@@ -33,7 +33,6 @@
         {%- endif -%}
         <span>{{ product.title }}</span>
       </div>
-      <h1 class="pdp-hero-title">{{ product.title }}</h1>
     </div>
   </div>
 
@@ -108,22 +107,6 @@
             </div>
           </div>
           {%- endif -%}
-
-          <!-- VARIANTS -->
-          {%- unless product.has_only_default_variant -%}
-          <div class="variants-block">
-            <div class="var-title">{{ product.options_with_values[0].name | default: 'Select Size' }}</div>
-            <div class="var-options" data-variant-picker>
-              {%- for variant in product.variants -%}
-                <button type="button"
-                  class="var-btn{% if variant.id == cv.id %} active{% endif %}{% unless variant.available %} unavailable{% endunless %}"
-                  data-variant-id="{{ variant.id }}"
-                  data-variant-price="{{ variant.price | money }}"
-                  onclick="selectShopifyVariant(this, {{ variant.id }})">{{ variant.title }}</button>
-              {%- endfor -%}
-            </div>
-          </div>
-          {%- endunless -%}
 
           <!-- REASSURANCE -->
           <div class="urgency-block" style="background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.22)">
