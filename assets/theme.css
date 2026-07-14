@@ -3315,6 +3315,20 @@
       color: var(--gold-lt)
     }
 
+    .pay-chip-inline {
+      height: 18px;
+      padding: 0 7px;
+      gap: 4px;
+      font-size: .62rem;
+      border-radius: 3px;
+      vertical-align: middle;
+      transform: translateY(-1px)
+    }
+
+    .pay-chip-inline svg {
+      height: 11px
+    }
+
     /* Specifications — two-column grid */
     .spec-grid {
       display: grid;

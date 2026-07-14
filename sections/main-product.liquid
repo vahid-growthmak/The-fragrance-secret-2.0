@@ -108,7 +108,7 @@
             </div>
             {{ form | payment_button }}
             {% render 'pay-icons' %}
-            <p class="pay-note">Pay later, interest-free in 4 with <strong>Tabby</strong> &amp; <strong>Tamara</strong> · Cash on Delivery available UAE-wide</p>
+            <p class="pay-note">Pay later, interest-free in 4 with <span class="pay-chip pay-chip-inline pay-tabby" title="Tabby">tabby</span> &amp; <span class="pay-chip pay-chip-inline pay-tamara" title="Tamara">tamara</span> · <span class="pay-chip pay-chip-inline pay-cod" title="Cash on Delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/></svg>COD</span> available UAE-wide</p>
             {%- if product.type contains 'Oil' or product.type contains 'Attar' or product.tags contains 'oil' or product.tags contains 'attar' -%}
             <button type="button" class="mix-cta" onclick="openMix('{{ product.title | escape | replace: "'", "\\'" }}')">
               <span class="mi" aria-hidden="true">science</span>
