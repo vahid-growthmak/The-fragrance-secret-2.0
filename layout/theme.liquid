@@ -56,8 +56,6 @@
 
 <body class="template-{{ request.page_type | handle }}" data-no-chrome data-nav="{{ settings.header_theme | default: 'dark' }}">
 
-  <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t }}</a>
-
   {% sections 'header-group' %}
 
   <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
