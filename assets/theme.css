@@ -3265,6 +3265,42 @@
       margin-bottom: 4px
     }
 
+    /* Specifications — two-column grid */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 44px;
+      row-gap: 0
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      font-size: .86rem
+    }
+
+    .spec-k {
+      color: var(--warm);
+      white-space: nowrap
+    }
+
+    .spec-v {
+      color: var(--ink);
+      font-weight: 500;
+      text-align: right
+    }
+
+    @media(max-width:640px) {
+      .spec-grid {
+        grid-template-columns: 1fr;
+        column-gap: 0
+      }
+    }
+
     /* PDP REVIEWS */
     .pdp-reviews {
       padding: 72px 0;
