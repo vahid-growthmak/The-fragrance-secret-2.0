@@ -3278,6 +3278,11 @@
       padding: 0 48px
     }
 
+    /* PDP reviews sit on a light (cream) band — override the dark-band heading colors */
+    .pdp-reviews .reviews-head .sec-title { color: var(--ink) }
+    .pdp-reviews .reviews-head .sec-title em { color: var(--gold-dk) }
+    .pdp-reviews .reviews-head .sec-sub { color: var(--warm) }
+
     /* RELATED */
     .related {
       padding: 80px 0;

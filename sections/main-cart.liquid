@@ -18,12 +18,11 @@
 </div></div>
 
 <section class="section"><div class="container">
+  {%- if cart.item_count > 0 -%}
   <div class="sec-head">
     <span class="label">Your Bag</span>
     <h2 class="sec-title">Shopping <em>Cart</em></h2>
   </div>
-
-  {%- if cart.item_count > 0 -%}
   <form action="{{ routes.cart_url }}" method="post" id="cart-form">
     <div class="checkout-grid">
       <div class="co-block">
