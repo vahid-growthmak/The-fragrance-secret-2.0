@@ -3265,6 +3265,24 @@
       margin-bottom: 4px
     }
 
+    /* Dynamic checkout "Buy it now" button — brand gold */
+    .shopify-payment-button__button--unbranded {
+      background-color: var(--gold) !important;
+      color: var(--ink) !important;
+      font-family: var(--fb) !important;
+      font-weight: 600 !important;
+      letter-spacing: .04em;
+      border-radius: 3px !important
+    }
+
+    .shopify-payment-button__button--unbranded:hover:not([disabled]) {
+      background-color: var(--gold-lt) !important
+    }
+
+    .shopify-payment-button__button--unbranded:focus {
+      background-color: var(--gold-lt) !important
+    }
+
     /* Payment method icons */
     .pay-icons-row {
       display: flex;
