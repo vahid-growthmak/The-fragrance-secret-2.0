@@ -85,13 +85,15 @@
     </div>
   </form>
   {%- else -%}
-    <div class="empty-state" style="text-align:center;padding:60px 20px">
-      <span class="mi" aria-hidden="true" style="font-size:56px;color:var(--gold)">shopping_bag</span>
-      <h3 class="sec-title">Your cart is empty</h3>
-      <p class="sec-sub">Discover 218+ authentic houses — your signature scent is waiting.</p>
-      <div class="cta-actions" style="justify-content:center">
-        <a class="btn-g" href="/collections/best-sellers">Shop Best Sellers</a>
-        <button class="btn-o" onclick="openAI()"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</button>
+    <div style="min-height:56vh;display:flex;align-items:center;justify-content:center">
+      <div class="empty-state" style="max-width:560px;margin:0 auto;padding:40px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+        <span class="mi" aria-hidden="true" style="font-size:56px;color:var(--gold)">shopping_bag</span>
+        <h3 class="sec-title" style="margin:0">Your cart is empty</h3>
+        <p class="sec-sub" style="margin:0">Discover 218+ authentic houses — your signature scent is waiting.</p>
+        <div class="cta-actions" style="justify-content:center;flex-wrap:wrap;margin-top:6px">
+          <a class="btn-g" href="/collections/best-sellers">Shop Best Sellers</a>
+          <button class="btn-o" onclick="openAI()" style="color:var(--ink);border-color:rgba(13,10,6,.28)"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</button>
+        </div>
       </div>
     </div>
   {%- endif -%}
