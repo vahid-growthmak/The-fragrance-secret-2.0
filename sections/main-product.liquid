@@ -151,9 +151,7 @@
           <div class="pdp-tabs">
             <div class="tab-header">
               <button type="button" class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
-              {%- if fragrance_experience != blank or best_for_details != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'exp')">Fragrance Experience</button>{%- endif -%}
               <button type="button" class="tab-btn" onclick="switchTab(this,'specs')">Specifications</button>
-              {%- if faq != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'faq')">FAQ</button>{%- endif -%}
               <button type="button" class="tab-btn" onclick="switchTab(this,'ship')">Shipping &amp; Returns</button>
             </div>
             <div class="tab-content">
@@ -162,20 +160,6 @@
                 {%- if product.description != blank -%}{{ product.description }}
                 {%- else -%}<p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>{%- endif -%}
               </div>
-
-              <!-- Fragrance Experience (with Best For) -->
-              {%- if fragrance_experience != blank or best_for_details != blank -%}
-              <div class="tab-pane" id="exp">
-                {%- if fragrance_experience != blank -%}<p>{{ fragrance_experience | newline_to_br }}</p>{%- endif -%}
-                {%- if best_for_details != blank -%}
-                <h4>Best For</h4>
-                <ul>
-                  {%- assign bf_lines = best_for_details | strip | newline_to_br | split: '<br />' -%}
-                  {%- for line in bf_lines -%}{%- assign l = line | strip -%}{%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}{%- endfor -%}
-                </ul>
-                {%- endif -%}
-              </div>
-              {%- endif -%}
 
               <!-- Specifications (two-column grid) -->
               <div class="tab-pane" id="specs">
@@ -199,24 +183,6 @@
                 </div>
               </div>
 
-              <!-- FAQ -->
-              {%- if faq != blank -%}
-              <div class="tab-pane" id="faq">
-                <div class="faq-list">
-                  {%- assign faq_lines = faq | strip | newline_to_br | split: '<br />' -%}
-                  {%- for line in faq_lines -%}
-                    {%- assign qa = line | split: ' :: ' -%}
-                    {%- if qa.size >= 2 -%}
-                      <details class="faq-item">
-                        <summary class="faq-q">{{ qa[0] | strip }}<span class="mi" aria-hidden="true">add</span></summary>
-                        <div class="faq-a">{{ qa[1] | strip }}</div>
-                      </details>
-                    {%- endif -%}
-                  {%- endfor -%}
-                </div>
-              </div>
-              {%- endif -%}
-
               <!-- Shipping & Returns -->
               <div class="tab-pane" id="ship">
                 <h4>Delivery Information</h4>
@@ -230,6 +196,30 @@
       </div><!-- /pdp-main-inner -->
     </section>
   {%- endform -%}
+
+  <!-- FAQ — full width, below the product image and details -->
+  {%- if faq != blank -%}
+  <section class="section pdp-faq">
+    <div class="container" style="max-width:900px">
+      <div class="sec-head center">
+        <span class="label">Your Questions, Answered</span>
+        <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
+      </div>
+      <div class="faq-list">
+        {%- assign faq_lines = faq | strip | newline_to_br | split: '<br />' -%}
+        {%- for line in faq_lines -%}
+          {%- assign qa = line | split: ' :: ' -%}
+          {%- if qa.size >= 2 -%}
+          <details class="faq-item">
+            <summary class="faq-q">{{ qa[0] | strip }}<span class="mi" aria-hidden="true">add</span></summary>
+            <div class="faq-a">{{ qa[1] | strip }}</div>
+          </details>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
 
   <!-- PDP REVIEWS -->
   <section class="pdp-reviews" id="pdp-reviews">
