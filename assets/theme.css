@@ -3294,10 +3294,27 @@
       text-align: right
     }
 
+    .spec-head {
+      border-bottom: 1.5px solid rgba(0, 0, 0, .28)
+    }
+
+    .spec-head .spec-k,
+    .spec-head .spec-v {
+      color: var(--ink);
+      font-weight: 600;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
     @media(max-width:640px) {
       .spec-grid {
         grid-template-columns: 1fr;
         column-gap: 0
+      }
+
+      .spec-head-2 {
+        display: none
       }
     }
 

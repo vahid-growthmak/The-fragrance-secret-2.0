@@ -187,6 +187,8 @@
               <!-- Specifications (two-column grid) -->
               <div class="tab-pane" id="specs">
                 <div class="spec-grid">
+                  <div class="spec-item spec-head"><span class="spec-k">Product Details</span><span class="spec-v">Information</span></div>
+                  <div class="spec-item spec-head spec-head-2"><span class="spec-k">Product Details</span><span class="spec-v">Information</span></div>
                   {%- if product.vendor != blank -%}<div class="spec-item"><span class="spec-k">Brand</span><span class="spec-v">{{ product.vendor }}</span></div>{%- endif -%}
                   {%- if mf.fragrance_family.value != blank -%}<div class="spec-item"><span class="spec-k">Fragrance Family</span><span class="spec-v">{{ mf.fragrance_family.value }}</span></div>{%- endif -%}
                   {%- if mf.concentration.value != blank -%}<div class="spec-item"><span class="spec-k">Concentration</span><span class="spec-v">{{ mf.concentration.value }}</span></div>{%- endif -%}
