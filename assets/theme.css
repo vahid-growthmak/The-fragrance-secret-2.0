@@ -3347,6 +3347,78 @@
       height: 11px
     }
 
+    /* Fragrance family line (above notes) */
+    .fragrance-family {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 6px 0 14px
+    }
+
+    .fragrance-family .ff-label {
+      font-size: .66rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--warm)
+    }
+
+    .fragrance-family .ff-val {
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      color: var(--ink)
+    }
+
+    /* Why Customers Choose — icon cards */
+    .why-choose {
+      background: var(--cream-dk)
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 30px 18px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .06);
+      border-radius: 10px;
+      transition: transform .25s, box-shadow .25s
+    }
+
+    .why-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(13, 10, 6, .08)
+    }
+
+    .why-card .mi {
+      font-size: 36px;
+      color: var(--gold-dk)
+    }
+
+    .why-card h3 {
+      font-family: var(--fb);
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 12px;
+      line-height: 1.4
+    }
+
+    @media(max-width:820px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:480px) {
+      .why-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
     /* Specifications — two independent columns */
     .spec-cols {
       display: flex;

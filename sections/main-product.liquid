@@ -121,12 +121,18 @@
           <!-- KEY INFO -->
           <div class="key-info">
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">schedule</span></div><div class="ki-label">Longevity</div><div class="ki-val">{{ longevity }}</div></div>
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">air</span></div><div class="ki-label">Sillage</div><div class="ki-val">{{ sillage }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">air</span></div><div class="ki-label">Projection</div><div class="ki-val">{{ sillage }}</div></div>
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">person</span></div><div class="ki-label">Best For</div><div class="ki-val">{{ best_for }}</div></div>
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Origin</div><div class="ki-val">{{ origin }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Made In</div><div class="ki-val">{{ origin }}</div></div>
           </div>
 
-          <!-- FRAGRANCE NOTES -->
+          <!-- FRAGRANCE FAMILY + NOTES -->
+          {%- if mf.fragrance_family.value != blank -%}
+          <div class="fragrance-family">
+            <span class="ff-label">Fragrance Family</span>
+            <span class="ff-val">{{ mf.fragrance_family.value | replace: ', ', ' • ' }}</span>
+          </div>
+          {%- endif -%}
           {%- if notes_top or notes_heart or notes_base -%}
           <div class="notes-block">
             <div class="notes-title">Fragrance Notes</div>
@@ -140,10 +146,10 @@
 
           <!-- TRUST -->
           <div class="pdp-trust">
-            <div class="pt-item"><span class="mi" aria-hidden="true">verified_user</span><span><strong>100% Authentic</strong> — Genuine, verified-sourced resale</span></div>
-            <div class="pt-item"><span class="mi" aria-hidden="true">local_shipping</span><span><strong>Free Delivery</strong> on orders above AED 150</span></div>
-            <div class="pt-item"><span class="mi" aria-hidden="true">autorenew</span><span><strong>7-Day Easy Returns</strong> — No questions asked</span></div>
-            <div class="pt-item"><span class="mi" aria-hidden="true">payments</span><span>Secure payment — Visa, Mastercard, Apple Pay, COD</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">verified_user</span><span><strong>100% Authentic Perfumes</strong> — Sourced from trusted suppliers</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">local_shipping</span><span><strong>Free Delivery</strong> — On orders above AED 150</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">autorenew</span><span><strong>Easy Returns</strong> — Eligible damaged or incorrect orders only</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">lock</span><span><strong>Secure Payments</strong> — Visa, Mastercard, Apple Pay &amp; Cash on Delivery</span></div>
             <a href="/pages/sourcing-promise" class="pt-link">Read our Sourcing Promise <span class="mi" aria-hidden="true">arrow_forward</span></a>
           </div>
 
@@ -151,6 +157,7 @@
           <div class="pdp-tabs">
             <div class="tab-header">
               <button type="button" class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+              {%- if best_for_details != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'bestfor')">Best For</button>{%- endif -%}
               <button type="button" class="tab-btn" onclick="switchTab(this,'specs')">Specifications</button>
               <button type="button" class="tab-btn" onclick="switchTab(this,'ship')">Shipping &amp; Returns</button>
             </div>
@@ -160,6 +167,16 @@
                 {%- if product.description != blank -%}{{ product.description }}
                 {%- else -%}<p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>{%- endif -%}
               </div>
+
+              <!-- Best For -->
+              {%- if best_for_details != blank -%}
+              <div class="tab-pane" id="bestfor">
+                <ul>
+                  {%- assign bf_lines = best_for_details | strip | newline_to_br | split: '<br />' -%}
+                  {%- for line in bf_lines -%}{%- assign l = line | strip -%}{%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}{%- endfor -%}
+                </ul>
+              </div>
+              {%- endif -%}
 
               <!-- Specifications (two-column grid) -->
               <div class="tab-pane" id="specs">
@@ -173,10 +190,8 @@
                   {%- if mf.dispenser.value != blank -%}Dispenser|{{ mf.dispenser.value }}~|~{%- endif -%}
                   {%- if mf.gender.value != blank -%}Gender|{{ mf.gender.value }}~|~{%- endif -%}
                   {%- if mf.occasion.value != blank -%}Occasion|{{ mf.occasion.value }}~|~{%- endif -%}
-                  {%- if mf.longevity.value != blank -%}Longevity|{{ mf.longevity.value }}~|~{%- endif -%}
-                  {%- if mf.sillage.value != blank -%}Sillage|{{ mf.sillage.value }}~|~{%- endif -%}
-                  {%- if origin != blank -%}Origin|{{ origin }}~|~{%- endif -%}
                   {%- if mf.bottle_colour.value != blank -%}Bottle Colour|{{ mf.bottle_colour.value }}~|~{%- endif -%}
+                  {%- if mf.longevity.value != blank -%}Longevity|{{ mf.longevity.value }}~|~{%- endif -%}
                   {%- if mf.ships_to.value != blank -%}Ships To|{{ mf.ships_to.value }}~|~{%- endif -%}
                   {%- if mf.barcode.value != blank -%}Barcode|{{ mf.barcode.value }}~|~{%- endif -%}
                 {%- endcapture -%}
@@ -204,10 +219,10 @@
 
               <!-- Shipping & Returns -->
               <div class="tab-pane" id="ship">
-                <h4>Delivery Information</h4>
-                <p>Free delivery across UAE on all orders above AED 150. Standard delivery takes 2–4 business days. Express same-day delivery available in Dubai for orders placed before 2PM.</p>
-                <h4>Returns Policy</h4>
-                <p>We offer a 7-day hassle-free return policy on all unopened, sealed products. Simply contact our team via WhatsApp and we'll arrange a collection.</p>
+                <h4>Shipping Information</h4>
+                <p>We deliver across the UAE within 1–4 business days. Orders placed after 6:00 PM (UAE Time) are processed the next business day. Shipping costs AED 8, and tracking details are shared once your order has been dispatched.</p>
+                <h4>Return Policy</h4>
+                <p>Returns are accepted within 2 days only for damaged, defective, incorrect, or incomplete orders. Products must remain unused, sealed, and in their original packaging. Opened perfume bottles and change-of-mind returns cannot be accepted.</p>
               </div>
             </div>
           </div>
@@ -314,6 +329,24 @@
     </div>
   </section>
   {%- endif -%}
+
+  <!-- WHY CUSTOMERS CHOOSE THE FRAGRANCE SECRETS -->
+  <section class="section why-choose">
+    <div class="container">
+      <div class="sec-head center">
+        <span class="label">Why Shop With Us</span>
+        <h2 class="sec-title">Why Customers Choose <em>The Fragrance Secrets</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-up"><span class="mi" aria-hidden="true">verified</span><h3>100% Authentic Perfumes</h3></div>
+        <div class="why-card fade-up"><span class="mi" aria-hidden="true">local_shipping</span><h3>Fast UAE Delivery</h3></div>
+        <div class="why-card fade-up"><span class="mi" aria-hidden="true">lock</span><h3>Secure Payments</h3></div>
+        <div class="why-card fade-up"><span class="mi" aria-hidden="true">diamond</span><h3>Premium Fragrance Collection</h3></div>
+        <div class="why-card fade-up"><span class="mi" aria-hidden="true">inventory_2</span><h3>Carefully Packed Orders</h3></div>
+        <div class="why-card fade-up"><span class="mi" aria-hidden="true">redeem</span><h3>Perfect for Gifting</h3></div>
+      </div>
+    </div>
+  </section>
 
   <!-- STICKY ATC BAR -->
   <div class="sticky-atc" id="stickyatc">
