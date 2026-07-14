@@ -1,0 +1,103 @@
+{%- comment -%} Cart — native Shopify port of cart.html, driven by the `cart` object. {%- endcomment -%}
+{%- liquid
+  assign free_ship_threshold = 15000
+  assign remaining = free_ship_threshold | minus: cart.total_price
+  if cart.total_price >= free_ship_threshold
+    assign ship_pct = 100
+  else
+    assign ship_pct = cart.total_price | times: 100 | divided_by: free_ship_threshold
+  endif
+-%}
+
+<div class="crumb-bar"><div class="container">
+  <div class="breadcrumb">
+    <a href="{{ routes.root_url }}">Home</a>
+    <span class="mi" aria-hidden="true">chevron_right</span>
+    <span>Cart</span>
+  </div>
+</div></div>
+
+<section class="section"><div class="container">
+  <div class="sec-head">
+    <span class="label">Your Bag</span>
+    <h2 class="sec-title">Shopping <em>Cart</em></h2>
+  </div>
+
+  {%- if cart.item_count > 0 -%}
+  <form action="{{ routes.cart_url }}" method="post" id="cart-form">
+    <div class="checkout-grid">
+      <div class="co-block">
+        <div id="cartLines">
+          {%- for item in cart.items -%}
+            <div class="co-line" data-price="{{ item.final_price }}" data-qty="{{ item.quantity }}" data-line="{{ forloop.index }}" data-key="{{ item.key }}">
+              {%- if item.image -%}
+                <a href="{{ item.url }}" class="cl-img"><img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" width="80"></a>
+              {%- endif -%}
+              <div class="cl-body">
+                <div class="cl-name"><a href="{{ item.url }}">{{ item.product.title }}</a></div>
+                <div class="cl-meta">{% unless item.variant.title == 'Default Title' %}{{ item.variant.title }}{% endunless %}{% if item.product.vendor %} · {{ item.product.vendor }}{% endif %}</div>
+                <div class="qty-wrap">
+                  <button type="button" class="qty-btn" onclick="cartChangeQty('{{ item.key }}', {{ item.quantity | minus: 1 }})">&minus;</button>
+                  <input class="qty-num" type="text" value="{{ item.quantity }}" readonly>
+                  <button type="button" class="qty-btn" onclick="cartChangeQty('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+                </div>
+              </div>
+              <div class="cl-price">{{ item.final_line_price | money }}</div>
+              <button type="button" class="cart-remove" aria-label="Remove" onclick="cartChangeQty('{{ item.key }}', 0)"><span class="mi" aria-hidden="true">close</span></button>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <!-- CROSS-SELL -->
+        <div class="upsell">
+          <div class="upsell-head"><span class="mi" aria-hidden="true">auto_awesome</span>Complete your order</div>
+          <div class="upsell-sub">Customers who bought these items also loved</div>
+          <div class="upsell-row products-grid" data-render="products" data-count="3"></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="co-summary">
+          <div class="co-sum-head">Order Summary</div>
+          <div class="ship-nudge" id="shipNudge">
+            {%- if cart.total_price >= free_ship_threshold -%}
+              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over AED 150 <span class="mi" aria-hidden="true" style="font-size:15px;vertical-align:-3px;color:var(--gold-dk)">check_circle</span></p>
+            {%- else -%}
+              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>{{ remaining | money }}</b> more for <b>free delivery</b></p>
+            {%- endif -%}
+            <div class="ship-bar"><i id="shipBar" style="width:{{ ship_pct }}%"></i></div>
+          </div>
+          <div class="co-totals">
+            <div class="co-trow"><span>Subtotal</span><span id="cartSub">{{ cart.total_price | money }}</span></div>
+            <div class="co-trow"><span>Delivery</span><span id="cartShip" style="color:var(--gold-dk)">{% if cart.total_price >= free_ship_threshold %}Free{% else %}Calculated at checkout{% endif %}</span></div>
+            <div class="co-trow"><span>VAT (5%)</span><span>Included</span></div>
+            <div class="co-trow grand"><span>Total</span><b id="cartTotal">{{ cart.total_price | money }}</b></div>
+
+            <div class="pay-badges" aria-label="Payment options" style="margin-top:16px">
+              <span class="pay-badge">COD</span><span class="pay-badge">Tabby</span><span class="pay-badge">Tamara</span><span class="pay-badge">Apple Pay</span><span class="pay-badge">Cards</span>
+            </div>
+
+            <button type="submit" name="checkout" class="btn-g co-place" style="justify-content:center;margin-top:8px;width:100%"><span class="mi" aria-hidden="true">lock</span>Proceed to Checkout</button>
+            <a class="btn-ghost" href="/collections/all" style="justify-content:center;margin-top:16px;display:flex"><span class="mi" aria-hidden="true">arrow_back</span>Continue shopping</a>
+            <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:14px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · 7-day returns · Secure checkout</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </form>
+  {%- else -%}
+    <div class="empty-state" style="text-align:center;padding:60px 20px">
+      <span class="mi" aria-hidden="true" style="font-size:56px;color:var(--gold)">shopping_bag</span>
+      <h3 class="sec-title">Your cart is empty</h3>
+      <p class="sec-sub">Discover 218+ authentic houses — your signature scent is waiting.</p>
+      <div class="cta-actions" style="justify-content:center">
+        <a class="btn-g" href="/collections/best-sellers">Shop Best Sellers</a>
+        <button class="btn-o" onclick="openAI()"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</button>
+      </div>
+    </div>
+  {%- endif -%}
+</div></section>
+
+{% schema %}
+{ "name": "Cart", "settings": [] }
+{% endschema %}

@@ -1,0 +1,38 @@
+{%- comment -%} Customer login (+ recover password) {%- endcomment -%}
+<section class="page-hero tall"><div class="container">
+  <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Account</span></div>
+  <span class="ph-eyebrow">Welcome Back</span>
+  <h1 class="ph-title">Sign <em>In</em></h1>
+</div></section>
+
+<section class="section"><div class="container" style="max-width:460px">
+  <div id="RecoverPassword" style="display:none">
+    <h3 class="sec-title" style="font-size:1.5rem">Reset your password</h3>
+    {%- form 'recover_customer_password' -%}
+      {% if form.posted_successfully? %}<p class="form-success">We've sent you an email with a link to update your password.</p>{% endif %}
+      <label>Email</label>
+      <input type="email" name="email" class="fld" required>
+      <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Send reset link</button>
+      <a href="#" onclick="document.getElementById('RecoverPassword').style.display='none';document.getElementById('LoginForm').style.display='block';return false" class="btn-ghost" style="display:flex;justify-content:center;margin-top:12px">Back to sign in</a>
+    {%- endform -%}
+  </div>
+
+  <div id="LoginForm">
+    {%- form 'customer_login' -%}
+      {{ form.errors | default_errors }}
+      <label>Email</label>
+      <input type="email" name="customer[email]" class="fld" required>
+      <label style="margin-top:12px">Password</label>
+      <input type="password" name="customer[password]" class="fld">
+      <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Sign In</button>
+    {%- endform -%}
+    <div class="cta-actions" style="justify-content:space-between;margin-top:16px">
+      <a href="#" onclick="document.getElementById('LoginForm').style.display='none';document.getElementById('RecoverPassword').style.display='block';return false" class="fg-email">Forgot password?</a>
+      <a href="{{ routes.account_register_url }}" class="fg-email">Create account</a>
+    </div>
+  </div>
+</div></section>
+
+{% schema %}
+{ "name": "Customer login", "settings": [] }
+{% endschema %}

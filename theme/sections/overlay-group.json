@@ -1,0 +1,6 @@
+{
+  "type": "footer",
+  "name": "Overlay group",
+  "sections": { "overlays": { "type": "overlays", "settings": {} } },
+  "order": ["overlays"]
+}

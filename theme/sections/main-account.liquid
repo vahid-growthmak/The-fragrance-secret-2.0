@@ -1,0 +1,32 @@
+{%- comment -%} Customer account dashboard + order history {%- endcomment -%}
+<section class="page-hero tall"><div class="container">
+  <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Account</span></div>
+  <span class="ph-eyebrow">My Account</span>
+  <h1 class="ph-title">Hello, <em>{{ customer.first_name | default: 'there' }}</em></h1>
+  <div class="cta-actions" style="margin-top:18px">
+    <a class="btn-o" href="{{ routes.account_addresses_url }}">Manage addresses ({{ customer.addresses_count }})</a>
+    <a class="btn-o" href="{{ routes.account_logout_url }}">Log out</a>
+  </div>
+</div></section>
+<section class="section"><div class="container">
+  <div class="sec-head"><span class="label">Order History</span><h2 class="sec-title">Your <em>Orders</em></h2></div>
+  {%- if customer.orders.size > 0 -%}
+    <div class="order-table">
+      {%- for order in customer.orders -%}
+        <div class="co-line">
+          <div class="cl-body">
+            <div class="cl-name"><a href="{{ order.customer_url }}">Order {{ order.name }}</a></div>
+            <div class="cl-meta">{{ order.created_at | date: '%B %-d, %Y' }} · {{ order.financial_status_label }} · {{ order.fulfillment_status_label }}</div>
+          </div>
+          <div class="cl-price">{{ order.total_net_amount | money }}</div>
+          <a class="btn-ghost" href="{{ order.customer_url }}">Reorder</a>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <p class="sec-sub">You haven't placed any orders yet. <a href="/collections/best-sellers" class="fg-email">Start shopping</a>.</p>
+  {%- endif -%}
+</div></section>
+{% schema %}
+{ "name": "Customer account", "settings": [] }
+{% endschema %}

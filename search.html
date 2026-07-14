@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Search — The Fragrance Secrets</title>
+  <meta name="description" content="Search 218+ authentic fragrance houses by brand, note, scent family or occasion. Free UAE delivery over AED 150, cash on delivery and interest-free Tabby & Tamara." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+
+<body data-nav="dark" data-active="">
+  <main>
+
+    <!-- SEARCH HERO -->
+    <section class="page-hero tall">
+      <div class="container" style="text-align:center">
+        <span class="ph-eyebrow">Find Your Fragrance</span>
+        <h1 class="ph-title">What are you <em>searching for?</em></h1>
+        <p class="ph-sub" style="margin-left:auto;margin-right:auto">Search across 218+ authentic houses — by brand, note, scent family or occasion. Every result is 100% genuine, verified-sourced, and ready to ship UAE-wide.</p>
+
+        <form onsubmit="return runSearch(event)" style="max-width:720px;margin:36px auto 0">
+          <div style="position:relative;display:flex;align-items:center">
+            <span class="mi" aria-hidden="true" style="position:absolute;left:22px;font-size:26px;color:var(--gold)">search</span>
+            <input id="searchInput" type="search" autocomplete="off" autofocus
+              placeholder="Try &ldquo;Lattafa&rdquo;, &ldquo;oud&rdquo;, &ldquo;gift for him&rdquo;…"
+              aria-label="Search fragrances"
+              style="width:100%;font-family:var(--fb);font-size:1.05rem;color:var(--white);padding:20px 130px 20px 62px;background:rgba(255,255,255,.06);border:1.5px solid rgba(226,201,126,.28);border-radius:8px;outline:none;transition:border-color .25s" />
+            <button type="submit" class="btn-g" style="position:absolute;right:8px;padding:12px 26px">Search</button>
+          </div>
+        </form>
+
+        <!-- POPULAR SEARCHES -->
+        <div style="margin-top:30px">
+          <div class="label" style="margin-bottom:14px">Popular Searches</div>
+          <div class="fb-group" style="justify-content:center">
+            <a class="fb-chip" href="collection.html?c=brand&brand=Lattafa"><span class="mi" aria-hidden="true">local_mall</span>Lattafa</a>
+            <a class="fb-chip" href="collection.html?c=scent-family&family=Oud%20%26%20Woody"><span class="mi" aria-hidden="true">forest</span>Oud</a>
+            <a class="fb-chip" href="collection.html?c=best-sellers"><span class="mi" aria-hidden="true">trending_up</span>Best Sellers</a>
+            <a class="fb-chip" href="occasions-gifts.html"><span class="mi" aria-hidden="true">redeem</span>Gifts for Him</a>
+            <a class="fb-chip" href="collection.html?c=attar"><span class="mi" aria-hidden="true">water_drop</span>Attar</a>
+            <a class="fb-chip" href="collection.html?c=all"><span class="mi" aria-hidden="true">sell</span>Under AED 150</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREDICTIVE / DISCOVERY PREVIEW -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="label">Start Anywhere</span>
+          <h2 class="sec-title">Try searching by brand, note, <em>family or occasion</em></h2>
+          <p class="sec-sub">Not sure what to type? These are the scents our customers reach for most this week — a great place to begin.</p>
+        </div>
+
+        <div class="results-head">
+          <span class="label" style="margin-bottom:0">Popular Right Now</span>
+          <a href="collection.html?c=best-sellers" class="btn-ghost">View all best sellers <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+        <div class="products-grid" data-render="products" data-count="4"></div>
+      </div>
+    </section>
+
+    <!-- NO-RESULTS RESCUE -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band">
+          <span class="label">We're Here to Help</span>
+          <h2 class="sec-title">Can't find it? <em>Let's help</em></h2>
+          <p class="sec-sub">Searched and came up empty? Don't worry — with 218+ houses we very likely stock it or something you'll love even more. Let our concierge or our WhatsApp team point you straight to it.</p>
+          <div class="cta-actions">
+            <a class="btn-g" href="collection.html?c=best-sellers"><span class="mi" aria-hidden="true">local_fire_department</span>Browse Best Sellers</a>
+            <button class="btn-o" onclick="openAI()"><span class="mi" aria-hidden="true">auto_awesome</span>Take the Find My Scent quiz</button>
+            <button class="btn-o" onclick="waChat()"><span class="mi" aria-hidden="true">chat</span>Chat on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/js/app.js"></script>
+  <script>
+    /* Lightweight search intent — routes typed queries into the catalogue.
+       Real search is server-side; here we route to the most relevant page. */
+    function runSearch(e) {
+      e.preventDefault();
+      var q = (document.getElementById('searchInput').value || '').trim();
+      if (!q) { if (typeof toast === 'function') toast('Type a brand, note or occasion to search'); return false; }
+      if (typeof toast === 'function') toast('Searching for "' + q + '"…');
+      location.href = 'collection.html?c=all&q=' + encodeURIComponent(q);
+      return false;
+    }
+  </script>
+</body>
+
+</html>

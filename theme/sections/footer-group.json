@@ -1,0 +1,18 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "shop": { "type": "column", "settings": { "heading": "Shop", "links": "Our Brands | /pages/brands\nAll Brands | /pages/brands\nMen's Perfumes | /collections/mens\nWomen's Perfumes | /collections/womens\nUnisex | /collections/unisex\nBest Sellers | /collections/best-sellers\nGift Sets | /pages/gift-sets" } },
+        "discover": { "type": "column", "settings": { "heading": "Discover", "links": "Occasions & Gifts | /pages/occasions-gifts\nDiscovery Kits | /collections/discovery-kits\nGuides | /blogs/journal\nFind My Scent | /pages/find-my-scent\nCustom Mixing | /pages/find-my-scent" } },
+        "help": { "type": "column", "settings": { "heading": "Help", "links": "Contact | /pages/contact\nFAQs | /pages/faqs\nShipping | /pages/shipping-policy\nReturns & Refund | /pages/return-policy\nPayment | /pages/payment-policy\nTrack Order | /account" } },
+        "company": { "type": "column", "settings": { "heading": "Company", "links": "About | /pages/about\nSourcing Promise | /pages/sourcing-promise\nReviews | /pages/reviews\nPrivacy Policy | /pages/privacy-policy\nTerms of Service | /pages/terms-of-service" } }
+      },
+      "block_order": ["shop","discover","help","company"],
+      "settings": {}
+    }
+  },
+  "order": ["footer"]
+}

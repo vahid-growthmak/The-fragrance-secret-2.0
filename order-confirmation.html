@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Order Confirmed — The Fragrance Secrets</title>
+  <meta name="description" content="Thank you — your order is confirmed. Track your order, view your summary, and see estimated delivery. 100% authentic fragrances, cash on delivery UAE-wide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <style>
+    /* ── Order confirmation — success header + horizontal tracker ── */
+    .oc-success { text-align: center; max-width: 720px; margin: 0 auto 8px; }
+    .oc-check {
+      width: 78px; height: 78px; border-radius: 50%; margin: 0 auto 22px;
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 35%, rgba(201, 168, 76, .22), rgba(201, 168, 76, .06));
+      border: 1px solid rgba(201, 168, 76, .4);
+      animation: oc-pop .5s var(--snap) both;
+    }
+    .oc-check .mi { font-size: 42px; color: var(--gold-dk); }
+    @keyframes oc-pop { 0% { transform: scale(.5); opacity: 0 } 100% { transform: scale(1); opacity: 1 } }
+    .oc-success h1 { font-family: var(--fd); font-weight: 400; font-size: clamp(2.1rem, 4vw, 3rem); line-height: 1.1; margin-bottom: 12px; }
+    .oc-success h1 em { font-style: italic; color: var(--gold-dk); }
+    .oc-success p { color: var(--warm); font-size: .96rem; max-width: 540px; margin: 0 auto; }
+    .oc-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 26px 0 6px; }
+    .oc-chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; background: var(--white); border: 1px solid var(--cream-dk); border-radius: 40px; font-size: .78rem; }
+    .oc-chip b { color: var(--ink); font-weight: 600; }
+    .oc-chip .mi { font-size: 17px; color: var(--gold-dk); }
+
+    /* Horizontal order tracker */
+    .otrack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 6px 0 4px; }
+    .ostep { position: relative; text-align: center; padding-top: 40px; }
+    .ostep::before { content: ''; position: absolute; top: 13px; left: 0; right: 0; height: 2px; background: var(--cream-dk); z-index: 0; }
+    .ostep:first-child::before { left: 50%; }
+    .ostep:last-child::before { right: 50%; }
+    .ostep.done::before { background: var(--gold); }
+    .ostep .dot {
+      position: absolute; top: 3px; left: 50%; transform: translateX(-50%); z-index: 1;
+      width: 24px; height: 24px; border-radius: 50%; background: var(--cream); border: 2px solid var(--cream-dk);
+      display: flex; align-items: center; justify-content: center; color: var(--muted);
+    }
+    .ostep .dot .mi { font-size: 15px; }
+    .ostep.done .dot { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .ostep.current .dot { background: var(--ink); border-color: var(--ink); color: var(--gold-lt); box-shadow: 0 0 0 5px rgba(201, 168, 76, .16); }
+    .ostep h4 { font-size: .82rem; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .ostep.pending h4 { color: var(--muted); font-weight: 500; }
+    .ostep span { font-size: .68rem; color: var(--warm); }
+    .oc-next { list-style: none; margin: 6px 0 0; padding: 0; }
+    .oc-next li { position: relative; padding-left: 30px; margin-bottom: 14px; font-size: .86rem; color: var(--warm); line-height: 1.6; }
+    .oc-next li .mi { position: absolute; left: 0; top: 1px; font-size: 20px; color: var(--gold-dk); }
+    .oc-next li b { color: var(--ink); font-weight: 600; }
+    .oc-deliv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; font-size: .88rem; }
+    @media (max-width: 560px) {
+      .ostep h4 { font-size: .72rem; }
+      .ostep span { display: none; }
+      .oc-deliv { grid-template-columns: 1fr; }
+      .oc-success h1 { font-size: clamp(1.7rem, 7vw, 2.1rem); }
+      .oc-meta { gap: 8px; }
+      .oc-chip { font-size: .72rem; padding: 8px 13px; }
+    }
+  </style>
+</head>
+
+<body data-nav="dark" data-active="">
+  <main>
+
+    <div class="crumb-bar">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="mi" aria-hidden="true">chevron_right</span><a href="cart.html">Cart</a><span class="mi" aria-hidden="true">chevron_right</span><a href="checkout.html">Checkout</a><span class="mi" aria-hidden="true">chevron_right</span><span>Confirmation</span></div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:44px">
+      <div class="container">
+
+        <!-- SUCCESS HEADER -->
+        <div class="oc-success">
+          <div class="oc-check"><span class="mi" aria-hidden="true">check</span></div>
+          <span class="label" style="display:block">Order Confirmed</span>
+          <h1>Thank you, Fatima — <em>your scent is on its way</em></h1>
+          <p>We've received your order and sent a confirmation to your WhatsApp and email. Our team is preparing it for dispatch now.</p>
+          <div class="oc-meta">
+            <span class="oc-chip"><span class="mi" aria-hidden="true">tag</span>Order <b id="ocNum">#TFS-2026-10482</b></span>
+            <span class="oc-chip"><span class="mi" aria-hidden="true">calendar_today</span><b>9 July 2026</b></span>
+            <span class="oc-chip"><span class="mi" aria-hidden="true">payments</span>Cash on Delivery · <b>AED 407</b></span>
+          </div>
+        </div>
+
+        <div class="checkout-grid" style="margin-top:44px">
+
+          <!-- LEFT: TRACKER + DELIVERY + NEXT STEPS -->
+          <div>
+            <div class="co-block">
+              <div class="co-step"><span class="n"><span class="mi" aria-hidden="true" style="font-size:18px">local_shipping</span></span><h2>Order Status</h2></div>
+              <div class="otrack">
+                <div class="ostep done current"><span class="dot"><span class="mi" aria-hidden="true">check</span></span><h4>Confirmed</h4><span>9 Jul</span></div>
+                <div class="ostep pending"><span class="dot"><span class="mi" aria-hidden="true">inventory_2</span></span><h4>Packed</h4><span>by 10 Jul</span></div>
+                <div class="ostep pending"><span class="dot"><span class="mi" aria-hidden="true">local_shipping</span></span><h4>On the Way</h4><span>11 Jul</span></div>
+                <div class="ostep pending"><span class="dot"><span class="mi" aria-hidden="true">home</span></span><h4>Delivered</h4><span>11–13 Jul</span></div>
+              </div>
+            </div>
+
+            <div class="co-block">
+              <div class="co-step"><span class="n">1</span><h2>Delivery Details</h2></div>
+              <div class="oc-deliv">
+                <div>
+                  <div class="label" style="margin-bottom:6px">Ship To</div>
+                  <p style="color:var(--warm);line-height:1.6">Fatima Al Rashid<br>Villa 24, Al Wasl Road, Jumeirah 1<br>Dubai, United Arab Emirates<br>+971 5X XXX XXXX</p>
+                </div>
+                <div>
+                  <div class="label" style="margin-bottom:6px">Estimated Delivery</div>
+                  <p style="color:var(--warm);line-height:1.6"><b style="color:var(--ink)">11–13 July 2026</b><br>Standard UAE delivery (2–4 working days)<br><span style="color:var(--gold-dk)">Free — order over AED 150</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="co-block">
+              <div class="co-step"><span class="n">2</span><h2>What Happens Next</h2></div>
+              <ul class="oc-next">
+                <li><span class="mi" aria-hidden="true">chat</span><b>We'll WhatsApp you</b> a confirmation and tracking link within a few minutes.</li>
+                <li><span class="mi" aria-hidden="true">inventory_2</span><b>We pack &amp; verify</b> every bottle for authenticity before it leaves our facility.</li>
+                <li><span class="mi" aria-hidden="true">payments</span><b>Keep AED 407 ready</b> in cash for the courier on delivery — or pay by card at the door.</li>
+                <li><span class="mi" aria-hidden="true">autorenew</span>Changed your mind? <b>7-day easy returns</b> on sealed items, no questions asked.</li>
+              </ul>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+                <a class="btn-ol" href="#" onclick="waChat();return false"><span class="mi" aria-hidden="true">chat</span>Chat on WhatsApp</a>
+                <a class="btn-ghost" href="contact.html" style="display:inline-flex"><span class="mi" aria-hidden="true">support_agent</span>Contact Support</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: ORDER SUMMARY -->
+          <aside>
+            <div class="co-summary">
+              <div class="co-sum-head">Order Summary</div>
+              <div class="co-lines">
+                <div class="co-line"><img src="assets/img/prod-bouquet-oud.png" alt="Bouquet of Oud EDP" /><div><div class="cl-name"><a href="product.html" style="color:inherit">Bouquet of Oud EDP</a></div><div class="cl-meta">100ml · Qty 1</div></div><div class="cl-price">AED 189</div></div>
+                <div class="co-line"><img src="assets/img/prod-club-de-nuit.jpg" alt="Club de Nuit Précieux" /><div><div class="cl-name"><a href="product.html" style="color:inherit">Club de Nuit Précieux</a></div><div class="cl-meta">100ml · Qty 1</div></div><div class="cl-price">AED 129</div></div>
+                <div class="co-line"><img src="assets/img/kit-oud-trio.png" alt="Oud Discovery Set" /><div><div class="cl-name"><a href="collection.html?c=discovery-kits" style="color:inherit">Oud Discovery Set</a></div><div class="cl-meta">5 × 2ml · Qty 1</div></div><div class="cl-price">AED 89</div></div>
+              </div>
+              <div class="co-totals">
+                <div class="co-trow"><span>Subtotal</span><span>AED 407</span></div>
+                <div class="co-trow"><span>Delivery</span><span style="color:var(--gold-dk)">Free</span></div>
+                <div class="co-trow"><span>VAT (5%)</span><span>Included</span></div>
+                <div class="co-trow grand"><span>Total Paid on Delivery</span><b>AED 407</b></div>
+                <a class="btn-g co-place" href="account.html" style="justify-content:center;margin-top:16px"><span class="mi" aria-hidden="true">local_shipping</span>Track Your Order</a>
+                <a class="btn-ol" href="collection.html?c=all" style="justify-content:center;margin-top:12px;display:flex"><span class="mi" aria-hidden="true">arrow_forward</span>Continue Shopping</a>
+                <a class="btn-ghost" href="#" onclick="toast('📄 Invoice sent to your email');return false" style="justify-content:center;margin-top:12px;display:flex"><span class="mi" aria-hidden="true">receipt_long</span>Email My Invoice</a>
+                <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:14px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · 7-day returns · Secure checkout</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- POST-PURCHASE CROSS-SELL -->
+    <section class="related">
+      <div class="related-inner">
+        <div class="related-head fade-up"><span class="label">Complete Your Collection</span><h2 class="sec-title">You May Also <em>Like</em></h2></div>
+        <div class="products-grid" data-render="products" data-count="4"></div>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/js/app.js"></script>
+  <script>
+    /* Show a friendly confirmation toast once chrome is ready */
+    window.addEventListener('DOMContentLoaded', function () {
+      if (typeof toast === 'function') setTimeout(function () { toast('✓ Order placed — confirmation sent to your WhatsApp'); }, 400);
+    });
+  </script>
+</body>
+
+</html>

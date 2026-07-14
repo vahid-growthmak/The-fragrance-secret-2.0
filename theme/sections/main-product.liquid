@@ -1,0 +1,267 @@
+{%- comment -%}
+  Product detail page — native Shopify port of product.html.
+  Driven by the `product` object (gallery, variants, price, description,
+  metafields) with fallbacks so a bare product still renders the design.
+{%- endcomment -%}
+
+{%- liquid
+  assign p = product
+  assign cv = product.selected_or_first_available_variant
+  assign brand = product.vendor | default: 'The Fragrance Secrets'
+  assign rating = product.metafields.reviews.rating.value.rating | default: product.metafields.custom.rating.value | default: 4.9
+  assign review_count = product.metafields.reviews.rating_count.value | default: product.metafields.custom.review_count.value | default: 0
+  assign longevity = product.metafields.custom.longevity.value | default: '8–12 hours'
+  assign sillage = product.metafields.custom.sillage.value | default: 'Strong'
+  assign best_for = product.metafields.custom.best_for.value | default: 'Evening / Party'
+  assign origin = product.metafields.custom.origin.value | default: 'UAE'
+  assign notes_top = product.metafields.custom.notes_top.value
+  assign notes_heart = product.metafields.custom.notes_heart.value
+  assign notes_base = product.metafields.custom.notes_base.value
+  assign badge = product.metafields.custom.badge.value | default: 'Bestseller'
+-%}
+
+<main-product class="page active" id="product" data-product>
+  <!-- BREADCRUMB HERO -->
+  <div class="pdp-hero">
+    <div class="pdp-hero-inner">
+      <div class="breadcrumb">
+        <a href="{{ routes.root_url }}">Home</a>
+        <span class="mi" aria-hidden="true">chevron_right</span>
+        {%- if collection -%}
+          <a href="{{ collection.url }}">{{ collection.title }}</a>
+          <span class="mi" aria-hidden="true">chevron_right</span>
+        {%- endif -%}
+        <span>{{ product.title }}</span>
+      </div>
+      <h1 class="pdp-hero-title">{{ product.title }}</h1>
+    </div>
+  </div>
+
+  {%- form 'product', product, id: 'product-form', class: 'pdp-form' -%}
+    <input type="hidden" name="id" value="{{ cv.id }}">
+
+    <section class="pdp-main">
+      <div class="pdp-main-inner">
+
+        <!-- GALLERY -->
+        <div class="pdp-gallery">
+          <div class="thumb-list" id="thumblist">
+            {%- if product.media.size > 0 -%}
+              {%- for media in product.media limit: 6 -%}
+                <div class="thumb{% if forloop.first %} active{% endif %}" data-full="{{ media | image_url: width: 900 }}"><img src="{{ media | image_url: width: 160 }}" alt="View {{ forloop.index }}"></div>
+              {%- endfor -%}
+            {%- else -%}
+              <div class="thumb active" data-full="{{ 'prod-bouquet-oud.png' | asset_url }}"><img src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="View 1"></div>
+              <div class="thumb" data-full="{{ 'hero-oud.jpg' | asset_url }}"><img src="{{ 'hero-oud.jpg' | asset_url }}" alt="View 2"></div>
+              <div class="thumb" data-full="{{ 'prod-shaghaf.png' | asset_url }}"><img src="{{ 'prod-shaghaf.png' | asset_url }}" alt="View 3"></div>
+            {%- endif -%}
+          </div>
+          <div class="main-img-wrap">
+            {%- if product.featured_media -%}
+              <img class="main-img" id="mainimg" src="{{ product.featured_media | image_url: width: 900 }}" alt="{{ product.title | escape }}">
+            {%- else -%}
+              <img class="main-img" id="mainimg" src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="{{ product.title | escape }}">
+            {%- endif -%}
+            {%- if badge != blank -%}<div class="img-badge">{{ badge }}</div>{%- endif -%}
+            <div class="zoom-hint"><span class="mi" aria-hidden="true">zoom_in</span>Hover to zoom</div>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="pdp-info">
+          <div class="pdp-brand">{{ brand }}</div>
+          <h1 class="pdp-title">{{ product.title }}</h1>
+          <div class="pdp-rating-row">
+            {% render 'star-rating', rating: rating %}
+            <span class="rv-count">{{ review_count }} reviews</span>
+            <a href="#pdp-reviews" class="rv-link">Read reviews</a>
+          </div>
+          {%- if product.description != blank -%}
+            <p class="pdp-hook">{{ product.metafields.custom.hook.value | default: product.description | strip_html | truncatewords: 40 }}</p>
+          {%- else -%}
+            <p class="pdp-hook">A bold, long-lasting scent crafted for unforgettable moments — where warmth meets mystery and confidence becomes your signature.</p>
+          {%- endif -%}
+          <div class="pdp-price-row" data-price-row>
+            <span class="pdp-price-now">{{ cv.price | money }}</span>
+            {%- if cv.compare_at_price > cv.price -%}
+              <span class="pdp-price-was">{{ cv.compare_at_price | money }}</span>
+              <span class="pdp-price-save">Save {{ cv.compare_at_price | minus: cv.price | times: 100.0 | divided_by: cv.compare_at_price | round }}%</span>
+            {%- endif -%}
+          </div>
+
+          <!-- KEY INFO -->
+          <div class="key-info">
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">schedule</span></div><div class="ki-label">Longevity</div><div class="ki-val">{{ longevity }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">air</span></div><div class="ki-label">Sillage</div><div class="ki-val">{{ sillage }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">person</span></div><div class="ki-label">Best For</div><div class="ki-val">{{ best_for }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Origin</div><div class="ki-val">{{ origin }}</div></div>
+          </div>
+
+          <!-- FRAGRANCE NOTES -->
+          {%- if notes_top or notes_heart or notes_base -%}
+          <div class="notes-block">
+            <div class="notes-title">Fragrance Notes</div>
+            <div class="notes-row">
+              {%- if notes_top -%}<span class="note-tag"><strong>Top</strong>{{ notes_top }}</span>{%- endif -%}
+              {%- if notes_heart -%}<span class="note-tag"><strong>Heart</strong>{{ notes_heart }}</span>{%- endif -%}
+              {%- if notes_base -%}<span class="note-tag"><strong>Base</strong>{{ notes_base }}</span>{%- endif -%}
+            </div>
+          </div>
+          {%- endif -%}
+
+          <!-- VARIANTS -->
+          {%- unless product.has_only_default_variant -%}
+          <div class="variants-block">
+            <div class="var-title">{{ product.options_with_values[0].name | default: 'Select Size' }}</div>
+            <div class="var-options" data-variant-picker>
+              {%- for variant in product.variants -%}
+                <button type="button"
+                  class="var-btn{% if variant.id == cv.id %} active{% endif %}{% unless variant.available %} unavailable{% endunless %}"
+                  data-variant-id="{{ variant.id }}"
+                  data-variant-price="{{ variant.price | money }}"
+                  onclick="selectShopifyVariant(this, {{ variant.id }})">{{ variant.title }}</button>
+              {%- endfor -%}
+            </div>
+          </div>
+          {%- endunless -%}
+
+          <!-- REASSURANCE -->
+          <div class="urgency-block" style="background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.22)">
+            <div class="ub-stock" style="color:var(--gold-dk)"><span class="mi" aria-hidden="true">local_shipping</span>
+              {%- if cv.available -%}In stock — ships within 48 hours{%- else -%}Currently out of stock{%- endif -%}
+            </div>
+            <div class="ub-sep" style="background:rgba(201,168,76,.3)"></div>
+            <div class="ub-views"><span class="mi" aria-hidden="true">verified_user</span>Authenticity guaranteed · 7-day returns</div>
+          </div>
+
+          <!-- CTA BLOCK -->
+          <div class="cta-block">
+            <div class="qty-row">
+              <div class="qty-wrap">
+                <button type="button" class="qty-btn" onclick="changeQty(-1)">&minus;</button>
+                <input class="qty-num" id="qtynum" name="quantity" type="text" value="1" readonly>
+                <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+              </div>
+              <button type="submit" name="add" class="atc-btn"{% unless cv.available %} disabled{% endunless %}><span class="mi" aria-hidden="true">shopping_bag</span>{% if cv.available %}Add to Cart{% else %}Sold Out{% endif %}</button>
+            </div>
+            {{ form | payment_button }}
+            <div class="pay-badges" aria-label="Payment options">
+              <span class="pay-badge">Cash on Delivery</span><span class="pay-badge">Tabby</span><span class="pay-badge">Tamara</span><span class="pay-badge">Apple Pay</span><span class="pay-badge">Google Pay</span><span class="pay-badge">Visa</span><span class="pay-badge">Mastercard</span>
+            </div>
+            <p class="pay-note">Pay later, interest-free in 4 with <strong>Tabby</strong> &amp; <strong>Tamara</strong> · Cash on Delivery available UAE-wide</p>
+            {%- if product.type contains 'Oil' or product.type contains 'Attar' or product.tags contains 'oil' or product.tags contains 'attar' -%}
+            <button type="button" class="mix-cta" onclick="openMix('{{ product.title | escape | replace: "'", "\\'" }}')">
+              <span class="mi" aria-hidden="true">science</span>
+              Mix It Into a Spray
+              <span class="mix-tag">50 / 100ml</span>
+            </button>
+            {%- endif -%}
+          </div>
+
+          <!-- TRUST -->
+          <div class="pdp-trust">
+            <div class="pt-item"><span class="mi" aria-hidden="true">verified_user</span><span><strong>100% Authentic</strong> — Genuine, verified-sourced resale</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">local_shipping</span><span><strong>Free Delivery</strong> on orders above AED 150</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">autorenew</span><span><strong>7-Day Easy Returns</strong> — No questions asked</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">payments</span><span>Secure payment — Visa, Mastercard, Apple Pay, COD</span></div>
+            <a href="/pages/sourcing-promise" class="pt-link">Read our Sourcing Promise <span class="mi" aria-hidden="true">arrow_forward</span></a>
+          </div>
+
+          <!-- FRAGRANCE FINDER (PDP) -->
+          <div class="pdp-finder">
+            <div class="finder-head fade-up">
+              <span class="label">Personalised Recommendation</span>
+              <h2 class="sec-title">Not Sure What to <em>Pick?</em></h2>
+              <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
+            </div>
+            <div class="quiz-progress quiz-progress-wrap"></div>
+            <div class="quiz-container-wrap"></div>
+          </div>
+
+          <!-- TABS -->
+          <div class="pdp-tabs">
+            <div class="tab-header">
+              <button type="button" class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+              <button type="button" class="tab-btn" onclick="switchTab(this,'ship')">Shipping &amp; Returns</button>
+              <button type="button" class="tab-btn" onclick="switchTab(this,'info')">Additional Info</button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="desc">
+                {%- if product.description != blank -%}
+                  {{ product.description }}
+                {%- else -%}
+                  <h4>Why You'll Love It</h4>
+                  <p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>
+                {%- endif -%}
+              </div>
+              <div class="tab-pane" id="ship">
+                <h4>Delivery Information</h4>
+                <p>Free delivery across UAE on all orders above AED 150. Standard delivery takes 2–4 business days. Express same-day delivery available in Dubai for orders placed before 2PM.</p>
+                <h4>Returns Policy</h4>
+                <p>We offer a 7-day hassle-free return policy on all unopened, sealed products. Simply contact our team via WhatsApp and we'll arrange a collection.</p>
+              </div>
+              <div class="tab-pane" id="info">
+                <ul>
+                  <li><strong>Brand:</strong> {{ brand }}</li>
+                  <li><strong>Type:</strong> {{ product.type | default: 'Eau de Parfum (EDP)' }}</li>
+                  {%- if cv.title != 'Default Title' -%}<li><strong>Volume:</strong> {{ cv.title }}</li>{%- endif -%}
+                  <li><strong>Origin:</strong> {{ origin }}</li>
+                  {%- if product.metafields.custom.barcode.value -%}<li><strong>Barcode:</strong> {{ product.metafields.custom.barcode.value }}</li>{%- endif -%}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div><!-- /pdp-info -->
+      </div><!-- /pdp-main-inner -->
+    </section>
+  {%- endform -%}
+
+  <!-- PDP REVIEWS -->
+  <section class="pdp-reviews" id="pdp-reviews">
+    <div class="pdp-rv-inner">
+      <div class="reviews-head fade-up"><span class="label">Verified Reviews</span><h2 class="sec-title">What Customers <em>Say</em></h2></div>
+      <div class="rv-summary fade-up" style="margin-bottom:40px">
+        <div class="rv-big">{{ rating }}</div>
+        <div class="rv-details">
+          {% render 'star-rating', rating: rating %}
+          <p>{{ review_count }} verified reviews</p>
+        </div>
+      </div>
+      <div class="rv-grid" data-render="reviews" data-count="3"></div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related">
+    <div class="related-inner">
+      <div class="related-head fade-up"><span class="label">Complete the Set</span><h2 class="sec-title">You May Also <em>Like</em></h2></div>
+      {%- assign related = product.metafields.custom.related.value | default: recommendations.products -%}
+      {%- if collection.products.size > 1 -%}
+        <div class="products-grid">
+          {%- for prod in collection.products limit: 4 -%}
+            {%- unless prod.id == product.id -%}{% render 'product-card', product: prod %}{%- endunless -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="products-grid" data-render="products" data-count="4"></div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <!-- STICKY ATC BAR -->
+  <div class="sticky-atc" id="stickyatc">
+    <div class="sticky-atc-inner">
+      <span class="prod-name-mini">{{ product.title }}</span>
+      <span class="price-mini">{{ cv.price | money }}</span>
+      <button type="button" class="atc-mini" onclick="document.getElementById('product-form').requestSubmit()">Add to Cart</button>
+    </div>
+  </div>
+</main-product>
+
+{% schema %}
+{
+  "name": "Product page",
+  "settings": [],
+  "presets": [ { "name": "Product page" } ]
+}
+{% endschema %}

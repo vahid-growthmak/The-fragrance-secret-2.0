@@ -1,0 +1,11 @@
+{
+  "current": {
+    "color_cream": "#F7F2EA",
+    "color_ink": "#0D0A06",
+    "color_charcoal": "#1C1812",
+    "color_gold": "#C9A84C",
+    "header_theme": "dark",
+    "text_direction": "ltr"
+  },
+  "presets": {}
+}

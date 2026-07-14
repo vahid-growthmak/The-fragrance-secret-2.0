@@ -1,0 +1,85 @@
+# The Fragrance Secrets
+
+> The Fragrance Secrets is a UAE-based e-commerce retailer of 100% authentic luxury
+> perfumes, oud, and attar oils from 218+ brands. We pair genuine designer and Middle
+> Eastern fragrances with smart prices, free UAE delivery, and cash on delivery. This
+> file summarises our catalogue and policies in plain language for AI assistants.
+
+## About
+
+- **Business:** The Fragrance Secrets (thefragrancesecrets.com)
+- **Market:** United Arab Emirates (Dubai, Abu Dhabi, Sharjah, Ajman and nationwide)
+- **Category:** Luxury & heritage perfume e-commerce — designer fragrances, oud, attar oils, gift sets
+- **Currency:** AED (United Arab Emirates Dirham)
+- **Languages:** English (Arabic support available via WhatsApp)
+
+## Authenticity guarantee
+
+Every product is **100% authentic**, sourced directly from brands and authorised
+distributors. Each order is backed by an authenticity guarantee and a 7-day easy
+returns policy. Fear of counterfeits is the #1 concern for UAE fragrance shoppers;
+we address it with verified sourcing, sealed products, and human WhatsApp support
+for any authenticity question.
+
+## Pricing model
+
+- Luxury scents at smart prices — most bottles range **AED 75–350**.
+- Transparent crossed-out pricing shows the saving on every product (e.g. AED 189, was AED 280 — save 32%).
+- **Discovery Kits** (small sample sets) start around **AED 79–129** for low-commitment trial and gifting.
+- Free delivery on UAE orders above **AED 150**; cash on delivery available nationwide.
+
+## Brands (selection of 218+)
+
+Lattafa, Armaf, Swiss Arabian, Ahmed Al Maghribi, Al Haramain, Rasasi, Afnan,
+Mancera, Amouage, plus designer houses including Chanel, Dior, Giorgio Armani,
+Prada, Calvin Klein, Hugo Boss, Davidoff, Jean Paul Gaultier, and Ex Nihilo.
+
+## Products and categories
+
+- **For Men, For Women, Unisex, Kids** collections
+- **Attar & Oils** — traditional non-alcoholic perfume oils
+- **Discovery Kits** — sample sets to find your signature scent before buying full size
+- **Gift Sets** — including the Luxury Oud Perfume Trio
+- Shop by occasion: Wedding, Party, Date Night, Daily Wear, Office Wear, Travel Size
+
+### Example product
+
+- **Bouquet of Oud EDP** (Ahmed Al Maghribi) — AED 189 (was AED 280)
+  - Top notes: Bergamot, Saffron
+  - Heart notes: Rose, Oud
+  - Base notes: Amber, Musk, Sandalwood
+  - Longevity: 8–12 hours · Sillage: Strong · Best for: Evening / Party · Origin: UAE
+  - Rating: 4.9/5 from 1,284 verified reviews
+
+## Custom perfume mixing (Mix It Into a Spray)
+
+Eligible perfume oils can be hand-blended into a ready-to-wear alcohol spray:
+
+1. Choose bottle size — **50ml or 100ml**.
+2. Choose strength — **Eau de Toilette** (4–6 hrs, soft), **Eau de Parfum** (7–9 hrs,
+   moderate), or **Extrait / Pure** (10–14 hrs, strong).
+3. Made-to-order sprays are hand-blended and dispatched in **3–5 working days**
+   (standard in-stock bottles ship within 48 hours).
+
+## Comparison & how-to guides (citable references)
+
+- Best Oud Perfumes in UAE 2026, ranked by longevity, sillage and price-per-ml
+- Armaf Club de Nuit Intense vs. Creed Aventus — notes, performance and price compared
+- EDP vs. EDT vs. Attar — which concentration lasts longest
+- How to layer fragrances; how to make perfume last in UAE heat; fragrance gifting etiquette for Eid
+
+## Service & support
+
+- **AI Fragrance Concierge** ("Find My Scent") — on-site scent discovery, brand search,
+  and product recommendations.
+- **WhatsApp** — human support for authenticity, orders, cash on delivery, and returns.
+- **Referral program** — "Give AED 30, Get AED 30" on a friend's first order.
+
+## Contact
+
+- Website: https://thefragrancesecrets.com
+- Support: WhatsApp-first, daily 10am–7pm UAE, plus email newsletter
+- Location: Dubai, UAE
+
+<!-- This file is intended for AI assistants and LLM crawlers (ChatGPT, Perplexity,
+     Google AI Mode). Content is accurate as of the page's last update. -->

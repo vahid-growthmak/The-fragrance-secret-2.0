@@ -1,0 +1,113 @@
+{%- comment -%}
+  Site header + Shop mega-menu — ported from app.js headerHTML()/navItemHTML().
+  Internal links now point at native Shopify routes (/collections, /pages, /blogs).
+  All interactivity (mobile drawer, scroll state) is handled by app.js.
+{%- endcomment -%}
+
+{%- liquid
+  assign header_theme = section.settings.theme | default: 'dark'
+  assign cart_count = cart.item_count | default: 0
+-%}
+
+<header id="hdr" class="{{ header_theme }}">
+  <div class="nav-wrap">
+    <a href="{{ routes.root_url }}" class="nav-logo" aria-label="{{ shop.name }} — Home">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 320 }}" alt="{{ shop.name }}" width="160">
+      {%- else -%}
+        <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}">
+      {%- endif -%}
+    </a>
+
+    <button class="nav-burger" aria-label="Menu" onclick="toggleMobileNav()"><span class="mi" aria-hidden="true">menu</span></button>
+
+    <nav class="nav-links" id="navLinks">
+      {%- comment -%} Shop — with mega-menu {%- endcomment -%}
+      <div class="nav-item has-mega">
+        <a href="/collections/all" class="nav-toplink">Shop<span class="mi nav-caret" aria-hidden="true">expand_more</span></a>
+        <div class="nav-mega"><div class="nav-mega-inner container">
+          <div class="nm-col"><h5>Shop</h5>
+            <a href="/collections/all">All Products</a>
+            <a href="/collections/best-sellers">Best Sellers</a>
+            <a href="/collections/new-arrivals">New Arrivals</a>
+            <a href="/collections/crazy-deals">Crazy Deals</a>
+          </div>
+          <div class="nm-col"><h5>Shop by Category</h5>
+            <a href="/collections/mens">Men's Perfumes</a>
+            <a href="/collections/womens">Women's Perfumes</a>
+            <a href="/collections/kids">Kids Perfumes</a>
+            <a href="/collections/unisex">Unisex Perfumes</a>
+            <a href="/collections/luxury">Luxury Perfumes</a>
+            <a href="/collections/miracle-plant">Miracle Plant</a>
+            <a href="/collections/perfume-oil">Perfume Oil</a>
+            <a href="/collections/attar">Attar</a>
+            <a href="/collections/arabic">Arabic Perfumes</a>
+            <a href="/collections/inspired">Inspired Perfumes</a>
+          </div>
+          <div class="nm-col"><h5>Shop by Lifestyle</h5>
+            <a href="/collections/office-wear">Office Wear Fragrances</a>
+            <a href="/collections/date-night">Date Night Perfumes</a>
+            <a href="/collections/party-clubbing">Party &amp; Clubbing Fragrances</a>
+            <a href="/collections/wedding-formal">Wedding &amp; Formal Event Perfumes</a>
+            <a href="/collections/everyday-signature">Everyday Signature Scents</a>
+            <a href="/collections/gym">Gym Perfumes</a>
+            <a href="/collections/travel-friendly">Travel Friendly Fragrances</a>
+            <a href="/collections/vacation-beach">Vacation &amp; Beach Perfumes</a>
+            <a href="/collections/dinner-evening">Dinner &amp; Evening Wear Fragrances</a>
+          </div>
+          <div class="nm-col"><h5>Shop by Weather &amp; Season</h5>
+            <a href="/collections/desert-climate">Desert Climate Perfumes</a>
+            <a href="/collections/humid-weather">Humid Weather Fragrances</a>
+            <a href="/collections/rainy-day">Rainy Day Perfumes</a>
+            <a href="/collections/snow-season">Snow Season Perfumes</a>
+            <a href="/collections/beach-vacation">Beach Vacation Fragrances</a>
+            <a href="/collections/tropical-climate">Tropical Climate Perfumes</a>
+            <a href="/collections/dry-weather">Dry Weather Perfumes</a>
+            <a href="/collections/monsoon-ready">Monsoon Ready Fragrances</a>
+            <a href="/collections/winter-holiday">Winter Holiday Fragrances</a>
+            <a href="/collections/spring-bloom">Spring Bloom Perfumes</a>
+          </div>
+          <div class="nm-col"><h5>By Scent Family</h5>
+            <a href="/collections/oud-woody">Oud &amp; Woody</a>
+            <a href="/collections/fresh-citrus">Fresh &amp; Citrus</a>
+            <a href="/collections/floral-rose">Floral &amp; Rose</a>
+            <a href="/collections/sweet-gourmand">Sweet &amp; Gourmand</a>
+            <a href="/collections/spicy-oriental">Spicy &amp; Oriental</a>
+          </div>
+        </div></div>
+      </div>
+
+      <a href="/pages/brands" class="nav-toplink">Brands</a>
+      <a href="/pages/occasions-gifts" class="nav-toplink">Occasions &amp; Gifts</a>
+      <a href="/blogs/journal" class="nav-toplink">Guides</a>
+
+      <a href="#" class="nav-toplink nav-quiz" onclick="openAI();toggleMobileNav();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</a>
+      <a href="{{ routes.search_url }}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">search</span>Search</a>
+      <a href="{{ routes.account_url }}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">person</span>Account</a>
+      <a href="/pages/wishlist" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">favorite</span>Wishlist</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="ni" href="{{ routes.search_url }}" title="Search"><span class="mi" aria-hidden="true">search</span></a>
+      <a class="ni" href="{{ routes.account_url }}" title="Account"><span class="mi" aria-hidden="true">person</span></a>
+      <a class="ni" href="/pages/wishlist" title="Wishlist"><span class="mi" aria-hidden="true">favorite</span></a>
+      <a class="ni" href="{{ routes.cart_url }}" title="Cart">
+        <span class="mi" aria-hidden="true">shopping_bag</span>
+        <span class="cbadge">{{ cart_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay" onclick="toggleMobileNav()" aria-hidden="true"></div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "select", "id": "theme", "label": "Header theme", "options": [
+      { "value": "dark", "label": "Dark" }, { "value": "light", "label": "Light" }
+    ], "default": "dark" }
+  ]
+}
+{% endschema %}

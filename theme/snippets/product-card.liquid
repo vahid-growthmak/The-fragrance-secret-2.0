@@ -1,0 +1,53 @@
+{%- comment -%}
+  Product card — native Shopify port of app.js productCardHTML().
+  Usage: {% render 'product-card', product: product %}
+  Reads optional metafields (custom.badge, reviews.rating / custom.rating,
+  reviews.rating_count / custom.review_count) with graceful fallbacks so a
+  bare product still renders.
+{%- endcomment -%}
+
+{%- liquid
+  assign badge = product.metafields.custom.badge.value
+  assign badge_class = product.metafields.custom.badge_class.value | default: 'badge-best'
+  if badge == blank
+    if product.compare_at_price > product.price
+      assign badge = 'Sale'
+      assign badge_class = 'badge-sale'
+    elsif product.tags contains 'bestseller'
+      assign badge = 'Bestseller'
+      assign badge_class = 'badge-best'
+    endif
+  endif
+
+  assign rating = product.metafields.reviews.rating.value.rating | default: product.metafields.custom.rating.value
+  assign review_count = product.metafields.reviews.rating_count.value | default: product.metafields.custom.review_count.value
+-%}
+
+<div class="prod-card fade-up" onclick="location.href='{{ product.url }}'">
+  <div class="prod-img-wrap">
+    {%- if product.featured_image -%}
+      <img class="prod-img" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
+    {%- else -%}
+      <img class="prod-img" src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="{{ product.title | escape }}" loading="lazy">
+    {%- endif -%}
+    {%- if badge != blank -%}<div class="prod-badge {{ badge_class }}">{{ badge }}</div>{%- endif -%}
+    <div class="prod-actions">
+      <button class="pa-btn" title="Wishlist" onclick="event.stopPropagation();toast('&#9825; Saved to wishlist')"><span class="mi" aria-hidden="true">favorite</span></button>
+      <button class="pa-btn quick-add" onclick="event.stopPropagation();addToCart('{{ product.title | escape | replace: "'", "\\'" }}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
+    </div>
+  </div>
+  <div class="prod-info">
+    {%- if product.vendor != blank -%}<div class="prod-brand">{{ product.vendor }}</div>{%- endif -%}
+    <div class="prod-name">{{ product.title }}</div>
+    {%- if rating -%}
+      <div class="prod-rating">{% render 'star-rating', rating: rating %}<span>({{ review_count | default: 0 }})</span></div>
+    {%- endif -%}
+    <div class="prod-price">
+      <span class="price-now">{{ product.price | money }}</span>
+      {%- if product.compare_at_price > product.price -%}
+        <span class="price-was">{{ product.compare_at_price | money }}</span>
+        <span class="price-save">Save {{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%</span>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

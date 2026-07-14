@@ -1,0 +1,20 @@
+{%- comment -%} Customer registration {%- endcomment -%}
+<section class="page-hero tall"><div class="container">
+  <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Create account</span></div>
+  <span class="ph-eyebrow">Join Us</span>
+  <h1 class="ph-title">Create <em>Account</em></h1>
+</div></section>
+<section class="section"><div class="container" style="max-width:460px">
+  {%- form 'create_customer' -%}
+    {{ form.errors | default_errors }}
+    <label>First name</label><input type="text" name="customer[first_name]" class="fld">
+    <label style="margin-top:12px">Last name</label><input type="text" name="customer[last_name]" class="fld">
+    <label style="margin-top:12px">Email</label><input type="email" name="customer[email]" class="fld" required>
+    <label style="margin-top:12px">Password</label><input type="password" name="customer[password]" class="fld" required>
+    <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Create Account</button>
+  {%- endform -%}
+  <a href="{{ routes.account_login_url }}" class="btn-ghost" style="display:flex;justify-content:center;margin-top:12px">Already have an account? Sign in</a>
+</div></section>
+{% schema %}
+{ "name": "Customer register", "settings": [] }
+{% endschema %}

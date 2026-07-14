@@ -1,0 +1,14 @@
+{%- comment -%} Activate account {%- endcomment -%}
+<section class="page-hero tall"><div class="container"><h1 class="ph-title">Activate <em>Account</em></h1></div></section>
+<section class="section"><div class="container" style="max-width:460px">
+  {%- form 'activate_customer_password' -%}
+    {{ form.errors | default_errors }}
+    <label>Password</label><input type="password" name="customer[password]" class="fld" required>
+    <label style="margin-top:12px">Confirm password</label><input type="password" name="customer[password_confirmation]" class="fld" required>
+    <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Activate Account</button>
+    <button type="submit" name="decline" class="btn-ghost" style="width:100%;margin-top:12px;justify-content:center">Decline invitation</button>
+  {%- endform -%}
+</div></section>
+{% schema %}
+{ "name": "Activate account", "settings": [] }
+{% endschema %}

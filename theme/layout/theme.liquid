@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction | default: 'ltr' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="{{ settings.color_ink | default: '#0D0A06' }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endif -%}
+
+  <title>
+    {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {% comment %} Fonts — ported verbatim from the source theme {% endcomment %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  {% comment %} Design tokens from theme settings, injected into :root (overrides CSS defaults) {% endcomment %}
+  <style>
+    :root {
+      --gold: {{ settings.color_gold | default: '#C9A84C' }};
+      --cream: {{ settings.color_cream | default: '#F7F2EA' }};
+      --ink: {{ settings.color_ink | default: '#0D0A06' }};
+      --charcoal: {{ settings.color_charcoal | default: '#1C1812' }};
+    }
+  </style>
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'pages.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    /* Base URL for the flat Shopify assets/ folder, consumed by IMG() in app.js */
+    window.ASSET_BASE = {{ 'logo.png' | asset_url | split: 'logo.png' | first | json }};
+    window.routes = {
+      cart_url: {{ routes.cart_url | json }},
+      cart_add_url: {{ routes.cart_add_url | json }},
+      cart_change_url: {{ routes.cart_change_url | json }},
+      search_url: {{ routes.search_url | json }},
+      all_products_url: {{ routes.all_products_collection_url | json }}
+    };
+  </script>
+
+  {{ content_for_header }}
+</head>
+
+<body class="template-{{ request.page_type | handle }}" data-no-chrome data-nav="{{ settings.header_theme | default: 'dark' }}">
+
+  <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t }}</a>
+
+  {% sections 'header-group' %}
+
+  <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {% sections 'footer-group' %}
+  {% sections 'overlay-group' %}
+
+  {{ 'app.js' | asset_url | script_tag }}
+  {{ 'collections.js' | asset_url | script_tag }}
+</body>
+</html>

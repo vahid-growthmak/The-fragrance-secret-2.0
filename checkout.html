@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Secure Checkout — The Fragrance Secrets</title>
+  <meta name="description" content="Secure checkout — Cash on Delivery, Tabby & Tamara interest-free instalments, Apple Pay and cards. Free UAE delivery over AED 150." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+
+<body data-nav="dark" data-active="">
+  <main>
+
+    <div class="crumb-bar">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="mi" aria-hidden="true">chevron_right</span><a href="cart.html">Cart</a><span class="mi" aria-hidden="true">chevron_right</span><span>Checkout</span></div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:44px">
+      <div class="container">
+        <div class="sec-head"><span class="label">Almost Yours</span><h2 class="sec-title">Secure <em>Checkout</em></h2></div>
+
+        <div class="checkout-grid">
+
+          <!-- LEFT: FORM -->
+          <div>
+            <!-- Free-gift AOV nudge -->
+            <div class="upsell" style="margin-bottom:22px">
+              <div class="upsell-head"><span class="mi" aria-hidden="true">redeem</span><h3 id="giftHeadline">You're AED 43 away from a free gift</h3></div>
+              <p class="upsell-sub" id="giftSub">Spend AED 450 and we'll add a <strong>free 10ml travel atomiser</strong> to your order.</p>
+              <div class="ship-bar"><i id="giftBar" style="width:90%"></i></div>
+            </div>
+
+            <!-- STRATEGIC UPSELL SHELF -->
+            <div class="upsell" style="border-style:solid;background:var(--white)">
+              <div class="upsell-head"><span class="mi" aria-hidden="true">add_shopping_cart</span><h3>Complete Your Order</h3></div>
+              <p class="upsell-sub">Customers who bought these items added these too — add before checkout and save the second delivery.</p>
+              <div class="upsell-row">
+                <div class="upsell-card">
+                  <img src="travel_size_perfume.png" alt="Travel atomiser" />
+                  <div class="uc-name">Refillable Travel Atomiser 10ml</div>
+                  <div class="uc-price"><span class="uc-now">AED 29</span></div>
+                  <button class="upsell-add" onclick="addUpsell('Travel Atomiser 10ml',29,this)">+ Add</button>
+                </div>
+                <div class="upsell-card">
+                  <img src="assets/img/hero-oud.jpg" alt="Amber Oud Gold" />
+                  <div class="uc-name">Amber Oud Gold EDP 100ml</div>
+                  <div class="uc-price"><span class="uc-now">AED 259</span><span class="uc-was">AED 380</span></div>
+                  <button class="upsell-add" onclick="addUpsell('Amber Oud Gold EDP',259,this)">+ Add</button>
+                </div>
+                <div class="upsell-card">
+                  <img src="attar_oils.png" alt="Rose Attar" />
+                  <div class="uc-name">Rose Attar Absolu 12ml</div>
+                  <div class="uc-price"><span class="uc-now">AED 79</span><span class="uc-was">AED 120</span></div>
+                  <button class="upsell-add" onclick="addUpsell('Rose Attar Absolu',79,this)">+ Add</button>
+                </div>
+                <div class="upsell-card">
+                  <img src="assets/img/kit-gift.jpg" alt="Gift wrapping" />
+                  <div class="uc-name">Premium Gift Wrapping</div>
+                  <div class="uc-price"><span class="uc-now">AED 15</span></div>
+                  <button class="upsell-add" onclick="addUpsell('Premium Gift Wrapping',15,this)">+ Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="co-block">
+              <div class="co-step"><span class="n">1</span><h2>Contact &amp; Delivery</h2></div>
+              <div class="form-row">
+                <div class="field"><label for="fn">First Name</label><input id="fn" type="text" placeholder="Fatima" /></div>
+                <div class="field"><label for="ln">Last Name</label><input id="ln" type="text" placeholder="Al Rashid" /></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label for="ph">Mobile (for WhatsApp updates)</label><input id="ph" type="tel" placeholder="+971 5X XXX XXXX" /></div>
+                <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com" /></div>
+              </div>
+              <div class="field full" style="margin-bottom:16px"><label for="ad">Address</label><input id="ad" type="text" placeholder="Building, street, area" /></div>
+              <div class="form-row">
+                <div class="field"><label for="ci">Emirate</label>
+                  <select id="ci"><option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Ajman</option><option>Ras Al Khaimah</option><option>Fujairah</option><option>Umm Al Quwain</option></select>
+                </div>
+                <div class="field"><label for="lm">Landmark (optional)</label><input id="lm" type="text" placeholder="Near…" /></div>
+              </div>
+            </div>
+
+            <!-- PAYMENT -->
+            <div class="co-block">
+              <div class="co-step"><span class="n">2</span><h2>Payment</h2></div>
+              <div class="pay-method active" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Cash on Delivery</div><div class="pm-sub">Pay in cash when your order arrives — available UAE-wide</div></div><span class="pm-tag">Most Popular</span></div>
+              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Tabby — Pay in 4</div><div class="pm-sub">4 interest-free payments, no fees</div></div><span class="pm-tag">0% Interest</span></div>
+              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Tamara — Split in 3</div><div class="pm-sub">3 interest-free instalments</div></div><span class="pm-tag">0% Interest</span></div>
+              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Card / Apple Pay / Google Pay</div><div class="pm-sub">Visa, Mastercard &amp; wallets — secured</div></div></div>
+            </div>
+          </div>
+
+          <!-- RIGHT: ORDER SUMMARY -->
+          <aside>
+            <div class="co-summary">
+              <div class="co-sum-head">Order Summary</div>
+              <div class="ship-nudge">
+                <p><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over AED 150</p>
+                <div class="ship-bar"><i style="width:100%"></i></div>
+              </div>
+              <div class="co-lines" id="coLines">
+                <div class="co-line"><img src="assets/img/prod-bouquet-oud.png" alt=""/><div><div class="cl-name">Bouquet of Oud EDP</div><div class="cl-meta">100ml · Qty 1</div></div><div class="cl-price">AED 189</div></div>
+                <div class="co-line"><img src="assets/img/prod-club-de-nuit.jpg" alt=""/><div><div class="cl-name">Club de Nuit Précieux</div><div class="cl-meta">100ml · Qty 1</div></div><div class="cl-price">AED 129</div></div>
+                <div class="co-line"><img src="assets/img/kit-oud-trio.png" alt=""/><div><div class="cl-name">Oud Discovery Set</div><div class="cl-meta">5 × 2ml · Qty 1</div></div><div class="cl-price">AED 89</div></div>
+              </div>
+              <div class="co-promo">
+                <input type="text" placeholder="Promo code" aria-label="Promo code" />
+                <button class="btn-ol" style="padding:11px 18px" onclick="toast('Promo applied at payment')">Apply</button>
+              </div>
+              <div class="co-totals">
+                <div class="co-trow"><span>Subtotal</span><span id="coSub">AED 407</span></div>
+                <div class="co-trow"><span>Delivery</span><span style="color:var(--gold-dk)">Free</span></div>
+                <div class="co-trow"><span>VAT (5%)</span><span>Included</span></div>
+                <div class="co-trow grand"><span>Total</span><b id="coTotal">AED 407</b></div>
+                <a class="btn-g co-place" href="#" onclick="placeOrder();return false" style="justify-content:center;margin-top:16px"><span class="mi" aria-hidden="true">lock</span>Place Order</a>
+                <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:12px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · 7-day returns · Secure checkout</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/js/app.js"></script>
+  <script>
+    /* Checkout state — self-contained AOV logic */
+    var CO = { sub: 407, giftThreshold: 450, added: [] };
+    function coRender() {
+      var sub = CO.sub;
+      document.getElementById('coSub').textContent = 'AED ' + sub.toLocaleString('en-AE');
+      document.getElementById('coTotal').textContent = 'AED ' + sub.toLocaleString('en-AE');
+      var remain = CO.giftThreshold - sub;
+      var bar = document.getElementById('giftBar');
+      var head = document.getElementById('giftHeadline');
+      var subEl = document.getElementById('giftSub');
+      if (remain > 0) {
+        bar.style.width = Math.max(6, Math.round(sub / CO.giftThreshold * 100)) + '%';
+        head.textContent = "You're AED " + remain + ' away from a free gift';
+        subEl.innerHTML = 'Spend AED ' + CO.giftThreshold + " and we'll add a <strong>free 10ml travel atomiser</strong> to your order.";
+      } else {
+        bar.style.width = '100%';
+        head.textContent = '🎁 Free gift unlocked!';
+        subEl.innerHTML = "A <strong>free 10ml travel atomiser</strong> will be added to your order — enjoy.";
+      }
+    }
+    function addUpsell(name, price, btn) {
+      if (btn.classList.contains('added')) return;
+      btn.classList.add('added'); btn.textContent = '✓ Added';
+      CO.sub += price; CO.added.push(name);
+      var lines = document.getElementById('coLines');
+      var row = document.createElement('div');
+      row.className = 'co-line';
+      row.innerHTML = '<img src="' + btn.parentElement.querySelector('img').src + '" alt=""/><div><div class="cl-name">' + name + '</div><div class="cl-meta">Added at checkout · Qty 1</div></div><div class="cl-price">AED ' + price + '</div>';
+      lines.appendChild(row);
+      coRender();
+      if (typeof bumpCart === 'function') bumpCart(1);
+      if (typeof toast === 'function') toast('✓ Added to order — ' + name);
+    }
+    function selectPay(el) {
+      document.querySelectorAll('.pay-method').forEach(function (p) { p.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    function placeOrder() {
+      if (typeof toast === 'function') toast('✓ Placing your order…');
+      setTimeout(function () { location.href = 'order-confirmation.html'; }, 450);
+    }
+    coRender();
+  </script>
+</body>
+
+</html>

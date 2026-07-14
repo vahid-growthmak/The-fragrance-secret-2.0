@@ -1,0 +1,22 @@
+{%- comment -%} Generic Shopify page — renders page.content. Used by the default page.json. {%- endcomment -%}
+<section class="page-hero tall">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span class="mi" aria-hidden="true">chevron_right</span>
+      <span>{{ page.title }}</span>
+    </div>
+    <h1 class="ph-title">{{ page.title }}</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="legal-prose rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Page", "settings": [] }
+{% endschema %}

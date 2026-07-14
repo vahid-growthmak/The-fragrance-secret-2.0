@@ -1,0 +1,37 @@
+{%- comment -%} Blog article (Guide article) — native port of guide-article.html. {%- endcomment -%}
+<article class="guide-article">
+  <section class="page-hero tall">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span>
+        <a href="{{ blog.url }}">{{ blog.title }}</a><span class="mi" aria-hidden="true">chevron_right</span>
+        <span>{{ article.title }}</span>
+      </div>
+      {%- if article.tags.size > 0 -%}<span class="ph-eyebrow">{{ article.tags.first }}</span>{%- endif -%}
+      <h1 class="ph-title">{{ article.title }}</h1>
+      <div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}{% if article.author != blank %} · {{ article.author }}{% endif %}{% if article.reading_time %} · {{ article.reading_time }}{% endif %}</div>
+    </div>
+  </section>
+
+  {%- if article.image -%}
+    <div class="container"><figure class="article-hero-img"><img src="{{ article.image | image_url: width: 1400 }}" alt="{{ article.title | escape }}"></figure></div>
+  {%- endif -%}
+
+  <section class="section"><div class="container">
+    <div class="legal-prose rte article-body">{{ article.content }}</div>
+
+    {%- if blog.comments_enabled? -%}
+      <div class="article-comments">
+        {%- if article.comments.size > 0 -%}
+          {%- for comment in article.comments -%}
+            <div class="rv-card"><div class="rv-name">{{ comment.author }}</div><div class="rv-text">{{ comment.content }}</div></div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div></section>
+</article>
+
+{% schema %}
+{ "name": "Article", "settings": [] }
+{% endschema %}

@@ -1,0 +1,188 @@
+{%- comment -%}
+  Collection page — native Shopify port of collection.html + collections.js.
+  Uses collection.filters (configured in Search & Discovery) and
+  collection.products with pagination + sort. Reproduces the .shop-layout /
+  .shop-filters / .shop-results markup so the existing CSS applies unchanged.
+{%- endcomment -%}
+
+{%- liquid
+  assign hero_image = collection.image | default: collection.metafields.custom.hero_image.value
+  paginate_by = section.settings.products_per_page | default: 24
+-%}
+
+<div data-collection-native>
+
+  <!-- PAGE HERO -->
+  {%- if hero_image -%}
+    <section class="page-hero split tall">
+      <div class="container">
+        <div>
+          <div class="breadcrumb">
+            <a href="{{ routes.root_url }}">Home</a>
+            <span class="mi" aria-hidden="true">chevron_right</span>
+            <a href="/collections/all">Shop</a>
+            <span class="mi" aria-hidden="true">chevron_right</span>
+            <span>{{ collection.title }}</span>
+          </div>
+          <span class="ph-eyebrow">The Collection</span>
+          <h1 class="ph-title">{{ collection.title }}</h1>
+          {%- if collection.description != blank -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
+          <div class="ph-meta">
+            <span><span class="mi" aria-hidden="true">verified_user</span>100% Authentic</span>
+            <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE Delivery</span>
+            <span><span class="mi" aria-hidden="true">payments</span>Cash on Delivery</span>
+          </div>
+        </div>
+        <figure class="ph-figure"><img src="{{ hero_image | image_url: width: 1200 }}" alt="{{ collection.title | escape }}"></figure>
+      </div>
+    </section>
+  {%- else -%}
+    <section class="page-hero tall">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="{{ routes.root_url }}">Home</a>
+          <span class="mi" aria-hidden="true">chevron_right</span>
+          <a href="/collections/all">Shop</a>
+          <span class="mi" aria-hidden="true">chevron_right</span>
+          <span>{{ collection.title }}</span>
+        </div>
+        <span class="ph-eyebrow">The Collection</span>
+        <h1 class="ph-title">{{ collection.title }}</h1>
+        {%- if collection.description != blank -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
+      </div>
+    </section>
+  {%- endif -%}
+
+  <!-- TRUST BAND -->
+  <section class="section-sm alt"><div class="container">
+    <div class="trust-band">
+      <div class="tb-item"><span class="mi" aria-hidden="true">verified_user</span><div><strong>100% Authentic</strong><span>Verified sourcing</span></div></div>
+      <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above AED 150</span></div></div>
+      <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Available UAE-wide</span></div></div>
+      <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:22px"><a class="btn-ghost" href="/pages/sourcing-promise">See our Sourcing Promise <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
+  </div></section>
+
+  <!-- FILTER BAR (mobile toggle) -->
+  <div class="filter-bar" id="filterBar"><div class="container"><div class="fb-inner">
+    <button type="button" class="fb-toggle" id="fbToggle" onclick="document.getElementById('shopFilters').classList.add('open');document.getElementById('sfOverlay').classList.add('open')"><span class="mi" aria-hidden="true">tune</span>Filters &amp; Sort</button>
+  </div></div></div>
+
+  {%- paginate collection.products by paginate_by -%}
+  <section class="section" id="grid"><div class="container">
+    <div class="results-head">
+      <div><span class="label">The Collection</span><h2 class="sec-title" style="font-size:2rem">Shop the Range</h2></div>
+      <div class="results-count">{{ collection.products_count }} products</div>
+    </div>
+
+    <div class="shop-layout">
+      <aside class="shop-filters" id="shopFilters" aria-label="Product filters">
+        <form>
+          <div class="sf-head">
+            <span class="sf-title"><span class="mi" aria-hidden="true">tune</span>Filters</span>
+            <a class="sf-clear" href="{{ collection.url }}">Clear all</a>
+            <button type="button" class="sf-close" id="sfClose" aria-label="Close filters" onclick="document.getElementById('shopFilters').classList.remove('open');document.getElementById('sfOverlay').classList.remove('open')"><span class="mi" aria-hidden="true">close</span></button>
+          </div>
+          <div class="sf-scroll">
+            <div class="sf-group sf-sortgroup">
+              <div class="sf-gtitle sf-gtitle-static">Sort By</div>
+              <div class="sf-gbody">
+                <select class="sf-sort" name="sort_by" onchange="this.form.submit()">
+                  {%- for option in collection.sort_options -%}
+                    <option value="{{ option.value }}"{% if option.value == collection.sort_by or option.value == collection.default_sort_by %} selected{% endif %}>{{ option.name }}</option>
+                  {%- endfor -%}
+                </select>
+              </div>
+            </div>
+
+            {%- for filter in collection.filters -%}
+              <details class="sf-group" open {{ filter.shopify_attributes }}>
+                <summary class="sf-gtitle">{{ filter.label }}<span class="mi sf-chev" aria-hidden="true">expand_more</span></summary>
+                <div class="sf-gbody">
+                  {%- case filter.type -%}
+                    {%- when 'list' -%}
+                      <div class="sf-opts">
+                        {%- for value in filter.values -%}
+                          <label class="sf-opt">
+                            <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}"{% if value.active %} checked{% endif %} onchange="this.form.submit()">
+                            <span class="sf-box"><span class="mi" aria-hidden="true">check</span></span>
+                            <span class="sf-label">{{ value.label }}</span>
+                            <span class="sf-count">{{ value.count }}</span>
+                          </label>
+                        {%- endfor -%}
+                      </div>
+                    {%- when 'price_range' -%}
+                      <div class="sf-price">
+                        <input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}" placeholder="Min {{ filter.range_max | money_without_currency }}" min="0" onchange="this.form.submit()">
+                        <span>to</span>
+                        <input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}" placeholder="Max {{ filter.range_max | money_without_currency }}" min="0" onchange="this.form.submit()">
+                      </div>
+                  {%- endcase -%}
+                </div>
+              </details>
+            {%- endfor -%}
+          </div>
+        </form>
+      </aside>
+
+      <div class="shop-results">
+        {%- if collection.products.size > 0 -%}
+          <div class="products-grid" id="collGrid">
+            {%- for product in collection.products -%}
+              {% render 'product-card', product: product %}
+            {%- endfor -%}
+          </div>
+          {%- if paginate.pages > 1 -%}
+            <div class="pagination">
+              {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" aria-label="Previous page"><span class="mi" aria-hidden="true">chevron_left</span></a>{%- endif -%}
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>
+                {%- elsif part.title == paginate.current_page -%}<span class="current">{{ part.title }}</span>
+                {%- else -%}<span>{{ part.title }}</span>{%- endif -%}
+              {%- endfor -%}
+              {%- if paginate.next -%}<a href="{{ paginate.next.url }}" aria-label="Next page"><span class="mi" aria-hidden="true">chevron_right</span></a>{%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- else -%}
+          <div class="empty-state" style="text-align:center;padding:60px 20px">
+            <span class="mi" aria-hidden="true" style="font-size:48px;color:var(--gold)">search_off</span>
+            <h3 class="sec-title">No products yet</h3>
+            <p class="sec-sub">This collection is being curated. Explore all products in the meantime.</p>
+            <a class="btn-g" href="/collections/all">Shop All Products</a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div></section>
+  <div class="sf-overlay" id="sfOverlay" onclick="document.getElementById('shopFilters').classList.remove('open');this.classList.remove('open')"></div>
+  {%- endpaginate -%}
+
+  <!-- FIND MY SCENT -->
+  <section class="finder"><div class="finder-inner">
+    <div class="finder-head fade-up">
+      <span class="label">Personalised Recommendation</span>
+      <h2 class="sec-title" style="color:var(--white)">Not Sure What to <em>Pick?</em></h2>
+      <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
+    </div>
+    <div class="quiz-progress quiz-progress-wrap"></div>
+    <div class="quiz-container-wrap"></div>
+  </div></section>
+
+  <!-- REVIEWS -->
+  <section class="reviews"><div class="reviews-inner">
+    <div class="reviews-head fade-up"><span class="label">What Customers Say</span><h2 class="sec-title">Loved by <em>Fragrance Lovers</em></h2></div>
+    <div class="rv-grid" data-render="reviews" data-count="3"></div>
+  </div></section>
+
+</div>
+
+{% schema %}
+{
+  "name": "Collection page",
+  "settings": [
+    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 48, "step": 4, "default": 24 }
+  ],
+  "presets": [ { "name": "Collection page" } ]
+}
+{% endschema %}

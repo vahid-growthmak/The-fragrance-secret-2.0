@@ -1,0 +1,15 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": { "type": "announcement-bar", "blocks": {
+      "m1": { "type": "message", "settings": { "text": "Complimentary delivery anywhere in the UAE on orders above AED 150" } },
+      "m2": { "type": "message", "settings": { "text": "Every fragrance is 100% authentic with fully verified sourcing" } },
+      "m3": { "type": "message", "settings": { "text": "Cash on delivery available across all Emirates for easy shopping" } },
+      "m4": { "type": "message", "settings": { "text": "Explore 218+ fragrance houses trusted by perfume lovers in the UAE" } },
+      "m5": { "type": "message", "settings": { "text": "Need assistance? Connect with our WhatsApp team daily from 10am to 7pm" } }
+    }, "block_order": ["m1","m2","m3","m4","m5"] },
+    "header": { "type": "header", "settings": { "theme": "dark" } }
+  },
+  "order": ["announcement-bar", "header"]
+}

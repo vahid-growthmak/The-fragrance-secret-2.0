@@ -1,0 +1,57 @@
+{%- comment -%} 404 — native port of 404.html {%- endcomment -%}
+<section class="page-hero tall">
+  <div class="container" style="text-align:center">
+    <div style="font-family:var(--fd);font-weight:300;font-size:clamp(6rem,20vw,13rem);line-height:.9;color:var(--gold-lt);letter-spacing:.02em">404</div>
+    <span class="ph-eyebrow" style="margin-top:18px">Lost the Trail</span>
+    <h1 class="ph-title">This scent trail <em>went cold</em></h1>
+    <p class="ph-sub" style="margin-left:auto;margin-right:auto">The page you were looking for has drifted away — maybe it moved, sold out, or never existed. No matter: your next signature scent is only a click away, and every one of our 218+ houses is 100% authentic.</p>
+    <div class="cta-actions" style="margin-top:30px">
+      <a class="btn-g" href="{{ routes.search_url }}"><span class="mi" aria-hidden="true">search</span>Search Our Store</a>
+      <a class="btn-o" href="{{ routes.root_url }}"><span class="mi" aria-hidden="true">home</span>Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="label">Let's Get You Back on Scent</span>
+      <h2 class="sec-title">Pick up where you <em>left off</em></h2>
+      <p class="sec-sub">Start a fresh search, or jump straight to one of our most-loved destinations below.</p>
+    </div>
+    <a href="{{ routes.search_url }}" aria-label="Search the store"
+      style="display:flex;align-items:center;gap:14px;max-width:620px;margin:0 auto 34px;padding:18px 24px;background:var(--white);border:1px solid rgba(13,10,6,.12);border-radius:8px;transition:border-color .25s,transform .25s">
+      <span class="mi" aria-hidden="true" style="font-size:24px;color:var(--gold-dk)">search</span>
+      <span style="flex:1;color:var(--muted);font-size:.95rem">Search by brand, note, family or occasion…</span>
+      <span class="mi" aria-hidden="true" style="color:var(--gold-dk)">arrow_forward</span>
+    </a>
+    <div class="crosslink-grid">
+      <a class="crosslink" href="/collections/best-sellers"><span>Best Sellers</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/collections/all"><span>Shop All</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/pages/brands"><span>Brands</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/pages/occasions-gifts"><span>Occasions &amp; Gifts</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="#" onclick="openAI();return false"><span>Take the Find My Scent quiz</span><span class="mi" aria-hidden="true">auto_awesome</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" style="padding-top:0">
+  <div class="container" style="padding-top:88px">
+    <div class="sec-head center">
+      <span class="label">Still Browsing?</span>
+      <h2 class="sec-title">Or start with a <em>bestseller</em></h2>
+      <p class="sec-sub">Loved across the UAE — authentic, long-lasting, and ready to ship today.</p>
+    </div>
+    {%- if collections['best-sellers'].products.size > 0 -%}
+      <div class="products-grid">
+        {%- for product in collections['best-sellers'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="products-grid" data-render="products" data-count="4"></div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "404", "settings": [] }
+{% endschema %}

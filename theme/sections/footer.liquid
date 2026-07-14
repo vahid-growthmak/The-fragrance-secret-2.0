@@ -1,0 +1,72 @@
+{%- comment -%} Locked 4-column footer — ported from app.js footerHTML() {%- endcomment -%}
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="fg-brand">
+        <span class="nav-logo">
+          {%- if section.settings.logo != blank -%}
+            <img src="{{ section.settings.logo | image_url: width: 320 }}" alt="{{ shop.name }}" width="160">
+          {%- else -%}
+            <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}">
+          {%- endif -%}
+        </span>
+        <p>{{ section.settings.tagline }}</p>
+        <a href="mailto:{{ section.settings.email }}" class="fg-email"><span class="mi" aria-hidden="true">mail</span>{{ section.settings.email }}</a>
+        <div class="socials">
+          <a href="{{ section.settings.instagram | default: '#' }}" class="soc-btn" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="{{ section.settings.facebook | default: '#' }}" class="soc-btn" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="{{ section.settings.tiktok | default: '#' }}" class="soc-btn" title="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+          <a href="{{ section.settings.youtube | default: '#' }}" class="soc-btn" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'column' -%}
+          <div class="fg-col" {{ block.shopify_attributes }}>
+            <h4>{{ block.settings.heading }}</h4>
+            <ul>
+              {%- assign links = block.settings.links | newline_to_br | split: '<br />' -%}
+              {%- for link in links -%}
+                {%- assign parts = link | strip | split: '|' -%}
+                {%- if parts.size >= 2 -%}
+                  <li><a href="{{ parts[1] | strip }}">{{ parts[0] | strip }}</a></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>{{ section.settings.copyright | default: '© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE' }}</p>
+      <div class="pay-icons">
+        <span class="pay-icon">VISA</span><span class="pay-icon">MC</span><span class="pay-icon">Apple Pay</span><span class="pay-icon">COD</span><span class="pay-icon">Tabby</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "textarea", "id": "tagline", "label": "Tagline", "default": "Your trusted destination for authentic fragrances, premium scents, and unforgettable perfume experiences across the UAE." },
+    { "type": "text", "id": "email", "label": "Email", "default": "info@thefragrancesecrets.com" },
+    { "type": "url", "id": "instagram", "label": "Instagram" },
+    { "type": "url", "id": "facebook", "label": "Facebook" },
+    { "type": "url", "id": "tiktok", "label": "TikTok" },
+    { "type": "url", "id": "youtube", "label": "YouTube" },
+    { "type": "text", "id": "copyright", "label": "Copyright line", "default": "© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE" }
+  ],
+  "blocks": [
+    { "type": "column", "name": "Link column", "settings": [
+      { "type": "text", "id": "heading", "label": "Heading" },
+      { "type": "textarea", "id": "links", "label": "Links (one per line: Label | /url)" }
+    ] }
+  ],
+  "presets": [ { "name": "Footer" } ]
+}
+{% endschema %}

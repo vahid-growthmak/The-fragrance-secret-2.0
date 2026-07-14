@@ -1,0 +1,6 @@
+{
+  "settings_schema": {
+    "colors": { "name": "Colors" },
+    "layout": { "name": "Layout" }
+  }
+}

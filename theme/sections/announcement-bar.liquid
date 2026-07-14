@@ -1,0 +1,34 @@
+{%- comment -%} Scrolling announcement marquee — ported from app.js announceHTML() {%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+  <div class="announce">
+    <div class="announce-track" id="atrack">
+      {%- comment -%} duplicated once so the CSS marquee loops seamlessly {%- endcomment -%}
+      {%- for i in (1..2) -%}
+        {%- for block in section.blocks -%}
+          <div class="a-item" {{ block.shopify_attributes }}>{{ block.settings.text }}<span class="dot">&#10022;</span></div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [],
+  "blocks": [
+    { "type": "message", "name": "Message", "settings": [
+      { "type": "text", "id": "text", "label": "Text" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Announcement bar", "blocks": [
+      { "type": "message", "settings": { "text": "Complimentary delivery anywhere in the UAE on orders above AED 150" } },
+      { "type": "message", "settings": { "text": "Every fragrance is 100% authentic with fully verified sourcing" } },
+      { "type": "message", "settings": { "text": "Cash on delivery available across all Emirates for easy shopping" } },
+      { "type": "message", "settings": { "text": "Explore 218+ fragrance houses trusted by perfume lovers in the UAE" } },
+      { "type": "message", "settings": { "text": "Need assistance? Connect with our WhatsApp team daily from 10am to 7pm" } }
+    ] }
+  ]
+}
+{% endschema %}

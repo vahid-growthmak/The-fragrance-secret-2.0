@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Your Wishlist — The Fragrance Secrets</title>
+  <meta name="description" content="Your saved fragrances — keep the scents you love in one place, then move them to your cart when you're ready. 100% authentic, free UAE delivery over AED 150." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <style>
+    /* ── Wishlist ── */
+    .wish-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+    .wish-toolbar .wish-count { font-size: .86rem; color: var(--warm); }
+    .wish-toolbar .wish-count b { color: var(--ink); }
+    .wish-card .prod-info { display: flex; flex-direction: column; }
+    .wish-actions { display: flex; gap: 8px; margin-top: 14px; }
+    .wish-actions .btn-g { flex: 1; justify-content: center; padding: 11px 14px; font-size: .74rem; }
+    .wish-remove {
+      width: 44px; flex-shrink: 0; border: 1px solid var(--cream-dk); border-radius: 8px; background: var(--white);
+      color: var(--muted); display: flex; align-items: center; justify-content: center; transition: all .2s;
+    }
+    .wish-remove:hover { border-color: #C0392B; color: #C0392B; background: rgba(192, 57, 43, .05); }
+    .wish-remove .mi { font-size: 19px; }
+    /* Empty state */
+    .wish-empty { display: none; text-align: center; max-width: 520px; margin: 20px auto 0; padding: 40px 0; }
+    .wish-empty.show { display: block; }
+    .wish-empty .we-ic { width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 22px; display: flex; align-items: center; justify-content: center; background: var(--cream-mid); border: 1px solid var(--cream-dk); }
+    .wish-empty .we-ic .mi { font-size: 40px; color: var(--gold-dk); }
+    .wish-empty h3 { font-family: var(--fd); font-weight: 400; font-size: 1.9rem; margin-bottom: 10px; }
+    .wish-empty p { color: var(--warm); font-size: .92rem; margin-bottom: 24px; }
+    /* Single-column on standard phones so Move-to-Cart + remove sit comfortably */
+    @media (max-width: 560px) {
+      #wishGrid { grid-template-columns: 1fr; gap: 16px; }
+      .wish-card { display: grid; grid-template-columns: 116px 1fr; align-items: stretch; }
+      .wish-card .prod-img-wrap { height: 100%; }
+      .wish-card .prod-img { height: 100%; object-fit: cover; }
+      .wish-card .prod-info { padding: 14px 14px 14px 16px; }
+      .wish-toolbar .btn-g { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 360px) {
+      .wish-card { grid-template-columns: 96px 1fr; }
+      .wish-actions .btn-g { font-size: .72rem; padding: 11px 8px; }
+    }
+  </style>
+</head>
+
+<body data-nav="dark" data-active="">
+  <main>
+
+    <div class="crumb-bar">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Wishlist</span></div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:44px">
+      <div class="container">
+        <div class="sec-head"><span class="label">Saved For Later</span><h2 class="sec-title">Your <em>Wishlist</em></h2></div>
+
+        <div class="wish-toolbar" id="wishToolbar">
+          <span class="wish-count"><b id="wishNum">4</b> fragrances saved</span>
+          <button class="btn-g" style="padding:12px 22px" onclick="addAllToCart()"><span class="mi" aria-hidden="true">shopping_bag</span>Add All to Cart</button>
+        </div>
+
+        <!-- SAVED ITEMS -->
+        <div class="products-grid" id="wishGrid">
+
+          <div class="prod-card wish-card fade-up">
+            <a class="prod-img-wrap" href="product.html" style="display:block">
+              <img class="prod-img" src="assets/img/prod-bouquet-oud.png" alt="Bouquet of Oud EDP" loading="lazy" />
+              <div class="prod-badge badge-best">Bestseller</div>
+            </a>
+            <div class="prod-info">
+              <div class="prod-brand">Ahmed Al Maghribi</div>
+              <div class="prod-name"><a href="product.html" style="color:inherit">Bouquet of Oud EDP</a></div>
+              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(1,284)</span></div>
+              <div class="prod-price"><span class="price-now">AED 189</span><span class="price-was">AED 280</span><span class="price-save">Save 32%</span></div>
+              <div class="wish-actions">
+                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
+                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="prod-card wish-card fade-up">
+            <a class="prod-img-wrap" href="product.html" style="display:block">
+              <img class="prod-img" src="assets/img/prod-amber-oud.jpg" alt="Amber Oud Gold EDP" loading="lazy" />
+              <div class="prod-badge badge-sale">Save 32%</div>
+            </a>
+            <div class="prod-info">
+              <div class="prod-brand">Al Haramain</div>
+              <div class="prod-name"><a href="product.html" style="color:inherit">Amber Oud Gold EDP</a></div>
+              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(946)</span></div>
+              <div class="prod-price"><span class="price-now">AED 259</span><span class="price-was">AED 380</span><span class="price-save">Save 32%</span></div>
+              <div class="wish-actions">
+                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
+                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="prod-card wish-card fade-up">
+            <a class="prod-img-wrap" href="product.html" style="display:block">
+              <img class="prod-img" src="assets/img/prod-hawas.jpg" alt="Hawas for Him EDP" loading="lazy" />
+              <div class="prod-badge badge-best">Bestseller</div>
+            </a>
+            <div class="prod-info">
+              <div class="prod-brand">Rasasi</div>
+              <div class="prod-name"><a href="product.html" style="color:inherit">Hawas for Him EDP</a></div>
+              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(2,013)</span></div>
+              <div class="prod-price"><span class="price-now">AED 215</span><span class="price-was">AED 300</span><span class="price-save">Save 28%</span></div>
+              <div class="wish-actions">
+                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
+                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="prod-card wish-card fade-up">
+            <a class="prod-img-wrap" href="product.html" style="display:block">
+              <img class="prod-img" src="assets/img/prod-oud-roses.jpg" alt="Oud Roses EDP" loading="lazy" />
+              <div class="prod-badge badge-new">New</div>
+            </a>
+            <div class="prod-info">
+              <div class="prod-brand">Ahmed Al Maghribi</div>
+              <div class="prod-name"><a href="product.html" style="color:inherit">Oud Roses EDP</a></div>
+              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(571)</span></div>
+              <div class="prod-price"><span class="price-now">AED 179</span><span class="price-was">AED 240</span><span class="price-save">Save 25%</span></div>
+              <div class="wish-actions">
+                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
+                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div class="wish-empty" id="wishEmpty">
+          <div class="we-ic"><span class="mi" aria-hidden="true">favorite</span></div>
+          <h3>Your wishlist is empty</h3>
+          <p>Tap the heart on any fragrance to save it here for later. Start with our most-loved scents.</p>
+          <div class="cta-actions" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a class="btn-g" href="collection.html?c=best-sellers"><span class="mi" aria-hidden="true">local_fire_department</span>Shop Best Sellers</a>
+            <a class="btn-ol" href="find-my-scent.html">Find My Scent</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEEP EXPLORING -->
+    <section class="section alt">
+      <div class="container">
+        <div class="sec-head center fade-up"><span class="label">Keep Exploring</span><h2 class="sec-title">More to <em>Discover</em></h2></div>
+        <div class="products-grid" data-render="products" data-count="4"></div>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function updateWishCount() {
+      var n = document.querySelectorAll('#wishGrid .wish-card').length;
+      var numEl = document.getElementById('wishNum');
+      if (numEl) numEl.textContent = n;
+      var empty = document.getElementById('wishEmpty');
+      var grid = document.getElementById('wishGrid');
+      var toolbar = document.getElementById('wishToolbar');
+      if (n === 0) {
+        if (empty) empty.classList.add('show');
+        if (grid) grid.style.display = 'none';
+        if (toolbar) toolbar.style.display = 'none';
+      }
+    }
+    function moveToCart(btn) {
+      var card = btn.closest('.wish-card');
+      var name = card.querySelector('.prod-name').textContent.trim();
+      card.remove();
+      if (typeof bumpCart === 'function') bumpCart(1);
+      if (typeof toast === 'function') toast('✓ Moved to cart — ' + name);
+      updateWishCount();
+    }
+    function wishRemove(btn) {
+      var card = btn.closest('.wish-card');
+      var name = card.querySelector('.prod-name').textContent.trim();
+      card.remove();
+      if (typeof toast === 'function') toast('Removed — ' + name);
+      updateWishCount();
+    }
+    function addAllToCart() {
+      var cards = document.querySelectorAll('#wishGrid .wish-card');
+      var count = cards.length;
+      if (!count) return;
+      cards.forEach(function (c) { c.remove(); });
+      if (typeof bumpCart === 'function') bumpCart(count);
+      if (typeof toast === 'function') toast('✓ ' + count + ' fragrances moved to cart');
+      updateWishCount();
+    }
+  </script>
+</body>
+
+</html>

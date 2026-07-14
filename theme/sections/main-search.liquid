@@ -1,0 +1,101 @@
+{%- comment -%} Search — native Shopify port of search.html. Form posts to routes.search_url. {%- endcomment -%}
+
+<!-- SEARCH HERO -->
+<section class="page-hero tall">
+  <div class="container" style="text-align:center">
+    <span class="ph-eyebrow">Find Your Fragrance</span>
+    <h1 class="ph-title">What are you <em>searching for?</em></h1>
+    <p class="ph-sub" style="margin-left:auto;margin-right:auto">Search across 218+ authentic houses — by brand, note, scent family or occasion. Every result is 100% genuine, verified-sourced, and ready to ship UAE-wide.</p>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" style="max-width:720px;margin:36px auto 0">
+      <input type="hidden" name="type" value="product">
+      <div style="position:relative;display:flex;align-items:center">
+        <span class="mi" aria-hidden="true" style="position:absolute;left:22px;font-size:26px;color:var(--gold)">search</span>
+        <input id="searchInput" name="q" type="search" autocomplete="off" value="{{ search.terms | escape }}"
+          placeholder="Try &ldquo;Lattafa&rdquo;, &ldquo;oud&rdquo;, &ldquo;gift for him&rdquo;…"
+          aria-label="Search fragrances"
+          style="width:100%;font-family:var(--fb);font-size:1.05rem;color:var(--white);padding:20px 130px 20px 62px;background:rgba(255,255,255,.06);border:1.5px solid rgba(226,201,126,.28);border-radius:8px;outline:none;transition:border-color .25s">
+        <button type="submit" class="btn-g" style="position:absolute;right:8px;padding:12px 26px">Search</button>
+      </div>
+    </form>
+
+    <!-- POPULAR SEARCHES -->
+    <div style="margin-top:30px">
+      <div class="label" style="margin-bottom:14px">Popular Searches</div>
+      <div class="fb-group" style="justify-content:center">
+        <a class="fb-chip" href="{{ routes.search_url }}?q=Lattafa&type=product"><span class="mi" aria-hidden="true">local_mall</span>Lattafa</a>
+        <a class="fb-chip" href="/collections/oud-woody"><span class="mi" aria-hidden="true">forest</span>Oud</a>
+        <a class="fb-chip" href="/collections/best-sellers"><span class="mi" aria-hidden="true">trending_up</span>Best Sellers</a>
+        <a class="fb-chip" href="/pages/occasions-gifts"><span class="mi" aria-hidden="true">redeem</span>Gifts for Him</a>
+        <a class="fb-chip" href="/collections/attar"><span class="mi" aria-hidden="true">water_drop</span>Attar</a>
+        <a class="fb-chip" href="/collections/all"><span class="mi" aria-hidden="true">sell</span>Under AED 150</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if search.performed -%}
+  <section class="section"><div class="container">
+    <div class="results-head">
+      <div><span class="label">Search Results</span><h2 class="sec-title" style="font-size:2rem">{{ search.results_count }} result{{ search.results_count | pluralize: '', 's' }} for “{{ search.terms | escape }}”</h2></div>
+    </div>
+    {%- if search.results.size > 0 -%}
+      {%- paginate search.results by 24 -%}
+        <div class="products-grid" id="collGrid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}{% render 'product-card', product: item %}{%- endif -%}
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          <div class="pagination">
+            {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}"><span class="mi" aria-hidden="true">chevron_left</span></a>{%- endif -%}
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>
+              {%- elsif part.title == paginate.current_page -%}<span class="current">{{ part.title }}</span>
+              {%- else -%}<span>{{ part.title }}</span>{%- endif -%}
+            {%- endfor -%}
+            {%- if paginate.next -%}<a href="{{ paginate.next.url }}"><span class="mi" aria-hidden="true">chevron_right</span></a>{%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- else -%}
+      <!-- NO-RESULTS RESCUE -->
+      <div class="cta-band">
+        <span class="label">We're Here to Help</span>
+        <h2 class="sec-title">Can't find it? <em>Let's help</em></h2>
+        <p class="sec-sub">Searched and came up empty? Don't worry — with 218+ houses we very likely stock it or something you'll love even more. Let our concierge or our WhatsApp team point you straight to it.</p>
+        <div class="cta-actions">
+          <a class="btn-g" href="/collections/best-sellers"><span class="mi" aria-hidden="true">local_fire_department</span>Browse Best Sellers</a>
+          <button class="btn-o" onclick="openAI()"><span class="mi" aria-hidden="true">auto_awesome</span>Take the Find My Scent quiz</button>
+          <button class="btn-o" onclick="waChat()"><span class="mi" aria-hidden="true">chat</span>Chat on WhatsApp</button>
+        </div>
+      </div>
+    {%- endif -%}
+  </div></section>
+{%- else -%}
+  <!-- DISCOVERY PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head center">
+        <span class="label">Start Anywhere</span>
+        <h2 class="sec-title">Try searching by brand, note, <em>family or occasion</em></h2>
+        <p class="sec-sub">Not sure what to type? These are the scents our customers reach for most this week — a great place to begin.</p>
+      </div>
+      <div class="results-head">
+        <span class="label" style="margin-bottom:0">Popular Right Now</span>
+        <a href="/collections/best-sellers" class="btn-ghost">View all best sellers <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+      {%- if collections['best-sellers'].products.size > 0 -%}
+        <div class="products-grid">
+          {%- for product in collections['best-sellers'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="products-grid" data-render="products" data-count="4"></div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{ "name": "Search", "settings": [] }
+{% endschema %}

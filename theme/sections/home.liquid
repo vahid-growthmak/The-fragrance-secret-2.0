@@ -1,0 +1,503 @@
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-pretitle">Luxury Perfumes · UAE</p>
+        <h1 class="hero-h">Find The Scent That<br><em>Feels Truly Yours</em></h1>
+        <p class="hero-sub">Every fragrance tells a story, and the one you wear says everything about you. Explore the
+          best perfumes in UAE at The Fragrance Secrets — where authentic fragrances, premium perfume oils, and
+          long-lasting scents come together in one trusted destination built for fragrance lovers.</p>
+        <div class="hero-rating">
+          <div class="stars">
+            <span class="mi mi-f" aria-hidden="true">star</span>
+            <span class="mi mi-f" aria-hidden="true">star</span>
+            <span class="mi mi-f" aria-hidden="true">star</span>
+            <span class="mi mi-f" aria-hidden="true">star</span>
+            <span class="mi mi-f" aria-hidden="true">star</span>
+          </div>
+          <span>Rated 4.8/5 by 10,000+ Customers across UAE</span>
+        </div>
+        <div class="hero-ctas">
+          <button class="btn-g" onclick="document.getElementById('best').scrollIntoView({behavior:'smooth'})">
+            <span class="mi" aria-hidden="true">shopping_bag</span>
+            Shop Perfumes
+          </button>
+          <button class="btn-o" onclick="document.getElementById('best').scrollIntoView({behavior:'smooth'})">Explore
+            Bestsellers</button>
+        </div>
+        <div class="hero-trust">
+          <div class="ht-item"><span class="mi" aria-hidden="true">verified_user</span>100% Authentic — Only genuine fragrances</div>
+          <div class="ht-item"><span class="mi" aria-hidden="true">local_shipping</span>Free Delivery — UAE orders above AED 150</div>
+          <div class="ht-item"><span class="mi" aria-hidden="true">payments</span>Cash on Delivery — Convenient payment option</div>
+          <div class="ht-item"><span class="mi" aria-hidden="true">chat</span>WhatsApp Team — Daily, 10am to 7pm</div>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img class="hero-img" src="{{ 'hero-roses.jpg' | asset_url }}"
+          alt="Luxury perfume bottle among fresh roses" onload="this.classList.add('loaded')" />
+      </div>
+    </section>
+
+    <!-- BRAND STRIP -->
+    <section class="brands" id="brands">
+      <div class="brands-inner">
+        <div class="brands-head fade-up">
+          <span class="label">Shop by Brand</span>
+          <h2 class="sec-title" style="font-size:1.9rem">Our Houses &amp; <em>47+ World Brands</em></h2>
+        </div>
+        <!-- Our Brands — elevated above resale A-Z -->
+        <div class="ourbrands">
+          <a href="/collections/own-brand" class="ob-card fade-up stagger-1">
+            <span class="ob-tag">Our Brand</span>
+            <span class="ob-name">Fragrance Secrets</span>
+            <span class="ob-sub">Signature in-house line</span>
+            <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
+          </a>
+          <a href="/collections/own-brand" class="ob-card fade-up stagger-2">
+            <span class="ob-tag">Our Brand</span>
+            <span class="ob-name">Secret Scents</span>
+            <span class="ob-sub">Everyday luxury, smart prices</span>
+            <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
+          </a>
+          <a href="/collections/own-brand" class="ob-card fade-up stagger-3">
+            <span class="ob-tag">Our Brand</span>
+            <span class="ob-name">Paris Collection</span>
+            <span class="ob-sub">French-inspired elegance</span>
+            <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
+          </a>
+        </div>
+        <!-- All Brands A-Z — verified resale -->
+        <div class="azbrands-head fade-up">
+          <span class="label" style="margin:0">All Brands A–Z</span>
+          <span class="az-note">Verified Resale</span>
+        </div>
+        <div class="brand-track-wrap">
+          <div class="brand-track" data-render="brand-track"></div>
+        </div>
+      </div>
+    </section>
+
+<!-- BESTSELLERS -->
+    <section class="best" id="best">
+      <div class="best-inner">
+        <div class="best-head fade-up">
+          <div>
+            <span class="label">Most Popular</span>
+            <h2 class="sec-title">The Best Perfumes in UAE<br>Loved by <em>Our Customers</em></h2>
+          </div>
+          <a href="/collections/best-sellers" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+        <div class="products-grid" data-render="products" data-count="8"></div>
+      </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="best" id="new">
+      <div class="best-inner">
+        <div class="best-head fade-up">
+          <div>
+            <span class="label">New Arrivals</span>
+            <h2 class="sec-title">Premium Fragrances <em>Newly Added for You</em></h2>
+            <p class="sec-sub">Explore our fresh arrivals featuring new scents that feel unique, elegant, and memorable —
+              fragrances that match every mood, style, and occasion.</p>
+          </div>
+          <a href="/collections/new-arrivals" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+        <div class="products-grid" data-render="products" data-count="4" data-from="4"></div>
+      </div>
+    </section>
+
+    <!-- SHOP BY PURPOSE -->
+    <section class="purpose" id="purpose">
+      <div class="purpose-inner">
+        <div class="purpose-head fade-up">
+          <span class="label">Shop by Occasion</span>
+          <h2 class="sec-title">Find the Perfect Fragrance<br><em>for Every Occasion</em></h2>
+          <p class="sec-sub center" style="margin:12px auto 0">Explore fragrances designed to complement everyday
+            routines, celebrations, special evenings, and moments worth remembering.</p>
+          <div style="text-align:center;margin-top:20px"><a href="/pages/occasions-gifts" class="see-all" style="display:inline-flex">Explore Occasions &amp; Gifts <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
+        </div>
+        <div class="purpose-grid">
+          <div class="purpose-card fade-up stagger-1" onclick="location.href='/collections/wedding'" style="cursor:pointer">
+            <img class="pc-img" src="{{ 'kit-gift.jpg' | asset_url }}"
+              alt="Wedding" />
+            <div class="pc-overlay"></div>
+            <div class="pc-content">
+              <div class="pc-title">For Weddings</div>
+              <div class="pc-sub">Elegant and unforgettable</div>
+              <span class="pc-btn">Shop Now <span class="mi" aria-hidden="true">arrow_forward</span></span>
+            </div>
+          </div>
+          <div class="purpose-card fade-up stagger-2" onclick="location.href='/collections/eid'" style="cursor:pointer">
+            <img class="pc-img" src="{{ 'ed-5.jpg' | asset_url }}"
+              alt="Celebrations" />
+            <div class="pc-overlay"></div>
+            <div class="pc-content">
+              <div class="pc-title">For Celebrations</div>
+              <div class="pc-sub">Bold and memorable</div>
+              <span class="pc-btn">Shop Now <span class="mi" aria-hidden="true">arrow_forward</span></span>
+            </div>
+          </div>
+          <div class="purpose-card fade-up stagger-3" onclick="location.href='/collections/date-night'" style="cursor:pointer">
+            <img class="pc-img" src="{{ 'prod-bouquet-oud.png' | asset_url }}"
+              alt="Date Night" />
+            <div class="pc-overlay"></div>
+            <div class="pc-content">
+              <div class="pc-title">For Date Night</div>
+              <div class="pc-sub">Warm and captivating</div>
+              <span class="pc-btn">Shop Now <span class="mi" aria-hidden="true">arrow_forward</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="purpose-grid-bottom">
+          <div class="purpose-card-sm fade-up stagger-1" onclick="location.href='/collections/everyday-signature'" style="cursor:pointer">
+            <img class="pcs-img" src="{{ 'cat-unisex.jpg' | asset_url }}"
+              alt="Daily Wear" />
+            <div class="pcs-overlay"></div>
+            <div class="pcs-content">
+              <div class="pcs-title">For Everyday Wear</div>
+              <div class="pcs-sub">Fresh and effortless</div>
+            </div>
+          </div>
+          <div class="purpose-card-sm fade-up stagger-2" onclick="location.href='/collections/office-wear'" style="cursor:pointer">
+            <img class="pcs-img" src="{{ 'cat-men.jpg' | asset_url }}"
+              alt="The Office" />
+            <div class="pcs-overlay"></div>
+            <div class="pcs-content">
+              <div class="pcs-title">For The Office</div>
+              <div class="pcs-sub">Clean and confident</div>
+            </div>
+          </div>
+          <div class="purpose-card-sm fade-up stagger-3" onclick="location.href='/collections/travel-friendly'" style="cursor:pointer">
+            <img class="pcs-img" src="{{ 'travel_size_perfume.png' | asset_url }}" alt="Travel" />
+            <div class="pcs-overlay"></div>
+            <div class="pcs-content">
+              <div class="pcs-title">For Travel</div>
+              <div class="pcs-sub">Light and refreshing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+      <div class="trust-inner">
+        <div class="ts-item"><span class="mi" aria-hidden="true">verified_user</span>
+          <div><strong>100% Authentic</strong> — Verified sourcing</div>
+        </div>
+        <div class="ts-item"><span class="mi" aria-hidden="true">local_shipping</span>
+          <div><strong>Free Delivery</strong> above AED 150</div>
+        </div>
+        <div class="ts-item"><span class="mi" aria-hidden="true">payments</span>
+          <div><strong>Cash on Delivery</strong> available UAE-wide</div>
+        </div>
+        <div class="ts-item"><span class="mi" aria-hidden="true">chat</span>
+          <div><strong>WhatsApp Support</strong> — daily 10am–7pm</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOURCING PROMISE — transparent dual-model (Goal R-1 / Competitor P1) -->
+    <section class="sourcing" id="sourcing">
+      <div class="sourcing-inner">
+        <div class="sourcing-head fade-up">
+          <span class="label">Our Sourcing Promise</span>
+          <h2 class="sec-title">Exactly Where <em>Each Scent Comes From</em></h2>
+          <p class="sec-sub">No vague claims. We run two clearly separated lines — our own perfume brands, and a
+            verified resale catalogue of genuine fragrances — so you always know what you're buying.</p>
+        </div>
+        <div class="sourcing-grid">
+          <div class="src-card fade-up stagger-1">
+            <span class="src-tag"><span class="mi" aria-hidden="true">workspace_premium</span>Our Own Brands</span>
+            <h3>Fragrance Secrets · Secret Scents · Paris Collection</h3>
+            <p>Our in-house lines, developed and manufactured to our own brand standards through certified UAE
+              manufacturing partners — original creations, never claimed as designer originals.</p>
+            <ul class="src-list">
+              <li><span class="mi" aria-hidden="true">check_circle</span>Made to our own standards in the UAE</li>
+              <li><span class="mi" aria-hidden="true">check_circle</span>Inspired-by lines are labelled as inspired — never as the original</li>
+              <li><span class="mi" aria-hidden="true">check_circle</span>Tuned for UAE heat — oud, attar and oriental profiles</li>
+            </ul>
+          </div>
+          <div class="src-card fade-up stagger-2">
+            <span class="src-tag"><span class="mi" aria-hidden="true">verified</span>Verified Resale</span>
+            <h3>Genuine Arabic-house &amp; designer fragrances</h3>
+            <p>Brand-name fragrances (Lattafa, Armaf, Swiss Arabian, Ahmed Al Maghribi, Rasasi and more) sourced
+              through verified wholesalers and market-authorised channels — 100% genuine, sealed stock.</p>
+            <ul class="src-list">
+              <li><span class="mi" aria-hidden="true">check_circle</span>Sourced via verified wholesalers — authenticity guaranteed</li>
+              <li><span class="mi" aria-hidden="true">check_circle</span>We are <em>not</em> the official distributor for designer houses</li>
+              <li><span class="mi" aria-hidden="true">check_circle</span>Backed by a 7-day easy-returns policy</li>
+            </ul>
+          </div>
+        </div>
+        <p class="sourcing-note fade-up">Have a question about a specific product's sourcing?
+          <strong>Message us on WhatsApp (daily 10am–7pm)</strong> — a real person will tell you exactly where it
+          comes from before you buy.</p>
+        <div class="sourcing-note fade-up" style="text-align:center;margin-top:6px"><a href="/pages/sourcing-promise" class="see-all" style="display:inline-flex">Read our full Sourcing Promise <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
+      </div>
+    </section>
+
+<!-- FRAGRANCE FINDER -->
+    <section class="finder">
+      <div class="finder-inner">
+        <div class="finder-head fade-up">
+          <span class="label">Personalised Recommendation</span>
+          <h2 class="sec-title" style="color:var(--white)">Not Sure What to <em>Pick?</em></h2>
+          <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
+        </div>
+        <div class="quiz-progress quiz-progress-wrap"></div>
+        <div class="quiz-container-wrap"></div>
+      </div>
+    </section>
+
+        <!-- SHOP BY GENDER -->
+    <section class="gender">
+      <div class="gender-inner">
+        <div class="gender-head fade-up">
+          <span class="label">Shop by Collection</span>
+          <h2 class="sec-title">A Collection for <em>Every Preference</em></h2>
+          <p class="sec-sub center" style="margin:12px auto 0">From authentic Arabic perfumes to refined unisex
+            fragrances and timeless attar oils, giving you more ways to express your personal fragrance style.</p>
+        </div>
+        <div class="gender-grid">
+          <div class="g-card fade-up stagger-1">
+            <img class="gc-img" src="{{ 'men_fragrance.png' | asset_url }}" alt="For Men" />
+            <div class="gc-overlay"></div>
+            <div class="gc-content">
+              <div class="gc-title">For Men</div>
+              <div class="gc-count">84 Fragrances</div><span class="gc-btn">Explore</span>
+            </div>
+          </div>
+          <div class="g-card fade-up stagger-2">
+            <img class="gc-img" src="{{ 'women_fragrance.png' | asset_url }}" alt="For Women" />
+            <div class="gc-overlay"></div>
+            <div class="gc-content">
+              <div class="gc-title">For Women</div>
+              <div class="gc-count">72 Fragrances</div><span class="gc-btn">Explore</span>
+            </div>
+          </div>
+          <div class="g-card fade-up stagger-3">
+            <img class="gc-img" src="{{ 'unisex_fragrance.png' | asset_url }}" alt="Unisex" />
+            <div class="gc-overlay"></div>
+            <div class="gc-content">
+              <div class="gc-title">Unisex</div>
+              <div class="gc-count">46 Fragrances</div><span class="gc-btn">Explore</span>
+            </div>
+          </div>
+          <div class="g-card fade-up stagger-4">
+            <img class="gc-img" src="{{ 'kids_fragrance.png' | asset_url }}" alt="Kids" />
+            <div class="gc-overlay"></div>
+            <div class="gc-content">
+              <div class="gc-title">Kids Collection</div>
+              <div class="gc-count">16 Fragrances</div><span class="gc-btn">Explore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFT SETS (featured) -->
+    <section class="feat-prod">
+      <div class="feat-prod-inner">
+        <div class="best-head fade-up" style="margin-bottom:34px">
+          <div>
+            <span class="label">Gift Sets</span>
+            <h2 class="sec-title" style="font-size:2.2rem">Featured <em>Gift Set</em></h2>
+          </div>
+          <a href="/pages/gift-sets" class="see-all">All Gift Sets &amp; Kits <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+        <div class="fp-split">
+
+          <!-- LEFT: GALLERY -->
+          <div class="fp-gallery">
+            <div class="fp-main-wrap">
+              <img id="fp-main-img" src="{{ '14.webp' | asset_url }}" alt="Luxury Oud Perfume Trio" />
+            </div>
+            <div class="fp-thumbs">
+              <div class="fp-thumb active" onclick="swapFpImg(this, '14.webp')">
+                <img src="{{ '14.webp' | asset_url }}" alt="Thumbnail 1" />
+              </div>
+              <div class="fp-thumb" onclick="swapFpImg(this, '15.webp')">
+                <img src="{{ '15.webp' | asset_url }}" alt="Thumbnail 2" />
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: DETAILS -->
+          <div class="fp-details">
+            <div class="fp-brand">FRAGRANCE SECRETS</div>
+            <h2 class="fp-title">Luxury Oud Perfume Trio - 3 Bestselling Long-Lasting Fragrances (Unisex)</h2>
+            <div class="fp-price-block">
+              <span class="fp-price">199.00 AED</span>
+              <span class="fp-compare">600.00 AED</span>
+              <span class="fp-badge">On sale</span>
+            </div>
+            <p class="fp-tax">Tax included.</p>
+
+            <hr class="fp-divider">
+
+            <div class="fp-form">
+              <label class="fp-qty-label">Quantity</label>
+              <div class="fp-qty-row">
+                <div class="fp-qty-wrap">
+                  <button onclick="changeFpQty(-1)">−</button>
+                  <input type="text" id="fp-qty" value="1" readonly />
+                  <button onclick="changeFpQty(1)">+</button>
+                </div>
+                <span class="mi" aria-hidden="true">share</span>
+              </div>
+
+              <button class="fp-btn-add" onclick="location.href='/collections/all'">
+                Add to cart
+                <span class="mi" aria-hidden="true">arrow_outward</span>
+              </button>
+
+              <button class="fp-btn-buy" onclick="location.href='/collections/all'">
+                Buy with <span style="font-family:sans-serif;font-weight:600"><span style="color:#4285F4">G</span> Pay</span>
+              </button>
+
+              <a href="#" class="fp-link-muted">More payment options</a>
+            </div>
+
+            <a href="/collections/all" class="fp-link-bold">View full details</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOVERY KITS -->
+    <section class="best" id="kits">
+      <div class="best-inner">
+        <div class="best-head fade-up">
+          <div>
+            <span class="label">New · Low Commitment</span>
+            <h2 class="sec-title">Discovery <em>Kits</em></h2>
+            <p class="sec-sub">Sample our bestsellers before committing to a full bottle — the easiest way to find your
+              signature scent, and a perfect little gift.</p>
+          </div>
+          <a href="/pages/gift-sets" class="see-all">View All Kits <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+        <div class="products-grid" data-render="kits"></div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="blog" id="blog">
+      <div class="blog-inner">
+        <div class="blog-head fade-up">
+          <div>
+            <span class="label">Know Before You Buy</span>
+            <h2 class="sec-title">Fragrance Insights & <em>Expert Guides</em></h2>
+          </div>
+          <a href="/blogs/journal" class="see-all">All Articles <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+        <div class="blog-grid" data-render="blogs"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="reviews-inner">
+        <div class="reviews-head fade-up">
+          <span class="label">What Customers Say</span>
+          <h2 class="sec-title">More Than Fragrance<br><em>A Trusted Experience</em></h2>
+        </div>
+        <div class="rv-summary fade-up">
+          <div class="rv-big">4.8</div>
+          <div class="rv-details">
+            <div class="stars">
+              <span class="mi mi-f" aria-hidden="true">star</span>
+              <span class="mi mi-f" aria-hidden="true">star</span>
+              <span class="mi mi-f" aria-hidden="true">star</span>
+              <span class="mi mi-f" aria-hidden="true">star</span>
+              <span class="mi mi-f" aria-hidden="true">star</span>
+            </div>
+            <p>Based on 10,284 verified reviews</p>
+          </div>
+        </div>
+        <div class="rv-grid" data-render="reviews"></div>
+      </div>
+    </section>
+
+    <!-- UGC -->
+    <section class="ugc">
+      <div class="ugc-inner">
+        <div class="ugc-head fade-up">
+          <span class="label">Insta Shop</span>
+          <h2 class="sec-title">Real People. <em>Real Scents.</em></h2>
+          <p class="sec-sub center" style="margin:8px auto 0">Tag us @thefragrancesecrets to be featured</p>
+        </div>
+        <div class="ugc-grid" data-render="ugc"></div>
+      </div>
+    </section>
+
+    <!-- EMAIL + WHATSAPP CAPTURE -->
+    <section class="final-cta" id="capture">
+      <div class="fca-inner fade-up">
+        <span class="label" style="color:var(--gold)">Start Your Journey</span>
+        <h2 class="sec-title" style="color:var(--white)">Discover Your <em>Signature Scent</em> Today</h2>
+        <p class="sec-sub" style="margin:12px auto 0">Choose scents that match your identity, express your personality,
+          and leave a lasting impression every single day. Subscribe for 10% off your first order, early access to new
+          drops, and scent tips made for UAE heat.</p>
+        <div class="capture-form">
+          <input type="email" placeholder="Your email address" aria-label="Email address" />
+          <button class="btn-g">Get My 10% Code</button>
+        </div>
+        <label class="wa-optin" style="justify-content:center;max-width:460px;margin:16px auto 0;text-align:left">
+          <input type="checkbox" checked />
+          <span>Also send my deals on <strong>WhatsApp</strong> — order updates &amp; exclusive offers, the way the UAE
+            shops. Opt out anytime.</span>
+        </label>
+        <p class="news-fineprint" style="text-align:center;margin-top:10px">No spam, ever. The 10% offer is honoured on
+          your first order.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="faq-inner">
+        <div class="faq-head fade-up">
+          <span class="label">Your Questions, Answered</span>
+          <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
+        </div>
+        <div class="faq-list fade-up">
+          <details class="faq-item">
+            <summary class="faq-q">What are the best luxury perfumes to buy online in UAE?<span class="mi" aria-hidden="true">add</span></summary>
+            <div class="faq-a">At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully
+              selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we
+              offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">How do I choose the right perfume for my personality?<span class="mi" aria-hidden="true">add</span></summary>
+            <div class="faq-a">Choosing the right perfume depends on your personal style, mood, and fragrance
+              preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you
+              discover fragrances that match your personality and create a lasting impression wherever you go.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Where can I buy authentic perfumes online in Dubai?<span class="mi" aria-hidden="true">add</span></summary>
+            <div class="faq-a">If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a
+              trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes
+              designed for those who value originality, luxury, and a seamless online shopping experience.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Which perfumes last longer in UAE weather conditions?<span class="mi" aria-hidden="true">add</span></summary>
+            <div class="faq-a">Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and
+              woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium
+              fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Why should I buy perfumes from The Fragrance Secrets?<span class="mi" aria-hidden="true">add</span></summary>
+            <div class="faq-a">The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers
+              who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a
+              focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable,
+              and timeless.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+{% schema %}
+{ "name": "Home", "settings": [], "presets": [ { "name": "Home" } ] }
+{% endschema %}

@@ -1,0 +1,200 @@
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>My Account</span></div>
+        <span class="ph-eyebrow">Welcome Back</span>
+        <h1 class="ph-title">Hello, <em>Fatima</em></h1>
+        <p class="ph-sub">Pick up right where you left off — reorder a favourite in one tap, keep your details up to date, and revisit the scents you have saved.</p>
+        <div class="ph-meta">
+          <span><span class="mi" aria-hidden="true">receipt_long</span>12 orders</span>
+          <span><span class="mi" aria-hidden="true">workspace_premium</span>Gold member</span>
+          <span><span class="mi" aria-hidden="true">favorite</span>3 saved scents</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER HISTORY + ONE-TAP REORDER -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head fade-up">
+          <span class="label">Your Orders</span>
+          <h2 class="sec-title">Order History &amp; <em>One-Tap Reorder</em></h2>
+          <p class="sec-sub" style="margin-left:0">Loved something? Add your whole order back to the cart in a single tap — same scents, same sizes, delivered fast.</p>
+        </div>
+
+        <!-- ORDER 1 -->
+        <div class="co-block fade-up">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid rgba(13,10,6,.08);margin-bottom:6px">
+            <div>
+              <div style="font-family:var(--fb);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Order TFS-10432</div>
+              <div style="font-size:.82rem;color:var(--warm);margin-top:3px">Placed 2 July 2026 · 2 items</div>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--gold-dk);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.28);padding:6px 13px;border-radius:999px"><span class="mi" aria-hidden="true" style="font-size:15px">check_circle</span>Delivered</span>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="Bouquet of Oud EDP" />
+            <div><div class="cl-name">Bouquet of Oud EDP</div><div class="cl-meta">Ahmed Al Maghribi · 100ml</div></div>
+            <div class="cl-price">AED 189</div>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'prod-shaghaf.png' | asset_url }}" alt="Shaghaf Oud Elixir" />
+            <div><div class="cl-name">Shaghaf Oud Elixir</div><div class="cl-meta">Swiss Arabian · 100ml</div></div>
+            <div class="cl-price">AED 219</div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:18px">
+            <div style="font-size:.86rem;color:var(--warm)">Order total<strong style="color:var(--ink);font-size:1rem;margin-left:8px">AED 408</strong></div>
+            <button class="btn-g" type="button" onclick="addToCart('Bouquet of Oud EDP');toast('Added your last order to cart')"><span class="mi" aria-hidden="true">replay</span>Reorder</button>
+          </div>
+        </div>
+
+        <!-- ORDER 2 -->
+        <div class="co-block fade-up">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid rgba(13,10,6,.08);margin-bottom:6px">
+            <div>
+              <div style="font-family:var(--fb);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Order TFS-10318</div>
+              <div style="font-size:.82rem;color:var(--warm);margin-top:3px">Placed 14 June 2026 · 3 items</div>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--gold-dk);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.28);padding:6px 13px;border-radius:999px"><span class="mi" aria-hidden="true" style="font-size:15px">check_circle</span>Delivered</span>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'prod-club-de-nuit.jpg' | asset_url }}" alt="Club de Nuit Précieux" />
+            <div><div class="cl-name">Club de Nuit Précieux</div><div class="cl-meta">Armaf · 105ml</div></div>
+            <div class="cl-price">AED 129</div>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'prod-hawas.jpg' | asset_url }}" alt="Hawas Fire EDP" />
+            <div><div class="cl-name">Hawas Fire EDP</div><div class="cl-meta">Rasasi · 100ml</div></div>
+            <div class="cl-price">AED 99</div>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'prod-supremacy.jpg' | asset_url }}" alt="Supremacy Collector's Edition" />
+            <div><div class="cl-name">Supremacy Collector's Edition</div><div class="cl-meta">Afnan · 100ml</div></div>
+            <div class="cl-price">AED 89</div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:18px">
+            <div style="font-size:.86rem;color:var(--warm)">Order total<strong style="color:var(--ink);font-size:1rem;margin-left:8px">AED 317</strong></div>
+            <button class="btn-g" type="button" onclick="addToCart('Club de Nuit Précieux');toast('Added your last order to cart')"><span class="mi" aria-hidden="true">replay</span>Reorder</button>
+          </div>
+        </div>
+
+        <!-- ORDER 3 -->
+        <div class="co-block fade-up">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid rgba(13,10,6,.08);margin-bottom:6px">
+            <div>
+              <div style="font-family:var(--fb);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Order TFS-10204</div>
+              <div style="font-size:.82rem;color:var(--warm);margin-top:3px">Placed 28 May 2026 · 2 items</div>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--gold-dk);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.28);padding:6px 13px;border-radius:999px"><span class="mi" aria-hidden="true" style="font-size:15px">check_circle</span>Delivered</span>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'prod-cedrat-boise.jpg' | asset_url }}" alt="Cedrat Boise EDP" />
+            <div><div class="cl-name">Cedrat Boise EDP</div><div class="cl-meta">Mancera · 120ml</div></div>
+            <div class="cl-price">AED 349</div>
+          </div>
+          <div class="co-line">
+            <img src="{{ 'kit-oud-trio.png' | asset_url }}" alt="Oud Discovery Set" />
+            <div><div class="cl-name">Oud Discovery Set</div><div class="cl-meta">5 × 2ml Vials</div></div>
+            <div class="cl-price">AED 89</div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:18px">
+            <div style="font-size:.86rem;color:var(--warm)">Order total<strong style="color:var(--ink);font-size:1rem;margin-left:8px">AED 438</strong></div>
+            <button class="btn-g" type="button" onclick="addToCart('Cedrat Boise EDP');toast('Added your last order to cart')"><span class="mi" aria-hidden="true">replay</span>Reorder</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAVED DETAILS -->
+    <section class="section alt">
+      <div class="container">
+        <div class="sec-head fade-up">
+          <span class="label">Your Details</span>
+          <h2 class="sec-title">Saved <em>Details</em></h2>
+          <p class="sec-sub" style="margin-left:0">Your default delivery address and the scents you have saved for later — all in one place.</p>
+        </div>
+        <div class="contact-grid">
+
+          <!-- DEFAULT ADDRESS -->
+          <div class="co-block fade-up" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+              <div class="cm-ic"><span class="mi" aria-hidden="true">home_pin</span></div>
+              <div>
+                <h2 style="margin-bottom:2px">Default Delivery Address</h2>
+                <div style="font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dk);font-weight:600">Primary</div>
+              </div>
+            </div>
+            <p style="font-size:.9rem;color:var(--warm);line-height:1.85;margin-bottom:6px">
+              Fatima Al Rashid<br />
+              Villa 12, Al Wasl Road<br />
+              Jumeirah 1, Dubai<br />
+              United Arab Emirates<br />
+              +971 50 123 4567
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:16px">
+              <a class="btn-ol" href="#" onclick="toast('Edit your saved address');return false"><span class="mi" aria-hidden="true">edit</span>Edit Address</a>
+              <span style="display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--warm)"><span class="mi" aria-hidden="true" style="color:var(--gold-dk);font-size:18px">local_shipping</span>Free delivery over AED 150</span>
+            </div>
+          </div>
+
+          <!-- SAVED SCENTS -->
+          <div class="co-block fade-up" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+              <div class="cm-ic"><span class="mi" aria-hidden="true">favorite</span></div>
+              <div>
+                <h2 style="margin-bottom:2px">Saved Scents</h2>
+                <div style="font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dk);font-weight:600">3 fragrances</div>
+              </div>
+            </div>
+            <p style="font-size:.86rem;color:var(--warm);line-height:1.75;margin-bottom:18px">The bottles you are keeping an eye on — jump back in whenever you are ready.</p>
+            <div style="display:flex;gap:14px">
+              <a href="{{ routes.all_products_collection_url }}" style="flex:1;min-width:0;text-decoration:none;text-align:center">
+                <img src="{{ 'prod-amber-oud.jpg' | asset_url }}" alt="Amber Oud Gold EDP" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:var(--cream-dk);border:1px solid rgba(13,10,6,.08)" />
+                <div style="font-size:.78rem;color:var(--ink);font-weight:500;margin-top:9px;line-height:1.35">Amber Oud Gold</div>
+                <div style="font-size:.74rem;color:var(--warm)">Al Haramain</div>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" style="flex:1;min-width:0;text-decoration:none;text-align:center">
+                <img src="{{ 'prod-oud-roses.jpg' | asset_url }}" alt="Oud & Roses EDP" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:var(--cream-dk);border:1px solid rgba(13,10,6,.08)" />
+                <div style="font-size:.78rem;color:var(--ink);font-weight:500;margin-top:9px;line-height:1.35">Oud &amp; Roses</div>
+                <div style="font-size:.74rem;color:var(--warm)">Fragrance Secrets</div>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}" style="flex:1;min-width:0;text-decoration:none;text-align:center">
+                <img src="{{ 'prod-ambar-silk.jpg' | asset_url }}" alt="Ambar Silk EDP" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:var(--cream-dk);border:1px solid rgba(13,10,6,.08)" />
+                <div style="font-size:.78rem;color:var(--ink);font-weight:500;margin-top:9px;line-height:1.35">Ambar Silk</div>
+                <div style="font-size:.74rem;color:var(--warm)">Rasasi</div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REORDER YOUR SIGNATURE — REMINDER BAND -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band fade-up">
+          <span class="label" style="color:var(--gold)">Running Low?</span>
+          <h2 class="sec-title">Reorder Your <em>Signature</em></h2>
+          <p class="sec-sub">Your go-to <strong style="color:var(--gold-lt)">Bouquet of Oud EDP</strong> is a tap away. Top up before it runs out — or discover your next favourite from 218+ authentic brands.</p>
+          <div class="cta-actions">
+            <a class="btn-g" href="#" onclick="addToCart('Bouquet of Oud EDP');toast('Added your signature scent to cart');return false"><span class="mi" aria-hidden="true">replay</span>Reorder My Signature</a>
+            <a class="btn-o" href="/collections/best-sellers">Discover Something New</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOUNT FOOTER LINKS -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div style="display:flex;flex-wrap:wrap;gap:26px;justify-content:center;align-items:center;padding-top:8px">
+          <a class="btn-ghost" href="#" onclick="toast('Looking up your latest order…');return false"><span class="mi" aria-hidden="true">local_shipping</span>Track an Order</a>
+          <a class="btn-ghost" href="#" onclick="toast('You have been signed out');return false"><span class="mi" aria-hidden="true">logout</span>Sign Out</a>
+        </div>
+      </div>
+    </section>
+
+{% schema %}
+{ "name": "My Account page", "settings": [] }
+{% endschema %}

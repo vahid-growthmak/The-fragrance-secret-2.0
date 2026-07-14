@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Gift Sets & Discovery Kits — The Fragrance Secrets</title>
+  <meta name="description" content="Curated fragrance gift sets, discovery kits and build-your-own brand combos. The easiest way to find your signature scent — or give one. 100% authentic, UAE delivery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+
+<body data-nav="dark" data-active="shop">
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero split tall">
+      <div class="container">
+        <div>
+          <div class="breadcrumb"><a href="index.html">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Gift Sets &amp; Discovery Kits</span></div>
+          <span class="ph-eyebrow">Give, or Discover</span>
+          <h1 class="ph-title">Gift Sets &amp; <em>Discovery Kits</em></h1>
+          <p class="ph-sub">The smartest way to explore — sample a house before committing to a full bottle — and the most thoughtful way to give. Beautifully boxed, ready to gift, and 100% authentic.</p>
+          <div class="ph-meta" style="margin-top:26px">
+            <a class="btn-g" href="#kits"><span class="mi" aria-hidden="true">redeem</span>Shop Gift Sets</a>
+            <a class="btn-o" href="#combo">Build a Brand Combo</a>
+          </div>
+        </div>
+        <figure class="ph-figure"><img src="14.webp" alt="Luxury fragrance gift set" /></figure>
+      </div>
+    </section>
+
+    <!-- VALUE PROP -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head center"><span class="label">Why a Set?</span><h2 class="sec-title">Try More, <em>Spend Smarter</em></h2><p class="sec-sub">Discovery kits and bundles lower the risk of finding your signature — and quietly deliver better value than buying blind.</p></div>
+        <div class="value-hero fade-up">
+          <div class="value-card"><span class="mi" aria-hidden="true">science</span><h3>Try Before You Commit</h3><p>Sample 4–6 bestsellers in travel vials before investing in a full 100ml bottle you'll actually love.</p></div>
+          <div class="value-card"><span class="mi" aria-hidden="true">savings</span><h3>Better Value</h3><p>Curated sets and combos are priced below buying each fragrance individually — more scent for your dirham.</p></div>
+          <div class="value-card"><span class="mi" aria-hidden="true">card_giftcard</span><h3>Gift-Ready</h3><p>Every set arrives in premium packaging — no wrapping required. The effortless present that always fits.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOVERY KITS GRID -->
+    <section class="section alt" id="kits">
+      <div class="container">
+        <div class="results-head"><div><span class="label">Low Commitment</span><h2 class="sec-title" style="font-size:2rem">Discovery <em>Kits</em></h2></div><a class="btn-ghost" href="collection.html?c=all">Shop all products <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
+        <div class="products-grid" data-render="kits"></div>
+      </div>
+    </section>
+
+    <!-- BRAND COMBO BUILDER -->
+    <section class="section" id="combo">
+      <div class="container">
+        <div class="combo">
+          <div class="combo-head">
+            <span class="label" style="color:var(--gold-lt)">Build a Set · Save 15%</span>
+            <h2 class="sec-title">Create Your <em>Brand Combo</em></h2>
+            <p class="sec-sub" style="color:rgba(255,255,255,.6);margin:10px auto 0">Choose a house, pick any 3 of its fragrances, and save 15% — your own curated wardrobe, or a beautifully coordinated gift from one brand.</p>
+          </div>
+          <div class="combo-brandbar">
+            <button class="combo-brand active" onclick="comboBrand(this,'Lattafa')">Lattafa</button>
+            <button class="combo-brand" onclick="comboBrand(this,'Armaf')">Armaf</button>
+            <button class="combo-brand" onclick="comboBrand(this,'Swiss Arabian')">Swiss Arabian</button>
+            <button class="combo-brand" onclick="comboBrand(this,'Al Haramain')">Al Haramain</button>
+            <button class="combo-brand" onclick="comboBrand(this,'Ahmed Al Maghribi')">Ahmed Al Maghribi</button>
+          </div>
+          <div class="combo-grid" id="comboGrid"></div>
+          <div class="combo-bar">
+            <div>
+              <div class="combo-summary"><span id="comboCount">0 of 3 selected</span> · <b id="comboTotal">AED 0</b><span class="combo-save" id="comboSave"></span></div>
+              <div class="combo-hint">Select 3 fragrances to unlock the 15% combo discount.</div>
+            </div>
+            <button class="btn-g" id="comboAdd" onclick="comboAddToCart()" disabled>Add Combo to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED GIFT SETS -->
+    <section class="section alt">
+      <div class="container">
+        <div class="results-head"><div><span class="label">Ready to Gift</span><h2 class="sec-title" style="font-size:2rem">Signature <em>Gift Sets</em></h2></div><a class="btn-ghost" href="collection.html?c=luxury">Explore luxury <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
+        <div class="products-grid" data-render="products" data-count="8"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container"><div class="cta-band">
+        <span class="label" style="color:var(--gold)">Need a Hand?</span>
+        <h2 class="sec-title">Not Sure Which <em>Set to Gift?</em></h2>
+        <p class="sec-sub">Tell our concierge who it's for and your budget — we'll build the perfect set in seconds.</p>
+        <div class="cta-actions">
+          <a class="btn-g" href="#" onclick="openAI();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Ask the Concierge</a>
+          <a class="btn-o" href="collection.html?c=best-sellers">Browse Best Sellers</a>
+        </div>
+      </div></div>
+    </section>
+
+  </main>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/collections.js"></script>
+</body>
+
+</html>

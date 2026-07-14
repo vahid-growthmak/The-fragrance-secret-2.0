@@ -1,0 +1,18 @@
+{%- comment -%} Customer addresses {%- endcomment -%}
+<section class="page-hero tall"><div class="container">
+  <div class="breadcrumb"><a href="{{ routes.account_url }}">Account</a><span class="mi" aria-hidden="true">chevron_right</span><span>Addresses</span></div>
+  <h1 class="ph-title">Your <em>Addresses</em></h1>
+</div></section>
+<section class="section"><div class="container" style="max-width:600px">
+  {%- for address in customer.addresses -%}
+    <div class="co-block" style="margin-bottom:18px">
+      <p>{{ address | format_address }}</p>
+    </div>
+  {%- else -%}
+    <p class="sec-sub">No saved addresses yet.</p>
+  {%- endfor -%}
+  <a href="{{ routes.account_url }}" class="btn-ghost" style="display:inline-flex;margin-top:12px">Back to account</a>
+</div></section>
+{% schema %}
+{ "name": "Customer addresses", "settings": [] }
+{% endschema %}
