@@ -3347,12 +3347,15 @@
       height: 11px
     }
 
-    /* Specifications — two-column grid */
-    .spec-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 44px;
-      row-gap: 0
+    /* Specifications — two independent columns */
+    .spec-cols {
+      display: flex;
+      gap: 48px
+    }
+
+    .spec-col {
+      flex: 1;
+      min-width: 0
     }
 
     .spec-item {
@@ -3390,9 +3393,9 @@
     }
 
     @media(max-width:640px) {
-      .spec-grid {
-        grid-template-columns: 1fr;
-        column-gap: 0
+      .spec-cols {
+        flex-direction: column;
+        gap: 0
       }
 
       .spec-head-2 {

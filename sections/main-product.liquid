@@ -163,23 +163,42 @@
 
               <!-- Specifications (two-column grid) -->
               <div class="tab-pane" id="specs">
-                <div class="spec-grid">
-                  <div class="spec-item spec-head"><span class="spec-k">Product Details</span><span class="spec-v">Information</span></div>
-                  <div class="spec-item spec-head spec-head-2"><span class="spec-k">Product Details</span><span class="spec-v">Information</span></div>
-                  {%- if product.vendor != blank -%}<div class="spec-item"><span class="spec-k">Brand</span><span class="spec-v">{{ product.vendor }}</span></div>{%- endif -%}
-                  {%- if mf.fragrance_family.value != blank -%}<div class="spec-item"><span class="spec-k">Fragrance Family</span><span class="spec-v">{{ mf.fragrance_family.value }}</span></div>{%- endif -%}
-                  {%- if mf.concentration.value != blank -%}<div class="spec-item"><span class="spec-k">Concentration</span><span class="spec-v">{{ mf.concentration.value }}</span></div>{%- endif -%}
-                  {%- if mf.size.value != blank -%}<div class="spec-item"><span class="spec-k">Size</span><span class="spec-v">{{ mf.size.value }}</span></div>{%- elsif cv.title != 'Default Title' -%}<div class="spec-item"><span class="spec-k">Size</span><span class="spec-v">{{ cv.title }}</span></div>{%- endif -%}
-                  {%- if mf.product_form.value != blank -%}<div class="spec-item"><span class="spec-k">Product Form</span><span class="spec-v">{{ mf.product_form.value }}</span></div>{%- endif -%}
-                  {%- if mf.dispenser.value != blank -%}<div class="spec-item"><span class="spec-k">Dispenser</span><span class="spec-v">{{ mf.dispenser.value }}</span></div>{%- endif -%}
-                  {%- if mf.gender.value != blank -%}<div class="spec-item"><span class="spec-k">Gender</span><span class="spec-v">{{ mf.gender.value }}</span></div>{%- endif -%}
-                  {%- if mf.occasion.value != blank -%}<div class="spec-item"><span class="spec-k">Occasion</span><span class="spec-v">{{ mf.occasion.value }}</span></div>{%- endif -%}
-                  {%- if mf.longevity.value != blank -%}<div class="spec-item"><span class="spec-k">Longevity</span><span class="spec-v">{{ mf.longevity.value }}</span></div>{%- endif -%}
-                  {%- if mf.sillage.value != blank -%}<div class="spec-item"><span class="spec-k">Sillage</span><span class="spec-v">{{ mf.sillage.value }}</span></div>{%- endif -%}
-                  {%- if origin != blank -%}<div class="spec-item"><span class="spec-k">Origin</span><span class="spec-v">{{ origin }}</span></div>{%- endif -%}
-                  {%- if mf.bottle_colour.value != blank -%}<div class="spec-item"><span class="spec-k">Bottle Colour</span><span class="spec-v">{{ mf.bottle_colour.value }}</span></div>{%- endif -%}
-                  {%- if mf.ships_to.value != blank -%}<div class="spec-item"><span class="spec-k">Ships To</span><span class="spec-v">{{ mf.ships_to.value }}</span></div>{%- endif -%}
-                  {%- if mf.barcode.value != blank -%}<div class="spec-item"><span class="spec-k">Barcode</span><span class="spec-v">{{ mf.barcode.value }}</span></div>{%- endif -%}
+                {%- comment -%} Collect present specs as "Label|Value" items, then split into two independent columns {%- endcomment -%}
+                {%- capture specs_raw -%}
+                  {%- if product.vendor != blank -%}Brand|{{ product.vendor }}~|~{%- endif -%}
+                  {%- if mf.fragrance_family.value != blank -%}Fragrance Family|{{ mf.fragrance_family.value }}~|~{%- endif -%}
+                  {%- if mf.concentration.value != blank -%}Concentration|{{ mf.concentration.value }}~|~{%- endif -%}
+                  {%- if mf.size.value != blank -%}Size|{{ mf.size.value }}~|~{%- elsif cv.title != 'Default Title' -%}Size|{{ cv.title }}~|~{%- endif -%}
+                  {%- if mf.product_form.value != blank -%}Product Form|{{ mf.product_form.value }}~|~{%- endif -%}
+                  {%- if mf.dispenser.value != blank -%}Dispenser|{{ mf.dispenser.value }}~|~{%- endif -%}
+                  {%- if mf.gender.value != blank -%}Gender|{{ mf.gender.value }}~|~{%- endif -%}
+                  {%- if mf.occasion.value != blank -%}Occasion|{{ mf.occasion.value }}~|~{%- endif -%}
+                  {%- if mf.longevity.value != blank -%}Longevity|{{ mf.longevity.value }}~|~{%- endif -%}
+                  {%- if mf.sillage.value != blank -%}Sillage|{{ mf.sillage.value }}~|~{%- endif -%}
+                  {%- if origin != blank -%}Origin|{{ origin }}~|~{%- endif -%}
+                  {%- if mf.bottle_colour.value != blank -%}Bottle Colour|{{ mf.bottle_colour.value }}~|~{%- endif -%}
+                  {%- if mf.ships_to.value != blank -%}Ships To|{{ mf.ships_to.value }}~|~{%- endif -%}
+                  {%- if mf.barcode.value != blank -%}Barcode|{{ mf.barcode.value }}~|~{%- endif -%}
+                {%- endcapture -%}
+                {%- assign spec_list = specs_raw | strip | split: '~|~' -%}
+                {%- assign spec_half = spec_list.size | plus: 1 | divided_by: 2 -%}
+                <div class="spec-cols">
+                  {%- for col in (1..2) -%}
+                  <div class="spec-col">
+                    <div class="spec-item spec-head{% if col == 2 %} spec-head-2{% endif %}"><span class="spec-k">Product Details</span><span class="spec-v">Information</span></div>
+                    {%- for item in spec_list -%}
+                      {%- assign in_left = false -%}
+                      {%- if forloop.index0 < spec_half -%}{%- assign in_left = true -%}{%- endif -%}
+                      {%- if col == 1 and in_left -%}
+                        {%- assign kv = item | strip | split: '|' -%}
+                        <div class="spec-item"><span class="spec-k">{{ kv[0] }}</span><span class="spec-v">{{ kv[1] }}</span></div>
+                      {%- elsif col == 2 and in_left == false -%}
+                        {%- assign kv = item | strip | split: '|' -%}
+                        <div class="spec-item"><span class="spec-k">{{ kv[0] }}</span><span class="spec-v">{{ kv[1] }}</span></div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                  {%- endfor -%}
                 </div>
               </div>
 
