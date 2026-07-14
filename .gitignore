@@ -1,0 +1,9 @@
+# Secrets — never commit
+.env
+.env.local
+*.token
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+node_modules/

@@ -208,7 +208,7 @@
           <h2 class="sec-title">Latest From the <em>Journal</em></h2>
           <p class="sec-sub">Put your new knowledge to work with our most recent guides.</p>
         </div>
-        <div class="blog-grid fade-up" data-render="blogs" data-count="3"></div>
+        {%- if blogs['journal'].articles.size > 0 -%}<div class="blog-grid fade-up">{%- for article in blogs['journal'].articles limit: 3 -%}<a class="bl-card" href="{{ article.url }}"><div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>{% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}<div class="bl-title">{{ article.title }}</div><div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div><div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div></a>{%- endfor -%}</div>{%- else -%}<div class="blog-grid fade-up" data-render="blogs" data-count="3"></div>{%- endif -%}
       </div>
     </section>
 

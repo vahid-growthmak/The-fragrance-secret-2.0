@@ -52,7 +52,7 @@
         <div class="upsell">
           <div class="upsell-head"><span class="mi" aria-hidden="true">auto_awesome</span>Complete your order</div>
           <div class="upsell-sub">Customers who bought these items also loved</div>
-          <div class="upsell-row products-grid" data-render="products" data-count="3"></div>
+          {%- if collections['featured'].products.size > 0 -%}<div class="upsell-row products-grid">{%- for product in collections['featured'].products limit: 3 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="upsell-row products-grid" data-render="products" data-count="3"></div>{%- endif -%}
         </div>
       </div>
 

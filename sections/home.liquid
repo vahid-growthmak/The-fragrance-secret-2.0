@@ -87,7 +87,7 @@
           </div>
           <a href="/collections/best-sellers" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
         </div>
-        <div class="products-grid" data-render="products" data-count="8"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 8 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="8"></div>{%- endif -%}
       </div>
     </section>
 
@@ -103,7 +103,7 @@
           </div>
           <a href="/collections/new-arrivals" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
         </div>
-        <div class="products-grid" data-render="products" data-count="4" data-from="4"></div>
+        {%- if collections['new-arrivals'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['new-arrivals'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="4" data-from="4"></div>{%- endif -%}
       </div>
     </section>
 
@@ -393,7 +393,7 @@
           </div>
           <a href="/blogs/journal" class="see-all">All Articles <span class="mi" aria-hidden="true">arrow_forward</span></a>
         </div>
-        <div class="blog-grid" data-render="blogs"></div>
+        {%- if blogs['journal'].articles.size > 0 -%}<div class="blog-grid">{%- for article in blogs['journal'].articles limit: 6 -%}<a class="bl-card" href="{{ article.url }}"><div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>{% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}<div class="bl-title">{{ article.title }}</div><div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div><div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div></a>{%- endfor -%}</div>{%- else -%}<div class="blog-grid" data-render="blogs"></div>{%- endif -%}
       </div>
     </section>
 

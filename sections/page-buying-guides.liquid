@@ -133,7 +133,7 @@
           <h2 class="sec-title">Every Buying <em>Guide</em></h2>
           <p class="sec-sub">Comparisons, how-tos and expert advice to help you shop smarter.</p>
         </div>
-        <div class="blog-grid fade-up" data-render="blogs"></div>
+        {%- if blogs['journal'].articles.size > 0 -%}<div class="blog-grid fade-up">{%- for article in blogs['journal'].articles limit: 6 -%}<a class="bl-card" href="{{ article.url }}"><div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>{% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}<div class="bl-title">{{ article.title }}</div><div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div><div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div></a>{%- endfor -%}</div>{%- else -%}<div class="blog-grid fade-up" data-render="blogs"></div>{%- endif -%}
       </div>
     </section>
 

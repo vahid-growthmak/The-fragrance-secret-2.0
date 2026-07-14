@@ -44,7 +44,7 @@
     <section class="section alt">
       <div class="container">
         <div class="results-head"><div><span class="label">Prefer to Browse?</span><h2 class="sec-title" style="font-size:2rem">Start With a <em>Bestseller</em></h2></div><a class="btn-ghost" href="/collections/best-sellers">All best sellers <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
-        <div class="products-grid" data-render="products" data-count="4"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="4"></div>{%- endif -%}
       </div>
     </section>
 

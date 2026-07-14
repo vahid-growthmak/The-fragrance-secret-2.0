@@ -99,7 +99,7 @@
           <h2 class="sec-title">Curated Picks for <em>the Season</em></h2>
           <p class="sec-sub">Hand-selected bottles our team is reaching for right now — all 100% authentic, all ready to ship.</p>
         </div>
-        <div class="products-grid fade-up" data-render="products" data-count="8"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid fade-up">{%- for product in collections['featured'].products limit: 8 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid fade-up" data-render="products" data-count="8"></div>{%- endif -%}
       </div>
     </section>
 

@@ -147,7 +147,7 @@
     <section class="related">
       <div class="related-inner">
         <div class="related-head fade-up"><span class="label">Complete Your Collection</span><h2 class="sec-title">You May Also <em>Like</em></h2></div>
-        <div class="products-grid" data-render="products" data-count="4"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="4"></div>{%- endif -%}
       </div>
     </section>
 

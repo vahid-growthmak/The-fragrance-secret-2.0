@@ -71,7 +71,7 @@
           <h2 class="sec-title">Recommended <em>Investment Scents</em></h2>
           <p class="sec-sub">A curated selection of our finest fragrances — every one 100% authentic and ready to ship across the UAE.</p>
         </div>
-        <div class="products-grid fade-up" data-render="products" data-count="8"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid fade-up">{%- for product in collections['featured'].products limit: 8 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid fade-up" data-render="products" data-count="8"></div>{%- endif -%}
       </div>
     </section>
 

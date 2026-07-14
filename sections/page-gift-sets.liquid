@@ -68,7 +68,7 @@
     <section class="section alt">
       <div class="container">
         <div class="results-head"><div><span class="label">Ready to Gift</span><h2 class="sec-title" style="font-size:2rem">Signature <em>Gift Sets</em></h2></div><a class="btn-ghost" href="/collections/luxury">Explore luxury <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
-        <div class="products-grid" data-render="products" data-count="8"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 8 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="8"></div>{%- endif -%}
       </div>
     </section>
 

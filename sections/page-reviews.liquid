@@ -86,7 +86,7 @@
           <h2 class="sec-title">Top-Rated by Our <em>Customers</em></h2>
           <p class="sec-sub">The fragrances our reviewers keep coming back to — highest rated, most loved.</p>
         </div>
-        <div class="products-grid" data-render="products" data-count="4"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="4"></div>{%- endif -%}
         <div class="load-more-wrap">
           <a class="btn-ol" href="/collections/best-sellers">View All Best Sellers</a>
         </div>

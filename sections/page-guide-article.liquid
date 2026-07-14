@@ -62,7 +62,7 @@
           <h2 class="sec-title">Shop the <em>Guide</em></h2>
           <p class="sec-sub">Four oud-forward fragrances our team keeps reaching for in 2026 — all 100% authentic, ready to ship across the UAE.</p>
         </div>
-        <div class="products-grid" data-render="products" data-count="4"></div>
+        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="4"></div>{%- endif -%}
         <div class="cta-actions" style="margin-top:36px">
           <a class="btn-ghost" href="/collections/arabic">Explore all Arabic perfumes <span class="mi" aria-hidden="true">arrow_forward</span></a>
         </div>
@@ -92,7 +92,7 @@
           <h2 class="sec-title">Related <em>Guides</em></h2>
           <p class="sec-sub">More expert reads to help you choose, layer and wear fragrance with confidence.</p>
         </div>
-        <div class="blog-grid fade-up" data-render="blogs" data-count="3"></div>
+        {%- if blogs['journal'].articles.size > 0 -%}<div class="blog-grid fade-up">{%- for article in blogs['journal'].articles limit: 3 -%}<a class="bl-card" href="{{ article.url }}"><div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>{% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}<div class="bl-title">{{ article.title }}</div><div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div><div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div></a>{%- endfor -%}</div>{%- else -%}<div class="blog-grid fade-up" data-render="blogs" data-count="3"></div>{%- endif -%}
       </div>
     </section>
 
