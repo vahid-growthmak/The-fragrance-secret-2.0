@@ -1,0 +1,30 @@
+{%- comment -%} Global "sign in / create account" band above the footer. Hidden for logged-in customers. {%- endcomment -%}
+{%- unless customer -%}
+<section class="section customer-login-cta">
+  <div class="container">
+    <div class="cta-band">
+      <span class="label" style="color:var(--gold)">{{ section.settings.eyebrow }}</span>
+      <h2 class="sec-title">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subtext != blank -%}<p class="sec-sub">{{ section.settings.subtext }}</p>{%- endif -%}
+      <div class="cta-actions">
+        <a class="btn-g" href="{{ routes.account_login_url }}"><span class="mi" aria-hidden="true">person</span>{{ section.settings.login_label }}</a>
+        <a class="btn-o" href="{{ routes.account_register_url }}">{{ section.settings.register_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Customer login CTA",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Members Save More" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Sign in for a faster checkout" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Create an account to track orders, save your details, reorder in one tap, and keep a wishlist across every device." },
+    { "type": "text", "id": "login_label", "label": "Sign-in button", "default": "Sign In" },
+    { "type": "text", "id": "register_label", "label": "Register button", "default": "Create Account" }
+  ],
+  "presets": [ { "name": "Customer login CTA" } ]
+}
+{% endschema %}
