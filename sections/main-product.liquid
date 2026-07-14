@@ -18,6 +18,10 @@
   assign notes_heart = product.metafields.custom.notes_heart.value
   assign notes_base = product.metafields.custom.notes_base.value
   assign badge = product.metafields.custom.badge.value | default: 'Bestseller'
+  assign mf = product.metafields.custom
+  assign fragrance_experience = mf.fragrance_experience.value
+  assign best_for_details = mf.best_for_details.value
+  assign faq = mf.faq.value
 -%}
 
 <main-product class="page active" id="product" data-product>
@@ -161,36 +165,82 @@
             <div class="quiz-container-wrap"></div>
           </div>
 
-          <!-- TABS -->
+          <!-- TABS — one per detail section, driven by metafields -->
           <div class="pdp-tabs">
             <div class="tab-header">
               <button type="button" class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+              {%- if fragrance_experience != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'exp')">Fragrance Experience</button>{%- endif -%}
+              {%- if best_for_details != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'bestfor')">Best For</button>{%- endif -%}
+              <button type="button" class="tab-btn" onclick="switchTab(this,'specs')">Specifications</button>
+              {%- if faq != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'faq')">FAQ</button>{%- endif -%}
               <button type="button" class="tab-btn" onclick="switchTab(this,'ship')">Shipping &amp; Returns</button>
-              <button type="button" class="tab-btn" onclick="switchTab(this,'info')">Additional Info</button>
             </div>
             <div class="tab-content">
+              <!-- Description -->
               <div class="tab-pane active" id="desc">
-                {%- if product.description != blank -%}
-                  {{ product.description }}
-                {%- else -%}
-                  <h4>Why You'll Love It</h4>
-                  <p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>
-                {%- endif -%}
+                {%- if product.description != blank -%}{{ product.description }}
+                {%- else -%}<p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>{%- endif -%}
               </div>
+
+              <!-- Fragrance Experience -->
+              {%- if fragrance_experience != blank -%}
+              <div class="tab-pane" id="exp"><p>{{ fragrance_experience | newline_to_br }}</p></div>
+              {%- endif -%}
+
+              <!-- Best For -->
+              {%- if best_for_details != blank -%}
+              <div class="tab-pane" id="bestfor">
+                <ul>
+                  {%- assign bf_lines = best_for_details | strip | newline_to_br | split: '<br />' -%}
+                  {%- for line in bf_lines -%}{%- assign l = line | strip -%}{%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}{%- endfor -%}
+                </ul>
+              </div>
+              {%- endif -%}
+
+              <!-- Specifications -->
+              <div class="tab-pane" id="specs">
+                <table class="spec-table">
+                  {%- if product.vendor != blank -%}<tr><td>Brand</td><td>{{ product.vendor }}</td></tr>{%- endif -%}
+                  {%- if mf.fragrance_family.value != blank -%}<tr><td>Fragrance Family</td><td>{{ mf.fragrance_family.value }}</td></tr>{%- endif -%}
+                  {%- if mf.concentration.value != blank -%}<tr><td>Concentration</td><td>{{ mf.concentration.value }}</td></tr>{%- endif -%}
+                  {%- if mf.size.value != blank -%}<tr><td>Size</td><td>{{ mf.size.value }}</td></tr>{%- elsif cv.title != 'Default Title' -%}<tr><td>Size</td><td>{{ cv.title }}</td></tr>{%- endif -%}
+                  {%- if mf.product_form.value != blank -%}<tr><td>Product Form</td><td>{{ mf.product_form.value }}</td></tr>{%- endif -%}
+                  {%- if mf.dispenser.value != blank -%}<tr><td>Dispenser</td><td>{{ mf.dispenser.value }}</td></tr>{%- endif -%}
+                  {%- if mf.gender.value != blank -%}<tr><td>Gender</td><td>{{ mf.gender.value }}</td></tr>{%- endif -%}
+                  {%- if mf.occasion.value != blank -%}<tr><td>Occasion</td><td>{{ mf.occasion.value }}</td></tr>{%- endif -%}
+                  {%- if mf.longevity.value != blank -%}<tr><td>Longevity</td><td>{{ mf.longevity.value }}</td></tr>{%- endif -%}
+                  {%- if mf.sillage.value != blank -%}<tr><td>Sillage</td><td>{{ mf.sillage.value }}</td></tr>{%- endif -%}
+                  {%- if origin != blank -%}<tr><td>Origin</td><td>{{ origin }}</td></tr>{%- endif -%}
+                  {%- if mf.bottle_colour.value != blank -%}<tr><td>Bottle Colour</td><td>{{ mf.bottle_colour.value }}</td></tr>{%- endif -%}
+                  {%- if mf.ships_to.value != blank -%}<tr><td>Ships To</td><td>{{ mf.ships_to.value }}</td></tr>{%- endif -%}
+                  {%- if mf.barcode.value != blank -%}<tr><td>Barcode</td><td>{{ mf.barcode.value }}</td></tr>{%- endif -%}
+                </table>
+              </div>
+
+              <!-- FAQ -->
+              {%- if faq != blank -%}
+              <div class="tab-pane" id="faq">
+                <div class="faq-list">
+                  {%- assign faq_lines = faq | strip | newline_to_br | split: '<br />' -%}
+                  {%- for line in faq_lines -%}
+                    {%- assign qa = line | split: ' :: ' -%}
+                    {%- if qa.size >= 2 -%}
+                      <details class="faq-item">
+                        <summary class="faq-q">{{ qa[0] | strip }}<span class="mi" aria-hidden="true">add</span></summary>
+                        <div class="faq-a">{{ qa[1] | strip }}</div>
+                      </details>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+              {%- endif -%}
+
+              <!-- Shipping & Returns -->
               <div class="tab-pane" id="ship">
                 <h4>Delivery Information</h4>
                 <p>Free delivery across UAE on all orders above AED 150. Standard delivery takes 2–4 business days. Express same-day delivery available in Dubai for orders placed before 2PM.</p>
                 <h4>Returns Policy</h4>
                 <p>We offer a 7-day hassle-free return policy on all unopened, sealed products. Simply contact our team via WhatsApp and we'll arrange a collection.</p>
-              </div>
-              <div class="tab-pane" id="info">
-                <ul>
-                  <li><strong>Brand:</strong> {{ brand }}</li>
-                  <li><strong>Type:</strong> {{ product.type | default: 'Eau de Parfum (EDP)' }}</li>
-                  {%- if cv.title != 'Default Title' -%}<li><strong>Volume:</strong> {{ cv.title }}</li>{%- endif -%}
-                  <li><strong>Origin:</strong> {{ origin }}</li>
-                  {%- if product.metafields.custom.barcode.value -%}<li><strong>Barcode:</strong> {{ product.metafields.custom.barcode.value }}</li>{%- endif -%}
-                </ul>
               </div>
             </div>
           </div>
