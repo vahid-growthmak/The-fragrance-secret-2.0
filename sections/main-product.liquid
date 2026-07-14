@@ -169,8 +169,7 @@
           <div class="pdp-tabs">
             <div class="tab-header">
               <button type="button" class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
-              {%- if fragrance_experience != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'exp')">Fragrance Experience</button>{%- endif -%}
-              {%- if best_for_details != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'bestfor')">Best For</button>{%- endif -%}
+              {%- if fragrance_experience != blank or best_for_details != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'exp')">Fragrance Experience</button>{%- endif -%}
               <button type="button" class="tab-btn" onclick="switchTab(this,'specs')">Specifications</button>
               {%- if faq != blank -%}<button type="button" class="tab-btn" onclick="switchTab(this,'faq')">FAQ</button>{%- endif -%}
               <button type="button" class="tab-btn" onclick="switchTab(this,'ship')">Shipping &amp; Returns</button>
@@ -182,18 +181,17 @@
                 {%- else -%}<p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>{%- endif -%}
               </div>
 
-              <!-- Fragrance Experience -->
-              {%- if fragrance_experience != blank -%}
-              <div class="tab-pane" id="exp"><p>{{ fragrance_experience | newline_to_br }}</p></div>
-              {%- endif -%}
-
-              <!-- Best For -->
-              {%- if best_for_details != blank -%}
-              <div class="tab-pane" id="bestfor">
+              <!-- Fragrance Experience (with Best For) -->
+              {%- if fragrance_experience != blank or best_for_details != blank -%}
+              <div class="tab-pane" id="exp">
+                {%- if fragrance_experience != blank -%}<p>{{ fragrance_experience | newline_to_br }}</p>{%- endif -%}
+                {%- if best_for_details != blank -%}
+                <h4>Best For</h4>
                 <ul>
                   {%- assign bf_lines = best_for_details | strip | newline_to_br | split: '<br />' -%}
                   {%- for line in bf_lines -%}{%- assign l = line | strip -%}{%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}{%- endfor -%}
                 </ul>
+                {%- endif -%}
               </div>
               {%- endif -%}
 
