@@ -2533,8 +2533,12 @@
     /* BREADCRUMB HERO */
     .pdp-hero {
       background: var(--cream-dk);
-      padding: 80px 0 40px;
+      padding: 18px 0;
       border-bottom: 1px solid rgba(0, 0, 0, .07)
+    }
+
+    .pdp-hero .breadcrumb {
+      margin-bottom: 0
     }
 
     .pdp-hero-inner {
@@ -2574,7 +2578,7 @@
 
     @media(max-width:600px) {
       .pdp-hero {
-        padding: 48px 0 24px
+        padding: 14px 0
       }
 
       .pdp-hero-title {
