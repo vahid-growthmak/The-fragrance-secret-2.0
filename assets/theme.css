@@ -2709,7 +2709,7 @@
     }
 
     .pdp-title {
-      font-family: var(--fd);
+      font-family: var(--fb);
       font-size: clamp(1.5rem, 2.2vw, 2rem);
       font-weight: 700;
       color: var(--ink);
