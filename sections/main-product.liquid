@@ -88,26 +88,6 @@
             {%- endif -%}
           </div>
 
-          <!-- KEY INFO -->
-          <div class="key-info">
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">schedule</span></div><div class="ki-label">Longevity</div><div class="ki-val">{{ longevity }}</div></div>
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">air</span></div><div class="ki-label">Sillage</div><div class="ki-val">{{ sillage }}</div></div>
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">person</span></div><div class="ki-label">Best For</div><div class="ki-val">{{ best_for }}</div></div>
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Origin</div><div class="ki-val">{{ origin }}</div></div>
-          </div>
-
-          <!-- FRAGRANCE NOTES -->
-          {%- if notes_top or notes_heart or notes_base -%}
-          <div class="notes-block">
-            <div class="notes-title">Fragrance Notes</div>
-            <div class="notes-row">
-              {%- if notes_top -%}<span class="note-tag"><strong>Top</strong>{{ notes_top }}</span>{%- endif -%}
-              {%- if notes_heart -%}<span class="note-tag"><strong>Heart</strong>{{ notes_heart }}</span>{%- endif -%}
-              {%- if notes_base -%}<span class="note-tag"><strong>Base</strong>{{ notes_base }}</span>{%- endif -%}
-            </div>
-          </div>
-          {%- endif -%}
-
           <!-- REASSURANCE -->
           <div class="urgency-block" style="background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.22)">
             <div class="ub-stock" style="color:var(--gold-dk)"><span class="mi" aria-hidden="true">local_shipping</span>
@@ -117,7 +97,7 @@
             <div class="ub-views"><span class="mi" aria-hidden="true">verified_user</span>Authenticity guaranteed · 7-day returns</div>
           </div>
 
-          <!-- CTA BLOCK -->
+          <!-- CTA BLOCK (primary action — kept above the fold) -->
           <div class="cta-block">
             <div class="qty-row">
               <div class="qty-wrap">
@@ -140,6 +120,26 @@
             </button>
             {%- endif -%}
           </div>
+
+          <!-- KEY INFO -->
+          <div class="key-info">
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">schedule</span></div><div class="ki-label">Longevity</div><div class="ki-val">{{ longevity }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">air</span></div><div class="ki-label">Sillage</div><div class="ki-val">{{ sillage }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">person</span></div><div class="ki-label">Best For</div><div class="ki-val">{{ best_for }}</div></div>
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Origin</div><div class="ki-val">{{ origin }}</div></div>
+          </div>
+
+          <!-- FRAGRANCE NOTES -->
+          {%- if notes_top or notes_heart or notes_base -%}
+          <div class="notes-block">
+            <div class="notes-title">Fragrance Notes</div>
+            <div class="notes-row">
+              {%- if notes_top -%}<span class="note-tag"><strong>Top</strong>{{ notes_top }}</span>{%- endif -%}
+              {%- if notes_heart -%}<span class="note-tag"><strong>Heart</strong>{{ notes_heart }}</span>{%- endif -%}
+              {%- if notes_base -%}<span class="note-tag"><strong>Base</strong>{{ notes_base }}</span>{%- endif -%}
+            </div>
+          </div>
+          {%- endif -%}
 
           <!-- TRUST -->
           <div class="pdp-trust">
