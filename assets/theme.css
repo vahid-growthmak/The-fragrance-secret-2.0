@@ -2765,9 +2765,9 @@
     }
 
     .pdp-price-now {
-      font-family: var(--fd);
-      font-size: 2rem;
-      font-weight: 400;
+      font-family: var(--fb);
+      font-size: 1.6rem;
+      font-weight: 600;
       color: var(--ink)
     }
 
