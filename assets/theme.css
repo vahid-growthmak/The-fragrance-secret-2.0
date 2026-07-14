@@ -1389,7 +1389,7 @@
     .price-save {
       font-size: .65rem;
       font-weight: 600;
-      color: #C0392B;
+      color: #1A7F4B;
       letter-spacing: .05em
     }
 
@@ -2780,8 +2780,8 @@
     .pdp-price-save {
       font-size: .8rem;
       font-weight: 600;
-      color: #C0392B;
-      background: rgba(192, 57, 43, .08);
+      color: #1A7F4B;
+      background: rgba(26, 127, 75, .1);
       padding: 3px 10px;
       border-radius: 12px
     }
