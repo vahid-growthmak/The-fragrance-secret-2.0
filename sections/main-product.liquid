@@ -79,11 +79,6 @@
             <span class="rv-count">{{ review_count }} reviews</span>
             <a href="#pdp-reviews" class="rv-link">Read reviews</a>
           </div>
-          {%- if product.description != blank -%}
-            <p class="pdp-hook">{{ product.metafields.custom.hook.value | default: product.description | strip_html | truncatewords: 40 }}</p>
-          {%- else -%}
-            <p class="pdp-hook">A bold, long-lasting scent crafted for unforgettable moments — where warmth meets mystery and confidence becomes your signature.</p>
-          {%- endif -%}
           <div class="pdp-price-row" data-price-row>
             <span class="pdp-price-now">{{ cv.price | money }}</span>
             {%- if cv.compare_at_price > cv.price -%}
