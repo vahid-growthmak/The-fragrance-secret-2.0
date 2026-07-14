@@ -256,6 +256,46 @@
     </div>
   </section>
 
+  <!-- MORE FROM THIS BRAND -->
+  {%- assign brand_count = 0 -%}
+  {%- for p in collections.all.products -%}
+    {%- if p.vendor == product.vendor and p.id != product.id -%}{%- assign brand_count = brand_count | plus: 1 -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if brand_count > 0 -%}
+  <section class="related">
+    <div class="related-inner">
+      <div class="related-head fade-up"><span class="label">The House</span><h2 class="sec-title">More from <em>{{ product.vendor }}</em></h2></div>
+      <div class="products-grid">
+        {%- assign shown = 0 -%}
+        {%- for p in collections.all.products -%}
+          {%- if p.vendor == product.vendor and p.id != product.id and shown < 4 -%}
+            {% render 'product-card', product: p %}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div style="text-align:center;margin-top:30px">
+        <a class="btn-o" href="/collections/vendors?q={{ product.vendor | url_encode }}" style="color:var(--ink);border-color:rgba(13,10,6,.28)">View all {{ product.vendor }} perfumes<span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  <!-- BEST SELLERS -->
+  {%- if collections['best-sellers'].products.size > 0 -%}
+  <section class="related">
+    <div class="related-inner">
+      <div class="related-head fade-up"><span class="label">Loved by Many</span><h2 class="sec-title">Our <em>Best Sellers</em></h2></div>
+      <div class="products-grid">
+        {%- assign shown = 0 -%}
+        {%- for p in collections['best-sellers'].products -%}
+          {%- if p.id != product.id and shown < 4 -%}{% render 'product-card', product: p %}{%- assign shown = shown | plus: 1 -%}{%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
   <!-- STICKY ATC BAR -->
   <div class="sticky-atc" id="stickyatc">
     <div class="sticky-atc-inner">
