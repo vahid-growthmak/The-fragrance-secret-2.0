@@ -1,0 +1,16 @@
+{%- comment -%}
+  Payment method row. Visa / Mastercard / Apple Pay / Google Pay use Shopify's
+  official payment icons (payment_type_svg_tag). Tabby / Tamara / COD are brand
+  badges (not part of Shopify's icon set). Usage: {% render 'pay-icons' %}
+{%- endcomment -%}
+<div class="pay-icons-row" aria-label="Payment options">
+  <span class="pay-chip pay-cod" title="Cash on Delivery">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/></svg>COD
+  </span>
+  <span class="pay-chip pay-tabby" title="Tabby">tabby</span>
+  <span class="pay-chip pay-tamara" title="Tamara">tamara</span>
+  {{ 'apple_pay' | payment_type_svg_tag }}
+  {{ 'google_pay' | payment_type_svg_tag }}
+  {{ 'visa' | payment_type_svg_tag }}
+  {{ 'master' | payment_type_svg_tag }}
+</div>

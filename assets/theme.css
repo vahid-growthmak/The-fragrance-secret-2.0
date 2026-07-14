@@ -3265,6 +3265,56 @@
       margin-bottom: 4px
     }
 
+    /* Payment method icons */
+    .pay-icons-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 14px 0 4px
+    }
+
+    .pay-icons-row svg.payment-icon,
+    .pay-icons-row > svg {
+      height: 26px;
+      width: auto;
+      border-radius: 4px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .08)
+    }
+
+    .pay-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 26px;
+      padding: 0 11px;
+      border-radius: 4px;
+      font-family: var(--fb);
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .01em
+    }
+
+    .pay-chip svg {
+      height: 15px;
+      width: auto
+    }
+
+    .pay-chip.pay-tabby {
+      background: #3EE9C3;
+      color: #08243F
+    }
+
+    .pay-chip.pay-tamara {
+      background: #FE5A3C;
+      color: #fff
+    }
+
+    .pay-chip.pay-cod {
+      background: var(--charcoal);
+      color: var(--gold-lt)
+    }
+
     /* Specifications — two-column grid */
     .spec-grid {
       display: grid;
