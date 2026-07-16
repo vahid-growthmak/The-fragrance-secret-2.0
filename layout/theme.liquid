@@ -10,8 +10,8 @@
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 48, height: 48 }}">
     <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180, height: 180 }}">
   {%- else -%}
-    {%- comment -%} On-brand default favicon: gold "FS" monogram on ink (inline SVG) {%- endcomment -%}
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230D0A06'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Georgia,%20serif'%20font-size='15'%20font-weight='700'%20fill='%23C9A84C'%20text-anchor='middle'%3EFS%3C/text%3E%3C/svg%3E">
+    {%- comment -%} Default favicon: the store logo (theme asset) {%- endcomment -%}
+    <link rel="icon" type="image/png" href="{{ 'logo.png' | asset_url }}">
     <link rel="apple-touch-icon" href="{{ 'logo.png' | asset_url }}">
   {%- endif -%}
 
