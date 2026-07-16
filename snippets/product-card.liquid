@@ -39,9 +39,7 @@
   <div class="prod-info">
     {%- if product.vendor != blank -%}<div class="prod-brand">{{ product.vendor }}</div>{%- endif -%}
     <div class="prod-name">{{ product.title }}</div>
-    {%- if rating -%}
-      <div class="prod-rating">{% render 'star-rating', rating: rating %}<span>({{ review_count | default: 0 }})</span></div>
-    {%- endif -%}
+    <div class="prod-rating"><div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>{{ product.metafields.judgeme.badge }}</div></div>
     <div class="prod-price">
       <span class="price-now">{{ product.price | money }}</span>
       {%- if product.compare_at_price > product.price -%}

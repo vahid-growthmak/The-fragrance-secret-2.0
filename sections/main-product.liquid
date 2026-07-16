@@ -75,9 +75,9 @@
           <div class="pdp-brand">{{ brand }}</div>
           <h1 class="pdp-title">{{ product.title }}</h1>
           <div class="pdp-rating-row">
-            {% render 'star-rating', rating: rating %}
-            <span class="rv-count">{{ review_count }} reviews</span>
-            <a href="#pdp-reviews" class="rv-link">Read reviews</a>
+            <!-- Judge.me preview badge -->
+            <div style='clear:both'></div>
+            <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-template='product'>{{ product.metafields.judgeme.badge }}</div>
           </div>
           <div class="pdp-price-row" data-price-row>
             <span class="pdp-price-now">{{ cv.price | money }}</span>
