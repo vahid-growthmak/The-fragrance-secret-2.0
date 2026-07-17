@@ -3493,6 +3493,78 @@
     .pdp-reviews .reviews-head .sec-title em { color: var(--gold-dk) }
     .pdp-reviews .reviews-head .sec-sub { color: var(--warm) }
 
+    /* ══════ Judge.me — brand alignment ══════ */
+    .jdgm-rev-widg,
+    .jdgm-all-reviews-page,
+    .jdgm-widget {
+      font-family: var(--fb);
+      color: var(--ink)
+    }
+
+    .jdgm-rev-widg__title,
+    .jdgm-all-reviews-page__title {
+      font-family: var(--fd);
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink)
+    }
+
+    /* Stars → brand gold */
+    .jdgm-star.jdgm--on,
+    .jdgm-star.jdgm--half {
+      color: var(--gold) !important
+    }
+
+    .jdgm-star.jdgm--off {
+      color: var(--cream-dk) !important
+    }
+
+    /* Buttons (Write a review, submit, pagination current) → brand gold */
+    .jdgm-write-rev-link,
+    .jdgm-btn,
+    .jdgm-submit-rev,
+    .jdgm-paginate__page.jdgm-curt {
+      background-color: var(--gold) !important;
+      color: var(--ink) !important;
+      border: none !important;
+      border-radius: 3px !important;
+      box-shadow: none !important;
+      font-family: var(--fb);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: none
+    }
+
+    .jdgm-write-rev-link:hover,
+    .jdgm-btn:hover,
+    .jdgm-submit-rev:hover {
+      background-color: var(--gold-lt) !important;
+      color: var(--ink) !important
+    }
+
+    /* Histogram bars + links */
+    .jdgm-histogram__bar-content {
+      background: var(--gold) !important
+    }
+
+    .jdgm-rev-widg a,
+    .jdgm-ask-question-link,
+    .jdgm-rev__prod-link {
+      color: var(--gold-dk) !important
+    }
+
+    /* Review form fields */
+    .jdgm-form input[type='text'],
+    .jdgm-form input[type='email'],
+    .jdgm-form textarea,
+    .jdgm-form select {
+      border: 1px solid rgba(13, 10, 6, .15) !important;
+      border-radius: 4px !important;
+      font-family: var(--fb)
+    }
+
     /* RELATED */
     .related {
       padding: 80px 0;
