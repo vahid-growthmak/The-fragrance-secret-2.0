@@ -26,7 +26,8 @@
       ], "default": "dark" },
       { "type": "select", "id": "text_direction", "label": "Text direction", "options": [
         { "value": "ltr", "label": "Left to right" }, { "value": "rtl", "label": "Right to left" }
-      ], "default": "ltr" }
+      ], "default": "ltr" },
+      { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number", "info": "With country code, digits only (e.g. 971501234567). Used by the WhatsApp float and concierge." }
     ]
   }
 ]

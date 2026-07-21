@@ -81,7 +81,7 @@ const IMG = {
 /* ═══════════════════════════════════════
    SMALL HELPERS
 ═══════════════════════════════════════ */
-function money(n) { return 'AED ' + Number(n).toLocaleString('en-AE'); }
+function money(n) { return (window.CURRENCY || 'AED') + ' ' + Number(n).toLocaleString('en-AE'); }
 function savePct(price, was) { return Math.round((1 - price / was) * 100); }
 function qs(name) { return new URLSearchParams(location.search).get(name); }
 function el(id) { return document.getElementById(id); }
@@ -99,6 +99,63 @@ function assetURL(p) {
   return (window.ASSET_BASE || 'assets/img/') + String(p).split('/').pop();
 }
 
+/* ═══════════════════════════════════════
+   LIVE CATALOGUE — replace the demo products with the store's real,
+   published products (Shopify storefront /products.json) so the concierge
+   recommends, links, and adds real items. Runs at init; the demo data
+   remains only as an offline fallback.
+═══════════════════════════════════════ */
+const FAMILY_TAGS = {
+  'family-oud-woody': 'Oud & Woody',
+  'family-fresh-citrus': 'Fresh & Citrus',
+  'family-floral-rose': 'Floral & Rose',
+  'family-sweet-gourmand': 'Sweet & Gourmand',
+  'family-spicy-oriental': 'Spicy & Oriental',
+};
+function loadLiveCatalog() {
+  fetch('/products.json?limit=250', { headers: { 'Accept': 'application/json' } })
+    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (data) {
+      var live = (data.products || []).map(function (p) {
+        var tags = Array.isArray(p.tags) ? p.tags : String(p.tags || '').split(',').map(function (t) { return t.trim(); });
+        var v = (p.variants && p.variants[0]) || {};
+        var family = '', gender = 'Unisex', badge = '', badgeClass = 'badge-best';
+        tags.forEach(function (t) {
+          if (FAMILY_TAGS[t]) family = FAMILY_TAGS[t];
+          if (t === 'mens') gender = 'Men';
+          if (t === 'womens') gender = 'Women';
+          if (t === 'kids') gender = 'Kids';
+        });
+        if (tags.indexOf('bestseller') > -1) { badge = 'Bestseller'; badgeClass = 'badge-best'; }
+        else if (tags.indexOf('new-arrival') > -1) { badge = 'New'; badgeClass = 'badge-new'; }
+        else if (tags.indexOf('sale') > -1) { badge = 'Sale'; badgeClass = 'badge-sale'; }
+        return {
+          id: p.id, brand: p.vendor || '', name: p.title || '',
+          price: parseFloat(v.price) || 0,
+          was: parseFloat(v.compare_at_price) || 0,
+          badge: badge, badgeClass: badgeClass,
+          rating: 4.8, reviews: 0,
+          family: family, gender: gender, occasion: '',
+          img: (p.images && p.images[0] && p.images[0].src) || '',
+          url: '/products/' + p.handle,
+          variantId: v.id,
+        };
+      }).filter(function (p) { return p.name && p.price > 0; });
+      if (live.length) {
+        products.length = 0;
+        Array.prototype.push.apply(products, live);
+        // Teach the concierge any live vendor it doesn't already know
+        var known = {};
+        brands.forEach(function (b) { known[b.toLowerCase()] = 1; });
+        live.forEach(function (p) {
+          var b = (p.brand || '').trim();
+          if (b && !known[b.toLowerCase()]) { known[b.toLowerCase()] = 1; brands.push(b); }
+        });
+      }
+    })
+    .catch(function () { /* offline/preview — keep the demo catalogue */ });
+}
+
 function starsHTML(r) {
   return Array.from({ length: 5 }, (_, i) =>
     `<span class="mi mi-f" aria-hidden="true" style="color:${i < Math.round(r) ? 'var(--gold)' : 'var(--cream-dk)'}">star</span>`
@@ -109,13 +166,13 @@ function starsHTML(r) {
    REUSABLE CARD RENDERERS
 ═══════════════════════════════════════ */
 function productCardHTML(p) {
-  return `<div class="prod-card fade-up" onclick="location.href='${R('product.html')}'">
+  return `<div class="prod-card fade-up" onclick="location.href='${p.url || R('product.html')}'">
     <div class="prod-img-wrap">
       <img class="prod-img" src="${assetURL(p.img)}" alt="${esc(p.name)}" loading="lazy"/>
-      <div class="prod-badge ${p.badgeClass}">${p.badge}</div>
+      ${p.badge ? `<div class="prod-badge ${p.badgeClass}">${p.badge}</div>` : ''}
       <div class="prod-actions">
         <button class="pa-btn" title="Wishlist" onclick="event.stopPropagation();toast('♡ Saved to wishlist')"><span class="mi" aria-hidden="true">favorite</span></button>
-        <button class="pa-btn quick-add" onclick="event.stopPropagation();addToCart('${esc(p.name).replace(/'/g, "\\'")}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
+        <button class="pa-btn quick-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${esc(p.name).replace(/'/g, "\\'")}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
       </div>
     </div>
     <div class="prod-info">
@@ -433,7 +490,13 @@ function toggleMobileNav() {
     const ic = b.querySelector('.mi'); if (ic) ic.textContent = open ? 'close' : 'menu';
   }
 }
-function waChat() { toast('Opening WhatsApp chat with our team…'); }
+function waChat() {
+  if (window.WHATSAPP_NUMBER) {
+    window.open('https://wa.me/' + String(window.WHATSAPP_NUMBER).replace(/[^0-9]/g, ''), '_blank');
+  } else {
+    toast('Opening WhatsApp chat with our team…');
+  }
+}
 
 /* ═══════════════════════════════════════
    HEADER SCROLL + FADE-UP OBSERVER
@@ -458,7 +521,7 @@ function observeFadeUps() {
 /* ═══════════════════════════════════════
    CART + TOAST
 ═══════════════════════════════════════ */
-let cartCount = 3;
+let cartCount = 0; // synced from the Liquid-rendered badge at init
 function bumpCart(n) { cartCount += (n || 1); document.querySelectorAll('.cbadge').forEach(b => b.textContent = cartCount); }
 function toast(msg) {
   const t = document.createElement('div');
@@ -469,6 +532,26 @@ function toast(msg) {
   setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(10px)'; setTimeout(() => t.remove(), 350); }, 2300);
 }
 function addToCart(name, qty) { bumpCart(qty || 1); toast('✓ Added to cart — ' + name); }
+
+/* Real Shopify cart add by variant id (used by the concierge and any live card).
+   Falls back to the demo toast when no variant id is available. */
+function addLiveToCart(variantId, name, qty) {
+  if (!variantId) { addToCart(name, qty); return; }
+  fetch((window.routes && window.routes.cart_add_url) || '/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ items: [{ id: variantId, quantity: qty || 1 }] })
+  }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function () {
+      return fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); });
+    })
+    .then(function (c) {
+      cartCount = c.item_count;
+      document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = cartCount; });
+      toast('✓ Added to cart — ' + name);
+    })
+    .catch(function () { toast('Could not add to cart — please try again'); });
+}
 
 /* Native Shopify cart line change (quantity update / remove). Posts to the
    cart change endpoint by line-item key, then reloads to re-render totals. */
@@ -555,14 +638,16 @@ function aiChips(items) {
   b.appendChild(w); aiScroll();
 }
 function aiRecCard(p) {
+  const safeName = esc(p.name).replace(/'/g, "\\'");
+  const go = p.url ? ` style="cursor:pointer" onclick="location.href='${p.url}'"` : '';
   return `<div class="ai-rec">
-    <img src="${assetURL(p.img)}" alt="${esc(p.name)}"/>
-    <div class="ai-rec-info">
+    <img src="${assetURL(p.img)}" alt="${esc(p.name)}"${go}/>
+    <div class="ai-rec-info"${go}>
       <div class="ai-rec-brand">${esc(p.brand)}</div>
       <div class="ai-rec-name">${esc(p.name)}</div>
-      <div class="ai-rec-price">${money(p.price)} <s>${money(p.was)}</s></div>
+      <div class="ai-rec-price">${money(p.price)}${p.was ? ` <s>${money(p.was)}</s>` : ''}</div>
     </div>
-    <button class="ai-rec-add" onclick="addToCart('${esc(p.name).replace(/'/g, "\\'")}')">Add</button>
+    <button class="ai-rec-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${safeName}')">Add</button>
   </div>`;
 }
 function aiPushRec(p) { const b = el('aiBody'); if (b) { b.insertAdjacentHTML('beforeend', aiRecCard(p)); aiScroll(); } }
@@ -882,6 +967,10 @@ function initCountdowns() {
 ═══════════════════════════════════════ */
 function initApp() {
   if (!document.body.hasAttribute('data-no-chrome')) mountChrome();
+  // Sync the JS cart counter with the Liquid-rendered badge (real cart count)
+  const badge = document.querySelector('.cbadge');
+  if (badge) cartCount = parseInt(badge.textContent, 10) || 0;
+  loadLiveCatalog();
   hydrateRenderables();
   initHeaderScroll();
   initThumbs();

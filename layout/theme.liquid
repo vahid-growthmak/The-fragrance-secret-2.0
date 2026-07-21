@@ -47,6 +47,8 @@
   <script>
     /* Base URL for the flat Shopify assets/ folder, consumed by IMG() in app.js */
     window.ASSET_BASE = {{ 'logo.png' | asset_url | split: 'logo.png' | first | json }};
+    window.CURRENCY = {{ cart.currency.iso_code | default: shop.currency | json }};
+    window.WHATSAPP_NUMBER = {{ settings.whatsapp_number | json }};
     window.routes = {
       cart_url: {{ routes.cart_url | json }},
       cart_add_url: {{ routes.cart_add_url | json }},
