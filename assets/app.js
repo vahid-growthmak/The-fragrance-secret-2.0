@@ -674,6 +674,20 @@ function pickProducts(keys) {
   const res = products.filter(p => keys.some(k => (p.name + ' ' + p.brand).toLowerCase().includes(k.toLowerCase())));
   return (res.length ? res : products).slice(0, 3);
 }
+/* Live-catalogue pickers — match on the mapped family/gender/badge fields
+   (set by loadLiveCatalog) rather than demo product names. */
+function pickByFamily(fams) {
+  let res = products.filter(p => fams.indexOf(p.family) > -1);
+  if (!res.length) res = products.filter(p => p.badge === 'Bestseller');
+  if (!res.length) res = products;
+  return res.slice(0, 3);
+}
+function bestsellers(pool) {
+  pool = pool || products;
+  let res = pool.filter(p => p.badge === 'Bestseller');
+  if (!res.length) res = pool;
+  return res.slice(0, 3);
+}
 function flashEscalate() {
   const e = document.querySelector('.ai-escalate'); if (!e) return;
   e.style.background = 'rgba(37,211,102,.24)';
@@ -716,13 +730,28 @@ function aiRespond(q) {
     return;
   }
   let recs = [];
-  if (/oud|woody|\bwood\b|amber/.test(q)) recs = pickProducts(['Oud', 'Wood', 'Amber']);
-  else if (/fresh|citrus|light|summer|clean/.test(q)) recs = pickProducts(['Silver', 'Hawas', 'Cedrat']);
-  else if (/floral|rose|sweet|gourmand|vanilla/.test(q)) recs = pickProducts(['Raghba', 'Amber', 'Bouquet']);
-  else if (/gift|\bhim\b|\bher\b|present|eid|husband|wife/.test(q)) recs = products.filter(p => p.badge === 'Bestseller').slice(0, 3);
-  else if (/under|budget|cheap|affordable|\b1[0-5]0\b|\b1[0-2][0-9]\b/.test(q)) recs = products.filter(p => p.price <= 150).slice(0, 3);
-  else if (/evening|night|date|long|last|strong|projection|beast/.test(q)) recs = pickProducts(['Oud', 'Amber', 'Shaghaf']);
-  else if (/signature|recommend|suggest|match|best|popular|surprise|not sure|don.?t know/.test(q)) recs = products.filter(p => p.badge === 'Bestseller').slice(0, 3);
+  if (/under|budget|cheap|affordable|less than|below|\bmax\b/.test(q)) {
+    // Budget intent — honour a number if the visitor gave one ("under 120")
+    const m = q.match(/\b(\d{2,4})\b/);
+    const cap = m ? parseInt(m[1], 10) : 150;
+    recs = products.filter(p => p.price > 0 && p.price <= cap).sort((a, b) => b.price - a.price).slice(0, 3);
+    if (!recs.length) recs = products.slice().sort((a, b) => a.price - b.price).slice(0, 3);
+  }
+  else if (/oud|woody|\bwood\b/.test(q)) recs = pickByFamily(['Oud & Woody']);
+  else if (/spic|oriental|amber|\bwarm\b/.test(q)) recs = pickByFamily(['Spicy & Oriental', 'Oud & Woody']);
+  else if (/fresh|citrus|light|summer|clean|sport|gym/.test(q)) recs = pickByFamily(['Fresh & Citrus']);
+  else if (/floral|rose|\bsoft\b/.test(q)) recs = pickByFamily(['Floral & Rose']);
+  else if (/sweet|gourmand|vanilla|coffee/.test(q)) recs = pickByFamily(['Sweet & Gourmand']);
+  else if (/gift|present|eid|\bhim\b|\bher\b|husband|wife|father|mother|\bdad\b|\bmom\b|brother|sister/.test(q)) {
+    let pool = products;
+    if (/\bhim\b|husband|father|\bdad\b|brother/.test(q)) pool = products.filter(p => p.gender === 'Men' || p.gender === 'Unisex');
+    else if (/\bher\b|wife|mother|\bmom\b|sister/.test(q)) pool = products.filter(p => p.gender === 'Women' || p.gender === 'Unisex');
+    recs = bestsellers(pool.length ? pool : products);
+  }
+  else if (/\bmen\b|masculine|for guys/.test(q)) recs = bestsellers(products.filter(p => p.gender === 'Men' || p.gender === 'Unisex'));
+  else if (/women|feminine|for ladies/.test(q)) recs = bestsellers(products.filter(p => p.gender === 'Women' || p.gender === 'Unisex'));
+  else if (/evening|night|date|long|last|strong|projection|beast/.test(q)) recs = pickByFamily(['Oud & Woody', 'Spicy & Oriental']);
+  else if (/signature|recommend|suggest|match|best|popular|surprise|not sure|don.?t know/.test(q)) recs = bestsellers();
   if (recs.length) {
     aiPush("Based on that, here's what I'd reach for — all in stock and great value:");
     recs.forEach(aiPushRec);
