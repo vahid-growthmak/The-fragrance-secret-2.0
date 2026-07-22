@@ -10,20 +10,7 @@
 /* ═══════════════════════════════════════
    CATALOGUE DATA
 ═══════════════════════════════════════ */
-const products = [
-  { id: 1, brand: 'Ahmed Al Maghribi', name: 'Bouquet of Oud EDP', price: 189, was: 280, badge: 'Bestseller', badgeClass: 'badge-best', rating: 4.9, reviews: 1284, family: 'Oud & Woody', gender: 'Unisex', occasion: 'Evening', img: 'assets/img/prod-bouquet-oud.png' },
-  { id: 2, brand: 'Lattafa', name: 'Badee Al Oud Honor & Glory', price: 149, was: 220, badge: 'New', badgeClass: 'badge-new', rating: 4.7, reviews: 892, family: 'Sweet & Gourmand', gender: 'Unisex', occasion: 'Daily', img: 'assets/img/prod-badee-al-oud.jpg' },
-  { id: 3, brand: 'Armaf', name: 'Club de Nuit Précieux', price: 129, was: 180, badge: 'Sale', badgeClass: 'badge-sale', rating: 4.8, reviews: 2156, family: 'Fresh & Citrus', gender: 'Men', occasion: 'Office', img: 'assets/img/prod-club-de-nuit.jpg' },
-  { id: 4, brand: 'Swiss Arabian', name: 'Shaghaf Oud Elixir', price: 219, was: 320, badge: 'Bestseller', badgeClass: 'badge-best', rating: 4.9, reviews: 641, family: 'Oud & Woody', gender: 'Unisex', occasion: 'Special', img: 'assets/img/prod-shaghaf.png' },
-  { id: 5, brand: 'Rasasi', name: 'Hawas Fire EDP', price: 99, was: 140, badge: 'New', badgeClass: 'badge-new', rating: 4.6, reviews: 478, family: 'Fresh & Citrus', gender: 'Men', occasion: 'Daily', img: 'assets/img/prod-hawas.jpg' },
-  { id: 6, brand: 'Al Haramain', name: 'Amber Oud Gold EDP', price: 259, was: 380, badge: 'Bestseller', badgeClass: 'badge-best', rating: 4.9, reviews: 1102, family: 'Spicy & Oriental', gender: 'Unisex', occasion: 'Evening', img: 'assets/img/prod-amber-oud.jpg' },
-  { id: 7, brand: 'Afnan', name: 'Supremacy Collector\'s Edition', price: 89, was: 130, badge: 'Sale', badgeClass: 'badge-sale', rating: 4.5, reviews: 334, family: 'Fresh & Citrus', gender: 'Men', occasion: 'Gym', img: 'assets/img/prod-supremacy.jpg' },
-  { id: 8, brand: 'Mancera', name: 'Cedrat Boise EDP', price: 349, was: 450, badge: 'New', badgeClass: 'badge-new', rating: 4.8, reviews: 767, family: 'Fresh & Citrus', gender: 'Unisex', occasion: 'Office', img: 'assets/img/prod-cedrat-boise.jpg' },
-  { id: 9, brand: 'Fragrance Secrets', name: 'Coffee Oud EDP', price: 165, was: 240, badge: 'Bestseller', badgeClass: 'badge-best', rating: 4.9, reviews: 1547, family: 'Sweet & Gourmand', gender: 'Unisex', occasion: 'Evening', img: 'assets/img/prod-coffee-oud.jpg' },
-  { id: 10, brand: 'Rasasi', name: 'Ambar Silk EDP', price: 189, was: 260, badge: 'Luxury', badgeClass: 'badge-kit', rating: 4.9, reviews: 421, family: 'Spicy & Oriental', gender: 'Women', occasion: 'Special', img: 'assets/img/prod-ambar-silk.jpg' },
-  { id: 11, brand: 'Fragrance Secrets', name: 'Oud & Roses EDP', price: 79, was: 120, badge: 'Our Brand', badgeClass: 'badge-kit', rating: 4.7, reviews: 356, family: 'Floral & Rose', gender: 'Women', occasion: 'Daily', img: 'assets/img/prod-oud-roses.jpg' },
-  { id: 12, brand: 'Maison Alhambra', name: 'Delilah Blanc EDP', price: 109, was: 160, badge: 'Sale', badgeClass: 'badge-sale', rating: 4.6, reviews: 588, family: 'Floral & Rose', gender: 'Women', occasion: 'Evening', img: 'assets/img/prod-delilah-blanc.jpg' },
-];
+const products = []; // populated from the live store by loadLiveCatalog()
 
 const reviews = [
   { name: 'Fatima Al Rashid', loc: 'Dubai, UAE', text: 'Smells exactly like luxury brands — insane quality for the price! My whole office was asking what I was wearing.', prod: 'Bouquet of Oud EDP', init: 'F', rating: 5 },
@@ -34,15 +21,7 @@ const reviews = [
   { name: 'Omar Al Mansouri', loc: 'Dubai, UAE', text: 'The quality guarantee gives me peace of mind. No more worrying about fakes. Fast delivery, great prices, genuine products.', prod: 'Hawas Fire EDP', init: 'O', rating: 5 },
 ];
 
-const brands = [
-  'Lattafa', 'Armaf', 'Swiss Arabian', 'Ahmed Al Maghribi', 'Al Haramain', 'Rasasi', 'Afnan', 'Mancera',
-  'Amouage', 'Chanel', 'Dior', 'Giorgio Armani', 'Prada', 'Calvin Klein', 'Hugo Boss', 'Davidoff',
-  'Ex Nihilo', 'Jean Paul Gaultier', 'Ard Al Zaafaran', 'Al Wataniah', 'Asdaaf', 'Maison Alhambra',
-  'Zimaya', 'French Avenue', 'Nabeel', 'Al Rehab', 'Paris Corner', 'My Perfumes', 'Bharara', 'Khadlaj',
-  'Ajmal', 'Xerjoff', 'Initio', 'Parfums de Marly', 'Creed', 'Tom Ford', 'Versace', 'Montblanc',
-  'Carolina Herrera', 'Yves Saint Laurent', 'Paco Rabanne', 'Viktor & Rolf', 'Kayali', 'Byredo',
-  'Le Labo', 'Maison Margiela', 'Narciso Rodriguez', 'Roja Parfums',
-];
+const brands = []; // populated from live product vendors by loadLiveCatalog()
 
 const blogs = [
   { cat: 'Comparison Guide', title: 'Best Oud Perfumes in UAE You Should Try in 2026', excerpt: 'Explore top oud fragrances ranked based on longevity, scent profile, and overall performance, from affordable everyday picks to premium luxury collections.', date: 'June 2, 2026', read: '8 min read', img: 'assets/img/ed-1.jpg' },
@@ -61,12 +40,7 @@ const ugcImgs = [
   'assets/img/prod-hawas.jpg',
 ];
 
-const discoveryKits = [
-  { pieces: '5 × 2ml Vials', name: 'Oud Discovery Set', price: 89, was: 150, rating: 4.8, reviews: 412, badge: 'New', img: 'assets/img/kit-oud-trio.png' },
-  { pieces: '4 × 2ml Vials', name: 'Date Night Edit', price: 79, was: 130, rating: 4.7, reviews: 286, badge: 'Popular', img: 'assets/img/kit-date-night.png' },
-  { pieces: '6 × 2ml Vials', name: 'Bestseller Sampler', price: 99, was: 180, rating: 4.9, reviews: 531, badge: 'Bestseller', img: 'assets/img/kit-bestseller.png' },
-  { pieces: '4 × 5ml Travel Sprays', name: 'His & Hers Gift Kit', price: 129, was: 240, rating: 4.8, reviews: 198, badge: 'Gift', img: 'assets/img/kit-gift.jpg' },
-];
+const discoveryKits = []; // no hardcoded kits — use a real discovery-kits collection
 
 /* Shared image pool for hero / editorial imagery */
 const IMG = {
@@ -113,8 +87,19 @@ const FAMILY_TAGS = {
   'family-spicy-oriental': 'Spicy & Oriental',
 };
 function loadLiveCatalog() {
-  fetch('/products.json?limit=250', { headers: { 'Accept': 'application/json' } })
-    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+  // Paginate — the storefront caps each page at 250 and the catalogue is larger
+  var collected = [], MAX_PAGES = 8;
+  function page(n) {
+    return fetch('/products.json?limit=250&page=' + n, { headers: { 'Accept': 'application/json' } })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) {
+        var batch = d.products || [];
+        collected = collected.concat(batch);
+        if (batch.length === 250 && n < MAX_PAGES) return page(n + 1);
+        return { products: collected };
+      });
+  }
+  page(1)
     .then(function (data) {
       var live = (data.products || []).map(function (p) {
         var tags = Array.isArray(p.tags) ? p.tags : String(p.tags || '').split(',').map(function (t) { return t.trim(); });
