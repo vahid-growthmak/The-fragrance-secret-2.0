@@ -139,6 +139,9 @@ function loadLiveCatalog() {
         brands.forEach(function (b) { known[b.toLowerCase()] = 1; });
         live.forEach(function (p) {
           var b = (p.brand || '').trim();
+          // skip junk vendor names ("Gift", "Valentine's Day Offer") — they'd
+          // hijack brand matching in the concierge ("a gift for him" -> brand "Gift")
+          if (/offer|deal|^gift$/i.test(b)) return;
           if (b && !known[b.toLowerCase()]) { known[b.toLowerCase()] = 1; brands.push(b); }
         });
         // Re-render any [data-render] grids so they show live data (fetch is async)
