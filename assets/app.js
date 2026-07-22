@@ -79,13 +79,18 @@ function assetURL(p) {
    recommends, links, and adds real items. Runs at init; the demo data
    remains only as an offline fallback.
 ═══════════════════════════════════════ */
-const FAMILY_TAGS = {
-  'family-oud-woody': 'Oud & Woody',
-  'family-fresh-citrus': 'Fresh & Citrus',
-  'family-floral-rose': 'Floral & Rose',
-  'family-sweet-gourmand': 'Sweet & Gourmand',
-  'family-spicy-oriental': 'Spicy & Oriental',
-};
+/* Bucket any family-* tag (the catalogue has 144 distinct slugs) into the
+   five broad families the concierge and quiz reason about. */
+function familyBucket(tag) {
+  const t = String(tag).replace(/^family-/, '');
+  if (/oud/.test(t)) return 'Oud & Woody';
+  if (/floral|rose|jasmine/.test(t)) return 'Floral & Rose';
+  if (/gourmand|sweet|vanilla|coffee/.test(t)) return 'Sweet & Gourmand';
+  if (/fresh|citrus|aquatic|green|fruity|clean/.test(t)) return 'Fresh & Citrus';
+  if (/spicy|oriental|amber|tobacco|leather|saffron|incense|musk/.test(t)) return 'Spicy & Oriental';
+  if (/woody|wood|smoky|earthy|creamy|aromatic|chypre/.test(t)) return 'Oud & Woody';
+  return '';
+}
 function loadLiveCatalog() {
   // Paginate — the storefront caps each page at 250 and the catalogue is larger
   var collected = [], MAX_PAGES = 8;
@@ -106,7 +111,7 @@ function loadLiveCatalog() {
         var v = (p.variants && p.variants[0]) || {};
         var family = '', gender = 'Unisex', badge = '', badgeClass = 'badge-best';
         tags.forEach(function (t) {
-          if (FAMILY_TAGS[t]) family = FAMILY_TAGS[t];
+          if (!family && t.indexOf('family-') === 0) family = familyBucket(t);
           if (t === 'mens') gender = 'Men';
           if (t === 'womens') gender = 'Women';
           if (t === 'kids') gender = 'Kids';
@@ -125,7 +130,7 @@ function loadLiveCatalog() {
           url: '/products/' + p.handle,
           variantId: v.id,
         };
-      }).filter(function (p) { return p.name && p.price > 0; });
+      }).filter(function (p) { return p.name && p.variantId; }); // price may be 0 pre-launch
       if (live.length) {
         products.length = 0;
         Array.prototype.push.apply(products, live);
@@ -670,7 +675,7 @@ function aiRecCard(p) {
     <div class="ai-rec-info"${go}>
       <div class="ai-rec-brand">${esc(p.brand)}</div>
       <div class="ai-rec-name">${esc(p.name)}</div>
-      <div class="ai-rec-price">${money(p.price)}${p.was ? ` <s>${money(p.was)}</s>` : ''}</div>
+      <div class="ai-rec-price">${p.price > 0 ? money(p.price) : ''}${p.price > 0 && p.was > p.price ? ` <s>${money(p.was)}</s>` : ''}</div>
     </div>
     <button class="ai-rec-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${safeName}')">Add</button>
   </div>`;
@@ -710,6 +715,7 @@ function pickByFamily(fams) {
 function bestsellers(pool) {
   pool = pool || products;
   let res = pool.filter(p => p.badge === 'Bestseller');
+  if (!res.length) res = pool.filter(p => p.family); // prefer real fragrances over accessories/cards
   if (!res.length) res = pool;
   return res.slice(0, 3);
 }
