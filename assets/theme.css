@@ -3347,6 +3347,27 @@
       height: 11px
     }
 
+    /* Collections index — reuses .g-card tiles, responsive + image fallback */
+    .collections-grid {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px
+    }
+
+    .gc-img-fallback {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(120% 90% at 50% 10%, rgba(201, 168, 76, .30), transparent 60%),
+        linear-gradient(160deg, var(--charcoal) 0%, var(--ink) 100%)
+    }
+
+    @media(max-width:520px) {
+      .collections-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
     /* Fragrance family line (above notes) */
     .fragrance-family {
       display: flex;

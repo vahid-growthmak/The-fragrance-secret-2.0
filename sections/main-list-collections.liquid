@@ -9,19 +9,24 @@
 </section>
 
 <section class="section"><div class="container">
-  <div class="cat-grid">
+  <div class="gender-grid collections-grid">
     {%- for collection in collections -%}
-      <a class="cat-card fade-up" href="{{ collection.url }}">
-        <div class="cat-img-wrap">
-          {%- if collection.image -%}
-            <img class="cat-img" src="{{ collection.image | image_url: width: 600 }}" alt="{{ collection.title | escape }}" loading="lazy">
-          {%- elsif collection.products.first.featured_image -%}
-            <img class="cat-img" src="{{ collection.products.first.featured_image | image_url: width: 600 }}" alt="{{ collection.title | escape }}" loading="lazy">
+      {%- liquid
+        assign col_img = collection.image | default: collection.products.first.featured_image
+      -%}
+      <a class="g-card fade-up" href="{{ collection.url }}">
+        {%- if col_img -%}
+          <img class="gc-img" src="{{ col_img | image_url: width: 600 }}" alt="{{ collection.title | escape }}" loading="lazy">
+        {%- else -%}
+          <span class="gc-img gc-img-fallback" aria-hidden="true"></span>
+        {%- endif -%}
+        <div class="gc-overlay"></div>
+        <div class="gc-content">
+          <div class="gc-title">{{ collection.title }}</div>
+          {%- if collection.all_products_count > 0 -%}
+            <div class="gc-count">{{ collection.all_products_count }} Fragrance{% unless collection.all_products_count == 1 %}s{% endunless %}</div>
           {%- endif -%}
-        </div>
-        <div class="cat-info">
-          <h3 class="cat-name">{{ collection.title }}</h3>
-          <span class="cat-count">{{ collection.all_products_count }} products</span>
+          <span class="gc-btn">Explore</span>
         </div>
       </a>
     {%- endfor -%}
