@@ -3604,79 +3604,111 @@
     .pdp-reviews .reviews-head .sec-title em { color: var(--gold-dk) }
     .pdp-reviews .reviews-head .sec-sub { color: var(--warm) }
 
-    /* ══════ Judge.me — brand alignment ══════ */
-    .jdgm-rev-widg,
-    .jdgm-all-reviews-page,
-    .jdgm-widget {
-      font-family: var(--fb);
-      color: var(--ink)
-    }
+    /* ══════ Judge.me — brand alignment ══════
+   Judge.me injects its stylesheet after the theme's and pins colors with
+   !important, so these overrides use html/body-boosted specificity. */
+html body .jdgm-widget,
+html body .jdgm-rev-widg,
+html body .jdgm-all-reviews-page {
+  font-family: var(--fb);
+  color: var(--ink)
+}
 
-    .jdgm-rev-widg__title,
-    .jdgm-all-reviews-page__title {
-      font-family: var(--fd);
-      font-weight: 400;
-      font-size: 1.5rem;
-      letter-spacing: 0;
-      text-transform: none;
-      color: var(--ink)
-    }
+/* Empty state + header: one centered column (no floating title / dead space) */
+html body .jdgm-rev-widg {
+  padding: 10px 0 0;
+  text-align: center
+}
 
-    /* Stars → brand gold */
-    .jdgm-star.jdgm--on,
-    .jdgm-star.jdgm--half {
-      color: var(--gold) !important
-    }
+html body .jdgm-rev-widg__title {
+  display: none  /* the section's "What Customers Say" heading already covers it */
+}
 
-    .jdgm-star.jdgm--off {
-      color: var(--cream-dk) !important
-    }
+html body .jdgm-rev-widg__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0
+}
 
-    /* Buttons (Write a review, submit, pagination current) → brand gold */
-    .jdgm-write-rev-link,
-    .jdgm-btn,
-    .jdgm-submit-rev,
-    .jdgm-paginate__page.jdgm-curt {
-      background-color: var(--gold) !important;
-      color: var(--ink) !important;
-      border: none !important;
-      border-radius: 3px !important;
-      box-shadow: none !important;
-      font-family: var(--fb);
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-transform: none
-    }
+html body .jdgm-rev-widg__summary {
+  margin: 0 auto
+}
 
-    .jdgm-write-rev-link:hover,
-    .jdgm-btn:hover,
-    .jdgm-submit-rev:hover {
-      background-color: var(--gold-lt) !important;
-      color: var(--ink) !important
-    }
+html body .jdgm-rev-widg__summary-text {
+  font-family: var(--fd);
+  font-size: 1.35rem;
+  color: var(--ink)
+}
 
-    /* Histogram bars + links */
-    .jdgm-histogram__bar-content {
-      background: var(--gold) !important
-    }
+/* Stars → brand gold */
+html body .jdgm-widget .jdgm-star.jdgm--on,
+html body .jdgm-widget .jdgm-star.jdgm--half {
+  color: var(--gold) !important
+}
 
-    .jdgm-rev-widg a,
-    .jdgm-ask-question-link,
-    .jdgm-rev__prod-link {
-      color: var(--gold-dk) !important
-    }
+html body .jdgm-widget .jdgm-star.jdgm--off {
+  color: var(--cream-dk) !important
+}
 
-    /* Review form fields */
-    .jdgm-form input[type='text'],
-    .jdgm-form input[type='email'],
-    .jdgm-form textarea,
-    .jdgm-form select {
-      border: 1px solid rgba(13, 10, 6, .15) !important;
-      border-radius: 4px !important;
-      font-family: var(--fb)
-    }
+/* Buttons (Write a review, form submit, pagination current) → gold, uppercase */
+html body .jdgm-widget .jdgm-write-rev-link,
+html body .jdgm-widget .jdgm-btn,
+html body .jdgm-widget .jdgm-submit-rev,
+html body .jdgm-widget input[type='submit'],
+html body .jdgm-widget .jdgm-paginate__page.jdgm-curt {
+  background: var(--gold) !important;
+  background-color: var(--gold) !important;
+  color: var(--ink) !important;
+  border: none !important;
+  border-radius: 3px !important;
+  padding: 12px 30px !important;
+  font-family: var(--fb) !important;
+  font-weight: 600 !important;
+  font-size: .76rem !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  transition: background .25s
+}
 
-    /* RELATED */
+html body .jdgm-widget .jdgm-write-rev-link:hover,
+html body .jdgm-widget .jdgm-btn:hover,
+html body .jdgm-widget .jdgm-submit-rev:hover,
+html body .jdgm-widget input[type='submit']:hover {
+  background: var(--gold-lt) !important;
+  background-color: var(--gold-lt) !important;
+  color: var(--ink) !important
+}
+
+/* Histogram bars + links */
+html body .jdgm-widget .jdgm-histogram__bar-content {
+  background: var(--gold) !important
+}
+
+html body .jdgm-widget a,
+html body .jdgm-widget .jdgm-ask-question-link,
+html body .jdgm-widget .jdgm-rev__prod-link {
+  color: var(--gold-dk) !important
+}
+
+/* Review cards + form fields */
+html body .jdgm-rev {
+  border-color: rgba(13, 10, 6, .08) !important
+}
+
+html body .jdgm-form input[type='text'],
+html body .jdgm-form input[type='email'],
+html body .jdgm-form textarea,
+html body .jdgm-form select {
+  border: 1px solid rgba(13, 10, 6, .15) !important;
+  border-radius: 4px !important;
+  font-family: var(--fb);
+  background: var(--white)
+}
+
+/* RELATED */
     .related {
       padding: 80px 0;
       background: var(--white);
