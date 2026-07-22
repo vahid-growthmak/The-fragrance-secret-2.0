@@ -7,7 +7,7 @@
 
 {%- liquid
   assign hero_image = collection.image | default: collection.metafields.custom.hero_image.value
-  paginate_by = section.settings.products_per_page | default: 24
+  assign paginate_by = section.settings.products_per_page | default: 24
 -%}
 
 <div data-collection-native>
