@@ -3693,6 +3693,47 @@ html body .jdgm-widget .jdgm-rev__prod-link {
   color: var(--gold-dk) !important
 }
 
+/* Widget v3 theming — the sanctioned lever: v3 styles read these variables
+   (button green #108474 is only their fallback when these are unset) */
+html body .jdgm-widget,
+html body [data-widget] {
+  --jdgm-primary-color: #8B6914 !important;          /* gold-dk — links, accents */
+  --jdgm-secondary-color: rgba(201, 168, 76, .12) !important;
+  --jdgm-star-color: #C9A84C !important;             /* gold */
+  --jdgm-write-review-bg-color: #C9A84C !important;  /* gold button */
+  --jdgm-write-review-text-color: #0D0A06 !important;/* ink text */
+  --jdgm-paginate-color: #8B6914 !important;
+  --jdgm-border-radius: 3px !important
+}
+
+/* v3 empty state — one centered column, brand type */
+html body .jdgm-rev-widg__body--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  padding: 10px 0 0
+}
+
+html body .jdgm-rev-widg__body--empty .jdgm-rev-widg__summary,
+html body .jdgm-rev-widg__body--empty .jdgm-rev-widg__actions {
+  margin: 0 auto
+}
+
+html body .jdgm-write-rev-link.jdgm-write-rev-link.jdgm-write-rev-link {
+  display: inline-block;
+  width: auto;
+  padding: 13px 32px;
+  font-family: var(--fb);
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px
+}
+
 /* Review cards + form fields */
 html body .jdgm-rev {
   border-color: rgba(13, 10, 6, .08) !important
