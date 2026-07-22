@@ -229,7 +229,21 @@ function hydrateRenderables() {
     else if (kind === 'kits') node.innerHTML = discoveryKits.map(kitCardHTML).join('');
     else if (kind === 'blogs') node.innerHTML = (n ? blogs.slice(0, n) : blogs).map(blogCardHTML).join('');
     else if (kind === 'brands') node.innerHTML = brandsIndexHTML();
-    else if (kind === 'brand-track') node.innerHTML = [...brands, ...brands].map(b => `<span class="brand-item">${esc(b)}</span>`).join('');
+    else if (kind === 'brand-track') {
+      // Curated marquee: top brands by live product count, junk vendors filtered
+      const counts = {};
+      products.forEach(p => { const b = (p.brand || '').trim(); if (b) counts[b] = (counts[b] || 0) + 1; });
+      let names = Object.keys(counts).filter(b => !/offer|deal|^gift$/i.test(b));
+      names.sort((a, b) => counts[b] - counts[a]);
+      names = names.slice(0, 28);
+      if (!names.length) names = brands.slice(0, 28);
+      node.innerHTML = names.concat(names).map(b => `<a class="brand-item" href="${vendorURL(b)}">${esc(b)}</a>`).join('');
+      // Constant scroll speed (~40px/s) no matter how many brands are in the track
+      requestAnimationFrame(() => {
+        const half = node.scrollWidth / 2;
+        if (half > 0) node.style.animationDuration = Math.max(30, Math.round(half / 40)) + 's';
+      });
+    }
     else if (kind === 'ugc') node.innerHTML = ugcImgs.map(u => `
   <div class="ugc-item">
     <img src="${assetURL(u)}" alt="Customer" loading="lazy"/>
