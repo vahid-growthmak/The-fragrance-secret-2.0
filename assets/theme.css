@@ -2038,9 +2038,14 @@
     .brand-track {
       display: flex;
       gap: 56px;
-      animation: bscroll 22s linear infinite;
+      /* slow, readable scroll — the track now carries the full live brand list */
+      animation: bscroll 120s linear infinite;
       width: max-content;
       align-items: center
+    }
+
+    .brand-track:hover {
+      animation-play-state: paused
     }
 
     .brand-item {
@@ -3345,6 +3350,91 @@
 
     .pay-chip-inline svg {
       height: 11px
+    }
+
+    /* Brand index cards — real product imagery per house */
+    .brand-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      background: var(--white);
+      border: 1px solid rgba(13, 10, 6, .08);
+      border-radius: 8px;
+      transition: all .2s var(--snap)
+    }
+
+    .brand-card:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, .05);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(13, 10, 6, .06)
+    }
+
+    .brand-card .bc-img {
+      flex: 0 0 46px;
+      width: 46px;
+      height: 46px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--cream-dk);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .brand-card .bc-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .brand-card .bc-txt {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1
+    }
+
+    .brand-card .bc-name {
+      font-size: .88rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+
+    .brand-card .bc-count {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .04em
+    }
+
+    .brand-card .bc-go {
+      font-size: 15px;
+      color: var(--muted);
+      transition: color .2s
+    }
+
+    .brand-card:hover .bc-go {
+      color: var(--gold)
+    }
+
+    /* Checkout — payment method logos */
+    .pm-logos {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-left: auto
+    }
+
+    .pm-logos svg {
+      height: 22px;
+      width: auto;
+      border-radius: 3px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .08)
     }
 
     /* Collections index — reuses .g-card tiles, responsive + image fallback */

@@ -75,10 +75,10 @@
             <!-- PAYMENT -->
             <div class="co-block">
               <div class="co-step"><span class="n">2</span><h2>Payment</h2></div>
-              <div class="pay-method active" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Cash on Delivery</div><div class="pm-sub">Pay in cash when your order arrives — available UAE-wide</div></div><span class="pm-tag">Most Popular</span></div>
-              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Tabby — Pay in 4</div><div class="pm-sub">4 interest-free payments, no fees</div></div><span class="pm-tag">0% Interest</span></div>
-              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Tamara — Split in 3</div><div class="pm-sub">3 interest-free instalments</div></div><span class="pm-tag">0% Interest</span></div>
-              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Card / Apple Pay / Google Pay</div><div class="pm-sub">Visa, Mastercard &amp; wallets — secured</div></div></div>
+              <div class="pay-method active" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Cash on Delivery</div><div class="pm-sub">Pay in cash when your order arrives — available UAE-wide</div></div><span class="pm-logos"><span class="pay-chip pay-cod"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/></svg>COD</span></span><span class="pm-tag">Most Popular</span></div>
+              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Tabby — Pay in 4</div><div class="pm-sub">4 interest-free payments, no fees</div></div><span class="pm-logos"><span class="pay-chip pay-tabby">tabby</span></span><span class="pm-tag">0% Interest</span></div>
+              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Tamara — Split in 3</div><div class="pm-sub">3 interest-free instalments</div></div><span class="pm-logos"><span class="pay-chip pay-tamara">tamara</span></span><span class="pm-tag">0% Interest</span></div>
+              <div class="pay-method" onclick="selectPay(this)"><span class="pm-radio"></span><div><div class="pm-title">Card / Apple Pay / Google Pay</div><div class="pm-sub">Visa, Mastercard &amp; wallets — secured</div></div><span class="pm-logos">{{ 'visa' | payment_type_svg_tag }}{{ 'master' | payment_type_svg_tag }}{{ 'apple_pay' | payment_type_svg_tag }}{{ 'google_pay' | payment_type_svg_tag }}</span></div>
             </div>
           </div>
 

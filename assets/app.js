@@ -151,6 +151,8 @@ function loadLiveCatalog() {
           var b = (p.brand || '').trim();
           if (b && !known[b.toLowerCase()]) { known[b.toLowerCase()] = 1; brands.push(b); }
         });
+        // Re-render any [data-render] grids so they show live data (fetch is async)
+        try { hydrateRenderables(); observeFadeUps(); } catch (e) { }
       }
     })
     .catch(function () { /* offline/preview — keep the demo catalogue */ });
@@ -252,10 +254,34 @@ function hydrateRenderables() {
 }
 
 /* Compact alphabetical brand cloud (dense, low-scroll) */
+function vendorURL(name) { return '/collections/vendors?q=' + encodeURIComponent(name); }
+
+/* Brand index — built from the LIVE catalogue: one card per vendor with a real
+   product photo from that brand, its product count, and a working vendor link.
+   Falls back to plain chips when the live catalogue isn't available. */
 function brandsIndexHTML() {
-  return [...brands].sort((a, b) => a.localeCompare(b)).map(b =>
-    `<a class="brand-chip" href="${R('collection.html?c=brand&brand=' + encodeURIComponent(b))}">${b}<span class="mi" aria-hidden="true">arrow_outward</span></a>`
-  ).join('');
+  const byBrand = {};
+  products.forEach(p => {
+    const b = (p.brand || '').trim();
+    if (!b) return;
+    if (!byBrand[b]) byBrand[b] = { name: b, img: '', count: 0 };
+    byBrand[b].count++;
+    if (!byBrand[b].img && p.img) byBrand[b].img = p.img;
+  });
+  const list = Object.keys(byBrand).map(k => byBrand[k]).sort((a, b) => a.name.localeCompare(b.name));
+  if (!list.length) {
+    return [...brands].sort((a, b) => a.localeCompare(b)).map(b =>
+      `<a class="brand-chip" href="${vendorURL(b)}">${esc(b)}<span class="mi" aria-hidden="true">arrow_outward</span></a>`
+    ).join('');
+  }
+  return list.map(b => `<a class="brand-card" href="${vendorURL(b.name)}">
+    <span class="bc-img">${b.img ? `<img src="${assetURL(b.img)}" alt="${esc(b.name)}" loading="lazy"/>` : ''}</span>
+    <span class="bc-txt">
+      <span class="bc-name">${esc(b.name)}</span>
+      <span class="bc-count">${b.count} fragrance${b.count === 1 ? '' : 's'}</span>
+    </span>
+    <span class="mi bc-go" aria-hidden="true">arrow_outward</span>
+  </a>`).join('');
 }
 
 /* ═══════════════════════════════════════
