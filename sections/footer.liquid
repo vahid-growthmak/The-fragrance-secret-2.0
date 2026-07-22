@@ -41,8 +41,14 @@
   <div class="footer-inner">
     <div class="footer-bottom">
       <p>{{ section.settings.copyright | default: '© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE' }}</p>
-      <div class="pay-icons">
-        <span class="pay-icon">VISA</span><span class="pay-icon">MC</span><span class="pay-icon">Apple Pay</span><span class="pay-icon">COD</span><span class="pay-icon">Tabby</span>
+      <div class="pay-icons pay-icons-row" aria-label="Payment options">
+        {{ 'visa' | payment_type_svg_tag }}
+        {{ 'master' | payment_type_svg_tag }}
+        {{ 'apple_pay' | payment_type_svg_tag }}
+        {{ 'google_pay' | payment_type_svg_tag }}
+        <span class="pay-chip pay-tabby" title="Tabby">tabby</span>
+        <span class="pay-chip pay-tamara" title="Tamara">tamara</span>
+        <span class="pay-chip pay-cod" title="Cash on Delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/></svg>COD</span>
       </div>
     </div>
   </div>
