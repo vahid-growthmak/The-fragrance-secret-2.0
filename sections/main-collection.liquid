@@ -168,7 +168,7 @@
             <div class="sf-group sf-sortgroup">
               <div class="sf-gtitle sf-gtitle-static">Sort By</div>
               <div class="sf-gbody">
-                <select class="sf-sort" name="sort_by" onchange="this.form.submit()">
+                <select class="sf-sort" name="sort_by">
                   {%- for option in collection.sort_options -%}
                     <option value="{{ option.value }}"{% if option.value == collection.sort_by or option.value == collection.default_sort_by %} selected{% endif %}>{{ option.name }}</option>
                   {%- endfor -%}
@@ -185,7 +185,7 @@
                       <div class="sf-opts">
                         {%- for value in filter.values -%}
                           <label class="sf-opt">
-                            <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}"{% if value.active %} checked{% endif %} onchange="this.form.submit()">
+                            <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}"{% if value.active %} checked{% endif %}>
                             <span class="sf-box"><span class="mi" aria-hidden="true">check</span></span>
                             <span class="sf-label">{{ value.label }}</span>
                             <span class="sf-count">{{ value.count }}</span>
@@ -194,14 +194,16 @@
                       </div>
                     {%- when 'price_range' -%}
                       <div class="sf-price">
-                        <input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}" placeholder="Min {{ filter.range_max | money_without_currency }}" min="0" onchange="this.form.submit()">
+                        <input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}" placeholder="Min {{ filter.range_max | money_without_currency }}" min="0">
                         <span>to</span>
-                        <input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}" placeholder="Max {{ filter.range_max | money_without_currency }}" min="0" onchange="this.form.submit()">
+                        <input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}" placeholder="Max {{ filter.range_max | money_without_currency }}" min="0">
                       </div>
                   {%- endcase -%}
                 </div>
               </details>
             {%- endfor -%}
+            {%- comment -%} Without JS the form still works the old way {%- endcomment -%}
+            <noscript><div class="sf-group"><div class="sf-gbody"><button type="submit" class="btn-g" style="width:100%;justify-content:center">Apply filters</button></div></div></noscript>
           </div>
         </form>
       </aside>
@@ -260,6 +262,116 @@
   {%- endif -%}
 
 </div>
+
+{%- comment -%}
+  Filtering / sorting / pagination without a page reload. Uses the Section
+  Rendering API to fetch this same section and swaps only the grid, the facet
+  list and the product count. Falls back to a normal navigation on any error,
+  and the form still submits the old way when JS is unavailable (noscript).
+{%- endcomment -%}
+<script>
+  (function () {
+    var SECTION_ID = {{ section.id | json }};
+    var BASE_URL = {{ collection.url | json }};
+    var root = document.querySelector('[data-collection-native]');
+    if (!root || !window.fetch || !window.DOMParser || !window.URLSearchParams) return;
+
+    var busy = false;
+
+    function buildUrl() {
+      var form = root.querySelector('.shop-filters form');
+      var params = new URLSearchParams();
+      if (form) {
+        new FormData(form).forEach(function (value, key) {
+          if (String(value).trim() !== '') params.append(key, value);
+        });
+      }
+      var query = params.toString();
+      return BASE_URL + (query ? '?' + query : '');
+    }
+
+    function swap(doc, selector) {
+      var next = doc.querySelector(selector);
+      var current = document.querySelector(selector);
+      if (next && current) current.parentNode.replaceChild(next, current);
+    }
+
+    /* Facets re-render too (counts and disabled states change), so carry the
+       panel's scroll position and which groups are open across the swap. */
+    function swapFilters(doc) {
+      var next = doc.querySelector('.shop-filters');
+      var current = document.querySelector('.shop-filters');
+      if (!next || !current) return;
+      var scroller = current.querySelector('.sf-scroll');
+      var scrollTop = scroller ? scroller.scrollTop : 0;
+      var open = [];
+      current.querySelectorAll('details.sf-group').forEach(function (group) { open.push(group.open); });
+      if (current.classList.contains('open')) next.classList.add('open');
+      current.parentNode.replaceChild(next, current);
+      next.querySelectorAll('details.sf-group').forEach(function (group, i) {
+        if (typeof open[i] === 'boolean') group.open = open[i];
+      });
+      var nextScroller = next.querySelector('.sf-scroll');
+      if (nextScroller) nextScroller.scrollTop = scrollTop;
+    }
+
+    function reveal() {
+      if (typeof window.observeFadeUps === 'function') { window.observeFadeUps(); return; }
+      document.querySelectorAll('.shop-results .fade-up').forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    function render(url, push) {
+      if (busy) return;
+      busy = true;
+      root.classList.add('is-filtering');
+      var separator = url.indexOf('?') === -1 ? '?' : '&';
+      fetch(url + separator + 'section_id=' + encodeURIComponent(SECTION_ID), { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function (response) {
+          if (!response.ok) throw new Error(response.status);
+          return response.text();
+        })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          swap(doc, '.results-count');
+          swapFilters(doc);
+          swap(doc, '.shop-results');
+          reveal();
+          if (push) history.pushState({ url: url }, '', url);
+          var grid = document.getElementById('grid');
+          if (grid && grid.getBoundingClientRect().top < 0) {
+            window.scrollTo({ top: grid.offsetTop - 84, behavior: 'smooth' });
+          }
+          busy = false;
+          root.classList.remove('is-filtering');
+        })
+        .catch(function () { window.location.href = url; });
+    }
+
+    root.addEventListener('change', function (event) {
+      if (!event.target.closest('.shop-filters form')) return;
+      render(buildUrl(), true);
+    });
+
+    root.addEventListener('submit', function (event) {
+      if (!event.target.closest('.shop-filters')) return;
+      event.preventDefault();
+      render(buildUrl(), true);
+    });
+
+    root.addEventListener('click', function (event) {
+      var link = event.target.closest('a');
+      if (!link || !link.getAttribute('href')) return;
+      if (link.classList.contains('sf-clear') || link.closest('.pagination')) {
+        event.preventDefault();
+        render(link.getAttribute('href'), true);
+      }
+    });
+
+    window.addEventListener('popstate', function () {
+      render(location.pathname + location.search, false);
+    });
+  })();
+</script>
 
 {% schema %}
 {

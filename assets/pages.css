@@ -220,6 +220,10 @@ header.light .nav-burger { color: var(--warm); }
 .pagination .current { background: var(--ink); color: var(--gold-lt); border-color: var(--ink); }
 .load-more-wrap { text-align: center; margin-top: 52px; }
 
+/* While a filter request is in flight */
+.is-filtering .shop-results { opacity: .4; pointer-events: none; transition: opacity .18s; }
+.is-filtering .shop-filters { pointer-events: none; }
+
 /* ── Faceted filter sidebar (shop layout) ────────────────────────── */
 .shop-layout { display: grid; grid-template-columns: 264px 1fr; gap: 40px; align-items: start; }
 .shop-results { min-width: 0; }
