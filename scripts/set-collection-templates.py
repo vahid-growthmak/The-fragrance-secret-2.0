@@ -8,12 +8,16 @@ one run.
 
 Usage
 -----
-    export SHOPIFY_STORE=your-store.myshopify.com
-    export SHOPIFY_ADMIN_TOKEN=shpat_xxxxxxxxxxxxxxxx
-
     python3 scripts/set-collection-templates.py            # dry run, changes nothing
     python3 scripts/set-collection-templates.py --apply    # write the changes
     python3 scripts/set-collection-templates.py --handles   # list every handle in the store
+
+Credentials are read from .env in the repo root (gitignored), falling back to
+the environment:
+
+    SHOPIFY_STORE_DOMAIN / SHOPIFY_STORE               your-store.myshopify.com
+    SHOPIFY_ADMIN_ACCESS_TOKEN / SHOPIFY_ADMIN_TOKEN   shpat_xxxxxxxxxxxxxxxx
+    SHOPIFY_API_VERSION                                optional, defaults below
 
 The token needs the write_products scope (Settings -> Apps and sales channels ->
 Develop apps -> Configure Admin API scopes). Nothing is written without --apply.
@@ -24,6 +28,7 @@ Requires no third-party packages.
 import argparse
 import json
 import os
+import ssl
 import sys
 import time
 import urllib.error
@@ -84,11 +89,54 @@ mutation SetTemplate($input: CollectionInput!) {
 
 GREEN, YELLOW, RED, DIM, RESET = "\033[32m", "\033[33m", "\033[31m", "\033[2m", "\033[0m"
 
+DEFAULT_API_VERSION = "2025-01"
+
+
+def load_dotenv():
+    """Read .env from the repo root without clobbering real environment vars."""
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+    values = {}
+    if not os.path.exists(path):
+        return values
+    with open(path, encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            values[key.strip()] = value.strip().strip("'\"")
+    return values
+
+
+def credential(dotenv, *names):
+    for name in names:
+        value = os.environ.get(name) or dotenv.get(name)
+        if value:
+            return value
+    return None
+
+
+def ssl_context():
+    """Some macOS Pythons ship without a usable CA bundle; find one rather than
+    disabling verification."""
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        pass
+    if not ssl.create_default_context().cert_store_stats()["x509_ca"]:
+        for candidate in ("/etc/ssl/cert.pem", "/usr/local/etc/openssl@3/cert.pem",
+                          "/opt/homebrew/etc/openssl@3/cert.pem", "/etc/pki/tls/certs/ca-bundle.crt"):
+            if os.path.exists(candidate):
+                return ssl.create_default_context(cafile=candidate)
+    return ssl.create_default_context()
+
 
 class Shopify:
     def __init__(self, store, token, api_version):
         self.url = "https://%s/admin/api/%s/graphql.json" % (store, api_version)
         self.token = token
+        self.ssl = ssl_context()
 
     def call(self, query, variables=None):
         payload = json.dumps({"query": query, "variables": variables or {}}).encode()
@@ -102,7 +150,7 @@ class Shopify:
             },
         )
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=30, context=self.ssl) as response:
                 body = json.loads(response.read().decode())
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode(errors="replace")[:400]
@@ -138,18 +186,23 @@ def main():
                         help="write the changes (default is a dry run)")
     parser.add_argument("--handles", action="store_true",
                         help="just list every collection handle in the store and exit")
-    parser.add_argument("--store", default=os.environ.get("SHOPIFY_STORE"),
-                        help="myshopify domain, or set SHOPIFY_STORE")
-    parser.add_argument("--token", default=os.environ.get("SHOPIFY_ADMIN_TOKEN"),
-                        help="Admin API access token, or set SHOPIFY_ADMIN_TOKEN")
-    parser.add_argument("--api-version", default="2025-01")
+    parser.add_argument("--store", help="myshopify domain (defaults to .env SHOPIFY_STORE_DOMAIN)")
+    parser.add_argument("--token", help="Admin API token (defaults to .env SHOPIFY_ADMIN_ACCESS_TOKEN)")
+    parser.add_argument("--api-version", help="defaults to .env SHOPIFY_API_VERSION or %s" % DEFAULT_API_VERSION)
     args = parser.parse_args()
 
-    if not args.store or not args.token:
-        sys.exit("Set SHOPIFY_STORE and SHOPIFY_ADMIN_TOKEN (or pass --store / --token). "
-                 "See --help.")
+    dotenv = load_dotenv()
+    store = args.store or credential(dotenv, "SHOPIFY_STORE_DOMAIN", "SHOPIFY_STORE")
+    token = args.token or credential(dotenv, "SHOPIFY_ADMIN_ACCESS_TOKEN", "SHOPIFY_ADMIN_TOKEN")
+    api_version = args.api_version or credential(dotenv, "SHOPIFY_API_VERSION") or DEFAULT_API_VERSION
 
-    client = Shopify(args.store.replace("https://", "").strip("/"), args.token, args.api_version)
+    if not store or not token:
+        sys.exit("No credentials found. Add SHOPIFY_STORE_DOMAIN and SHOPIFY_ADMIN_ACCESS_TOKEN to "
+                 ".env, or pass --store / --token. See --help.")
+
+    args.api_version = api_version
+    client = Shopify(store.replace("https://", "").strip("/"), token, api_version)
+    args.store = store
     print("%sStore:%s %s   %sAPI:%s %s\n" % (DIM, RESET, args.store, DIM, RESET, args.api_version))
 
     if args.handles:
