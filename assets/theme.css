@@ -3479,6 +3479,129 @@
       color: var(--ink)
     }
 
+    /* Men's editorial — scent-family cards */
+    .fam-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden
+    }
+
+    .fam-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 3px;
+      width: 0;
+      background: var(--gold);
+      transition: width .3s ease
+    }
+
+    .fam-card:hover::before { width: 100% }
+
+    .fam-card .fam-num {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold-dk);
+      margin-bottom: 10px
+    }
+
+    .fam-card h3 {
+      font-family: var(--fd);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px
+    }
+
+    .fam-card p {
+      font-size: .9rem;
+      color: var(--warm);
+      line-height: 1.65;
+      flex: 1
+    }
+
+    .fam-card .fam-bestfor { margin: 16px 0 14px }
+
+    .fam-card .fam-bestfor .bl {
+      display: block;
+      font-size: .6rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px
+    }
+
+    .fam-card .fam-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .fam-card .fam-tags span {
+      font-size: .7rem;
+      color: var(--warm);
+      background: var(--cream-dk);
+      padding: 4px 10px;
+      border-radius: 2px
+    }
+
+    .fam-card .fam-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-dk)
+    }
+
+    .fam-card .fam-link .mi { font-size: 15px }
+
+    .crosslink-grid.four { grid-template-columns: repeat(4, 1fr) }
+
+    .explore-tile .mi:first-child {
+      font-size: 18px;
+      color: var(--gold-dk);
+      margin-right: 8px;
+      vertical-align: -4px
+    }
+
+    /* Membership band */
+    .member-band .member-perks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 22px;
+      margin: 22px auto 4px;
+      max-width: 720px
+    }
+
+    .member-band .member-perks span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .82rem;
+      color: var(--on-dark)
+    }
+
+    .member-band .member-perks .mi {
+      font-size: 16px;
+      color: var(--gold-lt)
+    }
+
+    @media(max-width:900px) {
+      .crosslink-grid.four { grid-template-columns: 1fr 1fr }
+    }
+
+    @media(max-width:560px) {
+      .crosslink-grid.four { grid-template-columns: 1fr }
+    }
+
     /* Why Customers Choose — icon cards */
     .why-choose {
       background: var(--cream-dk)

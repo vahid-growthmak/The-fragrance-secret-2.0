@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "main": { "type": "main-collection", "settings": {} },
+    "editorial": { "type": "mens-editorial", "settings": {} }
+  },
+  "order": ["main", "editorial"]
+}
