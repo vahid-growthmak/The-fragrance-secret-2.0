@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Traditional & Alcohol-Free",
+        "hero_heading": "<em>Attar</em>",
+        "hero_image_alt": "Attar collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Traditional & Alcohol-Free",
+        "intro_heading": "Attar UAE",
+        "intro_text": "<p>Attar has been an integral part of Arabian fragrance traditions for centuries, celebrated for its rich character, exceptional craftsmanship, and timeless appeal. These concentrated, alcohol-free perfume oils are crafted using ingredients such as oud, rose, musk, sandalwood, and other precious botanicals, creating rich fragrances that are applied a drop at a time and appreciated for their lasting character. At The Fragrance Secrets, discover authentic attars for both men and women, from deep woody oud blends to elegant floral and soft musk compositions. Whether you're exploring traditional perfumery or searching for a signature fragrance, our attar collection offers timeless scents for every occasion.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Tradition",
+        "cards_heading": "What Makes <em>Attar Different</em>",
+        "cards_sub": "Attar is not simply perfume without alcohol. It is a concentrated fragrance oil, worn sparingly and applied to the skin, that develops slowly with your body's warmth rather than projecting loudly. Understanding how it works is the key to wearing it well.",
+        "show_numbers": false,
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Attar",
+        "schema_name": "Attar UAE",
+        "schema_description": "Shop genuine attar at The Fragrance Secrets. Concentrated, alcohol-free oud, musk and rose perfume oils for men and women, long-lasting, with fast delivery across the UAE, USA and Canada.",
+        "cards_footnote": "Attar also makes a meaningful gift for weddings, Eid and special occasions, and it layers beautifully under a spray perfume for anyone who wants their scent to last even longer."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Alcohol-Free and Concentrated",
+            "body": "Attar contains no alcohol and no water, only pure fragrance oil. That concentration is why a single drop goes so far, and why it feels gentle on skin that reacts to alcohol-based sprays.",
+            "tag_label": "Best For",
+            "tags": "Sensitive Skin, Daily Wear, Modest Use"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Long-Lasting on the Skin",
+            "body": "Because it is undiluted oil, attar clings to the skin and unfolds slowly over many hours. It stays closer to you than a spray, rewarding anyone near you rather than filling a room.",
+            "tag_label": "Why It Lasts",
+            "tags": "Pure Oil, No Evaporation, Warmth-Activated"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Traditional Oud, Musk and Rose",
+            "body": "The classic attars are built on oud, musk, rose, saffron and sandalwood, the notes at the heart of Arabian perfumery. Each is distilled to carry real depth and a scent that feels timeless.",
+            "tag_label": "Popular Notes",
+            "tags": "Oud, Musk, Rose, Sandalwood"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "How to Apply Attar",
+            "body": "Use a little. Dab a single drop onto pulse points, the wrists, behind the ears or the neck, and let your skin warm it. Never rub it in hard; a light touch lets the layers open naturally through the day.",
+            "tag_label": "Apply To",
+            "tags": "Wrists, Neck, Behind Ears"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is attar perfume?",
+            "answer": "Attar is a concentrated, alcohol-free perfume oil traditionally distilled from natural materials such as oud, rose, musk and sandalwood. It is worn in small amounts directly on the skin and is the oldest form of perfume used across the Arab world."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is attar alcohol-free?",
+            "answer": "Yes. Genuine attar contains no alcohol at all, only concentrated fragrance oil. This makes it a gentler choice for sensitive skin and a popular option for those who prefer alcohol-free perfume."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between attar and regular perfume?",
+            "answer": "Regular perfume is diluted with alcohol and sprayed, so it projects strongly and fades faster. Attar is undiluted oil applied to the skin, so it sits closer to you and lasts far longer from a single small application."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does attar last?",
+            "answer": "Because it is concentrated oil with no alcohol to evaporate, attar can last many hours on the skin, often longer than a standard spray. Oud and musk-based attars are typically the longest-lasting."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I apply attar correctly?",
+            "answer": "Apply a single drop to pulse points such as the wrists, neck or behind the ears, and let your skin warm it rather than rubbing it in. A little goes a long way, so start with less than you think you need."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Which attar is best for daily use?",
+            "answer": "Lighter musk, rose and floral attars suit daily wear because they stay soft and close to the skin. Save the deeper oud attars for evenings and special occasions when you want more presence."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your attars genuine?",
+            "answer": "Yes. Every attar at The Fragrance Secrets is genuine and sourced through trusted suppliers, so you receive concentrated, authentic fragrance oil rather than a diluted imitation."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship attar internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

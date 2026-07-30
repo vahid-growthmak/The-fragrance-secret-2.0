@@ -1,0 +1,169 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Premium Collection",
+        "hero_heading": "Luxury <em>Perfumes</em>",
+        "hero_image_alt": "Luxury perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Premium Collection",
+        "intro_heading": "Luxury Perfumes UAE",
+        "intro_text": "<p>Luxury is more than a fragrance. It reflects craftsmanship, premium ingredients, and the confidence that comes with wearing a scent that leaves a lasting impression. At The Fragrance Secrets, explore luxury perfumes for men and women from leading designer and Arabian fragrance houses, featuring elegant florals, rich oud, refined woods, warm amber, and sophisticated gourmand creations. Whether you're searching for a signature scent, a thoughtful gift, or long-lasting luxury perfumes for everyday wear, our collection brings together premium perfumes designed for every occasion.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Difference",
+        "cards_heading": "Why Choose <em>Luxury Perfumes?</em>",
+        "cards_sub": "Luxury perfumes are created for those who appreciate exceptional craftsmanship, premium ingredients, and fragrances that develop beautifully throughout the day. From elegant everyday scents to statement fragrances for special occasions, each perfume is designed to deliver lasting performance, refined character, and an unforgettable fragrance experience.",
+        "show_numbers": false,
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate, and scent family to find the perfect fragrance for every occasion and personal preference.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Luxury Perfumes",
+        "schema_name": "Luxury Perfumes UAE",
+        "schema_description": "Explore luxury perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances with premium ingredients, long-lasting performance, and shipping across the UAE, USA, and Canada.",
+        "cards_footnote": "Luxury perfumes also make memorable gifts for birthdays, anniversaries, weddings, Eid, and corporate occasions, and they become signature fragrances for everyday confidence, helping you create lasting impressions wherever you go."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Premium Ingredients",
+            "body": "Luxury fragrances are crafted with carefully selected ingredients such as oud, rose, jasmine, sandalwood, amber, vanilla, and musk. These premium fragrance notes create sophisticated compositions with remarkable depth and elegance.",
+            "tag_label": "Popular Notes",
+            "tags": "Oud, Rose, Sandalwood, Amber"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Long-Lasting Performance",
+            "body": "Many luxury Eau de Parfum fragrances feature higher fragrance concentrations and expertly balanced compositions, providing excellent longevity from morning meetings to evening celebrations.",
+            "tag_label": "Perfect For",
+            "tags": "Daily Signature Wear, Business Meetings, Evening Events"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Designer & Arabian Fragrance Houses",
+            "body": "Explore luxury perfumes from genuine niche and premium houses such as Amouage and Mancera, alongside luxury Arabian creations known for their oud. Each is selected for its craftsmanship, distinctive scent profile, and exceptional quality, whether you prefer modern designer fragrances or traditional Arabian perfumery.",
+            "tag_label": "Explore by Style",
+            "tags": "Niche, Designer, Arabian, Contemporary"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Niche or Designer? How to Choose",
+            "body": "Niche houses focus on distinctive, often bolder compositions with higher-grade materials, while designer luxury leans towards broad, refined appeal. Neither is better outright. Choose niche for individuality and depth, or designer for timeless, versatile elegance, and let the scent profile guide you.",
+            "tag_label": "Best For",
+            "tags": "Signature Scent, Collectors, A Standout Gift"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What makes a perfume luxurious?",
+            "answer": "Luxury perfumes are crafted using premium ingredients, expertly balanced fragrance compositions, and high-quality materials that create richer scent development and longer-lasting performance than many standard fragrances."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Are luxury perfumes long-lasting?",
+            "answer": "Yes. Many long-lasting luxury perfumes feature Eau de Parfum concentrations with fragrance notes such as oud, amber, sandalwood, vanilla, and musk, helping them perform exceptionally well throughout the day."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are niche perfumes better than designer?",
+            "answer": "Not better, but different. Niche houses focus on distinctive, often bolder compositions with higher-grade materials, while designer fragrances aim for broad, refined appeal. Many people prefer niche for individuality and depth, and designer for versatile, timeless elegance."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer designer and Arabian luxury perfumes?",
+            "answer": "Yes. The Fragrance Secrets offers a carefully curated collection of designer luxury perfumes and luxury Arabian perfumes, giving you a wide selection of premium fragrances for everyday wear and special occasions."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right luxury perfume?",
+            "answer": "Start by considering the fragrance notes you enjoy most. Fresh and floral fragrances are excellent for everyday wear, while woody, amber, gourmand, and oud fragrances offer greater depth for evenings and formal occasions."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Are luxury perfumes suitable for gifting?",
+            "answer": "Absolutely. Luxury perfumes are among the most popular gifts for birthdays, anniversaries, weddings, Eid, and other celebrations because they combine premium presentation with timeless fragrance appeal."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "What fragrance notes are common in luxury perfumes?",
+            "answer": "Luxury perfumes often feature ingredients such as oud, rose, jasmine, sandalwood, amber, vanilla, musk, leather, patchouli, and precious woods. Together, these notes create refined fragrances with exceptional depth and character."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Are all luxury perfumes genuine?",
+            "answer": "Yes. Every luxury perfume available at The Fragrance Secrets is sourced through trusted suppliers, ensuring genuine products and a premium shopping experience."
+          }
+        },
+        "faq9": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times, and available services are displayed during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8",
+        "faq9"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

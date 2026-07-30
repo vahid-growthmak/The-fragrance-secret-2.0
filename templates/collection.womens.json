@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "For Her",
+        "hero_heading": "Women's <em>Perfumes</em>",
+        "hero_image_alt": "Women's perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "For Her",
+        "intro_heading": "Women's Perfumes UAE",
+        "intro_text": "<p>The perfect fragrance should feel like it was made for you. The Fragrance Secrets is passionate about helping fragrance lovers discover authentic perfumes from trusted international and Arabian brands. Every collection is created to make finding your next signature scent simple, enjoyable, and reliable. From fresh citrus and elegant florals to warm gourmand blends and rich oud fragrances, you'll find scents for every style, season, and occasion. Whether you're choosing your first signature fragrance or adding a new favourite to your collection, you'll find authentic perfumes that are made to be worn and remembered.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Find Your Match",
+        "cards_heading": "Which Fragrance Family <em>Fits You Best?</em>",
+        "cards_sub": "Not sure where to start? You don't need to know everything about perfume. Choose the fragrance family that matches your style, and finding a scent you'll love becomes much easier.",
+        "show_numbers": true,
+        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Women's Perfumes",
+        "schema_name": "Women's Perfumes UAE",
+        "schema_description": "Shop authentic women's perfumes at The Fragrance Secrets. Explore designer and Arabian fragrances, from floral and fresh to gourmand and oud, with fast delivery across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Floral & Rose",
+            "body": "Love soft, elegant fragrances? Floral perfumes combine rose, jasmine, peony, and delicate white flowers to create timeless scents that feel effortless from everyday wear to weddings and special occasions.",
+            "tag_label": "Best For",
+            "tags": "Everyday Wear, Office, Weddings",
+            "link_label": "Explore Floral & Rose",
+            "link_url": "/collections/floral-rose"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Citrus",
+            "body": "Prefer something light and refreshing? Citrus fruits, green notes, and soft musk create clean, uplifting fragrances that feel comfortable throughout the UAE's warm weather.",
+            "tag_label": "Best For",
+            "tags": "Daily Wear, Summer, Travel",
+            "link_label": "Explore Fresh & Citrus",
+            "link_url": "/collections/fresh-citrus"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Sweet & Gourmand",
+            "body": "If you enjoy warm, comforting scents, vanilla, caramel, amber, and praline create fragrances that leave a memorable impression from day to night.",
+            "tag_label": "Best For",
+            "tags": "Date Nights, Evenings, Cooler Weather",
+            "link_label": "Explore Sweet & Gourmand",
+            "link_url": "/collections/sweet-gourmand"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Oud & Woody",
+            "body": "Looking for something richer? Inspired by Arabian perfumery, oud, sandalwood, amber, and warm spices create luxurious fragrances with exceptional depth and lasting performance.",
+            "tag_label": "Best For",
+            "tags": "Formal Events, Evening Wear, Luxury Occasions",
+            "link_label": "Explore Oud & Woody",
+            "link_url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the best women's perfumes for everyday wear?",
+            "answer": "Fresh floral, fruity, and soft musk fragrances are excellent choices for everyday wear because they feel versatile, comfortable, and suitable for work, casual outings, and special occasions. At The Fragrance Secrets, you'll find a wide range of women's perfumes for every lifestyle and preference."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Which women's perfumes last the longest in the UAE?",
+            "answer": "Long-lasting women's perfumes with Eau de Parfum concentrations, especially those featuring oud, amber, vanilla, and musk, generally perform best in the UAE's warm climate. These fragrance notes provide excellent longevity and leave a lasting impression throughout the day."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right women's perfume?",
+            "answer": "Start by choosing a fragrance family that matches your personal style. Floral fragrances feel elegant and timeless, fresh citrus scents are clean and uplifting, gourmand fragrances add warmth and sweetness, while oud fragrances offer rich depth and long-lasting performance."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which fragrance family is best for me?",
+            "answer": "The best fragrance family depends on your personal preferences and where you plan to wear your perfume. If you enjoy light, everyday scents, floral and fresh fragrances are a great choice. If you prefer richer fragrances, gourmand and oud perfumes for women offer greater depth and character."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are all women's perfumes authentic?",
+            "answer": "Yes. Every women's perfume available at The Fragrance Secrets is sourced through trusted suppliers to ensure authenticity, quality, and reliable performance. You can shop with confidence knowing you're purchasing genuine designer and Arabian fragrances."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer both designer and Arabian perfumes?",
+            "answer": "Yes. Our collection includes designer women's perfumes alongside authentic Arabian fragrance brands, giving you a wide selection of fragrances for everyday wear, special occasions, and luxury fragrance lovers."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear these perfumes throughout the year?",
+            "answer": "Yes. Our collection includes fragrances for every season. Fresh citrus and floral perfumes are popular during warmer months, while gourmand, amber, and oud fragrances are ideal for cooler evenings and special occasions. You can also explore our Shop by Weather & Season collections for personalised recommendations."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times, and available services are displayed during checkout based on your shipping destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

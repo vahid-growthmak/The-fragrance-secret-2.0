@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "For Everyone",
+        "hero_heading": "Unisex <em>Perfumes</em>",
+        "hero_image_alt": "Unisex perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "For Everyone",
+        "intro_heading": "Unisex Perfumes UAE",
+        "intro_text": "<p>A great fragrance has never belonged to just one person. Long before perfume was divided into his and hers, the oud and attar traditions of Arabian perfumery were created to be shared, and many of those timeless scents still are. At The Fragrance Secrets, our collection of authentic unisex perfumes brings together balanced fragrance compositions that suit every style and occasion. Whether you're sharing a favourite scent or looking for a signature fragrance that feels uniquely yours, you'll find long-lasting perfumes designed to perform beautifully in the UAE's warm climate.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Find Your Match",
+        "cards_heading": "Scents Made <em>to Be Shared</em>",
+        "cards_sub": "What makes a perfume unisex is simple, it leans on notes almost everyone loves, rather than the florals or aquatics marketing assigns to one gender. Here is where to start, whatever you are drawn to.",
+        "show_numbers": true,
+        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Unisex Perfumes",
+        "schema_name": "Unisex Perfumes UAE",
+        "schema_description": "Explore authentic unisex perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances, from fresh citrus and floral to rich oud and amber, with fast delivery across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Oud & Woody",
+            "body": "The heart of the collection and of Arabian perfumery itself. Oud, sandalwood and amber are deep, warm and universally worn, which is exactly why a single bottle so often ends up shared between two people.",
+            "tag_label": "Best For",
+            "tags": "Shared Signature, Formal Wear, All-Day Wear",
+            "link_label": "Explore Oud & Woody",
+            "link_url": "/collections/oud-woody"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Spicy & Oriental",
+            "body": "Bold and full of character, with no lean either way. Cardamom, saffron, incense and amber build a scent that carries in cooler air and suits anyone who wants presence over subtlety.",
+            "tag_label": "Best For",
+            "tags": "Evenings, Cooler Weather, Statement",
+            "link_label": "Explore Spicy & Oriental",
+            "link_url": "/collections/spicy-oriental"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Citrus",
+            "body": "The easiest place to start, and the easiest to share. Bright citrus, green notes and clean musk read as effortless on anyone, and they hold up beautifully through a hot Gulf afternoon.",
+            "tag_label": "Best For",
+            "tags": "Daily Wear, Hot Weather, First Fragrance",
+            "link_label": "Explore Fresh & Citrus",
+            "link_url": "/collections/fresh-citrus"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Sweet & Amber",
+            "body": "Warm, smooth and quietly addictive. Vanilla, amber and soft resins give a cosy depth that works on any skin, which makes these among the most gifted and most borrowed scents we carry.",
+            "tag_label": "Best For",
+            "tags": "Gifting, Cool Season, Evenings",
+            "link_label": "Explore Sweet & Gourmand",
+            "link_url": "/collections/sweet-gourmand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What does unisex perfume actually mean?",
+            "answer": "A unisex fragrance is built without leaning masculine or feminine. Instead of the florals or aquatics that marketing tends to assign to one gender, it is composed around notes almost everyone reads as universal, such as oud, amber, musk, citrus and spice. That balance is what lets anyone wear it comfortably."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can a couple really share the same perfume?",
+            "answer": "Yes, and many do. Because unisex scents avoid strongly gendered notes, the same bottle can smell natural on two different people, shifting slightly with each person's skin. Oud, amber and musk-based fragrances share particularly well."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Why are so many Arabian perfumes unisex?",
+            "answer": "Arabian perfumery was never divided by gender the way Western designer fragrance was. Oud, attar and bakhoor have always been worn by everyone, so many of the region's most treasured scents are naturally unisex, and they hold up well in the heat."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which unisex perfumes last the longest?",
+            "answer": "Oud, amber and woody Eau de Parfums last longest, because their heavy base notes resist evaporation in warm weather. For maximum longevity, look for Eau de Parfum or Extrait concentrations, and check the longevity note on each product page."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are unisex perfumes a good gift?",
+            "answer": "They are one of the safest gifts you can give, precisely because they are not tied to gender. A warm amber, a versatile oud or a clean citrus suits a wide range of tastes, and our gift sets come packaged ready for birthdays, Eid and special occasions."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear unisex fragrances all year round?",
+            "answer": "Yes. Fresh and citrus unisex scents feel best in the warmer months, while oud, spice and amber come into their own on cooler evenings. Many people keep a lighter and a deeper option and switch between them with the season."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are these unisex perfumes genuine?",
+            "answer": "Yes. Every unisex perfume at The Fragrance Secrets is sourced through trusted suppliers and checked for authenticity before it ships, so you are always buying genuine designer and Arabian fragrances."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship unisex perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

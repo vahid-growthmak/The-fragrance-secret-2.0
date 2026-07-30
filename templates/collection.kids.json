@@ -1,0 +1,160 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "For Little Ones",
+        "hero_heading": "Kids <em>Perfumes</em>",
+        "hero_image_alt": "Kids perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "For Little Ones",
+        "intro_heading": "Kids Perfumes UAE",
+        "intro_text": "<p>Choosing a fragrance for a child should feel simple and reassuring. At The Fragrance Secrets, our collection of authentic kids' perfumes features light, fresh, and age-appropriate fragrances designed for everyday wear, celebrations, and thoughtful gifting. Whether you're selecting a first fragrance or adding a new favourite to their collection, you'll find carefully chosen scents from trusted brands that are enjoyable to wear and easy to love. Every product page includes fragrance notes and essential details to help you make an informed choice, so you can confidently find a kids' perfume that suits your child's personality, style, and special moments.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "A Parent's Guide",
+        "cards_heading": "How to Choose a Fragrance <em>for Your Child</em>",
+        "cards_sub": "Choosing for a child comes down to peace of mind. These four simple checks make it easy to pick something gentle, age-appropriate and safe.",
+        "show_numbers": true,
+        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Kids Perfumes",
+        "schema_name": "Kids Perfumes UAE",
+        "schema_description": "Shop the gentle kids' perfumes at The Fragrance Secrets. Explore fresh and age-appropriate fragrances for children from trusted brands, with fast delivery across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Start with Alcohol-Free",
+            "body": "For young skin, an alcohol-free mist or oil is the gentlest choice. It is far less likely to dry or irritate than a standard spray, which makes it the safest place to begin. Look for the alcohol-free label on each product.",
+            "tag_label": "Best For",
+            "tags": "Sensitive Skin, Everyday, Gentle"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Match It to Their Age",
+            "body": "Younger children suit the lightest mists; older children can handle a little more. Every product page lists who it is intended for, so you can match the scent to your child's age instead of guessing.",
+            "tag_label": "Best For",
+            "tags": "Toddlers, Children, Pre-Teens"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Keep It Light and On Fabric",
+            "body": "A gentle scent goes a long way on a child. Spray onto clothing rather than directly onto skin, keep it to a single light application, and patch test anything new on the inner arm first.",
+            "tag_label": "Best For",
+            "tags": "Light Scent, Skin-Friendly, Patch Test First"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Make Gifting Simple",
+            "body": "Buying for someone else's child? A gentle, clearly labelled mist takes the worry out of it. Our kid-appropriate sets are chosen to be safe crowd-pleasers for birthdays, Eid and new arrivals.",
+            "tag_label": "Best For",
+            "tags": "Birthdays, Eid, New Baby"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it safe for children to wear perfume?",
+            "answer": "In general, yes, as long as it is gentle and used lightly. Alcohol-free body mists sprayed onto clothing rather than skin are the safest option for children. Always patch test something new first, and if your child has sensitive skin, eczema or allergies, check with your paediatrician before use."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What kind of fragrance is best for a child?",
+            "answer": "A light, alcohol-free mist or oil is best. Children suit soft, low-intensity scents rather than strong sprays, so look for gentle formulas and apply only a small amount. Each product page lists its ingredients so you can check suitability."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "At what age can a child start wearing perfume?",
+            "answer": "There is no fixed rule, but gentle, alcohol-free mists are commonly used from around school age, applied lightly to clothing. For younger children and babies, it is best to avoid fragrance on the skin and to speak with your paediatrician first."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Why choose alcohol-free perfume for kids?",
+            "answer": "Alcohol is what makes many sprays feel harsh and drying. Removing it gives a milder product that is far gentler on young, sensitive skin, which is why alcohol-free mists are the recommended starting point for children."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How should my child apply their fragrance?",
+            "answer": "Keep it simple and light. Spray once onto clothing rather than directly onto the skin, and avoid the face and eyes. Applying to fabric lets your child enjoy the scent while reducing any chance of a skin reaction."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I do if my child has sensitive skin or allergies?",
+            "answer": "Patch test first: apply a small amount to the inner arm and wait to check for any reaction before wider use. If your child has known allergies, eczema or very sensitive skin, speak to your paediatrician before introducing any new fragrance."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your kids products genuine and safe?",
+            "answer": "Yes. Every product here is genuine and sourced through trusted suppliers, and we prioritise gentle, alcohol-free options for children. Any safety detail is shown on the product page so you can decide with confidence."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship kids products internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

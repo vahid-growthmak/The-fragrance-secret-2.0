@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Designer-Inspired Value",
+        "hero_heading": "Inspired <em>Perfumes</em>",
+        "hero_image_alt": "Inspired perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Designer-Inspired Value",
+        "intro_heading": "Inspired Perfumes UAE",
+        "intro_text": "<p>Love a scent but not its price tag? Inspired perfumes are made for exactly that. These are quality fragrances built around the scent profiles people love most, the fresh, woody, sweet and oriental styles you recognise, offered at a fraction of designer prices. They are their own perfumes, not copies of any brand, created so you can wear a scent you adore every day without thinking twice. At The Fragrance Secrets, explore designer-inspired perfumes for men and women, made to smell wonderful and last.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Idea",
+        "cards_heading": "What Is <em>an Inspired Perfume?</em>",
+        "cards_sub": "An inspired perfume is an original fragrance built around a popular scent profile, the family of notes behind a style people love, rather than a copy of any particular brand. It lets you enjoy a familiar type of scent at an accessible price, which is why inspired and impression fragrances have become so popular.",
+        "show_numbers": false,
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Inspired Perfumes",
+        "schema_name": "Inspired Perfumes UAE",
+        "schema_description": "Shop inspired perfumes at The Fragrance Secrets. Explore our original fragrance creations inspired by popular scent styles, crafted for long-lasting everyday wear and shipped across the UAE, USA, and Canada.",
+        "cards_footnote": "Inspired perfumes also make an easy, low-risk gift and a smart way to enjoy several scents for the price of one designer bottle."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Familiar Scent Profiles",
+            "body": "Each inspired perfume is built around a well-loved style, whether that is a fresh aquatic, a warm vanilla, a smoky oud or a sweet floral. You get the character you are drawn to, in a fragrance of our own.",
+            "tag_label": "Popular Styles",
+            "tags": "Fresh, Woody, Sweet, Oriental"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Designer Feel, Everyday Price",
+            "body": "The appeal is simple: a beautiful, wearable scent without the premium price. That makes inspired perfumes perfect for daily wear, for trying new styles, and for building a fragrance wardrobe affordably.",
+            "tag_label": "Best For",
+            "tags": "Daily Wear, Trying New Styles, Value"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Made to Last",
+            "body": "A good inspired perfume is judged on performance, and ours are formulated for genuine longevity and projection, so the scent stays with you through the day rather than fading in an hour.",
+            "tag_label": "Performance",
+            "tags": "Long-Lasting, Good Projection, Everyday"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Honest, Own-Brand Fragrances",
+            "body": "These are our own perfumes, inspired by styles people love, never passed off as another brand. What you buy is an authentic fragrance in its own right, priced fairly and clearly for what it is.",
+            "tag_label": "Our Promise",
+            "tags": "Own-Brand, Authentic, Fairly Priced"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is an inspired or dupe perfume?",
+            "answer": "An inspired perfume, sometimes called an impression or dupe, is an original fragrance built around a popular scent profile rather than a copy of a specific brand. It lets you enjoy a familiar style of scent at a more accessible price."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Are inspired perfumes good quality?",
+            "answer": "Yes. A well-made inspired perfume uses quality fragrance materials and is judged on how good it smells and how well it lasts. Ours are formulated for genuine longevity and projection, not just a low price."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Do inspired perfumes last as long as the original?",
+            "answer": "A good inspired perfume is made to last through the day, with solid longevity and projection. Performance varies by fragrance and concentration, and each product page describes what to expect."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are inspired perfumes the same as the designer originals?",
+            "answer": "No. Inspired perfumes are our own original fragrances built around a popular scent style, not copies or replicas of any brand. They are sold clearly as inspired fragrances in their own right."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Which affordable perfume smells like a luxury style?",
+            "answer": "Our inspired range covers the most-loved fragrance styles, from fresh and aquatic to warm oud and sweet vanilla, so you can find an affordable scent in the profile you enjoy. Browse by scent family to match the style you like."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Why are inspired perfumes cheaper than designer ones?",
+            "answer": "Designer prices include brand marketing, packaging and licensing. An inspired perfume focuses spending on the fragrance itself, which is why you can enjoy a beautiful scent at a much lower price."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your inspired perfumes genuine products?",
+            "answer": "Yes. Every inspired perfume at The Fragrance Secrets is a genuine own-brand fragrance, sourced and made to a real standard, and sold honestly as an inspired scent rather than as another brand."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship inspired perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

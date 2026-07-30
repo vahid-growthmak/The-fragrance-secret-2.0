@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Oud & Oriental Heritage",
+        "hero_heading": "Arabic <em>Perfumes</em>",
+        "hero_image_alt": "Arabic perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Oud & Oriental Heritage",
+        "intro_heading": "Arabic Perfumes UAE",
+        "intro_text": "<p>Arabic perfumery is celebrated for its rich ingredients, exceptional craftsmanship, and long-lasting fragrance traditions. Built around notes such as oud, amber, musk, rose, saffron, and warm spices, Arabic perfumes are known for their depth, character, and lasting impression. At The Fragrance Secrets, explore authentic Arabic perfumes for men and women from leading Arabian fragrance houses. Whether you prefer traditional oud creations or modern oriental blends, you'll discover fragrances designed for everyday wear, special occasions, and lasting confidence in the UAE's warm climate.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Tradition",
+        "cards_heading": "What Defines <em>an Arabic Perfume</em>",
+        "cards_sub": "Arabian perfumery is defined by richness and longevity. It leans on precious, long-lasting materials such as oud, amber and musk, layered for depth rather than diluted for lightness. That is why these scents feel more intense than many designer fragrances, and why a single application lasts so long.",
+        "show_numbers": false,
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Arabic Perfumes",
+        "schema_name": "Arabic Perfumes UAE",
+        "schema_description": "Explore Arabic perfumes at The Fragrance Secrets. From rich oud and warm amber to elegant rose and musk, discover long-lasting fragrances with shipping across the UAE, USA, and Canada.",
+        "cards_footnote": "Arabic perfumes also make a treasured gift for weddings, Eid and special occasions, and pair beautifully with bakhoor and attar for anyone who loves to layer the tradition fully."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Oud, the Heart of Arabian Scent",
+            "body": "Oud is the deep, woody, slightly smoky note at the centre of Arabian perfumery, prized for centuries and unmistakable once you know it. It gives these fragrances their signature depth and their remarkable staying power.",
+            "tag_label": "Popular Notes",
+            "tags": "Oud, Amber, Musk, Saffron"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Made to Last in the Heat",
+            "body": "Arabian perfumes are composed to survive warmth, which is exactly why they thrive in the Gulf. Heavy base notes resist the heat that burns off lighter scents, so the fragrance stays with you from morning to night.",
+            "tag_label": "Why It Lasts",
+            "tags": "Rich Oils, Heavy Base, Heat-Resistant"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "For Men and For Women",
+            "body": "The tradition offers scents for everyone: bold leather and oud compositions, soft rose and floral blends, and warm amber gourmands that suit any wearer. Many are unisex by nature, worn across the family.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Shared Signature"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Oriental and Modern Styles",
+            "body": "Alongside the classics sit modern oriental fragrances that pair traditional oud and amber with fresh or fruity top notes, giving you the heritage depth with a contemporary, easy-to-wear finish.",
+            "tag_label": "Explore by Style",
+            "tags": "Traditional Oud, Oriental, Modern Amber"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is an Arabic perfume?",
+            "answer": "An Arabic perfume is a fragrance rooted in Middle Eastern perfumery, built on rich, long-lasting materials such as oud, amber, musk and saffron. It is known for its depth, intensity and remarkable longevity compared with many Western designer scents."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does oud smell like?",
+            "answer": "Oud is warm, woody and slightly smoky, with a deep, resinous character that can feel rich and even a little animalic. It is the signature note of Arabian perfumery and gives these fragrances their unmistakable depth."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Why do Arabic perfumes last so long?",
+            "answer": "They are made with a high concentration of rich, heavy materials such as oud, amber and musk, which evaporate slowly. These dense base notes resist heat far better than lighter scents, so the fragrance lingers for many hours."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which Arabic perfume is best for men?",
+            "answer": "Bold oud, leather and spice compositions are the classic choice for men, offering strong presence and long wear. For daytime, a lighter amber or woody oriental gives the same heritage in a more wearable form."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Arabic perfumes suitable for women?",
+            "answer": "Absolutely. The tradition includes soft rose, floral and fruity blends alongside warm ambers, and many oud and musk scents are naturally unisex, worn beautifully by women across the region."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Arabic perfumes alcohol-free?",
+            "answer": "Some are and some are not. Spray Arabian perfumes usually contain alcohol, while attars and perfume oils in the same style are alcohol-free. Check each product page, or browse our Attar and Perfume Oils collections for alcohol-free options."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your Arabic perfumes genuine?",
+            "answer": "Yes. Every Arabic perfume at The Fragrance Secrets is genuine and sourced through trusted suppliers, so you receive authentic fragrances from respected Arabian houses."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Arabic perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

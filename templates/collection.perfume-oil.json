@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Concentrated & Long-Lasting",
+        "hero_heading": "Perfume <em>Oils</em>",
+        "hero_image_alt": "Perfume oils collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Concentrated & Long-Lasting",
+        "intro_heading": "Perfume Oils UAE",
+        "intro_text": "<p>If you're looking for a fragrance that stays close to the skin and lasts throughout the day, perfume oils are a timeless choice. These concentrated, alcohol-free fragrances are applied directly to the skin, offering a rich and personal scent experience with just a small amount. At The Fragrance Secrets, explore perfume oils for men and women, featuring oud, musk, amber, floral, and fresh fragrance notes from trusted designer and Arabian fragrance houses. Whether you're discovering perfume oils for the first time or adding a new favourite to your collection, you'll find long-lasting fragrances for every style and occasion.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Difference",
+        "cards_heading": "Why Choose <em>a Perfume Oil?</em>",
+        "cards_sub": "A perfume oil is fragrance without the alcohol carrier. Instead of spraying a fine mist that lifts off the skin and evaporates, you apply a concentrated oil that stays put. The result is a scent that lasts longer, sits closer, and suits skin that alcohol tends to dry out.",
+        "show_numbers": false,
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "explore_1_label": "Shop by Category",
+        "explore_1_sub": "Men's, women's, unisex & more",
+        "explore_1_url": "/collections",
+        "show_reviews": true,
+        "crumb_name": "Perfume Oils",
+        "schema_name": "Perfume Oils UAE",
+        "schema_description": "Shop concentrated perfume oils at The Fragrance Secrets. Explore long-lasting, alcohol-free perfume oils with oud, musk, floral, and amber notes for men and women, with shipping across the UAE, USA, and Canada.",
+        "cards_footnote": "Perfume oils are also an easy, affordable way to build a fragrance wardrobe, and they layer under a spray perfume to make any scent last longer."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Longer-Lasting Than Sprays",
+            "body": "With no alcohol to evaporate, a perfume oil clings to the skin and releases slowly over many hours. A small amount outlasts a spray, so one application in the morning usually sees you through the day.",
+            "tag_label": "Why It Lasts",
+            "tags": "No Alcohol, Slow Release, Skin-Warmed"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Gentle and Alcohol-Free",
+            "body": "Because they skip the alcohol, perfume oils are far kinder to sensitive or dry skin. There is no sharp alcohol bite on application, just the fragrance itself from the first moment.",
+            "tag_label": "Best For",
+            "tags": "Sensitive Skin, Daily Wear, Layering"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Easy to Carry and Reapply",
+            "body": "Most oils come in a compact roll-on or dab bottle, so they slip into a bag or pocket. No spray, no mess, and a quick top-up whenever you want one.",
+            "tag_label": "Format",
+            "tags": "Roll-On, Travel-Friendly, No Spray"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "How to Apply Perfume Oil",
+            "body": "Roll or dab a little onto warm pulse points, the wrists, neck and inner elbows, and leave it to settle. Skip the rubbing, which can flatten the scent, and layer over a matching spray if you want it to last even longer.",
+            "tag_label": "Apply To",
+            "tags": "Wrists, Neck, Inner Elbows"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is perfume oil and does it last longer?",
+            "answer": "Perfume oil is a concentrated, alcohol-free fragrance applied directly to the skin. Because it has no alcohol to evaporate, it typically lasts longer than a spray perfume, releasing slowly over many hours from a small amount."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is perfume oil better than spray perfume?",
+            "answer": "Neither is simply better; they suit different needs. Perfume oil lasts longer, sits closer to the skin and is gentler on sensitive skin. Spray perfume projects more and is quicker to apply. Many people use oils for longevity and sprays for reach."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are perfume oils alcohol-free?",
+            "answer": "Most perfume oils are alcohol-free, which is why they are gentler on the skin and do not carry the sharp alcohol note of a spray. Check each product page to confirm the formulation."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I apply perfume oil?",
+            "answer": "Roll or dab a small amount onto warm pulse points such as the wrists, neck and inner elbows, then let it settle without rubbing. Start with a little, as concentrated oils go a long way."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfume oil lasts the longest?",
+            "answer": "Oud, amber and musk-based perfume oils tend to last longest because of their heavier base notes. For maximum longevity, apply to moisturised skin and layer under a matching spray."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I layer perfume oil with my spray perfume?",
+            "answer": "Yes, and it is one of the best ways to make a scent last. Apply the oil first, then the matching or complementary spray on top, and the oil helps anchor the fragrance for longer."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your perfume oils genuine?",
+            "answer": "Yes. Every perfume oil at The Fragrance Secrets is genuine and sourced through trusted suppliers, so you receive concentrated, authentic fragrance rather than a diluted product."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship perfume oils internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

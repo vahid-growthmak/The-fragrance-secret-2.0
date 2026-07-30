@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Natural Aromatherapy",
+        "hero_heading": "Miracle <em>Plant</em>",
+        "hero_image_alt": "Miracle Plant natural perfume The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Natural Aromatherapy",
+        "intro_heading": "Miracle Plant Natural Perfume UAE",
+        "intro_text": "<p>Miracle Plant is not an ordinary perfume. It is a natural, alcohol-free aromatherapy spray made from pure essential oils, created around one idea: helping you wind down and drift into deeper, more peaceful sleep. Made in Australia and free from synthetic fragrance, it is spritzed onto your pillow, bed linen or pulse points at bedtime, so the calming aroma settles around you as you rest. At The Fragrance Secrets, explore the Miracle Plant Deep Sleep range, a clean, botanical alternative for anyone who prefers natural, plant-based scent.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Natural Aromatherapy",
+        "cards_heading": "How <em>Miracle Plant</em> Works",
+        "cards_sub": "Miracle Plant draws on aromatherapy, the practice of using natural plant aromas to support relaxation. As you breathe in the essential-oil blend at bedtime, the calming scent helps signal to your body that it is time to unwind. It is a gentle, non-oral, non-addictive ritual designed to fit easily into your nightly routine.",
+        "show_numbers": false,
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "explore_1_label": "Shop by Brand",
+        "explore_1_sub": "Every house we carry",
+        "explore_1_url": "/pages/brands",
+        "show_reviews": true,
+        "crumb_name": "Miracle Plant",
+        "schema_name": "Miracle Plant Natural Perfume UAE",
+        "schema_description": "Shop Miracle Plant at The Fragrance Secrets. A natural, alcohol-free aromatherapy Deep Sleep perfume made from pure essential oils, with fast delivery across the UAE, USA and Canada.",
+        "cards_footnote": "Miracle Plant comes in five gentle variants, For Her, For Him, For Every Body, For Mature and For Kids, and its clean, thoughtful packaging also makes it a caring gift for anyone who values rest and natural wellbeing."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "100% Natural and Alcohol-Free",
+            "body": "Miracle Plant is made from pure essential oils with no alcohol, no synthetic fragrance, and no artificial colours. It is a clean, botanical formula, which makes it a gentle choice for those who prefer natural, plant-based scent.",
+            "tag_label": "Formula",
+            "tags": "Natural, Alcohol-Free, Essential Oils"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Designed for Deep Sleep",
+            "body": "The blend is created specifically to help you relax and fall asleep more easily. According to the brand, it is scientifically formulated for sleep, offering a calming aroma to help quieten a busy mind at the end of the day.",
+            "tag_label": "Made For",
+            "tags": "Bedtime, Relaxation, Winding Down"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Backed by the Brand's Research",
+            "body": "Miracle Plant reports that its Deep Sleep perfume was clinically evaluated in a study of over 250 participants, with 94% experiencing faster sleep onset and 100% saying they would recommend it. These are the brand's own published findings.",
+            "tag_label": "The Brand States",
+            "tags": "Clinically Studied, 250+ Participants"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Simple to Use at Bedtime",
+            "body": "There is nothing to swallow and no complicated routine. Spray one to three times lightly over your pillow, bed linen or pyjamas, or dab a little onto your wrists and neck, then breathe in and let yourself relax.",
+            "tag_label": "How to Use",
+            "tags": "Pillow, Linen, Pulse Points"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Miracle Plant?",
+            "answer": "Miracle Plant is a natural, alcohol-free aromatherapy perfume made from pure essential oils. Rather than a conventional fragrance, it is a Deep Sleep spray designed to help you relax and fall asleep more easily, made in Australia and free from synthetic fragrance."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Miracle Plant work?",
+            "answer": "It works through aromatherapy. As you breathe in the natural essential-oil blend at bedtime, the calming aroma helps you relax and unwind, creating a peaceful atmosphere that supports restful sleep. It is non-oral and non-addictive."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I use Miracle Plant?",
+            "answer": "Spray one to three times lightly over your pillow, bed linen, pyjamas or around the room before bed. You can also dab a small amount onto pulse points such as the wrists and neck, then breathe in the aroma and let yourself relax."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Miracle Plant natural and alcohol-free?",
+            "answer": "Yes. Miracle Plant is made with 100% natural ingredients and pure essential oils, with no alcohol and no synthetic fragrance. It is a clean, plant-based formula."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Miracle Plant safe and non-addictive?",
+            "answer": "The brand describes it as a natural, non-oral and non-addictive essential-oil spray developed by experts. As with any new product, if you are pregnant, have a medical condition or are using it for a child, it is sensible to check with a healthcare professional first."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Miracle Plant actually help with sleep?",
+            "answer": "Miracle Plant reports that its Deep Sleep perfume was clinically evaluated in a study of over 250 participants, with 94% experiencing faster sleep onset. These are the brand's own published findings, and individual results can vary from person to person."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Which Miracle Plant variant should I choose?",
+            "answer": "The range includes five options, For Her, For Him, For Every Body, For Mature and For Kids, so you can choose the one made for you or the person you are buying for. Each is built on the same natural, alcohol-free approach."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Miracle Plant internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

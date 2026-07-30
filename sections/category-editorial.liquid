@@ -1,0 +1,273 @@
+{%- comment -%}
+  Category collection editorial — the shared "Shop by Category" page body that
+  renders below the product grid. Every string comes from section settings or
+  blocks, so one section serves every category template (women's, unisex, kids,
+  luxury, arabic, attar, perfume oils, inspired, miracle plant).
+
+  Blocks:
+    card — the four feature / scent-family cards
+    faq  — one accordion row, also mirrored into FAQPage schema
+{%- endcomment -%}
+
+{%- assign card_blocks = section.blocks | where: 'type', 'card' -%}
+{%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
+
+<!-- FEATURE / SCENT-FAMILY CARDS -->
+{%- if card_blocks.size > 0 -%}
+  <section class="section family-section"><div class="container">
+    <div class="sec-head center">
+      {%- if section.settings.cards_eyebrow != blank -%}<span class="label">{{ section.settings.cards_eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.cards_heading != blank -%}<h2 class="sec-title">{{ section.settings.cards_heading }}</h2>{%- endif -%}
+      {%- if section.settings.cards_sub != blank -%}<p class="sec-sub">{{ section.settings.cards_sub }}</p>{%- endif -%}
+    </div>
+
+    <div class="usp-grid four">
+      {%- for block in card_blocks -%}
+        {%- capture card_number -%}{{ forloop.index | prepend: '0' | slice: -2, 2 }}{%- endcapture -%}
+        {%- capture card_inner -%}
+          {%- if section.settings.show_numbers -%}<div class="fam-num">{{ card_number }}</div>{%- endif -%}
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.body }}</p>
+          {%- if block.settings.tags != blank -%}
+            <div class="fam-bestfor">
+              <span class="bl">{{ block.settings.tag_label | default: 'Best For' }}</span>
+              <div class="fam-tags">
+                {%- assign tags = block.settings.tags | split: ',' -%}
+                {%- for tag in tags -%}<span>{{ tag | strip }}</span>{%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.link_url != blank and block.settings.link_label != blank -%}
+            <span class="fam-link">{{ block.settings.link_label }} <span class="mi" aria-hidden="true">arrow_forward</span></span>
+          {%- endif -%}
+        {%- endcapture -%}
+
+        {%- if block.settings.link_url != blank -%}
+          <a class="usp-card fam-card fade-up" href="{{ block.settings.link_url }}" {{ block.shopify_attributes }}>{{ card_inner }}</a>
+        {%- else -%}
+          <div class="usp-card fam-card fade-up" {{ block.shopify_attributes }}>{{ card_inner }}</div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cards_footnote != blank -%}
+      <p class="sec-sub cards-footnote">{{ section.settings.cards_footnote }}</p>
+    {%- endif -%}
+  </div></section>
+{%- endif -%}
+
+<!-- EXPLORE MORE COLLECTIONS -->
+<section class="section alt"><div class="container">
+  <div class="sec-head center">
+    <span class="label">Keep Looking</span>
+    <h2 class="sec-title">Explore More <em>Collections</em></h2>
+    {%- if section.settings.explore_sub != blank -%}<p class="sec-sub">{{ section.settings.explore_sub }}</p>{%- endif -%}
+  </div>
+  <div class="explore-grid">
+    <a class="explore-card fade-up" href="{{ section.settings.explore_1_url | default: '/collections' }}">
+      <span class="mi ex-ic" aria-hidden="true">grid_view</span>
+      <b>{{ section.settings.explore_1_label | default: 'Shop by Category' }}</b>
+      <span class="ex-sub">{{ section.settings.explore_1_sub | default: "Men's, women's, unisex &amp; more" }}</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+    <a class="explore-card fade-up" href="/pages/shop-by-lifestyle">
+      <span class="mi ex-ic" aria-hidden="true">auto_awesome</span>
+      <b>Shop by Lifestyle</b>
+      <span class="ex-sub">Office, date night, everyday</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+    <a class="explore-card fade-up" href="/pages/shop-by-weather">
+      <span class="mi ex-ic" aria-hidden="true">wb_sunny</span>
+      <b>Shop by Climate</b>
+      <span class="ex-sub">Summer, humid, cooler days</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+    <a class="explore-card fade-up" href="/collections/oud-woody">
+      <span class="mi ex-ic" aria-hidden="true">spa</span>
+      <b>Shop by Scent Family</b>
+      <span class="ex-sub">Fresh, oud, spicy, sweet</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+  </div>
+</div></section>
+
+<!-- REVIEWS -->
+{%- if section.settings.show_reviews -%}
+  <section class="reviews"><div class="reviews-inner">
+    <div class="reviews-head fade-up">
+      <span class="label">What Customers Say</span>
+      <h2 class="sec-title">Loved by <em>Fragrance Lovers</em></h2>
+    </div>
+    <div class="rv-summary fade-up">
+      <div class="rv-big">4.8</div>
+      <div class="rv-details">
+        <div class="stars">
+          <span class="mi mi-f" aria-hidden="true">star</span>
+          <span class="mi mi-f" aria-hidden="true">star</span>
+          <span class="mi mi-f" aria-hidden="true">star</span>
+          <span class="mi mi-f" aria-hidden="true">star</span>
+          <span class="mi mi-f" aria-hidden="true">star</span>
+        </div>
+        <p>Based on 10,284 verified reviews</p>
+      </div>
+    </div>
+    <div class="rv-grid" data-render="reviews" data-count="3"></div>
+  </div></section>
+{%- endif -%}
+
+<!-- FAQ -->
+{%- if faq_blocks.size > 0 -%}
+  <section class="faq"><div class="faq-inner">
+    <div class="faq-head fade-up">
+      <span class="label">Your Questions, Answered</span>
+      <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list fade-up">
+      {%- for block in faq_blocks -%}
+        <details class="faq-item" {{ block.shopify_attributes }}>
+          <summary class="faq-q">{{ block.settings.question }}<span class="mi" aria-hidden="true">add</span></summary>
+          <div class="faq-a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div></section>
+{%- endif -%}
+
+<!-- BECOME A MEMBER -->
+{%- unless customer -%}
+  <section class="section"><div class="container">
+    <div class="cta-band member-band">
+      <div class="member-copy">
+        <span class="label" style="color:var(--gold)">Welcome to The Fragrance Secrets</span>
+        <h2 class="sec-title">Enjoy 10% Off <em>Your First Perfume Order</em></h2>
+        <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Receive an instant 10% welcome discount on your first purchase, save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
+        <div class="cta-actions">
+          <a class="btn-g" href="{{ routes.account_register_url }}"><span class="mi" aria-hidden="true">person_add</span>Claim 10% Discount</a>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="mc-disc"><b>10%</b><span>Welcome Discount</span></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant 10% welcome discount</b><span>Applied automatically at checkout</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">favorite</span><div><b>Save your favourite fragrances</b><span>Build your personal wishlist</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">local_shipping</span><div><b>Track every order</b><span>Full order history in one place</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">bolt</span><div><b>Faster checkout</b><span>Saved details, fewer steps</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">star</span><div><b>Exclusive member-only offers</b><span>Member drops all year round</span></div></div>
+      </div>
+    </div>
+  </div></section>
+{%- endunless -%}
+
+{%- comment -%} ── Structured data: BreadcrumbList + CollectionPage/ItemList + FAQPage ── {%- endcomment -%}
+{%- liquid
+  assign coll_url = shop.url | append: collection.url
+  assign crumb_name = section.settings.crumb_name | default: collection.title
+  assign schema_name = section.settings.schema_name | default: collection.title
+-%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": {{ coll_url | append: '#breadcrumb' | json }},
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop.url | append: '/' | json }} },
+    { "@type": "ListItem", "position": 2, "name": "Perfumes", "item": {{ shop.url | append: '/collections/all' | json }} },
+    { "@type": "ListItem", "position": 3, "name": {{ crumb_name | json }}, "item": {{ coll_url | json }} }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ coll_url | append: '#collectionpage' | json }},
+  "url": {{ coll_url | json }},
+  "name": {{ schema_name | json }},
+  {%- if section.settings.schema_description != blank -%}
+  "description": {{ section.settings.schema_description | json }},
+  {%- endif -%}
+  "isPartOf": { "@id": {{ shop.url | append: '/#website' | json }} },
+  "breadcrumb": { "@id": {{ coll_url | append: '#breadcrumb' | json }} },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ collection.products_count }},
+    "itemListElement": [
+      {%- for product in collection.products -%}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "url": {{ shop.url | append: product.url | json }},
+        "name": {{ product.title | json }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+}
+</script>
+
+{%- if faq_blocks.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in faq_blocks -%}
+    {
+      "@type": "Question",
+      "name": {{ block.settings.question | json }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} }
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Category editorial",
+  "settings": [
+    { "type": "header", "content": "Feature cards" },
+    { "type": "text", "id": "cards_eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "cards_heading", "label": "Heading (H2)", "info": "Wrap words in <em></em> for the gold italic accent." },
+    { "type": "textarea", "id": "cards_sub", "label": "Intro paragraph" },
+    { "type": "textarea", "id": "cards_footnote", "label": "Closing paragraph" },
+    { "type": "checkbox", "id": "show_numbers", "label": "Number the cards (01, 02, …)", "default": true },
+    { "type": "header", "content": "Explore more" },
+    { "type": "textarea", "id": "explore_sub", "label": "Intro paragraph" },
+    { "type": "text", "id": "explore_1_label", "label": "First tile label", "default": "Shop by Category" },
+    { "type": "text", "id": "explore_1_sub", "label": "First tile sub-label", "default": "Men's, women's, unisex & more" },
+    { "type": "url", "id": "explore_1_url", "label": "First tile link" },
+    { "type": "header", "content": "Reviews" },
+    { "type": "checkbox", "id": "show_reviews", "label": "Show the reviews band", "default": true },
+    { "type": "header", "content": "Structured data" },
+    { "type": "text", "id": "crumb_name", "label": "Breadcrumb name", "info": "Leave blank to use the collection title." },
+    { "type": "text", "id": "schema_name", "label": "CollectionPage name", "info": "Usually the primary keyword, e.g. Women's Perfumes UAE." },
+    { "type": "textarea", "id": "schema_description", "label": "CollectionPage description" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Feature card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" },
+        { "type": "text", "id": "tag_label", "label": "Tag label", "default": "Best For" },
+        { "type": "text", "id": "tags", "label": "Tags", "info": "Comma separated." },
+        { "type": "text", "id": "link_label", "label": "Link label" },
+        { "type": "url", "id": "link_url", "label": "Link" }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Category editorial" } ]
+}
+{% endschema %}
