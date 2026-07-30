@@ -201,6 +201,17 @@
       transition: all .4s var(--ease)
     }
 
+    /* Shopify wraps every section in its own div, so the header's sticky
+       position has no room to travel inside it. Stick the wrapper instead
+       (section-group id ends in __header; standalone id is shopify-section-header).
+       The announcement bar above it is left to scroll away. */
+    [id^="shopify-section"][id$="__header"],
+    #shopify-section-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000
+    }
+
     header.dark {
       background: rgba(13, 10, 6, .97);
       backdrop-filter: blur(14px)
