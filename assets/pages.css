@@ -272,10 +272,21 @@ header.light .nav-burger { color: var(--warm); }
    groups scroll inside it, so the card can never grow taller than the
    viewport (which is what made it scroll away with the page). */
 @media (min-width: 901px) {
-  .shop-filters { top: 104px; max-height: calc(100vh - 124px); display: flex; flex-direction: column; }
+  .shop-filters { top: 96px; max-height: calc(100vh - 112px); display: flex; flex-direction: column; }
   .shop-filters > form { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
   .sf-head { flex: 0 0 auto; }
   .sf-scroll { flex: 1 1 auto; min-height: 0; max-height: none; overscroll-behavior: contain; }
+
+  /* One scroll region only — the card itself. Per-group scroll boxes trapped
+     long value lists (brands) and made the panel look cut off. */
+  .sf-opts, .sf-cats { max-height: none; overflow: visible; }
+
+  /* Slim scrollbar so the pinned card reads as scrollable */
+  .sf-scroll { scrollbar-width: thin; scrollbar-color: rgba(13,10,6,.22) transparent; }
+  .sf-scroll::-webkit-scrollbar { width: 7px; }
+  .sf-scroll::-webkit-scrollbar-track { background: transparent; }
+  .sf-scroll::-webkit-scrollbar-thumb { background: rgba(13,10,6,.18); border-radius: 4px; }
+  .sf-scroll:hover::-webkit-scrollbar-thumb { background: rgba(13,10,6,.3); }
 }
 
 /* The collection top toolbar now only carries the mobile Filters button
