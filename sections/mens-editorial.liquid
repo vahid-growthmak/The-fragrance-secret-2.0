@@ -48,8 +48,8 @@
   </div>
   <div class="crosslink-grid four">
     <a class="crosslink explore-tile" href="/collections"><span><span class="mi" aria-hidden="true">grid_view</span>Shop by Category</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
-    <a class="crosslink explore-tile" href="/collections/everyday-signature"><span><span class="mi" aria-hidden="true">auto_awesome</span>Shop by Lifestyle</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
-    <a class="crosslink explore-tile" href="/collections/summer-wear"><span><span class="mi" aria-hidden="true">wb_sunny</span>Shop by Climate</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+    <a class="crosslink explore-tile" href="/pages/shop-by-lifestyle"><span><span class="mi" aria-hidden="true">auto_awesome</span>Shop by Lifestyle</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+    <a class="crosslink explore-tile" href="/pages/shop-by-weather"><span><span class="mi" aria-hidden="true">wb_sunny</span>Shop by Climate</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
     <a class="crosslink explore-tile" href="/collections/oud-woody"><span><span class="mi" aria-hidden="true">spa</span>Shop by Scent Family</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
   </div>
 </div></section>
@@ -97,7 +97,7 @@
     <span class="label">Why Shop With Us</span>
     <h2 class="sec-title">Why Customers Choose <em>The Fragrance Secrets</em></h2>
   </div>
-  <div class="why-grid">
+  <div class="why-grid six">
     <div class="why-card fade-up"><span class="mi" aria-hidden="true">verified</span><h3>100% Authentic Perfumes</h3></div>
     <div class="why-card fade-up"><span class="mi" aria-hidden="true">local_shipping</span><h3>Fast UAE Delivery</h3></div>
     <div class="why-card fade-up"><span class="mi" aria-hidden="true">lock</span><h3>Secure Payments</h3></div>
@@ -106,6 +106,120 @@
     <div class="why-card fade-up"><span class="mi" aria-hidden="true">redeem</span><h3>Perfect for Gifting</h3></div>
   </div>
 </div></section>
+
+<!-- INTERNAL LINKING -->
+<section class="section alt"><div class="container">
+  <div class="linkset-grid">
+    <div class="linkset fade-up">
+      <h3>Shop by Gender</h3>
+      <a class="crosslink" href="/collections/womens"><span>Women's Perfumes</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/collections/unisex"><span>Unisex Perfumes</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/collections/kids"><span>Kids Perfumes</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="linkset fade-up">
+      <h3>Popular with Men</h3>
+      <a class="crosslink" href="/collections/best-sellers"><span>Best Sellers</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/collections/luxury"><span>Luxury Perfumes</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="linkset fade-up">
+      <h3>More to Explore</h3>
+      <a class="crosslink" href="/collections/perfume-oil"><span>Perfume Oils</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <a class="crosslink" href="/pages/gift-sets"><span>Gift Sets</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+  </div>
+</div></section>
+
+{%- comment -%} ── Structured data: BreadcrumbList + CollectionPage/ItemList + FAQPage ── {%- endcomment -%}
+{%- assign coll_url = shop.url | append: collection.url -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": {{ coll_url | append: '#breadcrumb' | json }},
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop.url | append: '/' | json }} },
+    { "@type": "ListItem", "position": 2, "name": "Perfumes", "item": {{ shop.url | append: '/collections/all' | json }} },
+    { "@type": "ListItem", "position": 3, "name": "Men's Perfumes", "item": {{ coll_url | json }} }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ coll_url | append: '#collectionpage' | json }},
+  "url": {{ coll_url | json }},
+  "name": "Men's Perfumes UAE",
+  "description": "Authentic designer and Arabian men's perfumes at The Fragrance Secrets, from fresh citrus office scents to rich oud, chosen to perform in the UAE climate.",
+  "isPartOf": { "@id": {{ shop.url | append: '/#website' | json }} },
+  "breadcrumb": { "@id": {{ coll_url | append: '#breadcrumb' | json }} },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ collection.products_count }},
+    "itemListElement": [
+      {%- for product in collection.products -%}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "url": {{ shop.url | append: product.url | json }},
+        "name": {{ product.title | json }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which men's perfumes last the longest in the UAE heat?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oud, amber and woody Eau de Parfums hold up best in the heat. Their heavier base notes resist the high temperatures that burn off lighter fragrances quickly, so the scent stays with you through the day. Look for Eau de Parfum or Extrait concentrations for the strongest performance, and check the longevity note on each product page." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good men's perfume for the office?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For the office, a fresh or citrus fragrance is the safer choice. It projects just enough to be noticed up close without filling a shared or air-conditioned space. Save the heavier oud and spice scents for evenings, when stronger projection works in your favour." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between EDT and EDP?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Eau de Toilette (EDT) has a lighter concentration of fragrance oil, so it feels fresher but fades faster, which suits daytime and hot weather. Eau de Parfum (EDP) is more concentrated, richer and longer-lasting, making it the better pick for evenings and cooler months. Most of our men's range is EDP for that reason." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a signature scent that suits me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Start with the occasion you buy for most, whether that is work, evenings out or formal events, then choose the family that fits it. Once a scent earns you a few compliments and feels like you, it becomes your signature. Our range spans fresh, spicy, oud and gourmand so you can settle on the profile that fits your routine." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which men's perfume is best for making an impression?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oud and spicy oriental fragrances make the strongest impression because they carry further and last longer. If you want to be remembered, look to deep oud, amber and incense-led scents, or a warm gourmand for something more approachable but still distinctive." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these men's perfumes genuine?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every men's perfume at The Fragrance Secrets is sourced through trusted suppliers and checked for authenticity before it ships. You are buying genuine designer and Arabian fragrances, with no imitations." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good men's perfume to give as a gift?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A versatile oud or a crowd-pleasing fresh scent makes a reliable gift, since both suit a wide range of tastes. If you are unsure of his preference, a well-known Arabian oud or a designer fresh fragrance is a safe, premium choice. Our gift sets are packaged ready to give for birthdays, Eid and special occasions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you ship men's perfumes internationally?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options, delivery times and available services are shown during checkout based on your destination." }
+    }
+  ]
+}
+</script>
 
 {% schema %}
 { "name": "Men's editorial", "settings": [], "presets": [ { "name": "Men's editorial" } ] }

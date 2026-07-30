@@ -3602,6 +3602,173 @@
       .crosslink-grid.four { grid-template-columns: 1fr }
     }
 
+    /* ── Collection introduction (copy + why-choose rotator) ── */
+    .coll-intro {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .coll-intro-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 52px;
+      align-items: center
+    }
+
+    .coll-intro-copy .sec-title { font-size: clamp(1.7rem, 3.2vw, 2.5rem) }
+
+    .coll-intro-body {
+      max-width: 660px;
+      font-size: .95rem
+    }
+
+    .coll-intro-body p + p { margin-top: 12px }
+
+    .wc-rotator {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--ink), var(--charcoal));
+      border: 1px solid rgba(226, 201, 126, .22);
+      border-radius: 10px;
+      padding: 26px 28px 22px
+    }
+
+    .wc-rotator::before {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, .22), transparent 65%)
+    }
+
+    .wc-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px
+    }
+
+    .wc-head .label { margin-bottom: 0 }
+
+    .wc-count {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      color: var(--on-dark)
+    }
+
+    .wc-count b { color: var(--gold-lt) }
+
+    .wc-stage {
+      position: relative;
+      min-height: 178px
+    }
+
+    .wc-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .5s var(--ease), transform .5s var(--ease);
+      pointer-events: none
+    }
+
+    .wc-slide.is-active {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto
+    }
+
+    .wc-slide .mi {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(226, 201, 126, .14);
+      border: 1px solid rgba(226, 201, 126, .36);
+      color: var(--gold-lt);
+      font-size: 22px;
+      margin-bottom: 14px
+    }
+
+    .wc-slide b {
+      font-family: var(--fd);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 8px
+    }
+
+    .wc-slide p {
+      font-size: .85rem;
+      line-height: 1.65;
+      color: var(--on-dark);
+      max-width: 340px
+    }
+
+    .wc-dots {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 8px;
+      margin-top: 16px
+    }
+
+    .wc-dots button {
+      width: 22px;
+      height: 3px;
+      padding: 0;
+      border: 0;
+      border-radius: 2px;
+      background: rgba(247, 242, 234, .22);
+      cursor: pointer;
+      transition: .3s var(--ease)
+    }
+
+    .wc-dots button.is-active {
+      width: 30px;
+      background: var(--gold)
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .wc-slide { transition: none }
+    }
+
+    @media(max-width:900px) {
+      .coll-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px
+      }
+    }
+
+    /* ── Internal linking groups ── */
+    .linkset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px
+    }
+
+    .linkset h3 {
+      font-family: var(--fb);
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-dk);
+      margin-bottom: 14px
+    }
+
+    .linkset .crosslink { margin-bottom: 10px }
+
+    @media(max-width:768px) {
+      .linkset-grid { grid-template-columns: 1fr }
+    }
+
     /* Why Customers Choose — icon cards */
     .why-choose {
       background: var(--cream-dk)
@@ -3641,10 +3808,26 @@
       line-height: 1.4
     }
 
+    /* six cards in a single row (category collection pages) */
+    .why-grid.six {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px
+    }
+
+    .why-grid.six .why-card { padding: 26px 12px }
+
+    .why-grid.six .why-card h3 { font-size: .82rem }
+
+    @media(max-width:1080px) {
+      .why-grid.six { grid-template-columns: repeat(3, 1fr) }
+    }
+
     @media(max-width:820px) {
       .why-grid {
         grid-template-columns: repeat(2, 1fr)
       }
+
+      .why-grid.six { grid-template-columns: repeat(2, 1fr) }
     }
 
     @media(max-width:480px) {

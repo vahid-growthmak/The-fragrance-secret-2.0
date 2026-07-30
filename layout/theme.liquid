@@ -25,6 +25,25 @@
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
 
+  {%- comment -%}
+    Keep filtered / sorted collection URLs out of the index (they are thin duplicates
+    of the base collection). The canonical above already points at the clean URL.
+  {%- endcomment -%}
+  {%- if collection -%}
+    {%- liquid
+      assign is_refined = false
+      if collection.sort_by != blank
+        assign is_refined = true
+      endif
+      for filter in collection.filters
+        if filter.active_values.size > 0 or filter.min_value.value != blank or filter.max_value.value != blank
+          assign is_refined = true
+        endif
+      endfor
+    -%}
+    {%- if is_refined -%}<meta name="robots" content="noindex, follow">{%- endif -%}
+  {%- endif -%}
+
   {% comment %} Fonts — ported verbatim from the source theme {% endcomment %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

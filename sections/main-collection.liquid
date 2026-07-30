@@ -8,47 +8,51 @@
 {%- liquid
   assign hero_image = collection.image | default: collection.metafields.custom.hero_image.value
   assign paginate_by = section.settings.products_per_page | default: 24
+
+  assign hero_eyebrow = section.settings.hero_eyebrow | default: 'The Collection'
+  assign hero_heading = section.settings.hero_heading | default: collection.title
+  assign hero_image_alt = section.settings.hero_image_alt | default: collection.title
+  assign crumb_parent_label = section.settings.crumb_parent_label | default: 'Shop'
+  assign crumb_parent_url = section.settings.crumb_parent_url | default: '/collections/all'
 -%}
 
 <div data-collection-native>
 
   <!-- PAGE HERO -->
+  {%- capture collection_breadcrumb -%}
+    <div class="breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span class="mi" aria-hidden="true">chevron_right</span>
+      <a href="{{ crumb_parent_url }}">{{ crumb_parent_label }}</a>
+      <span class="mi" aria-hidden="true">chevron_right</span>
+      <span>{{ hero_heading }}</span>
+    </div>
+  {%- endcapture -%}
+
   {%- if hero_image -%}
     <section class="page-hero split tall">
       <div class="container">
         <div>
-          <div class="breadcrumb">
-            <a href="{{ routes.root_url }}">Home</a>
-            <span class="mi" aria-hidden="true">chevron_right</span>
-            <a href="/collections/all">Shop</a>
-            <span class="mi" aria-hidden="true">chevron_right</span>
-            <span>{{ collection.title }}</span>
-          </div>
-          <span class="ph-eyebrow">The Collection</span>
-          <h1 class="ph-title">{{ collection.title }}</h1>
-          {%- if collection.description != blank -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
+          {{ collection_breadcrumb }}
+          <span class="ph-eyebrow">{{ hero_eyebrow }}</span>
+          <h1 class="ph-title">{{ hero_heading }}</h1>
+          {%- if collection.description != blank and section.settings.show_hero_description -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
           <div class="ph-meta">
             <span><span class="mi" aria-hidden="true">verified_user</span>100% Authentic</span>
             <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE Delivery</span>
             <span><span class="mi" aria-hidden="true">payments</span>Cash on Delivery</span>
           </div>
         </div>
-        <figure class="ph-figure"><img src="{{ hero_image | image_url: width: 1200 }}" alt="{{ collection.title | escape }}"></figure>
+        <figure class="ph-figure"><img src="{{ hero_image | image_url: width: 1200 }}" alt="{{ hero_image_alt | escape }}"></figure>
       </div>
     </section>
   {%- else -%}
     <section class="page-hero tall">
       <div class="container">
-        <div class="breadcrumb">
-          <a href="{{ routes.root_url }}">Home</a>
-          <span class="mi" aria-hidden="true">chevron_right</span>
-          <a href="/collections/all">Shop</a>
-          <span class="mi" aria-hidden="true">chevron_right</span>
-          <span>{{ collection.title }}</span>
-        </div>
-        <span class="ph-eyebrow">The Collection</span>
-        <h1 class="ph-title">{{ collection.title }}</h1>
-        {%- if collection.description != blank -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
+        {{ collection_breadcrumb }}
+        <span class="ph-eyebrow">{{ hero_eyebrow }}</span>
+        <h1 class="ph-title">{{ hero_heading }}</h1>
+        {%- if collection.description != blank and section.settings.show_hero_description -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
       </div>
     </section>
   {%- endif -%}
@@ -62,6 +66,70 @@
       <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
     </div>
   </div></section>
+
+  <!-- COLLECTION INTRODUCTION -->
+  {%- if section.settings.intro_heading != blank or section.settings.intro_text != blank -%}
+    <section class="section-sm coll-intro"><div class="container coll-intro-grid">
+      <div class="coll-intro-copy">
+        {%- if section.settings.intro_eyebrow != blank -%}<span class="label">{{ section.settings.intro_eyebrow }}</span>{%- endif -%}
+        {%- if section.settings.intro_heading != blank -%}<h2 class="sec-title">{{ section.settings.intro_heading }}</h2>{%- endif -%}
+        {%- if section.settings.intro_text != blank -%}<div class="sec-sub coll-intro-body">{{ section.settings.intro_text }}</div>{%- endif -%}
+      </div>
+
+      {%- if section.settings.show_why_rotator -%}
+        <aside class="wc-rotator" id="wcRotator-{{ section.id }}" aria-label="Why choose The Fragrance Secrets">
+          <div class="wc-head">
+            <span class="label">Why Choose Us</span>
+            <span class="wc-count"><b data-wc-now>1</b>/6</span>
+          </div>
+          <div class="wc-stage">
+            <div class="wc-slide is-active"><span class="mi" aria-hidden="true">verified</span><b>100% Authentic Perfumes</b><p>Every fragrance is genuine and sourced through trusted suppliers, checked before it ships.</p></div>
+            <div class="wc-slide"><span class="mi" aria-hidden="true">local_shipping</span><b>Fast UAE Delivery</b><p>Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates.</p></div>
+            <div class="wc-slide"><span class="mi" aria-hidden="true">lock</span><b>Secure Payments</b><p>Pay safely by card, wallet or cash on delivery, whichever suits you best.</p></div>
+            <div class="wc-slide"><span class="mi" aria-hidden="true">diamond</span><b>Premium Fragrance Collection</b><p>Designer houses and Arabian perfumery, side by side in one place.</p></div>
+            <div class="wc-slide"><span class="mi" aria-hidden="true">inventory_2</span><b>Carefully Packed Orders</b><p>Every order is packed with care so it arrives sealed, safe and gift-ready.</p></div>
+            <div class="wc-slide"><span class="mi" aria-hidden="true">redeem</span><b>Perfect for Gifting</b><p>Ready-wrapped sets and premium packaging for weddings, Eid and birthdays.</p></div>
+          </div>
+          <div class="wc-dots">
+            <button type="button" class="is-active" aria-label="Slide 1"></button>
+            <button type="button" aria-label="Slide 2"></button>
+            <button type="button" aria-label="Slide 3"></button>
+            <button type="button" aria-label="Slide 4"></button>
+            <button type="button" aria-label="Slide 5"></button>
+            <button type="button" aria-label="Slide 6"></button>
+          </div>
+        </aside>
+      {%- endif -%}
+    </div></section>
+
+    {%- if section.settings.show_why_rotator -%}
+      <script>
+          (function () {
+            var root = document.getElementById('wcRotator-{{ section.id }}');
+            if (!root) return;
+            var slides = root.querySelectorAll('.wc-slide');
+            var dots = root.querySelectorAll('.wc-dots button');
+            var now = root.querySelector('[data-wc-now]');
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var i = 0, timer = null;
+            function show(n) {
+              slides[i].classList.remove('is-active');
+              dots[i].classList.remove('is-active');
+              i = (n + slides.length) % slides.length;
+              slides[i].classList.add('is-active');
+              dots[i].classList.add('is-active');
+              if (now) now.textContent = i + 1;
+            }
+            function stop() { if (timer) { clearInterval(timer); timer = null; } }
+            function start() { if (reduce) return; stop(); timer = setInterval(function () { show(i + 1); }, 4000); }
+            dots.forEach(function (d, idx) { d.addEventListener('click', function () { show(idx); start(); }); });
+            root.addEventListener('mouseenter', stop);
+            root.addEventListener('mouseleave', start);
+            start();
+          })();
+      </script>
+    {%- endif -%}
+  {%- endif -%}
 
   <!-- FILTER BAR (mobile toggle) -->
   <div class="filter-bar" id="filterBar"><div class="container"><div class="fb-inner">
@@ -180,7 +248,19 @@
 {
   "name": "Collection page",
   "settings": [
-    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 48, "step": 4, "default": 24 }
+    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 48, "step": 4, "default": 24 },
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "The Collection" },
+    { "type": "text", "id": "hero_heading", "label": "Heading (H1)", "info": "Leave blank to use the collection title." },
+    { "type": "text", "id": "hero_image_alt", "label": "Hero image alt text", "info": "Leave blank to use the collection title." },
+    { "type": "checkbox", "id": "show_hero_description", "label": "Show collection description in hero", "default": true },
+    { "type": "text", "id": "crumb_parent_label", "label": "Breadcrumb parent label", "default": "Shop" },
+    { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent URL", "default": "/collections/all" },
+    { "type": "header", "content": "Collection introduction" },
+    { "type": "text", "id": "intro_eyebrow", "label": "Intro eyebrow" },
+    { "type": "text", "id": "intro_heading", "label": "Intro heading (H2)", "info": "Carries the page's primary keyword. Leave blank to hide the intro." },
+    { "type": "richtext", "id": "intro_text", "label": "Intro copy" },
+    { "type": "checkbox", "id": "show_why_rotator", "label": "Show 'Why choose us' rotator beside the intro", "default": false }
   ],
   "presets": [ { "name": "Collection page" } ]
 }
