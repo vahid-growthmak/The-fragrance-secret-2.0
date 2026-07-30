@@ -3643,10 +3643,10 @@
     .cta-band.member-band {
       display: grid;
       grid-template-columns: 1.12fr .88fr;
-      gap: 50px;
+      gap: 44px;
       align-items: center;
       text-align: left;
-      padding: 58px 46px
+      padding: 38px 40px
     }
 
     .cta-band.member-band::before {
@@ -3655,11 +3655,15 @@
 
     .member-band .member-copy { position: relative; z-index: 2 }
 
-    .member-band .sec-sub { margin: 14px 0 0 }
+    /* beats `.cta-band .sec-sub { margin: 14px auto 26px }` in pages.css */
+    .cta-band.member-band .sec-sub {
+      margin: 14px 0 0;
+      max-width: 600px
+    }
 
     .member-band .cta-actions {
       justify-content: flex-start;
-      margin-top: 26px
+      margin-top: 22px
     }
 
     .member-card {
@@ -3668,18 +3672,19 @@
       background: rgba(255, 253, 248, .04);
       border: 1px solid rgba(226, 201, 126, .3);
       border-radius: 10px;
-      padding: 30px 28px
+      padding: 22px 24px
     }
 
     .member-card .mc-disc {
       text-align: center;
-      margin-bottom: 18px
+      margin-bottom: 12px
     }
+
 
     .member-card .mc-disc b {
       display: block;
       font-family: var(--fd);
-      font-size: 3.2rem;
+      font-size: 2.7rem;
       font-weight: 600;
       line-height: 1;
       color: var(--gold-lt)
@@ -3697,8 +3702,8 @@
     .member-card .mc-perk {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      padding: 13px 0;
+      gap: 13px;
+      padding: 10px 0;
       border-bottom: 1px solid rgba(226, 201, 126, .14)
     }
 
@@ -3729,8 +3734,8 @@
     @media(max-width:900px) {
       .cta-band.member-band {
         grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 44px 26px
+        gap: 28px;
+        padding: 32px 22px
       }
     }
 
