@@ -146,6 +146,25 @@ header.light .nav-burger { color: var(--warm); }
   pointer-events: none;
 }
 .page-hero.tall { padding: 150px 0 88px; }
+
+/* Full-bleed hero artwork: image sits behind a left-weighted scrim so the
+   breadcrumb, eyebrow, H1 and facts row stay legible over it. */
+.page-hero.has-bg { background: var(--ink); }
+.page-hero .ph-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.page-hero .ph-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 72% center; }
+.page-hero .ph-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(13,10,6,.94) 0%, rgba(13,10,6,.88) 30%, rgba(13,10,6,.62) 52%,
+    rgba(13,10,6,.28) 74%, rgba(13,10,6,.18) 100%);
+}
+.page-hero.has-bg::before { z-index: 1; }
+@media (max-width: 900px) {
+  .page-hero .ph-bg img { object-position: 78% center; }
+  .page-hero .ph-bg::after {
+    background: linear-gradient(180deg, rgba(13,10,6,.9) 0%, rgba(13,10,6,.72) 55%, rgba(13,10,6,.86) 100%);
+  }
+}
 .page-hero .container { position: relative; z-index: 2; }
 .ph-eyebrow { color: var(--gold); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; display: block; }
 .ph-title { font-family: var(--fd); font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 400; line-height: 1.08; letter-spacing: -.01em; }
