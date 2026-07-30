@@ -274,8 +274,8 @@ header.light .nav-burger { color: var(--warm); }
    viewport (which is what made it scroll away with the page). */
 @media (min-width: 901px) {
   .shop-filters {
-    top: 68px;                       /* flush under the 68px sticky header */
-    max-height: calc(100vh - 84px);
+    top: 84px;                       /* 68px sticky header + a 16px gap, matching the gap below */
+    max-height: calc(100vh - 100px); /* 84px above + 16px below */
     display: flex; flex-direction: column;
   }
   .shop-filters > form { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
