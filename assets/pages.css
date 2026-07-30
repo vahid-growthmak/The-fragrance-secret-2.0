@@ -268,6 +268,16 @@ header.light .nav-burger { color: var(--warm); }
 .sf-cat-active { color: var(--gold-dk); font-weight: 600; }
 .sf-cat-active::before { content: '›'; margin-right: 5px; color: var(--gold); }
 
+/* Desktop: pin the whole filter card in view under the header and let the
+   groups scroll inside it, so the card can never grow taller than the
+   viewport (which is what made it scroll away with the page). */
+@media (min-width: 901px) {
+  .shop-filters { top: 104px; max-height: calc(100vh - 124px); display: flex; flex-direction: column; }
+  .shop-filters > form { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
+  .sf-head { flex: 0 0 auto; }
+  .sf-scroll { flex: 1 1 auto; min-height: 0; max-height: none; overscroll-behavior: contain; }
+}
+
 /* The collection top toolbar now only carries the mobile Filters button
    (sort + count moved into / removed from the sidebar). Hide the empty bar
    on desktop; reveal it on mobile where the toggle is needed. */
