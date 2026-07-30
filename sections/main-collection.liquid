@@ -257,11 +257,25 @@
             </div>
           {%- endif -%}
         {%- else -%}
-          <div class="empty-state" style="text-align:center;padding:60px 20px">
-            <span class="mi" aria-hidden="true" style="font-size:48px;color:var(--gold)">search_off</span>
-            <h3 class="sec-title">No products yet</h3>
-            <p class="sec-sub">This collection is being curated. Explore all products in the meantime.</p>
-            <a class="btn-g" href="/collections/all">Shop All Products</a>
+          {%- liquid
+            assign filters_applied = false
+            for filter in collection.filters
+              if filter.active_values.size > 0 or filter.min_value.value != nil or filter.max_value.value != nil
+                assign filters_applied = true
+              endif
+            endfor
+          -%}
+          <div class="empty-state">
+            <span class="mi es-ic" aria-hidden="true">search_off</span>
+            {%- if filters_applied -%}
+              <h3>No products match these filters</h3>
+              <p>Try removing a filter, widening the price range, or clearing them all to see the full collection.</p>
+              <a class="btn-g" href="{{ collection.url }}"><span class="mi" aria-hidden="true">restart_alt</span>Clear all filters</a>
+            {%- else -%}
+              <h3>No products yet</h3>
+              <p>This collection is being curated. Explore all products in the meantime.</p>
+              <a class="btn-g" href="/collections/all">Shop All Products</a>
+            {%- endif -%}
           </div>
         {%- endif -%}
       </div>
