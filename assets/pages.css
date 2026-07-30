@@ -273,26 +273,9 @@ header.light .nav-burger { color: var(--warm); }
    groups scroll inside it, so the card can never grow taller than the
    viewport (which is what made it scroll away with the page). */
 @media (min-width: 901px) {
-  /* "Shop the Range" head pins under the site header; the filter card pins
-     directly beneath it, so head + filters travel together as the grid scrolls.
-     Compact while pinned (66px) so the filter card keeps its height. */
-  #grid .results-head {
-    position: sticky; top: 96px; z-index: 20;
-    align-items: center; padding: 11px 0 10px; margin-bottom: 18px;
-  }
-  /* full-bleed backdrop so product cards never show beside the head */
-  #grid .results-head::before {
-    content: ''; position: absolute; inset: 0 -50vw; z-index: -1;
-    background: var(--cream);
-    border-bottom: 1px solid rgba(13,10,6,.07);
-    box-shadow: 0 8px 20px -14px rgba(13,10,6,.35);
-  }
-  #grid .results-head .label { margin-bottom: 4px; }
-  #grid .results-head .results-title { font-size: 1.45rem; line-height: 1.1; }
-
   .shop-filters {
-    top: 162px;                       /* 96px header offset + 66px pinned head */
-    max-height: calc(100vh - 182px);
+    top: 96px;
+    max-height: calc(100vh - 112px);
     display: flex; flex-direction: column;
   }
   .shop-filters > form { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
