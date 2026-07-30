@@ -272,7 +272,20 @@ header.light .nav-burger { color: var(--warm); }
    groups scroll inside it, so the card can never grow taller than the
    viewport (which is what made it scroll away with the page). */
 @media (min-width: 901px) {
-  .shop-filters { top: 96px; max-height: calc(100vh - 112px); display: flex; flex-direction: column; }
+  /* "Shop the Range" head pins under the site header; the filter card pins
+     directly beneath it, so head + filters travel together as the grid scrolls. */
+  #grid { --sticky-top: 96px; --rhead-h: 90px; }
+  #grid .results-head {
+    position: sticky; top: var(--sticky-top); z-index: 20;
+    background: var(--cream); padding: 12px 0; margin-bottom: 20px;
+    border-bottom: 1px solid rgba(13,10,6,.07);
+  }
+
+  .shop-filters {
+    top: calc(var(--sticky-top) + var(--rhead-h));
+    max-height: calc(100vh - var(--sticky-top) - var(--rhead-h) - 20px);
+    display: flex; flex-direction: column;
+  }
   .shop-filters > form { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
   .sf-head { flex: 0 0 auto; }
   .sf-scroll { flex: 1 1 auto; min-height: 0; max-height: none; overscroll-behavior: contain; }
