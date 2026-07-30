@@ -3891,29 +3891,6 @@
       }
     }
 
-    /* ── Internal linking groups ── */
-    .linkset-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px
-    }
-
-    .linkset h3 {
-      font-family: var(--fb);
-      font-size: .68rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--gold-dk);
-      margin-bottom: 14px
-    }
-
-    .linkset .crosslink { margin-bottom: 10px }
-
-    @media(max-width:768px) {
-      .linkset-grid { grid-template-columns: 1fr }
-    }
-
     /* Why Customers Choose — icon cards */
     .why-choose {
       background: var(--cream-dk)
