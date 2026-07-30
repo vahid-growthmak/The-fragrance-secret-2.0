@@ -46,12 +46,54 @@
     <h2 class="sec-title">Explore More <em>Collections</em></h2>
     <p class="sec-sub">Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.</p>
   </div>
-  <div class="crosslink-grid four">
-    <a class="crosslink explore-tile" href="/collections"><span><span class="mi" aria-hidden="true">grid_view</span>Shop by Category</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
-    <a class="crosslink explore-tile" href="/pages/shop-by-lifestyle"><span><span class="mi" aria-hidden="true">auto_awesome</span>Shop by Lifestyle</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
-    <a class="crosslink explore-tile" href="/pages/shop-by-weather"><span><span class="mi" aria-hidden="true">wb_sunny</span>Shop by Climate</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
-    <a class="crosslink explore-tile" href="/collections/oud-woody"><span><span class="mi" aria-hidden="true">spa</span>Shop by Scent Family</span><span class="mi" aria-hidden="true">arrow_forward</span></a>
+  <div class="explore-grid">
+    <a class="explore-card fade-up" href="/collections">
+      <span class="mi ex-ic" aria-hidden="true">grid_view</span>
+      <b>Shop by Category</b>
+      <span class="ex-sub">Men's, women's, unisex &amp; more</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+    <a class="explore-card fade-up" href="/pages/shop-by-lifestyle">
+      <span class="mi ex-ic" aria-hidden="true">auto_awesome</span>
+      <b>Shop by Lifestyle</b>
+      <span class="ex-sub">Office, date night, everyday</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+    <a class="explore-card fade-up" href="/pages/shop-by-weather">
+      <span class="mi ex-ic" aria-hidden="true">wb_sunny</span>
+      <b>Shop by Climate</b>
+      <span class="ex-sub">Summer, humid, cooler days</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
+    <a class="explore-card fade-up" href="/collections/oud-woody">
+      <span class="mi ex-ic" aria-hidden="true">spa</span>
+      <b>Shop by Scent Family</b>
+      <span class="ex-sub">Fresh, oud, spicy, sweet</span>
+      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+    </a>
   </div>
+</div></section>
+
+<!-- REVIEWS -->
+<section class="reviews"><div class="reviews-inner">
+  <div class="reviews-head fade-up">
+    <span class="label">What Customers Say</span>
+    <h2 class="sec-title">Loved by <em>Fragrance Lovers</em></h2>
+  </div>
+  <div class="rv-summary fade-up">
+    <div class="rv-big">4.8</div>
+    <div class="rv-details">
+      <div class="stars">
+        <span class="mi mi-f" aria-hidden="true">star</span>
+        <span class="mi mi-f" aria-hidden="true">star</span>
+        <span class="mi mi-f" aria-hidden="true">star</span>
+        <span class="mi mi-f" aria-hidden="true">star</span>
+        <span class="mi mi-f" aria-hidden="true">star</span>
+      </div>
+      <p>Based on 10,284 verified reviews</p>
+    </div>
+  </div>
+  <div class="rv-grid" data-render="reviews" data-count="3"></div>
 </div></section>
 
 <!-- FAQ -->
@@ -73,19 +115,22 @@
 {%- unless customer -%}
 <section class="section"><div class="container">
   <div class="cta-band member-band">
-    <span class="label" style="color:var(--gold)">Welcome to The Fragrance Secrets</span>
-    <h2 class="sec-title">Enjoy 10% Off <em>Your First Perfume Order</em></h2>
-    <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Receive an instant 10% welcome discount on your first purchase, save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
-    <div class="member-perks">
-      <span><span class="mi" aria-hidden="true">check</span>Instant 10% welcome discount</span>
-      <span><span class="mi" aria-hidden="true">favorite</span>Save your favourite fragrances</span>
-      <span><span class="mi" aria-hidden="true">local_shipping</span>Track every order</span>
-      <span><span class="mi" aria-hidden="true">bolt</span>Faster checkout</span>
-      <span><span class="mi" aria-hidden="true">star</span>Exclusive member-only offers</span>
+    <div class="member-copy">
+      <span class="label" style="color:var(--gold)">Welcome to The Fragrance Secrets</span>
+      <h2 class="sec-title">Enjoy 10% Off <em>Your First Perfume Order</em></h2>
+      <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Receive an instant 10% welcome discount on your first purchase, save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
+      <div class="cta-actions">
+        <a class="btn-g" href="{{ routes.account_register_url }}"><span class="mi" aria-hidden="true">person_add</span>Create Free Account</a>
+        <a class="btn-o" href="{{ routes.account_login_url }}" style="color:#fff;border-color:rgba(255,255,255,.4)">Sign In</a>
+      </div>
     </div>
-    <div class="cta-actions" style="justify-content:center">
-      <a class="btn-g" href="{{ routes.account_register_url }}"><span class="mi" aria-hidden="true">person_add</span>Create Free Account</a>
-      <a class="btn-o" href="{{ routes.account_login_url }}" style="color:#fff;border-color:rgba(255,255,255,.4)">Sign In</a>
+    <div class="member-card">
+      <div class="mc-disc"><b>10%</b><span>Welcome Discount</span></div>
+      <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant 10% welcome discount</b><span>Applied automatically at checkout</span></div></div>
+      <div class="mc-perk"><span class="mi" aria-hidden="true">favorite</span><div><b>Save your favourite fragrances</b><span>Build your personal wishlist</span></div></div>
+      <div class="mc-perk"><span class="mi" aria-hidden="true">local_shipping</span><div><b>Track every order</b><span>Full order history in one place</span></div></div>
+      <div class="mc-perk"><span class="mi" aria-hidden="true">bolt</span><div><b>Faster checkout</b><span>Saved details, fewer steps</span></div></div>
+      <div class="mc-perk"><span class="mi" aria-hidden="true">star</span><div><b>Exclusive member-only offers</b><span>Member drops all year round</span></div></div>
     </div>
   </div>
 </div></section>
@@ -98,12 +143,12 @@
     <h2 class="sec-title">Why Customers Choose <em>The Fragrance Secrets</em></h2>
   </div>
   <div class="why-grid six">
-    <div class="why-card fade-up"><span class="mi" aria-hidden="true">verified</span><h3>100% Authentic Perfumes</h3></div>
-    <div class="why-card fade-up"><span class="mi" aria-hidden="true">local_shipping</span><h3>Fast UAE Delivery</h3></div>
-    <div class="why-card fade-up"><span class="mi" aria-hidden="true">lock</span><h3>Secure Payments</h3></div>
-    <div class="why-card fade-up"><span class="mi" aria-hidden="true">diamond</span><h3>Premium Fragrance Collection</h3></div>
-    <div class="why-card fade-up"><span class="mi" aria-hidden="true">inventory_2</span><h3>Carefully Packed Orders</h3></div>
-    <div class="why-card fade-up"><span class="mi" aria-hidden="true">redeem</span><h3>Perfect for Gifting</h3></div>
+    <div class="why-card fade-up"><span class="mi" aria-hidden="true">verified</span><h3>100% Authentic Perfumes</h3><p>Every fragrance is genuine and sourced through trusted suppliers, checked before it ships.</p></div>
+    <div class="why-card fade-up"><span class="mi" aria-hidden="true">local_shipping</span><h3>Fast UAE Delivery</h3><p>Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates.</p></div>
+    <div class="why-card fade-up"><span class="mi" aria-hidden="true">lock</span><h3>Secure Payments</h3><p>Pay safely by card, wallet or cash on delivery, whichever suits you best.</p></div>
+    <div class="why-card fade-up"><span class="mi" aria-hidden="true">diamond</span><h3>Premium Fragrance Collection</h3><p>Designer houses and Arabian perfumery, side by side in one place.</p></div>
+    <div class="why-card fade-up"><span class="mi" aria-hidden="true">inventory_2</span><h3>Carefully Packed Orders</h3><p>Every order is packed with care so it arrives sealed, safe and gift-ready.</p></div>
+    <div class="why-card fade-up"><span class="mi" aria-hidden="true">redeem</span><h3>Perfect for Gifting</h3><p>Ready-wrapped sets and premium packaging for weddings, Eid and birthdays.</p></div>
   </div>
 </div></section>
 

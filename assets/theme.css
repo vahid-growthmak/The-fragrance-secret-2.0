@@ -3571,27 +3571,167 @@
       vertical-align: -4px
     }
 
-    /* Membership band */
-    .member-band .member-perks {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px 22px;
-      margin: 22px auto 4px;
-      max-width: 720px
+    /* Explore more — dark tiles */
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px
     }
 
-    .member-band .member-perks span {
+    .explore-card {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 24px;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 10px;
+      transition: transform .26s var(--snap), background .26s
+    }
+
+    .explore-card:hover {
+      background: var(--charcoal);
+      border-color: rgba(226, 201, 126, .3);
+      transform: translateY(-3px)
+    }
+
+    .explore-card .ex-ic {
+      font-size: 22px;
+      color: var(--gold-lt);
+      margin-bottom: 14px;
+      align-self: flex-start
+    }
+
+    .explore-card b {
+      font-family: var(--fd);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 6px
+    }
+
+    .explore-card .ex-sub {
+      font-size: .8rem;
+      color: var(--on-dark);
+      line-height: 1.5
+    }
+
+    .explore-card .ex-go {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: .82rem;
+      margin-top: 18px;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-lt)
+    }
+
+    .explore-card .ex-go .mi { font-size: 15px; transition: transform .25s }
+
+    .explore-card:hover .ex-go .mi { transform: translateX(4px) }
+
+    @media(max-width:1080px) {
+      .explore-grid { grid-template-columns: repeat(2, 1fr) }
+    }
+
+    @media(max-width:560px) {
+      .explore-grid { grid-template-columns: 1fr }
+    }
+
+    /* Membership band — copy left, perks card right */
+    .cta-band.member-band {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 50px;
+      align-items: center;
+      text-align: left;
+      padding: 58px 46px
+    }
+
+    .cta-band.member-band::before {
+      background: radial-gradient(60% 100% at 82% 30%, rgba(201, 168, 76, .26), transparent 60%)
+    }
+
+    .member-band .member-copy { position: relative; z-index: 2 }
+
+    .member-band .sec-sub { margin: 14px 0 0 }
+
+    .member-band .cta-actions {
+      justify-content: flex-start;
+      margin-top: 26px
+    }
+
+    .member-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 253, 248, .04);
+      border: 1px solid rgba(226, 201, 126, .3);
+      border-radius: 10px;
+      padding: 30px 28px
+    }
+
+    .member-card .mc-disc {
+      text-align: center;
+      margin-bottom: 18px
+    }
+
+    .member-card .mc-disc b {
+      display: block;
+      font-family: var(--fd);
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--gold-lt)
+    }
+
+    .member-card .mc-disc span {
+      display: block;
+      margin-top: 6px;
+      font-size: .64rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
       color: var(--on-dark)
     }
 
-    .member-band .member-perks .mi {
-      font-size: 16px;
-      color: var(--gold-lt)
+    .member-card .mc-perk {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(226, 201, 126, .14)
+    }
+
+    .member-card .mc-perk:last-child { border-bottom: none }
+
+    .member-card .mc-perk>.mi {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 16px
+    }
+
+    .member-card .mc-perk b {
+      display: block;
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--cream)
+    }
+
+    .member-card .mc-perk div span {
+      font-size: .76rem;
+      color: var(--on-dark)
+    }
+
+    @media(max-width:900px) {
+      .cta-band.member-band {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 44px 26px
+      }
     }
 
     @media(max-width:900px) {
@@ -3814,9 +3954,29 @@
       gap: 14px
     }
 
-    .why-grid.six .why-card { padding: 26px 12px }
+    .why-grid.six .why-card { padding: 26px 14px }
 
-    .why-grid.six .why-card h3 { font-size: .82rem }
+    .why-grid.six .why-card>.mi {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: var(--cream-dk);
+      font-size: 21px
+    }
+
+    .why-grid.six .why-card h3 {
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      font-weight: 500
+    }
+
+    .why-card p {
+      margin-top: 8px;
+      font-size: .78rem;
+      line-height: 1.55;
+      color: var(--warm)
+    }
 
     @media(max-width:1080px) {
       .why-grid.six { grid-template-columns: repeat(3, 1fr) }

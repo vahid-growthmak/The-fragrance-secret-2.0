@@ -25,7 +25,15 @@
       <span class="mi" aria-hidden="true">chevron_right</span>
       <a href="{{ crumb_parent_url }}">{{ crumb_parent_label }}</a>
       <span class="mi" aria-hidden="true">chevron_right</span>
-      <span>{{ hero_heading }}</span>
+      <span>{{ hero_heading | strip_html }}</span>
+    </div>
+  {%- endcapture -%}
+
+  {%- capture hero_facts -%}
+    <div class="ph-meta">
+      <span><span class="mi" aria-hidden="true">verified_user</span>100% Authentic</span>
+      <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE Delivery</span>
+      <span><span class="mi" aria-hidden="true">payments</span>Cash on Delivery</span>
     </div>
   {%- endcapture -%}
 
@@ -37,11 +45,7 @@
           <span class="ph-eyebrow">{{ hero_eyebrow }}</span>
           <h1 class="ph-title">{{ hero_heading }}</h1>
           {%- if collection.description != blank and section.settings.show_hero_description -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
-          <div class="ph-meta">
-            <span><span class="mi" aria-hidden="true">verified_user</span>100% Authentic</span>
-            <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE Delivery</span>
-            <span><span class="mi" aria-hidden="true">payments</span>Cash on Delivery</span>
-          </div>
+          {{ hero_facts }}
         </div>
         <figure class="ph-figure"><img src="{{ hero_image | image_url: width: 1200 }}" alt="{{ hero_image_alt | escape }}"></figure>
       </div>
@@ -53,19 +57,22 @@
         <span class="ph-eyebrow">{{ hero_eyebrow }}</span>
         <h1 class="ph-title">{{ hero_heading }}</h1>
         {%- if collection.description != blank and section.settings.show_hero_description -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
+        {{ hero_facts }}
       </div>
     </section>
   {%- endif -%}
 
   <!-- TRUST BAND -->
-  <section class="section-sm alt"><div class="container">
-    <div class="trust-band">
-      <div class="tb-item"><span class="mi" aria-hidden="true">verified_user</span><div><strong>100% Authentic</strong><span>Verified sourcing</span></div></div>
-      <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above AED 150</span></div></div>
-      <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Available UAE-wide</span></div></div>
-      <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
-    </div>
-  </div></section>
+  {%- if section.settings.show_trust_band -%}
+    <section class="section-sm alt"><div class="container">
+      <div class="trust-band">
+        <div class="tb-item"><span class="mi" aria-hidden="true">verified_user</span><div><strong>100% Authentic</strong><span>Verified sourcing</span></div></div>
+        <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above AED 150</span></div></div>
+        <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Available UAE-wide</span></div></div>
+        <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
+      </div>
+    </div></section>
+  {%- endif -%}
 
   <!-- COLLECTION INTRODUCTION -->
   {%- if section.settings.intro_heading != blank or section.settings.intro_text != blank -%}
@@ -226,21 +233,25 @@
   {%- endpaginate -%}
 
   <!-- FIND MY SCENT -->
-  <section class="finder"><div class="finder-inner">
-    <div class="finder-head fade-up">
-      <span class="label">Personalised Recommendation</span>
-      <h2 class="sec-title" style="color:var(--white)">Not Sure What to <em>Pick?</em></h2>
-      <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
-    </div>
-    <div class="quiz-progress quiz-progress-wrap"></div>
-    <div class="quiz-container-wrap"></div>
-  </div></section>
+  {%- if section.settings.show_finder -%}
+    <section class="finder"><div class="finder-inner">
+      <div class="finder-head fade-up">
+        <span class="label">Personalised Recommendation</span>
+        <h2 class="sec-title" style="color:var(--white)">Not Sure What to <em>Pick?</em></h2>
+        <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
+      </div>
+      <div class="quiz-progress quiz-progress-wrap"></div>
+      <div class="quiz-container-wrap"></div>
+    </div></section>
+  {%- endif -%}
 
   <!-- REVIEWS -->
-  <section class="reviews"><div class="reviews-inner">
-    <div class="reviews-head fade-up"><span class="label">What Customers Say</span><h2 class="sec-title">Loved by <em>Fragrance Lovers</em></h2></div>
-    <div class="rv-grid" data-render="reviews" data-count="3"></div>
-  </div></section>
+  {%- if section.settings.show_reviews -%}
+    <section class="reviews"><div class="reviews-inner">
+      <div class="reviews-head fade-up"><span class="label">What Customers Say</span><h2 class="sec-title">Loved by <em>Fragrance Lovers</em></h2></div>
+      <div class="rv-grid" data-render="reviews" data-count="3"></div>
+    </div></section>
+  {%- endif -%}
 
 </div>
 
@@ -256,6 +267,10 @@
     { "type": "checkbox", "id": "show_hero_description", "label": "Show collection description in hero", "default": true },
     { "type": "text", "id": "crumb_parent_label", "label": "Breadcrumb parent label", "default": "Shop" },
     { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent URL", "default": "/collections/all" },
+    { "type": "header", "content": "Sections" },
+    { "type": "checkbox", "id": "show_trust_band", "label": "Show trust band under the hero", "default": true },
+    { "type": "checkbox", "id": "show_finder", "label": "Show 'Find my scent' quiz after the grid", "default": true },
+    { "type": "checkbox", "id": "show_reviews", "label": "Show reviews after the grid", "default": true, "info": "Turn off when a page section renders reviews further down." },
     { "type": "header", "content": "Collection introduction" },
     { "type": "text", "id": "intro_eyebrow", "label": "Intro eyebrow" },
     { "type": "text", "id": "intro_heading", "label": "Intro heading (H2)", "info": "Carries the page's primary keyword. Leave blank to hide the intro." },
