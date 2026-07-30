@@ -24,7 +24,9 @@
         "intro_eyebrow": "For Him",
         "intro_heading": "Men's Perfumes UAE",
         "intro_text": "<p>The scent you wear says something before you do. That is why choosing the right men's fragrance matters. At The Fragrance Secrets, every men's perfume is selected for how it performs in the UAE's warm climate, from lasting through a busy working day to carrying confidently into the evening. You'll find fresh, office-ready scents alongside bold woody, spicy, and rich oud fragrances from trusted designer and Arabian fragrance houses. Every fragrance is 100% authentic, helping you find a signature scent that feels right for every occasion.</p>",
-        "show_why_rotator": true
+        "intro_image": "mens.png",
+        "intro_image_alt": "Men's Perfumes — bold scents, timeless style, made for every man. 100% authentic, fast shipping, secure checkout.",
+        "show_why_rotator": false
       }
     },
     "editorial": { "type": "mens-editorial", "settings": {} }
