@@ -54,7 +54,7 @@
     <section class="page-hero tall{% if section.settings.hero_bg_image != blank %} has-bg{% endif %}">
       {%- if section.settings.hero_bg_image != blank -%}
         <div class="ph-bg" aria-hidden="true">
-          <img src="{{ section.settings.hero_bg_image | asset_img_url: '2800x' }}" alt="" width="2800" height="1000" fetchpriority="high" decoding="async">
+          <img src="{{ section.settings.hero_bg_image | asset_url }}" alt="" width="2800" height="1000" loading="eager" fetchpriority="high" decoding="async">
         </div>
       {%- endif -%}
       <div class="container">
@@ -90,7 +90,7 @@
 
       {%- if section.settings.intro_image != blank -%}
         <figure class="coll-intro-figure">
-          <img src="{{ section.settings.intro_image | asset_img_url: '1200x' }}"
+          <img src="{{ section.settings.intro_image | asset_url }}"
                alt="{{ section.settings.intro_image_alt | escape }}"
                width="1536" height="1024" loading="lazy" decoding="async">
         </figure>
