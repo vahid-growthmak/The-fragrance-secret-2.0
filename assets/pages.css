@@ -210,6 +210,7 @@ header.light .nav-burger { color: var(--warm); }
 
 /* Results grid header + pagination */
 .results-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; flex-wrap: wrap; gap: 12px; }
+.results-title { font-size: 2rem; }
 .pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 56px; }
 .pagination a, .pagination span {
   min-width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center;
@@ -273,17 +274,25 @@ header.light .nav-burger { color: var(--warm); }
    viewport (which is what made it scroll away with the page). */
 @media (min-width: 901px) {
   /* "Shop the Range" head pins under the site header; the filter card pins
-     directly beneath it, so head + filters travel together as the grid scrolls. */
-  #grid { --sticky-top: 96px; --rhead-h: 90px; }
+     directly beneath it, so head + filters travel together as the grid scrolls.
+     Compact while pinned (66px) so the filter card keeps its height. */
   #grid .results-head {
-    position: sticky; top: var(--sticky-top); z-index: 20;
-    background: var(--cream); padding: 12px 0; margin-bottom: 20px;
-    border-bottom: 1px solid rgba(13,10,6,.07);
+    position: sticky; top: 96px; z-index: 20;
+    align-items: center; padding: 11px 0 10px; margin-bottom: 18px;
   }
+  /* full-bleed backdrop so product cards never show beside the head */
+  #grid .results-head::before {
+    content: ''; position: absolute; inset: 0 -50vw; z-index: -1;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(13,10,6,.07);
+    box-shadow: 0 8px 20px -14px rgba(13,10,6,.35);
+  }
+  #grid .results-head .label { margin-bottom: 4px; }
+  #grid .results-head .results-title { font-size: 1.45rem; line-height: 1.1; }
 
   .shop-filters {
-    top: calc(var(--sticky-top) + var(--rhead-h));
-    max-height: calc(100vh - var(--sticky-top) - var(--rhead-h) - 20px);
+    top: 162px;                       /* 96px header offset + 66px pinned head */
+    max-height: calc(100vh - 182px);
     display: flex; flex-direction: column;
   }
   .shop-filters > form { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
