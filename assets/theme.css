@@ -3953,13 +3953,6 @@
       font-weight: 500
     }
 
-    .why-card p {
-      margin-top: 8px;
-      font-size: .78rem;
-      line-height: 1.55;
-      color: var(--warm)
-    }
-
     @media(max-width:1080px) {
       .why-grid.six { grid-template-columns: repeat(3, 1fr) }
     }
