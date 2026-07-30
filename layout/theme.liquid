@@ -88,7 +88,10 @@
     {{ content_for_layout }}
   </main>
 
-  {% section 'customer-login-cta' %}
+  {%- comment -%} Collection pages carry their own membership / CTA bands, so skip the global one. {%- endcomment -%}
+  {%- unless request.page_type == 'collection' -%}
+    {% section 'customer-login-cta' %}
+  {%- endunless -%}
   {% sections 'footer-group' %}
   {% sections 'overlay-group' %}
 
