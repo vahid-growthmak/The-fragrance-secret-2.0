@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Lifestyle Collection",
+        "hero_heading": "Date Night <em>Perfumes</em>",
+        "hero_image_alt": "Date night perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Lifestyle Collection",
+        "intro_heading": "Best Date Night Perfumes UAE",
+        "intro_text": "<p>The right date night fragrance creates a memorable impression long after the evening begins. Warm, inviting, and effortlessly elegant, these fragrances are chosen to complement special moments with notes such as vanilla, amber, oud, rose, and musk. At The Fragrance Secrets, explore date night perfumes for men and women, carefully selected for romantic dinners, first dates, anniversaries, and evening occasions. Whether you prefer soft floral elegance or rich oriental blends, you'll find long-lasting fragrances that help you feel confident throughout the night.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "For the Evening",
+        "cards_heading": "How to Choose the Perfect <em>Date Night Perfume</em>",
+        "cards_sub": "The best date night fragrances are warm, close and a little addictive, the kind that invite someone into your space rather than announce you across the room. Choosing well means picking a scent with intimacy and staying power. Here is what to look for.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "show_reviews": true,
+        "crumb_name": "Date Night Perfumes",
+        "schema_name": "Best Date Night Perfumes UAE",
+        "schema_description": "Shop the best date night perfumes at The Fragrance Secrets. Warm, sensual, long-lasting romantic fragrances for men and women, with fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Warm & Sensual Notes",
+            "body": "Vanilla, amber, oud, musk and spice create the warm, skin-like scents that feel intimate and inviting. These are the notes people describe as sexy, and they come alive with your body's warmth over the course of an evening.",
+            "tag_label": "Best For",
+            "tags": "First Dates, Anniversaries, Romantic Nights"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Close-Range Allure",
+            "body": "A great date night scent is meant to be discovered up close, not from across a room. Look for fragrances with a soft, hugging trail rather than aggressive projection, so it rewards the person nearest to you.",
+            "tag_label": "Best For",
+            "tags": "Intimate Settings, Dinner Dates, Slow Evenings"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "The Compliment Getter",
+            "body": "Some scents simply make people ask what you are wearing. Sweet gourmands, warm ambers and creamy florals are the classic compliment-getters, memorable enough to leave a lasting impression on someone new.",
+            "tag_label": "Best For",
+            "tags": "Making an Impression, New Romance, Special Someone"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Lasts All Night",
+            "body": "A date night fragrance needs to last from dinner through to the end of the evening. Eau de Parfum and richer oil-based scents hold on for hours, so your fragrance is still working long after you arrive.",
+            "tag_label": "Best For",
+            "tags": "Long Evenings, Dinner to Drinks, All-Night Wear"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Everyday Signature Scents",
+            "url": "/collections/everyday-signature"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Office Wear Perfumes",
+            "url": "/collections/office-wear"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Party Wear Perfumes",
+            "url": "/collections/party-clubbing"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Wedding & Formal Perfumes",
+            "url": "/collections/wedding"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the best perfume for a date night?",
+            "answer": "The best date night perfumes are warm and sensual, built on notes like vanilla, amber, oud and musk. These create an intimate, alluring impression that draws people closer and lasts through the evening."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Which fragrance is most attractive?",
+            "answer": "Warm, sweet and musky scents are widely considered the most attractive because they feel close, skin-like and inviting. Vanilla, amber, oud and soft floral notes are consistent favourites for romantic occasions."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume should a man wear on a date?",
+            "answer": "A man is best served by a warm, confident scent, think oud, spice, amber or a sweet woody fragrance. These feel sensual and masculine up close, which is exactly what a date night calls for."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume should a woman wear on a date?",
+            "answer": "Warm florals, sweet gourmands and soft musky fragrances work beautifully for women on a date, feeling romantic and alluring without being overpowering. Choose something that draws people in rather than fills the room."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Which date night perfume lasts the longest?",
+            "answer": "Rich Eau de Parfums and oil-based fragrances built on amber, oud, vanilla and musk last longest, easily carrying through dinner and beyond. Apply to pulse points and moisturised skin for maximum staying power."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Should a date night perfume be strong?",
+            "answer": "It should be noticeable up close rather than overwhelming. The ideal date night scent has a warm, intimate trail that invites someone nearer, not a loud projection that dominates the room."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are these date night perfumes suitable for men and women?",
+            "answer": "Yes. Our date night collection includes seductive fragrances for men, alluring perfumes for women, and sensual unisex scents, so anyone can find the right romantic fragrance."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Lifestyle Collection",
+        "hero_heading": "Vacation <em>Perfumes</em>",
+        "hero_image_alt": "Vacation perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Lifestyle Collection",
+        "intro_heading": "Best Vacation Perfumes UAE",
+        "intro_text": "<p>Every holiday deserves a fragrance that feels as refreshing as the destination itself. Whether you're relaxing by the beach, exploring a new city, or enjoying a luxury resort, the right scent becomes part of the memories you bring home. The Fragrance Secrets brings together vacation perfumes for men and women featuring bright citrus, tropical fruits, soft florals, and warm sun-kissed notes. Whether you are off to a tropical escape or a summer city break, our collection helps you pack a scent that feels like time off.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Time Off",
+        "cards_heading": "How to Choose Your <em>Holiday Fragrance</em>",
+        "cards_sub": "A vacation fragrance is about mood as much as weather. It should feel light and easy, suit the warmth of a holiday, and travel well without fuss. Here is how to choose a scent that matches the carefree feeling of time away.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "show_reviews": true,
+        "crumb_name": "Vacation Perfumes",
+        "schema_name": "Best Vacation Perfumes UAE",
+        "schema_description": "Buy vacation perfumes online at The Fragrance Secrets. Discover light, fresh fragrances for men and women, perfect for holidays, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Light & Summery",
+            "body": "Holidays call for fresh, uncomplicated scents. Bright citrus, soft florals and fruity notes feel effortless in warm weather and match the relaxed pace of time off, never heavy, never demanding.",
+            "tag_label": "Best For",
+            "tags": "Summer Trips, City Breaks, Warm Escapes"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Tropical & Resort Notes",
+            "body": "Coconut, mango, frangipani and other tropical notes conjure the resort feeling instantly. They are warm, sweet and sunny, the scent equivalent of a poolside afternoon in a beautiful place.",
+            "tag_label": "Best For",
+            "tags": "Tropical Getaways, Resorts, Poolside"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Made for Hot Weather",
+            "body": "A holiday scent has to survive heat and humidity while still feeling fresh. Light citrus and fruity fragrances stay crisp and pleasant in the sun, where a heavy perfume would quickly feel like too much.",
+            "tag_label": "Best For",
+            "tags": "Hot Climates, Humid Days, Summer Sun"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Easy to Pack & Carry",
+            "body": "The best holiday fragrance travels as well as it wears. Choose a versatile, light scent, ideally in a travel size, that covers daytime sightseeing and easy evenings without needing a second bottle.",
+            "tag_label": "Best For",
+            "tags": "Packing Light, One Scent Trips, On the Move"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Everyday Signature Scents",
+            "url": "/collections/everyday-signature"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Office Wear Perfumes",
+            "url": "/collections/office-wear"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Date Night Perfumes",
+            "url": "/collections/date-night"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Party Wear Perfumes",
+            "url": "/collections/party-clubbing"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the best perfume for a vacation?",
+            "answer": "The best vacation perfumes are light and summery, built on bright citrus, tropical fruit and soft floral notes. They suit warm-weather travel, feel relaxed and easy, and pack well for a trip."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume should I take on holiday?",
+            "answer": "Take a light, versatile scent that suits both daytime and evening, ideally in a travel size so it fits your hand luggage. A fresh citrus or soft floral fragrance covers most holiday settings without needing a second bottle."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Which fragrance is best for a summer holiday?",
+            "answer": "Fresh, fruity and light floral fragrances are ideal for a summer holiday because they stay crisp in the heat. Citrus and tropical notes feel sunny and relaxed, matching the mood of time off."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a good tropical or resort perfume?",
+            "answer": "Tropical perfumes built on coconut, mango, frangipani and soft vanilla capture the resort feeling beautifully. They are warm and sunny, perfect for a poolside or beach-resort holiday."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I pack perfume for a holiday?",
+            "answer": "Use a travel size bottle of 100ml or less so it is allowed in hand luggage, or decant your favourite scent into a refillable atomiser. A single versatile fragrance keeps packing light while covering the whole trip."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Should holiday perfumes be different from everyday ones?",
+            "answer": "Many people like a dedicated holiday scent because fragrance is strongly tied to memory, a summery perfume worn only on trips brings the holiday back every time. A lighter, brighter scent also suits warm-weather travel better than a heavy daily fragrance."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are vacation perfumes suitable for men and women?",
+            "answer": "Yes. Our vacation collection includes fresh holiday scents for men, light summery fragrances for women, and easy unisex options, so anyone can pack the right holiday fragrance."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

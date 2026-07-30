@@ -3573,6 +3573,11 @@
 
     .fam-card .fam-link .mi { font-size: 15px }
 
+    .sibling-all {
+      text-align: center;
+      margin-top: 26px
+    }
+
     .cards-footnote {
       max-width: 780px;
       margin: 30px auto 0;

@@ -34,10 +34,9 @@
         "cards_heading": "Which Fragrance Family <em>Fits You Best?</em>",
         "cards_sub": "Not sure where to start? You don't need to know everything about perfume. Choose the fragrance family that matches your style, and finding a scent you'll love becomes much easier.",
         "show_numbers": true,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
         "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
-        "explore_1_label": "Shop by Category",
-        "explore_1_sub": "Men's, women's, unisex & more",
-        "explore_1_url": "/collections",
         "show_reviews": true,
         "crumb_name": "Women's Perfumes",
         "schema_name": "Women's Perfumes UAE",
@@ -86,6 +85,42 @@
             "tags": "Formal Events, Evening Wear, Luxury Occasions",
             "link_label": "Explore Oud & Woody",
             "link_url": "/collections/oud-woody"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
           }
         },
         "faq1": {
@@ -150,6 +185,10 @@
         "card2",
         "card3",
         "card4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
         "faq1",
         "faq2",
         "faq3",

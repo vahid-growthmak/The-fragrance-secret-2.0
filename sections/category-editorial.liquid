@@ -11,6 +11,8 @@
 
 {%- assign card_blocks = section.blocks | where: 'type', 'card' -%}
 {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
+{%- assign sibling_blocks = section.blocks | where: 'type', 'sibling' -%}
+{%- assign explore_blocks = section.blocks | where: 'type', 'explore' -%}
 
 <!-- FEATURE / SCENT-FAMILY CARDS -->
 {%- if card_blocks.size > 0 -%}
@@ -56,40 +58,50 @@
   </div></section>
 {%- endif -%}
 
+<!-- SIBLING COLLECTIONS (lifestyle pages) -->
+{%- if sibling_blocks.size > 0 -%}
+  <section class="section"><div class="container">
+    <div class="sec-head center">
+      {%- if section.settings.sibling_eyebrow != blank -%}<span class="label">{{ section.settings.sibling_eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.sibling_heading != blank -%}<h2 class="sec-title">{{ section.settings.sibling_heading }}</h2>{%- endif -%}
+      {%- if section.settings.sibling_sub != blank -%}<p class="sec-sub">{{ section.settings.sibling_sub }}</p>{%- endif -%}
+    </div>
+    <div class="crosslink-grid four">
+      {%- for block in sibling_blocks -%}
+        <a class="crosslink" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+          <span>{{ block.settings.label }}</span>
+          <span class="mi" aria-hidden="true">arrow_forward</span>
+        </a>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.sibling_all_url != blank and section.settings.sibling_all_label != blank -%}
+      <div class="sibling-all">
+        <a class="btn-ghost" href="{{ section.settings.sibling_all_url }}">{{ section.settings.sibling_all_label }} <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    {%- endif -%}
+  </div></section>
+{%- endif -%}
+
 <!-- EXPLORE MORE COLLECTIONS -->
-<section class="section alt"><div class="container">
-  <div class="sec-head center">
-    <span class="label">Keep Looking</span>
-    <h2 class="sec-title">Explore More <em>Collections</em></h2>
-    {%- if section.settings.explore_sub != blank -%}<p class="sec-sub">{{ section.settings.explore_sub }}</p>{%- endif -%}
-  </div>
-  <div class="explore-grid">
-    <a class="explore-card fade-up" href="{{ section.settings.explore_1_url | default: '/collections' }}">
-      <span class="mi ex-ic" aria-hidden="true">grid_view</span>
-      <b>{{ section.settings.explore_1_label | default: 'Shop by Category' }}</b>
-      <span class="ex-sub">{{ section.settings.explore_1_sub | default: "Men's, women's, unisex &amp; more" }}</span>
-      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
-    </a>
-    <a class="explore-card fade-up" href="/pages/shop-by-lifestyle">
-      <span class="mi ex-ic" aria-hidden="true">auto_awesome</span>
-      <b>Shop by Lifestyle</b>
-      <span class="ex-sub">Office, date night, everyday</span>
-      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
-    </a>
-    <a class="explore-card fade-up" href="/pages/shop-by-weather">
-      <span class="mi ex-ic" aria-hidden="true">wb_sunny</span>
-      <b>Shop by Climate</b>
-      <span class="ex-sub">Summer, humid, cooler days</span>
-      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
-    </a>
-    <a class="explore-card fade-up" href="/collections/oud-woody">
-      <span class="mi ex-ic" aria-hidden="true">spa</span>
-      <b>Shop by Scent Family</b>
-      <span class="ex-sub">Fresh, oud, spicy, sweet</span>
-      <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
-    </a>
-  </div>
-</div></section>
+{%- if explore_blocks.size > 0 -%}
+  <section class="section alt"><div class="container">
+    <div class="sec-head center">
+      <span class="label">{{ section.settings.explore_eyebrow | default: 'Keep Looking' }}</span>
+      <h2 class="sec-title">{{ section.settings.explore_heading | default: 'Explore More <em>Collections</em>' }}</h2>
+      {%- if section.settings.explore_sub != blank -%}<p class="sec-sub">{{ section.settings.explore_sub }}</p>{%- endif -%}
+    </div>
+    <div class="explore-grid">
+      {%- for block in explore_blocks -%}
+        <a class="explore-card fade-up" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+          <span class="mi ex-ic" aria-hidden="true">{{ block.settings.icon | default: 'grid_view' }}</span>
+          <b>{{ block.settings.label }}</b>
+          <span class="ex-sub">{{ block.settings.sub }}</span>
+          <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div></section>
+{%- endif -%}
 
 <!-- REVIEWS -->
 {%- if section.settings.show_reviews -%}
@@ -234,11 +246,16 @@
     { "type": "textarea", "id": "cards_sub", "label": "Intro paragraph" },
     { "type": "textarea", "id": "cards_footnote", "label": "Closing paragraph" },
     { "type": "checkbox", "id": "show_numbers", "label": "Number the cards (01, 02, …)", "default": true },
+    { "type": "header", "content": "Sibling collections", "info": "Shown only when Sibling link blocks are added." },
+    { "type": "text", "id": "sibling_eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "sibling_heading", "label": "Heading (H2)" },
+    { "type": "textarea", "id": "sibling_sub", "label": "Intro paragraph" },
+    { "type": "text", "id": "sibling_all_label", "label": "See-all link label" },
+    { "type": "url", "id": "sibling_all_url", "label": "See-all link" },
     { "type": "header", "content": "Explore more" },
+    { "type": "text", "id": "explore_eyebrow", "label": "Eyebrow", "default": "Keep Looking" },
+    { "type": "text", "id": "explore_heading", "label": "Heading (H2)", "default": "Explore More <em>Collections</em>" },
     { "type": "textarea", "id": "explore_sub", "label": "Intro paragraph" },
-    { "type": "text", "id": "explore_1_label", "label": "First tile label", "default": "Shop by Category" },
-    { "type": "text", "id": "explore_1_sub", "label": "First tile sub-label", "default": "Men's, women's, unisex & more" },
-    { "type": "url", "id": "explore_1_url", "label": "First tile link" },
     { "type": "header", "content": "Reviews" },
     { "type": "checkbox", "id": "show_reviews", "label": "Show the reviews band", "default": true },
     { "type": "header", "content": "Structured data" },
@@ -257,6 +274,34 @@
         { "type": "text", "id": "tags", "label": "Tags", "info": "Comma separated." },
         { "type": "text", "id": "link_label", "label": "Link label" },
         { "type": "url", "id": "link_url", "label": "Link" }
+      ]
+    },
+    {
+      "type": "sibling",
+      "name": "Sibling link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    },
+    {
+      "type": "explore",
+      "name": "Explore tile",
+      "settings": [
+        {
+          "type": "select", "id": "icon", "label": "Icon", "default": "grid_view",
+          "options": [
+            { "value": "grid_view", "label": "Grid (category)" },
+            { "value": "auto_awesome", "label": "Sparkle (lifestyle)" },
+            { "value": "wb_sunny", "label": "Sun (climate)" },
+            { "value": "spa", "label": "Petal (scent family)" },
+            { "value": "storefront", "label": "Storefront (brand)" },
+            { "value": "redeem", "label": "Gift" }
+          ]
+        },
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "text", "id": "sub", "label": "Sub-label" },
+        { "type": "url", "id": "url", "label": "Link" }
       ]
     },
     {

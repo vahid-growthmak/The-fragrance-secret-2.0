@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Lifestyle Collection",
+        "hero_heading": "Travel <em>Perfumes</em>",
+        "hero_image_alt": "Travel size perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Lifestyle Collection",
+        "intro_heading": "Travel Size Perfumes UAE",
+        "intro_text": "<p>Some fragrances become part of every journey. Whether you're travelling for business, heading on holiday, or packing for a weekend away, your favourite scent should always be within easy reach. The Fragrance Secrets brings together travel-size perfumes, mini fragrances, and refillable atomisers for men and women that are easy to carry, simple to refill, and perfect for life on the move. Whether you are flying for work or heading off on holiday, take your signature scent wherever you land.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "On the Move",
+        "cards_heading": "How to Choose a <em>Travel-Friendly Perfume</em>",
+        "cards_sub": "A travel fragrance is chosen as much for its size and format as its scent. The best options are compact, leak-safe, and cabin-friendly, so they slip into a bag and survive the journey. Here is what makes a perfume genuinely travel-ready.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "show_reviews": true,
+        "crumb_name": "Travel Perfumes",
+        "schema_name": "Travel Size Perfumes UAE",
+        "schema_description": "Order travel size perfumes online from The Fragrance Secrets. Find mini fragrances and refillable atomisers designed for life on the move, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Compact & Cabin-Friendly",
+            "body": "Small bottles under 100ml are allowed in hand luggage, and minis of 10ml or less are the easiest of all to pack. A travel size fits a handbag, a jacket pocket or a wash bag without weighing you down.",
+            "tag_label": "Best For",
+            "tags": "Hand Luggage, Weekends, Day Trips"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Refillable Atomisers",
+            "body": "A refillable travel atomiser lets you decant your favourite full-size scent into a compact, leak-resistant spray. It is the smart way to carry the perfume you already love without risking the big bottle.",
+            "tag_label": "Best For",
+            "tags": "Frequent Flyers, Decanting, Top-Ups"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Discovery & Mini Sets",
+            "body": "Travel sets and discovery sizes let you take several scents in one small pouch, so you can match your fragrance to the day. They are also a great low-commitment way to try something new while away.",
+            "tag_label": "Best For",
+            "tags": "Trying New Scents, Variety, Gifting"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Pack Smart, Travel Light",
+            "body": "Choose versatile scents that suit different settings on one trip, from daytime sightseeing to dinner out. A single well-chosen travel fragrance, or a small duo, covers a whole holiday without the bulk.",
+            "tag_label": "Best For",
+            "tags": "Long Trips, Minimal Packing, One Bag"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Everyday Perfumes",
+            "url": "/collections/everyday-signature"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Office Wear Perfumes",
+            "url": "/collections/office-wear"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Date Night Perfumes",
+            "url": "/collections/date-night"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Party Wear Perfumes",
+            "url": "/collections/party-clubbing"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume size is allowed on a plane?",
+            "answer": "For cabin baggage, individual liquid containers must be 100ml or smaller, carried in a clear resealable bag alongside your other liquids. Travel size perfumes and minis of 10ml to 50ml are ideal, and there is no size limit for perfume in checked luggage."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I take perfume in hand luggage?",
+            "answer": "Yes. You can carry perfume in hand luggage as long as each bottle is 100ml or less and fits within your clear liquids bag. Travel size and mini perfumes are made exactly for this."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the best travel size perfume?",
+            "answer": "The best travel perfume is a compact, leak-resistant bottle or refillable atomiser holding your favourite scent. A 10ml to 30ml size covers most trips, and a small discovery set is ideal if you want variety."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "How much perfume can you fly with?",
+            "answer": "In hand luggage, each container must be 100ml or less and fit in your clear liquids bag. In checked luggage there is no practical size limit, though airlines cap the total quantity of aerosols and flammable liquids, so check your airline if carrying several large bottles."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a refillable perfume atomiser?",
+            "answer": "A refillable atomiser is a small, reusable spray you fill from a full-size bottle. It lets you carry your favourite perfume in a compact, cabin-friendly, leak-resistant format without travelling with the original bottle."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Are travel size perfumes good value?",
+            "answer": "Yes, in two ways: they let you try a scent before committing to a full bottle, and they save you carrying an expensive large bottle that could leak or break. Refillable atomisers are the most economical for regular travellers."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are travel perfumes suitable for men and women?",
+            "answer": "Yes. Our travel collection includes minis, travel sprays and refillable atomisers for men and women, so anyone can take their signature scent on the go."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

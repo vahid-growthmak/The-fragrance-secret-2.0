@@ -34,10 +34,9 @@
         "cards_heading": "How to Choose a Fragrance <em>for Your Child</em>",
         "cards_sub": "Choosing for a child comes down to peace of mind. These four simple checks make it easy to pick something gentle, age-appropriate and safe.",
         "show_numbers": true,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
         "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
-        "explore_1_label": "Shop by Category",
-        "explore_1_sub": "Men's, women's, unisex & more",
-        "explore_1_url": "/collections",
         "show_reviews": true,
         "crumb_name": "Kids Perfumes",
         "schema_name": "Kids Perfumes UAE",
@@ -78,6 +77,42 @@
             "body": "Buying for someone else's child? A gentle, clearly labelled mist takes the worry out of it. Our kid-appropriate sets are chosen to be safe crowd-pleasers for birthdays, Eid and new arrivals.",
             "tag_label": "Best For",
             "tags": "Birthdays, Eid, New Baby"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
           }
         },
         "faq1": {
@@ -142,6 +177,10 @@
         "card2",
         "card3",
         "card4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
         "faq1",
         "faq2",
         "faq3",

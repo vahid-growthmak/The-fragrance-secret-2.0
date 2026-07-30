@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Lifestyle Collection",
+        "hero_heading": "Party Wear <em>Perfumes</em>",
+        "hero_image_alt": "Party wear perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Lifestyle Collection",
+        "intro_heading": "Best Party Perfumes UAE",
+        "intro_text": "<p>Every celebration deserves a fragrance that matches the energy of the moment. Whether you're heading to a party, rooftop gathering, club, or a special celebration with friends, the right perfume helps you feel confident from the moment you arrive. The Fragrance Secrets brings together party perfumes for men and women featuring rich amber, warm vanilla, bold spices, luxurious oud, and sensual musk notes. Explore long-lasting fragrances designed to keep you feeling your best throughout the night.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Big Nights",
+        "cards_heading": "How to Choose a Party Perfume <em>That Turns Heads</em>",
+        "cards_sub": "Party and clubbing fragrances play by different rules. Here, projection and staying power matter most, you want a scent that carries across a crowded room and survives hours of heat and movement. Here is how to pick one with real presence.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "show_reviews": true,
+        "crumb_name": "Party Wear Perfumes",
+        "schema_name": "Best Party Perfumes UAE",
+        "schema_description": "Shop the best party perfumes at The Fragrance Secrets. Bold, high-projection, long-lasting fragrances for a night out, for men and women, with fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Bold, High-Projection Scents",
+            "body": "A party fragrance should arrive before you do. Look for intense, high-projection compositions, the kind with real sillage that leaves a trail and gets noticed in a crowd. This is where louder is genuinely better.",
+            "tag_label": "Best For",
+            "tags": "Clubs, Big Nights, Making an Entrance"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Sweet, Spicy & Oud-Heavy",
+            "body": "The best party scents lean rich and intense: sweet gourmands, hot spices, and deep oud that punch through a room full of people. These heavyweight notes are built for impact, not subtlety.",
+            "tag_label": "Best For",
+            "tags": "Night Out, Celebrations, Cool Evenings"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Built to Last All Night",
+            "body": "Nothing kills a vibe like a scent that fades by midnight. Concentrated Eau de Parfums and extraits hold their strength for hours, so your fragrance is still going strong on the dance floor at 2am.",
+            "tag_label": "Best For",
+            "tags": "Long Nights, Dancing, Dusk to Dawn"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Fills the Room, Owns the Night",
+            "body": "Some fragrances simply command a space. High-performance party scents fill the air around you and make an impression that people remember the next day, the definition of a beast-mode fragrance.",
+            "tag_label": "Best For",
+            "tags": "Confidence, Standing Out, Statement Nights"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Everyday Signature Scents",
+            "url": "/collections/everyday-signature"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Office Wear Perfumes",
+            "url": "/collections/office-wear"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Date Night Perfumes",
+            "url": "/collections/date-night"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Wedding & Formal Perfumes",
+            "url": "/collections/wedding"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the best perfume for a night out?",
+            "answer": "The best night-out perfumes are bold and high-projection, built on intense sweet, spicy or oud-heavy notes. They carry across a room and last for hours, which is exactly what a party or club calls for."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfume has the strongest projection?",
+            "answer": "Concentrated Eau de Parfums and extraits with rich gourmand, spicy and oud notes tend to have the strongest projection and sillage. These are the fragrances people describe as loud or beast-mode, made to fill a room."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What fragrance is best for clubbing?",
+            "answer": "Clubbing calls for a strong, long-lasting scent that survives heat and movement. Sweet, spicy and oud-based Eau de Parfums project well in a crowded, warm venue and hold up through a full night."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I make my party perfume last all night?",
+            "answer": "Choose a concentrated Eau de Parfum or extrait, apply to moisturised skin and pulse points, and consider a matching perfume oil underneath. Rich sweet, amber and oud notes naturally last longer than fresh ones."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Should a party perfume be strong?",
+            "answer": "Yes. Unlike an office scent, a party fragrance is meant to project and be noticed. Bold, high-sillage compositions are the whole point, though a couple of well-placed sprays is still enough to fill a room."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Which party perfumes are best in the UAE heat?",
+            "answer": "In warm venues, rich oud, amber and spicy Eau de Parfums perform best because their heavy base notes resist heat and keep projecting. They outlast lighter, fresher scents on a hot, crowded night."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are party perfumes suitable for men and women?",
+            "answer": "Yes. Our party collection includes bold clubbing fragrances for men, statement party perfumes for women, and intense unisex scents, so anyone can find a head-turning night-out fragrance."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

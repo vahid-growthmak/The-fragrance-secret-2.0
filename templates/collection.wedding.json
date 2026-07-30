@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Lifestyle Collection",
+        "hero_heading": "Wedding &amp; Formal <em>Perfumes</em>",
+        "hero_image_alt": "Wedding and formal perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Lifestyle Collection",
+        "intro_heading": "Best Wedding Perfumes UAE",
+        "intro_text": "<p>The scent you wear on a big day becomes part of the memory. Years later, a single note can bring the whole occasion back. The Fragrance Secrets brings together elegant wedding perfumes for brides, grooms, and guests, featuring refined blends of rose, oud, amber, musk, and delicate florals. Whether you're walking down the aisle, celebrating with family and friends, or attending a formal event, you'll find long-lasting fragrances that complement every special occasion. Our collection helps you choose a fragrance as memorable as the day itself.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Big Day",
+        "cards_heading": "How to Choose the Perfect <em>Wedding Perfume</em>",
+        "cards_sub": "A wedding or formal fragrance should feel elegant, refined, and special enough for the occasion, while lasting from the ceremony through to the final dance. Because the scent becomes tied to the memory, it is worth choosing with care. Here is how.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "show_reviews": true,
+        "crumb_name": "Wedding & Formal Perfumes",
+        "schema_name": "Best Wedding Perfumes UAE",
+        "schema_description": "Find the perfect wedding fragrance at The Fragrance Secrets. From elegant bridal scents to refined perfumes for grooms and guests, discover long-lasting fragrances with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Timeless & Elegant",
+            "body": "Wedding fragrances should feel refined without overpowering the occasion. Rose, white florals, iris, amber, soft musk, and delicate oud create timeless scents that complement the atmosphere of a wedding beautifully.",
+            "tag_label": "Best For",
+            "tags": "Classic Wedding Style, Elegant Ceremonies, Timeless Fragrances"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "For the Bride & Groom",
+            "body": "Your wedding scent is one you will remember forever. Brides often choose soft florals, rose and warm musk, while grooms lean to refined oud, amber and woody compositions, each memorable and worthy of the day.",
+            "tag_label": "Best For",
+            "tags": "Brides, Grooms, The Big Day"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Refined for Guests",
+            "body": "Attending a wedding or formal event calls for something elegant but not attention-stealing. A sophisticated, balanced fragrance lets you feel polished and appropriate without overshadowing the couple.",
+            "tag_label": "Best For",
+            "tags": "Wedding Guests, Receptions, Celebrations"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Make Every Memory Last",
+            "body": "The fragrance you wear on your wedding day becomes part of the memories you create. Choosing a scent that feels special today means every future wear can remind you of one of life's most meaningful celebrations.",
+            "tag_label": "Best For",
+            "tags": "Wedding Day Memories, Anniversaries, Special Occasions"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Everyday Signature Scents",
+            "url": "/collections/everyday-signature"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Office Wear Perfumes",
+            "url": "/collections/office-wear"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Date Night Perfumes",
+            "url": "/collections/date-night"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Party Wear Perfumes",
+            "url": "/collections/party-clubbing"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume should I wear to a wedding?",
+            "answer": "Choose an elegant, sophisticated fragrance built on rose, oud, amber or precious florals. As a guest, pick something refined but not overpowering, so you feel polished without overshadowing the couple."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the best perfume for a bride on her wedding day?",
+            "answer": "Brides often choose soft, romantic florals, rose and warm musk, that feel elegant and timeless in photographs and memories. A long-lasting Eau de Parfum ensures the scent carries through the whole celebration."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Which fragrance is best for a formal event?",
+            "answer": "Sophisticated, refined fragrances suit formal events best: think rose, oud, iris, amber and precious woods. These elegant compositions feel appropriate for black-tie occasions and last well into the evening."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume should a groom wear?",
+            "answer": "Grooms are well suited to refined oud, amber and woody fragrances that feel elegant and confident. Choose a long-lasting Eau de Parfum so it holds through the ceremony, dinner and celebrations."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Which wedding perfume lasts the longest?",
+            "answer": "Rich Eau de Parfums built on oud, amber, musk and precious florals last longest, easily carrying through a full wedding day. Apply to pulse points and moisturised skin for the best staying power."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Are luxury perfumes suitable for weddings?",
+            "answer": "Absolutely. A wedding is exactly the occasion for a luxury or niche fragrance. Their refined, long-lasting compositions feel special and worthy of the day, which is why many people invest in a signature wedding scent."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are these perfumes suitable for men and women?",
+            "answer": "Yes. Our wedding and formal collection includes elegant fragrances for grooms and men, sophisticated perfumes for brides and women, and refined unisex scents suitable for any formal occasion."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

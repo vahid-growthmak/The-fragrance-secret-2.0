@@ -34,10 +34,9 @@
         "cards_heading": "How <em>Miracle Plant</em> Works",
         "cards_sub": "Miracle Plant draws on aromatherapy, the practice of using natural plant aromas to support relaxation. As you breathe in the essential-oil blend at bedtime, the calming scent helps signal to your body that it is time to unwind. It is a gentle, non-oral, non-addictive ritual designed to fit easily into your nightly routine.",
         "show_numbers": false,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
         "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
-        "explore_1_label": "Shop by Brand",
-        "explore_1_sub": "Every house we carry",
-        "explore_1_url": "/pages/brands",
         "show_reviews": true,
         "crumb_name": "Miracle Plant",
         "schema_name": "Miracle Plant Natural Perfume UAE",
@@ -79,6 +78,42 @@
             "body": "There is nothing to swallow and no complicated routine. Spray one to three times lightly over your pillow, bed linen or pyjamas, or dab a little onto your wrists and neck, then breathe in and let yourself relax.",
             "tag_label": "How to Use",
             "tags": "Pillow, Linen, Pulse Points"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
           }
         },
         "faq1": {
@@ -143,6 +178,10 @@
         "card2",
         "card3",
         "card4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
         "faq1",
         "faq2",
         "faq3",

@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Lifestyle Collection",
+        "hero_heading": "Everyday <em>Perfumes</em>",
+        "hero_image_alt": "Everyday perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Lifestyle Collection",
+        "intro_heading": "Best Everyday Perfumes UAE",
+        "intro_text": "<p>Some fragrances are made for special occasions. Others become part of your everyday routine. The right everyday perfume feels comfortable, versatile, and effortless, whether you're heading to work, meeting friends, or enjoying a relaxed weekend. At The Fragrance Secrets, discover everyday perfumes for men and women featuring fresh citrus, clean woody, floral, and soft musk fragrance profiles. Whether you're searching for your first signature scent or a reliable fragrance that lasts throughout the day, you'll find versatile perfumes designed for every lifestyle.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Find Your Signature",
+        "cards_heading": "How to Choose Your <em>Everyday Signature Scent</em>",
+        "cards_sub": "A signature scent is the fragrance people come to associate with you. The best everyday perfume is versatile enough to work anywhere, comfortable enough to wear daily, and long-lasting enough to see you from morning to night. Here is how to find yours.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "show_reviews": true,
+        "crumb_name": "Everyday Perfumes",
+        "schema_name": "Best Everyday Perfumes UAE",
+        "schema_description": "Shop the best everyday perfumes at The Fragrance Secrets. Discover versatile, long-lasting fragrances for men and women, perfect for daily wear, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Versatile Enough for Anywhere",
+            "body": "The ideal everyday scent moves with you, from the office to a casual lunch to dinner with friends. Fresh, clean, and lightly woody or musky fragrances adapt to any setting, which is what makes them so easy to wear day after day.",
+            "tag_label": "Best For",
+            "tags": "Work & Casual, Any Season, Any Time"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Comfortable, Never Too Much",
+            "body": "A daily fragrance should feel like a natural part of you, not a statement. Soft, balanced scents sit close to the skin and stay pleasant in every situation, so you never have to worry about wearing too much to the wrong place.",
+            "tag_label": "Best For",
+            "tags": "Daily Wear, Shared Spaces, Easy Wearing"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Long-Lasting Through the Day",
+            "body": "Your go-to perfume should still be there in the afternoon. Eau de Parfum concentrations give dependable, all-day performance from a single morning application, so your scent lasts as long as your day does.",
+            "tag_label": "Best For",
+            "tags": "All-Day Wear, Busy Schedules, One & Done"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "A Scent That Becomes Yours",
+            "body": "A true signature is the fragrance you return to again and again. Wearing one scent regularly builds familiarity and makes it recognisably yours, the one friends notice the moment you walk in.",
+            "tag_label": "Best For",
+            "tags": "Signature Scent, First Fragrance, Everyday Confidence"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Office Wear Perfumes",
+            "url": "/collections/office-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Date Night Perfumes",
+            "url": "/collections/date-night"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Party Wear Perfumes",
+            "url": "/collections/party-clubbing"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Wedding & Formal Perfumes",
+            "url": "/collections/wedding"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a good everyday perfume?",
+            "answer": "A good everyday perfume is versatile, comfortable, and long-lasting. Fresh, clean, and soft musky fragrances work best because they suit almost any setting, from work to casual outings, without feeling overpowering."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I find my signature scent?",
+            "answer": "Start with the fragrance families you naturally enjoy, then choose a versatile, wearable scent within that style and wear it consistently. A signature scent is simply the one you return to most, the fragrance that starts to feel like you."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfume is best for daily wear in the UAE?",
+            "answer": "For daily wear in the UAE's warm climate, fresh, citrus and light woody or musky fragrances perform best, staying comfortable in the heat. Eau de Parfum concentrations help them last through a full day."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "What makes a perfume versatile?",
+            "answer": "A versatile perfume is balanced rather than extreme, so it fits many occasions. Fresh and soft scents that are neither too sweet nor too heavy transition easily from day to night and from work to weekend."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How long should an everyday perfume last?",
+            "answer": "A dependable everyday perfume should last through most of your day. Eau de Parfum concentrations generally offer strong longevity, so one application in the morning carries you into the evening."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Are everyday perfumes suitable for men and women?",
+            "answer": "Yes. Our everyday collection includes daily fragrances for men, perfumes for women, and versatile unisex scents, so anyone can find a reliable go-to signature."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear one everyday perfume all year round?",
+            "answer": "Yes. Fresh, clean and musky everyday scents are versatile enough for every season, though many people keep a lighter option for summer and a slightly warmer one for cooler evenings."
+          }
+        },
+        "faq8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "faq7",
+        "faq8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}
