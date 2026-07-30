@@ -198,10 +198,35 @@
                         {%- endfor -%}
                       </div>
                     {%- when 'price_range' -%}
+                      {%- comment -%}
+                        Liquid returns min_value/max_value in cents but the query
+                        parameter expects major units, so divide for display.
+                      {%- endcomment -%}
+                      {%- liquid
+                        assign price_ceiling = filter.range_max | divided_by: 100.0 | ceil
+                        assign price_from = ''
+                        assign price_to = ''
+                        if filter.min_value.value != nil
+                          assign price_from = filter.min_value.value | divided_by: 100.0
+                        endif
+                        if filter.max_value.value != nil
+                          assign price_to = filter.max_value.value | divided_by: 100.0
+                        endif
+                      -%}
                       <div class="sf-price">
-                        <input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}" placeholder="Min {{ filter.range_max | money_without_currency }}" min="0">
-                        <span>to</span>
-                        <input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}" placeholder="Max {{ filter.range_max | money_without_currency }}" min="0">
+                        <label class="sf-price-field">
+                          <span class="sf-price-cur">{{ cart.currency.symbol }}</span>
+                          <input type="number" name="{{ filter.min_value.param_name }}" value="{{ price_from }}"
+                                 placeholder="0" min="0" max="{{ price_ceiling }}" step="any" inputmode="decimal"
+                                 aria-label="Minimum price">
+                        </label>
+                        <span class="sf-price-sep">to</span>
+                        <label class="sf-price-field">
+                          <span class="sf-price-cur">{{ cart.currency.symbol }}</span>
+                          <input type="number" name="{{ filter.max_value.param_name }}" value="{{ price_to }}"
+                                 placeholder="{{ price_ceiling }}" min="0" max="{{ price_ceiling }}" step="any" inputmode="decimal"
+                                 aria-label="Maximum price">
+                        </label>
                       </div>
                   {%- endcase -%}
                 </div>
@@ -352,9 +377,25 @@
         .catch(function () { window.location.href = url; });
     }
 
+    /* Price fields fire a change per keystroke-commit and per arrow click, so
+       debounce them; checkboxes and the sort select apply immediately. */
+    var priceTimer = null;
     root.addEventListener('change', function (event) {
-      if (!event.target.closest('.shop-filters form')) return;
+      var field = event.target;
+      if (!field.closest || !field.closest('.shop-filters form')) return;
+      if (field.type === 'number') {
+        clearTimeout(priceTimer);
+        priceTimer = setTimeout(function () { render(buildUrl(), true); }, 600);
+        return;
+      }
       render(buildUrl(), true);
+    });
+
+    root.addEventListener('input', function (event) {
+      if (event.target.type !== 'number') return;
+      if (!event.target.closest('.shop-filters form')) return;
+      clearTimeout(priceTimer);
+      priceTimer = setTimeout(function () { render(buildUrl(), true); }, 600);
     });
 
     root.addEventListener('submit', function (event) {

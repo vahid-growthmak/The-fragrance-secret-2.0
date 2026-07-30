@@ -265,6 +265,22 @@ header.light .nav-burger { color: var(--warm); }
 .sf-search { display: flex; align-items: center; gap: 8px; border: 1px solid rgba(13,10,6,.16); border-radius: 6px; padding: 7px 10px; margin-bottom: 10px; }
 .sf-search .mi { font-size: 17px; color: var(--muted); }
 .sf-search input { border: none; outline: none; font-family: var(--fb); font-size: .78rem; width: 100%; background: none; color: var(--ink); }
+/* Price range: two bounded number fields with a currency prefix */
+.sf-price { display: flex; align-items: center; gap: 8px; }
+.sf-price-field {
+  flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: 4px;
+  border: 1px solid rgba(13,10,6,.16); border-radius: 6px; padding: 7px 8px 7px 10px;
+  background: var(--white); transition: border-color .18s;
+}
+.sf-price-field:focus-within { border-color: var(--gold); }
+.sf-price-cur { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+.sf-price-field input {
+  width: 100%; min-width: 0; border: none; outline: none; background: none;
+  font-family: var(--fb); font-size: .82rem; color: var(--ink); padding: 0;
+}
+.sf-price-field input::placeholder { color: var(--muted); }
+.sf-price-sep { font-size: .76rem; color: var(--muted); flex-shrink: 0; }
+
 .sf-opts { display: flex; flex-direction: column; gap: 1px; max-height: 232px; overflow-y: auto; }
 .sf-opt { display: flex; align-items: center; gap: 10px; padding: 6px 2px; cursor: pointer; font-size: .82rem; color: var(--charcoal); position: relative; }
 .sf-opt.sf-hidden { display: none; }
