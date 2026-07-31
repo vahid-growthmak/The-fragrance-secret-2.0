@@ -1,0 +1,234 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Scent Family",
+        "hero_heading": "Sweet &amp; Gourmand <em>Perfumes</em>",
+        "hero_image_alt": "Sweet and gourmand perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Scent Family",
+        "intro_heading": "Sweet & Gourmand Perfumes UAE",
+        "intro_text": "<p>Sweet and gourmand perfumes smell good enough to eat. Built on warm vanilla, caramel, chocolate, honey and sugar, they are the cozy, comforting scents that feel like dessert in a bottle. At The Fragrance Secrets, explore sweet and gourmand perfumes for men and women, from creamy vanilla and praline to rich chocolate and coffee. Whether you want a soft everyday sweetness or a deep, indulgent gourmand for cool evenings, this warm and inviting family wraps you in comfort and draws people closer.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Family",
+        "cards_heading": "Understanding <em>Sweet &amp; Gourmand</em> Fragrances",
+        "cards_sub": "Gourmand fragrances are built on edible, dessert-like notes, the perfumery family designed to smell delicious. Warm and comforting, they trigger a cozy, nostalgic feeling and tend to perform best in cooler weather and intimate settings. Here is what defines the family.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Family",
+        "sibling_heading": "Explore Other <em>Scent Family Collections</em>",
+        "sibling_sub": "Every fragrance belongs to a scent family. Explore the other families to discover the notes and moods that suit you, and find your next signature scent.",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, climate, and brand, and find the perfect scent for every occasion.",
+        "current_hub": "scent",
+        "show_reviews": true,
+        "crumb_name": "Sweet & Gourmand Perfumes",
+        "schema_name": "Sweet & Gourmand Perfumes UAE",
+        "schema_description": "Order sweet and gourmand perfumes at The Fragrance Secrets. Warm vanilla, caramel and chocolate scents smell like dessert and wrap you in cozy comfort. Quick delivery to the UAE, USA and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Warm Vanilla & Caramel",
+            "body": "Vanilla is the heart of the gourmand family, creamy, warm and comforting, often joined by caramel, toffee and tonka bean. Together they create a soft, sweet warmth that feels cozy and inviting.",
+            "tag_label": "Key Notes",
+            "tags": "Vanilla, Caramel, Tonka, Toffee"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Rich Chocolate & Coffee",
+            "body": "Deeper gourmands lean into chocolate, coffee, praline and almond for a richer, more indulgent sweetness. These notes feel decadent and full-bodied, perfect for cooler weather and evening wear.",
+            "tag_label": "Key Notes",
+            "tags": "Chocolate, Coffee, Praline, Almond"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Honey, Sugar & Sweet Treats",
+            "body": "Modern gourmands expand into honey, cotton candy, marshmallow and baked-goods accords. Playful and nostalgic, they smell like favourite desserts and bring an instant sense of comfort and joy.",
+            "tag_label": "Key Notes",
+            "tags": "Honey, Sugar, Cotton Candy, Praline"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Cozy, Comforting & Alluring",
+            "body": "Gourmand scents are warm and close, which makes them naturally comforting and quietly seductive. They shine in cool weather, on date nights, and any moment that calls for a little indulgence.",
+            "tag_label": "Best For",
+            "tags": "Cool Weather, Date Night, Evenings"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Oud & Woody",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Fresh & Citrus",
+            "url": "/collections/fresh-citrus"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Floral & Rose",
+            "url": "/collections/floral-rose"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spicy & Oriental",
+            "url": "/collections/spicy-oriental"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a gourmand fragrance?",
+            "answer": "A gourmand fragrance is built on sweet, edible notes like vanilla, caramel, chocolate and honey. Designed to smell delicious, these warm scents feel cozy, like a treat in a bottle."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does a sweet perfume smell like?",
+            "answer": "Sweet perfumes smell warm and edible, with notes such as vanilla, caramel, sugar and praline. They feel comforting and inviting, often triggering nostalgic memories of favourite desserts and cozy moments."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are gourmand perfumes good for winter?",
+            "answer": "Yes. Warm, rich gourmands shine in cool weather because the cold suits their cozy, indulgent sweetness. Vanilla, chocolate and caramel scents feel especially comforting on cold days and evenings."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are sweet perfumes suitable for men?",
+            "answer": "Absolutely. Many gourmand scents are unisex or made for men, using vanilla, coffee, tonka and tobacco for a warm sweetness that feels masculine rather than sugary."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Do gourmand perfumes last long?",
+            "answer": "Yes. Their rich vanilla, tonka and resin base notes are heavy and slow to evaporate, so gourmand scents last well and project warmly, especially in an Eau de Parfum."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

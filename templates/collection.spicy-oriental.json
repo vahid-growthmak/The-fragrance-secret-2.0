@@ -1,0 +1,234 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Scent Family",
+        "hero_heading": "Spicy &amp; Oriental <em>Perfumes</em>",
+        "hero_image_alt": "Spicy and oriental perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Scent Family",
+        "intro_heading": "Spicy & Oriental Perfumes UAE",
+        "intro_text": "<p>Some fragrances are made to leave a lasting impression. Spicy and oriental perfumes combine the warmth of cinnamon, cardamom, saffron, amber, vanilla, and rich resins to create bold, inviting scents with exceptional depth and character. The Fragrance Secrets brings together spicy and oriental perfumes for men and women, inspired by the timeless fragrance traditions of the Middle East. Whether you want a bold spicy statement or a smooth amber glow, this family delivers the rich, exotic character that defines Middle Eastern perfumery.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Family",
+        "cards_heading": "Understanding <em>Spicy &amp; Oriental</em> Fragrances",
+        "cards_sub": "The oriental or amber family is defined by warmth, spice, and richness. Built on warm spices, resins, amber and vanilla, these scents are full-bodied and long-lasting, unfolding slowly on the skin. They suit evenings and cooler weather, and sit at the heart of Arabian perfumery. Here is what defines the family.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Family",
+        "sibling_heading": "Explore Other <em>Scent Family Collections</em>",
+        "sibling_sub": "Every fragrance belongs to a scent family. Explore the other families to discover the notes and moods that suit you, and find your next signature scent.",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, climate, and brand, and find the perfect scent for every occasion.",
+        "current_hub": "scent",
+        "show_reviews": true,
+        "crumb_name": "Spicy & Oriental Perfumes",
+        "schema_name": "Spicy & Oriental Perfumes UAE",
+        "schema_description": "Shop spicy & oriental perfumes at The Fragrance Secrets. Find warm amber, cinnamon, and saffron fragrances made for lasting impressions, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Warm Spices",
+            "body": "Cinnamon, cardamom, saffron, clove and pink pepper give this family its signature warmth. These spices add depth and a cozy, exotic energy, creating an immediate richness that feels inviting rather than sharp.",
+            "tag_label": "Key Notes",
+            "tags": "Cinnamon, Cardamom, Saffron, Clove"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Amber & Resins",
+            "body": "At the base sit amber, benzoin, labdanum and frankincense, warm, balsamic resins that give oriental scents their glowing depth and remarkable staying power. Amber is the smooth, golden heart of the family.",
+            "tag_label": "Key Notes",
+            "tags": "Amber, Benzoin, Labdanum, Incense"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Sweet & Sensual Warmth",
+            "body": "Vanilla, tonka and musk round out the family with a soft, sensual sweetness. This warmth is what makes oriental scents feel intimate and seductive, drawing people closer with a rich, lingering trail.",
+            "tag_label": "Key Notes",
+            "tags": "Vanilla, Tonka, Musk, Sandalwood"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Rich, Long-Lasting & Exotic",
+            "body": "Oriental scents are full-bodied and long-lasting, unfolding over hours with a distinctive trail. Their warmth suits cooler weather, evenings and special occasions, and their exotic depth defines Arabian perfumery.",
+            "tag_label": "Best For",
+            "tags": "Evenings, Cool Weather, Special Occasions"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Oud & Woody",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Fresh & Citrus",
+            "url": "/collections/fresh-citrus"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Floral & Rose",
+            "url": "/collections/floral-rose"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Sweet & Gourmand",
+            "url": "/collections/sweet-gourmand"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is an oriental fragrance?",
+            "answer": "An oriental fragrance, also called amber, is a warm, rich, sensual scent built on spices, resins, amber and vanilla. Full-bodied and long-lasting, it is central to Arabian perfumery."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between spicy and oriental perfumes?",
+            "answer": "Spicy is a style within the oriental family. Oriental, or amber, is the wider warm family, while spicy orientals lead with cinnamon, cardamom, saffron and clove over a warm base."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does an amber perfume smell like?",
+            "answer": "Amber perfumes smell warm, sweet and resinous, with a smooth, golden glow. Built on benzoin, labdanum and vanilla, they feel cozy and enveloping rather than sharp or fresh."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are oriental perfumes good for winter?",
+            "answer": "Yes. Their warm, rich, spicy depth suits cool weather and evenings perfectly, where the cold carries their long trail. Lighter oriental styles also work year-round and in daytime."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Why are oriental perfumes called amber now?",
+            "answer": "The industry has shifted from oriental to amber to avoid an outdated, culturally broad term. The scents are unchanged, still warm, spicy, resinous fragrances built on amber and vanilla."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

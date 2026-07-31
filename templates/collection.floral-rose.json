@@ -1,0 +1,234 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Scent Family",
+        "hero_heading": "Floral &amp; Rose <em>Perfumes</em>",
+        "hero_image_alt": "Floral and rose perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Scent Family",
+        "intro_heading": "Floral & Rose Perfumes UAE",
+        "intro_text": "<p>Floral and rose perfumes are the largest, most beloved family in perfumery, romantic, elegant, and endlessly wearable. Built on rose, jasmine, and blossoming petals, they range from a single flower in full bloom to rich bouquets and modern fruity-florals. At The Fragrance Secrets, discover floral and rose perfumes for men and women, from soft, powdery blooms to deep, opulent rose and oud. Whether you want a fresh daytime bouquet or a warm, seductive floral for evening, this timeless family has a scent for every mood and moment.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Family",
+        "cards_heading": "Understanding <em>Floral &amp; Rose</em> Fragrances",
+        "cards_sub": "The floral family is the widest in perfumery, built around the scent of flowers and led by rose, the most treasured note of all. It spans light and powdery to rich and opulent, and contrary to old ideas, florals suit everyone. Here is what defines the family.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Family",
+        "sibling_heading": "Explore Other <em>Scent Family Collections</em>",
+        "sibling_sub": "Every fragrance belongs to a scent family. Explore the other families to discover the notes and moods that suit you, and find your next signature scent.",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, climate, and brand, and find the perfect scent for every occasion.",
+        "current_hub": "scent",
+        "show_reviews": true,
+        "crumb_name": "Floral & Rose Perfumes",
+        "schema_name": "Floral & Rose Perfumes UAE",
+        "schema_description": "Shop floral & rose perfumes at The Fragrance Secrets. Choose from delicate rose, jasmine, and blooming floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Rose, the Queen of Flowers",
+            "body": "Rose is the most iconic note in perfumery, ranging from fresh and dewy to deep and jammy. It pairs beautifully with oud, jasmine and amber, and anchors some of the most treasured fragrances ever made.",
+            "tag_label": "Key Notes",
+            "tags": "Rose, Damask, Centifolia, Rose Oud"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "White & Bouquet Florals",
+            "body": "Beyond rose, the family blooms with jasmine, orange blossom, lily, peony and ylang-ylang. Worn as a single flower or a layered bouquet, these notes feel elegant, feminine and romantic.",
+            "tag_label": "Key Notes",
+            "tags": "Jasmine, Orange Blossom, Peony, Lily"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fruity & Modern Florals",
+            "body": "Modern florals blend blossoms with fruit for a brighter, livelier feel. Peach, blackcurrant and berry lift rose and peony into fresh, sunny scents that feel young, wearable and full of character.",
+            "tag_label": "Key Notes",
+            "tags": "Peach, Blackcurrant, Berry, Petals"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Soft, Romantic & For Everyone",
+            "body": "Florals span airy and powdery to warm and opulent, suiting daytime, weddings and evenings alike. Once seen as feminine, rose and white florals are worn beautifully by everyone today.",
+            "tag_label": "Best For",
+            "tags": "Daytime, Weddings, Men & Women"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Oud & Woody",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Fresh & Citrus",
+            "url": "/collections/fresh-citrus"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Sweet & Gourmand",
+            "url": "/collections/sweet-gourmand"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spicy & Oriental",
+            "url": "/collections/spicy-oriental"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a floral fragrance?",
+            "answer": "A floral fragrance is built around the scent of flowers, led by rose and jasmine. It is the largest fragrance family, ranging from light and powdery to rich and romantic."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does a rose perfume smell like?",
+            "answer": "Rose perfume can smell fresh and dewy or deep and jammy, depending on the rose. It feels romantic and elegant, and pairs beautifully with oud, jasmine, and warm amber notes."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are floral perfumes only for women?",
+            "answer": "No. Although marketed as feminine last century, rose and white florals have a long unisex history. Modern perfumery treats florals as scents for everyone, worn beautifully by men and women."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which flowers are used in floral perfumes?",
+            "answer": "Rose and jasmine lead the family, alongside orange blossom, peony, lily, ylang-ylang and violet. These may appear as a single flower or blended into a rich, layered bouquet."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are floral perfumes good for everyday wear?",
+            "answer": "Yes. Lighter fresh-floral and floral-musk scents are ideal for daily wear because they feel romantic yet comfortable, while richer rose and white florals suit evenings and special occasions."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

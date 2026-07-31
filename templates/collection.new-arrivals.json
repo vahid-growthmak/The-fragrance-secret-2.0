@@ -1,0 +1,228 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Shop",
+        "hero_heading": "New <em>Arrivals</em>",
+        "hero_image_alt": "New perfume arrivals at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Shop",
+        "intro_heading": "New Perfume Arrivals UAE",
+        "intro_text": "<p>Every new fragrance brings a new experience worth exploring. The New Arrivals collection at The Fragrance Secrets brings together the latest designer launches, newly released Arabian perfumes, and the newest additions to our fragrance collection. Explore fresh arrivals before they become customer favourites and discover scents that have just landed in our store. Whether you're looking for the latest perfume trends, a recently launched fragrance, or something unique that stands out, this collection is updated regularly with the newest perfumes available online.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Just Landed",
+        "cards_heading": "Why Shop <em>This Collection</em>",
+        "cards_sub": "The New Arrivals collection is where our newest fragrances land first, updated regularly so you always see the latest launches and freshest additions. Here is what makes shopping our new arrivals worthwhile.",
+        "show_numbers": false,
+        "sibling_eyebrow": "The Shop",
+        "sibling_heading": "Explore Other <em>Shop Collections</em>",
+        "sibling_sub": "Looking for something specific? Explore our other shop collections to find bestsellers, new launches, and limited-time offers across the full fragrance range.",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, climate, and scent family, and find the perfect scent for every occasion.",
+        "current_hub": "none",
+        "show_reviews": true,
+        "crumb_name": "New Arrivals",
+        "schema_name": "New Perfume Arrivals UAE",
+        "schema_description": "Explore new perfume arrivals at The Fragrance Secrets. Shop the latest designer and Arabian fragrance launches for men and women, updated regularly. Fast delivery across the UAE, USA and Canada.",
+        "sibling_all_label": "Browse the Full Shop",
+        "sibling_all_url": "/collections/all"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "The Latest Launches",
+            "body": "Every fragrance here is a recent addition, from new designer releases to just-arrived Arabian scents. It is the fastest way to see what is new and discover launches as they land.",
+            "tag_label": "Explore",
+            "tags": "New Releases, Latest Drops, Just Added"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Be First to Discover",
+            "body": "Get ahead of the crowd. Shopping new arrivals lets you find and wear standout scents before they become mainstream bestsellers, so you can build a signature that feels genuinely fresh.",
+            "tag_label": "Best For",
+            "tags": "Trendsetters, Early Adopters, Fresh Picks"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Updated Regularly",
+            "body": "This collection refreshes often as new stock lands, so it is always worth checking back. Bookmark it to keep discovering the newest fragrances added to our range throughout the year.",
+            "tag_label": "Refreshed",
+            "tags": "Ongoing, Seasonal, New Stock"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Something for Everyone",
+            "body": "New arrivals span every style, designer and Arabian, oud, fresh, floral and sweet, for men, women and unisex, so there is always a new scent worth discovering, whatever you love.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Every Style"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "All Products",
+            "url": "/collections/all"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Best Sellers",
+            "url": "/collections/best-sellers"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Crazy Deals",
+            "url": "/collections/crazy-deals"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the latest perfume launches in 2026?",
+            "answer": "Our New Arrivals collection is updated regularly with the newest fragrances to land, so it is the best place to see the latest designer and Arabian launches this year."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Which new fragrances are worth buying this year?",
+            "answer": "The New Arrivals collection gathers our freshest additions in one place, so you can browse the latest scents and discover new releases worth adding before they become bestsellers."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What new perfumes just launched in the UAE?",
+            "answer": "Browse our New Arrivals collection to see the perfumes most recently added, including just-launched designer releases and new Arabian scents, all available to ship across the UAE."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you recommend a newly released perfume for men?",
+            "answer": "Explore the New Arrivals collection and filter by men's fragrances for the latest launches. Our fresh, oud and woody families are great places to find a new signature scent."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How often do you add new perfumes?",
+            "answer": "We add new fragrances regularly as fresh stock arrives, so the New Arrivals collection is always worth checking back. Bookmark it to keep discovering the newest additions throughout the year."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

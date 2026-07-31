@@ -66,7 +66,7 @@
       {%- if section.settings.sibling_heading != blank -%}<h2 class="sec-title">{{ section.settings.sibling_heading }}</h2>{%- endif -%}
       {%- if section.settings.sibling_sub != blank -%}<p class="sec-sub">{{ section.settings.sibling_sub }}</p>{%- endif -%}
     </div>
-    <div class="crosslink-grid four">
+    <div class="crosslink-grid{% if sibling_blocks.size >= 4 %} four{% endif %}">
       {%- for block in sibling_blocks -%}
         <a class="crosslink" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
           <span>{{ block.settings.label }}</span>

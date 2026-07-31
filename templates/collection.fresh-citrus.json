@@ -1,0 +1,234 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Scent Family",
+        "hero_heading": "Fresh &amp; Citrus <em>Perfumes</em>",
+        "hero_image_alt": "Fresh and citrus perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Scent Family",
+        "intro_heading": "Fresh & Citrus Perfumes UAE",
+        "intro_text": "<p>Nothing feels as refreshing as a fragrance filled with bright citrus and crisp fresh notes. Bergamot, lemon, grapefruit, green accords, and aquatic blends create clean, uplifting scents that are easy to wear every day and especially suited to the UAE's warm climate. The Fragrance Secrets brings together fresh and citrus perfumes for men and women that feel light, energising, and comfortable from the first spray to the last. Whether you want a sharp citrus burst or a cool aquatic breeze, this family keeps you feeling fresh from morning to evening.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Family",
+        "cards_heading": "Understanding <em>Fresh &amp; Citrus</em> Fragrances",
+        "cards_sub": "The fresh family is united by a clean, open, airy character that sits on the lighter side of projection. It splits into a few clear styles, each with its own mood, and all of them suit warm weather and daytime beautifully. Here is what defines the family.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Family",
+        "sibling_heading": "Explore Other <em>Scent Family Collections</em>",
+        "sibling_sub": "Every fragrance belongs to a scent family. Explore the other families to discover the notes and moods that suit you, and find your next signature scent.",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, climate, and brand, and find the perfect scent for every occasion.",
+        "current_hub": "scent",
+        "show_reviews": true,
+        "crumb_name": "Fresh & Citrus Perfumes",
+        "schema_name": "Fresh & Citrus Perfumes UAE",
+        "schema_description": "Shop fresh and citrus perfumes at The Fragrance Secrets. Bright bergamot, lemon and cool aquatic scents stay clean and energising in warm weather. Fast delivery across the UAE, USA and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Zesty Citrus",
+            "body": "Citrus is the heart of the fresh family. Bergamot, lemon, grapefruit, mandarin and neroli give an immediate, mood-lifting burst that feels clean and energising, the brightest opening in all of perfumery.",
+            "tag_label": "Key Notes",
+            "tags": "Bergamot, Lemon, Grapefruit, Neroli"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Cool Aquatic & Marine",
+            "body": "Aquatic scents recreate sea air, salt and open water using marine accords. Crisp, expansive and cooling, they feel like a breeze off the ocean and are ideal for hot, humid days.",
+            "tag_label": "Key Notes",
+            "tags": "Sea Salt, Marine, Ozonic, Water"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Green & Aromatic",
+            "body": "Green notes evoke fresh-cut grass and crushed leaves, while aromatic herbs like lavender, mint and basil add a clean, herbal lift. Together they feel natural, outdoorsy and refreshing.",
+            "tag_label": "Key Notes",
+            "tags": "Green Leaves, Lavender, Mint, Basil"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Light, Clean & Versatile",
+            "body": "Fresh scents project cleanly without crowding a room, which makes them the easiest family to wear. Bright and versatile, they suit the office, daytime, warm weather, and anyone who finds heavy scents too much.",
+            "tag_label": "Best For",
+            "tags": "Office, Daytime, Warm Weather"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Oud & Woody",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Floral & Rose",
+            "url": "/collections/floral-rose"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Sweet & Gourmand",
+            "url": "/collections/sweet-gourmand"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spicy & Oriental",
+            "url": "/collections/spicy-oriental"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a fresh fragrance?",
+            "answer": "A fresh fragrance is a clean, light, airy scent built on citrus, aquatic, or green notes. It feels bright and energising, and suits warm weather and daytime."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What are citrus perfumes made of?",
+            "answer": "Citrus perfumes are built on zesty notes like bergamot, lemon, grapefruit, mandarin and neroli, which come from citrus fruit peel and give the family its clean, energising character."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Do fresh and citrus perfumes last long?",
+            "answer": "They are lighter by nature, so pure citrus can fade faster. Perfumers anchor them with light woods or musk, and an Eau de Parfum concentration helps them last longer."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are fresh perfumes good for hot weather?",
+            "answer": "Yes. Fresh, citrus and aquatic scents feel cooling and clean rather than heavy, which makes them the most comfortable family to wear in the UAE's warm climate."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between fresh and aquatic perfumes?",
+            "answer": "Aquatic is a type of fresh scent. Fresh is the wider family of clean, light scents, while aquatic recreates sea air. All aquatic scents are fresh, but not the reverse."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}
