@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Humid Weather <em>Perfumes</em>",
+        "hero_image_alt": "Humid weather perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Perfumes for Humid Weather UAE",
+        "intro_text": "<p>Humid weather changes how fragrance behaves. Moisture in the air amplifies scent, so light and clean notes feel far more comfortable than rich, cloying ones. The Fragrance Secrets brings together humid weather perfumes for men and women featuring citrus, aquatic notes, light florals, and clean musk that stay fresh and breathable in sticky conditions. Whether you live with coastal humidity, face muggy summers, or simply prefer airy scents, our collection helps you find your perfect humid-weather signature.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Humidity",
+        "cards_heading": "How to Choose the Right <em>Perfume for Humidity</em>",
+        "cards_sub": "Humidity is made for lightness and freshness. The best humid-weather fragrances feel clean and airy, resist turning cloying in moisture, and stay comfortable through sticky heat. Here is how to choose one that suits the climate.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Humid Weather Perfumes",
+        "schema_name": "Best Perfumes for Humid Weather UAE",
+        "schema_description": "Shop humid weather perfumes at The Fragrance Secrets. Explore fresh citrus, aquatic, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Light & Breathable Notes",
+            "body": "Humid air amplifies scent, so lighter is smarter. Citrus, aquatic, light floral and clean musk notes stay fresh and breathable in moisture, where heavy fragrances can quickly feel overwhelming.",
+            "tag_label": "Best For",
+            "tags": "Muggy Days, Coastal Weather, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh, Not Cloying",
+            "body": "In humidity, rich sweet and heavy notes can turn cloying fast. Clean, crisp and airy fragrances avoid that, staying pleasant and comfortable even when the air feels thick and sticky.",
+            "tag_label": "Best For",
+            "tags": "Sticky Heat, Summer Humidity, Office"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Cooling & Comfortable",
+            "body": "Aquatic and citrus notes have a genuinely cooling effect in humid weather, lifting you rather than sitting heavy on the skin. They are the ideal antidote to warm, moist conditions.",
+            "tag_label": "Best For",
+            "tags": "Coastal Days, Tropical Humidity, Outdoors"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Humid Weather Signature",
+            "body": "Whether you love crisp citrus, cool aquatics, or soft light florals, choose a clean, breathable scent that stays fresh and comfortable through humid, sticky days.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What type of perfume is best for humid weather?",
+            "answer": "Humid weather perfumes usually feature light, fresh notes like citrus, aquatic accords, light florals, and clean musk because they stay breathable and comfortable rather than turning cloying in moisture."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Why does perfume smell stronger in humidity?",
+            "answer": "Moisture in humid air helps fragrance molecules travel and project more, so scents smell stronger. This is why lighter perfumes are usually more comfortable and less overwhelming in humid conditions."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should perfume be lighter in humid climates?",
+            "answer": "Yes. Light, fresh, and airy fragrances are best for humidity because moisture amplifies scent, so a lighter perfume stays comfortable while heavy, sweet ones can quickly feel cloying and overpowering."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are aquatic perfumes good for humid weather?",
+            "answer": "Yes. Aquatic and citrus fragrances are ideal for humid weather because they feel cooling, clean, and breathable, staying fresh on the skin even when the air is warm and sticky."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear sweet perfumes in humid weather?",
+            "answer": "You can, but lightly. Sweet and heavy notes can turn cloying in humidity, so fresher, cleaner scents are usually more comfortable, or apply sweeter fragrances sparingly in muggy conditions."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

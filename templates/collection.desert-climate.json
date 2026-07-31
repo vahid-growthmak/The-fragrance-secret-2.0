@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Desert Climate <em>Perfumes</em>",
+        "hero_image_alt": "Desert climate perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Perfumes for Desert Climate UAE",
+        "intro_text": "<p>Desert heat is the ultimate test for a fragrance. Extreme temperatures can make scents fade fast or turn overpowering, so the desert climate demands perfumes built to perform. The Fragrance Secrets brings together desert climate perfumes for men and women, from heat-resistant oud and amber to fresh scents that stay crisp in dry heat. Whether you face the Gulf summer, live in an arid region, or simply need a fragrance that survives the heat, our collection helps you find your perfect desert-ready scent.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Desert Heat",
+        "cards_heading": "How to Choose the Right <em>Desert Climate Perfume</em>",
+        "cards_sub": "Desert weather is made for performance. The best desert fragrances resist extreme heat, last on the skin through soaring temperatures, and stay balanced rather than turning sharp. Here is how to choose one built for the Gulf climate.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Desert Climate Perfumes",
+        "schema_name": "Best Perfumes for Desert Climate UAE",
+        "schema_description": "Buy desert climate perfumes online at The Fragrance Secrets. Rich oud, amber, and musk fragrances are made for hot, dry weather, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Heat-Resistant Performance",
+            "body": "Extreme heat makes fragrance evaporate fast. Well-built Eau de Parfums with strong base notes like oud, amber and musk resist the heat and keep performing where lighter scents burn off quickly.",
+            "tag_label": "Best For",
+            "tags": "45 Degree Heat, Gulf Summer, Long Days"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Long-Lasting on Skin",
+            "body": "In desert heat, longevity is everything. Rich, concentrated fragrances anchor to the skin and last for hours, so your scent survives the hottest part of the day rather than fading by noon.",
+            "tag_label": "Best For",
+            "tags": "All-Day Wear, Outdoor Work, Arid Climate"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh Options That Survive Heat",
+            "body": "Prefer something lighter? Fresh citrus and woody-aromatic scents in a strong concentration can stay crisp in dry heat, giving a cooling feel that still holds up under the desert sun.",
+            "tag_label": "Best For",
+            "tags": "Daytime, Hot Afternoons, Dry Heat"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Desert Signature",
+            "body": "Whether you love deep heat-proof oud or a fresh scent that survives the sun, choose a fragrance built to last, so you stay confident through the desert climate all day.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume lasts in hot desert weather?",
+            "answer": "Rich Eau de Parfums with base notes like oud, amber, and musk last best in desert heat because they resist high temperatures and anchor to the skin instead of fading."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Why does perfume fade fast in the heat?",
+            "answer": "Heat speeds up evaporation, so fragrance lifts off the skin faster in hot weather. This is why lighter scents fade quickly, while concentrated, heavier perfumes last longer in desert conditions."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I make perfume last in hot weather?",
+            "answer": "Apply to moisturised skin and pulse points, choose a stronger Eau de Parfum, and layer a matching perfume oil underneath. Rich oud and amber notes naturally last longer in heat."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfume survives 45 degree heat?",
+            "answer": "Concentrated fragrances built on oud, amber, and musk survive extreme 45 degree heat best because their heavy base notes resist evaporation and keep projecting through the hottest desert conditions."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are fresh perfumes suitable for desert weather?",
+            "answer": "Yes, if concentrated. Fresh citrus and woody-aromatic scents feel cooling in dry heat, though a stronger concentration helps them last, since light versions fade fast in the sun."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

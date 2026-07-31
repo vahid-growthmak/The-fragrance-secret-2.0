@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Dry Weather <em>Perfumes</em>",
+        "hero_image_alt": "Dry weather perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Perfumes for Dry Weather UAE",
+        "intro_text": "<p>Dry air treats fragrance differently. With little moisture to carry scent, perfume can fade faster on dry skin, so dry climates reward richer, creamier fragrances that cling and last. The Fragrance Secrets brings together dry weather perfumes for men and women featuring musk, amber, creamy woods, and warm skin-like notes that hold on beautifully in low humidity. Whether you live in an arid region, face dry desert air, or simply want a scent that lasts on dry skin, our collection helps you find your perfect dry-weather fragrance.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Dry Air",
+        "cards_heading": "How to Choose the Right <em>Dry Weather Perfume</em>",
+        "cards_sub": "Dry weather is made for richness and staying power. The best dry-climate fragrances are creamy and warm, cling to the skin despite low humidity, and resist the fading that dry air causes. Here is how to choose one that lasts.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Dry Weather Perfumes",
+        "schema_name": "Best Perfumes for Dry Weather UAE",
+        "schema_description": "Shop dry weather perfumes at The Fragrance Secrets. Rich musk, amber and creamy woods cling to dry skin and resist fading in low humidity. Quick delivery to the UAE, USA and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Rich & Creamy Notes",
+            "body": "Dry air needs fragrances with body. Musk, amber, creamy sandalwood and warm vanilla create rich, skin-like scents that cling to dry skin and keep their warmth where lighter fragrances thin out.",
+            "tag_label": "Best For",
+            "tags": "Arid Days, Low Humidity, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Lasts on Dry Skin",
+            "body": "Dry skin holds scent poorly, so longevity matters most. Concentrated, oil-rich fragrances anchor to the skin and resist the quick fade that dry air causes, keeping your scent present for longer.",
+            "tag_label": "Best For",
+            "tags": "All-Day Wear, Dry Climate, Long Days"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Warm & Skin-Like",
+            "body": "Dry weather suits soft, warm scents that feel like a second skin. Musk, amber and creamy woods bring a cozy, hydrating-feeling warmth that flatters the skin in low-humidity air.",
+            "tag_label": "Best For",
+            "tags": "Dry Heat, Arid Evenings, Comfort Wear"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Dry Weather Signature",
+            "body": "Whether you love creamy musk, warm amber, or soft woody scents, choose a rich fragrance that clings and lasts, so you stay scented and confident through dry, low-humidity days.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume works best in dry weather?",
+            "answer": "Dry weather perfumes usually feature rich, creamy notes like musk, amber, sandalwood, and warm woods because they cling to dry skin and resist the fast fading that low-humidity air causes."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Why does perfume fade on dry skin?",
+            "answer": "Dry skin lacks the moisture and natural oils that hold fragrance, so scent evaporates and fades faster. Richer, oil-based perfumes and moisturised skin help fragrance last longer in dry conditions."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I make perfume last in a dry climate?",
+            "answer": "Moisturise your skin before applying, choose rich musk or amber-based fragrances, and layer a matching perfume oil. Applying to well-hydrated pulse points helps scent cling and last in dry air."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which notes last longest in dry weather?",
+            "answer": "Musk, amber, sandalwood, vanilla, and creamy woods last longest in dry weather because their rich, oily character clings to the skin and resists the quick fade that dry air causes."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are creamy perfumes good for dry climates?",
+            "answer": "Yes. Creamy, skin-like scents built on musk, amber, and soft woods suit dry climates beautifully, bringing warmth and clinging to dry skin far better than light, fresh fragrances."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Winter Wear <em>Perfumes</em>",
+        "hero_image_alt": "Winter wear perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Winter Perfumes UAE",
+        "intro_text": "<p>Winter is the perfect season for rich and comforting fragrances. Cooler temperatures help warm notes develop more gradually, allowing deeper scents to last longer and leave a lasting impression. The Fragrance Secrets brings together winter perfumes for men and women featuring oud, amber, vanilla, cinnamon, leather, woody notes, and warm spices. Whether you are dressing for a winter night out, choosing a holiday perfume gift, or simply prefer richer scents, our collection helps you find your perfect cold-season signature.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Cold Season",
+        "cards_heading": "How to Choose the Right <em>Winter Perfume</em>",
+        "cards_sub": "Winter is made for warmth and richness. The best cold-season fragrances feel cozy and comforting, develop beautifully in low temperatures, and carry the festive spirit of the holidays. Here is how to choose one that suits the season.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Winter Wear Perfumes",
+        "schema_name": "Best Winter Perfumes UAE",
+        "schema_description": "Buy winter perfumes online at The Fragrance Secrets. Explore warm oud, amber, and spicy fragrances for men and women, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Warm & Festive Notes",
+            "body": "Cool weather is the time for richer fragrances. Oud, amber, vanilla, cinnamon, spice, leather and woody notes create warm, cozy scents that feel comforting on cold days and festive through the holiday season.",
+            "tag_label": "Best For",
+            "tags": "Cold Days, Winter Evenings, Festive Season"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Long-Lasting in the Cold",
+            "body": "Lower temperatures let heavier notes develop gradually, so your winter perfume stays balanced and noticeable for longer. Rich Eau de Parfums and oriental compositions perform especially well once the air turns cold.",
+            "tag_label": "Best For",
+            "tags": "All-Day Wear, Outdoor Plans, Long Evenings"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Cozy for Day, Warm for Night",
+            "body": "A good winter scent feels smooth and wearable by day, then deepens as the evening chill sets in. That versatility makes it ideal for the office, dinner, and everything the season brings.",
+            "tag_label": "Best For",
+            "tags": "Office, Dinner, Weekend Outings"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "The Perfect Holiday Gift",
+            "body": "Warm, gourmand and spicy winter fragrances make some of the most-loved gifts of the year. Vanilla, cinnamon and amber scents feel indulgent and celebratory, ideal for Christmas, New Year, and holiday gifting.",
+            "tag_label": "Best For",
+            "tags": "Christmas Gifts, Gift Sets, For Him & Her"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Humid Weather Perfumes",
+            "url": "/collections/humid-weather"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What type of perfume is best for winter?",
+            "answer": "Winter perfumes usually feature warm notes like oud, amber, vanilla, leather, spices, sandalwood, and musk because they perform well in cooler temperatures and last longer on the skin."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do perfumes last longer in winter?",
+            "answer": "Yes. Cooler temperatures slow fragrance evaporation, allowing richer notes to develop gradually and remain noticeable for longer."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are oud perfumes good for winter?",
+            "answer": "Yes. Oud is one of the best fragrance notes for winter because it provides warmth, depth, excellent longevity, and performs beautifully in cooler temperatures throughout the day and evening alike."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear fresh perfumes during winter?",
+            "answer": "Yes. Fresh fragrances can be worn throughout the year, although warm woody, oriental, and amber fragrances are generally better suited to cooler weather."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I wear a stronger perfume during winter?",
+            "answer": "In many cases, yes. Winter is a great time to enjoy richer Eau de Parfum and oriental fragrances because cooler temperatures naturally soften their intensity while helping them last longer."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

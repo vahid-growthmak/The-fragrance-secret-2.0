@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Spring Wear <em>Perfumes</em>",
+        "hero_image_alt": "Spring wear perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Spring Perfumes UAE",
+        "intro_text": "<p>Spring is the season for fresh, floral, and uplifting fragrances. Mild weather is the perfect backdrop for delicate blooms and airy green notes that feel light and romantic. The Fragrance Secrets brings together spring perfumes for men and women featuring rose, jasmine, cherry blossom, green notes, and soft fresh florals. Whether you are welcoming the warmer days, refreshing your signature, or simply prefer light floral scents, our collection helps you find your perfect spring fragrance.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Mild Days",
+        "cards_heading": "How to Choose the Right <em>Spring Perfume</em>",
+        "cards_sub": "Spring is made for freshness and florals. The best spring fragrances feel light, delicate, and blooming, matching the mild weather and the season of new growth. Here is how to choose one that suits the season.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Spring Wear Perfumes",
+        "schema_name": "Best Spring Perfumes UAE",
+        "schema_description": "Buy spring wear perfumes online at The Fragrance Secrets. Find fresh floral fragrances with rose, jasmine, and green notes for men and women, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Floral Notes",
+            "body": "Spring calls for light, blooming scents. Rose, jasmine, cherry blossom, peony and soft green notes create fresh floral fragrances that feel delicate, romantic, and perfectly in tune with the season.",
+            "tag_label": "Best For",
+            "tags": "Mild Days, Spring Outings, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Light & Airy Feel",
+            "body": "Mild spring weather suits fragrances that feel airy rather than heavy. Delicate florals and green notes stay fresh and comfortable, ideal for the gentle warmth of the season without overwhelming the senses.",
+            "tag_label": "Best For",
+            "tags": "Office, Brunch, Daytime Wear"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Romantic & Uplifting",
+            "body": "Floral spring scents are naturally uplifting and romantic. Blooming rose and jasmine feel joyful and feminine, while green and citrus florals add a fresh, energising lift to brighter spring days.",
+            "tag_label": "Best For",
+            "tags": "Date Days, Celebrations, Fresh Starts"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Spring Signature",
+            "body": "Whether you love blooming florals, green freshness, or soft petal notes, choose a light scent that matches your style and captures the fresh, blossoming spirit of spring.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Humid Weather Perfumes",
+            "url": "/collections/humid-weather"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What type of perfume is best for spring?",
+            "answer": "Spring perfumes usually feature fresh floral notes like rose, jasmine, cherry blossom, peony, and soft green accords because they feel light, delicate, and perfectly suited to mild spring weather."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do floral perfumes suit spring?",
+            "answer": "Yes. Floral perfumes are the classic choice for spring because blooming notes like rose and jasmine feel romantic, fresh, and beautifully matched to the season of new growth and flowers."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are light perfumes better for spring?",
+            "answer": "Yes. Mild spring weather suits light, airy fragrances that feel fresh rather than heavy, so delicate florals and green notes are generally more comfortable than rich winter scents."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear fresh citrus perfumes in spring?",
+            "answer": "Yes. Fresh citrus and green floral fragrances work beautifully in spring, adding a bright, energising lift that complements the mild weather and the blooming, uplifting mood of the season."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I change my perfume for spring?",
+            "answer": "Many people do. Lighter florals and fresh green scents suit spring better than heavy winter fragrances, so switching to an airy, blooming perfume feels natural as the weather turns milder."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

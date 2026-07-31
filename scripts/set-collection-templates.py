@@ -59,6 +59,17 @@ TEMPLATES = {
     "travel-friendly": "travel-friendly",
     "beach-vacation": "beach-vacation",
     "vacation-beach": "vacation-beach",
+    # Shop by Climate
+    "summer-wear": "summer-wear",
+    "winter-holiday": "winter-holiday",
+    "spring-bloom": "spring-bloom",
+    "rainy-day": "rainy-day",
+    "humid-weather": "humid-weather",
+    "tropical-climate": "tropical-climate",
+    "desert-climate": "desert-climate",
+    "hot-weather": "hot-weather",
+    "cold-weather": "cold-weather",
+    "dry-weather": "dry-weather",
 }
 
 LOOKUP_QUERY = """

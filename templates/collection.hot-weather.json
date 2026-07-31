@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Hot Weather <em>Perfumes</em>",
+        "hero_image_alt": "Hot weather perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Perfumes for Hot Weather UAE",
+        "intro_text": "<p>Hot weather changes what feels good to wear. When temperatures climb, fresh and cooling scents feel far more comfortable than rich, heavy ones that can turn overwhelming. The Fragrance Secrets brings together hot weather perfumes for men and women featuring citrus, mint, aquatic notes, and light florals that stay crisp and refreshing when the heat is on. Whether you are dressing for a scorching day, an outdoor plan, or simply prefer breezy scents, our collection helps you find your perfect hot-weather fragrance.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "In the Heat",
+        "cards_heading": "How to Choose the Right <em>Hot Weather Perfume</em>",
+        "cards_sub": "Hot weather is made for freshness and lightness. The best hot-weather fragrances feel cool and crisp, stay comfortable as temperatures rise, and refresh you without becoming heavy. Here is how to choose one that suits the heat.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Hot Weather Perfumes",
+        "schema_name": "Best Perfumes for Hot Weather UAE",
+        "schema_description": "Buy hot weather perfumes online at The Fragrance Secrets. Keep every warm day feeling fresh with citrus, mint, and aquatic fragrances, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Cooling & Refreshing",
+            "body": "Heat calls for scents that cool you down. Citrus, mint, marine and green notes create crisp, refreshing fragrances that feel light on the skin and genuinely cooling when the weather is hot.",
+            "tag_label": "Best For",
+            "tags": "Scorching Days, Outdoors, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Light, Not Heavy",
+            "body": "Warm weather amplifies fragrance, so lighter is smarter. Fresh Eau de Toilette and cologne concentrations stay comfortable in the heat, where rich oud or sweet gourmands can quickly feel overpowering.",
+            "tag_label": "Best For",
+            "tags": "Hot Afternoons, Errands, Commutes"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Clean All Day",
+            "body": "A good hot-weather scent keeps you feeling clean through the heat. Airy citrus and aquatic fragrances stay pleasant even as you warm up, avoiding the heavy feeling that thick perfumes bring.",
+            "tag_label": "Best For",
+            "tags": "Long Hot Days, Work, Travel"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Hot Weather Signature",
+            "body": "Whether you love zesty citrus, cool mint, or breezy aquatics, choose a fresh, light scent that keeps you cool and confident through the hottest days of the year.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What type of perfume is best for hot weather?",
+            "answer": "Hot weather perfumes usually feature fresh, cooling notes like citrus, mint, marine accords, and light florals because they stay crisp and comfortable when heavy, rich scents would feel overwhelming."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfumes feel cooling in the heat?",
+            "answer": "Citrus, mint, and aquatic fragrances feel most cooling in heat because their fresh, crisp character lifts you rather than sitting heavy, making them ideal for hot summer days."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Should perfume be lighter in hot weather?",
+            "answer": "Yes. Heat intensifies fragrance, so lighter Eau de Toilette and cologne concentrations are more comfortable, while rich, sweet, or heavy scents can quickly become overpowering in hot conditions."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do perfumes fade faster in hot weather?",
+            "answer": "Yes. Warm temperatures speed up evaporation, so scents can fade sooner in the heat. Applying to moisturised skin and reapplying lightly helps a fresh fragrance last through a hot day."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear sweet perfumes in hot weather?",
+            "answer": "You can, but lightly. Sweet, rich notes can feel heavy and cloying in the heat, so fresher citrus and aquatic scents are usually more comfortable, or apply sweeter fragrances sparingly."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

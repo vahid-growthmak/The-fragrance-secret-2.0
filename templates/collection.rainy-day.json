@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Rainy Day <em>Perfumes</em>",
+        "hero_image_alt": "Rainy day perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Rainy Day Perfumes UAE",
+        "intro_text": "<p>Rainy weather calls for warm, earthy, and comforting fragrances. Damp air carries scent differently, so cozy and green notes feel especially soothing when it rains. The Fragrance Secrets brings together rainy day perfumes for men and women featuring petrichor-style earthy notes, green accords, warm woods, soft spice, and comforting musk. Whether you love the smell of fresh rain, want a cozy scent for grey days, or prefer moody fragrances, our collection helps you find your perfect rainy-day signature.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Wet Weather",
+        "cards_heading": "How to Choose the Right <em>Rainy Day Perfume</em>",
+        "cards_sub": "Rainy weather is made for warmth and earthiness. The best rainy-day fragrances feel cozy and grounding, complement the fresh, damp air, and add comfort to grey days. Here is how to choose one that suits the weather.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Rainy Day Perfumes",
+        "schema_name": "Best Rainy Day Perfumes UAE",
+        "schema_description": "Buy rainy day perfumes online at The Fragrance Secrets. Find earthy, green, and cozy fragrances for wet weather for men and women, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Earthy & Green Notes",
+            "body": "Rainy days suit grounding, natural scents. Petrichor-style earthy notes, green accords, vetiver and soft woods echo the fresh smell of rain and feel calming when the weather turns wet.",
+            "tag_label": "Best For",
+            "tags": "Wet Days, Grey Skies, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Warm & Comforting",
+            "body": "Damp, cooler air suits cozy fragrances. Soft spice, warm woods and gentle musk feel comforting on a rainy day, wrapping you in warmth without becoming heavy or overpowering.",
+            "tag_label": "Best For",
+            "tags": "Indoors, Cozy Days, Evenings In"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh After the Rain",
+            "body": "Some fragrances capture that clean, just-rained freshness beautifully. Green, aquatic and ozonic notes evoke the crisp air after a shower, feeling light and revitalising on wet-weather days.",
+            "tag_label": "Best For",
+            "tags": "Fresh Mornings, After the Rain, Cool Days"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Rainy Day Signature",
+            "body": "Whether you love earthy petrichor, cozy warmth, or fresh green notes, choose a scent that matches your mood and suits the calm, comforting feeling of a rainy day.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Humid Weather Perfumes",
+            "url": "/collections/humid-weather"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What type of perfume is best for rainy weather?",
+            "answer": "Rainy day perfumes usually feature earthy, green, and warm notes like petrichor accords, vetiver, soft woods, and comforting musk because they suit the damp air and feel cozy and grounding."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume smells like rain?",
+            "answer": "Fragrances built on petrichor, green, and ozonic notes smell most like fresh rain, capturing that clean, earthy scent of the air just after a shower on a wet day."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are earthy perfumes good for rainy days?",
+            "answer": "Yes. Earthy and green fragrances suit rainy weather beautifully because they echo the natural smell of wet ground and fresh rain, feeling calming and perfectly matched to grey, damp days."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear fresh perfumes on a rainy day?",
+            "answer": "Yes. Fresh green and aquatic scents work well on rainy days, capturing the crisp, clean air after rain, though many people also enjoy warmer, cozier fragrances when it is wet."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Should perfume be stronger in damp weather?",
+            "answer": "Not necessarily. Damp air can carry scent well, so a moderate application is usually enough. Warm, earthy fragrances feel comforting on rainy days without needing to be heavy or overpowering."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

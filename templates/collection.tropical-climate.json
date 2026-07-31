@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Tropical Climate <em>Perfumes</em>",
+        "hero_image_alt": "Tropical climate perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Perfumes for Tropical Climate UAE",
+        "intro_text": "<p>Tropical weather calls for vibrant, fruity, and exotic fragrances. Warm, humid air suits juicy and refreshing notes that feel alive and energising rather than heavy. The Fragrance Secrets brings together tropical climate perfumes for men and women featuring mango, pineapple, coconut, exotic florals, and fresh aquatic notes. Whether you live in a tropical region, travel to island destinations, or simply love bright exotic scents, our collection helps you find your perfect tropical fragrance.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Tropical Heat",
+        "cards_heading": "How to Choose the Right <em>Tropical Perfume</em>",
+        "cards_sub": "Tropical climates are made for freshness and fruit. The best tropical fragrances feel vibrant and juicy, stay refreshing in warm humid air, and capture the exotic mood of island weather. Here is how to choose one that suits the climate.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Tropical Climate Perfumes",
+        "schema_name": "Best Perfumes for Tropical Climate UAE",
+        "schema_description": "Order tropical climate perfumes at The Fragrance Secrets. Bring tropical vibes to every day with fruity, coconut, and fresh floral fragrances, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Fruity & Juicy Notes",
+            "body": "Tropical weather suits bright, juicy scents. Mango, pineapple, passionfruit and coconut create vibrant fruity fragrances that feel fresh and exotic, perfectly matched to warm, lush tropical air.",
+            "tag_label": "Best For",
+            "tags": "Hot Humid Days, Island Trips, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Exotic & Vibrant",
+            "body": "Tropical fragrances are all about energy and colour. Exotic florals like frangipani and tiare, paired with fresh fruits, feel lively and uplifting, capturing the vivid spirit of the tropics.",
+            "tag_label": "Best For",
+            "tags": "Holidays, Beach Days, Warm Evenings"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh in Humid Heat",
+            "body": "Tropical air is warm and humid, so lighter, fresher scents work best. Aquatic and citrus-fruity fragrances stay crisp and comfortable where heavy, rich perfumes would quickly feel overwhelming.",
+            "tag_label": "Best For",
+            "tags": "Humid Climates, Poolside, Outdoors"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Tropical Signature",
+            "body": "Whether you love juicy fruits, exotic florals, or fresh aquatic notes, choose a vibrant scent that matches your style and captures the bright, exotic feeling of a tropical paradise.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume is best for a tropical climate?",
+            "answer": "Tropical climate perfumes usually feature fruity and fresh notes like mango, pineapple, coconut, exotic florals, and aquatic accords because they feel vibrant and stay refreshing in warm, humid tropical air."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Which fragrances work in hot tropical weather?",
+            "answer": "Light, fruity, and aquatic fragrances work best in hot tropical weather because they stay fresh and crisp, while heavy oud or amber scents can feel overwhelming in warm, humid conditions."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are fruity perfumes good for tropical weather?",
+            "answer": "Yes. Juicy fruity notes like mango, pineapple, and passionfruit suit tropical weather beautifully, feeling vibrant, exotic, and refreshing, and matching the lush, colourful mood of a tropical climate."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "What notes suit tropical weather?",
+            "answer": "Fresh fruits, coconut, exotic florals such as frangipani and tiare, citrus, and light aquatic notes suit tropical weather best, staying bright and comfortable in warm, humid island conditions."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear heavy perfumes in tropical climates?",
+            "answer": "Lightly, if at all. Rich oud and amber scents can feel overpowering in tropical heat and humidity, so fresher, fruitier fragrances are usually far more comfortable in warm conditions."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

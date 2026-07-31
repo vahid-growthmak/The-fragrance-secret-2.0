@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Cold Weather <em>Perfumes</em>",
+        "hero_image_alt": "Cold weather perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Perfumes for Cold Weather UAE",
+        "intro_text": "<p>Cold weather brings the best out of a rich fragrance. Low temperatures slow evaporation and let deep, warm notes unfold gradually, so heavier scents perform beautifully when it is cold. The Fragrance Secrets brings together cold weather perfumes for men and women featuring oud, amber, spice, leather, and warm woody notes that feel comforting and last for hours. Whether you face a cold snowy climate, chilly evenings, or simply prefer bold, warming scents, our collection helps you find your perfect cold-weather fragrance.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "In the Cold",
+        "cards_heading": "How to Choose the Right <em>Cold Weather Perfume</em>",
+        "cards_sub": "Cold weather is made for richness and warmth. The best cold-climate fragrances feel deep and comforting, perform strongly in low temperatures, and last far longer than they would in heat. Here is how to choose one that suits the cold.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Cold Weather Perfumes",
+        "schema_name": "Best Perfumes for Cold Weather UAE",
+        "schema_description": "Order cold weather perfumes at The Fragrance Secrets. Made for cooler days, warm oud, amber, and spice fragrances leave a lasting impression, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Warm & Rich Notes",
+            "body": "Cold air suits deep, warming scents. Oud, amber, spice, leather and warm woods create rich fragrances that feel comforting in low temperatures and come alive as the cold slows their release.",
+            "tag_label": "Best For",
+            "tags": "Cold Days, Snowy Weather, Chilly Nights"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Long-Lasting in the Cold",
+            "body": "Low temperatures slow evaporation, so rich perfumes last far longer in cold weather. Concentrated Eau de Parfums built on heavy base notes keep performing for hours in the chill.",
+            "tag_label": "Best For",
+            "tags": "All-Day Wear, Outdoor Cold, Long Evenings"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Why Warm Scents Work in Cold",
+            "body": "Cold air holds fragrance close and releases it slowly, which is why warm, heavy scents feel perfectly balanced when it is cold. Notes that seem strong in summer sit just right in winter.",
+            "tag_label": "Best For",
+            "tags": "Cold Climates, Winter Travel, Snow Days"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Cold Weather Signature",
+            "body": "Whether you love smoky oud, sweet amber, or warm spice, choose a rich, long-lasting scent that keeps you feeling warm and confident through the coldest days.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Summer Wear Perfumes",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume is best for cold weather?",
+            "answer": "Cold weather perfumes usually feature warm, rich notes like oud, amber, spice, leather, and woods because they perform strongly in low temperatures and last much longer than lighter scents."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Why do warm perfumes work better in cold weather?",
+            "answer": "Cold air slows evaporation and holds scent close, releasing it gradually. This is why warm, heavy notes feel balanced and perform beautifully in cold, not heat."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Do perfumes last longer in cold weather?",
+            "answer": "Yes. Low temperatures slow evaporation, so rich fragrances develop gradually and stay noticeable for longer. Concentrated Eau de Parfums with heavy base notes are especially long-lasting in the cold."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which notes are best for cold climates?",
+            "answer": "Oud, amber, spice, leather, sandalwood, vanilla, and warm woods are best for cold climates because their depth and warmth feel comforting and perform strongly in low temperatures."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear fresh perfumes in cold weather?",
+            "answer": "You can, though warmer scents suit the cold better. Fresh fragrances can feel thin and fade quickly in low temperatures, so richer, warmer notes are generally more satisfying when cold."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

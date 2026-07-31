@@ -1,0 +1,220 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "Climate Collection",
+        "hero_heading": "Summer Wear <em>Perfumes</em>",
+        "hero_image_alt": "Summer wear perfumes collection The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Climate Collection",
+        "intro_heading": "Best Summer Perfumes UAE",
+        "intro_text": "<p>Summer is the season for fresh, light, and uplifting fragrances. Warm weather intensifies scent, so crisp and breezy notes feel far more comfortable than heavy ones. The Fragrance Secrets brings together summer perfumes for men and women featuring citrus, aquatic notes, fresh florals, light fruits, and clean musk. Whether you are dressing for hot days, a summer holiday, or simply prefer refreshing scents, our collection helps you find your perfect warm-weather signature.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Warm Weather",
+        "cards_heading": "How to Choose the Right <em>Summer Perfume</em>",
+        "cards_sub": "Summer is made for freshness and lightness. The best warm-weather fragrances feel crisp and cooling, stay comfortable in the heat, and lift your mood on the hottest days. Here is how to choose one that suits the season.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "show_reviews": true,
+        "crumb_name": "Summer Wear Perfumes",
+        "schema_name": "Best Summer Perfumes UAE",
+        "schema_description": "Buy summer wear perfumes online at The Fragrance Secrets. Find fresh citrus, marine, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Cooling Notes",
+            "body": "Warm weather calls for lighter fragrances. Citrus, aquatic, fresh floral and light fruity notes create crisp, cooling scents that feel refreshing on hot days and never turn heavy in the heat.",
+            "tag_label": "Best For",
+            "tags": "Hot Days, Summer Outings, Daily Wear"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Light, Not Overpowering",
+            "body": "Heat intensifies fragrance, so a lighter scent is the smarter summer choice. Fresh Eau de Toilette and cologne concentrations sit comfortably on the skin without becoming overwhelming in warm temperatures.",
+            "tag_label": "Best For",
+            "tags": "Office, Errands, Warm Afternoons"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Perfect for Sun & Travel",
+            "body": "A great summer fragrance suits sunny days and holidays alike. Breezy citrus and aquatic scents feel effortless by the pool, on the beach, or on a warm summer evening out.",
+            "tag_label": "Best For",
+            "tags": "Holidays, Poolside, Evenings Out"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Summer Signature",
+            "body": "Whether you love zesty citrus, cool aquatics, or soft summer florals, choose a fresh scent that matches your style and keeps you feeling cool and confident all season.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Winter Wear Perfumes",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Spring Wear Perfumes",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rainy Day Perfumes",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Humid Weather Perfumes",
+            "url": "/collections/humid-weather"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What type of perfume is best for summer?",
+            "answer": "Summer perfumes usually feature fresh notes like citrus, bergamot, aquatic accords, light florals, and clean musk because they feel cooling, stay comfortable in the heat, and never turn overpowering."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do perfumes fade faster in summer?",
+            "answer": "Yes. Warm temperatures speed up fragrance evaporation, so lighter summer scents can fade sooner, which is why many people reapply or choose a slightly stronger concentration during hot weather."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Are citrus perfumes good for summer?",
+            "answer": "Yes. Citrus is one of the most popular notes for summer because it is fresh, bright, and cooling, making it feel crisp and comfortable even on the hottest days."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear warm perfumes during summer?",
+            "answer": "Yes, though lighter is usually better. Rich oud and amber scents can feel heavy in heat, so warm fragrances are best kept for cooler evenings or lightly applied during summer."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I wear a lighter perfume in summer?",
+            "answer": "In most cases, yes. Summer suits fresh Eau de Toilette and cologne concentrations because heat intensifies fragrance, so a lighter scent stays comfortable and pleasant throughout warm days."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}
