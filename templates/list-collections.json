@@ -1,1 +1,287 @@
-{ "sections": { "main": { "type": "main-list-collections" } }, "order": ["main"] }
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hub-hero",
+      "settings": {
+        "hero_eyebrow": "Browse Everything",
+        "hero_heading": "Shop by <em>Collection</em>",
+        "intro_eyebrow": "Browse Everything",
+        "intro_heading": "Shop Perfume Categories in the UAE",
+        "intro_text": "<p>Every way to shop, in one place. The Shop by Collection hub is the complete map of The Fragrance Secrets, browse by category and gender, by fragrance type like Eau de Parfum, attar and perfume oil, and by the ways we curate scents for lifestyle, climate, brand and scent family. Whether you know exactly what you want or prefer to explore, this is where every collection begins. Choose a category below to narrow the range, or dive into a curated edit to discover something new.</p>",
+        "children_eyebrow": "Start Here",
+        "children_heading": "Shop by <em>Category</em>",
+        "children_sub": "Browse our core perfume categories by who they are for and the type of fragrance. Choose a category to narrow the full range to what suits you."
+      },
+      "blocks": {
+        "child1": {
+          "type": "link",
+          "settings": {
+            "label": "Women's Perfumes",
+            "url": "/collections/womens"
+          }
+        },
+        "child2": {
+          "type": "link",
+          "settings": {
+            "label": "Men's Perfumes",
+            "url": "/collections/mens"
+          }
+        },
+        "child3": {
+          "type": "link",
+          "settings": {
+            "label": "Unisex Perfumes",
+            "url": "/collections/unisex"
+          }
+        },
+        "child4": {
+          "type": "link",
+          "settings": {
+            "label": "Kids Perfumes",
+            "url": "/collections/kids"
+          }
+        },
+        "child5": {
+          "type": "link",
+          "settings": {
+            "label": "Luxury Perfumes",
+            "url": "/collections/luxury"
+          }
+        },
+        "child6": {
+          "type": "link",
+          "settings": {
+            "label": "Attar",
+            "url": "/collections/attar"
+          }
+        },
+        "child7": {
+          "type": "link",
+          "settings": {
+            "label": "Perfume Oils",
+            "url": "/collections/perfume-oil"
+          }
+        },
+        "child8": {
+          "type": "link",
+          "settings": {
+            "label": "Arabic Perfumes",
+            "url": "/collections/arabic"
+          }
+        },
+        "child9": {
+          "type": "link",
+          "settings": {
+            "label": "Inspired Perfumes",
+            "url": "/collections/inspired"
+          }
+        }
+      },
+      "block_order": [
+        "child1",
+        "child2",
+        "child3",
+        "child4",
+        "child5",
+        "child6",
+        "child7",
+        "child8",
+        "child9"
+      ]
+    },
+    "body": {
+      "type": "hub-editorial",
+      "settings": {
+        "cards_eyebrow": "How It Works",
+        "cards_heading": "How to Shop <em>by Collection</em>",
+        "cards_sub": "With a large catalogue, the fastest way to your perfect scent is to start with a collection. Every fragrance is organised by category, type and curated edit, so you can narrow the range in a click. Here is how the collections are structured.",
+        "ways_eyebrow": "Keep Looking",
+        "ways_heading": "Explore Curated <em>Collections</em>",
+        "ways_sub": "Prefer to shop a different way? Explore our other collections to find your perfect fragrance by category, brand, scent family, climate, or lifestyle.",
+        "shop_eyebrow": "The Shop",
+        "shop_heading": "Explore Our <em>Shop Collections</em>",
+        "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
+        "crumb_name": "Shop by Collection",
+        "ways_all_label": "Browse All Brands",
+        "ways_all_url": "/pages/brands"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Shop by Category & Gender",
+            "body": "Start with who it is for. The core categories, Women's, Men's, Unisex and Kids, plus Luxury, narrow the full range instantly, so you only browse fragrances made with you in mind.",
+            "tag_label": "Explore",
+            "tags": "Women, Men, Unisex, Kids, Luxury"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Shop by Fragrance Type",
+            "body": "Prefer a particular format? Browse by type, Eau de Parfum, attar, perfume oil, Arabic and inspired scents, each with its own character, strength and longevity, so you shop the style that suits you.",
+            "tag_label": "Types",
+            "tags": "EDP, Attar, Oil, Arabic, Inspired"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Shop by Curated Edit",
+            "body": "Beyond categories, we curate scents by lifestyle, climate, brand and scent family. These edits help you shop by occasion, weather, favourite house or the notes you love, however you like to explore.",
+            "tag_label": "Explore",
+            "tags": "Lifestyle, Climate, Brand, Family"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Everything, Genuine",
+            "body": "Whichever collection you choose, every fragrance is sourced through trusted suppliers, genuine and quality-checked. Browse the entire range with confidence, knowing exactly what you are buying.",
+            "tag_label": "Assured",
+            "tags": "Genuine, Quality-Checked, Trusted"
+          }
+        },
+        "way1": {
+          "type": "way",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "way2": {
+          "type": "way",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "way3": {
+          "type": "way",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family"
+          }
+        },
+        "way4": {
+          "type": "way",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "shop1": {
+          "type": "shoplink",
+          "settings": {
+            "label": "All Products",
+            "url": "/collections/all"
+          }
+        },
+        "shop2": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Best Sellers",
+            "url": "/collections/best-sellers"
+          }
+        },
+        "shop3": {
+          "type": "shoplink",
+          "settings": {
+            "label": "New Arrivals",
+            "url": "/collections/new-arrivals"
+          }
+        },
+        "shop4": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Crazy Deals",
+            "url": "/collections/crazy-deals"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the different types of perfume?",
+            "answer": "The main types are Eau de Parfum and Eau de Toilette, plus traditional attar and perfume oil. They differ in concentration and longevity, with attars and oils the most concentrated."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between EDP, EDT and attar?",
+            "answer": "Eau de Parfum is more concentrated than Eau de Toilette, so it lasts longer. Attar is a traditional, often oil-based concentrate, usually alcohol-free and very long-lasting on the skin."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfume category lasts the longest?",
+            "answer": "Attars and perfume oils generally last longest because they are highly concentrated, followed by Eau de Parfum. Eau de Toilette is lighter and fades sooner, better suited to daytime wear."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose a perfume category?",
+            "answer": "Start with who it is for and the strength you want. Choose Eau de Parfum for balance, attar or oil for longevity, or a curated edit to shop by occasion."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I browse all perfume categories?",
+            "answer": "Use this Shop by Collection hub. It maps every category, type and curated edit in one place, so you can narrow by gender, type, lifestyle, climate, brand or scent family."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "way1",
+        "way2",
+        "way3",
+        "way4",
+        "shop1",
+        "shop2",
+        "shop3",
+        "shop4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "body"
+  ]
+}

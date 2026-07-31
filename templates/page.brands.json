@@ -1,1 +1,213 @@
-{ "sections": { "main": { "type": "page-brands" } }, "order": ["main"] }
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hub-hero",
+      "settings": {
+        "hero_eyebrow": "The Houses We Carry",
+        "hero_heading": "Shop by <em>Brand</em>",
+        "intro_eyebrow": "The Houses We Carry",
+        "intro_heading": "Shop Perfume Brands in the UAE",
+        "intro_text": "<p>Every fragrance house has its own story, style, and signature creations. The Fragrance Secrets brings together 47+ authentic perfume brands, from renowned designer labels and luxury niche houses to iconic Arabian fragrance brands, all sourced through trusted suppliers. Browse perfume brands from A to Z, including our exclusive signature collections created to our own standards in the UAE. Whether you're searching for your favourite fragrance house or exploring a new brand, you'll find the complete collection in one place. Compare brands, discover their fragrances, and shop with complete confidence.</p>"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "brandgrid": {
+      "type": "page-brands",
+      "settings": {}
+    },
+    "body": {
+      "type": "hub-editorial",
+      "settings": {
+        "cards_eyebrow": "How It Works",
+        "cards_heading": "How to Shop <em>by Brand</em>",
+        "cards_sub": "Shopping by brand is the quickest way to reach a house you already trust, or to discover a new one. The Fragrance Secrets groups every perfume by its maker, from global designers to Arabian specialists and our own signature lines. Here is how to make the most of it.",
+        "ways_eyebrow": "Keep Looking",
+        "ways_heading": "Explore More <em>Fragrance Collections</em>",
+        "ways_sub": "Prefer to shop another way? Browse our main fragrance collections by category, lifestyle, climate, and scent family to find the perfect scent for every occasion.",
+        "shop_eyebrow": "The Shop",
+        "shop_heading": "Explore Other <em>Shop Collections</em>",
+        "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
+        "crumb_name": "Shop by Brand"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Designer, Niche & Arabian Houses",
+            "body": "Browse 47+ fragrance houses in one place, from global designer names to prestige niche makers and beloved Arabian brands like Lattafa, Rasasi and Armaf. Every major style and price point is represented.",
+            "tag_label": "Explore",
+            "tags": "Designer, Niche, Arabian, A to Z"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Our Own Signature Lines",
+            "body": "Alongside the houses we carry, we craft our own lines, Fragrance Secrets, Secret Scents and Paris Collection, made to our standards in the UAE. These inspired scents offer signature style at accessible prices.",
+            "tag_label": "Made by Us",
+            "tags": "Fragrance Secrets, Secret Scents, Paris Collection"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Every House, 100% Genuine",
+            "body": "Each brand we carry is sourced through trusted suppliers and market-authorised channels, sealed and authenticity-guaranteed. Whichever house you choose, you know exactly what you are buying and where it came from.",
+            "tag_label": "Assured",
+            "tags": "Genuine, Sealed, Trusted Sourcing"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your House Fast",
+            "body": "Use the A to Z brand index to jump straight to a house you love, or explore by style to discover a new favourite. Every brand links through to its full range of fragrances.",
+            "tag_label": "Best For",
+            "tags": "Loyal Buyers, Explorers, Gifting"
+          }
+        },
+        "way1": {
+          "type": "way",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "way2": {
+          "type": "way",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "way3": {
+          "type": "way",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "way4": {
+          "type": "way",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family"
+          }
+        },
+        "shop1": {
+          "type": "shoplink",
+          "settings": {
+            "label": "All Products",
+            "url": "/collections/all"
+          }
+        },
+        "shop2": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Best Sellers",
+            "url": "/collections/best-sellers"
+          }
+        },
+        "shop3": {
+          "type": "shoplink",
+          "settings": {
+            "label": "New Arrivals",
+            "url": "/collections/new-arrivals"
+          }
+        },
+        "shop4": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Crazy Deals",
+            "url": "/collections/crazy-deals"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfume brands are available at The Fragrance Secrets?",
+            "answer": "We offer 47+ authentic designer, niche, and Arabian fragrance houses, along with our own exclusive signature collections. Browse the complete A to Z brand directory to discover every brand we stock."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the best perfume brands to buy in Dubai?",
+            "answer": "The best perfume brand depends on your personal style. If you enjoy rich oud and long-lasting fragrances, Arabian brands like Lattafa and Rasasi are excellent choices. If you prefer classic or modern luxury scents, explore our designer and niche fragrance brands to find your perfect match."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right perfume brand?",
+            "answer": "Choosing the right perfume brand depends on the fragrance notes and style you enjoy. Arabian brands are ideal for rich oud and oriental scents, while designer and niche brands offer fresh, floral, woody, citrus, and modern fragrances for every preference."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Why should I shop by perfume brand?",
+            "answer": "Every perfume brand has its own signature style, fragrance notes, and identity. Shopping by brand makes it easier to discover fragrances that match your preferences and explore collections from your favourite fragrance houses."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are the perfume brands authentic?",
+            "answer": "Yes. Every perfume brand we stock is sourced through trusted suppliers and authorised distribution channels. Each fragrance is sealed, authentic, and quality checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and estimated delivery times are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "way1",
+        "way2",
+        "way3",
+        "way4",
+        "shop1",
+        "shop2",
+        "shop3",
+        "shop4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "brandgrid",
+    "body"
+  ]
+}

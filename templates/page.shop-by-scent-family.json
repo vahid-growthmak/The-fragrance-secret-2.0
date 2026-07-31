@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hub-hero",
+      "settings": {
+        "hero_eyebrow": "Find Your Scent",
+        "hero_heading": "Shop by <em>Scent Family</em>",
+        "intro_eyebrow": "Find Your Scent",
+        "intro_heading": "Shop Perfume by Scent Family UAE",
+        "intro_text": "<p>Finding your favourite fragrance is easier when you know the scent family you enjoy most. The Fragrance Secrets groups its collection into five distinct fragrance families, from rich oud & woody and fresh citrus to elegant floral & rose, indulgent sweet gourmand, and bold spicy & oriental scents. Instead of browsing hundreds of perfumes, start with the fragrance notes you already love and explore collections built around them. Discover all five scent families, learn what makes each one unique, and find the fragrance that perfectly matches your style.</p>",
+        "children_eyebrow": "Start Here",
+        "children_heading": "Explore <em>Scent Family Collections</em>",
+        "children_sub": "Each family is defined by a distinct character and set of notes. Choose the one that matches your taste and discover fragrances built around it."
+      },
+      "blocks": {
+        "child1": {
+          "type": "link",
+          "settings": {
+            "label": "Oud & Woody",
+            "url": "/collections/oud-woody"
+          }
+        },
+        "child2": {
+          "type": "link",
+          "settings": {
+            "label": "Fresh & Citrus",
+            "url": "/collections/fresh-citrus"
+          }
+        },
+        "child3": {
+          "type": "link",
+          "settings": {
+            "label": "Floral & Rose",
+            "url": "/collections/floral-rose"
+          }
+        },
+        "child4": {
+          "type": "link",
+          "settings": {
+            "label": "Sweet & Gourmand",
+            "url": "/collections/sweet-gourmand"
+          }
+        },
+        "child5": {
+          "type": "link",
+          "settings": {
+            "label": "Spicy & Oriental",
+            "url": "/collections/spicy-oriental"
+          }
+        }
+      },
+      "block_order": [
+        "child1",
+        "child2",
+        "child3",
+        "child4",
+        "child5"
+      ]
+    },
+    "body": {
+      "type": "hub-editorial",
+      "settings": {
+        "cards_eyebrow": "How It Works",
+        "cards_heading": "How to Shop <em>by Scent Family</em>",
+        "cards_sub": "Scent families are the simplest way to understand fragrance. Each groups perfumes by their dominant notes and character, so once you know which families you enjoy, finding new favourites becomes easy. Here is how to use them.",
+        "ways_eyebrow": "Keep Looking",
+        "ways_heading": "Explore Other <em>Ways to Shop</em>",
+        "ways_sub": "Prefer to shop a different way? Explore our other collections to find your perfect fragrance by category, brand, scent family, climate, or lifestyle.",
+        "shop_eyebrow": "The Shop",
+        "shop_heading": "Explore Our <em>Shop Collections</em>",
+        "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
+        "crumb_name": "Shop by Scent Family",
+        "ways_all_label": "See All Collections",
+        "ways_all_url": "/collections"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "What Scent Families Are",
+            "body": "A scent family groups fragrances by their dominant notes and character, woody, fresh, floral, sweet or spicy. Knowing the families turns fragrance from guesswork into a simple map you can navigate with confidence.",
+            "tag_label": "The Five",
+            "tags": "Oud & Woody, Fresh, Floral, Sweet, Spicy"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Find Your Family",
+            "body": "Think about the smells you naturally enjoy. Love warmth and depth? Try oud and woody or spicy oriental. Prefer bright and clean? Explore fresh and citrus. Drawn to flowers or dessert notes? Floral or gourmand await.",
+            "tag_label": "Explore",
+            "tags": "Warm, Fresh, Floral, Sweet"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Families & Longevity",
+            "body": "Character affects staying power. Rich oud, woody and oriental families tend to last longest, while fresh and citrus scents are lighter and brighter. Knowing this helps you match a family to the wear you want.",
+            "tag_label": "Good to Know",
+            "tags": "Long-Lasting, Light, Balanced"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Build Around What You Love",
+            "body": "Most people gravitate to two or three families. Once you know yours, you can build a scent wardrobe with confidence and branch into related families to discover something new but familiar.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Every Taste"
+          }
+        },
+        "way1": {
+          "type": "way",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections"
+          }
+        },
+        "way2": {
+          "type": "way",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "way3": {
+          "type": "way",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather"
+          }
+        },
+        "way4": {
+          "type": "way",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        },
+        "shop1": {
+          "type": "shoplink",
+          "settings": {
+            "label": "All Products",
+            "url": "/collections/all"
+          }
+        },
+        "shop2": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Best Sellers",
+            "url": "/collections/best-sellers"
+          }
+        },
+        "shop3": {
+          "type": "shoplink",
+          "settings": {
+            "label": "New Arrivals",
+            "url": "/collections/new-arrivals"
+          }
+        },
+        "shop4": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Crazy Deals",
+            "url": "/collections/crazy-deals"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the different fragrance families?",
+            "answer": "The main fragrance families are woody, fresh, floral, and oriental, with gourmand and spicy often treated separately. We organise scents into five: Oud & Woody, Fresh & Citrus, Floral & Rose, Sweet & Gourmand, and Spicy & Oriental."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I know my perfume scent family?",
+            "answer": "Notice the character you enjoy most. Warm and deep points to woody or oriental, bright and clean to fresh, flowery to floral, sweet to gourmand. Favourites usually cluster together."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a woody fragrance?",
+            "answer": "A woody fragrance is built on warm wood notes like sandalwood, cedar and vetiver, often crowned by oud. These scents feel warm, deep and sophisticated, and last well."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which fragrance family lasts longest?",
+            "answer": "Rich families last longest. Oud, woody and oriental scents have heavy base notes that evaporate slowly, so they outlast lighter families. Fresh and citrus scents are brighter but fade sooner."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose a perfume by scent family?",
+            "answer": "Start with the notes you already love, then explore that family. If you enjoy warmth, try woody or oriental; if you prefer freshness, explore fresh or citrus."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "way1",
+        "way2",
+        "way3",
+        "way4",
+        "shop1",
+        "shop2",
+        "shop3",
+        "shop4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "body"
+  ]
+}

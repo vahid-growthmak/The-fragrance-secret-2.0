@@ -1,0 +1,134 @@
+{%- comment -%}
+  Hub hero — the top of a parent page (Shop by Collection / Lifestyle / Scent
+  Family / Brand): dark hero, intro block, and the grid of child collections.
+
+  Blocks:
+    link — one child collection tile
+{%- endcomment -%}
+
+{%- assign child_blocks = section.blocks | where: 'type', 'link' -%}
+
+<section class="page-hero tall">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span class="mi" aria-hidden="true">chevron_right</span>
+      <a href="/collections/all">Perfumes</a>
+      <span class="mi" aria-hidden="true">chevron_right</span>
+      <span>{{ section.settings.hero_heading | strip_html }}</span>
+    </div>
+    {%- if section.settings.hero_eyebrow != blank -%}<span class="ph-eyebrow">{{ section.settings.hero_eyebrow }}</span>{%- endif -%}
+    <h1 class="ph-title">{{ section.settings.hero_heading }}</h1>
+    <div class="ph-meta">
+      <span><span class="mi" aria-hidden="true">verified_user</span>100% Authentic</span>
+      <span><span class="mi" aria-hidden="true">local_shipping</span>Fast Shipping</span>
+      <span><span class="mi" aria-hidden="true">lock</span>Secure Checkout</span>
+    </div>
+  </div>
+</section>
+
+{%- if section.settings.intro_heading != blank or section.settings.intro_text != blank -%}
+  <section class="section-sm coll-intro"><div class="container coll-intro-grid">
+    <div class="coll-intro-copy">
+      {%- if section.settings.intro_eyebrow != blank -%}<span class="label">{{ section.settings.intro_eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.intro_heading != blank -%}<h2 class="sec-title">{{ section.settings.intro_heading }}</h2>{%- endif -%}
+      {%- if section.settings.intro_text != blank -%}<div class="sec-sub coll-intro-body">{{ section.settings.intro_text }}</div>{%- endif -%}
+    </div>
+    <aside class="wc-rotator" id="wcRotator-{{ section.id }}" aria-label="Why choose The Fragrance Secrets">
+      <div class="wc-head">
+        <span class="label">Why Choose Us</span>
+        <span class="wc-count"><b data-wc-now>1</b>/6</span>
+      </div>
+      <div class="wc-stage">
+        <div class="wc-slide is-active"><span class="mi" aria-hidden="true">verified</span><b>100% Authentic Perfumes</b><p>Every fragrance is genuine and sourced through trusted suppliers, checked before it ships.</p></div>
+        <div class="wc-slide"><span class="mi" aria-hidden="true">local_shipping</span><b>Fast UAE Delivery</b><p>Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates.</p></div>
+        <div class="wc-slide"><span class="mi" aria-hidden="true">lock</span><b>Secure Payments</b><p>Pay safely by card, wallet or cash on delivery, whichever suits you best.</p></div>
+        <div class="wc-slide"><span class="mi" aria-hidden="true">diamond</span><b>Premium Fragrance Collection</b><p>Designer houses and Arabian perfumery, side by side in one place.</p></div>
+        <div class="wc-slide"><span class="mi" aria-hidden="true">inventory_2</span><b>Carefully Packed Orders</b><p>Every order is packed with care so it arrives sealed, safe and gift-ready.</p></div>
+        <div class="wc-slide"><span class="mi" aria-hidden="true">redeem</span><b>Perfect for Gifting</b><p>Ready-wrapped sets and premium packaging for weddings, Eid and birthdays.</p></div>
+      </div>
+      <div class="wc-dots">
+        <button type="button" class="is-active" aria-label="Slide 1"></button>
+        <button type="button" aria-label="Slide 2"></button>
+        <button type="button" aria-label="Slide 3"></button>
+        <button type="button" aria-label="Slide 4"></button>
+        <button type="button" aria-label="Slide 5"></button>
+        <button type="button" aria-label="Slide 6"></button>
+      </div>
+    </aside>
+  </div></section>
+
+  <script>
+    (function () {
+      var root = document.getElementById('wcRotator-{{ section.id }}');
+      if (!root) return;
+      var slides = root.querySelectorAll('.wc-slide');
+      var dots = root.querySelectorAll('.wc-dots button');
+      var now = root.querySelector('[data-wc-now]');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var i = 0, timer = null;
+      function show(n) {
+        slides[i].classList.remove('is-active');
+        dots[i].classList.remove('is-active');
+        i = (n + slides.length) % slides.length;
+        slides[i].classList.add('is-active');
+        dots[i].classList.add('is-active');
+        if (now) now.textContent = i + 1;
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      function start() { if (reduce) return; stop(); timer = setInterval(function () { show(i + 1); }, 4000); }
+      dots.forEach(function (d, idx) { d.addEventListener('click', function () { show(idx); start(); }); });
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      start();
+    })();
+  </script>
+{%- endif -%}
+
+{%- if child_blocks.size > 0 -%}
+  <section class="section"><div class="container">
+    <div class="sec-head center">
+      {%- if section.settings.children_eyebrow != blank -%}<span class="label">{{ section.settings.children_eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.children_heading != blank -%}<h2 class="sec-title">{{ section.settings.children_heading }}</h2>{%- endif -%}
+      {%- if section.settings.children_sub != blank -%}<p class="sec-sub">{{ section.settings.children_sub }}</p>{%- endif -%}
+    </div>
+    <div class="crosslink-grid four">
+      {%- for block in child_blocks -%}
+        <a class="crosslink" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+          <span>{{ block.settings.label }}</span>
+          <span class="mi" aria-hidden="true">arrow_forward</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div></section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hub hero",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "hero_heading", "label": "Heading (H1)", "info": "Wrap words in <em></em> for the gold italic accent." },
+    { "type": "header", "content": "Introduction" },
+    { "type": "text", "id": "intro_eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "intro_heading", "label": "Heading (H2)", "info": "Carries the page's primary keyword." },
+    { "type": "richtext", "id": "intro_text", "label": "Intro copy" },
+    { "type": "header", "content": "Child collections" },
+    { "type": "text", "id": "children_eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "children_heading", "label": "Heading (H2)" },
+    { "type": "textarea", "id": "children_sub", "label": "Intro paragraph" }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Child collection",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Hub hero" } ]
+}
+{% endschema %}
