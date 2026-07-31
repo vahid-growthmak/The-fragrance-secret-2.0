@@ -143,6 +143,20 @@ def ssl_context():
     return ssl.create_default_context()
 
 
+def pin_host(hostname, address):
+    """Work around a local resolver that NXDOMAINs a host public DNS resolves
+    fine. TLS still verifies the certificate against the hostname."""
+    import socket
+    original = socket.getaddrinfo
+
+    def patched(host, port, *args, **kwargs):
+        if host == hostname:
+            host = address
+        return original(host, port, *args, **kwargs)
+
+    socket.getaddrinfo = patched
+
+
 class Shopify:
     def __init__(self, store, token, api_version):
         self.url = "https://%s/admin/api/%s/graphql.json" % (store, api_version)
@@ -200,6 +214,8 @@ def main():
     parser.add_argument("--store", help="myshopify domain (defaults to .env SHOPIFY_STORE_DOMAIN)")
     parser.add_argument("--token", help="Admin API token (defaults to .env SHOPIFY_ADMIN_ACCESS_TOKEN)")
     parser.add_argument("--api-version", help="defaults to .env SHOPIFY_API_VERSION or %s" % DEFAULT_API_VERSION)
+    parser.add_argument("--resolve-ip", help="connect to this IP for the store host, for when the "
+                                             "local resolver fails on a name public DNS resolves")
     args = parser.parse_args()
 
     dotenv = load_dotenv()
@@ -212,8 +228,11 @@ def main():
                  ".env, or pass --store / --token. See --help.")
 
     args.api_version = api_version
-    client = Shopify(store.replace("https://", "").strip("/"), token, api_version)
-    args.store = store
+    host = store.replace("https://", "").replace("http://", "").strip("/")
+    if args.resolve_ip:
+        pin_host(host, args.resolve_ip)
+    client = Shopify(host, token, api_version)
+    args.store = host
     print("%sStore:%s %s   %sAPI:%s %s\n" % (DIM, RESET, args.store, DIM, RESET, args.api_version))
 
     if args.handles:
