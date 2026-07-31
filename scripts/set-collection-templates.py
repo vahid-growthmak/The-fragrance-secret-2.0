@@ -70,6 +70,16 @@ TEMPLATES = {
     "hot-weather": "hot-weather",
     "cold-weather": "cold-weather",
     "dry-weather": "dry-weather",
+    # Shop by Scent Family
+    "oud-woody": "oud-woody",
+    "fresh-citrus": "fresh-citrus",
+    "floral-rose": "floral-rose",
+    "sweet-gourmand": "sweet-gourmand",
+    "spicy-oriental": "spicy-oriental",
+    # Shop
+    "best-sellers": "best-sellers",
+    "new-arrivals": "new-arrivals",
+    "crazy-deals": "crazy-deals",
 }
 
 LOOKUP_QUERY = """
