@@ -1,0 +1,26 @@
+{%- comment -%}
+  Brand card — an image tile linking to a brand's collection.
+  Usage: {% render 'brand-card', brand: collection_object %}
+{%- endcomment -%}
+
+{%- liquid
+  assign brand_image = brand.image
+  if brand_image == blank
+    assign brand_image = brand.products.first.featured_image
+  endif
+-%}
+
+<a class="hub-tile brand-tile" href="{{ brand.url }}">
+  {%- if brand_image -%}
+    <img src="{{ brand_image | image_url: width: 600 }}" alt="{{ brand.title | escape }} perfumes" loading="lazy" width="600" height="480">
+  {%- else -%}
+    <span class="brand-tile-mark" aria-hidden="true">{{ brand.title | slice: 0, 1 }}</span>
+  {%- endif -%}
+  <div class="hub-body">
+    <h3>{{ brand.title }}</h3>
+    {%- if brand.products_count > 0 -%}
+      <p>{{ brand.products_count }} fragrance{% if brand.products_count != 1 %}s{% endif %}</p>
+    {%- endif -%}
+    <span class="hub-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
+  </div>
+</a>

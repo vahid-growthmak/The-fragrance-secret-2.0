@@ -431,6 +431,21 @@ header.light .nav-burger { color: var(--warm); }
 .hub-tile:hover .hub-go { opacity: 1; transform: translateY(0); }
 .hub-tile.wide { grid-column: span 2; aspect-ratio: auto; }
 
+/* Brand tiles (PDP "Explore other brands") */
+.brand-tile { background: linear-gradient(150deg, var(--ink), var(--charcoal)); }
+.brand-tile h3 { font-size: 1.25rem; }
+.brand-tile-mark {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--fd); font-size: 3.4rem; color: rgba(226,201,126,.45);
+}
+.brands-strip .sec-head { margin-bottom: 34px; }
+
+/* Shared "see the whole collection" row under a PDP recommendation grid */
+.related-cta { text-align: center; margin-top: 30px; }
+.related-cta .btn-o { color: var(--ink); border-color: rgba(13,10,6,.28); }
+.related-cta .btn-o:hover { color: var(--gold-dk); border-color: var(--gold); }
+.related-cta .mi { font-size: 16px; }
+
 /* ── Countdown + deal hero (Crazy Deals) ─────────────────────────── */
 .deal-hero { background: linear-gradient(135deg, #1C0F0A 0%, #2A1510 55%, #0D0A06 100%); color: var(--white); position: relative; overflow: hidden; padding: 118px 0 70px; }
 .deal-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(90% 120% at 15% 10%, rgba(201,168,76,.25), transparent 50%); }

@@ -282,10 +282,31 @@
   </section>
 
   <!-- MORE FROM THIS BRAND -->
-  {%- assign brand_count = 0 -%}
-  {%- for p in collections.all.products -%}
-    {%- if p.vendor == product.vendor and p.id != product.id -%}{%- assign brand_count = brand_count | plus: 1 -%}{%- endif -%}
-  {%- endfor -%}
+  {%- liquid
+    comment
+      Prefer the brand's own collection (handle, or handle-perfumes) so the CTA
+      lands on a real merchandised page; fall back to the vendor listing.
+    endcomment
+    assign vendor_handle = product.vendor | handleize
+    assign brand_collection = collections[vendor_handle]
+    unless brand_collection.handle
+      assign vendor_handle_alt = vendor_handle | append: '-perfumes'
+      assign brand_collection = collections[vendor_handle_alt]
+    endunless
+
+    if brand_collection.handle
+      assign brand_url = brand_collection.url
+    else
+      assign brand_url = '/collections/vendors?q=' | append: product.vendor | url_encode
+    endif
+
+    assign brand_count = 0
+    for p in collections.all.products
+      if p.vendor == product.vendor and p.id != product.id
+        assign brand_count = brand_count | plus: 1
+      endif
+    endfor
+  -%}
   {%- if brand_count > 0 -%}
   <section class="related">
     <div class="related-inner">
@@ -299,12 +320,51 @@
           {%- endif -%}
         {%- endfor -%}
       </div>
-      <div style="text-align:center;margin-top:30px">
-        <a class="btn-o" href="/collections/vendors?q={{ product.vendor | url_encode }}" style="color:var(--ink);border-color:rgba(13,10,6,.28)">View all {{ product.vendor }} perfumes<span class="mi" aria-hidden="true">arrow_forward</span></a>
+      <div class="related-cta">
+        <a class="btn-o" href="{{ brand_url }}">View all {{ product.vendor }} perfumes <span class="mi" aria-hidden="true">arrow_forward</span></a>
       </div>
     </div>
   </section>
   {%- endif -%}
+
+  <!-- EXPLORE OTHER BRANDS -->
+  {%- liquid
+    assign picked_brands = section.settings.brand_collections
+    assign brand_limit = section.settings.brand_limit | default: 4
+  -%}
+  <section class="section alt brands-strip">
+    <div class="container">
+      <div class="sec-head center fade-up">
+        <span class="label">The Houses</span>
+        <h2 class="sec-title">Explore Other <em>Brands</em></h2>
+        <p class="sec-sub">From beloved Arabian houses to prestige niche and designer names, every bottle 100% authentic.</p>
+      </div>
+      <div class="hub-grid four fade-up">
+        {%- assign brands_shown = 0 -%}
+        {%- if picked_brands.size > 0 -%}
+          {%- for brand in picked_brands -%}
+            {%- if brands_shown >= brand_limit -%}{%- break -%}{%- endif -%}
+            {%- unless brand.handle == brand_collection.handle -%}
+              {% render 'brand-card', brand: brand %}
+              {%- assign brands_shown = brands_shown | plus: 1 -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- comment -%} Nothing picked in the editor: fall back to brand collections by handle {%- endcomment -%}
+          {%- for c in collections -%}
+            {%- if brands_shown >= brand_limit -%}{%- break -%}{%- endif -%}
+            {%- unless c.handle contains 'perfumes' -%}{%- continue -%}{%- endunless -%}
+            {%- if c.handle == brand_collection.handle or c.products_count == 0 -%}{%- continue -%}{%- endif -%}
+            {% render 'brand-card', brand: c %}
+            {%- assign brands_shown = brands_shown | plus: 1 -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+      <div class="related-cta">
+        <a class="btn-o" href="/pages/brands">View all brands <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    </div>
+  </section>
 
   <!-- BEST SELLERS -->
   {%- if collections['best-sellers'].products.size > 0 -%}
@@ -316,6 +376,9 @@
         {%- for p in collections['best-sellers'].products -%}
           {%- if p.id != product.id and shown < 4 -%}{% render 'product-card', product: p %}{%- assign shown = shown | plus: 1 -%}{%- endif -%}
         {%- endfor -%}
+      </div>
+      <div class="related-cta">
+        <a class="btn-o" href="{{ collections['best-sellers'].url }}">Shop all best sellers <span class="mi" aria-hidden="true">arrow_forward</span></a>
       </div>
     </div>
   </section>
@@ -352,7 +415,11 @@
 {% schema %}
 {
   "name": "Product page",
-  "settings": [],
+  "settings": [
+    { "type": "header", "content": "Explore other brands" },
+    { "type": "collection_list", "id": "brand_collections", "label": "Brands to feature", "limit": 12, "info": "Leave empty to fall back to brand collections found automatically. The current product's own brand is always skipped." },
+    { "type": "range", "id": "brand_limit", "label": "Brand cards to show", "min": 3, "max": 8, "step": 1, "default": 4 }
+  ],
   "presets": [ { "name": "Product page" } ]
 }
 {% endschema %}
