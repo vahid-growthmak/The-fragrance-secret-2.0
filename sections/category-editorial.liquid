@@ -90,14 +90,25 @@
       <h2 class="sec-title">{{ section.settings.explore_heading | default: 'Explore More <em>Collections</em>' }}</h2>
       {%- if section.settings.explore_sub != blank -%}<p class="sec-sub">{{ section.settings.explore_sub }}</p>{%- endif -%}
     </div>
+    {%- comment -%}
+      Tiles are skipped when they point at the hub this page already belongs to
+      (a category page never offers "Shop by Category"), so the spare slot goes
+      to whichever tile comes next — normally Shop by Brand.
+    {%- endcomment -%}
     <div class="explore-grid">
+      {%- assign tiles_shown = 0 -%}
       {%- for block in explore_blocks -%}
+        {%- if tiles_shown >= 4 -%}{%- break -%}{%- endif -%}
+        {%- if block.settings.hub != blank and block.settings.hub == section.settings.current_hub -%}
+          {%- continue -%}
+        {%- endif -%}
         <a class="explore-card fade-up" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
           <span class="mi ex-ic" aria-hidden="true">{{ block.settings.icon | default: 'grid_view' }}</span>
           <b>{{ block.settings.label }}</b>
           <span class="ex-sub">{{ block.settings.sub }}</span>
           <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
         </a>
+        {%- assign tiles_shown = tiles_shown | plus: 1 -%}
       {%- endfor -%}
     </div>
   </div></section>
@@ -256,6 +267,18 @@
     { "type": "text", "id": "explore_eyebrow", "label": "Eyebrow", "default": "Keep Looking" },
     { "type": "text", "id": "explore_heading", "label": "Heading (H2)", "default": "Explore More <em>Collections</em>" },
     { "type": "textarea", "id": "explore_sub", "label": "Intro paragraph" },
+    {
+      "type": "select", "id": "current_hub", "label": "This page's hub", "default": "none",
+      "info": "The matching tile is hidden, so the page never links to the hub it already sits in.",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "category", "label": "Shop by Category" },
+        { "value": "lifestyle", "label": "Shop by Lifestyle" },
+        { "value": "climate", "label": "Shop by Climate" },
+        { "value": "brand", "label": "Shop by Brand" },
+        { "value": "scent", "label": "Shop by Scent Family" }
+      ]
+    },
     { "type": "header", "content": "Reviews" },
     { "type": "checkbox", "id": "show_reviews", "label": "Show the reviews band", "default": true },
     { "type": "header", "content": "Structured data" },
@@ -301,7 +324,19 @@
         },
         { "type": "text", "id": "label", "label": "Label" },
         { "type": "text", "id": "sub", "label": "Sub-label" },
-        { "type": "url", "id": "url", "label": "Link" }
+        { "type": "url", "id": "url", "label": "Link" },
+        {
+          "type": "select", "id": "hub", "label": "Hub", "default": "none",
+          "info": "Hidden when it matches this page's hub.",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "category", "label": "Shop by Category" },
+            { "value": "lifestyle", "label": "Shop by Lifestyle" },
+            { "value": "climate", "label": "Shop by Climate" },
+            { "value": "brand", "label": "Shop by Brand" },
+            { "value": "scent", "label": "Shop by Scent Family" }
+          ]
+        }
       ]
     },
     {

@@ -37,6 +37,7 @@
         "explore_eyebrow": "Keep Looking",
         "explore_heading": "Explore More <em>Collections</em>",
         "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "current_hub": "category",
         "show_reviews": true,
         "crumb_name": "Perfume Oils",
         "schema_name": "Perfume Oils UAE",
@@ -86,7 +87,8 @@
             "icon": "grid_view",
             "label": "Shop by Category",
             "sub": "Men's, women's, unisex & more",
-            "url": "/collections"
+            "url": "/collections",
+            "hub": "category"
           }
         },
         "explore2": {
@@ -95,7 +97,8 @@
             "icon": "auto_awesome",
             "label": "Shop by Lifestyle",
             "sub": "Office, date night, everyday",
-            "url": "/pages/shop-by-lifestyle"
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
           }
         },
         "explore3": {
@@ -104,7 +107,8 @@
             "icon": "wb_sunny",
             "label": "Shop by Climate",
             "sub": "Summer, humid, cooler days",
-            "url": "/pages/shop-by-weather"
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
           }
         },
         "explore4": {
@@ -113,7 +117,18 @@
             "icon": "spa",
             "label": "Shop by Scent Family",
             "sub": "Fresh, oud, spicy, sweet",
-            "url": "/collections/oud-woody"
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
           }
         },
         "faq1": {
@@ -182,6 +197,7 @@
         "explore2",
         "explore3",
         "explore4",
+        "explore5",
         "faq1",
         "faq2",
         "faq3",

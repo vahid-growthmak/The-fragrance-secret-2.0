@@ -47,10 +47,11 @@
     <p class="sec-sub">Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.</p>
   </div>
   <div class="explore-grid">
-    <a class="explore-card fade-up" href="/collections">
-      <span class="mi ex-ic" aria-hidden="true">grid_view</span>
-      <b>Shop by Category</b>
-      <span class="ex-sub">Men's, women's, unisex &amp; more</span>
+    {%- comment -%} This is itself a category page, so it points at Brand rather than Category. {%- endcomment -%}
+    <a class="explore-card fade-up" href="/pages/brands">
+      <span class="mi ex-ic" aria-hidden="true">storefront</span>
+      <b>Shop by Brand</b>
+      <span class="ex-sub">Every house we carry</span>
       <span class="ex-go">Browse <span class="mi" aria-hidden="true">arrow_forward</span></span>
     </a>
     <a class="explore-card fade-up" href="/pages/shop-by-lifestyle">
