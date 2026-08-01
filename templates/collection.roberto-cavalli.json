@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Roberto Cavalli <em>Perfumes</em>",
+        "hero_image_alt": "Roberto Cavalli Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Roberto Cavalli Perfumes UAE",
+        "intro_text": "<p>Roberto Cavalli is a bold Italian luxury house, founded by the designer whose glamorous, sensual style, all animal prints and Mediterranean flair, carries straight into fragrance. The Fragrance Secrets brings together authentic Roberto Cavalli perfumes for men and women, from the radiant floral Paradiso collection to the charismatic Roberto Cavalli Uomo and glamorous Just Cavalli. Crafted with quality ingredients and unmistakable Italian flair, these are luxurious, expressive scents that make a statement. If you want confident, glamorous fragrance with genuine designer heritage, Roberto Cavalli is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Roberto Cavalli <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Roberto Cavalli? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Roberto Cavalli Perfumes",
+        "schema_name": "Shop Roberto Cavalli Perfumes UAE",
+        "schema_description": "Explore authentic Roberto Cavalli perfumes at The Fragrance Secrets. Order the radiant Paradiso collection and Roberto Cavalli Uomo, glamorous Italian scents for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "An Italian Glamour House",
+            "body": "Founded by designer Roberto Cavalli, the house is synonymous with a glamorous Italian lifestyle, bold, sensual, and unmistakably stylish, a flair that defines every one of its fragrances.",
+            "tag_label": "Origin",
+            "tags": "Italy, Designer, Glamour"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Paradiso Collection",
+            "body": "Roberto Cavalli is celebrated for its Paradiso line, radiant Mediterranean florals like Paradiso and Paradiso Azzurro that capture a carefree, sun-drenched sense of Italian escape and femininity.",
+            "tag_label": "Iconic",
+            "tags": "Paradiso, Azzurro, Floral"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Fragrances",
+            "body": "Beyond Paradiso, Cavalli is loved for the charismatic Roberto Cavalli Uomo for men, the glamorous Just Cavalli, and Florence, spanning floral, oriental, and sensual woody styles.",
+            "tag_label": "Explore",
+            "tags": "Paradiso, Uomo, Just Cavalli"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Bold & Luxurious",
+            "body": "Roberto Cavalli fragrances blend quality ingredients with unmistakable Italian flair, delivering luxurious, expressive scents with real presence, perfect for those who love to stand out.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Statement Scents"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Giorgio Armani",
+            "url": "/collections/giorgio-armani"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Prada",
+            "url": "/collections/prada"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Dolce & Gabbana",
+            "url": "/collections/dolce-and-gabbana"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Chanel",
+            "url": "/collections/chanel"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Roberto Cavalli a good perfume brand?",
+            "answer": "Yes. Roberto Cavalli is a bold Italian luxury house known for glamorous, sensual fragrances like the Paradiso collection that combine quality ingredients with unmistakable Italian flair and lasting presence."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Roberto Cavalli's most popular perfume?",
+            "answer": "Roberto Cavalli's Paradiso collection is among its most popular, radiant Mediterranean florals for women. Roberto Cavalli Uomo is the charismatic men's signature, and Just Cavalli is widely loved."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do Roberto Cavalli perfumes come from?",
+            "answer": "Roberto Cavalli is an Italian luxury house founded by the designer of the same name. Its fragrances reflect his glamorous, sensual style, capturing the spirit of a bold Italian lifestyle."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Roberto Cavalli perfumes last long?",
+            "answer": "Yes. Roberto Cavalli fragrances are known for expressive character and dependable performance. Eau de parfum concentrations deliver especially strong projection and longevity on the skin."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Roberto Cavalli perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Roberto Cavalli perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Roberto Cavalli perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Roberto Cavalli perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

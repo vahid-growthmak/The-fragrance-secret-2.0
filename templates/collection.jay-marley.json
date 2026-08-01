@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Jay Marley <em>Perfumes</em>",
+        "hero_image_alt": "Jay Marley Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Jay Marley Perfumes UAE",
+        "intro_text": "<p>Jay Marley is a fragrance house for those who want bold, modern scent with a confident character. The Fragrance Secrets brings together authentic Jay Marley perfumes, contemporary compositions made with quality ingredients and designed to make an impression. Fresh, expressive, and made to last, these are fragrances for anyone who wants a signature scent with real presence. If you love modern perfumery with personality and you want it delivered fast across the UAE, Jay Marley is a house worth exploring at The Fragrance Secrets.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Jay Marley <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Jay Marley? Explore more modern and standout fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Jay Marley Perfumes",
+        "schema_name": "Shop Jay Marley Perfumes UAE",
+        "schema_description": "Find authentic Jay Marley perfumes at The Fragrance Secrets. Browse bold, modern, long-lasting fragrances with a confident character. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Bold, Modern Character",
+            "body": "Jay Marley is made for those who want bold, contemporary fragrance with a confident edge, expressive, modern scents chosen by people who like their signature to make a real impression.",
+            "tag_label": "Style",
+            "tags": "Modern, Bold, Confident"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Quality Compositions",
+            "body": "Each Jay Marley fragrance is built with quality ingredients and a considered blend, contemporary compositions designed to feel refined on the skin and leave a memorable, lasting impression.",
+            "tag_label": "Made With",
+            "tags": "Quality Ingredients, Refined"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Long-Lasting",
+            "body": "Jay Marley perfumes are made to project and to last, fresh, expressive scents that hold their presence through the day and perform especially well in warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Long-Lasting, Warm Climate"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Genuine & Quality-Checked",
+            "body": "Every Jay Marley perfume at The Fragrance Secrets is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence.",
+            "tag_label": "Assurance",
+            "tags": "Genuine, Quality-Checked"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Cristiano Ronaldo",
+            "url": "/collections/cristiano-ronaldo"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Billie Eilish",
+            "url": "/collections/billie-eilish"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Sabrina Carpenter",
+            "url": "/collections/sabrina-carpenter"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Armaf",
+            "url": "/collections/armaf"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Jay Marley a good perfume brand?",
+            "answer": "Yes. Jay Marley is known for bold, modern fragrances made with quality ingredients, fresh and long-lasting scents chosen by those who want a confident, contemporary signature with real presence."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Jay Marley known for?",
+            "answer": "Jay Marley is known for bold, modern perfumery, contemporary, expressive compositions made with quality ingredients and designed to make an impression and last through the day."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What do Jay Marley perfumes smell like?",
+            "answer": "Jay Marley offers fresh, expressive, contemporary compositions designed to feel refined on the skin. Individual scents span the range, so explore each fragrance to find the profile that suits you."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Jay Marley perfumes last long?",
+            "answer": "Yes. Jay Marley perfumes are made to project and to last, fresh, expressive scents that hold their presence and perform especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Jay Marley perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Jay Marley perfume at The Fragrance Secrets is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Jay Marley perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Jay Marley perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

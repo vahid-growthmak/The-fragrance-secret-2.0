@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Boadicea the Victorious <em>Perfumes</em>",
+        "hero_image_alt": "Boadicea the Victorious Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Boadicea the Victorious Perfumes UAE",
+        "intro_text": "<p>Boadicea the Victorious is an independent British luxury niche house, handcrafted in the UK and inspired by the legendary warrior queen Boadicea. The Fragrance Secrets brings together authentic Boadicea the Victorious perfumes, unisex creations built on rare, high-quality ingredients and rich oil concentrations, housed in striking bottles adorned with handcrafted Celtic pewter shields. Bold, complex, and long-lasting, these are scents designed as olfactory armour, made to command attention and leave a lasting impression. If you want distinctive British high perfumery with strength and artistry, Boadicea the Victorious is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Boadicea the Victorious <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Boadicea the Victorious? Explore more luxury and niche fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Boadicea the Victorious Perfumes",
+        "schema_name": "Shop Boadicea the Victorious Perfumes UAE",
+        "schema_description": "Discover authentic Boadicea the Victorious perfumes at The Fragrance Secrets. Explore bold, long-lasting British niche fragrances, handcrafted and unisex. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A British Niche House",
+            "body": "An independent British fragrance house handcrafted in the UK, Boadicea the Victorious redefines British niche perfumery, drawing on strength, history, and heritage inspired by the legendary warrior queen.",
+            "tag_label": "Origin",
+            "tags": "Britain, Niche, Handcrafted"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Olfactory Armour",
+            "body": "Boadicea fragrances are conceived as olfactory armour, bold, complex, empowering scents designed to leave a strong impression long after the wearer has left the room, a signature of confidence and power.",
+            "tag_label": "Known For",
+            "tags": "Bold, Complex, Empowering"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Craftsmanship & Design",
+            "body": "Blending rare, high-quality ingredients with rich oil concentrations, each perfume is presented in a striking bottle adorned with a handcrafted Celtic-style pewter shield, a work of art in its own right.",
+            "tag_label": "Explore",
+            "tags": "Rare Ingredients, Pewter, Celtic"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Unisex & Long-Lasting",
+            "body": "All Boadicea fragrances are gender-neutral, designed for individual interpretation, and their high concentration delivers strong projection and remarkable longevity for a truly lasting signature.",
+            "tag_label": "Best For",
+            "tags": "Unisex, Niche Lovers, Statement"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Amouage",
+            "url": "/collections/amouage"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Mancera",
+            "url": "/collections/mancera"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Ex Nihilo",
+            "url": "/collections/ex-nihilo"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Boadicea the Victorious a good perfume brand?",
+            "answer": "Yes. Boadicea the Victorious is a prestigious independent British niche house known for bold, complex, long-lasting unisex fragrances handcrafted in the UK from rare, high-quality ingredients."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Boadicea the Victorious known for?",
+            "answer": "Boadicea the Victorious is known for bold, gender-neutral British niche perfumes conceived as olfactory armour, presented in striking bottles adorned with handcrafted Celtic-style pewter shields."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do Boadicea the Victorious perfumes come from?",
+            "answer": "Boadicea the Victorious is an independent British fragrance house, with its perfumes handcrafted in the United Kingdom, drawing inspiration from the legendary warrior queen Boadicea and British heritage."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Boadicea the Victorious perfumes last long?",
+            "answer": "Yes. Made with rich oil concentrations and rare ingredients, Boadicea the Victorious fragrances are known for strong projection and remarkable longevity, performing beautifully in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Boadicea the Victorious perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Boadicea the Victorious perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Boadicea the Victorious perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Boadicea the Victorious perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

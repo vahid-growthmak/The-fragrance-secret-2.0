@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Jean Paul Gaultier <em>Perfumes</em>",
+        "hero_image_alt": "Jean Paul Gaultier Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Jean Paul Gaultier Perfumes UAE",
+        "intro_text": "<p>Jean Paul Gaultier is one of France's most daring luxury houses, founded by the legendary couturier whose irreverent, provocative style transformed fashion and fragrance alike. The Fragrance Secrets brings together authentic Jean Paul Gaultier perfumes for men and women, from the iconic torso-bottle Le Male and corset-bottle Classique to the honeyed Scandal and seductive La Belle. Bold, sensual, and instantly recognisable, these are statement scents with real character. If you want a distinctive, confident signature fragrance from a true fashion icon, Jean Paul Gaultier is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Jean Paul Gaultier <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Jean Paul Gaultier? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Jean Paul Gaultier Perfumes",
+        "schema_name": "Shop Jean Paul Gaultier Perfumes UAE",
+        "schema_description": "Browse authentic Jean Paul Gaultier perfumes at The Fragrance Secrets. Discover icons like Le Male, Classique and Scandal for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Daring French House",
+            "body": "Founded by legendary couturier Jean Paul Gaultier, the house is known for breaking the rules of fashion with an irreverent, provocative spirit, a boldness that runs through every fragrance it creates.",
+            "tag_label": "Origin",
+            "tags": "Paris, France, Couture"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Iconic Bottles & Scents",
+            "body": "Gaultier is famous for the torso-shaped Le Male, one of the best-selling men's fragrances ever, and the corset-bottle Classique, two instantly recognisable icons of designer perfumery.",
+            "tag_label": "Iconic",
+            "tags": "Le Male, Classique, Scandal"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Fragrances",
+            "body": "Beyond its classics, Gaultier is loved for the honeyed gourmand Scandal, the seductive La Belle, the intense Ultra Male, and Le Beau, spanning bold, sensual styles for men and women.",
+            "tag_label": "Explore",
+            "tags": "Le Male, Scandal, La Belle"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Bold & Sensual",
+            "body": "Jean Paul Gaultier fragrances combine elegance, sensuality, and provocation, delivering distinctive, statement scents with strong character and lasting presence for those who dare to stand out.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Signature Statement"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Chanel",
+            "url": "/collections/chanel"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Dior",
+            "url": "/collections/dior"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Yves Saint Laurent",
+            "url": "/collections/yves-saint-laurent"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Giorgio Armani",
+            "url": "/collections/giorgio-armani"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Jean Paul Gaultier a good perfume brand?",
+            "answer": "Yes. Jean Paul Gaultier is a celebrated French luxury house known for bold, sensual, instantly recognisable fragrances like Le Male and Scandal that combine distinctive character with elegant quality."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Jean Paul Gaultier's most popular perfume?",
+            "answer": "Le Male is Gaultier's most iconic men's fragrance and one of the best-selling ever, while Classique is the women's icon. Scandal and La Belle are also hugely popular signatures."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where are Jean Paul Gaultier perfumes made?",
+            "answer": "Jean Paul Gaultier is a French luxury house founded by the couturier of the same name. Its fragrances reflect his bold, provocative, sensual style, crafted with distinctive designer character."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Jean Paul Gaultier perfumes last long?",
+            "answer": "Yes. Gaultier fragrances are known for rich composition and strong performance. Eau de parfum and Le Parfum editions like Le Male Le Parfum deliver especially strong projection and longevity."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Jean Paul Gaultier perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Jean Paul Gaultier perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Jean Paul Gaultier perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Jean Paul Gaultier perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

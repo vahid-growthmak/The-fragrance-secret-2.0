@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "French Avenue <em>Perfumes</em>",
+        "hero_image_alt": "French Avenue Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop French Avenue Perfumes UAE",
+        "intro_text": "<p>French Avenue is a Dubai perfume house that pairs French-inspired elegance with the depth of oriental perfumery. The Fragrance Secrets brings together authentic French Avenue perfumes, led by the standout woody-amber Liquid Brun, alongside creations like El Dorado Extrait and Opus Magnum. Made in high concentration for strong projection and lasting wear, these are refined yet accessible fragrances built on modern, mostly unisex compositions. If you want premium Dubai perfumery with a polished, contemporary character and dependable performance, French Avenue is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose French Avenue <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love French Avenue? Explore more premium and Arabian-inspired fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "French Avenue Perfumes",
+        "schema_name": "Shop French Avenue Perfumes UAE",
+        "schema_description": "Browse authentic French Avenue perfumes at The Fragrance Secrets. Discover Dubai favourites like Liquid Brun, refined woody-amber scents with lasting power. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Dubai Perfume House",
+            "body": "French Avenue is a Dubai-born perfume brand that blends French-inspired elegance with oriental tradition, creating modern, refined compositions that feel both sophisticated and easy to wear.",
+            "tag_label": "Origin",
+            "tags": "Dubai, Modern, Refined"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Standout Liquid Brun",
+            "body": "French Avenue is best known for Liquid Brun, a modern woody-amber scent of cinnamon, orange blossom, and bourbon vanilla over a warm praline and ambroxan base, rich, smooth, and long-lasting.",
+            "tag_label": "Known For",
+            "tags": "Liquid Brun, Woody Amber"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Refined & Accessible",
+            "body": "French Avenue is positioned as refined yet accessible, offering high-quality, contemporary fragrances inspired by oriental perfumery at a price that brings premium scent within easy reach.",
+            "tag_label": "Explore",
+            "tags": "Liquid Brun, El Dorado, Opus Magnum"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "High Concentration",
+            "body": "Made with a high concentration of fragrance oils, French Avenue perfumes deliver strong projection and a refined trail that lasts through the day, ideal for warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Unisex, Everyday, Long-Lasting"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Armaf",
+            "url": "/collections/armaf"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is French Avenue a good perfume brand?",
+            "answer": "Yes. French Avenue is a well-regarded Dubai perfume house known for refined, modern, long-lasting fragrances like Liquid Brun, blending French-inspired elegance with oriental depth at accessible prices."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is French Avenue's most popular perfume?",
+            "answer": "Liquid Brun is French Avenue's most popular fragrance, a modern woody-amber scent with cinnamon, orange blossom, and bourbon vanilla. El Dorado Extrait and Opus Magnum are also widely loved."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do French Avenue perfumes come from?",
+            "answer": "French Avenue is a Dubai-born perfume brand. It blends French-inspired elegance with oriental perfume tradition, creating modern, refined compositions with strong performance and accessible pricing."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do French Avenue perfumes last long?",
+            "answer": "Yes. Made with a high concentration of fragrance oils, French Avenue perfumes deliver strong projection and a lasting trail, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are French Avenue perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every French Avenue perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship French Avenue perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers French Avenue perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

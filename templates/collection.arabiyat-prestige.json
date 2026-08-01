@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Arabiyat Prestige <em>Perfumes</em>",
+        "hero_image_alt": "Arabiyat Prestige Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Arabiyat Prestige Perfumes UAE",
+        "intro_text": "<p>Arabiyat Prestige is a Dubai fragrance house under the House of My Perfumes group, known for modern Arabian scents that pair rich oriental character with accessible luxury. Drawing on Middle Eastern perfumery heritage, the brand is famous for its sophisticated packaging and its innovative Layering in a Bottle concept, multiple scent dimensions unfolding within one composition. The Fragrance Secrets brings together authentic Arabiyat Prestige perfumes for men and women, including popular scents like Nyla, Marwa, and Khashab & Oud. If you love long-lasting oud, amber, and oriental fragrance with luxury feel at a fair price, this is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Arabiyat Prestige <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Arabiyat Prestige? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Arabiyat Prestige Perfumes",
+        "schema_name": "Shop Arabiyat Prestige Perfumes UAE",
+        "schema_description": "Browse authentic Arabiyat Prestige perfumes at The Fragrance Secrets. Explore modern Arabian oud and oriental scents for men and women, including Nyla and Khashab & Oud. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Modern Dubai House",
+            "body": "Arabiyat Prestige is a Dubai brand under the House of My Perfumes group, blending Middle Eastern perfumery heritage with modern creativity to craft sophisticated, contemporary Arabian fragrances.",
+            "tag_label": "Origin",
+            "tags": "Dubai, My Perfumes, Arabian"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Layering in a Bottle",
+            "body": "The brand is known for its innovative Layering in a Bottle concept, designing fragrances so multiple scent dimensions unfold harmoniously within a single composition, giving each scent real depth and evolution.",
+            "tag_label": "Known For",
+            "tags": "Depth, Layered, Innovative"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Scents",
+            "body": "Arabiyat Prestige is loved for popular releases like Nyla, the citrus-aromatic Marwa, and the rich Khashab & Oud, spanning oud, amber, fruity, and oriental styles with striking, ornate packaging.",
+            "tag_label": "Explore",
+            "tags": "Nyla, Marwa, Khashab & Oud"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Accessible Luxury",
+            "body": "Built on rich oud, amber, and musk with dense, long-lasting compositions, Arabiyat Prestige delivers a luxury feel and strong performance at a fair, accessible price.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Everyday Luxury"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Khaleej Pride",
+            "url": "/collections/khaleej-pride"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Al Haramain",
+            "url": "/collections/al-haramain"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Afnan",
+            "url": "/collections/afnan"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Arabiyat Prestige a good perfume brand?",
+            "answer": "Yes. Arabiyat Prestige is a Dubai house under the House of My Perfumes group, known for rich, long-lasting Arabian scents with sophisticated packaging and luxury feel at an accessible price."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Arabiyat Prestige known for?",
+            "answer": "Arabiyat Prestige is known for its Layering in a Bottle concept and popular oud scents like Nyla, Marwa, and Khashab & Oud, all with ornate packaging and strong performance."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where are Arabiyat Prestige perfumes made?",
+            "answer": "Arabiyat Prestige is a Dubai-based fragrance brand under the House of My Perfumes group, drawing on Middle Eastern perfumery heritage to craft modern Arabian fragrances."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Arabiyat Prestige perfumes last long?",
+            "answer": "Yes. Built on dense, oil-rich compositions of oud, amber, and musk, Arabiyat Prestige fragrances are known for strong projection and long wear, performing well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Arabiyat Prestige perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Arabiyat Prestige perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Arabiyat Prestige perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Arabiyat Prestige perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

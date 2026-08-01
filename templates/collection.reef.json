@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Reef <em>Perfumes</em>",
+        "hero_image_alt": "Reef Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Reef Perfumes UAE",
+        "intro_text": "<p>Reef is a contemporary Arabian fragrance house that blends traditional Gulf ingredients with modern perfumery. The Fragrance Secrets brings together authentic Reef perfumes, led by the cult favourite Reef 33, a saffron-and-oud signature, alongside the warm, sweet Reef 31 and a wider numbered lineup. Inspired by the beauty of coasts and the ocean, and made with responsibly sourced, high-quality oils, Reef fragrances are known for luxurious character and long-lasting performance. If you want modern Arabian scent with real presence and value, Reef is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Reef <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Reef? Explore more modern Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Reef Perfumes",
+        "schema_name": "Shop Reef Perfumes UAE",
+        "schema_description": "Explore authentic Reef perfumes at The Fragrance Secrets. Order modern Arabian scents like Reef 33 and Reef 31, saffron, oud, and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Modern Arabian Perfumery",
+            "body": "Reef is a contemporary fragrance house where generations of Arabian ingredients meet modern craftsmanship, creating captivating, refined scents inspired by the beauty of coasts and the ocean.",
+            "tag_label": "Origin",
+            "tags": "Arabian, Modern, Refined"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Cult Reef 33",
+            "body": "Reef is best known for Reef 33, its signature saffron and oud composition, joined by the warm, sweet Reef 31 with amber and vanilla, two standouts from a much-loved numbered lineup.",
+            "tag_label": "Known For",
+            "tags": "Reef 33, Reef 31"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Quality Ingredients",
+            "body": "Reef crafts its fragrances with responsibly sourced, high-quality oils, blending traditional notes like oud, saffron, musk, and amber into distinctive, well-structured compositions.",
+            "tag_label": "Explore",
+            "tags": "Oud, Saffron, Amber, Musk"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Luxury & Longevity",
+            "body": "Known for high-quality blends and long-lasting performance, Reef perfumes deliver rich projection and a lasting trail, performing especially well in warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Long-Lasting, Everyday Luxury"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rasasi",
+            "url": "/collections/rasasi"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Armaf",
+            "url": "/collections/armaf"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Reef a good perfume brand?",
+            "answer": "Yes. Reef is a well-loved contemporary Arabian house known for high-quality blends like Reef 33 and Reef 31, combining traditional oud and saffron with modern perfumery and strong longevity."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Reef's most popular perfume?",
+            "answer": "Reef 33 is the brand's signature and most popular scent, a saffron and oud composition. Reef 31, with saffron, amber, and vanilla, is another warm, sweet favourite from the lineup."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does Reef 33 smell like?",
+            "answer": "Reef 33 is an oriental woody fragrance built on Indian saffron, rosemary, and agarwood (oud). It is classy and distinctive, with a signature saffron-oud character and dependable longevity."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Reef perfumes last long?",
+            "answer": "Yes. Made with high-quality, responsibly sourced oils, Reef perfumes are known for strong projection and lasting wear, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Reef perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Reef perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Reef perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Reef perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

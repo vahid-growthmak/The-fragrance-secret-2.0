@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Borntostandout <em>Perfumes</em>",
+        "hero_image_alt": "Borntostandout Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Borntostandout Perfumes UAE",
+        "intro_text": "<p>Borntostandout is a bold Korean niche house from Seoul, known for smooth, distinctive unisex fragrances that break the rules. The Fragrance Secrets brings together authentic Borntostandout perfumes, from the creamy woody-musk Dirty Rice to the vibrant Indecent Cherry and gourmand Dirty Milk. Rooted in Korean aesthetic traditions and housed in striking porcelain-inspired bottles, its scents are made in high concentration for remarkable longevity and unforgettable presence. If you want an original, rule-breaking signature that refuses to blend into the crowd, Borntostandout is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Borntostandout <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Borntostandout? Explore more niche fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Borntostandout Perfumes",
+        "schema_name": "Shop Borntostandout Perfumes UAE",
+        "schema_description": "Find authentic Borntostandout perfumes at The Fragrance Secrets. Browse bold Korean niche scents like Dirty Rice and Indecent Cherry, unisex and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Korean Niche House",
+            "body": "Born in Seoul, South Korea, Borntostandout is a bold niche house founded on a rule-breaking, be-yourself philosophy, pairing its provocative spirit with a tribute to Korean aesthetic traditions.",
+            "tag_label": "Origin",
+            "tags": "Seoul, Korea, Niche"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Distinctive Signatures",
+            "body": "Borntostandout is known for smooth, characterful unisex scents with wild, memorable names, from the creamy woody-musk Dirty Rice to the vibrant Indecent Cherry and the gourmand Dirty Milk.",
+            "tag_label": "Known For",
+            "tags": "Dirty Rice, Indecent Cherry"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "High Concentration",
+            "body": "Made in high fragrance concentration, Borntostandout perfumes deliver remarkable longevity and an opulent presence that carries through the day, an immersive, boundary-pushing scent experience.",
+            "tag_label": "Explore",
+            "tags": "Unisex, High Concentration"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Bold & Original",
+            "body": "With striking porcelain-inspired bottles and daring compositions, Borntostandout creates fragrances for those who refuse to fade into the crowd and want a scent that is unmistakably their own.",
+            "tag_label": "Best For",
+            "tags": "Unisex, Niche Lovers, Statement"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Ex Nihilo",
+            "url": "/collections/ex-nihilo"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Mancera",
+            "url": "/collections/mancera"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Amouage",
+            "url": "/collections/amouage"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Boadicea the Victorious",
+            "url": "/collections/boadicea-the-victorious"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Borntostandout a good perfume brand?",
+            "answer": "Yes. Borntostandout is a bold Korean niche house known for smooth, distinctive unisex fragrances in high concentration, offering remarkable longevity and an original, rule-breaking character."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Borntostandout known for?",
+            "answer": "Borntostandout is known for characterful unisex scents with wild, memorable names, like the creamy Dirty Rice, the vibrant Indecent Cherry, and the gourmand Dirty Milk, all in high concentration."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do Borntostandout perfumes come from?",
+            "answer": "Borntostandout is a niche perfume house from Seoul, South Korea. It pairs a bold, rule-breaking philosophy with a tribute to Korean aesthetic traditions, creating smooth, distinctive unisex fragrances."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Borntostandout perfumes last long?",
+            "answer": "Yes. Made in high fragrance concentration, Borntostandout perfumes are known for remarkable longevity and an opulent presence that carries through the day, performing well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Borntostandout perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Borntostandout perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Borntostandout perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Borntostandout perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

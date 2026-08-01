@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Armaf <em>Perfumes</em>",
+        "hero_image_alt": "Armaf Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Armaf Perfumes UAE",
+        "intro_text": "<p>Armaf is one of the most popular fragrance houses to come out of the UAE, made under Sterling Perfumes and loved worldwide for delivering designer-level luxury at an accessible price. The Fragrance Secrets brings together authentic Armaf perfumes for men and women, headlined by the iconic Club de Nuit collection, including the award-winning Club de Nuit Intense Man, alongside the crystal-adorned OROS line. Spanning woody-spicy, fresh citrus, floral, and oud styles, Armaf crafts bold, refined scents with strong performance. If you want luxury character without the luxury price, Armaf is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Armaf <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Armaf? Explore more fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Armaf Perfumes",
+        "schema_name": "Shop Armaf Perfumes UAE",
+        "schema_description": "Explore authentic Armaf perfumes at The Fragrance Secrets. Order the iconic Club de Nuit collection and crystal OROS line, bold designer-style scents for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Modern UAE House",
+            "body": "Made in the UAE under Sterling Perfumes, Armaf has grown into a globally recognised fragrance house present in dozens of countries, known for pairing designer-style sophistication with accessible pricing.",
+            "tag_label": "Origin",
+            "tags": "UAE, Sterling Perfumes, Global"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Club de Nuit Icon",
+            "body": "Armaf is best known for its Club de Nuit collection, with Club de Nuit Intense Man an award-winning, hugely popular scent, alongside the luxurious OROS line adorned with crystals. These are the house's signature statements.",
+            "tag_label": "Known For",
+            "tags": "Club de Nuit, OROS, Intense Man"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "A Range for Every Style",
+            "body": "From woody-spicy and fresh citrus to floral, fruity, and rich oud, Armaf offers a broad palette for men, women, and unisex wearers, crafted in collaboration with respected international perfumers.",
+            "tag_label": "Explore",
+            "tags": "Woody, Citrus, Floral, Oud"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Designer Feel, Accessible Price",
+            "body": "Armaf's appeal is delivering bold, refined, long-lasting fragrance with the polish of far pricier designer scents, making luxury-style perfume accessible to everyone without compromise.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Everyday Luxury"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rasasi",
+            "url": "/collections/rasasi"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Afnan",
+            "url": "/collections/afnan"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Armaf a good perfume brand?",
+            "answer": "Yes. Armaf is a popular UAE house under Sterling Perfumes, loved worldwide for delivering bold, long-lasting, designer-style fragrances at an accessible price. Club de Nuit is a global favourite."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Armaf's most popular perfume?",
+            "answer": "Armaf's Club de Nuit Intense Man is its most popular scent, an award-winning, widely loved woody-spicy fragrance. The wider Club de Nuit collection and OROS line are also sought after."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where are Armaf perfumes made?",
+            "answer": "Armaf is made in the United Arab Emirates under Sterling Perfumes, one of the region's largest fragrance manufacturers, crafting its scents in collaboration with respected international perfumers."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Armaf perfumes last long?",
+            "answer": "Yes. Armaf fragrances are known for strong projection and long-lasting wear that often rivals far pricier designer scents, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Armaf perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Armaf perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Armaf perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Armaf perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

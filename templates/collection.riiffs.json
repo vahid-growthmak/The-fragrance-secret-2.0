@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "RiiFFS <em>Perfumes</em>",
+        "hero_image_alt": "RiiFFS Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop RiiFFS Perfumes UAE",
+        "intro_text": "<p>RiiFFS is a Dubai-based fragrance house offering a modern interpretation of Arabian perfumery. The Fragrance Secrets brings together authentic RiiFFS perfumes for men and women, from the bold Imperial Noir to the fresh Imperial Blue and elegant women's scents like Abeer and Warda. Operating under Sterling Perfumes Industries, RiiFFS blends oud, amber, and musk with fresh florals and gourmand touches, delivering strong, long-lasting performance at accessible prices. If you want contemporary Arabian-inspired scent with real projection and value, RiiFFS is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose RiiFFS <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love RiiFFS? Explore more Arabian and premium fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "RiiFFS Perfumes",
+        "schema_name": "Shop RiiFFS Perfumes UAE",
+        "schema_description": "Order authentic RiiFFS perfumes at The Fragrance Secrets. Find modern Arabian scents like Imperial Noir and Imperial Blue, bold and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Modern Arabian Perfumery",
+            "body": "RiiFFS is a Dubai-based fragrance house offering a modern interpretation of Arabian perfumery, pairing craftsmanship and thoughtful design with an accessible-luxury approach for wearers worldwide.",
+            "tag_label": "Origin",
+            "tags": "Dubai, Arabian, Modern"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Signatures for Him & Her",
+            "body": "RiiFFS is known for a wide range across men and women, from the bold Imperial Noir and fresh Imperial Blue to elegant women's fragrances like Abeer and Warda, a scent for every personality.",
+            "tag_label": "Known For",
+            "tags": "Imperial Noir, Imperial Blue"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Rich, Layered Compositions",
+            "body": "RiiFFS blends carefully selected ingredients, oud, amber, and musk alongside fresh florals and gourmand nuances, into distinctive, well-structured compositions with a bold, memorable character.",
+            "tag_label": "Explore",
+            "tags": "Oud, Amber, Musk"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Performance & Value",
+            "body": "Made for strong projection and lasting wear, RiiFFS delivers dependable, long-lasting performance at accessible prices, turning everyday moments into a personal scent signature.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Everyday"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Armaf",
+            "url": "/collections/armaf"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "French Avenue",
+            "url": "/collections/french-avenue"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rasasi",
+            "url": "/collections/rasasi"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is RiiFFS a good perfume brand?",
+            "answer": "Yes. RiiFFS is a Dubai-based fragrance house known for modern Arabian-inspired scents with strong, long-lasting performance and accessible pricing, offering a wide range for both men and women."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is RiiFFS known for?",
+            "answer": "RiiFFS is known for its modern take on Arabian perfumery, with popular scents like Imperial Noir and Imperial Blue for men and Abeer and Warda for women."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do RiiFFS perfumes come from?",
+            "answer": "RiiFFS is a Dubai-based fragrance house operating under Sterling Perfumes Industries, one of the leading perfume manufacturers in the Middle East, offering a modern interpretation of Arabian perfumery."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do RiiFFS perfumes last long?",
+            "answer": "Yes. RiiFFS perfumes are made for strong projection and lasting wear, built on rich oud, amber, and musk bases that perform dependably in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are RiiFFS perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every RiiFFS perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship RiiFFS perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers RiiFFS perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

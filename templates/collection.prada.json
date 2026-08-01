@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Prada <em>Perfumes</em>",
+        "hero_image_alt": "Prada Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Prada Perfumes UAE",
+        "intro_text": "<p>Prada is one of Italy's most iconic luxury houses, founded in Milan and celebrated for a philosophy of refined minimalism that carries from fashion into fragrance. The Fragrance Secrets brings together authentic Prada perfumes for men and women, from the fresh, sporty Luna Rossa collection and elegant L'Homme to the radiant floral Paradoxe and the beloved gourmand Candy. Crafted with the finest ingredients and Prada's signature clean sophistication, these are intelligent, understated scents with real presence. If you want modern Italian luxury with a distinctive, polished character, Prada is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Prada <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Prada? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Prada Perfumes",
+        "schema_name": "Shop Prada Perfumes UAE",
+        "schema_description": "Discover authentic Prada perfumes at The Fragrance Secrets. Explore icons like Luna Rossa, Paradoxe and Candy, refined Italian luxury for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "An Italian Luxury House",
+            "body": "Founded in Milan by Mario Prada, Prada is one of the world's most iconic Italian luxury houses. Its fragrances carry the same refined minimalism and intellectual elegance that define the brand.",
+            "tag_label": "Origin",
+            "tags": "Milan, Italy, Luxury"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Luna Rossa Line",
+            "body": "Prada is celebrated for its Luna Rossa collection, including Luna Rossa Carbon and Ocean, a family of fresh, sporty men's fragrances, alongside the timeless powdery iris of Prada L'Homme.",
+            "tag_label": "Iconic",
+            "tags": "Luna Rossa, Carbon, Ocean"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Fragrances",
+            "body": "Beyond Luna Rossa, Prada is loved for the radiant floral Paradoxe, the beloved gourmand Candy, and the sheer, elegant Infusion d'Iris, spanning fresh, floral, and sweet styles for men and women.",
+            "tag_label": "Explore",
+            "tags": "Paradoxe, Candy, L'Homme"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Clean & Refined",
+            "body": "Every Prada fragrance is built on refined composition and quality ingredients, delivering the house's signature clean, polished character with elegant, lasting presence for everyday and occasion wear.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Modern Luxury"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Chanel",
+            "url": "/collections/chanel"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Dior",
+            "url": "/collections/dior"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Giorgio Armani",
+            "url": "/collections/giorgio-armani"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Yves Saint Laurent",
+            "url": "/collections/yves-saint-laurent"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Prada a good perfume brand?",
+            "answer": "Yes. Prada is one of the world's most iconic Italian luxury houses, known for refined, minimalist fragrances like Luna Rossa and Paradoxe that combine quality ingredients with polished, intelligent elegance."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Prada's most popular perfume?",
+            "answer": "Prada's Luna Rossa collection is among its most popular, especially Luna Rossa Carbon and Ocean for men. Paradoxe is the standout women's icon, while Candy is a much-loved gourmand."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where are Prada perfumes made?",
+            "answer": "Prada is an Italian luxury house founded in Milan by Mario Prada. Its fragrances are crafted with fine ingredients and refined composition, reflecting the minimalist elegance that defines the brand."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Prada perfumes last long?",
+            "answer": "Yes. Prada fragrances are made with quality musks, resins, and woods for refined, lasting presence. Eau de parfum concentrations and Le Parfum editions deliver especially strong longevity."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Prada perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Prada perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Prada perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Prada perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

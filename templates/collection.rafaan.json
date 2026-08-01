@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Rafaan <em>Perfumes</em>",
+        "hero_image_alt": "Rafaan Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Rafaan Perfumes UAE",
+        "intro_text": "<p>Rafaan is a Dubai fragrance brand from the makers at La Parfum Galleria, crafting modern Arabian scents with real depth. The Fragrance Secrets brings together authentic Rafaan perfumes, from the unisex amber-floral-gourmand Mazoon to the oud-rich Journey of Oud series, including Imperial Jade, Opulent, and Blue Moon, plus signatures like Jenan and Ejlal. Built with quality ingredients and made for strong, lasting performance, these are fragrances for anyone who wants Dubai perfumery with character and value. If you love modern Arabian scent, Rafaan is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Rafaan <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Rafaan? Explore more Dubai and Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Rafaan Perfumes",
+        "schema_name": "Shop Rafaan Perfumes UAE",
+        "schema_description": "Find authentic Rafaan perfumes at The Fragrance Secrets. Browse Dubai Arabian scents like Journey of Oud and Mazoon, rich and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Made in Dubai",
+            "body": "Rafaan is a Dubai fragrance brand from the makers at La Parfum Galleria, creating modern Arabian compositions that pair traditional oud and amber with a polished, contemporary character.",
+            "tag_label": "Origin",
+            "tags": "Dubai, Arabian, Modern"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Journey of Oud Series",
+            "body": "Rafaan is known for its Journey of Oud line, including Imperial Jade, Opulent, and Blue Moon, oud-rich scents for men, alongside the unisex amber-floral-gourmand Mazoon.",
+            "tag_label": "Known For",
+            "tags": "Journey of Oud, Mazoon"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Compositions",
+            "body": "From the floral-woody Jenan to Ejlal and beyond, Rafaan blends oud, amber, florals, and gourmand notes into distinctive, well-balanced fragrances designed to leave a lasting impression.",
+            "tag_label": "Explore",
+            "tags": "Oud, Amber, Floral, Gourmand"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Performance & Value",
+            "body": "Made with quality ingredients, Rafaan perfumes deliver strong projection and lasting wear at accessible prices, performing especially well in warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Long-Lasting, Everyday"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "La Parfum Galleria",
+            "url": "/collections/la-parfum-galleria"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Rafaan a good perfume brand?",
+            "answer": "Yes. Rafaan is a Dubai fragrance brand from the makers at La Parfum Galleria, known for modern Arabian scents like the Journey of Oud series and Mazoon, with strong longevity."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Rafaan known for?",
+            "answer": "Rafaan is known for its oud-rich Journey of Oud series, including Imperial Jade, Opulent, and Blue Moon, along with the unisex amber-floral-gourmand Mazoon and signatures like Jenan and Ejlal."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do Rafaan perfumes come from?",
+            "answer": "Rafaan is a Dubai fragrance brand created by the makers at La Parfum Galleria, blending traditional Arabian oud and amber with modern, contemporary perfumery for a polished signature."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Rafaan perfumes last long?",
+            "answer": "Yes. Made with quality ingredients, Rafaan perfumes deliver strong projection and lasting wear through the day, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Rafaan perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Rafaan perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Rafaan perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Rafaan perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

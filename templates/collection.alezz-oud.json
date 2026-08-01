@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Alezz Oud <em>Perfumes</em>",
+        "hero_image_alt": "Alezz Oud Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Alezz Oud Perfumes UAE",
+        "intro_text": "<p>Alezz Oud is a Saudi Arabian niche perfume house built around one hero ingredient: oud. Rooted in the Gulf's deep perfumery heritage, the brand crafts bold, elegant oriental fragrances with a strong, distinctive identity. The Fragrance Secrets brings you authentic Alezz Oud perfumes, including the acclaimed Hersh Collection, long-lasting unisex Eau de Parfums that speak fluently in both Arabic and international fragrance languages. If you love rich, authentic oud with a contemporary edge and a scent that leaves a lasting impression, Alezz Oud is a house worth discovering.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Alezz Oud <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Alezz Oud? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Alezz Oud Perfumes",
+        "schema_name": "Shop Alezz Oud Perfumes UAE",
+        "schema_description": "Shop authentic Alezz Oud perfumes at The Fragrance Secrets. Discover the Hersh Collection, bold, long-lasting Saudi niche oud fragrances for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Saudi Niche House",
+            "body": "Alezz Oud is a Saudi Arabian perfume house specialising in niche, oud-centred oriental fragrances. Rooted in Arabian tradition, it creates bold, distinctive scents designed to stand out and leave a lasting impression.",
+            "tag_label": "Origin",
+            "tags": "Saudi Arabia, Niche, Oud"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Built Around Oud",
+            "body": "Oud is the heart of the Alezz Oud identity. This precious ingredient brings depth, character, and intensity to every composition, blended with floral, spicy, and fresh notes for a rich, layered result.",
+            "tag_label": "Known For",
+            "tags": "Oud, Depth, Intensity"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "The Hersh Collection",
+            "body": "Alezz Oud is recognised for its Hersh Collection, a line of distinct, long-lasting unisex Eau de Parfums, including the bold, spicy Hersh Lahab, that blend Arabian heritage with contemporary character.",
+            "tag_label": "Explore",
+            "tags": "Hersh, Unisex EDP, Long-Lasting"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "A True Signature",
+            "body": "Made for those who want more than a fragrance, Alezz Oud offers unique olfactory signatures with strong projection and staying power, ideal for evenings and anyone seeking a distinctive Arabian scent.",
+            "tag_label": "Best For",
+            "tags": "Evening, Oud Lovers, Unisex"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rasasi",
+            "url": "/collections/rasasi"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Al Haramain",
+            "url": "/collections/al-haramain"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Ahmed Al Maghribi",
+            "url": "/collections/ahmed-al-maghribi"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Alezz Oud a good perfume brand?",
+            "answer": "Yes. Alezz Oud is a Saudi Arabian niche house known for rich, authentic oud-based fragrances with strong, distinctive character and long-lasting performance, popular with lovers of bold Arabian scent."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Alezz Oud known for?",
+            "answer": "Alezz Oud is known for niche, oud-centred oriental fragrances, most notably the Hersh Collection, a line of distinctive, long-lasting unisex Eau de Parfums rooted in Arabian perfumery tradition."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where does Alezz Oud come from?",
+            "answer": "Alezz Oud is a Saudi Arabian perfume house. It draws on the Gulf's deep oud and perfumery heritage to craft bold, niche oriental fragrances with a strong, contemporary identity."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Alezz Oud perfumes last long?",
+            "answer": "Yes. Built on rich oud and made in Eau de Parfum concentration, Alezz Oud fragrances are formulated to project and last, performing especially well in the Gulf's warm climate."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Alezz Oud perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Alezz Oud perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Alezz Oud perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Alezz Oud perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

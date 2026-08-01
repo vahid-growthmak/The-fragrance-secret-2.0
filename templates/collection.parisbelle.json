@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Parisbelle <em>Perfumes</em>",
+        "hero_image_alt": "Parisbelle Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Parisbelle Perfumes UAE",
+        "intro_text": "<p>Parisbelle is a fragrance house that balances elegance with edge. The Fragrance Secrets brings together authentic Parisbelle perfumes, led by scents like Najrah, a refined floral-spicy-woody Extrait de Parfum with cedarwood and patchouli, built for confident, long-lasting wear. Made with quality ingredients and designed to leave a lasting impression, these are fragrances for anyone who wants sophisticated character with real presence. If you love polished, captivating perfumery and you want it delivered fast across the UAE, Parisbelle is a house worth exploring at The Fragrance Secrets.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Parisbelle <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Parisbelle? Explore more elegant and distinctive fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Parisbelle Perfumes",
+        "schema_name": "Shop Parisbelle Perfumes UAE",
+        "schema_description": "Order authentic Parisbelle perfumes at The Fragrance Secrets. Explore refined scents like Najrah Extrait de Parfum, floral, woody, and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Elegance with Edge",
+            "body": "Parisbelle is known for perfumery that balances elegance with edge, refined, confident compositions designed to feel sophisticated while leaving a bold, memorable impression.",
+            "tag_label": "Style",
+            "tags": "Refined, Confident, Bold"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Najrah",
+            "body": "Parisbelle is known for scents like Najrah, a floral-spicy-woody Extrait de Parfum built on cedarwood and patchouli, refined and captivating with a lasting, characterful trail.",
+            "tag_label": "Known For",
+            "tags": "Najrah, Extrait de Parfum"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Rich, Structured Blends",
+            "body": "Each Parisbelle fragrance layers florals, spice, and warm woods into well-structured, high-concentration compositions crafted to feel luxurious and distinctive on the skin.",
+            "tag_label": "Explore",
+            "tags": "Floral, Spicy, Woody"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Genuine & Long-Lasting",
+            "body": "Made with quality ingredients in high concentration, Parisbelle perfumes deliver strong projection and lasting wear, performing especially well in warm climates like the UAE, with every bottle quality-checked.",
+            "tag_label": "Assurance",
+            "tags": "Long-Lasting, Quality-Checked"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "House of Morais",
+            "url": "/collections/house-of-morais"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Farzanas Collection",
+            "url": "/collections/farzanas-collection"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Khaleej Pride",
+            "url": "/collections/khaleej-pride"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Parisbelle a good perfume brand?",
+            "answer": "Yes. Parisbelle is known for refined, confident perfumery like the floral-spicy-woody Najrah Extrait de Parfum, high-concentration scents made with quality ingredients and built for lasting wear."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Parisbelle known for?",
+            "answer": "Parisbelle is known for balancing elegance with edge, refined, characterful scents like Najrah, a floral-spicy-woody Extrait de Parfum built on cedarwood and patchouli with a bold, lasting trail."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does Parisbelle Najrah smell like?",
+            "answer": "Najrah is a refined floral, spicy, and woody Extrait de Parfum built on cedarwood and patchouli. It is confident and captivating, balancing elegance with edge for a long-lasting impression."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Parisbelle perfumes last long?",
+            "answer": "Yes. Made in high concentration with quality ingredients, Parisbelle perfumes deliver strong projection and lasting wear through the day, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Parisbelle perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Parisbelle perfume at The Fragrance Secrets is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Parisbelle perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Parisbelle perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

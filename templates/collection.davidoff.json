@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Davidoff <em>Perfumes</em>",
+        "hero_image_alt": "Davidoff Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Davidoff Perfumes UAE",
+        "intro_text": "<p>Davidoff is a Swiss luxury lifestyle brand known worldwide for one of the most successful men's fragrances ever created. The Fragrance Secrets brings together authentic Davidoff perfumes for men and women, led by the legendary aquatic Cool Water, alongside popular scents like Champion, The Game, and Horizon. Fresh, clean, and effortlessly wearable, Davidoff fragrances helped define the modern fresh style and remain everyday favourites. If you want a crisp, versatile signature scent with genuine designer heritage and dependable quality, Davidoff is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Davidoff <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Davidoff? Explore more designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Davidoff Perfumes",
+        "schema_name": "Shop Davidoff Perfumes UAE",
+        "schema_description": "Order authentic Davidoff perfumes at The Fragrance Secrets. Find the legendary Cool Water and popular scents like Champion and The Game for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Swiss Lifestyle Brand",
+            "body": "Named after its founder Zino Davidoff, Davidoff is a Swiss brand built on refined quality and the art of good living, applying that same appreciation for fine craftsmanship to its prestige fragrances.",
+            "tag_label": "Origin",
+            "tags": "Switzerland, Lifestyle, Luxury"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Legendary Cool Water",
+            "body": "Davidoff is best known for Cool Water, one of the most successful men's fragrances ever created. A landmark of fresh, aquatic perfumery, it moved the world away from heavy scents and remains a classic today.",
+            "tag_label": "Iconic",
+            "tags": "Cool Water, Aquatic, Fresh"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Fragrances",
+            "body": "Beyond Cool Water, Davidoff is loved for the sporty Champion, the fresh The Game, the elegant Horizon, and Cool Water Woman, spanning crisp, clean, versatile styles for men and women.",
+            "tag_label": "Explore",
+            "tags": "Cool Water, Champion, The Game"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Fresh & Versatile",
+            "body": "Davidoff fragrances are known for clean, fresh, easy-to-wear compositions, dependable everyday scents that perform well in warm climates and suit work, casual, and active occasions.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Everyday Wear"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Hugo Boss",
+            "url": "/collections/hugo-boss"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Calvin Klein",
+            "url": "/collections/calvin-klein"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Azzaro",
+            "url": "/collections/azzaro"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Giorgio Armani",
+            "url": "/collections/giorgio-armani"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Davidoff a good perfume brand?",
+            "answer": "Yes. Davidoff is a respected Swiss brand known for fresh, clean, easy-to-wear fragrances like the legendary Cool Water, offering dependable quality and genuine designer heritage at an accessible price."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Davidoff's most popular perfume?",
+            "answer": "Cool Water is Davidoff's most famous and popular fragrance, one of the most successful men's scents ever created. Champion, The Game, and Horizon are also widely loved signatures."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do Davidoff perfumes come from?",
+            "answer": "Davidoff is a Swiss lifestyle brand named after its founder Zino Davidoff. Its prestige fragrances reflect the brand's appreciation for fine quality, style, and the art of good living."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Davidoff perfumes last long?",
+            "answer": "Davidoff fragrances lean fresh and clean, ideal for everyday wear. Cool Water and its flankers offer dependable performance, with eau de parfum editions delivering stronger longevity than lighter versions."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Davidoff perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Davidoff perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Davidoff perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Davidoff perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

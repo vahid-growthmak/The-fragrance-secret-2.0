@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Dior <em>Perfumes</em>",
+        "hero_image_alt": "Dior Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Dior Perfumes UAE",
+        "intro_text": "<p>Dior is one of the most prestigious names in French luxury, a maison founded by Christian Dior and celebrated for couture-inspired fragrance of exceptional quality. The Fragrance Secrets brings together authentic Dior perfumes for men and women, from the blockbuster Sauvage and iconic J'adore to the timeless Miss Dior and bold Poison. Blending the finest ingredients with masterful French perfumery, Dior fragrances balance heritage and modern sophistication. If you want a refined, elegant signature scent from one of the world's great luxury houses, Dior is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Dior <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Dior? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Dior Perfumes",
+        "schema_name": "Shop Dior Perfumes UAE",
+        "schema_description": "Explore authentic Dior perfumes at The Fragrance Secrets. Order icons like Sauvage, J'adore and Miss Dior, refined French luxury for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A French Couture House",
+            "body": "Founded by Christian Dior in Paris, the House of Dior transformed fashion with its New Look and has become one of the world's most prestigious luxury maisons in both couture and fragrance.",
+            "tag_label": "Origin",
+            "tags": "Paris, France, Couture"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Iconic Fragrances",
+            "body": "Dior is home to fragrant landmarks: the record-breaking Sauvage for men, the luminous floral J'adore, the timeless Miss Dior, and the bold Poison, each a benchmark in modern perfumery.",
+            "tag_label": "Iconic",
+            "tags": "Sauvage, J'adore, Miss Dior"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Couture-Grade Craftsmanship",
+            "body": "Every Dior fragrance is crafted with noble raw materials and masterful composition, the same perfectionism Christian Dior brought to couture, giving each scent exceptional quality and a refined trail.",
+            "tag_label": "Explore",
+            "tags": "Sauvage, Poison, La Collection Privée"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Refined & Long-Lasting",
+            "body": "From fresh, versatile scents to rich, opulent compositions, Dior fragrances deliver elegant character and lasting presence, making them a favourite signature choice for men and women worldwide.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Signature Luxury"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Chanel",
+            "url": "/collections/chanel"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Giorgio Armani",
+            "url": "/collections/giorgio-armani"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Prada",
+            "url": "/collections/prada"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Yves Saint Laurent",
+            "url": "/collections/yves-saint-laurent"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Dior a good perfume brand?",
+            "answer": "Yes. Dior is one of the world's most prestigious French luxury houses, renowned for couture-grade fragrances like Sauvage and J'adore that combine noble ingredients with masterful perfumery and lasting quality."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Dior's most popular perfume?",
+            "answer": "Dior Sauvage is among the best-selling men's fragrances in the world, while J'adore is the iconic women's floral. Miss Dior and Poison are also celebrated, widely loved Dior signatures."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where are Dior perfumes made?",
+            "answer": "Dior is a French luxury maison founded in Paris by Christian Dior. Its fragrances are crafted with noble raw materials and masterful French perfumery, upholding the house's couture heritage."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Dior perfumes last long?",
+            "answer": "Yes. Dior fragrances are crafted with quality ingredients and refined composition for elegant, lasting presence. Concentrations like eau de parfum and parfum deliver especially strong longevity."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Dior perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Dior perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Dior perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Dior perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

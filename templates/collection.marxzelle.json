@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Marxzelle <em>Perfumes</em>",
+        "hero_image_alt": "Marxzelle Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Marxzelle Perfumes UAE",
+        "intro_text": "<p>Marxzelle is a modern-classic fragrance house offering stylish, accessible scents for men and women. The Fragrance Secrets brings together authentic Marxzelle perfumes, from the citrus-woody Solid Black and aromatic Man Pour Homme to the fruity-floral Lovebound Escape and sweet, feminine Lovebound Dreams. Clean, contemporary, and made for everyday elegance, these are well-balanced Eau de Parfums built for versatile, long-lasting wear. If you want polished, modern scent with genuine value, delivered fast across the UAE, Marxzelle is a house worth exploring at The Fragrance Secrets.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Marxzelle <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Marxzelle? Explore our other in-house and modern fragrance lines with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Marxzelle Perfumes",
+        "schema_name": "Shop Marxzelle Perfumes UAE",
+        "schema_description": "Discover authentic Marxzelle perfumes at The Fragrance Secrets. Explore modern scents like Solid Black and Lovebound, clean and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Modern-Classic Style",
+            "body": "Marxzelle is known for modern-classic perfumery, clean, contemporary scents for men and women designed for everyday elegance with a stylish, versatile character.",
+            "tag_label": "Style",
+            "tags": "Modern, Clean, Versatile"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Scents for Him & Her",
+            "body": "Marxzelle spans a wide range, from the citrus-woody Solid Black and aromatic Man Pour Homme to the fruity-floral Lovebound Escape and sweet, feminine Lovebound Dreams.",
+            "tag_label": "Known For",
+            "tags": "Solid Black, Lovebound"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Well-Balanced Blends",
+            "body": "Each Marxzelle fragrance layers fresh, floral, woody, and warm notes into balanced, easy-to-wear compositions, clean and modern scents suited to work, day, or evening.",
+            "tag_label": "Explore",
+            "tags": "Citrus, Floral, Woody, Warm"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Genuine & Accessible",
+            "body": "Made with quality ingredients at accessible prices, Marxzelle perfumes deliver dependable, long-lasting wear. Every bottle is genuine and quality-checked, sourced through verified wholesale channels within the UAE.",
+            "tag_label": "Assurance",
+            "tags": "Long-Lasting, Quality-Checked"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Fragrance Secrets",
+            "url": "/collections/fragrance-secrets"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Paris Collection",
+            "url": "/collections/paris-collection"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Farzanas Collection",
+            "url": "/collections/farzanas-collection"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "House of Morais",
+            "url": "/collections/house-of-morais"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Marxzelle a good perfume brand?",
+            "answer": "Yes. Marxzelle is a modern-classic house known for clean, stylish, well-balanced Eau de Parfums for men and women, like Solid Black and Lovebound, made with quality ingredients at accessible prices."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Marxzelle known for?",
+            "answer": "Marxzelle is known for modern-classic perfumery, clean, contemporary scents like the citrus-woody Solid Black, aromatic Man Pour Homme, and the fruity-floral Lovebound Escape and Lovebound Dreams."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does Marxzelle Solid Black smell like?",
+            "answer": "Solid Black opens with fresh citrus, moves into soft floral accords, and settles on a smooth woody, musky base. It is clean, modern, and masculine, with long-lasting wear."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Marxzelle perfumes last long?",
+            "answer": "Yes. Made with quality ingredients, Marxzelle perfumes deliver dependable projection and long-lasting wear through the day, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Marxzelle perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Marxzelle perfume at The Fragrance Secrets is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Marxzelle perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Marxzelle perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

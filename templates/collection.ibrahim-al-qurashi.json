@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Ibrahim Al Qurashi <em>Perfumes</em>",
+        "hero_image_alt": "Ibrahim Al Qurashi Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Ibrahim Al Qurashi Perfumes UAE",
+        "intro_text": "<p>Ibrahim Al Qurashi, also known as IBRAQ, is a heritage Gulf perfume house rooted in the art of oud, amber, and rich Arabian blends. The Fragrance Secrets brings together authentic Ibrahim Al Qurashi perfumes, from the bold, oud-driven Blue Oud to the Purple Heart Diamond and collections spanning musk, tobacco, and precious gemstone themes. Meticulously crafted with high-quality ingredients and built for serious longevity, these are fragrances for those who want depth, character, and true Arabian luxury. If you love heritage oud perfumery with a modern polish, Ibrahim Al Qurashi is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Ibrahim Al Qurashi <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Ibrahim Al Qurashi? Explore more heritage Arabian and oud-driven fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Ibrahim Al Qurashi Perfumes",
+        "schema_name": "Shop Ibrahim Al Qurashi Perfumes UAE",
+        "schema_description": "Discover authentic Ibrahim Al Qurashi perfumes at The Fragrance Secrets. Explore heritage oud scents like Blue Oud, rich and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Gulf Heritage House",
+            "body": "Ibrahim Al Qurashi, known as IBRAQ, is one of the well-established perfume names of Saudi Arabia and the Gulf, built on a deep heritage in oud, amber, and traditional Arabian perfumery.",
+            "tag_label": "Origin",
+            "tags": "Gulf, Heritage, Oud"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Iconic Blue Oud",
+            "body": "Ibrahim Al Qurashi is known for standout scents like Blue Oud, a bold composition of oud and blue lily over patchouli, leather, amber, and tobacco, dark, complex, and unmistakably luxurious.",
+            "tag_label": "Known For",
+            "tags": "Blue Oud, Purple Heart Diamond"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Rich Collections",
+            "body": "From Diamonds and Gemstones to Musk and Tobacco, Ibrahim Al Qurashi offers rich, distinctive collections built around oud, amber, florals, and exotic spices, each crafted for a memorable signature.",
+            "tag_label": "Explore",
+            "tags": "Oud, Amber, Musk, Tobacco"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Built to Last",
+            "body": "Made with high-quality ingredients, Ibrahim Al Qurashi perfumes are known for exceptional longevity and projection that linger through the day, performing especially well in warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Long-Lasting, Oud Lovers"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Ahmed Al Maghribi",
+            "url": "/collections/ahmed-al-maghribi"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Al Haramain",
+            "url": "/collections/al-haramain"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Amouage",
+            "url": "/collections/amouage"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Ibrahim Al Qurashi a good perfume brand?",
+            "answer": "Yes. Ibrahim Al Qurashi, or IBRAQ, is a respected Gulf heritage house known for rich oud and amber fragrances, high-quality ingredients, and exceptional longevity, popular with lovers of Arabian perfumery."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Ibrahim Al Qurashi known for?",
+            "answer": "Ibrahim Al Qurashi is known for deep, oud-driven Arabian perfumery, with standout scents like Blue Oud and Purple Heart Diamond and collections spanning musk, tobacco, diamonds, and gemstone themes."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does Ibrahim Al Qurashi Blue Oud smell like?",
+            "answer": "Blue Oud opens with bold oud and blue lily, moving into patchouli and leather, with a base of amber and tobacco. It is dark, complex, and known for powerful longevity."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Ibrahim Al Qurashi perfumes last long?",
+            "answer": "Yes. Made with high-quality ingredients, Ibrahim Al Qurashi perfumes are known for strong projection and exceptional longevity, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Ibrahim Al Qurashi perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Ibrahim Al Qurashi perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Ibrahim Al Qurashi perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Ibrahim Al Qurashi perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

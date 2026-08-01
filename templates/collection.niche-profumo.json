@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Niche Profumo <em>Perfumes</em>",
+        "hero_image_alt": "Niche Profumo Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Niche Profumo Perfumes UAE",
+        "intro_text": "<p>Niche Profumo is a fragrance house built for those who want scent with real character, not the mass-market crowd. The Fragrance Secrets brings together authentic Niche Profumo perfumes, distinctive compositions made with quality ingredients and designed to stand apart. Rich, expressive, and made to last, these are fragrances for anyone who treats their signature scent as part of their identity. If you love niche-style perfumery with depth and individuality, and you want it delivered fast across the UAE, Niche Profumo is a house worth exploring at The Fragrance Secrets.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Niche Profumo <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Niche Profumo? Explore more distinctive and Arabian-inspired fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Niche Profumo Perfumes",
+        "schema_name": "Shop Niche Profumo Perfumes UAE",
+        "schema_description": "Discover authentic Niche Profumo perfumes at The Fragrance Secrets. Explore distinctive, long-lasting niche-style fragrances with real character. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Niche-Style Character",
+            "body": "Niche Profumo is made for people who want something beyond the mainstream, expressive, distinctive fragrances with a character of their own, chosen by those who treat scent as personal identity.",
+            "tag_label": "Style",
+            "tags": "Niche, Distinctive, Expressive"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Quality Compositions",
+            "body": "Each Niche Profumo fragrance is built with quality ingredients and a considered blend, layered compositions designed to evolve on the skin and leave a memorable, lasting impression.",
+            "tag_label": "Made With",
+            "tags": "Quality Ingredients, Layered"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Rich & Long-Lasting",
+            "body": "Niche Profumo perfumes are made to project and to last, rich, expressive scents that hold their presence through the day and perform especially well in warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Long-Lasting, Warm Climate"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Genuine & Quality-Checked",
+            "body": "Every Niche Profumo perfume at The Fragrance Secrets is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence.",
+            "tag_label": "Assurance",
+            "tags": "Genuine, Quality-Checked"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Khaleej Pride",
+            "url": "/collections/khaleej-pride"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Ahmed Al Maghribi",
+            "url": "/collections/ahmed-al-maghribi"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Niche Profumo a good perfume brand?",
+            "answer": "Yes. Niche Profumo is known for distinctive, expressive, niche-style fragrances made with quality ingredients, rich and long-lasting scents chosen by those who want something beyond the mainstream."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Niche Profumo known for?",
+            "answer": "Niche Profumo is known for niche-style perfumery with real character, distinctive, expressive compositions made with quality ingredients and designed to stand apart and last through the day."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What do Niche Profumo perfumes smell like?",
+            "answer": "Niche Profumo offers rich, expressive, layered compositions designed to evolve on the skin. Individual scents span the range, so explore each fragrance to find the profile that suits you best."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Niche Profumo perfumes last long?",
+            "answer": "Yes. Niche Profumo perfumes are made to project and to last, rich, expressive scents that hold their presence and perform especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Niche Profumo perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Niche Profumo perfume at The Fragrance Secrets is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Niche Profumo perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Niche Profumo perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

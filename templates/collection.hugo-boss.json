@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Hugo Boss <em>Perfumes</em>",
+        "hero_image_alt": "Hugo Boss Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Hugo Boss Perfumes UAE",
+        "intro_text": "<p>Hugo Boss is a globally respected German designer house, known for refined masculinity and modern elegance across its fashion and fragrance. The Fragrance Secrets brings together authentic Hugo Boss perfumes for men and women, led by the iconic BOSS Bottled, alongside the seductive BOSS The Scent and the fresh, contemporary Boss Alive. Balancing sophistication with everyday wearability, Hugo Boss fragrances are dependable designer classics. If you want polished, versatile scent with genuine designer heritage and strong everyday performance, Hugo Boss is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Hugo Boss <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Hugo Boss? Explore more designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Hugo Boss Perfumes",
+        "schema_name": "Shop Hugo Boss Perfumes UAE",
+        "schema_description": "Browse authentic Hugo Boss perfumes at The Fragrance Secrets. Discover designer classics like BOSS Bottled and The Scent, polished scents for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A German Designer House",
+            "body": "Founded by Hugo Ferdinand Boss in Metzingen, Germany, Hugo Boss is a globally respected name in menswear and fragrance, known for refined masculinity, tailoring, and modern elegance.",
+            "tag_label": "Origin",
+            "tags": "Germany, Designer, Tailored"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Iconic BOSS Bottled",
+            "body": "Hugo Boss is best known for BOSS Bottled, one of the most popular designer men's fragrances in the world, a fresh, warm, woody-spicy scent that captures the brand's polished, confident style.",
+            "tag_label": "Iconic",
+            "tags": "BOSS Bottled, Woody, Spicy"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Fragrances",
+            "body": "Beyond BOSS Bottled, the house is loved for the seductive BOSS The Scent, the fresh and modern Boss Alive for women, and the classic Hugo Man, spanning versatile everyday styles.",
+            "tag_label": "Explore",
+            "tags": "BOSS Bottled, The Scent, Alive"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Polished & Versatile",
+            "body": "Hugo Boss fragrances balance sophistication with wearability, delivering refined, dependable scent that suits work, everyday, and special occasions, a reliable designer signature for many.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Everyday & Office"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Calvin Klein",
+            "url": "/collections/calvin-klein"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Giorgio Armani",
+            "url": "/collections/giorgio-armani"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Davidoff",
+            "url": "/collections/davidoff"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Azzaro",
+            "url": "/collections/azzaro"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Hugo Boss a good perfume brand?",
+            "answer": "Yes. Hugo Boss is a globally respected German designer house loved for polished, versatile fragrances like BOSS Bottled that combine refined masculinity with dependable everyday performance and quality."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Hugo Boss's most popular perfume?",
+            "answer": "BOSS Bottled is Hugo Boss's most iconic and popular fragrance, a fresh, warm, woody-spicy men's scent. BOSS The Scent and Boss Alive are also widely loved signatures."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where are Hugo Boss perfumes made?",
+            "answer": "Hugo Boss is a German designer house founded in Metzingen, Germany, by Hugo Ferdinand Boss. Its fragrances reflect the brand's refined, tailored aesthetic and modern designer elegance."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Hugo Boss perfumes last long?",
+            "answer": "Yes. Hugo Boss fragrances are formulated for dependable, everyday performance. Eau de parfum concentrations and intense editions deliver especially strong projection and longevity on the skin."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Hugo Boss perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Hugo Boss perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Hugo Boss perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Hugo Boss perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

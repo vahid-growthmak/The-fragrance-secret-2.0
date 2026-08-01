@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Khaleej Pride <em>Perfumes</em>",
+        "hero_image_alt": "Khaleej Pride Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Khaleej Pride Perfumes UAE",
+        "intro_text": "<p>Khaleej Pride is an Arabian fragrance brand offering rich, characterful scents at an accessible price. Built around Gulf-inspired notes like oud, musk, and warm orientals, its perfumes deliver bold personality and lasting wear without a luxury price tag. The Fragrance Secrets brings you authentic Khaleej Pride Eau de Parfums for men and women, from the deep, sweet Purple Oud to the smooth Black Musk and elegant Rouaá. If you love expressive Arabian fragrance that performs through the day and suits everyday wear or gifting, Khaleej Pride is an easy, rewarding house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Khaleej Pride <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Khaleej Pride? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Khaleej Pride Perfumes",
+        "schema_name": "Shop Khaleej Pride Perfumes UAE",
+        "schema_description": "Find authentic Khaleej Pride perfumes at The Fragrance Secrets. Browse rich Arabian oud and musk scents for men and women, including Purple Oud and Black Musk. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Arabian Character",
+            "body": "Khaleej Pride offers fragrances rooted in Gulf and Arabian scent culture, built around oud, musk, and warm oriental notes for bold, expressive character that reflects the region's rich perfumery style.",
+            "tag_label": "Style",
+            "tags": "Arabian, Oud, Musk, Oriental"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Accessible Everyday Luxury",
+            "body": "The brand's appeal is delivering rich, characterful scent at an approachable price, making expressive Arabian fragrance easy to wear every day and simple to gift without a premium cost.",
+            "tag_label": "Known For",
+            "tags": "Value, Everyday, Gifting"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Signature Eau de Parfums",
+            "body": "Khaleej Pride is known for standout Eau de Parfums like the sweet, indulgent Purple Oud, the smooth Black Musk, and the elegant Rouaá, each offering a distinct, memorable character.",
+            "tag_label": "Explore",
+            "tags": "Purple Oud, Black Musk, Rouaá"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Built to Last",
+            "body": "Formulated for the warm Gulf climate, Khaleej Pride fragrances are made to project and last through the day, giving you dependable performance whatever the occasion.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Everyday Wear"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Al Haramain",
+            "url": "/collections/al-haramain"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Ahmed Al Maghribi",
+            "url": "/collections/ahmed-al-maghribi"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Khaleej Pride a good perfume brand?",
+            "answer": "Yes. Khaleej Pride is an Arabian fragrance brand known for rich, characterful oud and oriental scents at an accessible price, offering bold personality and lasting wear that suits everyday use."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Khaleej Pride known for?",
+            "answer": "Khaleej Pride is known for expressive, Gulf-inspired Eau de Parfums built on oud, musk, and warm oriental notes, including popular scents like Purple Oud, Black Musk, and Rouaá."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What kind of perfumes does Khaleej Pride make?",
+            "answer": "Khaleej Pride makes Arabian-style Eau de Parfums for men and women, centred on oud, musk, and oriental notes, offering bold, long-lasting scent with an accessible, everyday appeal."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Khaleej Pride perfumes last long?",
+            "answer": "Yes. Formulated for the warm Gulf climate, Khaleej Pride fragrances are made to project and last through the day, giving dependable performance for everyday wear and special occasions."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Khaleej Pride perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Khaleej Pride products are 100% authentic, sourced through verified wholesale channels within the UAE, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Khaleej Pride perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Khaleej Pride perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

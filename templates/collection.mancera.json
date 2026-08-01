@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Mancera <em>Perfumes</em>",
+        "hero_image_alt": "Mancera Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Mancera Perfumes UAE",
+        "intro_text": "<p>Mancera is a Paris-based niche perfume house that fuses French elegance with rich Eastern character, known for bold, powerful, and remarkably long-lasting fragrances. The Fragrance Secrets brings together authentic Mancera perfumes for men and women, from the worldwide bestseller Cedrat Boise to the beloved Roses Vanille, the elegant Instant Crush, and the warm Red Tobacco. Housed in distinctive Art Deco bottles and built on oud, precious woods, and intense concentrations, these are unisex scents with serious presence. If you want a striking niche signature with East-meets-West depth, Mancera is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Mancera <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Mancera? Explore more luxury and Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Mancera Perfumes",
+        "schema_name": "Shop Mancera Perfumes UAE",
+        "schema_description": "Browse authentic Mancera perfumes at The Fragrance Secrets. Discover niche icons like Cedrat Boise and Roses Vanille, bold long-lasting scents for men and women. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "A Parisian Niche House",
+            "body": "Mancera is a Paris-based niche perfume house that blends French refinement with rich Eastern character, part of the perfumery family that helped introduce the nobility of oud to the Western world.",
+            "tag_label": "Origin",
+            "tags": "Paris, Niche, East Meets West"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Bestselling Signatures",
+            "body": "Mancera is famous for Cedrat Boise, a worldwide favourite of fresh citrus and warm woods, alongside beloved scents like Roses Vanille, Instant Crush, and the warm, spicy Red Tobacco.",
+            "tag_label": "Iconic",
+            "tags": "Cedrat Boise, Roses Vanille"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Bold, Long-Lasting Elixirs",
+            "body": "Built on oud, precious woods, spices, and intense eau de parfum concentrations, Mancera fragrances are known for powerful projection and remarkable longevity, often lasting well through the day.",
+            "tag_label": "Explore",
+            "tags": "Oud, Woods, Vanilla, Intense"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Art Deco Elegance",
+            "body": "Presented in distinctive Art Deco bottles, Mancera creations pair striking design with unisex, East-meets-West compositions, made for those who want a scent that stands apart from the crowd.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Niche Lovers"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Amouage",
+            "url": "/collections/amouage"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rasasi",
+            "url": "/collections/rasasi"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Swiss Arabian",
+            "url": "/collections/swiss-arabian"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Mancera a good perfume brand?",
+            "answer": "Yes. Mancera is a respected Paris-based niche house known for bold, powerful, long-lasting fragrances like Cedrat Boise and Roses Vanille that blend French elegance with rich Eastern character."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Mancera's most popular perfume?",
+            "answer": "Cedrat Boise is Mancera's most popular fragrance, a worldwide favourite of fresh citrus and warm woods. Roses Vanille, Instant Crush, and Red Tobacco are also widely loved signatures."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do Mancera perfumes come from?",
+            "answer": "Mancera is a Paris-based French niche perfume house. It blends French refinement with rich Eastern ingredients like oud and precious woods, creating powerful, East-meets-West compositions."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Mancera perfumes last long?",
+            "answer": "Yes. Made in intense eau de parfum concentrations with oud and precious woods, Mancera fragrances are known for powerful projection and remarkable longevity, often lasting well through the day."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Mancera perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Mancera perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Mancera perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Mancera perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

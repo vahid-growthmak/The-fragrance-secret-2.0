@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Paris Collection <em>Perfumes</em>",
+        "hero_image_alt": "Paris Collection Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Paris Collection Perfumes UAE",
+        "intro_text": "<p>Paris Collection is one of our own house lines, refined eau de parfums with a confident, French-inspired character. Built around rich, well-structured compositions like Imperial, a blend of bergamot and pink pepper over oud, white amber, leather, and musk, these are our own interpretations, never designer originals. Made with quality ingredients for strong projection and lasting wear, Paris Collection offers premium scent character at an accessible price. If you love bold, elegant perfumery with real depth and you want it delivered fast across the UAE, the Paris Collection house line is the perfect place to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Paris Collection <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love the Paris Collection house line? Explore our other in-house and Arabian-inspired fragrance collections and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Paris Collection Perfumes",
+        "schema_name": "Shop Paris Collection Perfumes UAE",
+        "schema_description": "Explore the Paris Collection house line at The Fragrance Secrets. Order bold, French-inspired eau de parfums like Imperial, rich and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Our Own House Line",
+            "body": "Paris Collection is one of our in-house brands, refined eau de parfums with a French-inspired character. These are our own interpretations and original compositions, never designer originals.",
+            "tag_label": "Range",
+            "tags": "House Line, Eau de Parfum"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Bold, Refined Compositions",
+            "body": "Paris Collection is built around rich, well-structured scents like Imperial, blending bergamot and pink pepper with oud, white amber, leather, and musk for a confident, elegant signature.",
+            "tag_label": "Known For",
+            "tags": "Imperial, Oud & Amber"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Premium Character, Accessible",
+            "body": "Each Paris Collection scent captures premium, French-inspired character and delivers it at a genuinely accessible price, so you get depth, warmth, and elegance without the premium price tag.",
+            "tag_label": "Best For",
+            "tags": "Accessible Luxury, Evening"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Quality & Longevity",
+            "body": "Made with quality ingredients, Paris Collection perfumes are built for strong projection and lasting wear, holding their presence through the day and performing especially well in warm climates like the UAE.",
+            "tag_label": "Assurance",
+            "tags": "Long-Lasting, Quality-Checked"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Fragrance Secrets",
+            "url": "/collections/fragrance-secrets"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Farzanas Collection",
+            "url": "/collections/farzanas-collection"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Khaleej Pride",
+            "url": "/collections/khaleej-pride"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the Paris Collection house line?",
+            "answer": "Paris Collection is one of our in-house brands, refined eau de parfums with a French-inspired character. It features bold, well-structured scents like Imperial at accessible prices, made with quality ingredients."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Paris Collection perfumes designer originals?",
+            "answer": "No. Paris Collection scents are our own interpretations with a French-inspired character. They are original compositions in that spirit, never designer originals, crafted to offer premium character accessibly."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does Paris Collection Imperial smell like?",
+            "answer": "Imperial opens with bergamot and pink pepper, moves into oud and white amber, and settles on leather and musk. It is bold, warm, and confident, with strong lasting power."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Paris Collection perfumes last long?",
+            "answer": "Yes. Made with quality ingredients, Paris Collection perfumes are built for strong projection and lasting wear, holding their presence and performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Paris Collection perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Paris Collection is our own house line, so every bottle is genuine and quality-checked, blended with quality ingredients, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Paris Collection perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Paris Collection across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

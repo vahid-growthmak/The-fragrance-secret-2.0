@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "La Parfum Galleria <em>Perfumes</em>",
+        "hero_image_alt": "La Parfum Galleria Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop La Parfum Galleria Perfumes UAE",
+        "intro_text": "<p>La Parfum Galleria is a Dubai perfume maker crafting modern Arabian fragrances across a family of house brands, including Rafaan. The Fragrance Secrets brings together authentic La Parfum Galleria perfumes, from oud-rich compositions to fresh floral and gourmand blends like Jenan, built with quality ingredients for strong, lasting performance. Rooted in Dubai perfumery and made for character and value, these are fragrances for anyone who wants Arabian scent with a polished, contemporary feel. If you love modern Dubai perfumery, La Parfum Galleria is a house to explore at The Fragrance Secrets.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose La Parfum Galleria <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love La Parfum Galleria? Explore more Dubai and Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "La Parfum Galleria Perfumes",
+        "schema_name": "Shop La Parfum Galleria Perfumes UAE",
+        "schema_description": "Browse authentic La Parfum Galleria perfumes at The Fragrance Secrets. Discover Dubai Arabian scents from Rafaan and more, rich and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Perfume Makers of Dubai",
+            "body": "La Parfum Galleria is a Dubai perfume maker crafting modern Arabian fragrances, pairing traditional oud and amber with contemporary compositions across a family of house brands.",
+            "tag_label": "Origin",
+            "tags": "Dubai, Arabian, Modern"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "A Family of Brands",
+            "body": "La Parfum Galleria is the maker behind house brands including Rafaan, offering a broad range of scents built around oud, amber, florals, and gourmand notes for every preference.",
+            "tag_label": "Known For",
+            "tags": "Rafaan, House Brands"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Distinctive Compositions",
+            "body": "From fresh floral-woody scents like Jenan to deeper oud-driven blends, La Parfum Galleria crafts well-balanced fragrances with quality ingredients and a distinctive, lasting character.",
+            "tag_label": "Explore",
+            "tags": "Oud, Amber, Floral, Gourmand"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Performance & Value",
+            "body": "Made with quality ingredients, La Parfum Galleria perfumes deliver strong projection and lasting wear at accessible prices, performing especially well in warm climates like the UAE.",
+            "tag_label": "Best For",
+            "tags": "Long-Lasting, Everyday"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Rafaan",
+            "url": "/collections/rafaan"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Arabiyat Prestige",
+            "url": "/collections/arabiyat-prestige"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "French Avenue",
+            "url": "/collections/french-avenue"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is La Parfum Galleria a good perfume brand?",
+            "answer": "Yes. La Parfum Galleria is a Dubai perfume maker known for modern Arabian fragrances across a family of house brands, including Rafaan, with quality ingredients and strong, long-lasting performance."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is La Parfum Galleria known for?",
+            "answer": "La Parfum Galleria is known as a Dubai perfume maker behind house brands like Rafaan, crafting modern Arabian scents that blend oud, amber, florals, and gourmand notes."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do La Parfum Galleria perfumes come from?",
+            "answer": "La Parfum Galleria is a Dubai-based perfume maker. It creates modern Arabian fragrances across a family of house brands, blending traditional oud and amber with contemporary perfumery."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do La Parfum Galleria perfumes last long?",
+            "answer": "Yes. Made with quality ingredients, La Parfum Galleria perfumes deliver strong projection and lasting wear through the day, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are La Parfum Galleria perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every La Parfum Galleria perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship La Parfum Galleria perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers La Parfum Galleria perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

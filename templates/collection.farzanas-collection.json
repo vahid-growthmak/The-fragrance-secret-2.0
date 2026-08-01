@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Farzanas Collection <em>Perfumes</em>",
+        "hero_image_alt": "Farzanas Collection Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Farzanas Collection Perfumes UAE",
+        "intro_text": "<p>Farzanas Collection is an exclusive Arabic-inspired line crafted and presented by The Fragrance Secrets. Rooted in traditional Middle Eastern perfumery, it features bold, expressive scents like the oud-driven Lion of the Arabs, the citrus-and-floral Dirham Silver, and the powdery-rose Raya. Made with quality ingredients for strong projection and lasting wear, these are unisex fragrances built for those who love rich, cultural Arabian character. If you want distinctive Arabic perfumery with real depth and value, delivered fast across the UAE, the Farzanas Collection is a line worth exploring.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Farzanas Collection <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love the Farzanas Collection? Explore our other in-house and Arabian fragrance lines with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Farzanas Collection Perfumes",
+        "schema_name": "Shop Farzanas Collection Perfumes UAE",
+        "schema_description": "Find the Farzanas Collection at The Fragrance Secrets. Browse exclusive Arabic scents like Lion of the Arabs and Raya, bold and long-lasting. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Exclusive to Fragrance Secrets",
+            "body": "Farzanas Collection is an exclusive Arabic-inspired line crafted and presented by The Fragrance Secrets, rooted in traditional Middle Eastern perfumery with a bold, cultural character.",
+            "tag_label": "Range",
+            "tags": "Exclusive Line, Arabic"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Bold Arabian Signatures",
+            "body": "Farzanas is known for expressive scents like Lion of the Arabs, with dark oud and fresh Arabic notes, the citrus-floral Dirham Silver, and the powdery-rose Raya, each a distinctive statement.",
+            "tag_label": "Known For",
+            "tags": "Lion of the Arabs, Raya"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Rich, Traditional Blends",
+            "body": "Built on oud, rose, citrus, spice, and warm woods, Farzanas Collection captures the artistry of traditional Arabic perfumery in versatile, unisex compositions for every occasion.",
+            "tag_label": "Explore",
+            "tags": "Oud, Rose, Spice, Wood"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Genuine & Long-Lasting",
+            "body": "Made with quality ingredients, Farzanas perfumes deliver strong projection and lasting wear. Every bottle is genuine and quality-checked, sourced through verified wholesale channels within the UAE.",
+            "tag_label": "Assurance",
+            "tags": "Long-Lasting, Quality-Checked"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Fragrance Secrets",
+            "url": "/collections/fragrance-secrets"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Paris Collection",
+            "url": "/collections/paris-collection"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Khaleej Pride",
+            "url": "/collections/khaleej-pride"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Lattafa",
+            "url": "/collections/lattafa"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Farzanas Collection?",
+            "answer": "Farzanas Collection is an exclusive Arabic-inspired fragrance line crafted and presented by The Fragrance Secrets, featuring bold, traditional Middle Eastern scents like Lion of the Arabs, Dirham Silver, and Raya."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Farzanas Collection known for?",
+            "answer": "Farzanas is known for bold, expressive Arabic perfumery, oud-driven scents like Lion of the Arabs, the citrus-floral Dirham Silver, and the powdery-rose Raya, all versatile and unisex."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does Farzanas Lion of the Arabs smell like?",
+            "answer": "Lion of the Arabs weaves dark oud into a fresh, shimmering Arabic aroma. It is bold yet refined, unisex, and rich with cultural character, made for a statement."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Farzanas Collection perfumes last long?",
+            "answer": "Yes. Made with quality ingredients, Farzanas perfumes deliver strong projection and lasting wear through the day, performing especially well in warm climates like the UAE."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Farzanas Collection perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Farzanas is our exclusive line, so every bottle is genuine and quality-checked, sourced through verified wholesale channels within the UAE, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Farzanas Collection perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Farzanas Collection across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}

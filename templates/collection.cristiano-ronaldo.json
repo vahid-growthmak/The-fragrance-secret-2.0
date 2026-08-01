@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "hero_eyebrow": "By Brand",
+        "hero_heading": "Cristiano Ronaldo <em>Perfumes</em>",
+        "hero_image_alt": "Cristiano Ronaldo Perfumes at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands",
+        "show_trust_band": false,
+        "show_finder": false,
+        "show_reviews": false,
+        "intro_eyebrow": "By Brand",
+        "intro_heading": "Shop Cristiano Ronaldo Perfumes UAE",
+        "intro_text": "<p>Cristiano Ronaldo's CR7 fragrance line brings the football icon's sporty, confident, modern energy to men's scent. The Fragrance Secrets brings together authentic Cristiano Ronaldo perfumes, led by the original aromatic CR7, alongside CR7 Game On, CR7 Origins, and the bold Fearless. Fresh, woody, and energetic, these are accessible everyday colognes designed for the active, on-the-go man. If you want a confident, sporty signature scent inspired by one of the world's most famous athletes at a friendly price, Cristiano Ronaldo is a house to explore.</p>",
+        "show_why_rotator": true
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Cristiano Ronaldo <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Cristiano Ronaldo? Explore more standout fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Cristiano Ronaldo Perfumes",
+        "schema_name": "Shop Cristiano Ronaldo Perfumes UAE",
+        "schema_description": "Find authentic Cristiano Ronaldo perfumes at The Fragrance Secrets. Browse the CR7 line, Game On and Fearless, fresh sporty colognes for men. Fast UAE, USA and Canada delivery."
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "An Icon's Energy",
+            "body": "Created by football legend Cristiano Ronaldo, the CR7 fragrance line reflects his sporty, confident, and driven character, scents designed for the modern, active man who aspires to live boldly.",
+            "tag_label": "Origin",
+            "tags": "Athlete-Created, Sporty"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "The Signature CR7",
+            "body": "The original CR7 is an aromatic fougère built on lavender, cardamom, and bergamot, with tobacco and cedar leading into a warm base of vanilla, sandalwood, amber, and musk, fresh, woody, and confident.",
+            "tag_label": "Iconic",
+            "tags": "CR7, Fresh, Woody"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "The CR7 Collection",
+            "body": "Beyond the original, the line spans CR7 Game On, the fruity-woody CR7 Origins, the fresh CR7 Discover, and the bold Fearless, each targeting a different mood and lifestyle moment.",
+            "tag_label": "Explore",
+            "tags": "CR7, Game On, Fearless"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Energetic & Accessible",
+            "body": "Cristiano Ronaldo fragrances are fresh, energetic, and easy to wear, offering sporty, modern men's scents with dependable everyday performance at a genuinely accessible price.",
+            "tag_label": "Best For",
+            "tags": "Men, Everyday, Active"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Billie Eilish",
+            "url": "/collections/billie-eilish"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "Sabrina Carpenter",
+            "url": "/collections/sabrina-carpenter"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Hugo Boss",
+            "url": "/collections/hugo-boss"
+          }
+        },
+        "sibling4": {
+          "type": "sibling",
+          "settings": {
+            "label": "Davidoff",
+            "url": "/collections/davidoff"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/pages/shop-by-scent-family",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Cristiano Ronaldo a good perfume brand?",
+            "answer": "Yes. Cristiano Ronaldo's CR7 line is known for fresh, sporty, easy-to-wear men's fragrances with modern scent profiles and dependable performance, offering good quality at an accessible price."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Cristiano Ronaldo's most popular perfume?",
+            "answer": "The original CR7 is the most popular, a fresh, woody aromatic fougère. CR7 Game On, CR7 Origins, and Fearless are also widely loved across the men's collection."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What does CR7 perfume smell like?",
+            "answer": "The original CR7 is a fresh, woody aromatic fougère, opening with lavender, cardamom, and bergamot, moving through tobacco and cedar into a warm base of vanilla, sandalwood, amber, and musk."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Cristiano Ronaldo perfumes last long?",
+            "answer": "Cristiano Ronaldo CR7 fragrances are eau de toilette colognes designed for everyday wear, offering fresh, dependable performance through the day, ideal for active, on-the-go use in warm climates."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Cristiano Ronaldo perfumes authentic at The Fragrance Secrets?",
+            "answer": "Yes. Every Cristiano Ronaldo perfume at The Fragrance Secrets is 100% authentic and sourced through trusted suppliers, sealed and quality-checked, so you can shop with complete confidence."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship Cristiano Ronaldo perfumes internationally?",
+            "answer": "Yes. The Fragrance Secrets delivers Cristiano Ronaldo perfumes across the UAE and also ships to customers in the USA and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "sibling4",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "editorial"
+  ]
+}
