@@ -12,6 +12,50 @@
     "main": {
       "type": "home",
       "blocks": {
+        "category1": {
+          "type": "category",
+          "settings": {
+            "handle": "mens",
+            "title": "For Men"
+          }
+        },
+        "category2": {
+          "type": "category",
+          "settings": {
+            "handle": "womens",
+            "title": "For Women"
+          }
+        },
+        "category3": {
+          "type": "category",
+          "settings": {
+            "handle": "unisex",
+            "title": "Unisex"
+          }
+        },
+        "category4": {
+          "type": "category",
+          "settings": {
+            "handle": "kids",
+            "title": "Kids Collection"
+          }
+        },
+        "category5": {
+          "type": "category",
+          "settings": {
+            "handle": "arabic",
+            "title": "Arabic Perfumes",
+            "sub": "Oud, musk & attar"
+          }
+        },
+        "category6": {
+          "type": "category",
+          "settings": {
+            "handle": "perfume-oil",
+            "title": "Perfume Oils",
+            "sub": "Alcohol-free & concentrated"
+          }
+        },
         "scent1": {
           "type": "scent",
           "settings": {
@@ -126,6 +170,12 @@
         }
       },
       "block_order": [
+        "category1",
+        "category2",
+        "category3",
+        "category4",
+        "category5",
+        "category6",
         "scent1",
         "scent2",
         "scent3",

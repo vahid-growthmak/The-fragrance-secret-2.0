@@ -18,7 +18,6 @@
 {%- liquid
   assign house_handles = section.settings.house_handles | split: ','
   assign popular_handles = section.settings.popular_handles | split: ','
-  assign category_handles = section.settings.category_handles | split: ','
   assign scent_handles = section.settings.scent_handles | split: ','
   assign lifestyle_handles = section.settings.lifestyle_handles | split: ','
   assign climate_handles = section.settings.climate_handles | split: ','
@@ -194,24 +193,32 @@
       </div>
       <a href="/collections" class="see-all">Explore All Categories <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
-    <div class="gender-grid six">
-      {%- for raw_handle in category_handles -%}
-        {%- assign category_handle = raw_handle | strip -%}
-        {%- assign category = collections[category_handle] -%}
+    {%- comment -%}
+      Landscape image cards: title plus one descriptor line, and an arrow on
+      hover. The descriptor is per-card copy where the collection needs one
+      ("Oud, musk & attar"), and falls back to the live product count.
+      An uploaded image wins, then the collection image, then its first product.
+    {%- endcomment -%}
+    <div class="cat-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'category' -%}{%- continue -%}{%- endif -%}
+        {%- assign category = collections[block.settings.handle] -%}
         {%- if category.handle == blank -%}{%- continue -%}{%- endif -%}
-        {%- assign category_image = category.image | default: category.products.first.featured_image -%}
-        <a class="g-card fade-up" href="{{ category.url }}">
-          {%- if category_image -%}
-            <img class="gc-img" src="{{ category_image | image_url: width: 600 }}"
-                 alt="{{ category.title | escape }}" loading="lazy" />
+        {%- assign cat_image = block.settings.image | default: category.image | default: category.products.first.featured_image -%}
+        {%- assign cat_title = block.settings.title | default: category.title -%}
+        <a class="cat-card fade-up" href="{{ category.url }}" {{ block.shopify_attributes }}>
+          {%- if cat_image -%}
+            <img class="cat-img" src="{{ cat_image | image_url: width: 800 }}"
+                 alt="{{ cat_title | escape }}" loading="lazy" width="800" height="500" />
           {%- endif -%}
-          <div class="gc-overlay"></div>
-          <div class="gc-content">
-            <div class="gc-title">{{ category.title | remove: ' Perfumes' }}</div>
-            {%- if category.products_count > 0 -%}
-              <div class="gc-count">{{ category.products_count }} Fragrance{% if category.products_count != 1 %}s{% endif %}</div>
+          <span class="cat-arrow" aria-hidden="true"><span class="mi">arrow_forward</span></span>
+          <div class="cat-ct">
+            <h3>{{ cat_title }}</h3>
+            {%- if block.settings.sub != blank -%}
+              <span>{{ block.settings.sub }}</span>
+            {%- elsif category.products_count > 0 -%}
+              <span>{{ category.products_count }} fragrance{% if category.products_count != 1 %}s{% endif %}</span>
             {%- endif -%}
-            <span class="gc-btn">Explore</span>
           </div>
         </a>
       {%- endfor -%}
@@ -424,10 +431,6 @@
     { "type": "textarea", "id": "popular_handles", "label": "Most loved houses (comma separated handles)",
       "default": "lattafa, rasasi, armaf, swiss-arabian, ahmed-al-maghribi, al-haramain, amouage, ibrahim-al-qurashi" },
 
-    { "type": "header", "content": "6 · Shop by category" },
-    { "type": "textarea", "id": "category_handles", "label": "Category collections (comma separated handles)",
-      "default": "mens, womens, unisex, kids, arabic, perfume-oil" },
-
     { "type": "header", "content": "8 · Shop by moment" },
     { "type": "textarea", "id": "lifestyle_handles", "label": "Lifestyle collections (comma separated handles)",
       "default": "office-wear, date-night, wedding, gym, travel-friendly, dinner-evening" },
@@ -447,6 +450,18 @@
         { "type": "text", "id": "title", "label": "Title", "info": "Defaults to the collection title." },
         { "type": "text", "id": "sub", "label": "Description" },
         { "type": "text", "id": "icon", "label": "Material icon name", "default": "spa" }
+      ]
+    },
+    {
+      "type": "category",
+      "name": "Category card",
+      "settings": [
+        { "type": "text", "id": "handle", "label": "Collection handle" },
+        { "type": "text", "id": "title", "label": "Title", "info": "Defaults to the collection title." },
+        { "type": "text", "id": "sub", "label": "Descriptor",
+          "info": "Shown under the title. Leave blank to show the live product count instead." },
+        { "type": "image_picker", "id": "image", "label": "Image",
+          "info": "Landscape, 800 × 500 px or larger. Falls back to the collection image, then its first product photo." }
       ]
     },
     {
@@ -471,6 +486,12 @@
     {
       "name": "Home",
       "blocks": [
+        { "type": "category", "settings": { "handle": "mens", "title": "For Men" } },
+        { "type": "category", "settings": { "handle": "womens", "title": "For Women" } },
+        { "type": "category", "settings": { "handle": "unisex", "title": "Unisex" } },
+        { "type": "category", "settings": { "handle": "kids", "title": "Kids Collection" } },
+        { "type": "category", "settings": { "handle": "arabic", "title": "Arabic Perfumes", "sub": "Oud, musk & attar" } },
+        { "type": "category", "settings": { "handle": "perfume-oil", "title": "Perfume Oils", "sub": "Alcohol-free & concentrated" } },
         { "type": "scent", "settings": { "handle": "oud-woody", "title": "Oud & Woody", "sub": "Deep, warm, resinous", "icon": "park" } },
         { "type": "scent", "settings": { "handle": "fresh-citrus", "title": "Fresh & Citrus", "sub": "Bright, clean, energetic", "icon": "water_drop" } },
         { "type": "scent", "settings": { "handle": "floral-rose", "title": "Floral & Rose", "sub": "Elegant, soft, romantic", "icon": "local_florist" } },
