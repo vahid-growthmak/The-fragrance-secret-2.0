@@ -350,12 +350,22 @@
             {%- endunless -%}
           {%- endfor -%}
         {%- else -%}
-          {%- comment -%} Nothing picked in the editor: fall back to brand collections by handle {%- endcomment -%}
-          {%- for c in collections -%}
+          {%- comment -%}
+            Nothing picked in the editor: walk the store's vendors and show the
+            ones that have a matching brand collection.
+          {%- endcomment -%}
+          {%- for vendor_name in collections.all.all_vendors -%}
             {%- if brands_shown >= brand_limit -%}{%- break -%}{%- endif -%}
-            {%- unless c.handle contains 'perfumes' -%}{%- continue -%}{%- endunless -%}
-            {%- if c.handle == brand_collection.handle or c.products_count == 0 -%}{%- continue -%}{%- endif -%}
-            {% render 'brand-card', brand: c %}
+            {%- if vendor_name == product.vendor -%}{%- continue -%}{%- endif -%}
+            {%- assign vendor_slug = vendor_name | handleize -%}
+            {%- assign vendor_collection = collections[vendor_slug] -%}
+            {%- if vendor_collection.handle == blank -%}
+              {%- assign vendor_slug_alt = vendor_name | replace: '&', 'and' | handleize -%}
+              {%- assign vendor_collection = collections[vendor_slug_alt] -%}
+            {%- endif -%}
+            {%- if vendor_collection.handle == blank or vendor_collection.products_count == 0 -%}{%- continue -%}{%- endif -%}
+            {%- if vendor_collection.handle == brand_collection.handle -%}{%- continue -%}{%- endif -%}
+            {% render 'brand-card', brand: vendor_collection %}
             {%- assign brands_shown = brands_shown | plus: 1 -%}
           {%- endfor -%}
         {%- endif -%}
