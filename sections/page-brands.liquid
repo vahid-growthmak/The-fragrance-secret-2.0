@@ -1,49 +1,112 @@
 {%- comment -%}
-  The hero and intro now come from the hub-hero section above this one, so this
-  section starts at the signature houses.
+  Brands hub body. The hero and intro come from the hub-hero section above this
+  one, so this section starts at the signature houses.
+
+  Both rows are driven by collection handles and rendered in Liquid, so every
+  tile links to a collection that actually exists. They used to be hardcoded:
+  all three house tiles pointed at /collections/own-brand, which holds only
+  archived products and so renders "No products yet", and the A-Z index was
+  built client-side from the old demo catalogue, linking to
+  /collections/vendors?q=NAME — not a real Shopify route.
+
+  Handles with no matching collection are skipped rather than rendered as dead
+  links.
 {%- endcomment -%}
 
-    <!-- OUR BRANDS (elevated) -->
-    <section class="section" id="our-brands">
-      <div class="container">
-        <div class="sec-head"><span class="label">Our Signature Houses</span><h2 class="sec-title">Made By <em>Us</em>, For the UAE</h2><p class="sec-sub">Our in-house lines — original compositions manufactured to our own standards through certified UAE partners. Never claimed as designer originals; inspired-by lines are always labelled as inspired.</p></div>
-        <div class="hub-grid fade-up">
-          <a class="hub-tile" href="/collections/own-brand">
-            <img src="{{ 'prod-club-de-nuit.jpg' | asset_url }}" alt="Fragrance Secrets" loading="lazy"/>
-            <div class="hub-body"><span class="hub-ic"><span class="mi mi-f" aria-hidden="true" style="color:var(--gold-lt)">workspace_premium</span></span><h3>Fragrance Secrets</h3><p>Signature in-house line</p><span class="hub-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span></div>
-          </a>
-          <a class="hub-tile" href="/collections/own-brand">
-            <img src="{{ 'hero-gold.png' | asset_url }}" alt="Secret Scents" loading="lazy"/>
-            <div class="hub-body"><span class="hub-ic"><span class="mi mi-f" aria-hidden="true" style="color:var(--gold-lt)">auto_awesome</span></span><h3>Secret Scents</h3><p>Everyday luxury, smart prices</p><span class="hub-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span></div>
-          </a>
-          <a class="hub-tile" href="/collections/own-brand">
-            <img src="{{ 'prod-oud-roses.jpg' | asset_url }}" alt="Paris Collection" loading="lazy"/>
-            <div class="hub-body"><span class="hub-ic"><span class="mi mi-f" aria-hidden="true" style="color:var(--gold-lt)">diamond</span></span><h3>Paris Collection</h3><p>French-inspired elegance</p><span class="hub-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span></div>
-          </a>
-        </div>
-      </div>
-    </section>
+{%- liquid
+  assign house_handles = section.settings.house_handles | split: ','
+  assign brand_handles = section.settings.brand_handles | split: ','
+-%}
 
-    <!-- A-Z ALL BRANDS -->
-    <section class="section alt">
-      <div class="container">
-        <div class="sec-head"><span class="label">All Brands A–Z</span><h2 class="sec-title">47+ Fragrance <em>Houses</em></h2><p class="sec-sub">Every designer and Arabic-house brand below is 100% genuine, sourced through verified wholesalers and market-authorised channels — sealed stock, authenticity guaranteed.</p></div>
-        <div class="brand-cloud" data-render="brands"></div>
+<!-- OUR BRANDS (elevated) -->
+{%- if house_handles.size > 0 -%}
+  <section class="section" id="our-brands">
+    <div class="container">
+      <div class="sec-head">
+        <span class="label">{{ section.settings.house_eyebrow }}</span>
+        <h2 class="sec-title">{{ section.settings.house_heading }}</h2>
+        <p class="sec-sub">{{ section.settings.house_sub }}</p>
       </div>
-    </section>
+      <div class="hub-grid fade-up">
+        {%- for raw_handle in house_handles -%}
+          {%- assign house_handle = raw_handle | strip -%}
+          {%- assign house = collections[house_handle] -%}
+          {%- if house.handle == blank -%}{%- continue -%}{%- endif -%}
+          {%- assign house_label = house.title | remove: ' Perfumes' -%}
+          {% render 'collection-card', collection: house, label: house_label, cta: 'Shop the house' %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
 
-    <!-- SOURCING PROMISE BAND -->
-    <section class="section">
-      <div class="container"><div class="cta-band">
-        <span class="label" style="color:var(--gold)">Our Sourcing Promise</span>
-        <h2 class="sec-title">Know Exactly Where <em>Each Scent Comes From</em></h2>
-        <p class="sec-sub">No vague claims. We run two clearly separated lines — our own perfume brands, and a verified resale catalogue of genuine fragrances — so you always know what you're buying. Have a question about a specific product's sourcing? A real person will tell you exactly, on WhatsApp.</p>
-        <div class="cta-actions">
-          <a class="btn-g" href="#" onclick="waChat();return false"><span class="mi" aria-hidden="true">chat</span>Ask on WhatsApp</a>
-        </div>
-      </div></div>
-    </section>
+<!-- A-Z ALL BRANDS -->
+<section class="section alt">
+  <div class="container">
+    {%- comment -%} Counted first so the heading states the real number. {%- endcomment -%}
+    {%- assign brand_count = 0 -%}
+    {%- for raw_handle in brand_handles -%}
+      {%- assign brand_handle = raw_handle | strip -%}
+      {%- if collections[brand_handle].handle != blank -%}
+        {%- assign brand_count = brand_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="sec-head">
+      <span class="label">{{ section.settings.az_eyebrow }}</span>
+      <h2 class="sec-title">{{ brand_count }} Fragrance <em>Houses</em></h2>
+      <p class="sec-sub">{{ section.settings.az_sub }}</p>
+    </div>
+
+    <div class="brand-cloud fade-up">
+      {%- for raw_handle in brand_handles -%}
+        {%- assign brand_handle = raw_handle | strip -%}
+        {%- assign brand = collections[brand_handle] -%}
+        {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
+        {%- assign brand_name = brand.title | remove: ' Perfumes' -%}
+        <a class="brand-chip" href="{{ brand.url }}">
+          {{ brand_name }}
+          {%- if brand.products_count > 0 -%}
+            <span class="brand-chip-n">{{ brand.products_count }}</span>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- SOURCING PROMISE BAND -->
+<section class="section">
+  <div class="container"><div class="cta-band">
+    <span class="label" style="color:var(--gold)">Our Sourcing Promise</span>
+    <h2 class="sec-title">Know Exactly Where <em>Each Scent Comes From</em></h2>
+    <p class="sec-sub">No vague claims. We run two clearly separated lines — our own perfume brands, and a verified resale catalogue of genuine fragrances — so you always know what you're buying. Have a question about a specific product's sourcing? A real person will tell you exactly, on WhatsApp.</p>
+    <div class="cta-actions">
+      <a class="btn-g" href="#" onclick="waChat();return false"><span class="mi" aria-hidden="true">chat</span>Ask on WhatsApp</a>
+    </div>
+  </div></div>
+</section>
 
 {% schema %}
-{ "name": "Brands page", "settings": [] }
+{
+  "name": "Brands page",
+  "settings": [
+    { "type": "header", "content": "Signature houses" },
+    { "type": "text", "id": "house_eyebrow", "label": "Eyebrow", "default": "Our Signature Houses" },
+    { "type": "text", "id": "house_heading", "label": "Heading", "default": "Made By <em>Us</em>, For the UAE" },
+    { "type": "textarea", "id": "house_sub", "label": "Intro",
+      "default": "Our in-house lines — original compositions manufactured to our own standards through certified UAE partners. Never claimed as designer originals; inspired-by lines are always labelled as inspired." },
+    { "type": "textarea", "id": "house_handles", "label": "House collections (comma separated handles)",
+      "info": "Handles with no matching collection are skipped, so a tile can never link to a page that does not exist. 'secret-scents' has no collection yet — add the handle here once it does.",
+      "default": "fragrance-secrets, paris-collection" },
+
+    { "type": "header", "content": "All brands A–Z" },
+    { "type": "text", "id": "az_eyebrow", "label": "Eyebrow", "default": "All Brands A–Z" },
+    { "type": "textarea", "id": "az_sub", "label": "Intro",
+      "default": "Every designer and Arabic-house brand below is 100% genuine, sourced through verified wholesalers and market-authorised channels — sealed stock, authenticity guaranteed." },
+    { "type": "textarea", "id": "brand_handles", "label": "Brand collections (comma separated handles)",
+      "info": "Shown in this order. The heading counts only the handles that resolve to a collection.",
+      "default": "ahmed-al-maghribi, al-haramain, alezz-oud, amouage, arabiyat-prestige, armaf, azzaro, billie-eilish, boadicea-the-victorious, borntostandout, calvin-klein, chanel, cristiano-ronaldo, davidoff, dior, dolce-and-gabbana, elan-dor, ex-nihilo, farzanas-collection, fragrance-secrets, french-avenue, giorgio-armani, hevora, house-of-morais, hugo-boss, ibrahim-al-qurashi, jay-marley, jean-paul-gaultier, khaleej-pride, la-parfum-galleria, la-parfum-galleria-exclusif, lattafa, mancera, marxzelle, niche-profumo, orchid, paris-collection, parisbelle, prada, rafaan, ralph-lauren, rasasi, rayhaan, reef, riiffs, roberto-cavalli, sabrina-carpenter, swiss-arabian, yves-saint-laurent" }
+  ]
+}
 {% endschema %}
