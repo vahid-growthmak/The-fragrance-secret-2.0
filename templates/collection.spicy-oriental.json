@@ -44,7 +44,9 @@
         "show_reviews": true,
         "crumb_name": "Spicy & Oriental Perfumes",
         "schema_name": "Spicy & Oriental Perfumes UAE",
-        "schema_description": "Shop spicy & oriental perfumes at The Fragrance Secrets. Find warm amber, cinnamon, and saffron fragrances made for lasting impressions, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Shop spicy & oriental perfumes at The Fragrance Secrets. Find warm amber, cinnamon, and saffron fragrances made for lasting impressions, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

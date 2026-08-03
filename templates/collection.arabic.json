@@ -42,7 +42,9 @@
         "crumb_name": "Arabic Perfumes",
         "schema_name": "Arabic Perfumes UAE",
         "schema_description": "Explore Arabic perfumes at The Fragrance Secrets. From rich oud and warm amber to elegant rose and musk, discover long-lasting fragrances with shipping across the UAE, USA, and Canada.",
-        "cards_footnote": "Arabic perfumes also make a treasured gift for weddings, Eid and special occasions, and pair beautifully with bakhoor and attar for anyone who loves to layer the tradition fully."
+        "cards_footnote": "Arabic perfumes also make a treasured gift for weddings, Eid and special occasions, and pair beautifully with bakhoor and attar for anyone who loves to layer the tradition fully.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

@@ -41,7 +41,9 @@
         "show_reviews": true,
         "crumb_name": "Women's Perfumes",
         "schema_name": "Women's Perfumes UAE",
-        "schema_description": "Shop authentic women's perfumes at The Fragrance Secrets. Explore designer and Arabian fragrances, from floral and fresh to gourmand and oud, with fast delivery across the UAE, USA, and Canada."
+        "schema_description": "Shop authentic women's perfumes at The Fragrance Secrets. Explore designer and Arabian fragrances, from floral and fresh to gourmand and oud, with fast delivery across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

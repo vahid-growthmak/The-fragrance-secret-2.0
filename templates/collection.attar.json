@@ -42,7 +42,9 @@
         "crumb_name": "Attar",
         "schema_name": "Attar UAE",
         "schema_description": "Shop genuine attar at The Fragrance Secrets. Concentrated, alcohol-free oud, musk and rose perfume oils for men and women, long-lasting, with fast delivery across the UAE, USA and Canada.",
-        "cards_footnote": "Attar also makes a meaningful gift for weddings, Eid and special occasions, and it layers beautifully under a spray perfume for anyone who wants their scent to last even longer."
+        "cards_footnote": "Attar also makes a meaningful gift for weddings, Eid and special occasions, and it layers beautifully under a spray perfume for anyone who wants their scent to last even longer.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

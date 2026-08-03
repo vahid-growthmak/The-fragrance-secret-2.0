@@ -42,7 +42,9 @@
         "crumb_name": "Inspired Perfumes",
         "schema_name": "Inspired Perfumes UAE",
         "schema_description": "Shop inspired perfumes at The Fragrance Secrets. Explore our original fragrance creations inspired by popular scent styles, crafted for long-lasting everyday wear and shipped across the UAE, USA, and Canada.",
-        "cards_footnote": "Inspired perfumes also make an easy, low-risk gift and a smart way to enjoy several scents for the price of one designer bottle."
+        "cards_footnote": "Inspired perfumes also make an easy, low-risk gift and a smart way to enjoy several scents for the price of one designer bottle.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Prada Perfumes",
         "schema_name": "Shop Prada Perfumes UAE",
-        "schema_description": "Discover authentic Prada perfumes at The Fragrance Secrets. Explore icons like Luna Rossa, Paradoxe and Candy, refined Italian luxury for men and women. Fast UAE, USA and Canada delivery."
+        "schema_description": "Discover authentic Prada perfumes at The Fragrance Secrets. Explore icons like Luna Rossa, Paradoxe and Candy, refined Italian luxury for men and women. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

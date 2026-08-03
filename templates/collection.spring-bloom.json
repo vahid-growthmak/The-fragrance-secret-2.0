@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Spring Wear Perfumes",
         "schema_name": "Best Spring Perfumes UAE",
-        "schema_description": "Buy spring wear perfumes online at The Fragrance Secrets. Find fresh floral fragrances with rose, jasmine, and green notes for men and women, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Buy spring wear perfumes online at The Fragrance Secrets. Find fresh floral fragrances with rose, jasmine, and green notes for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

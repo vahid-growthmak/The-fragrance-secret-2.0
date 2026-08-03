@@ -42,7 +42,9 @@
         "crumb_name": "Luxury Perfumes",
         "schema_name": "Luxury Perfumes UAE",
         "schema_description": "Explore luxury perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances with premium ingredients, long-lasting performance, and shipping across the UAE, USA, and Canada.",
-        "cards_footnote": "Luxury perfumes also make memorable gifts for birthdays, anniversaries, weddings, Eid, and corporate occasions, and they become signature fragrances for everyday confidence, helping you create lasting impressions wherever you go."
+        "cards_footnote": "Luxury perfumes also make memorable gifts for birthdays, anniversaries, weddings, Eid, and corporate occasions, and they become signature fragrances for everyday confidence, helping you create lasting impressions wherever you go.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

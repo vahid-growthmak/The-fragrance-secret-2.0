@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Gym Perfumes",
         "schema_name": "Best Gym Perfumes UAE",
-        "schema_description": "Shop the best gym perfumes at The Fragrance Secrets. Explore fresh, light perfumes and body sprays for men and women, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Shop the best gym perfumes at The Fragrance Secrets. Explore fresh, light perfumes and body sprays for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

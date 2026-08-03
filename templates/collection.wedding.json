@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Wedding & Formal Perfumes",
         "schema_name": "Best Wedding Perfumes UAE",
-        "schema_description": "Find the perfect wedding fragrance at The Fragrance Secrets. From elegant bridal scents to refined perfumes for grooms and guests, discover long-lasting fragrances with shipping across the UAE, USA, and Canada."
+        "schema_description": "Find the perfect wedding fragrance at The Fragrance Secrets. From elegant bridal scents to refined perfumes for grooms and guests, discover long-lasting fragrances with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

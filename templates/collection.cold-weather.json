@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Cold Weather Perfumes",
         "schema_name": "Best Perfumes for Cold Weather UAE",
-        "schema_description": "Order cold weather perfumes at The Fragrance Secrets. Made for cooler days, warm oud, amber, and spice fragrances leave a lasting impression, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Order cold weather perfumes at The Fragrance Secrets. Made for cooler days, warm oud, amber, and spice fragrances leave a lasting impression, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

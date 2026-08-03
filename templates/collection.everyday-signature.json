@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Everyday Perfumes",
         "schema_name": "Best Everyday Perfumes UAE",
-        "schema_description": "Shop the best everyday perfumes at The Fragrance Secrets. Discover versatile, long-lasting fragrances for men and women, perfect for daily wear, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Shop the best everyday perfumes at The Fragrance Secrets. Discover versatile, long-lasting fragrances for men and women, perfect for daily wear, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

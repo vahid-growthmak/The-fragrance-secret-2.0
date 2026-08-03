@@ -44,7 +44,9 @@
         "show_reviews": true,
         "crumb_name": "Fresh & Citrus Perfumes",
         "schema_name": "Fresh & Citrus Perfumes UAE",
-        "schema_description": "Shop fresh and citrus perfumes at The Fragrance Secrets. Bright bergamot, lemon and cool aquatic scents stay clean and energising in warm weather. Fast delivery across the UAE, USA and Canada."
+        "schema_description": "Shop fresh and citrus perfumes at The Fragrance Secrets. Bright bergamot, lemon and cool aquatic scents stay clean and energising in warm weather. Fast delivery across the UAE, USA and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

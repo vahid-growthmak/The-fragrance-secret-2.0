@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Formal Event Perfumes",
         "schema_name": "Best Formal Event Perfumes UAE",
-        "schema_description": "Buy the best formal event perfumes online at The Fragrance Secrets. Explore long-lasting fragrances for black-tie events, corporate dinners, and special occasions, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Buy the best formal event perfumes online at The Fragrance Secrets. Explore long-lasting fragrances for black-tie events, corporate dinners, and special occasions, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

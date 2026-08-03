@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Winter Wear Perfumes",
         "schema_name": "Best Winter Perfumes UAE",
-        "schema_description": "Buy winter perfumes online at The Fragrance Secrets. Explore warm oud, amber, and spicy fragrances for men and women, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Buy winter perfumes online at The Fragrance Secrets. Explore warm oud, amber, and spicy fragrances for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

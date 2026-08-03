@@ -44,7 +44,9 @@
         "show_reviews": true,
         "crumb_name": "Floral & Rose Perfumes",
         "schema_name": "Floral & Rose Perfumes UAE",
-        "schema_description": "Shop floral & rose perfumes at The Fragrance Secrets. Choose from delicate rose, jasmine, and blooming floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Shop floral & rose perfumes at The Fragrance Secrets. Choose from delicate rose, jasmine, and blooming floral fragrances for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

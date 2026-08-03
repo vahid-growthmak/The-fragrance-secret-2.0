@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Tropical Climate Perfumes",
         "schema_name": "Best Perfumes for Tropical Climate UAE",
-        "schema_description": "Order tropical climate perfumes at The Fragrance Secrets. Bring tropical vibes to every day with fruity, coconut, and fresh floral fragrances, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Order tropical climate perfumes at The Fragrance Secrets. Bring tropical vibes to every day with fruity, coconut, and fresh floral fragrances, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Lattafa Perfumes",
         "schema_name": "Shop Lattafa Perfumes UAE",
-        "schema_description": "Shop authentic Lattafa perfumes at The Fragrance Secrets. Discover bestsellers like Khamrah, Yara, Asad and Raghba, long-lasting Arabian scents for men and women. Fast UAE, USA and Canada delivery."
+        "schema_description": "Shop authentic Lattafa perfumes at The Fragrance Secrets. Discover bestsellers like Khamrah, Yara, Asad and Raghba, long-lasting Arabian scents for men and women. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

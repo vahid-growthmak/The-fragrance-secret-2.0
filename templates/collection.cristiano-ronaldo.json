@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Cristiano Ronaldo Perfumes",
         "schema_name": "Shop Cristiano Ronaldo Perfumes UAE",
-        "schema_description": "Find authentic Cristiano Ronaldo perfumes at The Fragrance Secrets. Browse the CR7 line, Game On and Fearless, fresh sporty colognes for men. Fast UAE, USA and Canada delivery."
+        "schema_description": "Find authentic Cristiano Ronaldo perfumes at The Fragrance Secrets. Browse the CR7 line, Game On and Fearless, fresh sporty colognes for men. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

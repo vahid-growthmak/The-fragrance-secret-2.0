@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Sabrina Carpenter Perfumes",
         "schema_name": "Shop Sabrina Carpenter Perfumes UAE",
-        "schema_description": "Explore authentic Sabrina Carpenter perfumes at The Fragrance Secrets. Order the Sweet Tooth range, Cherry Baby and Caramel Dream, playful gourmand scents. Fast UAE, USA and Canada delivery."
+        "schema_description": "Explore authentic Sabrina Carpenter perfumes at The Fragrance Secrets. Order the Sweet Tooth range, Cherry Baby and Caramel Dream, playful gourmand scents. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

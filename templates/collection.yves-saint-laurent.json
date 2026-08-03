@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Yves Saint Laurent Perfumes",
         "schema_name": "Shop Yves Saint Laurent Perfumes UAE",
-        "schema_description": "Explore authentic Yves Saint Laurent perfumes at The Fragrance Secrets. Order YSL icons like Black Opium, Libre and La Nuit de l'Homme for men and women. Fast UAE, USA and Canada delivery."
+        "schema_description": "Explore authentic Yves Saint Laurent perfumes at The Fragrance Secrets. Order YSL icons like Black Opium, Libre and La Nuit de l'Homme for men and women. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Vacation Perfumes",
         "schema_name": "Best Vacation Perfumes UAE",
-        "schema_description": "Buy vacation perfumes online at The Fragrance Secrets. Discover light, fresh fragrances for men and women, perfect for holidays, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Buy vacation perfumes online at The Fragrance Secrets. Discover light, fresh fragrances for men and women, perfect for holidays, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

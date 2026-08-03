@@ -44,7 +44,9 @@
         "show_reviews": true,
         "crumb_name": "All Products",
         "schema_name": "Shop All Perfumes Online UAE",
-        "schema_description": "Shop all perfumes online at The Fragrance Secrets. Browse the complete range of designer and Arabian fragrances for men and women in one place. Fast delivery across the UAE, USA and Canada."
+        "schema_description": "Shop all perfumes online at The Fragrance Secrets. Browse the complete range of designer and Arabian fragrances for men and women in one place. Fast delivery across the UAE, USA and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Humid Weather Perfumes",
         "schema_name": "Best Perfumes for Humid Weather UAE",
-        "schema_description": "Shop humid weather perfumes at The Fragrance Secrets. Explore fresh citrus, aquatic, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Shop humid weather perfumes at The Fragrance Secrets. Explore fresh citrus, aquatic, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

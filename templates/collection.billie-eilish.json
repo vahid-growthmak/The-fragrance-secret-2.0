@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Billie Eilish Perfumes",
         "schema_name": "Shop Billie Eilish Perfumes UAE",
-        "schema_description": "Discover authentic Billie Eilish perfumes at The Fragrance Secrets. Explore the amber-gourmand Eilish and Eilish No. 2, warm sensual artist-created scents. Fast UAE, USA and Canada delivery."
+        "schema_description": "Discover authentic Billie Eilish perfumes at The Fragrance Secrets. Explore the amber-gourmand Eilish and Eilish No. 2, warm sensual artist-created scents. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

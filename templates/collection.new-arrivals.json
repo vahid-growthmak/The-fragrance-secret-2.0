@@ -46,7 +46,9 @@
         "schema_name": "New Perfume Arrivals UAE",
         "schema_description": "Explore new perfume arrivals at The Fragrance Secrets. Shop the latest designer and Arabian fragrance launches for men and women, updated regularly. Fast delivery across the UAE, USA and Canada.",
         "sibling_all_label": "Browse the Full Shop",
-        "sibling_all_url": "/collections/all"
+        "sibling_all_url": "/collections/all",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

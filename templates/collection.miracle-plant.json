@@ -42,7 +42,9 @@
         "crumb_name": "Miracle Plant",
         "schema_name": "Miracle Plant Natural Perfume UAE",
         "schema_description": "Shop Miracle Plant at The Fragrance Secrets. A natural, alcohol-free aromatherapy Deep Sleep perfume made from pure essential oils, with fast delivery across the UAE, USA and Canada.",
-        "cards_footnote": "Miracle Plant comes in five gentle variants, For Her, For Him, For Every Body, For Mature and For Kids, and its clean, thoughtful packaging also makes it a caring gift for anyone who values rest and natural wellbeing."
+        "cards_footnote": "Miracle Plant comes in five gentle variants, For Her, For Him, For Every Body, For Mature and For Kids, and its clean, thoughtful packaging also makes it a caring gift for anyone who values rest and natural wellbeing.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

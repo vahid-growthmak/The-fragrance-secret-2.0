@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Elan Dor Perfumes",
         "schema_name": "Shop Elan Dor Perfumes UAE",
-        "schema_description": "Find authentic Elan Dor perfumes at The Fragrance Secrets. Browse elegant, French-inspired, long-lasting fragrances with a refined character. Fast UAE, USA and Canada delivery."
+        "schema_description": "Find authentic Elan Dor perfumes at The Fragrance Secrets. Browse elegant, French-inspired, long-lasting fragrances with a refined character. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Ahmed Al Maghribi Perfumes",
         "schema_name": "Shop Ahmed Al Maghribi Perfumes UAE",
-        "schema_description": "Shop authentic Ahmed Al Maghribi perfumes at The Fragrance Secrets. Discover traditional Arabian oud, oriental Eau de Parfums and parfum oils for men and women. Fast UAE, USA and Canada delivery."
+        "schema_description": "Shop authentic Ahmed Al Maghribi perfumes at The Fragrance Secrets. Discover traditional Arabian oud, oriental Eau de Parfums and parfum oils for men and women. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

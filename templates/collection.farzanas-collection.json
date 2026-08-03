@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Farzanas Collection Perfumes",
         "schema_name": "Shop Farzanas Collection Perfumes UAE",
-        "schema_description": "Find the Farzanas Collection at The Fragrance Secrets. Browse exclusive Arabic scents like Lion of the Arabs and Raya, bold and long-lasting. Fast UAE, USA and Canada delivery."
+        "schema_description": "Find the Farzanas Collection at The Fragrance Secrets. Browse exclusive Arabic scents like Lion of the Arabs and Raya, bold and long-lasting. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

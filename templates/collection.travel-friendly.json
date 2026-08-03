@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Travel Perfumes",
         "schema_name": "Travel Size Perfumes UAE",
-        "schema_description": "Order travel size perfumes online from The Fragrance Secrets. Find mini fragrances and refillable atomisers designed for life on the move, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Order travel size perfumes online from The Fragrance Secrets. Find mini fragrances and refillable atomisers designed for life on the move, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

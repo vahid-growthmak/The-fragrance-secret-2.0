@@ -46,7 +46,9 @@
         "schema_name": "Crazy Perfume Deals UAE",
         "schema_description": "Buy discounted perfumes online at The Fragrance Secrets. Browse authentic designer and Arabian fragrances at great prices, with shipping across the UAE, USA, and Canada.",
         "sibling_all_label": "Browse the Full Shop",
-        "sibling_all_url": "/collections/all"
+        "sibling_all_url": "/collections/all",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

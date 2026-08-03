@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Rafaan Perfumes",
         "schema_name": "Shop Rafaan Perfumes UAE",
-        "schema_description": "Find authentic Rafaan perfumes at The Fragrance Secrets. Browse Dubai Arabian scents like Journey of Oud and Mazoon, rich and long-lasting. Fast UAE, USA and Canada delivery."
+        "schema_description": "Find authentic Rafaan perfumes at The Fragrance Secrets. Browse Dubai Arabian scents like Journey of Oud and Mazoon, rich and long-lasting. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
       },
       "blocks": {
         "card1": {

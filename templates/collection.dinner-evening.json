@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Evening Wear Perfumes",
         "schema_name": "Best Evening Perfumes UAE",
-        "schema_description": "Buy evening perfumes online at The Fragrance Secrets. Explore elegant, long-lasting fragrances for men and women with shipping across the UAE, USA, and Canada."
+        "schema_description": "Buy evening perfumes online at The Fragrance Secrets. Explore elegant, long-lasting fragrances for men and women with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

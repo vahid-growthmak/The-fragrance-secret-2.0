@@ -46,7 +46,9 @@
         "schema_name": "Best Selling Perfumes UAE",
         "schema_description": "Explore the best selling perfumes at The Fragrance Secrets. Shop our most popular, trending and customer-favourite fragrances for men and women. Fast delivery across the UAE, USA and Canada.",
         "sibling_all_label": "Browse the Full Shop",
-        "sibling_all_url": "/collections/all"
+        "sibling_all_url": "/collections/all",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

@@ -41,7 +41,9 @@
         "show_reviews": true,
         "crumb_name": "Unisex Perfumes",
         "schema_name": "Unisex Perfumes UAE",
-        "schema_description": "Explore authentic unisex perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances, from fresh citrus and floral to rich oud and amber, with fast delivery across the UAE, USA, and Canada."
+        "schema_description": "Explore authentic unisex perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances, from fresh citrus and floral to rich oud and amber, with fast delivery across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

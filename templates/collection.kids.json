@@ -41,7 +41,9 @@
         "show_reviews": true,
         "crumb_name": "Kids Perfumes",
         "schema_name": "Kids Perfumes UAE",
-        "schema_description": "Shop the gentle kids' perfumes at The Fragrance Secrets. Explore fresh and age-appropriate fragrances for children from trusted brands, with fast delivery across the UAE, USA, and Canada."
+        "schema_description": "Shop the gentle kids' perfumes at The Fragrance Secrets. Explore fresh and age-appropriate fragrances for children from trusted brands, with fast delivery across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

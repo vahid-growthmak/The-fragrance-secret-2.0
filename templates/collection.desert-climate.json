@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Desert Climate Perfumes",
         "schema_name": "Best Perfumes for Desert Climate UAE",
-        "schema_description": "Buy desert climate perfumes online at The Fragrance Secrets. Rich oud, amber, and musk fragrances are made for hot, dry weather, with shipping across the UAE, USA, and Canada."
+        "schema_description": "Buy desert climate perfumes online at The Fragrance Secrets. Rich oud, amber, and musk fragrances are made for hot, dry weather, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

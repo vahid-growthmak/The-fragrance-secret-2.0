@@ -42,7 +42,9 @@
         "crumb_name": "Perfume Oils",
         "schema_name": "Perfume Oils UAE",
         "schema_description": "Shop concentrated perfume oils at The Fragrance Secrets. Explore long-lasting, alcohol-free perfume oils with oud, musk, floral, and amber notes for men and women, with shipping across the UAE, USA, and Canada.",
-        "cards_footnote": "Perfume oils are also an easy, affordable way to build a fragrance wardrobe, and they layer under a spray perfume to make any scent last longer."
+        "cards_footnote": "Perfume oils are also an easy, affordable way to build a fragrance wardrobe, and they layer under a spray perfume to make any scent last longer.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

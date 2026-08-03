@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Dry Weather Perfumes",
         "schema_name": "Best Perfumes for Dry Weather UAE",
-        "schema_description": "Shop dry weather perfumes at The Fragrance Secrets. Rich musk, amber and creamy woods cling to dry skin and resist fading in low humidity. Quick delivery to the UAE, USA and Canada."
+        "schema_description": "Shop dry weather perfumes at The Fragrance Secrets. Rich musk, amber and creamy woods cling to dry skin and resist fading in low humidity. Quick delivery to the UAE, USA and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

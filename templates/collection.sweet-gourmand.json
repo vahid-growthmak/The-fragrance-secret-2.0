@@ -44,7 +44,9 @@
         "show_reviews": true,
         "crumb_name": "Sweet & Gourmand Perfumes",
         "schema_name": "Sweet & Gourmand Perfumes UAE",
-        "schema_description": "Order sweet and gourmand perfumes at The Fragrance Secrets. Warm vanilla, caramel and chocolate scents smell like dessert and wrap you in cozy comfort. Quick delivery to the UAE, USA and Canada."
+        "schema_description": "Order sweet and gourmand perfumes at The Fragrance Secrets. Warm vanilla, caramel and chocolate scents smell like dessert and wrap you in cozy comfort. Quick delivery to the UAE, USA and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

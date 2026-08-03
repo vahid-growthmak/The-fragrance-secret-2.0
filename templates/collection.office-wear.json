@@ -46,7 +46,9 @@
         "show_reviews": true,
         "crumb_name": "Office Wear Perfumes",
         "schema_name": "Best Office Perfumes UAE",
-        "schema_description": "Shop the best office perfumes at The Fragrance Secrets. Subtle, professional, long-lasting fragrances for men and women, ideal for work, with fast UAE, USA and Canada delivery."
+        "schema_description": "Shop the best office perfumes at The Fragrance Secrets. Subtle, professional, long-lasting fragrances for men and women, ideal for work, with fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {

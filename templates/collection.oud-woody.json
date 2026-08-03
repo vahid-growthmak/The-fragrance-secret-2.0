@@ -44,7 +44,9 @@
         "show_reviews": true,
         "crumb_name": "Oud & Woody Perfumes",
         "schema_name": "Oud & Woody Perfumes UAE",
-        "schema_description": "Order oud and woody perfumes online at The Fragrance Secrets. Explore rich sandalwood, cedar, and Arabian oud fragrances with long-lasting performance, shipped across the UAE, USA, and Canada."
+        "schema_description": "Order oud and woody perfumes online at The Fragrance Secrets. Explore rich sandalwood, cedar, and Arabian oud fragrances with long-lasting performance, shipped across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
       },
       "blocks": {
         "card1": {
