@@ -2603,10 +2603,12 @@
       font-weight: 500
     }
 
-    /* WHATSAPP FLOAT */
+    /* WHATSAPP FLOAT
+       Sits above the Chizy chat bubble, which the app pins to bottom 20px /
+       right 20px and would otherwise overlap. */
     .wa-float {
       position: fixed;
-      bottom: 28px;
+      bottom: 96px;
       right: 28px;
       z-index: 999;
       width: 54px;
@@ -5334,47 +5336,50 @@ html body .jdgm-form select {
       }
     }
 
-    /* ── Chizy chat bubble, restyled to match the theme ──────────────────
-       The app renders its own launcher and we do not touch its behaviour, so
-       these rules are cosmetic only: gold gradient, our radius and shadow, and
-       the icon tinted to sit on it. Nothing here hides or moves the widget, so
-       if a selector misses, the button simply keeps the app's own look.
-       Scoped to buttons the app owns — never the WhatsApp float.  */
-    [id*="chizy"] button,
-    [id*="Chizy"] button,
-    [class*="chizy"] button,
-    [class*="Chizy"] button,
-    button[id*="chizy"],
-    button[class*="chizy"],
-    [id*="chizy"] > div[role="button"],
-    [class*="chizy"] > div[role="button"] {
+    /* ══ CHIZY CHAT WIDGET — restyled to match the theme ══════════
+       Written against the app's real markup: the launcher is a div (not a
+       button), and its green — #6ea527 → #bc9134 on the bubble, rgb(110,165,39)
+       on the window header — is set inline, so overriding it needs !important.
+       Appearance only: nothing here touches display, position, inset, opacity
+       or transform, all of which the app animates from its own scripts. */
+
+    /* the launcher: gold gradient in place of the app's green */
+    .chizy-bubble-default-icon {
       background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%) !important;
-      color: var(--ink) !important;
-      border: none !important;
-      border-radius: 27px !important;
-      box-shadow: 0 12px 30px -8px rgba(201, 168, 76, .55) !important;
-      font-family: var(--fb) !important;
-      font-size: .76rem !important;
-      font-weight: 600 !important;
-      letter-spacing: .04em !important;
-      transition: transform .25s var(--snap), box-shadow .25s !important
+      color: var(--ink) !important
     }
 
-    [id*="chizy"] button:hover,
-    [class*="chizy"] button:hover,
-    button[id*="chizy"]:hover,
-    button[class*="chizy"]:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 16px 36px -8px rgba(201, 168, 76, .7) !important
+    .chizy-bubble-wrapper {
+      box-shadow: 0 10px 28px -6px rgba(201, 168, 76, .55)
     }
 
-    /* tint whatever icon the app puts inside so it reads on gold */
-    [id*="chizy"] button svg,
-    [class*="chizy"] button svg,
-    button[id*="chizy"] svg,
-    button[class*="chizy"] svg {
-      color: var(--ink) !important;
-      fill: currentColor !important
+    .chizy-bubble-wrapper:hover {
+      box-shadow: 0 16px 36px -8px rgba(201, 168, 76, .75)
+    }
+
+    /* the icon inside is an inline svg: a speech-bubble face (unclassed
+       ellipse + path) with three dots (a circle and the two blinking
+       .chizy-eye-* ellipses). Recolour rather than replace, so the app keeps
+       its own animation: dark bubble, light-gold dots. CSS fill wins over the
+       svg's fill attributes and gradient references. */
+    .chizy-bubble-default-icon svg > ellipse:not([class]),
+    .chizy-bubble-default-icon svg > path:not([class]) {
+      fill: var(--ink)
+    }
+
+    .chizy-bubble-default-icon svg > circle,
+    .chizy-bubble-default-icon svg > [class*="chizy-eye"] {
+      fill: var(--gold-lt)
+    }
+
+    /* the open chat window's header */
+    .chizy-chat-header {
+      background: var(--ink) !important
+    }
+
+    .chizy-unread-badge {
+      background: var(--gold) !important;
+      color: var(--ink) !important
     }
 
     .ai-launcher.hidden {
@@ -6288,13 +6293,9 @@ html body .jdgm-form select {
         justify-content: center
       }
 
-      /* keep floating buttons clear of the product sticky ATC bar */
+      /* keep the float clear of the product sticky ATC bar */
       #product.active~.wa-float {
-        bottom: 78px
-      }
-
-      #product.active~.ai-launcher {
-        bottom: 132px
+        bottom: 146px
       }
 
       /* safe wrapping for long product names / headings */
