@@ -15,14 +15,35 @@
     <link rel="apple-touch-icon" href="{{ 'favicon.png' | asset_url }}">
   {%- endif -%}
 
+  {%- comment -%}
+    Every collection and hub page carries its own SEO title and description, set
+    on the resource itself (scripts/set-seo-meta.py). Two of the signed-off pages
+    are built-in routes rather than resources, so there is nothing in the admin to
+    attach them to and their copy has to live here:
+      /collections/all — the built-in all-products route
+      /collections     — the list-collections hub
+  {%- endcomment -%}
+  {%- liquid
+    assign seo_title = page_title
+    assign seo_description = page_description
+
+    if request.path == '/collections/all'
+      assign seo_title = 'Shop All Perfumes Online UAE | The Fragrance Secrets'
+      assign seo_description = 'Shop all perfumes online at The Fragrance Secrets. Browse the complete range of designer and Arabian fragrances for men and women in one place. Fast delivery across the UAE, USA and Canada.'
+    elsif request.path == '/collections'
+      assign seo_title = 'Shop Perfume Categories UAE | The Fragrance Secrets'
+      assign seo_description = 'Browse every perfume category at The Fragrance Secrets. Shop by gender, fragrance type like EDP, attar and oil, and curated lifestyle, climate and brand edits. Fast delivery across the UAE, USA and Canada.'
+    endif
+  -%}
+
   <title>
-    {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+    {{ seo_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
     {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    {%- unless seo_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
   </title>
 
-  {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
+  {%- if seo_description != blank -%}
+    <meta name="description" content="{{ seo_description | escape }}">
   {%- endif -%}
 
   {%- comment -%}
