@@ -21,6 +21,14 @@
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "14717942367183170102": {
+        "type": "shopify://apps/chizy-ai-chatbot/blocks/chat-bubble/fd61935c-4053-4b60-9385-bcbc00e2b2be",
+        "disabled": false,
+        "settings": {
+          "api_base_url": "https://ai-agent.chizy.io",
+          "app_url": "https://chatbot.chizy.io"
+        }
       }
     }
   },
