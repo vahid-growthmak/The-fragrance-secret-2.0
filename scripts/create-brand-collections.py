@@ -20,6 +20,7 @@ import argparse
 import importlib.util
 import os
 import sys
+import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 spec = importlib.util.spec_from_file_location(
@@ -89,9 +90,7 @@ query Existing($q: String!) {
 """
 
 ONLINE_STORE = """
-query OnlineStore {
-  publications(first: 25, catalogType: APP) { nodes { id catalog { title } } }
-}
+query OnlineStore { channels(first: 25) { nodes { id name } } }
 """
 
 CREATE = """
@@ -111,11 +110,71 @@ mutation Publish($id: ID!, $input: [PublicationInput!]!) {
 }
 """
 
+PUBLISH_STATUS = """
+query PublishStatus($q: String!) {
+  collections(first: 250, query: $q) {
+    nodes { id handle resourcePublicationsCount { count } }
+  }
+}
+"""
+
+
+def online_store_publication(client):
+    """The Online Store publication shares its numeric id with the channel."""
+    for node in client.call(ONLINE_STORE)["channels"]["nodes"]:
+        if node["name"] == "Online Store":
+            return node["id"].replace("/Channel/", "/Publication/")
+    return None
+
+
+def publish_all(client, existing, apply):
+    """Publish brand collections to the Online Store. Shopify creates
+    collections unpublished via the API, and an unpublished collection is
+    invisible to Liquid — its page 404s and it cannot be looked up."""
+    publication = online_store_publication(client)
+    if not publication:
+        sys.exit("%sCould not find the Online Store channel.%s" % (RED, RESET))
+
+    handles = [h for h, _, _ in BRANDS if h in existing]
+    counts = client.call(PUBLISH_STATUS, {"q": " OR ".join("handle:%s" % h for h in handles)})
+    unpublished = [n for n in counts["collections"]["nodes"]
+                   if n["resourcePublicationsCount"]["count"] == 0]
+
+    print("%d brand collections | %d already published | %d to publish"
+          % (len(handles), len(handles) - len(unpublished), len(unpublished)))
+    if not unpublished:
+        return
+    for node in unpublished:
+        print("  %s-> %s %s" % (YELLOW, RESET, node["handle"]))
+    if not apply:
+        print("\n%sDry run — nothing written. Add --apply.%s" % (DIM, RESET))
+        return
+
+    print("\nPublishing...")
+    failures = 0
+    for node in unpublished:
+        result = client.call(PUBLISH, {"id": node["id"],
+                                      "input": [{"publicationId": publication}]})
+        errors = result["publishablePublish"]["userErrors"]
+        if errors:
+            failures += 1
+            print("  %s !! %s %-30s %s" % (RED, RESET, node["handle"],
+                                           "; ".join(e["message"] for e in errors)))
+        else:
+            print("  %s ok %s %s" % (GREEN, RESET, node["handle"]))
+        time.sleep(0.15)
+    print("\n%d published, %d failed" % (len(unpublished) - failures, failures))
+    if failures:
+        sys.exit(1)
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--apply", action="store_true", help="create the collections")
+    parser.add_argument("--publish", action="store_true",
+                        help="publish existing brand collections to the Online Store "
+                             "(a collection Shopify has not published is invisible to Liquid)")
     parser.add_argument("--resolve-ip", help="see set-collection-templates.py")
     args = parser.parse_args()
 
@@ -135,6 +194,10 @@ def main():
     query = " OR ".join("handle:%s" % h for h, _, _ in BRANDS)
     existing = {n["handle"]: n for n in client.call(LOOKUP, {"q": query})["collections"]["nodes"]}
 
+    if args.publish:
+        publish_all(client, existing, args.apply)
+        return
+
     todo = [b for b in BRANDS if b[0] not in existing]
     for handle, title, vendor in BRANDS:
         if handle in existing:
@@ -152,11 +215,7 @@ def main():
         print("\n%sDry run — nothing written. Re-run with --apply.%s" % (DIM, RESET))
         return
 
-    publication = None
-    for node in client.call(ONLINE_STORE)["publications"]["nodes"]:
-        if (node.get("catalog") or {}).get("title") == "Online Store":
-            publication = node["id"]
-            break
+    publication = online_store_publication(client)
     if not publication:
         print("%sCould not find the Online Store publication; collections will be created "
               "unpublished.%s" % (YELLOW, RESET))
