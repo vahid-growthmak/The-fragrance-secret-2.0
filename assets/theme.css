@@ -1309,6 +1309,17 @@
       background: var(--ink)
     }
 
+    /* The category section is dark, so its heading and intro need light text.
+       Scoped to the section rather than .gender-head, since the rebuilt markup
+       uses .best-head for the heading row. */
+    .gender .sec-title {
+      color: var(--white)
+    }
+
+    .gender .sec-sub {
+      color: var(--muted)
+    }
+
     /* ── 6 · shop by category, landscape image cards ──────────────
        Title plus one descriptor line over the artwork, with an arrow that
        appears on hover. Deliberately no button: the whole card is the link. */
