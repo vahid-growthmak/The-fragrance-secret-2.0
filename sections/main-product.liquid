@@ -264,23 +264,6 @@
     </div>
   </section>
 
-  <!-- RELATED PRODUCTS -->
-  <section class="related">
-    <div class="related-inner">
-      <div class="related-head fade-up"><span class="label">Complete the Set</span><h2 class="sec-title">You May Also <em>Like</em></h2></div>
-      {%- assign related = product.metafields.custom.related.value | default: recommendations.products -%}
-      {%- if collection.products.size > 1 -%}
-        <div class="products-grid">
-          {%- for prod in collection.products limit: 4 -%}
-            {%- unless prod.id == product.id -%}{% render 'product-card', product: prod %}{%- endunless -%}
-          {%- endfor -%}
-        </div>
-      {%- else -%}
-        <div class="products-grid" data-render="products" data-count="4"></div>
-      {%- endif -%}
-    </div>
-  </section>
-
   <!-- MORE FROM THIS BRAND -->
   {%- liquid
     comment
@@ -326,6 +309,23 @@
     </div>
   </section>
   {%- endif -%}
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related">
+    <div class="related-inner">
+      <div class="related-head fade-up"><span class="label">Complete the Set</span><h2 class="sec-title">You May Also <em>Like</em></h2></div>
+      {%- assign related = product.metafields.custom.related.value | default: recommendations.products -%}
+      {%- if collection.products.size > 1 -%}
+        <div class="products-grid">
+          {%- for prod in collection.products limit: 4 -%}
+            {%- unless prod.id == product.id -%}{% render 'product-card', product: prod %}{%- endunless -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="products-grid" data-render="products" data-count="4"></div>
+      {%- endif -%}
+    </div>
+  </section>
 
   <!-- EXPLORE OTHER BRANDS -->
   {%- liquid
