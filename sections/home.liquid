@@ -360,7 +360,15 @@
         <p class="sec-sub">{{ section.settings.why_sub }}</p>
       {%- endif -%}
     </div>
-    <div class="why-grid">
+    {%- comment -%}
+      Column count follows the number of cards, so they always sit on one row
+      whether there are three, four or five of them.
+    {%- endcomment -%}
+    {%- assign why_count = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'why' -%}{%- assign why_count = why_count | plus: 1 -%}{%- endif -%}
+    {%- endfor -%}
+    <div class="why-grid why-grid-auto" style="--why-cols: {{ why_count | default: 4 }}">
       {%- for block in section.blocks -%}
         {%- if block.type != 'why' -%}{%- continue -%}{%- endif -%}
         <div class="why-card fade-up" {{ block.shopify_attributes }}>
