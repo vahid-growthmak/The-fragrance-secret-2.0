@@ -1,0 +1,161 @@
+{%- comment -%}
+  Structured data for the product page: Product, FAQPage and BreadcrumbList.
+
+  The catalogue upload stored a per-product FAQPage in custom.faq_schema, which
+  matches the FAQs rendered on the page, so that one is emitted as supplied
+  (falling back to building it from custom.faq).
+
+  Product schema is built here from live product data rather than the stored
+  custom.product_schema, because the stored copy carries a null price and a
+  hardcoded availability and image list — Google requires those to match what
+  the page actually shows, and they change with the catalogue.
+
+  Usage: {% render 'product-schema', product: product %}
+{%- endcomment -%}
+
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign currency = cart.currency.iso_code | default: shop.currency
+  assign product_url = shop.url | append: product.url
+  assign description = product.description | strip_html | strip | truncate: 900
+
+  assign rating_value = product.metafields.reviews.rating.value.rating
+  assign rating_count = product.metafields.reviews.rating_count.value | plus: 0
+
+  assign title_check = product.title | downcase
+  assign gender = ''
+  if title_check contains 'unisex'
+    assign gender = 'unisex'
+  elsif title_check contains 'for women' or title_check contains "women's"
+    assign gender = 'female'
+  elsif title_check contains 'for men' or title_check contains "men's"
+    assign gender = 'male'
+  endif
+-%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "@id": {{ product_url | append: '#product' | json }},
+  "name": {{ product.title | json }},
+  "url": {{ product_url | json }},
+  {%- if description != blank %}
+  "description": {{ description | json }},
+  {%- endif %}
+  "brand": { "@type": "Brand", "name": {{ product.vendor | default: shop.name | json }} },
+  {%- if product.type != blank %}
+  "category": {{ product.type | json }},
+  {%- endif %}
+  {%- if gender != blank %}
+  "audience": { "@type": "PeopleAudience", "suggestedGender": {{ gender | json }} },
+  {%- endif %}
+  {%- if variant.sku != blank %}
+  "sku": {{ variant.sku | json }},
+  {%- endif %}
+  {%- if variant.barcode != blank %}
+  "gtin": {{ variant.barcode | json }},
+  {%- endif %}
+  {%- if product.images.size > 0 %}
+  "image": [
+    {%- for image in product.images limit: 5 -%}
+      {%- assign src = image | image_url: width: 1600 | split: '//' | last | prepend: 'https://' -%}
+      {{ src | json }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  {%- endif %}
+  {%- if rating_count > 0 and rating_value != blank %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ rating_value | json }},
+    "reviewCount": {{ rating_count | json }}
+  },
+  {%- endif %}
+  {%- comment -%}
+    Offers are emitted only with a real price. This catalogue currently has
+    none, and a zero or null price makes the rich result invalid, so the block
+    starts appearing on its own once prices are set.
+  {%- endcomment -%}
+  {%- if product.price > 0 %}
+    {%- if product.price_min != product.price_max %}
+  "offers": {
+    "@type": "AggregateOffer",
+    "offerCount": {{ product.variants.size }},
+    "lowPrice": {{ product.price_min | divided_by: 100.0 | json }},
+    "highPrice": {{ product.price_max | divided_by: 100.0 | json }},
+    "priceCurrency": {{ currency | json }},
+    "availability": {% if product.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
+    "url": {{ product_url | json }},
+    "seller": { "@type": "Organization", "name": {{ shop.name | json }} }
+  },
+    {%- else %}
+  "offers": {
+    "@type": "Offer",
+    "url": {{ product_url | json }},
+    "priceCurrency": {{ currency | json }},
+    "price": {{ variant.price | default: product.price | divided_by: 100.0 | json }},
+    "availability": {% if product.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": { "@type": "Organization", "name": {{ shop.name | json }} }
+  },
+    {%- endif %}
+  {%- endif %}
+  "isPartOf": { "@id": {{ shop.url | append: '/#website' | json }} }
+}
+</script>
+
+{%- comment -%} FAQ: the uploaded schema when present, otherwise built from the same metafield the page renders {%- endcomment -%}
+{%- assign faq_schema = product.metafields.custom.faq_schema.value | default: product.metafields.custom.faq_schema -%}
+{%- if faq_schema != blank -%}
+  <script type="application/ld+json">{{ faq_schema }}</script>
+{%- else -%}
+  {%- assign faq_text = product.metafields.custom.faq.value | default: product.metafields.custom.faq -%}
+  {%- if faq_text != blank -%}
+    {%- assign faq_lines = faq_text | strip | newline_to_br | split: '<br />' -%}
+    {%- assign pair_count = 0 -%}
+    {%- for line in faq_lines -%}
+      {%- assign qa = line | split: ' :: ' -%}
+      {%- if qa.size >= 2 -%}{%- assign pair_count = pair_count | plus: 1 -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if pair_count > 0 -%}
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- assign written = 0 -%}
+          {%- for line in faq_lines -%}
+            {%- assign qa = line | split: ' :: ' -%}
+            {%- if qa.size >= 2 -%}
+              {%- assign written = written | plus: 1 -%}
+              {
+                "@type": "Question",
+                "name": {{ qa[0] | strip | json }},
+                "acceptedAnswer": { "@type": "Answer", "text": {{ qa[1] | strip | json }} }
+              }{%- unless written == pair_count -%},{%- endunless -%}
+            {%- endif -%}
+          {%- endfor -%}
+        ]
+      }
+      </script>
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": {{ product_url | append: '#breadcrumb' | json }},
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop.url | append: '/' | json }} },
+    { "@type": "ListItem", "position": 2, "name": "Perfumes", "item": {{ shop.url | append: '/collections/all' | json }} },
+    {%- if collection.title != blank and collection.url != blank %}
+    { "@type": "ListItem", "position": 3, "name": {{ collection.title | json }}, "item": {{ shop.url | append: collection.url | json }} },
+    { "@type": "ListItem", "position": 4, "name": {{ product.title | json }}, "item": {{ product_url | json }} }
+    {%- else %}
+    { "@type": "ListItem", "position": 3, "name": {{ product.title | json }}, "item": {{ product_url | json }} }
+    {%- endif %}
+  ]
+}
+</script>

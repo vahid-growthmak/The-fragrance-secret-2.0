@@ -441,6 +441,9 @@
     </div>
   </section>
 
+  {%- comment -%} Product + FAQPage + BreadcrumbList structured data {%- endcomment -%}
+  {% render 'product-schema', product: product %}
+
   <!-- STICKY ATC BAR -->
   <div class="sticky-atc" id="stickyatc">
     <div class="sticky-atc-inner">
