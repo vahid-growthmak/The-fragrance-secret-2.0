@@ -1,524 +1,438 @@
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <p class="hero-pretitle">Luxury Perfumes · UAE</p>
-        <h1 class="hero-h">Find The Scent That<br><em>Feels Truly Yours</em></h1>
-        <p class="hero-sub">Every fragrance tells a story, and the one you wear says everything about you. Explore the
-          best perfumes in UAE at The Fragrance Secrets — where authentic fragrances, premium perfume oils, and
-          long-lasting scents come together in one trusted destination built for fragrance lovers.</p>
-        <div class="hero-rating">
-          <div class="stars">
-            <span class="mi mi-f" aria-hidden="true">star</span>
-            <span class="mi mi-f" aria-hidden="true">star</span>
-            <span class="mi mi-f" aria-hidden="true">star</span>
-            <span class="mi mi-f" aria-hidden="true">star</span>
-            <span class="mi mi-f" aria-hidden="true">star</span>
-          </div>
-          <span>Rated 4.8/5 by 10,000+ Customers across UAE</span>
-        </div>
-        <div class="hero-ctas">
-          <button class="btn-g" onclick="document.getElementById('best').scrollIntoView({behavior:'smooth'})">
-            <span class="mi" aria-hidden="true">shopping_bag</span>
-            Shop Perfumes
-          </button>
-          <button class="btn-o" onclick="document.getElementById('best').scrollIntoView({behavior:'smooth'})">Explore
-            Bestsellers</button>
-        </div>
-        <div class="hero-trust">
-          <div class="ht-item"><span class="mi" aria-hidden="true">verified_user</span>100% Authentic — Only genuine fragrances</div>
-          <div class="ht-item"><span class="mi" aria-hidden="true">local_shipping</span>Free Delivery — UAE orders above AED 150</div>
-          <div class="ht-item"><span class="mi" aria-hidden="true">payments</span>Cash on Delivery — Convenient payment option</div>
-          <div class="ht-item"><span class="mi" aria-hidden="true">chat</span>WhatsApp Team — Daily, 10am to 7pm</div>
-        </div>
-      </div>
-      <div class="hero-img-wrap">
-        <img class="hero-img" src="{{ 'hero-roses.jpg' | asset_url }}"
-          alt="Luxury perfume bottle among fresh roses" onload="this.classList.add('loaded')" />
-      </div>
-    </section>
+{%- comment -%}
+  Homepage, rebuilt to the approved 13-section reference layout.
 
-    <!-- BRAND STRIP -->
-    <section class="brands" id="brands">
-      <div class="brands-inner">
-        <div class="brands-head fade-up">
-          <span class="label">Shop by Brand</span>
-          <h2 class="sec-title" style="font-size:1.9rem">Our Houses &amp; <em>47+ World Brands</em></h2>
-        </div>
-        <!-- Our Brands — elevated above resale A-Z -->
-        <div class="ourbrands">
-          <a href="/collections/own-brand" class="ob-card fade-up stagger-1">
-            <span class="ob-tag">Our Brand</span>
-            <span class="ob-name">Fragrance Secrets</span>
-            <span class="ob-sub">Signature in-house line</span>
-            <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
-          </a>
-          <a href="/collections/own-brand" class="ob-card fade-up stagger-2">
-            <span class="ob-tag">Our Brand</span>
-            <span class="ob-name">Secret Scents</span>
-            <span class="ob-sub">Everyday luxury, smart prices</span>
-            <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
-          </a>
-          <a href="/collections/own-brand" class="ob-card fade-up stagger-3">
-            <span class="ob-tag">Our Brand</span>
-            <span class="ob-name">Paris Collection</span>
-            <span class="ob-sub">French-inspired elegance</span>
-            <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
-          </a>
-        </div>
-        <!-- All Brands A-Z — verified resale -->
-        <div class="azbrands-head fade-up">
-          <span class="label" style="margin:0">All Brands A–Z</span>
-          <span class="az-note">Verified Resale</span>
-        </div>
-        {%- comment -%}
-          Brand marquee. Each brand's logo is that collection's image, so adding
-          an image in admin turns the name into a logo. Brands without one keep
-          their name, and the track is rendered twice for the seamless loop.
-        {%- endcomment -%}
-        {%- liquid
-          assign brand_handles = section.settings.brand_handles | split: ','
-          assign track_passes = '1,2' | split: ','
-        -%}
-        <div class="brand-track-wrap">
-          <div class="brand-track brand-track-liquid">
-            {%- for pass in track_passes -%}
-              {%- for raw_handle in brand_handles -%}
-                {%- assign brand_handle = raw_handle | strip -%}
-                {%- assign brand = collections[brand_handle] -%}
-                {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
-                {%- assign brand_name = brand.title | remove: ' Perfumes' -%}
-                <a class="brand-item{% if brand.image %} has-logo{% endif %}" href="{{ brand.url }}"
-                   {% if pass == '2' %}aria-hidden="true" tabindex="-1"{% endif %}>
-                  {%- if brand.image -%}
-                    <img src="{{ brand.image | image_url: width: 320 }}" alt="{{ brand_name | escape }}" loading="lazy">
-                  {%- else -%}
-                    {{ brand_name }}
-                  {%- endif -%}
-                </a>
-              {%- endfor -%}
-            {%- endfor -%}
-          </div>
-        </div>
-      </div>
-    </section>
+  Order: hero, trust bar, brands, best sellers, new arrivals, shop by category,
+  shop by scent family, shop by moment (lifestyle + climate), guides, instagram,
+  FAQ, why choose. The 10% welcome band is section 13 of the reference and is
+  already rendered sitewide above the footer by customer-login-cta, so it is not
+  duplicated here.
 
-<!-- BESTSELLERS -->
-    <section class="best" id="best">
-      <div class="best-inner">
-        <div class="best-head fade-up">
-          <div>
-            <span class="label">Most Popular</span>
-            <h2 class="sec-title">The Best Perfumes in UAE<br>Loved by <em>Our Customers</em></h2>
-          </div>
-          <a href="/collections/best-sellers" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
-        </div>
-        {%- if collections['featured'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['featured'].products limit: 8 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="8"></div>{%- endif -%}
-      </div>
-    </section>
+  Deliberately omitted from the reference: the review score, the "10,284 verified
+  reviews" count, the named testimonials and the hero rating line, all of which
+  are fabricated.
 
-    <!-- NEW ARRIVALS -->
-    <section class="best" id="new">
-      <div class="best-inner">
-        <div class="best-head fade-up">
-          <div>
-            <span class="label">New Arrivals</span>
-            <h2 class="sec-title">Premium Fragrances <em>Newly Added for You</em></h2>
-            <p class="sec-sub">Explore our fresh arrivals featuring new scents that feel unique, elegant, and memorable —
-              fragrances that match every mood, style, and occasion.</p>
-          </div>
-          <a href="/collections/new-arrivals" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
-        </div>
-        {%- if collections['new-arrivals'].products.size > 0 -%}<div class="products-grid">{%- for product in collections['new-arrivals'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="products-grid" data-render="products" data-count="4" data-from="4"></div>{%- endif -%}
-      </div>
-    </section>
+  Every card row resolves collections by handle and skips handles with no
+  matching collection, so a tile can never link to a page that does not exist.
+{%- endcomment -%}
 
-    <!-- SHOP BY PURPOSE -->
-    <section class="purpose" id="purpose">
-      <div class="purpose-inner">
-        <div class="purpose-head fade-up">
-          <span class="label">Shop by Occasion</span>
-          <h2 class="sec-title">Find the Perfect Fragrance<br><em>for Every Occasion</em></h2>
-          <p class="sec-sub center" style="margin:12px auto 0">Explore fragrances designed to complement everyday
-            routines, celebrations, special evenings, and moments worth remembering.</p>
-          <div style="text-align:center;margin-top:20px"><a href="/pages/occasions-gifts" class="see-all" style="display:inline-flex">Explore Occasions &amp; Gifts <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
-        </div>
-        <div class="purpose-grid">
-          <div class="purpose-card fade-up stagger-1" onclick="location.href='/collections/wedding'" style="cursor:pointer">
-            <img class="pc-img" src="{{ 'kit-gift.jpg' | asset_url }}"
-              alt="Wedding" />
-            <div class="pc-overlay"></div>
-            <div class="pc-content">
-              <div class="pc-title">For Weddings</div>
-              <div class="pc-sub">Elegant and unforgettable</div>
-              <span class="pc-btn">Shop Now <span class="mi" aria-hidden="true">arrow_forward</span></span>
-            </div>
-          </div>
-          <div class="purpose-card fade-up stagger-2" onclick="location.href='/collections/eid'" style="cursor:pointer">
-            <img class="pc-img" src="{{ 'ed-5.jpg' | asset_url }}"
-              alt="Celebrations" />
-            <div class="pc-overlay"></div>
-            <div class="pc-content">
-              <div class="pc-title">For Celebrations</div>
-              <div class="pc-sub">Bold and memorable</div>
-              <span class="pc-btn">Shop Now <span class="mi" aria-hidden="true">arrow_forward</span></span>
-            </div>
-          </div>
-          <div class="purpose-card fade-up stagger-3" onclick="location.href='/collections/date-night'" style="cursor:pointer">
-            <img class="pc-img" src="{{ 'prod-bouquet-oud.png' | asset_url }}"
-              alt="Date Night" />
-            <div class="pc-overlay"></div>
-            <div class="pc-content">
-              <div class="pc-title">For Date Night</div>
-              <div class="pc-sub">Warm and captivating</div>
-              <span class="pc-btn">Shop Now <span class="mi" aria-hidden="true">arrow_forward</span></span>
-            </div>
-          </div>
-        </div>
-        <div class="purpose-grid-bottom">
-          <div class="purpose-card-sm fade-up stagger-1" onclick="location.href='/collections/everyday-signature'" style="cursor:pointer">
-            <img class="pcs-img" src="{{ 'cat-unisex.jpg' | asset_url }}"
-              alt="Daily Wear" />
-            <div class="pcs-overlay"></div>
-            <div class="pcs-content">
-              <div class="pcs-title">For Everyday Wear</div>
-              <div class="pcs-sub">Fresh and effortless</div>
-            </div>
-          </div>
-          <div class="purpose-card-sm fade-up stagger-2" onclick="location.href='/collections/office-wear'" style="cursor:pointer">
-            <img class="pcs-img" src="{{ 'cat-men.jpg' | asset_url }}"
-              alt="The Office" />
-            <div class="pcs-overlay"></div>
-            <div class="pcs-content">
-              <div class="pcs-title">For The Office</div>
-              <div class="pcs-sub">Clean and confident</div>
-            </div>
-          </div>
-          <div class="purpose-card-sm fade-up stagger-3" onclick="location.href='/collections/travel-friendly'" style="cursor:pointer">
-            <img class="pcs-img" src="{{ 'travel_size_perfume.png' | asset_url }}" alt="Travel" />
-            <div class="pcs-overlay"></div>
-            <div class="pcs-content">
-              <div class="pcs-title">For Travel</div>
-              <div class="pcs-sub">Light and refreshing</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+{%- liquid
+  assign house_handles = section.settings.house_handles | split: ','
+  assign popular_handles = section.settings.popular_handles | split: ','
+  assign category_handles = section.settings.category_handles | split: ','
+  assign scent_handles = section.settings.scent_handles | split: ','
+  assign lifestyle_handles = section.settings.lifestyle_handles | split: ','
+  assign climate_handles = section.settings.climate_handles | split: ','
+-%}
 
-    <!-- TRUST STRIP -->
-    <div class="trust-strip">
-      <div class="trust-inner">
-        <div class="ts-item"><span class="mi" aria-hidden="true">verified_user</span>
-          <div><strong>100% Authentic</strong> — Verified sourcing</div>
-        </div>
-        <div class="ts-item"><span class="mi" aria-hidden="true">local_shipping</span>
-          <div><strong>Free Delivery</strong> above AED 150</div>
-        </div>
-        <div class="ts-item"><span class="mi" aria-hidden="true">payments</span>
-          <div><strong>Cash on Delivery</strong> available UAE-wide</div>
-        </div>
-        <div class="ts-item"><span class="mi" aria-hidden="true">chat</span>
-          <div><strong>WhatsApp Support</strong> — daily 10am–7pm</div>
-        </div>
+<!-- 1 · HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-pretitle">{{ section.settings.hero_eyebrow }}</p>
+    <h1 class="hero-h">{{ section.settings.hero_heading }}</h1>
+    <p class="hero-sub">{{ section.settings.hero_sub }}</p>
+    <div class="hero-ctas">
+      <a class="btn-g" href="{{ section.settings.hero_cta_url }}">
+        <span class="mi" aria-hidden="true">shopping_bag</span>{{ section.settings.hero_cta_label }}
+      </a>
+      <a class="hero-textlink" href="{{ section.settings.hero_link_url }}">{{ section.settings.hero_link_label }}
+        <span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <img class="hero-img" src="{{ 'hero-roses.jpg' | asset_url }}"
+      alt="Luxury perfume bottle among fresh roses" onload="this.classList.add('loaded')" />
+  </div>
+</section>
+
+<!-- 2 · PERSISTENT TRUST BAR -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="ts-item"><span class="mi" aria-hidden="true">verified_user</span>
+      <div><strong>100% Authentic</strong> — Verified sourcing</div>
+    </div>
+    <div class="ts-item"><span class="mi" aria-hidden="true">local_shipping</span>
+      <div><strong>Free Delivery</strong> above AED 150</div>
+    </div>
+    <div class="ts-item"><span class="mi" aria-hidden="true">payments</span>
+      <div><strong>Cash on Delivery</strong> available UAE-wide</div>
+    </div>
+    <div class="ts-item"><span class="mi" aria-hidden="true">chat</span>
+      <div><strong>WhatsApp Support</strong> — daily 10am–7pm</div>
+    </div>
+  </div>
+</div>
+
+<!-- 3 · FEATURED BRANDS -->
+<section class="brands" id="brands">
+  <div class="brands-inner">
+    <div class="best-head fade-up">
+      <div>
+        <span class="label">Shop by Brand</span>
+        <h2 class="sec-title" style="font-size:1.9rem">{{ section.settings.brands_heading }}</h2>
       </div>
+      <a href="/pages/brands" class="see-all">All Brands A–Z <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
 
-    <!-- SOURCING PROMISE — transparent dual-model (Goal R-1 / Competitor P1) -->
-    <section class="sourcing" id="sourcing">
-      <div class="sourcing-inner">
-        <div class="sourcing-head fade-up">
-          <span class="label">Our Sourcing Promise</span>
-          <h2 class="sec-title">Exactly Where <em>Each Scent Comes From</em></h2>
-          <p class="sec-sub">No vague claims. We run two clearly separated lines — our own perfume brands, and a
-            verified resale catalogue of genuine fragrances — so you always know what you're buying.</p>
-        </div>
-        <div class="sourcing-grid">
-          <div class="src-card fade-up stagger-1">
-            <span class="src-tag"><span class="mi" aria-hidden="true">workspace_premium</span>Our Own Brands</span>
-            <h3>Fragrance Secrets · Secret Scents · Paris Collection</h3>
-            <p>Our in-house lines, developed and manufactured to our own brand standards through certified UAE
-              manufacturing partners — original creations, never claimed as designer originals.</p>
-            <ul class="src-list">
-              <li><span class="mi" aria-hidden="true">check_circle</span>Made to our own standards in the UAE</li>
-              <li><span class="mi" aria-hidden="true">check_circle</span>Inspired-by lines are labelled as inspired — never as the original</li>
-              <li><span class="mi" aria-hidden="true">check_circle</span>Tuned for UAE heat — oud, attar and oriental profiles</li>
-            </ul>
-          </div>
-          <div class="src-card fade-up stagger-2">
-            <span class="src-tag"><span class="mi" aria-hidden="true">verified</span>Verified Resale</span>
-            <h3>Genuine Arabic-house &amp; designer fragrances</h3>
-            <p>Brand-name fragrances (Lattafa, Armaf, Swiss Arabian, Ahmed Al Maghribi, Rasasi and more) sourced
-              through verified wholesalers and market-authorised channels — 100% genuine, sealed stock.</p>
-            <ul class="src-list">
-              <li><span class="mi" aria-hidden="true">check_circle</span>Sourced via verified wholesalers — authenticity guaranteed</li>
-              <li><span class="mi" aria-hidden="true">check_circle</span>We are <em>not</em> the official distributor for designer houses</li>
-              <li><span class="mi" aria-hidden="true">check_circle</span>Backed by a 7-day easy-returns policy</li>
-            </ul>
-          </div>
-        </div>
-        <p class="sourcing-note fade-up">Have a question about a specific product's sourcing?
-          <strong>Message us on WhatsApp (daily 10am–7pm)</strong> — a real person will tell you exactly where it
-          comes from before you buy.</p>
+    {%- comment -%} Our own houses, elevated above the resale A-Z. {%- endcomment -%}
+    <div class="ourbrands">
+      {%- for raw_handle in house_handles -%}
+        {%- assign house_handle = raw_handle | strip -%}
+        {%- assign house = collections[house_handle] -%}
+        {%- if house.handle == blank -%}{%- continue -%}{%- endif -%}
+        {%- assign house_name = house.title | remove: ' Perfumes' -%}
+        <a href="{{ house.url }}" class="ob-card fade-up">
+          <span class="ob-tag">Our Brand</span>
+          <span class="ob-name">{{ house_name }}</span>
+          <span class="ob-sub">{{ house.description | strip_html | truncatewords: 6 }}</span>
+          <span class="ob-go">Shop the house <span class="mi" aria-hidden="true">arrow_forward</span></span>
+        </a>
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} Most-loved houses, then the full A-Z on the brands hub. {%- endcomment -%}
+    <div class="azbrands-head fade-up">
+      <span class="label" style="margin:0">Most Loved Houses</span>
+      <span class="az-note">Verified Resale</span>
+    </div>
+    <div class="brand-cloud brand-cloud-row fade-up">
+      {%- for raw_handle in popular_handles -%}
+        {%- assign popular_handle = raw_handle | strip -%}
+        {%- assign brand = collections[popular_handle] -%}
+        {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
+        <a class="brand-chip" href="{{ brand.url }}">
+          {{ brand.title | remove: ' Perfumes' }}
+          {%- if brand.products_count > 0 -%}<span class="brand-chip-n">{{ brand.products_count }}</span>{%- endif -%}
+        </a>
+      {%- endfor -%}
+      <a class="brand-chip brand-chip-all" href="/pages/brands">View all brands
+        <span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · BEST SELLERS -->
+<section class="best" id="best">
+  <div class="best-inner">
+    <div class="best-head fade-up">
+      <div>
+        <span class="label">Most Popular</span>
+        <h2 class="sec-title">The Best Perfumes in UAE<br>Loved by <em>Our Customers</em></h2>
       </div>
-    </section>
-
-        <!-- SHOP BY GENDER -->
-    <section class="gender">
-      <div class="gender-inner">
-        <div class="gender-head fade-up">
-          <span class="label">Shop by Collection</span>
-          <h2 class="sec-title">A Collection for <em>Every Preference</em></h2>
-          <p class="sec-sub center" style="margin:12px auto 0">From authentic Arabic perfumes to refined unisex
-            fragrances and timeless attar oils, giving you more ways to express your personal fragrance style.</p>
-        </div>
-        <div class="gender-grid">
-          <div class="g-card fade-up stagger-1">
-            <img class="gc-img" src="{{ 'men_fragrance.png' | asset_url }}" alt="For Men" />
-            <div class="gc-overlay"></div>
-            <div class="gc-content">
-              <div class="gc-title">For Men</div>
-              <div class="gc-count">84 Fragrances</div><span class="gc-btn">Explore</span>
-            </div>
-          </div>
-          <div class="g-card fade-up stagger-2">
-            <img class="gc-img" src="{{ 'women_fragrance.png' | asset_url }}" alt="For Women" />
-            <div class="gc-overlay"></div>
-            <div class="gc-content">
-              <div class="gc-title">For Women</div>
-              <div class="gc-count">72 Fragrances</div><span class="gc-btn">Explore</span>
-            </div>
-          </div>
-          <div class="g-card fade-up stagger-3">
-            <img class="gc-img" src="{{ 'unisex_fragrance.png' | asset_url }}" alt="Unisex" />
-            <div class="gc-overlay"></div>
-            <div class="gc-content">
-              <div class="gc-title">Unisex</div>
-              <div class="gc-count">46 Fragrances</div><span class="gc-btn">Explore</span>
-            </div>
-          </div>
-          <div class="g-card fade-up stagger-4">
-            <img class="gc-img" src="{{ 'kids_fragrance.png' | asset_url }}" alt="Kids" />
-            <div class="gc-overlay"></div>
-            <div class="gc-content">
-              <div class="gc-title">Kids Collection</div>
-              <div class="gc-count">16 Fragrances</div><span class="gc-btn">Explore</span>
-            </div>
-          </div>
-        </div>
+      <a href="/collections/best-sellers" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    {%- assign bestsellers = collections['best-sellers'] -%}
+    {%- if bestsellers.products.size == 0 -%}{%- assign bestsellers = collections['featured'] -%}{%- endif -%}
+    {%- if bestsellers.products.size > 0 -%}
+      <div class="products-grid">
+        {%- for product in bestsellers.products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
       </div>
-    </section>
+    {%- endif -%}
+  </div>
+</section>
 
-    <!-- GIFT SETS (featured) -->
-    <section class="feat-prod">
-      <div class="feat-prod-inner">
-        <div class="best-head fade-up" style="margin-bottom:34px">
-          <div>
-            <span class="label">Gift Sets</span>
-            <h2 class="sec-title" style="font-size:2.2rem">Featured <em>Gift Set</em></h2>
+<!-- 5 · NEW ARRIVALS -->
+<section class="best" id="new">
+  <div class="best-inner">
+    <div class="best-head fade-up">
+      <div>
+        <span class="label">New Arrivals</span>
+        <h2 class="sec-title">Premium Fragrances <em>Newly Added for You</em></h2>
+        <p class="sec-sub">Explore our fresh arrivals featuring new scents that feel unique, elegant, and memorable —
+          fragrances that match every mood, style, and occasion.</p>
+      </div>
+      <a href="/collections/new-arrivals" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    {%- if collections['new-arrivals'].products.size > 0 -%}
+      <div class="products-grid">
+        {%- for product in collections['new-arrivals'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<!-- 6 · SHOP BY CATEGORY -->
+<section class="gender" id="category">
+  <div class="gender-inner">
+    <div class="best-head fade-up">
+      <div>
+        <span class="label">Shop by Category</span>
+        <h2 class="sec-title">Start With <em>Who It's For</em></h2>
+        <p class="sec-sub">The fastest way in. Most shoppers know the person before the perfume, so we lead with it.</p>
+      </div>
+      <a href="/collections" class="see-all">Explore All Categories <span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="gender-grid six">
+      {%- for raw_handle in category_handles -%}
+        {%- assign category_handle = raw_handle | strip -%}
+        {%- assign category = collections[category_handle] -%}
+        {%- if category.handle == blank -%}{%- continue -%}{%- endif -%}
+        {%- assign category_image = category.image | default: category.products.first.featured_image -%}
+        <a class="g-card fade-up" href="{{ category.url }}">
+          {%- if category_image -%}
+            <img class="gc-img" src="{{ category_image | image_url: width: 600 }}"
+                 alt="{{ category.title | escape }}" loading="lazy" />
+          {%- endif -%}
+          <div class="gc-overlay"></div>
+          <div class="gc-content">
+            <div class="gc-title">{{ category.title | remove: ' Perfumes' }}</div>
+            {%- if category.products_count > 0 -%}
+              <div class="gc-count">{{ category.products_count }} Fragrance{% if category.products_count != 1 %}s{% endif %}</div>
+            {%- endif -%}
+            <span class="gc-btn">Explore</span>
           </div>
-          <a href="/pages/gift-sets" class="see-all">All Gift Sets &amp; Kits <span class="mi" aria-hidden="true">arrow_forward</span></a>
-        </div>
-        <div class="fp-split">
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
 
-          <!-- LEFT: GALLERY -->
-          <div class="fp-gallery">
-            <div class="fp-main-wrap">
-              <img id="fp-main-img" src="{{ '14.webp' | asset_url }}" alt="Luxury Oud Perfume Trio" />
-            </div>
-            <div class="fp-thumbs">
-              <div class="fp-thumb active" onclick="swapFpImg(this, '14.webp')">
-                <img src="{{ '14.webp' | asset_url }}" alt="Thumbnail 1" />
-              </div>
-              <div class="fp-thumb" onclick="swapFpImg(this, '15.webp')">
-                <img src="{{ '15.webp' | asset_url }}" alt="Thumbnail 2" />
-              </div>
-            </div>
+<!-- 7 · SHOP BY SCENT FAMILY -->
+<section class="scent-section" id="scent-family">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <span class="label">Shop by Scent Family</span>
+      <h2 class="sec-title">Find Your <em>Signature Note</em></h2>
+      <p class="sec-sub">Don't know the name, but you know what you love. Pick the family that speaks to you.</p>
+    </div>
+    <div class="scent-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'scent' -%}{%- continue -%}{%- endif -%}
+        {%- assign scent = collections[block.settings.handle] -%}
+        {%- if scent.handle == blank -%}{%- continue -%}{%- endif -%}
+        <a class="scent-card fade-up" href="{{ scent.url }}" {{ block.shopify_attributes }}>
+          <span class="scent-ic"><span class="mi" aria-hidden="true">{{ block.settings.icon }}</span></span>
+          <h3>{{ block.settings.title | default: scent.title }}</h3>
+          <p>{{ block.settings.sub }}</p>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- 8 · SHOP BY MOMENT -->
+<section class="moment-section" id="moment">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <span class="label">Shop by Moment</span>
+      <h2 class="sec-title" style="color:var(--white)">Perfume For <em>Where You're Headed</em></h2>
+      <p class="sec-sub">Match a scent to the moment or the weather — two more ways in for shoppers who don't know names.</p>
+    </div>
+    <div class="moment-wrap">
+      {%- comment -%} Two columns: lifestyle and climate, six tiles each. {%- endcomment -%}
+      {%- assign moment_cols = 'lifestyle,climate' | split: ',' -%}
+      {%- for col in moment_cols -%}
+        {%- if col == 'lifestyle' -%}
+          {%- assign col_handles = lifestyle_handles -%}
+          {%- assign col_title = 'By Lifestyle' -%}
+          {%- assign col_lead = 'Dress your scent for the occasion.' -%}
+          {%- assign col_all_label = 'All lifestyles' -%}
+          {%- assign col_all_url = '/pages/shop-by-lifestyle' -%}
+        {%- else -%}
+          {%- assign col_handles = climate_handles -%}
+          {%- assign col_title = 'By Climate' -%}
+          {%- assign col_lead = 'Built for UAE heat, and beyond.' -%}
+          {%- assign col_all_label = 'All climates' -%}
+          {%- assign col_all_url = '/pages/shop-by-weather' -%}
+        {%- endif -%}
+        <div class="moment-col">
+          <h3 class="moment-title">{{ col_title }}</h3>
+          <p class="moment-lead">{{ col_lead }}</p>
+          <div class="moment-tiles">
+            {%- for raw_handle in col_handles -%}
+              {%- assign moment_handle = raw_handle | strip -%}
+              {%- assign moment = collections[moment_handle] -%}
+              {%- if moment.handle == blank -%}{%- continue -%}{%- endif -%}
+              {%- assign moment_image = moment.image | default: moment.products.first.featured_image -%}
+              <a class="moment-tile" href="{{ moment.url }}">
+                {%- if moment_image -%}
+                  <img src="{{ moment_image | image_url: width: 400 }}"
+                       alt="{{ moment.title | escape }}" loading="lazy">
+                {%- endif -%}
+                <span>{{ moment.title | remove: ' Perfumes' }}</span>
+              </a>
+            {%- endfor -%}
           </div>
-
-          <!-- RIGHT: DETAILS -->
-          <div class="fp-details">
-            <div class="fp-brand">FRAGRANCE SECRETS</div>
-            <h2 class="fp-title">Luxury Oud Perfume Trio - 3 Bestselling Long-Lasting Fragrances (Unisex)</h2>
-            <div class="fp-price-block">
-              <span class="fp-price">199.00 AED</span>
-              <span class="fp-compare">600.00 AED</span>
-              <span class="fp-badge">On sale</span>
-            </div>
-            <p class="fp-tax">Tax included.</p>
-
-            <hr class="fp-divider">
-
-            <div class="fp-form">
-              <label class="fp-qty-label">Quantity</label>
-              <div class="fp-qty-row">
-                <div class="fp-qty-wrap">
-                  <button onclick="changeFpQty(-1)">−</button>
-                  <input type="text" id="fp-qty" value="1" readonly />
-                  <button onclick="changeFpQty(1)">+</button>
-                </div>
-                <span class="mi" aria-hidden="true">share</span>
-              </div>
-
-              <button class="fp-btn-add" onclick="location.href='/collections/all'">
-                Add to cart
-                <span class="mi" aria-hidden="true">arrow_outward</span>
-              </button>
-
-              <button class="fp-btn-buy" onclick="location.href='/collections/all'">
-                Buy with <span style="font-family:sans-serif;font-weight:600"><span style="color:#4285F4">G</span> Pay</span>
-              </button>
-
-              <a href="#" class="fp-link-muted">More payment options</a>
-            </div>
-
-            <a href="/collections/all" class="fp-link-bold">View full details</a>
-          </div>
-
+          <a class="see-all moment-all" href="{{ col_all_url }}">{{ col_all_label }}
+            <span class="mi" aria-hidden="true">arrow_forward</span></a>
         </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- 9 · GUIDES -->
+<section class="blog" id="blog">
+  <div class="blog-inner">
+    <div class="blog-head fade-up">
+      <div>
+        <span class="label">Know Before You Buy</span>
+        <h2 class="sec-title">Fragrance Insights &amp; <em>Expert Guides</em></h2>
       </div>
-    </section>
-
-    <!-- DISCOVERY KITS -->
-    <section class="best" id="kits">
-      <div class="best-inner">
-        <div class="best-head fade-up">
-          <div>
-            <span class="label">New · Low Commitment</span>
-            <h2 class="sec-title">Discovery <em>Kits</em></h2>
-            <p class="sec-sub">Sample our bestsellers before committing to a full bottle — the easiest way to find your
-              signature scent, and a perfect little gift.</p>
-          </div>
-          <a href="/pages/gift-sets" class="see-all">View All Kits <span class="mi" aria-hidden="true">arrow_forward</span></a>
-        </div>
-        <div class="products-grid" data-render="kits"></div>
+      <a href="/blogs/journal" class="see-all">All Articles <span class="mi" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    {%- if blogs['journal'].articles.size > 0 -%}
+      <div class="blog-grid">
+        {%- for article in blogs['journal'].articles limit: 3 -%}
+          <a class="bl-card" href="{{ article.url }}">
+            <div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>
+            {% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}
+            <div class="bl-title">{{ article.title }}</div>
+            <div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div>
+            <div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div>
+          </a>
+        {%- endfor -%}
       </div>
-    </section>
+    {%- endif -%}
+  </div>
+</section>
 
-    <!-- BLOG -->
-    <section class="blog" id="blog">
-      <div class="blog-inner">
-        <div class="blog-head fade-up">
-          <div>
-            <span class="label">Know Before You Buy</span>
-            <h2 class="sec-title">Fragrance Insights & <em>Expert Guides</em></h2>
-          </div>
-          <a href="/blogs/journal" class="see-all">All Articles <span class="mi" aria-hidden="true">arrow_forward</span></a>
-        </div>
-        {%- if blogs['journal'].articles.size > 0 -%}<div class="blog-grid">{%- for article in blogs['journal'].articles limit: 6 -%}<a class="bl-card" href="{{ article.url }}"><div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>{% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}<div class="bl-title">{{ article.title }}</div><div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div><div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div></a>{%- endfor -%}</div>{%- else -%}<div class="blog-grid" data-render="blogs"></div>{%- endif -%}
-      </div>
-    </section>
+<!-- 10 · INSTAGRAM -->
+<section class="ugc">
+  <div class="ugc-inner">
+    <div class="ugc-head fade-up">
+      <span class="label">Insta Shop</span>
+      <h2 class="sec-title">Real People. <em>Real Scents.</em></h2>
+      <p class="sec-sub center" style="margin:8px auto 0">Tag us @thefragrancesecrets to be featured</p>
+    </div>
+    <div class="ugc-grid" data-render="ugc"></div>
+  </div>
+</section>
 
-    <!-- REVIEWS -->
-    <section class="reviews">
-      <div class="reviews-inner">
-        <div class="reviews-head fade-up">
-          <span class="label">What Customers Say</span>
-          <h2 class="sec-title">More Than Fragrance<br><em>A Trusted Experience</em></h2>
-        </div>
-        <div class="rv-summary fade-up">
-          <div class="rv-big">4.8</div>
-          <div class="rv-details">
-            <div class="stars">
-              <span class="mi mi-f" aria-hidden="true">star</span>
-              <span class="mi mi-f" aria-hidden="true">star</span>
-              <span class="mi mi-f" aria-hidden="true">star</span>
-              <span class="mi mi-f" aria-hidden="true">star</span>
-              <span class="mi mi-f" aria-hidden="true">star</span>
-            </div>
-            <p>Based on 10,284 verified reviews</p>
-          </div>
-        </div>
-        <div class="rv-grid" data-render="reviews"></div>
-      </div>
-    </section>
+<!-- 11 · FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-head fade-up">
+      <span class="label">Your Questions, Answered</span>
+      <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list fade-up">
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'faq' -%}{%- continue -%}{%- endif -%}
+        <details class="faq-item" {{ block.shopify_attributes }}>
+          <summary class="faq-q">{{ block.settings.question }}<span class="mi" aria-hidden="true">add</span></summary>
+          <div class="faq-a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
 
-    <!-- UGC -->
-    <section class="ugc">
-      <div class="ugc-inner">
-        <div class="ugc-head fade-up">
-          <span class="label">Insta Shop</span>
-          <h2 class="sec-title">Real People. <em>Real Scents.</em></h2>
-          <p class="sec-sub center" style="margin:8px auto 0">Tag us @thefragrancesecrets to be featured</p>
+<!-- 12 · WHY CHOOSE THE FRAGRANCE SECRETS -->
+<section class="section why-section">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <span class="label">Why Shop With Us</span>
+      <h2 class="sec-title">Why Choose <em>The Fragrance Secrets</em></h2>
+      {%- if section.settings.why_sub != blank -%}
+        <p class="sec-sub">{{ section.settings.why_sub }}</p>
+      {%- endif -%}
+    </div>
+    <div class="why-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'why' -%}{%- continue -%}{%- endif -%}
+        <div class="why-card fade-up" {{ block.shopify_attributes }}>
+          <span class="mi" aria-hidden="true">{{ block.settings.icon }}</span>
+          <h3>{{ block.settings.title }}</h3>
+          {%- if block.settings.body != blank -%}<p>{{ block.settings.body }}</p>{%- endif -%}
         </div>
-        <div class="ugc-grid" data-render="ugc"></div>
-      </div>
-    </section>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
 
-    <!-- EMAIL + WHATSAPP CAPTURE -->
-    <section class="final-cta" id="capture">
-      <div class="fca-inner fade-up">
-        <span class="label" style="color:var(--gold)">Start Your Journey</span>
-        <h2 class="sec-title" style="color:var(--white)">Discover Your <em>Signature Scent</em> Today</h2>
-        <p class="sec-sub" style="margin:12px auto 0">Choose scents that match your identity, express your personality,
-          and leave a lasting impression every single day. Subscribe for 10% off your first order, early access to new
-          drops, and scent tips made for UAE heat.</p>
-        <div class="capture-form">
-          <input type="email" placeholder="Your email address" aria-label="Email address" />
-          <button class="btn-g">Get My 10% Code</button>
-        </div>
-        <label class="wa-optin" style="justify-content:center;max-width:460px;margin:16px auto 0;text-align:left">
-          <input type="checkbox" checked />
-          <span>Also send my deals on <strong>WhatsApp</strong> — order updates &amp; exclusive offers, the way the UAE
-            shops. Opt out anytime.</span>
-        </label>
-        <p class="news-fineprint" style="text-align:center;margin-top:10px">No spam, ever. The 10% offer is honoured on
-          your first order.</p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-      <div class="faq-inner">
-        <div class="faq-head fade-up">
-          <span class="label">Your Questions, Answered</span>
-          <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
-        </div>
-        <div class="faq-list fade-up">
-          <details class="faq-item">
-            <summary class="faq-q">What are the best luxury perfumes to buy online in UAE?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully
-              selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we
-              offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion.</div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">How do I choose the right perfume for my personality?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">Choosing the right perfume depends on your personal style, mood, and fragrance
-              preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you
-              discover fragrances that match your personality and create a lasting impression wherever you go.</div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">Where can I buy authentic perfumes online in Dubai?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a
-              trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes
-              designed for those who value originality, luxury, and a seamless online shopping experience.</div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">Which perfumes last longer in UAE weather conditions?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and
-              woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium
-              fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment.</div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">Why should I buy perfumes from The Fragrance Secrets?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers
-              who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a
-              focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable,
-              and timeless.</div>
-          </details>
-        </div>
-      </div>
-    </section>
+{%- comment -%}
+  Section 13 of the reference, the 10% welcome band, is rendered sitewide above
+  the footer by sections/customer-login-cta.liquid, so it is not repeated here.
+{%- endcomment -%}
 
 {% schema %}
 {
   "name": "Home",
   "settings": [
-    { "type": "header", "content": "Brand marquee" },
-    { "type": "textarea", "id": "brand_handles", "label": "Brand collections (comma separated handles)",
-      "info": "Each brand shows its collection image as a logo, or its name when the collection has no image.",
-      "default": "ahmed-al-maghribi, al-haramain, alezz-oud, amouage, arabiyat-prestige, armaf, azzaro, billie-eilish, boadicea-the-victorious, borntostandout, calvin-klein, chanel, cristiano-ronaldo, davidoff, dior, dolce-and-gabbana, elan-dor, ex-nihilo, farzanas-collection, fragrance-secrets, french-avenue, giorgio-armani, hevora, house-of-morais, hugo-boss, ibrahim-al-qurashi, jay-marley, jean-paul-gaultier, khaleej-pride, la-parfum-galleria, la-parfum-galleria-exclusif, lattafa, mancera, marxzelle, niche-profumo, orchid, paris-collection, parisbelle, prada, rafaan, ralph-lauren, rasasi, rayhaan, reef, riiffs, roberto-cavalli, sabrina-carpenter, swiss-arabian, yves-saint-laurent" }
+    { "type": "header", "content": "1 · Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Luxury Perfumes · UAE" },
+    { "type": "html", "id": "hero_heading", "label": "Heading",
+      "default": "Find The Scent That<br><em>Feels Truly Yours</em>" },
+    { "type": "textarea", "id": "hero_sub", "label": "Subheading",
+      "default": "Authentic designer, Arabic and oud fragrances, curated in one trusted UAE destination." },
+    { "type": "text", "id": "hero_cta_label", "label": "Button label", "default": "Shop Perfumes" },
+    { "type": "url", "id": "hero_cta_url", "label": "Button link" },
+    { "type": "text", "id": "hero_link_label", "label": "Text link label", "default": "or explore best sellers" },
+    { "type": "url", "id": "hero_link_url", "label": "Text link" },
+
+    { "type": "header", "content": "3 · Brands" },
+    { "type": "html", "id": "brands_heading", "label": "Heading",
+      "default": "Our Houses &amp; <em>World Brands</em>" },
+    { "type": "textarea", "id": "house_handles", "label": "Our own houses (comma separated handles)",
+      "info": "Handles with no matching collection are skipped. 'secret-scents' has no collection yet — add it here once it does.",
+      "default": "fragrance-secrets, paris-collection" },
+    { "type": "textarea", "id": "popular_handles", "label": "Most loved houses (comma separated handles)",
+      "default": "lattafa, rasasi, armaf, swiss-arabian, ahmed-al-maghribi, al-haramain, amouage, ibrahim-al-qurashi" },
+
+    { "type": "header", "content": "6 · Shop by category" },
+    { "type": "textarea", "id": "category_handles", "label": "Category collections (comma separated handles)",
+      "default": "mens, womens, unisex, kids, arabic, perfume-oil" },
+
+    { "type": "header", "content": "8 · Shop by moment" },
+    { "type": "textarea", "id": "lifestyle_handles", "label": "Lifestyle collections (comma separated handles)",
+      "default": "office-wear, date-night, wedding, gym, travel-friendly, dinner-evening" },
+    { "type": "textarea", "id": "climate_handles", "label": "Climate collections (comma separated handles)",
+      "default": "summer-wear, winter-holiday, desert-climate, humid-weather, tropical-climate, rainy-day" },
+
+    { "type": "header", "content": "12 · Why choose" },
+    { "type": "textarea", "id": "why_sub", "label": "Intro",
+      "info": "The reference marks this section as a copy placeholder pending the approved homepage document. The cards below default to the wording already signed off in the collection documents." }
   ],
-  "presets": [ { "name": "Home" } ]
+  "blocks": [
+    {
+      "type": "scent",
+      "name": "Scent family",
+      "settings": [
+        { "type": "text", "id": "handle", "label": "Collection handle" },
+        { "type": "text", "id": "title", "label": "Title", "info": "Defaults to the collection title." },
+        { "type": "text", "id": "sub", "label": "Description" },
+        { "type": "text", "id": "icon", "label": "Material icon name", "default": "spa" }
+      ]
+    },
+    {
+      "type": "why",
+      "name": "Why choose card",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Material icon name", "default": "verified" },
+        { "type": "text", "id": "title", "label": "Heading" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home",
+      "blocks": [
+        { "type": "scent", "settings": { "handle": "oud-woody", "title": "Oud & Woody", "sub": "Deep, warm, resinous", "icon": "park" } },
+        { "type": "scent", "settings": { "handle": "fresh-citrus", "title": "Fresh & Citrus", "sub": "Bright, clean, energetic", "icon": "water_drop" } },
+        { "type": "scent", "settings": { "handle": "floral-rose", "title": "Floral & Rose", "sub": "Elegant, soft, romantic", "icon": "local_florist" } },
+        { "type": "scent", "settings": { "handle": "sweet-gourmand", "title": "Sweet & Gourmand", "sub": "Rich, indulgent, cosy", "icon": "cake" } },
+        { "type": "scent", "settings": { "handle": "spicy-oriental", "title": "Spicy & Oriental", "sub": "Bold, warm, exotic", "icon": "local_fire_department" } },
+        { "type": "why", "settings": { "icon": "verified", "title": "100% Authentic Perfumes", "body": "Every fragrance is genuine and sourced through trusted suppliers, checked before it ships." } },
+        { "type": "why", "settings": { "icon": "local_shipping", "title": "Fast UAE Delivery", "body": "Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates." } },
+        { "type": "why", "settings": { "icon": "lock", "title": "Secure Payments", "body": "Pay safely by card, wallet or cash on delivery, whichever suits you best." } },
+        { "type": "why", "settings": { "icon": "diamond", "title": "Premium Fragrance Collection", "body": "Designer houses and Arabian perfumery, side by side in one place." } },
+        { "type": "faq", "settings": { "question": "What are the best luxury perfumes to buy online in UAE?", "answer": "At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion." } },
+        { "type": "faq", "settings": { "question": "How do I choose the right perfume for my personality?", "answer": "Choosing the right perfume depends on your personal style, mood, and fragrance preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you discover fragrances that match your personality and create a lasting impression wherever you go." } },
+        { "type": "faq", "settings": { "question": "Where can I buy authentic perfumes online in Dubai?", "answer": "If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes designed for those who value originality, luxury, and a seamless online shopping experience." } },
+        { "type": "faq", "settings": { "question": "Which perfumes last longer in UAE weather conditions?", "answer": "Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment." } },
+        { "type": "faq", "settings": { "question": "Why should I buy perfumes from The Fragrance Secrets?", "answer": "The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable, and timeless." } }
+      ]
+    }
+  ]
 }
 {% endschema %}

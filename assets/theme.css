@@ -1071,9 +1071,226 @@
     }
 
     /* GENDER SECTION */
+    /* ══ HOMEPAGE, 2026 REFERENCE LAYOUT ═══════════════════════════
+       Sections added by the homepage rebuild: the hero text link, the
+       most-loved-houses chip row, a six-up category grid, shop by scent
+       family, and shop by moment. Everything else reuses existing classes. */
+
+    /* hero: one primary button plus a quiet text link */
+    .hero-textlink {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      color: var(--muted);
+      transition: color .25s
+    }
+
+    .hero-textlink:hover {
+      color: var(--gold)
+    }
+
+    .hero-textlink .mi {
+      font-size: 17px;
+      transition: transform .25s var(--snap)
+    }
+
+    .hero-textlink:hover .mi {
+      transform: translateX(4px)
+    }
+
+    /* most-loved houses: chips in a row rather than the auto-fill grid */
+    .brand-cloud-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .brand-cloud-row .brand-chip {
+      justify-content: flex-start;
+      gap: 10px
+    }
+
+    .brand-chip-all {
+      background: var(--ink) !important;
+      border-color: var(--ink) !important;
+      color: var(--gold) !important
+    }
+
+    .brand-chip-all .mi {
+      font-size: 16px;
+      color: var(--gold)
+    }
+
+    /* ── 7 · shop by scent family ── */
+    .scent-section {
+      padding: 80px 0;
+      background: var(--cream)
+    }
+
+    .scent-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px
+    }
+
+    .scent-card {
+      background: var(--white);
+      border: 1px solid rgba(13, 10, 6, .1);
+      border-radius: 14px;
+      padding: 26px 18px;
+      text-align: center;
+      transition: transform .3s var(--snap), border-color .3s, box-shadow .3s
+    }
+
+    .scent-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 16px 34px -20px rgba(13, 10, 6, .4)
+    }
+
+    .scent-ic {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: var(--cream-dk);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s
+    }
+
+    .scent-ic .mi {
+      font-size: 24px;
+      color: var(--gold-dk)
+    }
+
+    .scent-card:hover .scent-ic {
+      background: var(--gold)
+    }
+
+    .scent-card:hover .scent-ic .mi {
+      color: var(--ink)
+    }
+
+    .scent-card h3 {
+      font-family: var(--fd);
+      font-size: 1.24rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 5px;
+      line-height: 1.1
+    }
+
+    .scent-card p {
+      font-size: .74rem;
+      color: var(--warm);
+      line-height: 1.5
+    }
+
+    /* ── 8 · shop by moment (lifestyle + climate) ── */
+    .moment-section {
+      padding: 80px 0;
+      background: var(--ink)
+    }
+
+    .moment-section .sec-title {
+      color: var(--white)
+    }
+
+    .moment-section .sec-sub {
+      color: var(--muted)
+    }
+
+    .moment-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px
+    }
+
+    .moment-title {
+      font-family: var(--fd);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px
+    }
+
+    .moment-lead {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 20px
+    }
+
+    .moment-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px
+    }
+
+    /* No collection carries an image yet, so tiles fall back to the first
+       product photo and, failing that, to this gradient — imageless tiles
+       still read as deliberate rather than broken. */
+    .moment-tile {
+      position: relative;
+      aspect-ratio: 1/1;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 168, 76, .16);
+      background: linear-gradient(150deg, #2A2118, #171310);
+      transition: transform .3s var(--snap), border-color .3s
+    }
+
+    .moment-tile:hover {
+      transform: translateY(-3px);
+      border-color: rgba(201, 168, 76, .5)
+    }
+
+    .moment-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .moment-tile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13, 10, 6, .05) 40%, rgba(13, 10, 6, .82))
+    }
+
+    .moment-tile span {
+      position: absolute;
+      left: 12px;
+      bottom: 11px;
+      z-index: 1;
+      font-family: var(--fd);
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--white)
+    }
+
+    .moment-all {
+      margin-top: 20px;
+      display: inline-flex
+    }
+
+    /* ── 12 · why choose ── */
+    .why-section {
+      background: var(--cream-dk)
+    }
+
     .gender {
       padding: 80px 0;
       background: var(--ink)
+    }
+
+    /* six category cards, 3 across */
+    .gender-grid.six {
+      grid-template-columns: repeat(3, 1fr)
     }
 
     .gender-inner {
@@ -1102,6 +1319,7 @@
     }
 
     .g-card {
+      background: linear-gradient(150deg, #2A2118, #171310);
       position: relative;
       border-radius: 4px;
       overflow: hidden;
@@ -2685,6 +2903,18 @@
     }
 
     @media(max-width:600px) {
+      .scent-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .scent-card {
+        padding: 20px 14px
+      }
+
+      .moment-tiles {
+        gap: 8px
+      }
+
       .pdp-hero {
         padding: 14px 0
       }
@@ -3846,6 +4076,15 @@
     }
 
     @media(max-width:900px) {
+      .moment-wrap {
+        grid-template-columns: 1fr;
+        gap: 34px
+      }
+
+      .gender-grid.six {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
       .cta-band.member-band {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -4479,6 +4718,10 @@ html body .jdgm-form select {
     /* Tablet landscape / small desktop (≤1100px) */
     @media(max-width:1100px) {
       .products-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .scent-grid {
         grid-template-columns: repeat(3, 1fr)
       }
 
