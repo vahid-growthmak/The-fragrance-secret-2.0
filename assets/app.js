@@ -628,68 +628,21 @@ function selectQuiz(node, val) {
 ═══════════════════════════════════════ */
 const FIND_MY_SCENT_URL = '/pages/find-my-scent';
 
-/* The app renders through a theme app embed, so we discover it at runtime
-   rather than guessing selectors. Two shapes are possible:
-     - its bubble lives in the page DOM  → hide theirs, keep our gold launcher
-     - it only renders inside an iframe  → cannot be clicked cross-origin, so
-                                            hide ours and let theirs stand */
-const CHAT_SELECTOR = '[id*="chizy"],[class*="chizy"],[id*="Chizy"],[class*="Chizy"]';
-let chatNode = null;
-
-function ourLauncher() { return el('aiLauncher'); }
-
-function findChatNode() {
+/* Chat itself is the Chizy app's own bubble, which it renders and controls. The
+   theme does not hide, move or click it — earlier attempts to drive it from here
+   guessed at its markup and left nothing openable. So openAI() only handles the
+   theme's own "Find My Scent" actions: use a public API if the app exposes one,
+   otherwise send the visitor to the quiz page, which always works. */
+function chatApi() {
   const api = window.Chizy || window.chizy || window.ChizyChat || window.ChizyWidget;
-  if (api && (typeof api.open === 'function' || typeof api.toggle === 'function')) return api;
-
-  const nodes = [...document.querySelectorAll(CHAT_SELECTOR)];
-  /* the smallest visible candidate is the bubble rather than a wrapper */
-  const clickable = nodes
-    .filter(n => n.offsetParent && n.getBoundingClientRect().width > 20)
-    .sort((a, b) => a.getBoundingClientRect().width - b.getBoundingClientRect().width)[0];
-  return clickable || null;
-}
-
-function openChat(node) {
-  if (!node) return false;
-  if (typeof node.open === 'function') { node.open(); return true; }
-  if (typeof node.toggle === 'function') { node.toggle(); return true; }
-  if (typeof node.click === 'function') { node.click(); return true; }
-  return false;
-}
-
-/* The embed loads asynchronously, so keep looking for a while before deciding. */
-function initChatBridge() {
-  const launcher = ourLauncher();
-  let tries = 0;
-
-  const settle = () => {
-    chatNode = findChatNode();
-    if (chatNode) {
-      /* their bubble is reachable — hide it and show ours instead */
-      if (chatNode.nodeType === 1) chatNode.classList.add('chat-native-hidden');
-      if (launcher) launcher.classList.remove('hidden');
-      return true;
-    }
-    if (document.querySelector('iframe[src*="chizy"],iframe[src*="Chizy"]')) {
-      /* chat lives in an iframe we cannot drive, so let their launcher stand */
-      if (launcher) launcher.remove();
-      return true;
-    }
-    return false;
-  };
-
-  if (settle()) return;
-  const timer = setInterval(() => {
-    if (settle() || ++tries > 20) {           /* ~10s, then give up gracefully */
-      clearInterval(timer);
-      if (!chatNode && launcher) launcher.classList.remove('hidden'); /* falls back to the quiz page */
-    }
-  }, 500);
+  if (api && typeof api.open === 'function') return () => api.open();
+  if (api && typeof api.toggle === 'function') return () => api.toggle();
+  return null;
 }
 
 function openAI() {
-  if (openChat(chatNode || findChatNode())) return;
+  const open = chatApi();
+  if (open) { open(); return; }
   if (location.pathname !== FIND_MY_SCENT_URL) location.href = FIND_MY_SCENT_URL;
 }
 function closeAI() { /* the chat app owns its own close control */ }
@@ -889,7 +842,6 @@ function initCountdowns() {
 ═══════════════════════════════════════ */
 function initApp() {
   if (!document.body.hasAttribute('data-no-chrome')) mountChrome();
-  initChatBridge();
   // Sync the JS cart counter with the Liquid-rendered badge (real cart count)
   const badge = document.querySelector('.cbadge');
   if (badge) cartCount = parseInt(badge.textContent, 10) || 0;

@@ -5334,10 +5334,47 @@ html body .jdgm-form select {
       }
     }
 
-    /* The chat app's own bubble, hidden in favour of our branded launcher.
-       app.js adds this class only once it has found a bubble it can open. */
-    .chat-native-hidden {
-      display: none !important
+    /* ── Chizy chat bubble, restyled to match the theme ──────────────────
+       The app renders its own launcher and we do not touch its behaviour, so
+       these rules are cosmetic only: gold gradient, our radius and shadow, and
+       the icon tinted to sit on it. Nothing here hides or moves the widget, so
+       if a selector misses, the button simply keeps the app's own look.
+       Scoped to buttons the app owns — never the WhatsApp float.  */
+    [id*="chizy"] button,
+    [id*="Chizy"] button,
+    [class*="chizy"] button,
+    [class*="Chizy"] button,
+    button[id*="chizy"],
+    button[class*="chizy"],
+    [id*="chizy"] > div[role="button"],
+    [class*="chizy"] > div[role="button"] {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%) !important;
+      color: var(--ink) !important;
+      border: none !important;
+      border-radius: 27px !important;
+      box-shadow: 0 12px 30px -8px rgba(201, 168, 76, .55) !important;
+      font-family: var(--fb) !important;
+      font-size: .76rem !important;
+      font-weight: 600 !important;
+      letter-spacing: .04em !important;
+      transition: transform .25s var(--snap), box-shadow .25s !important
+    }
+
+    [id*="chizy"] button:hover,
+    [class*="chizy"] button:hover,
+    button[id*="chizy"]:hover,
+    button[class*="chizy"]:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 16px 36px -8px rgba(201, 168, 76, .7) !important
+    }
+
+    /* tint whatever icon the app puts inside so it reads on gold */
+    [id*="chizy"] button svg,
+    [class*="chizy"] button svg,
+    button[id*="chizy"] svg,
+    button[class*="chizy"] svg {
+      color: var(--ink) !important;
+      fill: currentColor !important
     }
 
     .ai-launcher.hidden {
