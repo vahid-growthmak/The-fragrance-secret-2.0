@@ -29,7 +29,17 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     <p class="hero-pretitle">{{ section.settings.hero_eyebrow }}</p>
-    <h1 class="hero-h">{{ section.settings.hero_heading }}</h1>
+    {%- comment -%}
+      Two explicit lines rather than one string with a <br>: each is its own
+      block, so the heading is always exactly two lines and never breaks into a
+      third when the longer line outgrows the column.
+    {%- endcomment -%}
+    <h1 class="hero-h">
+      <span class="hero-h-line">{{ section.settings.hero_line_1 }}</span>
+      {%- if section.settings.hero_line_2 != blank -%}
+        <span class="hero-h-line"><em>{{ section.settings.hero_line_2 }}</em></span>
+      {%- endif -%}
+    </h1>
     <p class="hero-sub">{{ section.settings.hero_sub }}</p>
     <div class="hero-ctas">
       <a class="btn-g" href="{{ section.settings.hero_cta_url }}">
@@ -352,8 +362,10 @@
   "settings": [
     { "type": "header", "content": "1 · Hero" },
     { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Luxury Perfumes · UAE" },
-    { "type": "html", "id": "hero_heading", "label": "Heading",
-      "default": "Find The Scent That<br><em>Feels Truly Yours</em>" },
+    { "type": "text", "id": "hero_line_1", "label": "Heading line 1", "default": "Find The Scent That" },
+    { "type": "text", "id": "hero_line_2", "label": "Heading line 2",
+      "info": "Rendered italic in gold on its own line. Leave blank for a one-line heading.",
+      "default": "Feels Truly Yours" },
     { "type": "textarea", "id": "hero_sub", "label": "Subheading",
       "default": "Authentic designer, Arabic and oud fragrances, curated in one trusted UAE destination." },
     { "type": "text", "id": "hero_cta_label", "label": "Button label", "default": "Shop Perfumes" },
