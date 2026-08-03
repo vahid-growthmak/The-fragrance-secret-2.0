@@ -2399,6 +2399,42 @@
       stroke-width: 1.8
     }
 
+    /* Registered business details in the footer brand column */
+    .fg-details {
+      margin: 18px 0 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .fg-details>div {
+      font-size: .82rem;
+      line-height: 1.6;
+      color: rgba(247, 242, 234, .62)
+    }
+
+    .fg-details dt {
+      display: inline;
+      font-weight: 600;
+      color: rgba(247, 242, 234, .9)
+    }
+
+    .fg-details dd {
+      display: inline;
+      margin: 0 0 0 5px
+    }
+
+    .fg-details a {
+      color: rgba(247, 242, 234, .62);
+      border-bottom: 1px solid rgba(247, 242, 234, .22);
+      transition: color .2s, border-color .2s
+    }
+
+    .fg-details a:hover {
+      color: var(--gold-lt);
+      border-color: var(--gold-lt)
+    }
+
     .fg-col h4 {
       font-size: .72rem;
       letter-spacing: .16em;

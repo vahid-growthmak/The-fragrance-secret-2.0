@@ -10,12 +10,49 @@
             <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}">
           {%- endif -%}
         </span>
-        <p>{{ section.settings.tagline }}</p>
-        <a href="mailto:{{ section.settings.email }}" class="fg-email"><span class="mi" aria-hidden="true">mail</span>{{ section.settings.email }}</a>
+        {%- if section.settings.tagline != blank -%}<p>{{ section.settings.tagline }}</p>{%- endif -%}
+
+        {%- comment -%} Registered business details {%- endcomment -%}
+        <dl class="fg-details">
+          {%- if section.settings.company_name != blank -%}
+            <div><dt>Company Name:</dt><dd>{{ section.settings.company_name }}</dd></div>
+          {%- endif -%}
+          {%- if section.settings.legal_status != blank -%}
+            <div><dt>Legal Status:</dt><dd>{{ section.settings.legal_status }}</dd></div>
+          {%- endif -%}
+          {%- if section.settings.address != blank -%}
+            <div><dt>Address:</dt><dd>
+              {%- if section.settings.address_url != blank -%}
+                <a href="{{ section.settings.address_url }}" target="_blank" rel="noopener">{{ section.settings.address }}</a>
+              {%- else -%}{{ section.settings.address }}{%- endif -%}
+            </dd></div>
+          {%- endif -%}
+          {%- if section.settings.email != blank -%}
+            <div><dt>Email:</dt><dd><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></dd></div>
+          {%- endif -%}
+          {%- if section.settings.phone != blank -%}
+            <div><dt>Phone:</dt><dd>
+              <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>
+              {%- if section.settings.phone_alt != blank -%}
+                / <a href="tel:{{ section.settings.phone_alt | remove: ' ' }}">{{ section.settings.phone_alt }}</a>
+              {%- endif -%}
+            </dd></div>
+          {%- endif -%}
+          {%- if section.settings.hours != blank -%}
+            <div><dt>Customer Service Hours:</dt><dd>{{ section.settings.hours }}</dd></div>
+          {%- endif -%}
+          {%- if section.settings.response_time != blank -%}
+            <div><dt>Response Time:</dt><dd>{{ section.settings.response_time }}</dd></div>
+          {%- endif -%}
+        </dl>
+
         <div class="socials">
           <a href="{{ section.settings.instagram | default: '#' }}" class="soc-btn" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="{{ section.settings.facebook | default: '#' }}" class="soc-btn" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           <a href="{{ section.settings.tiktok | default: '#' }}" class="soc-btn" title="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+          {%- if section.settings.twitter != blank -%}
+            <a href="{{ section.settings.twitter }}" class="soc-btn" title="X" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.6L3.4 21H6l5.6-6.3L16 21h5l-7.9-10.1L20.4 3H18l-5.2 5.9L8.5 3z"/></svg></a>
+          {%- endif -%}
           <a href="{{ section.settings.youtube | default: '#' }}" class="soc-btn" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
         </div>
       </div>
@@ -60,9 +97,20 @@
   "settings": [
     { "type": "image_picker", "id": "logo", "label": "Logo" },
     { "type": "textarea", "id": "tagline", "label": "Tagline", "default": "Your trusted destination for authentic fragrances, premium scents, and unforgettable perfume experiences across the UAE." },
+    { "type": "header", "content": "Business details" },
+    { "type": "text", "id": "company_name", "label": "Company name" },
+    { "type": "text", "id": "legal_status", "label": "Legal status" },
+    { "type": "text", "id": "address", "label": "Address" },
+    { "type": "url", "id": "address_url", "label": "Address link (map)" },
     { "type": "text", "id": "email", "label": "Email", "default": "info@thefragrancesecrets.com" },
+    { "type": "text", "id": "phone", "label": "Phone" },
+    { "type": "text", "id": "phone_alt", "label": "Second phone" },
+    { "type": "text", "id": "hours", "label": "Customer service hours" },
+    { "type": "text", "id": "response_time", "label": "Response time" },
+    { "type": "header", "content": "Social" },
     { "type": "url", "id": "instagram", "label": "Instagram" },
     { "type": "url", "id": "facebook", "label": "Facebook" },
+    { "type": "url", "id": "twitter", "label": "X" },
     { "type": "url", "id": "tiktok", "label": "TikTok" },
     { "type": "url", "id": "youtube", "label": "YouTube" },
     { "type": "text", "id": "copyright", "label": "Copyright line", "default": "© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE" }
