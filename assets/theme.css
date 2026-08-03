@@ -506,15 +506,15 @@
 ══════════════════════════════════════════ */
 
     /* HERO */
+    /* Full-bleed hero: the image covers the whole stage and the copy sits on
+       top of it, rather than the old half-and-half split. */
     .hero {
       min-height: 85vh;
       min-height: 85dvh;
       background: var(--ink);
       display: grid;
-      grid-template-columns: 1fr 1fr;
       position: relative;
-      overflow: hidden;
-      padding-inline: max(0px, calc((100% - 1380px) / 2))
+      overflow: hidden
     }
 
     .hero-bg {
@@ -524,15 +524,21 @@
     }
 
     .hero-img-wrap {
-      position: relative;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
       overflow: hidden
     }
 
+    /* Two scrims: a horizontal one so left-aligned copy stays readable, and a
+       vertical one so the announcement bar and CTAs keep contrast. */
     .hero-img-wrap::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, var(--ink) 0%, transparent 40%);
+      background:
+        linear-gradient(to right, rgba(13, 10, 6, .92) 0%, rgba(13, 10, 6, .72) 38%, rgba(13, 10, 6, .25) 72%, rgba(13, 10, 6, .1) 100%),
+        linear-gradient(to bottom, rgba(13, 10, 6, .55) 0%, transparent 30%, rgba(13, 10, 6, .45) 100%);
       z-index: 1
     }
 
@@ -553,9 +559,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 60px 72px 60px 48px;
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 60px 48px;
       position: relative;
       z-index: 2
+    }
+
+    /* keep the copy to a readable measure now the stage is full width */
+    .hero-content > * {
+      max-width: 620px
     }
 
     .hero-pretitle {
@@ -4763,17 +4777,14 @@ html body .jdgm-form select {
 
     /* Tablet portrait / large phone landscape (≤900px) */
     @media(max-width:900px) {
+      /* Stays full-bleed on tablet; the image is behind the copy, not above it. */
       .hero {
-        grid-template-columns: 1fr;
-        height: auto;
-        min-height: auto;
-        overflow: visible
+        min-height: 70vh;
+        min-height: 70dvh
       }
 
-      .hero-img-wrap {
-        height: 280px;
-        order: -1;
-        z-index: 1
+      .hero-content > * {
+        max-width: none
       }
 
       .hero-content {
@@ -4876,10 +4887,6 @@ html body .jdgm-form select {
 
     /* Large phones / small tablets (600px–768px) — iPad mini, Galaxy Tab */
     @media(max-width:768px) {
-      .hero-img-wrap {
-        height: 280px
-      }
-
       .hero-h {
         font-size: clamp(2rem, 6vw, 2.8rem)
       }
@@ -4954,10 +4961,6 @@ html body .jdgm-form select {
 
       .hero-content {
         padding: 28px 20px 36px
-      }
-
-      .hero-img-wrap {
-        height: 220px
       }
 
       .hero-h {

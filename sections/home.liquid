@@ -50,8 +50,30 @@
     </div>
   </div>
   <div class="hero-img-wrap">
-    <img class="hero-img" src="{{ 'hero-roses.jpg' | asset_url }}"
-      alt="Luxury perfume bottle among fresh roses" onload="this.classList.add('loaded')" />
+    {%- comment -%}
+      Full-bleed artwork. Uploaded images are served through image_url so Shopify
+      generates the responsive sizes; the packaged asset is the fallback.
+    {%- endcomment -%}
+    {%- assign hero_image = section.settings.hero_image -%}
+    {%- if hero_image != blank -%}
+      <img class="hero-img"
+        src="{{ hero_image | image_url: width: 2880 }}"
+        srcset="{{ hero_image | image_url: width: 900 }} 900w,
+                {{ hero_image | image_url: width: 1400 }} 1400w,
+                {{ hero_image | image_url: width: 1900 }} 1900w,
+                {{ hero_image | image_url: width: 2400 }} 2400w,
+                {{ hero_image | image_url: width: 2880 }} 2880w"
+        sizes="100vw"
+        width="{{ hero_image.width }}" height="{{ hero_image.height }}"
+        style="object-position: {{ section.settings.hero_focus }}"
+        alt="{{ hero_image.alt | default: 'Luxury perfume' | escape }}"
+        fetchpriority="high" onload="this.classList.add('loaded')" />
+    {%- else -%}
+      <img class="hero-img" src="{{ 'hero-roses.jpg' | asset_url }}"
+        style="object-position: {{ section.settings.hero_focus }}"
+        alt="Luxury perfume bottle among fresh roses"
+        fetchpriority="high" onload="this.classList.add('loaded')" />
+    {%- endif -%}
   </div>
 </section>
 
@@ -361,6 +383,18 @@
   "name": "Home",
   "settings": [
     { "type": "header", "content": "1 · Hero" },
+    { "type": "image_picker", "id": "hero_image", "label": "Background image",
+      "info": "Full width behind the copy. Upload 2880 × 1620 px (16:9). Keep the subject right of centre — the left side carries a dark scrim for the text. Falls back to hero-roses.jpg." },
+    { "type": "select", "id": "hero_focus", "label": "Image focus",
+      "info": "Which part of the image to keep when it is cropped.",
+      "options": [
+        { "value": "center center", "label": "Centre" },
+        { "value": "right center", "label": "Right" },
+        { "value": "left center", "label": "Left" },
+        { "value": "center top", "label": "Top" },
+        { "value": "center bottom", "label": "Bottom" }
+      ],
+      "default": "right center" },
     { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Luxury Perfumes · UAE" },
     { "type": "text", "id": "hero_line_1", "label": "Heading line 1", "default": "Find The Scent That" },
     { "type": "text", "id": "hero_line_2", "label": "Heading line 2",
