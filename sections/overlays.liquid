@@ -12,6 +12,18 @@
 
 <div class="wa-float" title="Chat with a human on WhatsApp" aria-label="WhatsApp support" onclick="waChat()">{{ wa_svg }}</div>
 
+{%- comment -%}
+  Our branded launcher for the Chizy chat. app.js hides whichever of the two
+  launchers is redundant at runtime: if Chizy renders its bubble in the page we
+  hide theirs and keep this one, and if it only renders inside an iframe (which
+  we cannot click from here) we hide this one and let theirs stand.
+{%- endcomment -%}
+<button class="ai-launcher hidden" id="aiLauncher" data-chat-launcher
+        title="Find My Scent — fragrance concierge" aria-label="Find My Scent — fragrance concierge"
+        onclick="openAI()">
+  <span class="ai-pulse"></span><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent
+</button>
+
 <div class="tfs-overlay" id="refOverlay" onclick="if(event.target===this)closeReferral()">
   <div class="tfs-modal">
     <button class="tfs-close" onclick="closeReferral()" aria-label="Close"><span class="mi" aria-hidden="true">close</span></button>

@@ -5334,6 +5334,12 @@ html body .jdgm-form select {
       }
     }
 
+    /* The chat app's own bubble, hidden in favour of our branded launcher.
+       app.js adds this class only once it has found a bubble it can open. */
+    .chat-native-hidden {
+      display: none !important
+    }
+
     .ai-launcher.hidden {
       opacity: 0;
       pointer-events: none;
