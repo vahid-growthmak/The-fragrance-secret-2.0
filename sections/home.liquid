@@ -71,8 +71,34 @@
           <span class="label" style="margin:0">All Brands A–Z</span>
           <span class="az-note">Verified Resale</span>
         </div>
+        {%- comment -%}
+          Brand marquee. Each brand's logo is that collection's image, so adding
+          an image in admin turns the name into a logo. Brands without one keep
+          their name, and the track is rendered twice for the seamless loop.
+        {%- endcomment -%}
+        {%- liquid
+          assign brand_handles = section.settings.brand_handles | split: ','
+          assign track_passes = '1,2' | split: ','
+        -%}
         <div class="brand-track-wrap">
-          <div class="brand-track" data-render="brand-track"></div>
+          <div class="brand-track brand-track-liquid">
+            {%- for pass in track_passes -%}
+              {%- for raw_handle in brand_handles -%}
+                {%- assign brand_handle = raw_handle | strip -%}
+                {%- assign brand = collections[brand_handle] -%}
+                {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
+                {%- assign brand_name = brand.title | remove: ' Perfumes' -%}
+                <a class="brand-item{% if brand.image %} has-logo{% endif %}" href="{{ brand.url }}"
+                   {% if pass == '2' %}aria-hidden="true" tabindex="-1"{% endif %}>
+                  {%- if brand.image -%}
+                    <img src="{{ brand.image | image_url: width: 320 }}" alt="{{ brand_name | escape }}" loading="lazy">
+                  {%- else -%}
+                    {{ brand_name }}
+                  {%- endif -%}
+                </a>
+              {%- endfor -%}
+            {%- endfor -%}
+          </div>
         </div>
       </div>
     </section>
@@ -498,5 +524,14 @@
     </section>
 
 {% schema %}
-{ "name": "Home", "settings": [], "presets": [ { "name": "Home" } ] }
+{
+  "name": "Home",
+  "settings": [
+    { "type": "header", "content": "Brand marquee" },
+    { "type": "textarea", "id": "brand_handles", "label": "Brand collections (comma separated handles)",
+      "info": "Each brand shows its collection image as a logo, or its name when the collection has no image.",
+      "default": "ahmed-al-maghribi, al-haramain, alezz-oud, amouage, arabiyat-prestige, armaf, azzaro, billie-eilish, boadicea-the-victorious, borntostandout, calvin-klein, chanel, cristiano-ronaldo, davidoff, dior, dolce-and-gabbana, elan-dor, ex-nihilo, farzanas-collection, fragrance-secrets, french-avenue, giorgio-armani, hevora, house-of-morais, hugo-boss, ibrahim-al-qurashi, jay-marley, jean-paul-gaultier, khaleej-pride, la-parfum-galleria, la-parfum-galleria-exclusif, lattafa, mancera, marxzelle, niche-profumo, orchid, paris-collection, parisbelle, prada, rafaan, ralph-lauren, rasasi, rayhaan, reef, riiffs, roberto-cavalli, sabrina-carpenter, swiss-arabian, yves-saint-laurent" }
+  ],
+  "presets": [ { "name": "Home" } ]
+}
 {% endschema %}

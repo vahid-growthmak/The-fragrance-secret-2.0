@@ -2049,8 +2049,9 @@
     .brand-track {
       display: flex;
       gap: 56px;
-      /* slow, readable scroll — the track now carries the full live brand list */
-      animation: bscroll 120s linear infinite;
+      /* The track holds the full brand list twice and the keyframe travels -50%,
+         so one pass is a seamless loop. 240s keeps it near 50px/s at 49 brands. */
+      animation: bscroll 240s linear infinite;
       width: max-content;
       align-items: center
     }
@@ -2073,6 +2074,34 @@
     .brand-item:hover {
       color: var(--gold-dk);
       opacity: 1
+    }
+
+    /* Brands whose collection has an image show it as a logo */
+    .brand-item.has-logo {
+      display: inline-flex;
+      align-items: center;
+      opacity: .72;
+      transition: opacity .25s, filter .25s
+    }
+
+    .brand-item.has-logo img {
+      height: 46px;
+      width: auto;
+      max-width: 150px;
+      object-fit: contain;
+      filter: grayscale(1)
+    }
+
+    .brand-item.has-logo:hover {
+      opacity: 1
+    }
+
+    .brand-item.has-logo:hover img {
+      filter: none
+    }
+
+    @media(max-width:640px) {
+      .brand-item.has-logo img { height: 36px; max-width: 118px }
     }
 
     @keyframes bscroll {
