@@ -2528,6 +2528,31 @@
       gap: 16px
     }
 
+    /* Bottom policy links row */
+    .footer-policies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 0;
+      padding: 0 0 22px
+    }
+
+    .footer-policies a {
+      font-size: .74rem;
+      color: rgba(255, 255, 255, .45);
+      padding: 0 14px;
+      transition: color .2s
+    }
+
+    .footer-policies a+a {
+      border-left: 1px solid rgba(255, 255, 255, .14)
+    }
+
+    .footer-policies a:hover {
+      color: var(--gold-lt)
+    }
+
     .footer-bottom p {
       font-size: .74rem;
       color: rgba(255, 255, 255, .3)

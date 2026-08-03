@@ -79,15 +79,41 @@
     <div class="footer-bottom">
       <p>{{ section.settings.copyright | default: '© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE' }}</p>
       <div class="pay-icons pay-icons-row" aria-label="Payment options">
-        {{ 'visa' | payment_type_svg_tag }}
-        {{ 'master' | payment_type_svg_tag }}
-        {{ 'apple_pay' | payment_type_svg_tag }}
-        {{ 'google_pay' | payment_type_svg_tag }}
+        {%- comment -%}
+          The cards the store actually accepts, falling back to the usual set
+          before payments are configured.
+        {%- endcomment -%}
+        {%- if shop.enabled_payment_types.size > 0 -%}
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'pay-svg' }}
+          {%- endfor -%}
+        {%- else -%}
+          {{ 'visa' | payment_type_svg_tag }}
+          {{ 'master' | payment_type_svg_tag }}
+          {{ 'american_express' | payment_type_svg_tag }}
+          {{ 'diners_club' | payment_type_svg_tag }}
+          {{ 'discover' | payment_type_svg_tag }}
+          {{ 'jcb' | payment_type_svg_tag }}
+          {{ 'apple_pay' | payment_type_svg_tag }}
+          {{ 'google_pay' | payment_type_svg_tag }}
+        {%- endif -%}
         <span class="pay-chip pay-tabby" title="Tabby">tabby</span>
         <span class="pay-chip pay-tamara" title="Tamara">tamara</span>
         <span class="pay-chip pay-cod" title="Cash on Delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/></svg>COD</span>
       </div>
     </div>
+
+    {%- if section.settings.policy_links != blank -%}
+      <nav class="footer-policies" aria-label="Policies">
+        {%- assign policy_links = section.settings.policy_links | newline_to_br | split: '<br />' -%}
+        {%- for link in policy_links -%}
+          {%- assign parts = link | strip | split: '|' -%}
+          {%- if parts.size >= 2 -%}
+            <a href="{{ parts[1] | strip }}">{{ parts[0] | strip }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
   </div>
 </footer>
 
@@ -113,7 +139,8 @@
     { "type": "url", "id": "twitter", "label": "X" },
     { "type": "url", "id": "tiktok", "label": "TikTok" },
     { "type": "url", "id": "youtube", "label": "YouTube" },
-    { "type": "text", "id": "copyright", "label": "Copyright line", "default": "© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE" }
+    { "type": "text", "id": "copyright", "label": "Copyright line", "default": "© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE" },
+    { "type": "textarea", "id": "policy_links", "label": "Bottom policy links (one per line: Label | /url)" }
   ],
   "blocks": [
     { "type": "column", "name": "Link column", "settings": [
