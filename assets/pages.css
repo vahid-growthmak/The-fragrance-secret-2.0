@@ -431,14 +431,16 @@ header.light .nav-burger { color: var(--warm); }
 .hub-tile:hover .hub-go { opacity: 1; transform: translateY(0); }
 .hub-tile.wide { grid-column: span 2; aspect-ratio: auto; }
 
-/* Brand tiles (PDP "Explore other brands") */
-.brand-tile { background: linear-gradient(150deg, var(--ink), var(--charcoal)); }
-.brand-tile h3 { font-size: 1.25rem; }
-.brand-tile-mark {
+/* Collection cards — PDP brand strip and the sibling rows on collection pages */
+.coll-tile { background: linear-gradient(150deg, var(--ink), var(--charcoal)); }
+.coll-tile h3 { font-size: 1.25rem; }
+.coll-tile-mark {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   font-family: var(--fd); font-size: 3.4rem; color: rgba(226,201,126,.45);
 }
 .brands-strip .sec-head { margin-bottom: 34px; }
+/* the sibling grid mixes cards with the plain-link fallback, so align them */
+.hub-grid > .crosslink { align-self: start; }
 
 /* Shared "see the whole collection" row under a PDP recommendation grid */
 .related-cta { text-align: center; margin-top: 30px; }

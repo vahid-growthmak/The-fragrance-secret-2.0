@@ -345,7 +345,7 @@
           {%- for brand in picked_brands -%}
             {%- if brands_shown >= brand_limit -%}{%- break -%}{%- endif -%}
             {%- unless brand.handle == brand_collection.handle -%}
-              {% render 'brand-card', brand: brand %}
+              {% render 'collection-card', collection: brand, cta: 'Shop the house' %}
               {%- assign brands_shown = brands_shown | plus: 1 -%}
             {%- endunless -%}
           {%- endfor -%}
@@ -365,7 +365,7 @@
             {%- endif -%}
             {%- if vendor_collection.handle == blank or vendor_collection.products_count == 0 -%}{%- continue -%}{%- endif -%}
             {%- if vendor_collection.handle == brand_collection.handle -%}{%- continue -%}{%- endif -%}
-            {% render 'brand-card', brand: vendor_collection %}
+            {% render 'collection-card', collection: vendor_collection, cta: 'Shop the house' %}
             {%- assign brands_shown = brands_shown | plus: 1 -%}
           {%- endfor -%}
         {%- endif -%}

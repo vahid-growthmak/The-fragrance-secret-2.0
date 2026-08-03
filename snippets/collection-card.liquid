@@ -1,0 +1,35 @@
+{%- comment -%}
+  Image card for a collection — used for the brand strip on the product page and
+  for the sibling-collection rows on collection pages.
+
+  Falls back to the collection's first product image when the collection has no
+  image of its own, and to a monogram when it has neither.
+
+  Usage:
+    {% render 'collection-card', collection: some_collection %}
+    {% render 'collection-card', collection: some_collection, label: 'Office Wear Perfumes', cta: 'Shop the house' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign card_label = label | default: collection.title
+  assign card_cta = cta | default: 'Browse'
+  assign card_image = collection.image
+  if card_image == blank
+    assign card_image = collection.products.first.featured_image
+  endif
+-%}
+
+<a class="hub-tile coll-tile" href="{{ collection.url }}">
+  {%- if card_image -%}
+    <img src="{{ card_image | image_url: width: 600 }}" alt="{{ card_label | escape }}" loading="lazy" width="600" height="480">
+  {%- else -%}
+    <span class="coll-tile-mark" aria-hidden="true">{{ card_label | slice: 0, 1 }}</span>
+  {%- endif -%}
+  <div class="hub-body">
+    <h3>{{ card_label }}</h3>
+    {%- if collection.products_count > 0 -%}
+      <p>{{ collection.products_count }} fragrance{% if collection.products_count != 1 %}s{% endif %}</p>
+    {%- endif -%}
+    <span class="hub-go">{{ card_cta }} <span class="mi" aria-hidden="true">arrow_forward</span></span>
+  </div>
+</a>
