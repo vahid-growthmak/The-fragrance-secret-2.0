@@ -222,17 +222,6 @@ function secCrosslinks(cfg) {
   </div></section>`;
 }
 
-function secFindscent() {
-  return `<section class="finder"><div class="finder-inner">
-    <div class="finder-head fade-up">
-      <span class="label">Personalised Recommendation</span>
-      <h2 class="sec-title" style="color:var(--white)">Not Sure What to <em>Pick?</em></h2>
-      <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
-    </div>
-    <div class="quiz-progress quiz-progress-wrap"></div>
-    <div class="quiz-container-wrap"></div>
-  </div></section>`;
-}
 
 function secReviews(cfg) {
   return `<section class="reviews"><div class="reviews-inner">
@@ -538,7 +527,7 @@ function initFilterBar(cfg) {
 /* ── Section dispatch ────────────────────────────────────────────── */
 const SECTIONS = {
   header: secHeader, trust: secTrust, usps: secUsps, filter: secFilter, grid: secGrid,
-  crosslinks: secCrosslinks, findscent: secFindscent, reviews: secReviews, testimonials: secReviews,
+  crosslinks: secCrosslinks, reviews: secReviews, testimonials: secReviews,
   faq: secFaq, cta: secCta, howitworks: secHowitworks, pricing: secPricing, benefits: secBenefits,
   gallery: secGallery, hero2: secHero2, story: secStory, combo: secCombo, delivery: secDelivery,
 };
@@ -560,7 +549,7 @@ function renderCollection() {
   cfg._products = buildProducts(cfg);
   document.title = (cfg.titlePlain || 'Collection') + ' — The Fragrance Secrets';
   const active = el('hdr'); // header already mounted by app.js
-  const order = cfg.sections || ['header', 'filter', 'grid', 'crosslinks', 'findscent', 'faq', 'cta'];
+  const order = cfg.sections || ['header', 'filter', 'grid', 'crosslinks', 'faq', 'cta'];
   const root = document.querySelector('[data-collection]');
   root.innerHTML = order.map(name => (SECTIONS[name] ? SECTIONS[name](cfg) : '')).join('');
   fillCollectionGrid(cfg);
@@ -612,7 +601,7 @@ const COLLECTIONS = {
     breadcrumb: [HOME_CRUMB, { label: 'Shop All' }],
     meta: [{ ic: 'inventory_2', t: '218+ Fragrances' }, { ic: 'storefront', t: '47+ Brands' }],
     count: 218,
-    sections: ['header', 'filter', 'grid', 'findscent', 'crosslinks', 'faq', 'cta'],
+    sections: ['header', 'filter', 'grid', 'crosslinks', 'faq', 'cta'],
   },
 
   'best-sellers': {
@@ -622,7 +611,7 @@ const COLLECTIONS = {
     breadcrumb: [HOME_CRUMB, { label: 'Best Sellers' }],
     meta: [{ ic: 'trending_up', t: 'Ranked by Sales' }, { ic: 'star', t: '4.8 Avg Rating' }],
     count: 60,
-    sections: ['header', 'filter', 'grid', 'findscent', 'faq', 'cta'],
+    sections: ['header', 'filter', 'grid', 'faq', 'cta'],
   },
 
   'new-arrivals': {
@@ -638,7 +627,7 @@ const COLLECTIONS = {
       { ic: 'lock', title: 'Exclusive Drops', text: 'Limited allocations and house exclusives you won\'t find on the marketplace sites.' },
       { ic: 'auto_awesome', title: 'Editor\'s Picks', text: 'Hand-selected by our fragrance team for standout quality, longevity and value.' },
     ],
-    sections: ['header', 'usps', 'filter', 'grid', 'findscent', 'reviews', 'faq', 'cta'],
+    sections: ['header', 'usps', 'filter', 'grid', 'reviews', 'faq', 'cta'],
     cta: { label: 'Never Miss a Drop', title: 'Get Early Access to <em>New Arrivals</em>', sub: 'Subscribe for first dibs on limited editions and exclusive launches — plus 10% off your first order.', primary: { label: 'Subscribe for Updates', href: '#', onclick: 'openReferral()' } },
   },
 
@@ -675,7 +664,7 @@ const COLLECTIONS = {
       ],
     },
     // Shop-first flow to match Women's: products up top, supporting content below.
-    sections: ['header', 'filter', 'grid', 'usps', 'howitworks', 'pricing', 'crosslinks', 'findscent', 'faq', 'cta'],
+    sections: ['header', 'filter', 'grid', 'usps', 'howitworks', 'pricing', 'crosslinks', 'faq', 'cta'],
     xHead: 'Discover More', xTitle: 'Shop by <em>Mood & Moment</em>',
     crosslinks: [
       { label: 'Date Night', href: 'collection.html?c=date-night' },
@@ -699,7 +688,7 @@ const COLLECTIONS = {
     breadcrumb: [HOME_CRUMB, { label: 'Categories', href: 'category-collection.html' }, { label: "Women's Perfumes" }],
     meta: [{ ic: 'local_florist', t: 'Floral to Oriental' }, { ic: 'star', t: 'Top-Rated' }],
     count: 72, filterGender: 'Women',
-    sections: ['header', 'filter', 'grid', 'crosslinks', 'findscent'],
+    sections: ['header', 'filter', 'grid', 'crosslinks'],
     xHead: 'Discover More', xTitle: 'Shop by <em>Mood & Moment</em>',
     crosslinks: [
       { label: 'Date Night Perfumes', href: 'collection.html?c=date-night' },
@@ -752,7 +741,7 @@ const COLLECTIONS = {
       { ic: 'wb_twilight', title: 'Day to Night', text: 'Versatile profiles that transition effortlessly from desk to dinner.' },
       { ic: 'workspace_premium', title: 'Modern & Niche', text: 'Contemporary and niche-inspired blends that feel distinctly you.' },
     ],
-    sections: ['header', 'usps', 'filter', 'grid', 'crosslinks', 'findscent'],
+    sections: ['header', 'usps', 'filter', 'grid', 'crosslinks'],
     crosslinks: [
       { label: 'Oud & Woody', href: 'collection.html?c=scent-family&family=Oud%20%26%20Woody' },
       { label: 'Fresh & Citrus', href: 'collection.html?c=scent-family&family=Fresh%20%26%20Citrus' },

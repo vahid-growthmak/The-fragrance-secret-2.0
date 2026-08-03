@@ -284,19 +284,6 @@
   <div class="sf-overlay" id="sfOverlay" onclick="document.getElementById('shopFilters').classList.remove('open');this.classList.remove('open')"></div>
   {%- endpaginate -%}
 
-  <!-- FIND MY SCENT -->
-  {%- if section.settings.show_finder -%}
-    <section class="finder"><div class="finder-inner">
-      <div class="finder-head fade-up">
-        <span class="label">Personalised Recommendation</span>
-        <h2 class="sec-title" style="color:var(--white)">Not Sure What to <em>Pick?</em></h2>
-        <p class="sec-sub">Answer 3 quick questions and we'll find your perfect fragrance match.</p>
-      </div>
-      <div class="quiz-progress quiz-progress-wrap"></div>
-      <div class="quiz-container-wrap"></div>
-    </div></section>
-  {%- endif -%}
-
   <!-- REVIEWS -->
   {%- if section.settings.show_reviews -%}
     <section class="reviews"><div class="reviews-inner">
@@ -448,7 +435,6 @@
     { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent URL", "default": "/collections/all" },
     { "type": "header", "content": "Sections" },
     { "type": "checkbox", "id": "show_trust_band", "label": "Show trust band under the hero", "default": true },
-    { "type": "checkbox", "id": "show_finder", "label": "Show 'Find my scent' quiz after the grid", "default": true },
     { "type": "checkbox", "id": "show_reviews", "label": "Show reviews after the grid", "default": true, "info": "Turn off when a page section renders reviews further down." },
     { "type": "header", "content": "Collection introduction" },
     { "type": "text", "id": "intro_eyebrow", "label": "Intro eyebrow" },

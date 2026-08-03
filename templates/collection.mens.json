@@ -20,7 +20,6 @@
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
         "show_trust_band": false,
-        "show_finder": false,
         "show_reviews": false,
         "intro_eyebrow": "For Him",
         "intro_heading": "Men's Perfumes UAE",
@@ -28,7 +27,13 @@
         "show_why_rotator": true
       }
     },
-    "editorial": { "type": "mens-editorial", "settings": {} }
+    "editorial": {
+      "type": "mens-editorial",
+      "settings": {}
+    }
   },
-  "order": ["main", "editorial"]
+  "order": [
+    "main",
+    "editorial"
+  ]
 }
