@@ -1,0 +1,28 @@
+{%- comment -%}
+  Membership band — "Enjoy 10% off your first perfume order".
+  Rendered globally above the footer by the customer-login-cta section, and
+  hidden for signed-in customers.
+{%- endcomment -%}
+
+{%- unless customer -%}
+  <section class="section"><div class="container">
+    <div class="cta-band member-band">
+      <div class="member-copy">
+        <span class="label" style="color:var(--gold)">Welcome to The Fragrance Secrets</span>
+        <h2 class="sec-title">Enjoy 10% Off <em>Your First Perfume Order</em></h2>
+        <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Receive an instant 10% welcome discount on your first purchase, save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
+        <div class="cta-actions">
+          <a class="btn-g" href="{{ routes.account_register_url }}"><span class="mi" aria-hidden="true">person_add</span>Claim 10% Discount</a>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="mc-disc"><b>10%</b><span>Welcome Discount</span></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant 10% welcome discount</b><span>Applied automatically at checkout</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">favorite</span><div><b>Save your favourite fragrances</b><span>Build your personal wishlist</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">local_shipping</span><div><b>Track every order</b><span>Full order history in one place</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">bolt</span><div><b>Faster checkout</b><span>Saved details, fewer steps</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">star</span><div><b>Exclusive member-only offers</b><span>Member drops all year round</span></div></div>
+      </div>
+    </div>
+  </div></section>
+{%- endunless -%}
