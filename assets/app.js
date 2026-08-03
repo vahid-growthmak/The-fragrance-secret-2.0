@@ -446,26 +446,6 @@ function overlaysHTML() {
   return `
   <div class="wa-float" title="Chat with a human on WhatsApp" aria-label="WhatsApp support" onclick="waChat()">${WA_SVG}</div>
 
-  <button class="ai-launcher" id="aiLauncher" title="Find My Scent — AI fragrance concierge" aria-label="Find My Scent — AI fragrance concierge" onclick="openAI()">
-    <span class="ai-pulse"></span><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent
-  </button>
-
-  <div class="ai-panel" id="aiPanel" role="dialog" aria-label="AI Fragrance Concierge">
-    <div class="ai-head">
-      <div class="ai-head-avatar"><span class="mi" aria-hidden="true">auto_awesome</span></div>
-      <div class="ai-head-txt"><h4>Find My Scent</h4><span>AI Fragrance Concierge</span></div>
-      <button class="ai-close" onclick="closeAI()" aria-label="Close concierge"><span class="mi" aria-hidden="true">close</span></button>
-    </div>
-    <div class="ai-body" id="aiBody"></div>
-    <div class="ai-escalate">
-      <a href="#" onclick="waChat();return false">${WA_SVG}Talk to a human on WhatsApp</a>
-    </div>
-    <div class="ai-input-row">
-      <input type="text" id="aiInput" placeholder="Ask anything — e.g. &ldquo;Do you have Lattafa?&rdquo;" onkeydown="if(event.key==='Enter')aiSend()"/>
-      <button class="ai-send" onclick="aiSend()" aria-label="Send"><span class="mi" aria-hidden="true">send</span></button>
-    </div>
-  </div>
-
   <div class="tfs-overlay" id="refOverlay" onclick="if(event.target===this)closeReferral()">
     <div class="tfs-modal">
       <button class="tfs-close" onclick="closeReferral()" aria-label="Close"><span class="mi" aria-hidden="true">close</span></button>
@@ -640,201 +620,36 @@ function selectQuiz(node, val) {
 }
 
 /* ═══════════════════════════════════════
-   AI FRAGRANCE CONCIERGE
+   FIND MY SCENT → CHAT APP BRIDGE
+   The in-theme concierge was removed; chat is handled by the Chizy AI chatbot
+   app, which injects its own launcher. Every "Find My Scent" action in the
+   theme calls openAI(), so this one function decides what that means: open the
+   chat app when it is on the page, otherwise fall back to the quiz page.
 ═══════════════════════════════════════ */
-let aiStarted = false;
-function openAI() {
-  const panel = el('aiPanel'); if (!panel) return;
-  panel.classList.add('open');
-  const l = el('aiLauncher'); if (l) l.classList.add('hidden');
-  const pulse = document.querySelector('.ai-launcher .ai-pulse'); if (pulse) pulse.remove();
-  if (!aiStarted) { aiStarted = true; aiWelcome(); }
-  setTimeout(() => { const i = el('aiInput'); if (i) i.focus(); }, 320);
-}
-function closeAI() {
-  const panel = el('aiPanel'); if (panel) panel.classList.remove('open');
-  const l = el('aiLauncher'); if (l) l.classList.remove('hidden');
-}
-function aiScroll() { const b = el('aiBody'); if (b) b.scrollTop = b.scrollHeight; }
-function aiPush(html, who) {
-  const b = el('aiBody'); if (!b) return;
-  const d = document.createElement('div');
-  d.className = 'ai-msg ' + (who || 'bot');
-  d.innerHTML = html;
-  b.appendChild(d); aiScroll(); return d;
-}
-function aiChips(items) {
-  const b = el('aiBody'); if (!b) return;
-  const w = document.createElement('div'); w.className = 'ai-chips';
-  w.innerHTML = items.map(() => `<button class="ai-chip"></button>`).join('');
-  [...w.children].forEach((c, i) => { c.textContent = items[i]; c.onclick = () => aiUser(items[i]); });
-  b.appendChild(w); aiScroll();
-}
-function aiRecCard(p) {
-  const safeName = esc(p.name).replace(/'/g, "\\'");
-  const go = p.url ? ` style="cursor:pointer" onclick="location.href='${p.url}'"` : '';
-  return `<div class="ai-rec">
-    <img src="${assetURL(p.img)}" alt="${esc(p.name)}"${go}/>
-    <div class="ai-rec-info"${go}>
-      <div class="ai-rec-brand">${esc(p.brand)}</div>
-      <div class="ai-rec-name">${esc(p.name)}</div>
-      <div class="ai-rec-price">${p.price > 0 ? money(p.price) : ''}${p.price > 0 && p.was > p.price ? ` <s>${money(p.was)}</s>` : ''}</div>
-    </div>
-    <button class="ai-rec-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${safeName}')">Add</button>
-  </div>`;
-}
-function aiPushRec(p) { const b = el('aiBody'); if (b) { b.insertAdjacentHTML('beforeend', aiRecCard(p)); aiScroll(); } }
-function aiPushAction(label, onclick) {
-  const b = el('aiBody'); if (!b) return;
-  b.insertAdjacentHTML('beforeend', `<button class="ai-cta" onclick="${onclick}"><span class="mi" aria-hidden="true">science</span>${label}</button>`);
-  aiScroll();
-}
-function aiTyping(cb, delay) {
-  const b = el('aiBody'); if (!b) { cb(); return; }
-  const t = document.createElement('div'); t.className = 'ai-typing';
-  t.innerHTML = '<span></span><span></span><span></span>';
-  b.appendChild(t); aiScroll();
-  setTimeout(() => { t.remove(); cb(); }, delay || 750);
-}
-function aiUser(text) {
-  if (!text || !text.trim()) return;
-  aiPush(esc(text), 'user');
-  const i = el('aiInput'); if (i) i.value = '';
-  aiTyping(() => aiRespond(text.toLowerCase()));
-}
-function aiSend() { const i = el('aiInput'); if (i) aiUser(i.value); }
-function pickProducts(keys) {
-  const res = products.filter(p => keys.some(k => (p.name + ' ' + p.brand).toLowerCase().includes(k.toLowerCase())));
-  return (res.length ? res : products).slice(0, 3);
-}
-/* Live-catalogue pickers — match on the mapped family/gender/badge fields
-   (set by loadLiveCatalog) rather than demo product names. */
-function pickByFamily(fams) {
-  let res = products.filter(p => fams.indexOf(p.family) > -1);
-  if (!res.length) res = products.filter(p => p.badge === 'Bestseller');
-  if (!res.length) res = products;
-  return res.slice(0, 3);
-}
-function bestsellers(pool) {
-  pool = pool || products;
-  let res = pool.filter(p => p.badge === 'Bestseller');
-  if (!res.length) res = pool.filter(p => p.family); // prefer real fragrances over accessories/cards
-  if (!res.length) res = pool;
-  return res.slice(0, 3);
-}
-function flashEscalate() {
-  const e = document.querySelector('.ai-escalate'); if (!e) return;
-  e.style.background = 'rgba(37,211,102,.24)';
-  setTimeout(() => { e.style.background = ''; }, 1000);
-}
-function aiWelcome() {
-  aiPush("Hi! I'm your AI fragrance concierge 🌙<br>I can help you <strong>discover a scent</strong>, <strong>find a specific brand</strong>, or <strong>compare options</strong> — all 100% authentic. What are you looking for?");
-  aiChips(['Find my signature scent', 'Do you have Lattafa?', 'Best oud under AED 150', 'A gift for him']);
-}
-function aiRespond(q) {
-  if (/(authentic|fake|counterfeit|genuine|\breal\b|original|refund|return|deliver|shipping|track|where.*(order|parcel)|\bcod\b|cash on)/.test(q)) {
-    aiPush("That's an important one — and because <strong>authenticity &amp; orders</strong> are where trust matters most, our human team answers these personally on WhatsApp so you get a guaranteed answer. Tap below to chat with them 👇");
-    flashEscalate();
-    return;
-  }
-  /* Custom-blend intent — the personalisation moat, surfaced here (not in the main funnel) */
-  if (/custom blend|mix (my )?own|create my|make my own|my own (scent|spray|blend)|personali[sz]e|bespoke|\bblend\b/.test(q)) {
-    aiPush("Amazing — a scent that exists nowhere else. Here's how it works: pick an oil, choose your <strong>strength</strong> and <strong>bottle size</strong>, and we hand-blend it into a ready-to-wear spray, made to order and dispatched in <strong>3–5 days</strong>. Tap below to start 👇");
-    aiPushAction('Start My Custom Blend', 'openMix()');
-    aiChips(['What does it cost?', 'Show me oils to start with', 'Maybe later']);
-    return;
-  }
-  if (/oils? to start|show me oils|perfume oil/.test(q)) {
-    aiPush("Great base oils to build a custom spray from — each blends beautifully:");
-    products.filter(p => /oud|attar|rose|coffee/i.test(p.name)).slice(0, 2).forEach(aiPushRec);
-    aiPushAction('Build My Custom Blend', 'openMix()');
-    return;
-  }
-  const brandHit = brands.find(b => q.includes(b.toLowerCase()));
-  if (brandHit || /do you (have|stock|carry)|in stock|available|looking for/.test(q)) {
-    if (brandHit) {
-      const matches = products.filter(p => p.brand.toLowerCase() === brandHit.toLowerCase());
-      aiPush(`Yes — we stock <strong>${brandHit}</strong> ✦ ${matches.length ? "here are popular picks, all 100% authentic:" : "it's one of our 218+ brands. Here are similar bestsellers you'll love:"}`);
-      (matches.length ? matches : products.filter(p => p.badge === 'Bestseller')).slice(0, 2).forEach(aiPushRec);
-      aiChips(['Something similar but cheaper', 'For evenings', 'A gift for him']);
-    } else {
-      aiPush("We carry 218+ brands. Which are you after — or shall I recommend by scent?");
-      aiChips(['Lattafa', 'Armaf', 'Recommend by scent']);
-    }
-    return;
-  }
-  let recs = [];
-  if (/under|budget|cheap|affordable|less than|below|\bmax\b/.test(q)) {
-    // Budget intent — honour a number if the visitor gave one ("under 120")
-    const m = q.match(/\b(\d{2,4})\b/);
-    const cap = m ? parseInt(m[1], 10) : 150;
-    recs = products.filter(p => p.price > 0 && p.price <= cap).sort((a, b) => b.price - a.price).slice(0, 3);
-    if (!recs.length) recs = products.slice().sort((a, b) => a.price - b.price).slice(0, 3);
-  }
-  else if (/oud|woody|\bwood\b/.test(q)) recs = pickByFamily(['Oud & Woody']);
-  else if (/spic|oriental|amber|\bwarm\b/.test(q)) recs = pickByFamily(['Spicy & Oriental', 'Oud & Woody']);
-  else if (/fresh|citrus|light|summer|clean|sport|gym/.test(q)) recs = pickByFamily(['Fresh & Citrus']);
-  else if (/floral|rose|\bsoft\b/.test(q)) recs = pickByFamily(['Floral & Rose']);
-  else if (/sweet|gourmand|vanilla|coffee/.test(q)) recs = pickByFamily(['Sweet & Gourmand']);
-  else if (/gift|present|eid|\bhim\b|\bher\b|husband|wife|father|mother|\bdad\b|\bmom\b|brother|sister/.test(q)) {
-    let pool = products;
-    if (/\bhim\b|husband|father|\bdad\b|brother/.test(q)) pool = products.filter(p => p.gender === 'Men' || p.gender === 'Unisex');
-    else if (/\bher\b|wife|mother|\bmom\b|sister/.test(q)) pool = products.filter(p => p.gender === 'Women' || p.gender === 'Unisex');
-    recs = bestsellers(pool.length ? pool : products);
-  }
-  else if (/\bmen\b|masculine|for guys/.test(q)) recs = bestsellers(products.filter(p => p.gender === 'Men' || p.gender === 'Unisex'));
-  else if (/women|feminine|for ladies/.test(q)) recs = bestsellers(products.filter(p => p.gender === 'Women' || p.gender === 'Unisex'));
-  else if (/evening|night|date|long|last|strong|projection|beast/.test(q)) recs = pickByFamily(['Oud & Woody', 'Spicy & Oriental']);
-  else if (/signature|recommend|suggest|match|best|popular|surprise|not sure|don.?t know/.test(q)) recs = bestsellers();
-  if (recs.length) {
-    aiPush("Based on that, here's what I'd reach for — all in stock and great value:");
-    recs.forEach(aiPushRec);
-    aiPush("Want me to narrow it down further?");
-    aiChips(['Under AED 120', 'For evenings', 'Make it a gift']);
-    return;
-  }
-  aiPush("I can help you <strong>discover a scent</strong>, <strong>find a brand</strong>, or <strong>compare options</strong>. Which sounds right?");
-  aiChips(['Find my signature scent', 'Do you have Lattafa?', 'Best oud under AED 150', 'A gift for him']);
-}
-function openAIFromQuiz() {
-  openAI();
-  const fam = qAnswers[0], strength = qAnswers[1], occ = qAnswers[2];
-  setTimeout(() => {
-    aiUser(`I like ${fam ? fam.toLowerCase() : 'oud'} scents, ${strength ? strength.toLowerCase() : 'balanced'} strength, mostly for ${occ ? occ.toLowerCase() : 'daily wear'}.`);
-  }, 480);
+const FIND_MY_SCENT_URL = '/pages/find-my-scent';
+
+/* The app exposes no documented API, so try the usual patterns in order:
+   a global open/toggle method, then a click on its own launcher. */
+function chatWidget() {
+  const api = window.Chizy || window.chizy || window.ChizyChat || window.ChizyWidget;
+  if (api && typeof api.open === 'function') return () => api.open();
+  if (api && typeof api.toggle === 'function') return () => api.toggle();
+  try {
+    const node = document.querySelector(
+      '[id*="chizy" i] button, [class*="chizy" i] button, iframe[src*="chizy" i], [id*="chizy" i], [class*="chizy" i]'
+    );
+    if (node) return () => node.click();
+  } catch (e) { /* older browsers reject the case-insensitive attribute flag */ }
+  return null;
 }
 
-/* ═══ EXIT-INTENT CUSTOM-BLEND OFFER ═══
-   Strategy: the custom-blend offer surfaces via the AI concierge ONLY when the
-   visitor is about to leave — so it never distracts from the main sales funnel. */
-let exitOffered = false;
-function aiPanelOpen() { const p = el('aiPanel'); return p && p.classList.contains('open'); }
-function offerCustomBlend() {
-  if (exitOffered || aiPanelOpen()) return;
-  exitOffered = true;
-  aiStarted = true; // skip the generic welcome; lead with the exit-intent pitch
-  openAI();
-  setTimeout(() => {
-    aiPush("Before you go — want a scent that's <strong>truly one of a kind?</strong> 🌙<br>I can hand-blend an oil into a ready-to-wear spray at your chosen strength — a signature that exists nowhere else.");
-    aiChips(['✨ Create my custom blend', 'Show me best-sellers', 'No thanks, just browsing']);
-  }, 360);
+function openAI() {
+  const open = chatWidget();
+  if (open) { open(); return; }
+  if (location.pathname !== FIND_MY_SCENT_URL) location.href = FIND_MY_SCENT_URL;
 }
-function initExitIntent() {
-  if (/checkout|cart/.test(location.pathname)) return; // never interrupt the funnel
-  // Desktop: cursor leaves through the top of the viewport.
-  document.addEventListener('mouseout', e => {
-    if (exitOffered) return;
-    if (!e.relatedTarget && !e.toElement && e.clientY <= 6) offerCustomBlend();
-  });
-  // Mobile fallback: a decisive upward flick near the top, after some dwell time.
-  let lastY = window.scrollY, dwell = false;
-  setTimeout(() => { dwell = true; }, 9000);
-  window.addEventListener('scroll', () => {
-    if (exitOffered || !dwell) { lastY = window.scrollY; return; }
-    if (window.scrollY < 140 && lastY - window.scrollY > 48) offerCustomBlend();
-    lastY = window.scrollY;
-  }, { passive: true });
-}
+function closeAI() { /* the chat app owns its own close control */ }
+function openAIFromQuiz() { openAI(); }
 
 /* ═══════════════════════════════════════
    MIX-YOUR-OWN-SPRAY (oil PDP)
@@ -1039,7 +854,6 @@ function initApp() {
   initThumbs();
   initStickyAtc();
   initCountdowns();
-  initExitIntent();
   document.querySelectorAll('.quiz-container-wrap').length && renderQuiz();
   observeFadeUps();
   // Collection engine, if present on this page

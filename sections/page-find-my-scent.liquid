@@ -55,7 +55,11 @@
         <h2 class="sec-title">Chat to Our <em>AI Stylist</em></h2>
         <p class="sec-sub">Describe what you're after in your own words — a scent, a brand, a gift — and get instant, authentic recommendations.</p>
         <div class="cta-actions">
-          <a class="btn-g" href="#" onclick="openAI();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Open the AI Stylist</a>
+          {%- comment -%}
+            openAI() opens the chat app, but on this page it would otherwise be a
+            no-op (its fallback is this very page), so fall back to the quiz above.
+          {%- endcomment -%}
+          <a class="btn-g" href="#" onclick="openAI();document.querySelector('.quiz-container-wrap')?.scrollIntoView({behavior:'smooth'});return false"><span class="mi" aria-hidden="true">auto_awesome</span>Open the AI Stylist</a>
           <a class="btn-o" href="/collections/all">Shop All Products</a>
         </div>
       </div></div>
