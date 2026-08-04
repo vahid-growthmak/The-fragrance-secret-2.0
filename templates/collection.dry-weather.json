@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Dry Weather UAE",
         "intro_text": "<p>Dry air treats fragrance differently. With little moisture to carry scent, perfume can fade faster on dry skin, so dry climates reward richer, creamier fragrances that cling and last. The Fragrance Secrets brings together dry weather perfumes for men and women featuring musk, amber, creamy woods, and warm skin-like notes that hold on beautifully in low humidity. Whether you live in an arid region, face dry desert air, or simply want a scent that lasts on dry skin, our collection helps you find your perfect dry-weather fragrance.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "dry-weather-hero.webp",
+        "hero_bg_image_sm": "dry-weather-hero-sm.webp"
       }
     },
     "editorial": {

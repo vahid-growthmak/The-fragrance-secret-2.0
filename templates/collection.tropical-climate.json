@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Tropical Climate UAE",
         "intro_text": "<p>Tropical weather calls for vibrant, fruity, and exotic fragrances. Warm, humid air suits juicy and refreshing notes that feel alive and energising rather than heavy. The Fragrance Secrets brings together tropical climate perfumes for men and women featuring mango, pineapple, coconut, exotic florals, and fresh aquatic notes. Whether you live in a tropical region, travel to island destinations, or simply love bright exotic scents, our collection helps you find your perfect tropical fragrance.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "tropical-climate-hero.webp",
+        "hero_bg_image_sm": "tropical-climate-hero-sm.webp"
       }
     },
     "editorial": {

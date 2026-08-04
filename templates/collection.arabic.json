@@ -23,7 +23,9 @@
         "intro_eyebrow": "Oud & Oriental Heritage",
         "intro_heading": "Arabic Perfumes UAE",
         "intro_text": "<p>Arabic perfumery is celebrated for its rich ingredients, exceptional craftsmanship, and long-lasting fragrance traditions. Built around notes such as oud, amber, musk, rose, saffron, and warm spices, Arabic perfumes are known for their depth, character, and lasting impression. At The Fragrance Secrets, explore authentic Arabic perfumes for men and women from leading Arabian fragrance houses. Whether you prefer traditional oud creations or modern oriental blends, you'll discover fragrances designed for everyday wear, special occasions, and lasting confidence in the UAE's warm climate.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "arabic-hero.webp",
+        "hero_bg_image_sm": "arabic-hero-sm.webp"
       }
     },
     "editorial": {

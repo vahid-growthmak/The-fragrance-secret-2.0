@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Spring Perfumes UAE",
         "intro_text": "<p>Spring is the season for fresh, floral, and uplifting fragrances. Mild weather is the perfect backdrop for delicate blooms and airy green notes that feel light and romantic. The Fragrance Secrets brings together spring perfumes for men and women featuring rose, jasmine, cherry blossom, green notes, and soft fresh florals. Whether you are welcoming the warmer days, refreshing your signature, or simply prefer light floral scents, our collection helps you find your perfect spring fragrance.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "spring-bloom-hero.webp",
+        "hero_bg_image_sm": "spring-bloom-hero-sm.webp"
       }
     },
     "editorial": {

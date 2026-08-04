@@ -24,7 +24,8 @@
         "intro_heading": "Shop Chanel Perfumes UAE",
         "intro_text": "<p>Chanel is one of the most iconic names in luxury fragrance, a French house founded by Gabrielle Coco Chanel and home to some of the most celebrated perfumes ever created. The Fragrance Secrets brings together authentic Chanel perfumes for women and men, from the legendary N°5 and elegant Coco Mademoiselle to the fresh Chance and the modern woody Bleu de Chanel. Defined by timeless sophistication and masterful composition, Chanel fragrances are the definition of refined French elegance. If you want a true signature scent with heritage and prestige, Chanel is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "chanel-hero.webp"
+        "hero_bg_image": "chanel-hero.webp",
+        "hero_bg_image_sm": "chanel-hero-sm.webp"
       }
     },
     "editorial": {

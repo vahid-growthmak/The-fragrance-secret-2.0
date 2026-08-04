@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Beach Perfumes UAE",
         "intro_text": "<p>Some scents smell like the sea itself. Salt on the skin, sun on warm sand, a cool breeze coming off the water, that is what a beach fragrance captures. At The Fragrance Secrets, discover fresh, aquatic beach perfumes for men and women, built on marine notes, citrus, coconut, and airy musk that feel breezy and cooling in the heat. Whether you are by the water or just want to carry that seaside feeling into the city, our collection bottles the fresh, open scent of a day at the beach.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "beach-vacation-hero.webp",
+        "hero_bg_image_sm": "beach-vacation-hero-sm.webp"
       }
     },
     "editorial": {

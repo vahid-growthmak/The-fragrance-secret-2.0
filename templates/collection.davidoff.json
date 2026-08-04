@@ -24,7 +24,8 @@
         "intro_heading": "Shop Davidoff Perfumes UAE",
         "intro_text": "<p>Davidoff is a Swiss luxury lifestyle brand known worldwide for one of the most successful men's fragrances ever created. The Fragrance Secrets brings together authentic Davidoff perfumes for men and women, led by the legendary aquatic Cool Water, alongside popular scents like Champion, The Game, and Horizon. Fresh, clean, and effortlessly wearable, Davidoff fragrances helped define the modern fresh style and remain everyday favourites. If you want a crisp, versatile signature scent with genuine designer heritage and dependable quality, Davidoff is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "davidoff-hero.webp"
+        "hero_bg_image": "davidoff-hero.webp",
+        "hero_bg_image_sm": "davidoff-hero-sm.webp"
       }
     },
     "editorial": {

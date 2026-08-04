@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Evening Perfumes UAE",
         "intro_text": "<p>The fragrance you wear during the day is not always the one you reach for in the evening. As the occasion changes, so does the mood, calling for richer notes, warmer blends, and a fragrance with greater depth. Amber, oud, soft musk, elegant florals, and warm spices come together in a collection created for dinners, celebrations, formal occasions, and memorable nights out. The Fragrance Secrets brings together long-lasting evening perfumes for men and women, helping you find a fragrance that feels refined, confident, and perfectly suited to every special evening.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "dinner-evening-hero.webp",
+        "hero_bg_image_sm": "dinner-evening-hero-sm.webp"
       }
     },
     "editorial": {

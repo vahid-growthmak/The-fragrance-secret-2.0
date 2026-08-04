@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Cold Weather UAE",
         "intro_text": "<p>Cold weather brings the best out of a rich fragrance. Low temperatures slow evaporation and let deep, warm notes unfold gradually, so heavier scents perform beautifully when it is cold. The Fragrance Secrets brings together cold weather perfumes for men and women featuring oud, amber, spice, leather, and warm woody notes that feel comforting and last for hours. Whether you face a cold snowy climate, chilly evenings, or simply prefer bold, warming scents, our collection helps you find your perfect cold-weather fragrance.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "cold-weather-hero.webp",
+        "hero_bg_image_sm": "cold-weather-hero-sm.webp"
       }
     },
     "editorial": {

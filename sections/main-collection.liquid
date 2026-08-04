@@ -54,7 +54,17 @@
     <section class="page-hero tall{% if section.settings.hero_bg_image != blank %} has-bg{% endif %}">
       {%- if section.settings.hero_bg_image != blank -%}
         <div class="ph-bg" aria-hidden="true">
-          <img src="{{ section.settings.hero_bg_image | asset_url }}" alt="" width="2800" height="1000" loading="eager" fetchpriority="high" decoding="async">
+          {%- comment -%}
+            Full-bleed banner. A narrower variant is served to phones when one is
+            named, so a handset does not download the 2880px desktop file.
+          {%- endcomment -%}
+          <img src="{{ section.settings.hero_bg_image | asset_url }}"
+               {%- if section.settings.hero_bg_image_sm != blank %}
+               srcset="{{ section.settings.hero_bg_image_sm | asset_url }} 1200w,
+                       {{ section.settings.hero_bg_image | asset_url }} 2880w"
+               sizes="100vw"
+               {%- endif %}
+               alt="" width="2880" height="1000" loading="eager" fetchpriority="high" decoding="async">
         </div>
       {%- endif -%}
       <div class="container">
@@ -429,7 +439,8 @@
     { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "The Collection" },
     { "type": "text", "id": "hero_heading", "label": "Heading (H1)", "info": "Leave blank to use the collection title." },
     { "type": "text", "id": "hero_image_alt", "label": "Hero image alt text", "info": "Leave blank to use the collection title." },
-    { "type": "text", "id": "hero_bg_image", "label": "Hero background image (theme asset filename)", "info": "e.g. mens-hero.webp — file must live in assets/. Used only when the collection has no image. Best at 2800 × 1000 with the left side dark." },
+    { "type": "text", "id": "hero_bg_image", "label": "Hero background image (theme asset filename)", "info": "e.g. mens-hero.webp — file must live in assets/. Used only when the collection has no image. Best at 2880 × 1000 with the left side dark." },
+    { "type": "text", "id": "hero_bg_image_sm", "label": "Hero background image, small (theme asset filename)", "info": "Optional 1200 × 417 variant served to phones." },
     { "type": "checkbox", "id": "show_hero_description", "label": "Show collection description in hero", "default": true },
     { "type": "text", "id": "crumb_parent_label", "label": "Breadcrumb parent label", "default": "Shop" },
     { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent URL", "default": "/collections/all" },

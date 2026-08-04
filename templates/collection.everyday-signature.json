@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Everyday Perfumes UAE",
         "intro_text": "<p>Some fragrances are made for special occasions. Others become part of your everyday routine. The right everyday perfume feels comfortable, versatile, and effortless, whether you're heading to work, meeting friends, or enjoying a relaxed weekend. At The Fragrance Secrets, discover everyday perfumes for men and women featuring fresh citrus, clean woody, floral, and soft musk fragrance profiles. Whether you're searching for your first signature scent or a reliable fragrance that lasts throughout the day, you'll find versatile perfumes designed for every lifestyle.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "everyday-signature-hero.webp",
+        "hero_bg_image_sm": "everyday-signature-hero-sm.webp"
       }
     },
     "editorial": {

@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Wedding Perfumes UAE",
         "intro_text": "<p>The scent you wear on a big day becomes part of the memory. Years later, a single note can bring the whole occasion back. The Fragrance Secrets brings together elegant wedding perfumes for brides, grooms, and guests, featuring refined blends of rose, oud, amber, musk, and delicate florals. Whether you're walking down the aisle, celebrating with family and friends, or attending a formal event, you'll find long-lasting fragrances that complement every special occasion. Our collection helps you choose a fragrance as memorable as the day itself.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "wedding-hero.webp",
+        "hero_bg_image_sm": "wedding-hero-sm.webp"
       }
     },
     "editorial": {

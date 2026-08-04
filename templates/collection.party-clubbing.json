@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Party Perfumes UAE",
         "intro_text": "<p>Every celebration deserves a fragrance that matches the energy of the moment. Whether you're heading to a party, rooftop gathering, club, or a special celebration with friends, the right perfume helps you feel confident from the moment you arrive. The Fragrance Secrets brings together party perfumes for men and women featuring rich amber, warm vanilla, bold spices, luxurious oud, and sensual musk notes. Explore long-lasting fragrances designed to keep you feeling your best throughout the night.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "party-clubbing-hero.webp",
+        "hero_bg_image_sm": "party-clubbing-hero-sm.webp"
       }
     },
     "editorial": {

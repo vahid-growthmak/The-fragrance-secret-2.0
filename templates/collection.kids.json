@@ -23,7 +23,9 @@
         "intro_eyebrow": "For Little Ones",
         "intro_heading": "Kids Perfumes UAE",
         "intro_text": "<p>Choosing a fragrance for a child should feel simple and reassuring. At The Fragrance Secrets, our collection of authentic kids' perfumes features light, fresh, and age-appropriate fragrances designed for everyday wear, celebrations, and thoughtful gifting. Whether you're selecting a first fragrance or adding a new favourite to their collection, you'll find carefully chosen scents from trusted brands that are enjoyable to wear and easy to love. Every product page includes fragrance notes and essential details to help you make an informed choice, so you can confidently find a kids' perfume that suits your child's personality, style, and special moments.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "kids-hero.webp",
+        "hero_bg_image_sm": "kids-hero-sm.webp"
       }
     },
     "editorial": {

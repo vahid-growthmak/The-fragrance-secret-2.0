@@ -24,7 +24,8 @@
         "intro_heading": "Shop Prada Perfumes UAE",
         "intro_text": "<p>Prada is one of Italy's most iconic luxury houses, founded in Milan and celebrated for a philosophy of refined minimalism that carries from fashion into fragrance. The Fragrance Secrets brings together authentic Prada perfumes for men and women, from the fresh, sporty Luna Rossa collection and elegant L'Homme to the radiant floral Paradoxe and the beloved gourmand Candy. Crafted with the finest ingredients and Prada's signature clean sophistication, these are intelligent, understated scents with real presence. If you want modern Italian luxury with a distinctive, polished character, Prada is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "prada-hero.webp"
+        "hero_bg_image": "prada-hero.webp",
+        "hero_bg_image_sm": "prada-hero-sm.webp"
       }
     },
     "editorial": {

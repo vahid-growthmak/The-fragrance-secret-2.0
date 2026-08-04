@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Travel Size Perfumes UAE",
         "intro_text": "<p>Some fragrances become part of every journey. Whether you're travelling for business, heading on holiday, or packing for a weekend away, your favourite scent should always be within easy reach. The Fragrance Secrets brings together travel-size perfumes, mini fragrances, and refillable atomisers for men and women that are easy to carry, simple to refill, and perfect for life on the move. Whether you are flying for work or heading off on holiday, take your signature scent wherever you land.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "travel-friendly-hero.webp",
+        "hero_bg_image_sm": "travel-friendly-hero-sm.webp"
       }
     },
     "editorial": {

@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Gym Perfumes UAE",
         "intro_text": "<p>The right gym scent keeps you feeling fresh, not fighting the room. It should lift you before a workout and stay fresh throughout your training session without ever becoming heavy in a shared, air-conditioned space. The Fragrance Secrets brings together gym perfumes and body sprays for men and women, carefully selected for active lifestyles. Whether you are heading in for an early session or a post-work burn, our collection keeps you smelling fresh from warm-up to cool-down.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "gym-hero.webp",
+        "hero_bg_image_sm": "gym-hero-sm.webp"
       }
     },
     "editorial": {

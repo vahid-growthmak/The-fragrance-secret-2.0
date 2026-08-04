@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Vacation Perfumes UAE",
         "intro_text": "<p>Every holiday deserves a fragrance that feels as refreshing as the destination itself. Whether you're relaxing by the beach, exploring a new city, or enjoying a luxury resort, the right scent becomes part of the memories you bring home. The Fragrance Secrets brings together vacation perfumes for men and women featuring bright citrus, tropical fruits, soft florals, and warm sun-kissed notes. Whether you are off to a tropical escape or a summer city break, our collection helps you pack a scent that feels like time off.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "vacation-beach-hero.webp",
+        "hero_bg_image_sm": "vacation-beach-hero-sm.webp"
       }
     },
     "editorial": {

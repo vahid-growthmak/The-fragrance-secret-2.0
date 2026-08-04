@@ -23,7 +23,9 @@
         "intro_eyebrow": "For Everyone",
         "intro_heading": "Unisex Perfumes UAE",
         "intro_text": "<p>A great fragrance has never belonged to just one person. Long before perfume was divided into his and hers, the oud and attar traditions of Arabian perfumery were created to be shared, and many of those timeless scents still are. At The Fragrance Secrets, our collection of authentic unisex perfumes brings together balanced fragrance compositions that suit every style and occasion. Whether you're sharing a favourite scent or looking for a signature fragrance that feels uniquely yours, you'll find long-lasting perfumes designed to perform beautifully in the UAE's warm climate.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "unisex-hero.webp",
+        "hero_bg_image_sm": "unisex-hero-sm.webp"
       }
     },
     "editorial": {

@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Humid Weather UAE",
         "intro_text": "<p>Humid weather changes how fragrance behaves. Moisture in the air amplifies scent, so light and clean notes feel far more comfortable than rich, cloying ones. The Fragrance Secrets brings together humid weather perfumes for men and women featuring citrus, aquatic notes, light florals, and clean musk that stay fresh and breathable in sticky conditions. Whether you live with coastal humidity, face muggy summers, or simply prefer airy scents, our collection helps you find your perfect humid-weather signature.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "humid-weather-hero.webp",
+        "hero_bg_image_sm": "humid-weather-hero-sm.webp"
       }
     },
     "editorial": {

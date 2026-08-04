@@ -24,7 +24,8 @@
         "intro_heading": "Shop Reef Perfumes UAE",
         "intro_text": "<p>Reef is a contemporary Arabian fragrance house that blends traditional Gulf ingredients with modern perfumery. The Fragrance Secrets brings together authentic Reef perfumes, led by the cult favourite Reef 33, a saffron-and-oud signature, alongside the warm, sweet Reef 31 and a wider numbered lineup. Inspired by the beauty of coasts and the ocean, and made with responsibly sourced, high-quality oils, Reef fragrances are known for luxurious character and long-lasting performance. If you want modern Arabian scent with real presence and value, Reef is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "reef-hero.webp"
+        "hero_bg_image": "reef-hero.webp",
+        "hero_bg_image_sm": "reef-hero-sm.webp"
       }
     },
     "editorial": {

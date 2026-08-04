@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Date Night Perfumes UAE",
         "intro_text": "<p>The right date night fragrance creates a memorable impression long after the evening begins. Warm, inviting, and effortlessly elegant, these fragrances are chosen to complement special moments with notes such as vanilla, amber, oud, rose, and musk. At The Fragrance Secrets, explore date night perfumes for men and women, carefully selected for romantic dinners, first dates, anniversaries, and evening occasions. Whether you prefer soft floral elegance or rich oriental blends, you'll find long-lasting fragrances that help you feel confident throughout the night.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "date-night-hero.webp",
+        "hero_bg_image_sm": "date-night-hero-sm.webp"
       }
     },
     "editorial": {

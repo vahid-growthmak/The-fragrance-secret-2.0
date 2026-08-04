@@ -23,7 +23,9 @@
         "intro_eyebrow": "Premium Collection",
         "intro_heading": "Luxury Perfumes UAE",
         "intro_text": "<p>Luxury is more than a fragrance. It reflects craftsmanship, premium ingredients, and the confidence that comes with wearing a scent that leaves a lasting impression. At The Fragrance Secrets, explore luxury perfumes for men and women from leading designer and Arabian fragrance houses, featuring elegant florals, rich oud, refined woods, warm amber, and sophisticated gourmand creations. Whether you're searching for a signature scent, a thoughtful gift, or long-lasting luxury perfumes for everyday wear, our collection brings together premium perfumes designed for every occasion.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "luxury-hero.webp",
+        "hero_bg_image_sm": "luxury-hero-sm.webp"
       }
     },
     "editorial": {

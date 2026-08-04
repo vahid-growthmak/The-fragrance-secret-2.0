@@ -24,7 +24,8 @@
         "intro_heading": "Shop Dior Perfumes UAE",
         "intro_text": "<p>Dior is one of the most prestigious names in French luxury, a maison founded by Christian Dior and celebrated for couture-inspired fragrance of exceptional quality. The Fragrance Secrets brings together authentic Dior perfumes for men and women, from the blockbuster Sauvage and iconic J'adore to the timeless Miss Dior and bold Poison. Blending the finest ingredients with masterful French perfumery, Dior fragrances balance heritage and modern sophistication. If you want a refined, elegant signature scent from one of the world's great luxury houses, Dior is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "dior-hero.webp"
+        "hero_bg_image": "dior-hero.webp",
+        "hero_bg_image_sm": "dior-hero-sm.webp"
       }
     },
     "editorial": {

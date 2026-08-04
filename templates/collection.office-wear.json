@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Office Perfumes UAE",
         "intro_text": "<p>The best office perfume leaves a confident, professional impression without ever overpowering the room. At The Fragrance Secrets, discover subtle, workplace-appropriate office wear perfumes for men and women, selected for professional environments and built around fresh citrus, clean woody, aromatic, and soft musk profiles. Whether you're heading to work, meeting clients, or building an everyday signature scent, our collection offers light yet long-lasting fragrances that stay refined and comfortable through every working day in the UAE's warm climate.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "office-wear-hero.webp",
+        "hero_bg_image_sm": "office-wear-hero-sm.webp"
       }
     },
     "editorial": {

@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Desert Climate UAE",
         "intro_text": "<p>Desert heat is the ultimate test for a fragrance. Extreme temperatures can make scents fade fast or turn overpowering, so the desert climate demands perfumes built to perform. The Fragrance Secrets brings together desert climate perfumes for men and women, from heat-resistant oud and amber to fresh scents that stay crisp in dry heat. Whether you face the Gulf summer, live in an arid region, or simply need a fragrance that survives the heat, our collection helps you find your perfect desert-ready scent.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "desert-climate-hero.webp",
+        "hero_bg_image_sm": "desert-climate-hero-sm.webp"
       }
     },
     "editorial": {

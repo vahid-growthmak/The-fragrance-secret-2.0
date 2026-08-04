@@ -24,7 +24,8 @@
         "intro_heading": "Shop Amouage Perfumes UAE",
         "intro_text": "<p>Amouage is one of the world's most prestigious niche luxury houses, born in the Sultanate of Oman under royal patronage and known as The Gift of Kings. The Fragrance Secrets brings together authentic Amouage perfumes for men and women, from the legendary Interlude and elegant Reflection to the opulent Gold and majestic Jubilation. Blending precious Arabian ingredients like frankincense, myrrh, and oud with master perfumery, Amouage creates deeply artistic, long-lasting high perfumery. If you want a rare, unforgettable signature scent of extraordinary craftsmanship, Amouage is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "amouage-hero.webp"
+        "hero_bg_image": "amouage-hero.webp",
+        "hero_bg_image_sm": "amouage-hero-sm.webp"
       }
     },
     "editorial": {

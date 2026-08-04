@@ -23,7 +23,9 @@
         "intro_eyebrow": "Traditional & Alcohol-Free",
         "intro_heading": "Attar UAE",
         "intro_text": "<p>Attar has been an integral part of Arabian fragrance traditions for centuries, celebrated for its rich character, exceptional craftsmanship, and timeless appeal. These concentrated, alcohol-free perfume oils are crafted using ingredients such as oud, rose, musk, sandalwood, and other precious botanicals, creating rich fragrances that are applied a drop at a time and appreciated for their lasting character. At The Fragrance Secrets, discover authentic attars for both men and women, from deep woody oud blends to elegant floral and soft musk compositions. Whether you're exploring traditional perfumery or searching for a signature fragrance, our attar collection offers timeless scents for every occasion.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "attar-hero.webp",
+        "hero_bg_image_sm": "attar-hero-sm.webp"
       }
     },
     "editorial": {

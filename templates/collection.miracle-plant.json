@@ -23,7 +23,9 @@
         "intro_eyebrow": "Natural Aromatherapy",
         "intro_heading": "Miracle Plant Natural Perfume UAE",
         "intro_text": "<p>Miracle Plant is not an ordinary perfume. It is a natural, alcohol-free aromatherapy spray made from pure essential oils, created around one idea: helping you wind down and drift into deeper, more peaceful sleep. Made in Australia and free from synthetic fragrance, it is spritzed onto your pillow, bed linen or pulse points at bedtime, so the calming aroma settles around you as you rest. At The Fragrance Secrets, explore the Miracle Plant Deep Sleep range, a clean, botanical alternative for anyone who prefers natural, plant-based scent.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "miracle-plant-hero.webp",
+        "hero_bg_image_sm": "miracle-plant-hero-sm.webp"
       }
     },
     "editorial": {

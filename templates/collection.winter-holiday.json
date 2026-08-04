@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Winter Perfumes UAE",
         "intro_text": "<p>Winter is the perfect season for rich and comforting fragrances. Cooler temperatures help warm notes develop more gradually, allowing deeper scents to last longer and leave a lasting impression. The Fragrance Secrets brings together winter perfumes for men and women featuring oud, amber, vanilla, cinnamon, leather, woody notes, and warm spices. Whether you are dressing for a winter night out, choosing a holiday perfume gift, or simply prefer richer scents, our collection helps you find your perfect cold-season signature.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "winter-holiday-hero.webp",
+        "hero_bg_image_sm": "winter-holiday-hero-sm.webp"
       }
     },
     "editorial": {

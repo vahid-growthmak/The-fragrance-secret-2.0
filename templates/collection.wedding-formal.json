@@ -23,7 +23,9 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Formal Event Perfumes UAE",
         "intro_text": "<p>Some occasions deserve a fragrance that is every bit as refined as your appearance. From corporate galas and awards ceremonies to black-tie dinners and formal receptions, the right perfume adds confidence without demanding attention. Rich iris, amber, oud, polished woods, and soft leather create elegant fragrances that suit distinguished occasions and leave a lasting impression. Whether you are attending a ceremony, a formal reception, or a distinguished evening occasion, our collection helps you choose a fragrance that feels poised, sophisticated, and appropriate for the moment.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "wedding-formal-hero.webp",
+        "hero_bg_image_sm": "wedding-formal-hero-sm.webp"
       }
     },
     "editorial": {

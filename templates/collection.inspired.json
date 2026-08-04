@@ -23,7 +23,9 @@
         "intro_eyebrow": "Designer-Inspired Value",
         "intro_heading": "Inspired Perfumes UAE",
         "intro_text": "<p>Love a scent but not its price tag? Inspired perfumes are made for exactly that. These are quality fragrances built around the scent profiles people love most, the fresh, woody, sweet and oriental styles you recognise, offered at a fraction of designer prices. They are their own perfumes, not copies of any brand, created so you can wear a scent you adore every day without thinking twice. At The Fragrance Secrets, explore designer-inspired perfumes for men and women, made to smell wonderful and last.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "inspired-hero.webp",
+        "hero_bg_image_sm": "inspired-hero-sm.webp"
       }
     },
     "editorial": {

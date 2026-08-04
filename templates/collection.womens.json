@@ -23,7 +23,9 @@
         "intro_eyebrow": "For Her",
         "intro_heading": "Women's Perfumes UAE",
         "intro_text": "<p>The perfect fragrance should feel like it was made for you. The Fragrance Secrets is passionate about helping fragrance lovers discover authentic perfumes from trusted international and Arabian brands. Every collection is created to make finding your next signature scent simple, enjoyable, and reliable. From fresh citrus and elegant florals to warm gourmand blends and rich oud fragrances, you'll find scents for every style, season, and occasion. Whether you're choosing your first signature fragrance or adding a new favourite to your collection, you'll find authentic perfumes that are made to be worn and remembered.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "womens-hero.webp",
+        "hero_bg_image_sm": "womens-hero-sm.webp"
       }
     },
     "editorial": {

@@ -24,7 +24,8 @@
         "intro_heading": "Shop RiiFFS Perfumes UAE",
         "intro_text": "<p>RiiFFS is a Dubai-based fragrance house offering a modern interpretation of Arabian perfumery. The Fragrance Secrets brings together authentic RiiFFS perfumes for men and women, from the bold Imperial Noir to the fresh Imperial Blue and elegant women's scents like Abeer and Warda. Operating under Sterling Perfumes Industries, RiiFFS blends oud, amber, and musk with fresh florals and gourmand touches, delivering strong, long-lasting performance at accessible prices. If you want contemporary Arabian-inspired scent with real projection and value, RiiFFS is a house to explore.</p>",
         "show_why_rotator": true,
-        "hero_bg_image": "riiffs-hero.webp"
+        "hero_bg_image": "riiffs-hero.webp",
+        "hero_bg_image_sm": "riiffs-hero-sm.webp"
       }
     },
     "editorial": {

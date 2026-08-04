@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Hot Weather UAE",
         "intro_text": "<p>Hot weather changes what feels good to wear. When temperatures climb, fresh and cooling scents feel far more comfortable than rich, heavy ones that can turn overwhelming. The Fragrance Secrets brings together hot weather perfumes for men and women featuring citrus, mint, aquatic notes, and light florals that stay crisp and refreshing when the heat is on. Whether you are dressing for a scorching day, an outdoor plan, or simply prefer breezy scents, our collection helps you find your perfect hot-weather fragrance.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "hot-weather-hero.webp",
+        "hero_bg_image_sm": "hot-weather-hero-sm.webp"
       }
     },
     "editorial": {

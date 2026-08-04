@@ -23,7 +23,9 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Rainy Day Perfumes UAE",
         "intro_text": "<p>Rainy weather calls for warm, earthy, and comforting fragrances. Damp air carries scent differently, so cozy and green notes feel especially soothing when it rains. The Fragrance Secrets brings together rainy day perfumes for men and women featuring petrichor-style earthy notes, green accords, warm woods, soft spice, and comforting musk. Whether you love the smell of fresh rain, want a cozy scent for grey days, or prefer moody fragrances, our collection helps you find your perfect rainy-day signature.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "rainy-day-hero.webp",
+        "hero_bg_image_sm": "rainy-day-hero-sm.webp"
       }
     },
     "editorial": {
