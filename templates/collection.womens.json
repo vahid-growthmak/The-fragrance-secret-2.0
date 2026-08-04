@@ -15,8 +15,6 @@
         "hero_eyebrow": "For Her",
         "hero_heading": "Women's <em>Perfumes</em>",
         "hero_image_alt": "Women's perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "womens-hero.webp",
-        "hero_bg_image_sm": "womens-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,29 @@
         "intro_eyebrow": "For Her",
         "intro_heading": "Women's Perfumes UAE",
         "intro_text": "<p>The perfect fragrance should feel like it was made for you. The Fragrance Secrets is passionate about helping fragrance lovers discover authentic perfumes from trusted international and Arabian brands. Every collection is created to make finding your next signature scent simple, enjoyable, and reliable. From fresh citrus and elegant florals to warm gourmand blends and rich oud fragrances, you'll find scents for every style, season, and occasion. Whether you're choosing your first signature fragrance or adding a new favourite to your collection, you'll find authentic perfumes that are made to be worn and remembered.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "womens-hero.webp",
+        "hero_bg_image_sm": "womens-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Find Your Match",
+        "cards_heading": "Which Fragrance Family <em>Fits You Best?</em>",
+        "cards_sub": "Not sure where to start? You don't need to know everything about perfume. Choose the fragrance family that matches your style, and finding a scent you'll love becomes much easier.",
+        "show_numbers": true,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
+        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
+        "current_hub": "category",
+        "show_reviews": true,
+        "crumb_name": "Women's Perfumes",
+        "schema_name": "Women's Perfumes UAE",
+        "schema_description": "Shop authentic women's perfumes at The Fragrance Secrets. Explore designer and Arabian fragrances, from floral and fresh to gourmand and oud, with fast delivery across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -200,21 +216,7 @@
         "faq6",
         "faq7",
         "faq8"
-      ],
-      "settings": {
-        "cards_eyebrow": "Find Your Match",
-        "cards_heading": "Which Fragrance Family <em>Fits You Best?</em>",
-        "cards_sub": "Not sure where to start? You don't need to know everything about perfume. Choose the fragrance family that matches your style, and finding a scent you'll love becomes much easier.",
-        "show_numbers": true,
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Collections</em>",
-        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
-        "current_hub": "category",
-        "show_reviews": true,
-        "crumb_name": "Women's Perfumes",
-        "schema_name": "Women's Perfumes UAE",
-        "schema_description": "Shop authentic women's perfumes at The Fragrance Secrets. Explore designer and Arabian fragrances, from floral and fresh to gourmand and oud, with fast delivery across the UAE, USA, and Canada."
-      }
+      ]
     }
   },
   "order": [

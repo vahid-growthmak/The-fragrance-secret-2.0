@@ -15,8 +15,6 @@
         "hero_eyebrow": "Climate Collection",
         "hero_heading": "Summer Wear <em>Perfumes</em>",
         "hero_image_alt": "Summer wear perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "summer-wear-hero.webp",
-        "hero_bg_image_sm": "summer-wear-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Summer Perfumes UAE",
         "intro_text": "<p>Summer is the season for fresh, light, and uplifting fragrances. Warm weather intensifies scent, so crisp and breezy notes feel far more comfortable than heavy ones. The Fragrance Secrets brings together summer perfumes for men and women featuring citrus, aquatic notes, fresh florals, light fruits, and clean musk. Whether you are dressing for hot days, a summer holiday, or simply prefer refreshing scents, our collection helps you find your perfect warm-weather signature.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "summer-wear-hero.webp",
+        "hero_bg_image_sm": "summer-wear-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Warm Weather",
+        "cards_heading": "How to Choose the Right <em>Summer Perfume</em>",
+        "cards_sub": "Summer is made for freshness and lightness. The best warm-weather fragrances feel crisp and cooling, stay comfortable in the heat, and lift your mood on the hottest days. Here is how to choose one that suits the season.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "current_hub": "climate",
+        "show_reviews": true,
+        "crumb_name": "Summer Wear Perfumes",
+        "schema_name": "Best Summer Perfumes UAE",
+        "schema_description": "Buy summer wear perfumes online at The Fragrance Secrets. Find fresh citrus, marine, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -208,26 +229,7 @@
         "faq4",
         "faq5",
         "faq6"
-      ],
-      "settings": {
-        "cards_eyebrow": "Warm Weather",
-        "cards_heading": "How to Choose the Right <em>Summer Perfume</em>",
-        "cards_sub": "Summer is made for freshness and lightness. The best warm-weather fragrances feel crisp and cooling, stay comfortable in the heat, and lift your mood on the hottest days. Here is how to choose one that suits the season.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Season",
-        "sibling_heading": "Explore Other <em>Climate Collections</em>",
-        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
-        "sibling_all_label": "Browse All Climate Collections",
-        "sibling_all_url": "/pages/shop-by-weather",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
-        "current_hub": "climate",
-        "show_reviews": true,
-        "crumb_name": "Summer Wear Perfumes",
-        "schema_name": "Best Summer Perfumes UAE",
-        "schema_description": "Buy summer wear perfumes online at The Fragrance Secrets. Find fresh citrus, marine, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
-      }
+      ]
     }
   },
   "order": [

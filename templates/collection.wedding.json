@@ -15,8 +15,6 @@
         "hero_eyebrow": "Lifestyle Collection",
         "hero_heading": "Wedding &amp; Formal <em>Perfumes</em>",
         "hero_image_alt": "Wedding and formal perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "wedding-hero.webp",
-        "hero_bg_image_sm": "wedding-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Wedding Perfumes UAE",
         "intro_text": "<p>The scent you wear on a big day becomes part of the memory. Years later, a single note can bring the whole occasion back. The Fragrance Secrets brings together elegant wedding perfumes for brides, grooms, and guests, featuring refined blends of rose, oud, amber, musk, and delicate florals. Whether you're walking down the aisle, celebrating with family and friends, or attending a formal event, you'll find long-lasting fragrances that complement every special occasion. Our collection helps you choose a fragrance as memorable as the day itself.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "wedding-hero.webp",
+        "hero_bg_image_sm": "wedding-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Big Day",
+        "cards_heading": "How to Choose the Perfect <em>Wedding Perfume</em>",
+        "cards_sub": "A wedding or formal fragrance should feel elegant, refined, and special enough for the occasion, while lasting from the ceremony through to the final dance. Because the scent becomes tied to the memory, it is worth choosing with care. Here is how.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "current_hub": "lifestyle",
+        "show_reviews": true,
+        "crumb_name": "Wedding & Formal Perfumes",
+        "schema_name": "Best Wedding Perfumes UAE",
+        "schema_description": "Find the perfect wedding fragrance at The Fragrance Secrets. From elegant bridal scents to refined perfumes for grooms and guests, discover long-lasting fragrances with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -224,26 +245,7 @@
         "faq6",
         "faq7",
         "faq8"
-      ],
-      "settings": {
-        "cards_eyebrow": "The Big Day",
-        "cards_heading": "How to Choose the Perfect <em>Wedding Perfume</em>",
-        "cards_sub": "A wedding or formal fragrance should feel elegant, refined, and special enough for the occasion, while lasting from the ceremony through to the final dance. Because the scent becomes tied to the memory, it is worth choosing with care. Here is how.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Occasion",
-        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
-        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
-        "sibling_all_label": "Explore All Lifestyle Collections",
-        "sibling_all_url": "/pages/shop-by-lifestyle",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
-        "current_hub": "lifestyle",
-        "show_reviews": true,
-        "crumb_name": "Wedding & Formal Perfumes",
-        "schema_name": "Best Wedding Perfumes UAE",
-        "schema_description": "Find the perfect wedding fragrance at The Fragrance Secrets. From elegant bridal scents to refined perfumes for grooms and guests, discover long-lasting fragrances with shipping across the UAE, USA, and Canada."
-      }
+      ]
     }
   },
   "order": [
