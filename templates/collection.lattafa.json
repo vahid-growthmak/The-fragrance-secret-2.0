@@ -15,8 +15,6 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Lattafa <em>Perfumes</em>",
         "hero_image_alt": "Lattafa Perfumes at The Fragrance Secrets UAE",
-        "hero_bg_image": "lattafa-hero.webp",
-        "hero_bg_image_sm": "lattafa-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Lattafa Perfumes UAE",
         "intro_text": "<p>Lattafa is one of the most loved Arabian fragrance houses in the world, a UAE brand that makes luxurious, long-lasting scent accessible to everyone. Rooted in Arabian heritage, the name comes from the Arabic for kindness and pleasantness. The Fragrance Secrets brings together authentic Lattafa perfumes for men and women, including global bestsellers like Khamrah, Yara, Asad, and Raghba, plus the premium Lattafa Pride line. From spiced gourmands to rich oud and sweet florals, Lattafa delivers designer-level performance at a price that makes discovering new scents easy.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "lattafa-hero.webp",
+        "hero_bg_image_sm": "lattafa-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Lattafa <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Lattafa? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Lattafa Perfumes",
+        "schema_name": "Shop Lattafa Perfumes UAE",
+        "schema_description": "Shop authentic Lattafa perfumes at The Fragrance Secrets. Discover bestsellers like Khamrah, Yara, Asad and Raghba, long-lasting Arabian scents for men and women. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -208,26 +229,7 @@
         "faq4",
         "faq5",
         "faq6"
-      ],
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Lattafa <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Lattafa? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Lattafa Perfumes",
-        "schema_name": "Shop Lattafa Perfumes UAE",
-        "schema_description": "Shop authentic Lattafa perfumes at The Fragrance Secrets. Discover bestsellers like Khamrah, Yara, Asad and Raghba, long-lasting Arabian scents for men and women. Fast UAE, USA and Canada delivery."
-      }
+      ]
     }
   },
   "order": [

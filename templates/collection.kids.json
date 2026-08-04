@@ -15,8 +15,6 @@
         "hero_eyebrow": "For Little Ones",
         "hero_heading": "Kids <em>Perfumes</em>",
         "hero_image_alt": "Kids perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "kids-hero.webp",
-        "hero_bg_image_sm": "kids-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,29 @@
         "intro_eyebrow": "For Little Ones",
         "intro_heading": "Kids Perfumes UAE",
         "intro_text": "<p>Choosing a fragrance for a child should feel simple and reassuring. At The Fragrance Secrets, our collection of authentic kids' perfumes features light, fresh, and age-appropriate fragrances designed for everyday wear, celebrations, and thoughtful gifting. Whether you're selecting a first fragrance or adding a new favourite to their collection, you'll find carefully chosen scents from trusted brands that are enjoyable to wear and easy to love. Every product page includes fragrance notes and essential details to help you make an informed choice, so you can confidently find a kids' perfume that suits your child's personality, style, and special moments.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "kids-hero.webp",
+        "hero_bg_image_sm": "kids-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "A Parent's Guide",
+        "cards_heading": "How to Choose a Fragrance <em>for Your Child</em>",
+        "cards_sub": "Choosing for a child comes down to peace of mind. These four simple checks make it easy to pick something gentle, age-appropriate and safe.",
+        "show_numbers": true,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
+        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
+        "current_hub": "category",
+        "show_reviews": true,
+        "crumb_name": "Kids Perfumes",
+        "schema_name": "Kids Perfumes UAE",
+        "schema_description": "Shop the gentle kids' perfumes at The Fragrance Secrets. Explore fresh and age-appropriate fragrances for children from trusted brands, with fast delivery across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -192,21 +208,7 @@
         "faq6",
         "faq7",
         "faq8"
-      ],
-      "settings": {
-        "cards_eyebrow": "A Parent's Guide",
-        "cards_heading": "How to Choose a Fragrance <em>for Your Child</em>",
-        "cards_sub": "Choosing for a child comes down to peace of mind. These four simple checks make it easy to pick something gentle, age-appropriate and safe.",
-        "show_numbers": true,
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Collections</em>",
-        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
-        "current_hub": "category",
-        "show_reviews": true,
-        "crumb_name": "Kids Perfumes",
-        "schema_name": "Kids Perfumes UAE",
-        "schema_description": "Shop the gentle kids' perfumes at The Fragrance Secrets. Explore fresh and age-appropriate fragrances for children from trusted brands, with fast delivery across the UAE, USA, and Canada."
-      }
+      ]
     }
   },
   "order": [

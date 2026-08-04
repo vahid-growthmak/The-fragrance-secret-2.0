@@ -15,8 +15,6 @@
         "hero_eyebrow": "Climate Collection",
         "hero_heading": "Humid Weather <em>Perfumes</em>",
         "hero_image_alt": "Humid weather perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "humid-weather-hero.webp",
-        "hero_bg_image_sm": "humid-weather-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Humid Weather UAE",
         "intro_text": "<p>Humid weather changes how fragrance behaves. Moisture in the air amplifies scent, so light and clean notes feel far more comfortable than rich, cloying ones. The Fragrance Secrets brings together humid weather perfumes for men and women featuring citrus, aquatic notes, light florals, and clean musk that stay fresh and breathable in sticky conditions. Whether you live with coastal humidity, face muggy summers, or simply prefer airy scents, our collection helps you find your perfect humid-weather signature.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "humid-weather-hero.webp",
+        "hero_bg_image_sm": "humid-weather-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Humidity",
+        "cards_heading": "How to Choose the Right <em>Perfume for Humidity</em>",
+        "cards_sub": "Humidity is made for lightness and freshness. The best humid-weather fragrances feel clean and airy, resist turning cloying in moisture, and stay comfortable through sticky heat. Here is how to choose one that suits the climate.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "current_hub": "climate",
+        "show_reviews": true,
+        "crumb_name": "Humid Weather Perfumes",
+        "schema_name": "Best Perfumes for Humid Weather UAE",
+        "schema_description": "Shop humid weather perfumes at The Fragrance Secrets. Explore fresh citrus, aquatic, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -208,26 +229,7 @@
         "faq4",
         "faq5",
         "faq6"
-      ],
-      "settings": {
-        "cards_eyebrow": "Humidity",
-        "cards_heading": "How to Choose the Right <em>Perfume for Humidity</em>",
-        "cards_sub": "Humidity is made for lightness and freshness. The best humid-weather fragrances feel clean and airy, resist turning cloying in moisture, and stay comfortable through sticky heat. Here is how to choose one that suits the climate.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Season",
-        "sibling_heading": "Explore Other <em>Climate Collections</em>",
-        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
-        "sibling_all_label": "Browse All Climate Collections",
-        "sibling_all_url": "/pages/shop-by-weather",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
-        "current_hub": "climate",
-        "show_reviews": true,
-        "crumb_name": "Humid Weather Perfumes",
-        "schema_name": "Best Perfumes for Humid Weather UAE",
-        "schema_description": "Shop humid weather perfumes at The Fragrance Secrets. Explore fresh citrus, aquatic, and floral fragrances for men and women, with shipping across the UAE, USA, and Canada."
-      }
+      ]
     }
   },
   "order": [

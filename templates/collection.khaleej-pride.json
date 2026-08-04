@@ -15,8 +15,6 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Khaleej Pride <em>Perfumes</em>",
         "hero_image_alt": "Khaleej Pride Perfumes at The Fragrance Secrets UAE",
-        "hero_bg_image": "khaleej-pride-hero.webp",
-        "hero_bg_image_sm": "khaleej-pride-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Khaleej Pride Perfumes UAE",
         "intro_text": "<p>Khaleej Pride is an Arabian fragrance brand offering rich, characterful scents at an accessible price. Built around Gulf-inspired notes like oud, musk, and warm orientals, its perfumes deliver bold personality and lasting wear without a luxury price tag. The Fragrance Secrets brings you authentic Khaleej Pride Eau de Parfums for men and women, from the deep, sweet Purple Oud to the smooth Black Musk and elegant Rouaá. If you love expressive Arabian fragrance that performs through the day and suits everyday wear or gifting, Khaleej Pride is an easy, rewarding house to explore.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "khaleej-pride-hero.webp",
+        "hero_bg_image_sm": "khaleej-pride-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Khaleej Pride <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Khaleej Pride? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Khaleej Pride Perfumes",
+        "schema_name": "Shop Khaleej Pride Perfumes UAE",
+        "schema_description": "Find authentic Khaleej Pride perfumes at The Fragrance Secrets. Browse rich Arabian oud and musk scents for men and women, including Purple Oud and Black Musk. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -208,26 +229,7 @@
         "faq4",
         "faq5",
         "faq6"
-      ],
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Khaleej Pride <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Khaleej Pride? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Khaleej Pride Perfumes",
-        "schema_name": "Shop Khaleej Pride Perfumes UAE",
-        "schema_description": "Find authentic Khaleej Pride perfumes at The Fragrance Secrets. Browse rich Arabian oud and musk scents for men and women, including Purple Oud and Black Musk. Fast UAE, USA and Canada delivery."
-      }
+      ]
     }
   },
   "order": [

@@ -15,8 +15,6 @@
         "hero_eyebrow": "Lifestyle Collection",
         "hero_heading": "Office Wear <em>Perfumes</em>",
         "hero_image_alt": "Office wear perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "office-wear-hero.webp",
-        "hero_bg_image_sm": "office-wear-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Office Perfumes UAE",
         "intro_text": "<p>The best office perfume leaves a confident, professional impression without ever overpowering the room. At The Fragrance Secrets, discover subtle, workplace-appropriate office wear perfumes for men and women, selected for professional environments and built around fresh citrus, clean woody, aromatic, and soft musk profiles. Whether you're heading to work, meeting clients, or building an everyday signature scent, our collection offers light yet long-lasting fragrances that stay refined and comfortable through every working day in the UAE's warm climate.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "office-wear-hero.webp",
+        "hero_bg_image_sm": "office-wear-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Dress for Work",
+        "cards_heading": "Choosing the Best <em>Office Wear Perfume</em>",
+        "cards_sub": "A great office perfume makes a positive impression while staying subtle and comfortable all day. The right choice is a fragrance that suits your workplace, matches your personal style, and performs from your morning commute to your final meeting, present, but never overpowering in a shared space.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "current_hub": "lifestyle",
+        "show_reviews": true,
+        "crumb_name": "Office Wear Perfumes",
+        "schema_name": "Best Office Perfumes UAE",
+        "schema_description": "Shop the best office perfumes at The Fragrance Secrets. Subtle, professional, long-lasting fragrances for men and women, ideal for work, with fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -224,26 +245,7 @@
         "faq6",
         "faq7",
         "faq8"
-      ],
-      "settings": {
-        "cards_eyebrow": "Dress for Work",
-        "cards_heading": "Choosing the Best <em>Office Wear Perfume</em>",
-        "cards_sub": "A great office perfume makes a positive impression while staying subtle and comfortable all day. The right choice is a fragrance that suits your workplace, matches your personal style, and performs from your morning commute to your final meeting, present, but never overpowering in a shared space.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Occasion",
-        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
-        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
-        "sibling_all_label": "Explore All Lifestyle Collections",
-        "sibling_all_url": "/pages/shop-by-lifestyle",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
-        "current_hub": "lifestyle",
-        "show_reviews": true,
-        "crumb_name": "Office Wear Perfumes",
-        "schema_name": "Best Office Perfumes UAE",
-        "schema_description": "Shop the best office perfumes at The Fragrance Secrets. Subtle, professional, long-lasting fragrances for men and women, ideal for work, with fast UAE, USA and Canada delivery."
-      }
+      ]
     }
   },
   "order": [
