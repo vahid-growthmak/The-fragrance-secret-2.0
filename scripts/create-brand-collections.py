@@ -33,6 +33,7 @@ GREEN, YELLOW, RED, DIM, RESET = sct.GREEN, sct.YELLOW, sct.RED, sct.DIM, sct.RE
 # (handle / template suffix, collection title, product vendor to match)
 BRANDS = [
     ('ahmed-al-maghribi', 'Ahmed Al Maghribi Perfumes', 'Ahmed Al Maghribi'),
+    ('secret-scents', 'Secret Scents Perfumes', 'Secret Scents'),
     ('al-haramain', 'Al Haramain Perfumes', 'Al Haramain'),
     ('alezz-oud', 'Alezz Oud Perfumes', 'Alezz Oud'),
     ('amouage', 'Amouage Perfumes', 'Amouage'),
@@ -223,7 +224,13 @@ def main():
     print("\nCreating...")
     failures = 0
     for handle, title, vendor in todo:
-        payload = {"title": title, "handle": handle, "templateSuffix": handle}
+        payload = {"title": title, "handle": handle}
+        # Pointing a collection at a template the theme does not contain breaks
+        # its page, so only set the suffix when the file is really there.
+        template = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                "templates", "collection.%s.json" % handle)
+        if os.path.exists(template):
+            payload["templateSuffix"] = handle
         if vendor:
             payload["ruleSet"] = {
                 "appliedDisjunctively": False,
