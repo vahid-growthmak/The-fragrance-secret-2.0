@@ -16,28 +16,36 @@
           "type": "category",
           "settings": {
             "handle": "mens",
-            "title": "For Men"
+            "title": "For Men",
+            "image_asset": "mens-card.webp",
+            "image_asset_sm": "mens-card-sm.webp"
           }
         },
         "category2": {
           "type": "category",
           "settings": {
             "handle": "womens",
-            "title": "For Women"
+            "title": "For Women",
+            "image_asset": "womens-card.webp",
+            "image_asset_sm": "womens-card-sm.webp"
           }
         },
         "category3": {
           "type": "category",
           "settings": {
             "handle": "unisex",
-            "title": "Unisex"
+            "title": "Unisex",
+            "image_asset": "unisex-card.webp",
+            "image_asset_sm": "unisex-card-sm.webp"
           }
         },
         "category4": {
           "type": "category",
           "settings": {
             "handle": "kids",
-            "title": "Kids Collection"
+            "title": "Kids Collection",
+            "image_asset": "kids-card.webp",
+            "image_asset_sm": "kids-card-sm.webp"
           }
         },
         "category5": {
@@ -45,7 +53,9 @@
           "settings": {
             "handle": "arabic",
             "title": "Arabic Perfumes",
-            "sub": "Oud, musk & attar"
+            "sub": "Oud, musk & attar",
+            "image_asset": "arabic-card.webp",
+            "image_asset_sm": "arabic-card-sm.webp"
           }
         },
         "category6": {
@@ -53,7 +63,9 @@
           "settings": {
             "handle": "perfume-oil",
             "title": "Perfume Oils",
-            "sub": "Alcohol-free & concentrated"
+            "sub": "Alcohol-free & concentrated",
+            "image_asset": "perfume-oil-card.webp",
+            "image_asset_sm": "perfume-oil-card-sm.webp"
           }
         },
         "scent1": {
@@ -62,7 +74,9 @@
             "handle": "oud-woody",
             "title": "Oud & Woody",
             "sub": "Deep, warm, resinous",
-            "icon": "park"
+            "icon": "park",
+            "image_asset": "oud-woody-card.webp",
+            "image_asset_sm": "oud-woody-card-sm.webp"
           }
         },
         "scent2": {
@@ -71,7 +85,9 @@
             "handle": "fresh-citrus",
             "title": "Fresh & Citrus",
             "sub": "Bright, clean, energetic",
-            "icon": "water_drop"
+            "icon": "water_drop",
+            "image_asset": "fresh-citrus-card.webp",
+            "image_asset_sm": "fresh-citrus-card-sm.webp"
           }
         },
         "scent3": {
@@ -80,7 +96,9 @@
             "handle": "floral-rose",
             "title": "Floral & Rose",
             "sub": "Elegant, soft, romantic",
-            "icon": "local_florist"
+            "icon": "local_florist",
+            "image_asset": "floral-rose-card.webp",
+            "image_asset_sm": "floral-rose-card-sm.webp"
           }
         },
         "scent4": {
@@ -89,7 +107,9 @@
             "handle": "sweet-gourmand",
             "title": "Sweet & Gourmand",
             "sub": "Rich, indulgent, cosy",
-            "icon": "cake"
+            "icon": "cake",
+            "image_asset": "sweet-gourmand-card.webp",
+            "image_asset_sm": "sweet-gourmand-card-sm.webp"
           }
         },
         "scent5": {
@@ -98,7 +118,9 @@
             "handle": "spicy-oriental",
             "title": "Spicy & Oriental",
             "sub": "Bold, warm, exotic",
-            "icon": "local_fire_department"
+            "icon": "local_fire_department",
+            "image_asset": "spicy-oriental-card.webp",
+            "image_asset_sm": "spicy-oriental-card-sm.webp"
           }
         },
         "why1": {

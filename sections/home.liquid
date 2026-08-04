@@ -204,15 +204,24 @@
         {%- if block.type != 'category' -%}{%- continue -%}{%- endif -%}
         {%- assign category = collections[block.settings.handle] -%}
         {%- if category.handle == blank -%}{%- continue -%}{%- endif -%}
+        {%- assign cat_asset = block.settings.image_asset -%}
         {%- assign cat_image = block.settings.image | default: category.image | default: category.products.first.featured_image -%}
         {%- assign cat_title = block.settings.title | default: category.title -%}
+        {%- assign cat_sizes = '(max-width: 600px) 92vw, (max-width: 900px) 46vw, 30vw' -%}
         <a class="cat-card fade-up" href="{{ category.url }}" {{ block.shopify_attributes }}>
-          {%- if cat_image -%}
+          {%- if cat_asset != blank -%}
+            <img class="cat-img" src="{{ cat_asset | asset_url }}"
+                 {%- if block.settings.image_asset_sm != blank %}
+                 srcset="{{ block.settings.image_asset_sm | asset_url }} 600w, {{ cat_asset | asset_url }} 1200w"
+                 sizes="{{ cat_sizes }}"
+                 {%- endif %}
+                 alt="{{ cat_title | escape }}" loading="lazy" width="1200" height="750" />
+          {%- elsif cat_image -%}
             <img class="cat-img" src="{{ cat_image | image_url: width: 900 }}"
                  srcset="{{ cat_image | image_url: width: 450 }} 450w,
                          {{ cat_image | image_url: width: 900 }} 900w,
                          {{ cat_image | image_url: width: 1200 }} 1200w"
-                 sizes="(max-width: 600px) 92vw, (max-width: 900px) 46vw, 30vw"
+                 sizes="{{ cat_sizes }}"
                  alt="{{ cat_title | escape }}" loading="lazy" width="900" height="563" />
           {%- endif -%}
           <span class="cat-arrow" aria-hidden="true"><span class="mi">arrow_forward</span></span>
@@ -243,10 +252,18 @@
         {%- if block.type != 'scent' -%}{%- continue -%}{%- endif -%}
         {%- assign scent = collections[block.settings.handle] -%}
         {%- if scent.handle == blank -%}{%- continue -%}{%- endif -%}
+        {%- assign scent_asset = block.settings.image_asset -%}
         {%- assign scent_image = block.settings.image | default: scent.image -%}
-        <a class="scent-card fade-up{% if scent_image %} has-bg{% endif %}" href="{{ scent.url }}"
-           {{ block.shopify_attributes }}>
-          {%- if scent_image -%}
+        <a class="scent-card fade-up{% if scent_asset != blank or scent_image %} has-bg{% endif %}"
+           href="{{ scent.url }}" {{ block.shopify_attributes }}>
+          {%- if scent_asset != blank -%}
+            <img class="scent-bg" src="{{ scent_asset | asset_url }}"
+                 {%- if block.settings.image_asset_sm != blank %}
+                 srcset="{{ block.settings.image_asset_sm | asset_url }} 350w, {{ scent_asset | asset_url }} 700w"
+                 sizes="(max-width: 600px) 46vw, 18vw"
+                 {%- endif %}
+                 alt="" loading="lazy" width="700" height="700" />
+          {%- elsif scent_image -%}
             <img class="scent-bg" src="{{ scent_image | image_url: width: 600 }}"
                  srcset="{{ scent_image | image_url: width: 300 }} 300w,
                          {{ scent_image | image_url: width: 600 }} 600w"
@@ -437,101 +454,307 @@
 {
   "name": "Home",
   "settings": [
-    { "type": "header", "content": "1 · Hero" },
-    { "type": "image_picker", "id": "hero_image", "label": "Background image",
-      "info": "Full width behind the copy. Upload 2880 × 1620 px (16:9). Keep the subject right of centre — the left side carries a dark scrim for the text. Falls back to hero-roses.jpg." },
-    { "type": "select", "id": "hero_focus", "label": "Image focus",
+    {
+      "type": "header",
+      "content": "1 · Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Background image",
+      "info": "Full width behind the copy. Upload 2880 × 1620 px (16:9). Keep the subject right of centre — the left side carries a dark scrim for the text. Falls back to hero-roses.jpg."
+    },
+    {
+      "type": "select",
+      "id": "hero_focus",
+      "label": "Image focus",
       "info": "Which part of the image to keep when it is cropped.",
       "options": [
-        { "value": "center center", "label": "Centre" },
-        { "value": "right center", "label": "Right" },
-        { "value": "left center", "label": "Left" },
-        { "value": "center top", "label": "Top" },
-        { "value": "center bottom", "label": "Bottom" }
+        {
+          "value": "center center",
+          "label": "Centre"
+        },
+        {
+          "value": "right center",
+          "label": "Right"
+        },
+        {
+          "value": "left center",
+          "label": "Left"
+        },
+        {
+          "value": "center top",
+          "label": "Top"
+        },
+        {
+          "value": "center bottom",
+          "label": "Bottom"
+        }
       ],
-      "default": "right center" },
-    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Luxury Perfumes · UAE" },
-    { "type": "text", "id": "hero_line_1", "label": "Heading line 1", "default": "Find The Scent That" },
-    { "type": "text", "id": "hero_line_2", "label": "Heading line 2",
+      "default": "right center"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Eyebrow",
+      "default": "Luxury Perfumes · UAE"
+    },
+    {
+      "type": "text",
+      "id": "hero_line_1",
+      "label": "Heading line 1",
+      "default": "Find The Scent That"
+    },
+    {
+      "type": "text",
+      "id": "hero_line_2",
+      "label": "Heading line 2",
       "info": "Rendered italic in gold on its own line. Leave blank for a one-line heading.",
-      "default": "Feels Truly Yours" },
-    { "type": "textarea", "id": "hero_sub", "label": "Subheading",
-      "default": "Authentic designer, Arabic and oud fragrances, curated in one trusted UAE destination." },
-    { "type": "text", "id": "hero_cta_label", "label": "Button label", "default": "Shop Perfumes" },
-    { "type": "url", "id": "hero_cta_url", "label": "Button link" },
-    { "type": "text", "id": "hero_link_label", "label": "Text link label", "default": "or explore best sellers" },
-    { "type": "url", "id": "hero_link_url", "label": "Text link" },
-
-    { "type": "header", "content": "3 · Brands" },
-    { "type": "html", "id": "brands_heading", "label": "Heading",
-      "default": "Our Houses &amp; <em>World Brands</em>" },
-    { "type": "textarea", "id": "house_handles", "label": "Our own houses (comma separated handles)",
+      "default": "Feels Truly Yours"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_sub",
+      "label": "Subheading",
+      "default": "Authentic designer, Arabic and oud fragrances, curated in one trusted UAE destination."
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_label",
+      "label": "Button label",
+      "default": "Shop Perfumes"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "hero_link_label",
+      "label": "Text link label",
+      "default": "or explore best sellers"
+    },
+    {
+      "type": "url",
+      "id": "hero_link_url",
+      "label": "Text link"
+    },
+    {
+      "type": "header",
+      "content": "3 · Brands"
+    },
+    {
+      "type": "html",
+      "id": "brands_heading",
+      "label": "Heading",
+      "default": "Our Houses &amp; <em>World Brands</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "house_handles",
+      "label": "Our own houses (comma separated handles)",
       "info": "Handles with no matching collection are skipped, so a card can never link to a page that does not exist.",
-      "default": "fragrance-secrets, secret-scents, paris-collection" },
-    { "type": "textarea", "id": "popular_handles", "label": "Most loved houses (comma separated handles)",
-      "default": "lattafa, rasasi, armaf, swiss-arabian, ahmed-al-maghribi, al-haramain, amouage, ibrahim-al-qurashi" },
-
-    { "type": "header", "content": "7 · Shop by scent family" },
-    { "type": "text", "id": "scent_all_label", "label": "CTA label", "default": "All Scent Families" },
-    { "type": "url", "id": "scent_all_url", "label": "CTA link",
-      "info": "The scent family hub. Leave blank to hide the button." },
-
-    { "type": "header", "content": "8 · Shop by moment" },
-    { "type": "textarea", "id": "lifestyle_handles", "label": "Lifestyle collections (comma separated handles)",
-      "default": "office-wear, date-night, wedding, gym, travel-friendly, dinner-evening" },
-    { "type": "textarea", "id": "climate_handles", "label": "Climate collections (comma separated handles)",
-      "default": "summer-wear, winter-holiday, desert-climate, humid-weather, tropical-climate, rainy-day" },
-
-    { "type": "header", "content": "10 · Instagram" },
-    { "type": "text", "id": "ugc_eyebrow", "label": "Eyebrow", "default": "Insta Shop" },
-    { "type": "html", "id": "ugc_heading", "label": "Heading", "default": "Real People. <em>Real Scents.</em>" },
-    { "type": "text", "id": "ugc_sub", "label": "Subheading", "default": "Tag us @thefragrancesecrets to be featured" },
-
-    { "type": "header", "content": "12 · Why choose" },
-    { "type": "textarea", "id": "why_sub", "label": "Intro",
-      "info": "The reference marks this section as a copy placeholder pending the approved homepage document. The cards below default to the wording already signed off in the collection documents." }
+      "default": "fragrance-secrets, secret-scents, paris-collection"
+    },
+    {
+      "type": "textarea",
+      "id": "popular_handles",
+      "label": "Most loved houses (comma separated handles)",
+      "default": "lattafa, rasasi, armaf, swiss-arabian, ahmed-al-maghribi, al-haramain, amouage, ibrahim-al-qurashi"
+    },
+    {
+      "type": "header",
+      "content": "7 · Shop by scent family"
+    },
+    {
+      "type": "text",
+      "id": "scent_all_label",
+      "label": "CTA label",
+      "default": "All Scent Families"
+    },
+    {
+      "type": "url",
+      "id": "scent_all_url",
+      "label": "CTA link",
+      "info": "The scent family hub. Leave blank to hide the button."
+    },
+    {
+      "type": "header",
+      "content": "8 · Shop by moment"
+    },
+    {
+      "type": "textarea",
+      "id": "lifestyle_handles",
+      "label": "Lifestyle collections (comma separated handles)",
+      "default": "office-wear, date-night, wedding, gym, travel-friendly, dinner-evening"
+    },
+    {
+      "type": "textarea",
+      "id": "climate_handles",
+      "label": "Climate collections (comma separated handles)",
+      "default": "summer-wear, winter-holiday, desert-climate, humid-weather, tropical-climate, rainy-day"
+    },
+    {
+      "type": "header",
+      "content": "10 · Instagram"
+    },
+    {
+      "type": "text",
+      "id": "ugc_eyebrow",
+      "label": "Eyebrow",
+      "default": "Insta Shop"
+    },
+    {
+      "type": "html",
+      "id": "ugc_heading",
+      "label": "Heading",
+      "default": "Real People. <em>Real Scents.</em>"
+    },
+    {
+      "type": "text",
+      "id": "ugc_sub",
+      "label": "Subheading",
+      "default": "Tag us @thefragrancesecrets to be featured"
+    },
+    {
+      "type": "header",
+      "content": "12 · Why choose"
+    },
+    {
+      "type": "textarea",
+      "id": "why_sub",
+      "label": "Intro",
+      "info": "The reference marks this section as a copy placeholder pending the approved homepage document. The cards below default to the wording already signed off in the collection documents."
+    }
   ],
   "blocks": [
-    { "type": "@app" },
+    {
+      "type": "@app"
+    },
     {
       "type": "scent",
       "name": "Scent family",
       "settings": [
-        { "type": "text", "id": "handle", "label": "Collection handle" },
-        { "type": "text", "id": "title", "label": "Title", "info": "Defaults to the collection title." },
-        { "type": "text", "id": "sub", "label": "Description" },
-        { "type": "text", "id": "icon", "label": "Material icon name", "default": "spa" },
-        { "type": "image_picker", "id": "image", "label": "Background image",
-          "info": "Optional, 600 x 600 px. The card switches to light text over a dark scrim. Falls back to the collection image; without either it keeps the plain white card." }
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Collection handle"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Defaults to the collection title."
+        },
+        {
+          "type": "text",
+          "id": "sub",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Image (theme asset filename)",
+          "info": "e.g. oud-woody-card.webp — the file must live in assets/. Takes precedence over the picker below."
+        },
+        {
+          "type": "text",
+          "id": "image_asset_sm",
+          "label": "Small image (theme asset filename)",
+          "info": "Optional 350 x 350 variant, served to phones."
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Material icon name",
+          "default": "spa"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image",
+          "info": "Optional, 600 x 600 px. The card switches to light text over a dark scrim. Falls back to the collection image; without either it keeps the plain white card."
+        }
       ]
     },
     {
       "type": "category",
       "name": "Category card",
       "settings": [
-        { "type": "text", "id": "handle", "label": "Collection handle" },
-        { "type": "text", "id": "title", "label": "Title", "info": "Defaults to the collection title." },
-        { "type": "text", "id": "sub", "label": "Descriptor",
-          "info": "Shown under the title. Leave blank to show the live product count instead." },
-        { "type": "image_picker", "id": "image", "label": "Image",
-          "info": "Landscape, 800 × 500 px or larger. Falls back to the collection image, then its first product photo." }
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Collection handle"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Defaults to the collection title."
+        },
+        {
+          "type": "text",
+          "id": "sub",
+          "label": "Descriptor",
+          "info": "Shown under the title. Leave blank to show the live product count instead."
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Image (theme asset filename)",
+          "info": "e.g. mens-card.webp — the file must live in assets/. Takes precedence over the picker below."
+        },
+        {
+          "type": "text",
+          "id": "image_asset_sm",
+          "label": "Small image (theme asset filename)",
+          "info": "Optional 600 x 375 variant, served to phones."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Landscape, 1200 × 750 px. Used when no theme asset is named above. Falls back to the collection image, then its first product photo."
+        }
       ]
     },
     {
       "type": "why",
       "name": "Why choose card",
       "settings": [
-        { "type": "text", "id": "icon", "label": "Material icon name", "default": "verified" },
-        { "type": "text", "id": "title", "label": "Heading" },
-        { "type": "textarea", "id": "body", "label": "Body" }
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Material icon name",
+          "default": "verified"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        }
       ]
     },
     {
       "type": "faq",
       "name": "FAQ",
       "settings": [
-        { "type": "text", "id": "question", "label": "Question" },
-        { "type": "textarea", "id": "answer", "label": "Answer" }
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
       ]
     }
   ],
@@ -539,26 +762,184 @@
     {
       "name": "Home",
       "blocks": [
-        { "type": "category", "settings": { "handle": "mens", "title": "For Men" } },
-        { "type": "category", "settings": { "handle": "womens", "title": "For Women" } },
-        { "type": "category", "settings": { "handle": "unisex", "title": "Unisex" } },
-        { "type": "category", "settings": { "handle": "kids", "title": "Kids Collection" } },
-        { "type": "category", "settings": { "handle": "arabic", "title": "Arabic Perfumes", "sub": "Oud, musk & attar" } },
-        { "type": "category", "settings": { "handle": "perfume-oil", "title": "Perfume Oils", "sub": "Alcohol-free & concentrated" } },
-        { "type": "scent", "settings": { "handle": "oud-woody", "title": "Oud & Woody", "sub": "Deep, warm, resinous", "icon": "park" } },
-        { "type": "scent", "settings": { "handle": "fresh-citrus", "title": "Fresh & Citrus", "sub": "Bright, clean, energetic", "icon": "water_drop" } },
-        { "type": "scent", "settings": { "handle": "floral-rose", "title": "Floral & Rose", "sub": "Elegant, soft, romantic", "icon": "local_florist" } },
-        { "type": "scent", "settings": { "handle": "sweet-gourmand", "title": "Sweet & Gourmand", "sub": "Rich, indulgent, cosy", "icon": "cake" } },
-        { "type": "scent", "settings": { "handle": "spicy-oriental", "title": "Spicy & Oriental", "sub": "Bold, warm, exotic", "icon": "local_fire_department" } },
-        { "type": "why", "settings": { "icon": "verified", "title": "100% Authentic Perfumes", "body": "Every fragrance is genuine and sourced through trusted suppliers, checked before it ships." } },
-        { "type": "why", "settings": { "icon": "local_shipping", "title": "Fast UAE Delivery", "body": "Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates." } },
-        { "type": "why", "settings": { "icon": "lock", "title": "Secure Payments", "body": "Pay safely by card, wallet or cash on delivery, whichever suits you best." } },
-        { "type": "why", "settings": { "icon": "diamond", "title": "Premium Fragrance Collection", "body": "Designer houses and Arabian perfumery, side by side in one place." } },
-        { "type": "faq", "settings": { "question": "What are the best luxury perfumes to buy online in UAE?", "answer": "At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion." } },
-        { "type": "faq", "settings": { "question": "How do I choose the right perfume for my personality?", "answer": "Choosing the right perfume depends on your personal style, mood, and fragrance preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you discover fragrances that match your personality and create a lasting impression wherever you go." } },
-        { "type": "faq", "settings": { "question": "Where can I buy authentic perfumes online in Dubai?", "answer": "If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes designed for those who value originality, luxury, and a seamless online shopping experience." } },
-        { "type": "faq", "settings": { "question": "Which perfumes last longer in UAE weather conditions?", "answer": "Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment." } },
-        { "type": "faq", "settings": { "question": "Why should I buy perfumes from The Fragrance Secrets?", "answer": "The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable, and timeless." } }
+        {
+          "type": "category",
+          "settings": {
+            "handle": "mens",
+            "title": "For Men",
+            "image_asset": "mens-card.webp",
+            "image_asset_sm": "mens-card-sm.webp"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "handle": "womens",
+            "title": "For Women",
+            "image_asset": "womens-card.webp",
+            "image_asset_sm": "womens-card-sm.webp"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "handle": "unisex",
+            "title": "Unisex",
+            "image_asset": "unisex-card.webp",
+            "image_asset_sm": "unisex-card-sm.webp"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "handle": "kids",
+            "title": "Kids Collection",
+            "image_asset": "kids-card.webp",
+            "image_asset_sm": "kids-card-sm.webp"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "handle": "arabic",
+            "title": "Arabic Perfumes",
+            "sub": "Oud, musk & attar",
+            "image_asset": "arabic-card.webp",
+            "image_asset_sm": "arabic-card-sm.webp"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "handle": "perfume-oil",
+            "title": "Perfume Oils",
+            "sub": "Alcohol-free & concentrated",
+            "image_asset": "perfume-oil-card.webp",
+            "image_asset_sm": "perfume-oil-card-sm.webp"
+          }
+        },
+        {
+          "type": "scent",
+          "settings": {
+            "handle": "oud-woody",
+            "title": "Oud & Woody",
+            "sub": "Deep, warm, resinous",
+            "icon": "park",
+            "image_asset": "oud-woody-card.webp",
+            "image_asset_sm": "oud-woody-card-sm.webp"
+          }
+        },
+        {
+          "type": "scent",
+          "settings": {
+            "handle": "fresh-citrus",
+            "title": "Fresh & Citrus",
+            "sub": "Bright, clean, energetic",
+            "icon": "water_drop",
+            "image_asset": "fresh-citrus-card.webp",
+            "image_asset_sm": "fresh-citrus-card-sm.webp"
+          }
+        },
+        {
+          "type": "scent",
+          "settings": {
+            "handle": "floral-rose",
+            "title": "Floral & Rose",
+            "sub": "Elegant, soft, romantic",
+            "icon": "local_florist",
+            "image_asset": "floral-rose-card.webp",
+            "image_asset_sm": "floral-rose-card-sm.webp"
+          }
+        },
+        {
+          "type": "scent",
+          "settings": {
+            "handle": "sweet-gourmand",
+            "title": "Sweet & Gourmand",
+            "sub": "Rich, indulgent, cosy",
+            "icon": "cake",
+            "image_asset": "sweet-gourmand-card.webp",
+            "image_asset_sm": "sweet-gourmand-card-sm.webp"
+          }
+        },
+        {
+          "type": "scent",
+          "settings": {
+            "handle": "spicy-oriental",
+            "title": "Spicy & Oriental",
+            "sub": "Bold, warm, exotic",
+            "icon": "local_fire_department",
+            "image_asset": "spicy-oriental-card.webp",
+            "image_asset_sm": "spicy-oriental-card-sm.webp"
+          }
+        },
+        {
+          "type": "why",
+          "settings": {
+            "icon": "verified",
+            "title": "100% Authentic Perfumes",
+            "body": "Every fragrance is genuine and sourced through trusted suppliers, checked before it ships."
+          }
+        },
+        {
+          "type": "why",
+          "settings": {
+            "icon": "local_shipping",
+            "title": "Fast UAE Delivery",
+            "body": "Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates."
+          }
+        },
+        {
+          "type": "why",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Payments",
+            "body": "Pay safely by card, wallet or cash on delivery, whichever suits you best."
+          }
+        },
+        {
+          "type": "why",
+          "settings": {
+            "icon": "diamond",
+            "title": "Premium Fragrance Collection",
+            "body": "Designer houses and Arabian perfumery, side by side in one place."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What are the best luxury perfumes to buy online in UAE?",
+            "answer": "At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right perfume for my personality?",
+            "answer": "Choosing the right perfume depends on your personal style, mood, and fragrance preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you discover fragrances that match your personality and create a lasting impression wherever you go."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I buy authentic perfumes online in Dubai?",
+            "answer": "If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes designed for those who value originality, luxury, and a seamless online shopping experience."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Which perfumes last longer in UAE weather conditions?",
+            "answer": "Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Why should I buy perfumes from The Fragrance Secrets?",
+            "answer": "The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable, and timeless."
+          }
+        }
       ]
     }
   ]
