@@ -333,16 +333,37 @@
 </section>
 
 <!-- 10 · INSTAGRAM -->
-<section class="ugc">
-  <div class="ugc-inner">
-    <div class="ugc-head fade-up">
-      <span class="label">Insta Shop</span>
-      <h2 class="sec-title">Real People. <em>Real Scents.</em></h2>
-      <p class="sec-sub center" style="margin:8px auto 0">Tag us @thefragrancesecrets to be featured</p>
+{%- comment -%}
+  The feed itself comes from an Instagram app block, which holds and refreshes the
+  Meta access token — a theme cannot do that safely, since anything it ships is
+  readable in the browser and the token expires every 60 days.
+
+  In the theme editor, add the app's block to this Home section and drag it here.
+  The section renders only the heading until one is present, so the page never
+  shows placeholder tiles pretending to be customer posts.
+{%- endcomment -%}
+{%- assign app_blocks = section.blocks | where: 'type', '@app' -%}
+{%- if app_blocks.size > 0 or request.design_mode -%}
+  <section class="ugc">
+    <div class="ugc-inner">
+      <div class="ugc-head fade-up">
+        <span class="label">{{ section.settings.ugc_eyebrow }}</span>
+        <h2 class="sec-title">{{ section.settings.ugc_heading }}</h2>
+        {%- if section.settings.ugc_sub != blank -%}
+          <p class="sec-sub center" style="margin:8px auto 0">{{ section.settings.ugc_sub }}</p>
+        {%- endif -%}
+      </div>
+      {%- for block in app_blocks -%}
+        <div class="ugc-app" {{ block.shopify_attributes }}>{% render block %}</div>
+      {%- endfor -%}
+      {%- if app_blocks.size == 0 and request.design_mode -%}
+        <p class="ugc-empty">No Instagram feed connected yet. Use <strong>Add block</strong> on this
+          Home section and pick your Instagram app's block, then drag it here. This
+          message is only visible in the theme editor.</p>
+      {%- endif -%}
     </div>
-    <div class="ugc-grid" data-render="ugc"></div>
-  </div>
-</section>
+  </section>
+{%- endif -%}
 
 <!-- 11 · FAQ -->
 <section class="faq" id="faq">
@@ -448,11 +469,17 @@
     { "type": "textarea", "id": "climate_handles", "label": "Climate collections (comma separated handles)",
       "default": "summer-wear, winter-holiday, desert-climate, humid-weather, tropical-climate, rainy-day" },
 
+    { "type": "header", "content": "10 · Instagram" },
+    { "type": "text", "id": "ugc_eyebrow", "label": "Eyebrow", "default": "Insta Shop" },
+    { "type": "html", "id": "ugc_heading", "label": "Heading", "default": "Real People. <em>Real Scents.</em>" },
+    { "type": "text", "id": "ugc_sub", "label": "Subheading", "default": "Tag us @thefragrancesecrets to be featured" },
+
     { "type": "header", "content": "12 · Why choose" },
     { "type": "textarea", "id": "why_sub", "label": "Intro",
       "info": "The reference marks this section as a copy placeholder pending the approved homepage document. The cards below default to the wording already signed off in the collection documents." }
   ],
   "blocks": [
+    { "type": "@app" },
     {
       "type": "scent",
       "name": "Scent family",

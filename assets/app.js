@@ -32,13 +32,6 @@ const blogs = [
   { cat: 'Fragrance Guide', title: 'EDP vs EDT vs Attar: Which Fragrance Lasts Longer?', excerpt: 'Understand fragrance concentration differences and learn which perfume type works best for everyday wear, special occasions, and long-lasting performance.', date: 'March 30, 2026', read: '5 min read', img: 'assets/img/cat-attar.jpg' },
 ];
 
-const ugcImgs = [
-  'assets/img/kit-gift.jpg',
-  'assets/img/prod-bouquet-oud.png',
-  'assets/img/hero-oud.jpg',
-  'assets/img/prod-club-de-nuit.jpg',
-  'assets/img/prod-hawas.jpg',
-];
 
 const discoveryKits = []; // no hardcoded kits — use a real discovery-kits collection
 
@@ -252,11 +245,6 @@ function hydrateRenderables() {
         if (half > 0) node.style.animationDuration = Math.max(30, Math.round(half / 40)) + 's';
       });
     }
-    else if (kind === 'ugc') node.innerHTML = ugcImgs.map(u => `
-  <div class="ugc-item">
-    <img src="${assetURL(u)}" alt="Customer" loading="lazy"/>
-    <div class="ugc-hover"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>View on Instagram</span></div>
-  </div>`).join('');
   });
 }
 

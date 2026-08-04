@@ -1212,6 +1212,23 @@
       line-height: 1.5
     }
 
+    /* Instagram feed comes from an app block; give it room and centre the
+       editor-only empty state. */
+    .ugc-app {
+      margin-top: 8px
+    }
+
+    .ugc-empty {
+      max-width: 620px;
+      margin: 8px auto 0;
+      padding: 22px 24px;
+      border: 1px dashed rgba(13, 10, 6, .22);
+      border-radius: 12px;
+      text-align: center;
+      font-size: .84rem;
+      color: var(--warm)
+    }
+
     /* centred CTA under the scent grid */
     .scent-cta {
       display: flex;
