@@ -208,8 +208,12 @@
         {%- assign cat_title = block.settings.title | default: category.title -%}
         <a class="cat-card fade-up" href="{{ category.url }}" {{ block.shopify_attributes }}>
           {%- if cat_image -%}
-            <img class="cat-img" src="{{ cat_image | image_url: width: 800 }}"
-                 alt="{{ cat_title | escape }}" loading="lazy" width="800" height="500" />
+            <img class="cat-img" src="{{ cat_image | image_url: width: 900 }}"
+                 srcset="{{ cat_image | image_url: width: 450 }} 450w,
+                         {{ cat_image | image_url: width: 900 }} 900w,
+                         {{ cat_image | image_url: width: 1200 }} 1200w"
+                 sizes="(max-width: 600px) 92vw, (max-width: 900px) 46vw, 30vw"
+                 alt="{{ cat_title | escape }}" loading="lazy" width="900" height="563" />
           {%- endif -%}
           <span class="cat-arrow" aria-hidden="true"><span class="mi">arrow_forward</span></span>
           <div class="cat-ct">
@@ -239,7 +243,16 @@
         {%- if block.type != 'scent' -%}{%- continue -%}{%- endif -%}
         {%- assign scent = collections[block.settings.handle] -%}
         {%- if scent.handle == blank -%}{%- continue -%}{%- endif -%}
-        <a class="scent-card fade-up" href="{{ scent.url }}" {{ block.shopify_attributes }}>
+        {%- assign scent_image = block.settings.image | default: scent.image -%}
+        <a class="scent-card fade-up{% if scent_image %} has-bg{% endif %}" href="{{ scent.url }}"
+           {{ block.shopify_attributes }}>
+          {%- if scent_image -%}
+            <img class="scent-bg" src="{{ scent_image | image_url: width: 600 }}"
+                 srcset="{{ scent_image | image_url: width: 300 }} 300w,
+                         {{ scent_image | image_url: width: 600 }} 600w"
+                 sizes="(max-width: 600px) 46vw, 18vw"
+                 alt="" loading="lazy" width="600" height="600" />
+          {%- endif -%}
           <span class="scent-ic"><span class="mi" aria-hidden="true">{{ block.settings.icon }}</span></span>
           <h3>{{ block.settings.title | default: scent.title }}</h3>
           <p>{{ block.settings.sub }}</p>
@@ -487,7 +500,9 @@
         { "type": "text", "id": "handle", "label": "Collection handle" },
         { "type": "text", "id": "title", "label": "Title", "info": "Defaults to the collection title." },
         { "type": "text", "id": "sub", "label": "Description" },
-        { "type": "text", "id": "icon", "label": "Material icon name", "default": "spa" }
+        { "type": "text", "id": "icon", "label": "Material icon name", "default": "spa" },
+        { "type": "image_picker", "id": "image", "label": "Background image",
+          "info": "Optional, 600 x 600 px. The card switches to light text over a dark scrim. Falls back to the collection image; without either it keeps the plain white card." }
       ]
     },
     {

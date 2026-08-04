@@ -1212,6 +1212,65 @@
       line-height: 1.5
     }
 
+    /* Optional artwork behind a scent card. Without an image the card keeps its
+       plain white treatment; with one it flips to light text over a scrim, and a
+       fixed square shape so the five cards stay level. */
+    .scent-card.has-bg {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-color: rgba(201, 168, 76, .2);
+      background: linear-gradient(150deg, #2A2118, #171310)
+    }
+
+    .scent-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s var(--ease)
+    }
+
+    .scent-card.has-bg:hover .scent-bg {
+      transform: scale(1.06)
+    }
+
+    .scent-card.has-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13, 10, 6, .1) 25%, rgba(13, 10, 6, .88))
+    }
+
+    .scent-card.has-bg .scent-ic,
+    .scent-card.has-bg h3,
+    .scent-card.has-bg p {
+      position: relative;
+      z-index: 1
+    }
+
+    .scent-card.has-bg .scent-ic {
+      background: rgba(201, 168, 76, .22);
+      border: 1px solid rgba(226, 201, 126, .45);
+      margin-bottom: 12px
+    }
+
+    .scent-card.has-bg .scent-ic .mi {
+      color: var(--gold-lt)
+    }
+
+    .scent-card.has-bg h3 {
+      color: var(--white)
+    }
+
+    .scent-card.has-bg p {
+      color: rgba(255, 255, 255, .74)
+    }
+
     /* Instagram feed comes from an app block; give it room and centre the
        editor-only empty state. */
     .ugc-app {
