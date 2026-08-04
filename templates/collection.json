@@ -143,7 +143,7 @@
             "icon": "spa",
             "label": "Shop by Scent Family",
             "sub": "Fresh, oud, spicy, sweet",
-            "url": "/collections/oud-woody",
+            "url": "/pages/shop-by-scent-family",
             "hub": "scent"
           }
         },
