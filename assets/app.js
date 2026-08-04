@@ -355,7 +355,7 @@ function headerHTML(theme, active) {
     <div class="nav-wrap">
       <a href="${R('index.html')}" class="nav-logo" aria-label="The Fragrance Secrets — Home"><img src="${R('assets/img/logo.png')}" alt="The Fragrance Secrets" /></a>
       <button class="nav-burger" aria-label="Menu" onclick="toggleMobileNav()"><span class="mi" aria-hidden="true">menu</span></button>
-      <nav class="nav-links" id="navLinks">${links}<a href="#" class="nav-toplink nav-quiz" onclick="openAI();toggleMobileNav();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</a><a href="${R('search.html')}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">search</span>Search</a><a href="${R('account.html')}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">person</span>Account</a><a href="${R('wishlist.html')}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">favorite</span>Wishlist</a></nav>
+      <nav class="nav-links" id="navLinks">${links}<a href="#" class="nav-toplink nav-quiz" onclick="openAI();closeMobileNav();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</a><a href="${R('search.html')}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">search</span>Search</a><a href="${R('account.html')}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">person</span>Account</a><a href="${R('wishlist.html')}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">favorite</span>Wishlist</a></nav>
       <div class="nav-actions">
         <a class="ni" href="search.html" title="Search"><span class="mi" aria-hidden="true">search</span></a>
         <a class="ni" href="account.html" title="Account"><span class="mi" aria-hidden="true">person</span></a>
@@ -489,6 +489,15 @@ function mountChrome() {
       if (h && !/^(https?:|mailto:|tel:|#|\/)/.test(h)) a.setAttribute('href', BASE + h);
     });
   }
+}
+
+/* Close-only companion to toggleMobileNav. The Find My Scent link used to call
+   the toggle, which on desktop — where the drawer is never open — opened it
+   instead, leaving the blurred overlay and the body scroll lock in place with no
+   way to clear them. */
+function closeMobileNav() {
+  const n = el('navLinks');
+  if (n && n.classList.contains('open')) toggleMobileNav();
 }
 
 function toggleMobileNav() {
