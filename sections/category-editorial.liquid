@@ -174,13 +174,12 @@
 {%- liquid
   assign coll_url = shop.url | append: collection.url
   assign crumb_name = section.settings.crumb_name | default: collection.title
-  {%- comment -%}
-    The middle crumb must name the page's real parent hub — Brands for a brand
-    page, Lifestyle for a lifestyle page — matching both the source documents and
-    the visible breadcrumb the hero renders. It used to be hardcoded to
-    Perfumes / collections/all, so the structured data contradicted the
-    breadcrumb on screen.
-  {%- endcomment -%}
+  # Comments inside a liquid tag must be '#' lines, and must not contain tag
+  # delimiters, or Liquid tries to parse them and rejects the whole file.
+  # The middle crumb names the page's real parent hub — Brands for a brand page,
+  # Lifestyle for a lifestyle page — matching both the source documents and the
+  # visible breadcrumb the hero renders. It was hardcoded to Perfumes /
+  # collections/all, so the structured data contradicted the breadcrumb on screen.
   assign crumb_parent_label = section.settings.crumb_parent_label | default: 'Perfumes'
   assign crumb_parent_path = section.settings.crumb_parent_url | default: '/collections/all'
   assign crumb_parent_url = shop.url | append: crumb_parent_path
