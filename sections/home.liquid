@@ -246,6 +246,12 @@
         </a>
       {%- endfor -%}
     </div>
+    {%- if section.settings.scent_all_url != blank -%}
+      <div class="scent-cta fade-up">
+        <a class="see-all" href="{{ section.settings.scent_all_url }}">{{ section.settings.scent_all_label }}
+          <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -430,6 +436,11 @@
       "default": "fragrance-secrets, paris-collection" },
     { "type": "textarea", "id": "popular_handles", "label": "Most loved houses (comma separated handles)",
       "default": "lattafa, rasasi, armaf, swiss-arabian, ahmed-al-maghribi, al-haramain, amouage, ibrahim-al-qurashi" },
+
+    { "type": "header", "content": "7 · Shop by scent family" },
+    { "type": "text", "id": "scent_all_label", "label": "CTA label", "default": "All Scent Families" },
+    { "type": "url", "id": "scent_all_url", "label": "CTA link",
+      "info": "The scent family hub. Leave blank to hide the button." },
 
     { "type": "header", "content": "8 · Shop by moment" },
     { "type": "textarea", "id": "lifestyle_handles", "label": "Lifestyle collections (comma separated handles)",

@@ -191,7 +191,10 @@
         "faq4",
         "faq5"
       ],
-      "settings": {}
+      "settings": {
+        "scent_all_label": "All Scent Families",
+        "scent_all_url": "/pages/shop-by-scent-family"
+      }
     }
   },
   "order": [
