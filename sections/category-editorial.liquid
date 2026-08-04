@@ -9,10 +9,23 @@
     faq  — one accordion row, also mirrored into FAQPage schema
 {%- endcomment -%}
 
+{%- comment -%}
+  The default collection template is shared by many collections, so copy meant for
+  one path must not leak onto the rest. When limit_to_path is set and the request
+  is elsewhere, this section renders nothing.
+{%- endcomment -%}
+{%- if section.settings.limit_to_path != blank and request.path != section.settings.limit_to_path -%}
+  {%- assign card_blocks = '' | split: ',' -%}
+  {%- assign faq_blocks = '' | split: ',' -%}
+  {%- assign sibling_blocks = '' | split: ',' -%}
+  {%- assign explore_blocks = '' | split: ',' -%}
+  {%- assign editorial_muted = true -%}
+{%- else -%}
 {%- assign card_blocks = section.blocks | where: 'type', 'card' -%}
 {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
 {%- assign sibling_blocks = section.blocks | where: 'type', 'sibling' -%}
 {%- assign explore_blocks = section.blocks | where: 'type', 'explore' -%}
+{%- endif -%}
 
 <!-- FEATURE / SCENT-FAMILY CARDS -->
 {%- if card_blocks.size > 0 -%}
@@ -129,7 +142,7 @@
 {%- endif -%}
 
 <!-- REVIEWS -->
-{%- if section.settings.show_reviews -%}
+{%- if section.settings.show_reviews and editorial_muted != true -%}
   <section class="reviews"><div class="reviews-inner">
     <div class="reviews-head fade-up">
       <span class="label">What Customers Say</span>
@@ -184,6 +197,14 @@
   assign crumb_parent_path = section.settings.crumb_parent_url | default: '/collections/all'
   assign crumb_parent_url = shop.url | append: crumb_parent_path
   assign schema_name = section.settings.schema_name | default: collection.title
+  # When the copy is confined to another path the schema must describe this
+  # collection, not the one the settings were written for.
+  if editorial_muted
+    assign crumb_name = collection.title
+    assign crumb_parent_label = 'Perfumes'
+    assign crumb_parent_url = shop.url | append: '/collections/all'
+    assign schema_name = collection.title
+  endif
 -%}
 
 <script type="application/ld+json">
@@ -281,6 +302,7 @@
     { "type": "header", "content": "Reviews" },
     { "type": "checkbox", "id": "show_reviews", "label": "Show the reviews band", "default": true },
     { "type": "header", "content": "Structured data" },
+    { "type": "text", "id": "limit_to_path", "label": "Only render on this path", "info": "For the default collection template, which many collections share. e.g. /collections/all — the section renders nothing elsewhere. Leave blank to always render." },
     { "type": "text", "id": "crumb_name", "label": "Breadcrumb name", "info": "Leave blank to use the collection title." },
     { "type": "text", "id": "crumb_parent_label", "label": "Breadcrumb parent name", "info": "The hub this page sits under, e.g. Brands. Must match the visible breadcrumb in the hero. Defaults to Perfumes." },
     { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent path", "info": "e.g. /pages/brands. Defaults to /collections/all." },

@@ -11,10 +11,219 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {}
+      "settings": {
+        "hero_eyebrow": "Shop",
+        "hero_heading": "All <em>Products</em>",
+        "hero_image_alt": "The full fragrance range at The Fragrance Secrets UAE",
+        "show_hero_description": false,
+        "crumb_parent_label": "Shop",
+        "crumb_parent_url": "/collections",
+        "show_trust_band": false,
+        "show_reviews": false,
+        "intro_eyebrow": "Shop",
+        "intro_heading": "Shop All Perfumes Online UAE",
+        "intro_text": "<p>Finding the right fragrance is easier when everything is in one place. The Fragrance Secrets brings together its complete collection of designer and Arabian fragrances, including oud and woody, fresh and floral, sweet and spicy scents for men, women, and unisex preferences. Browse the entire catalogue, filter by what matters most to you, and compare fragrances side by side to find your perfect match. Whether you're looking for a signature scent, shopping for a gift, or simply exploring something new, this is the easiest way to discover the full collection and buy perfumes online with confidence.</p>",
+        "show_why_rotator": true,
+        "limit_to_path": "/collections/all"
+      }
+    },
+    "editorial": {
+      "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The Full Range",
+        "cards_heading": "Why Shop <em>This Collection</em>",
+        "cards_sub": "The All Products collection is the complete view of everything we stock, built so you can browse, filter and compare with ease. Here is what makes shopping the full range at The Fragrance Secrets simple and reliable.",
+        "show_numbers": false,
+        "sibling_eyebrow": "The Shop",
+        "sibling_heading": "Explore Other <em>Shop Collections</em>",
+        "sibling_sub": "Looking for something specific? Explore our other shop collections to find bestsellers, new launches, and limited-time offers across the full fragrance range.",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, climate, and scent family, and find the perfect scent for every occasion.",
+        "current_hub": "none",
+        "show_reviews": true,
+        "crumb_name": "All Products",
+        "schema_name": "Shop All Perfumes Online UAE",
+        "schema_description": "Shop all perfumes online at The Fragrance Secrets. Browse the complete range of designer and Arabian fragrances for men and women in one place. Fast delivery across the UAE, USA and Canada.",
+        "crumb_parent_label": "Shop",
+        "crumb_parent_url": "/collections",
+        "limit_to_path": "/collections/all"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "The Complete Range",
+            "body": "Every fragrance we stock, in one collection. Browse designer and Arabian houses, oud, fresh, floral, sweet and spicy scents for men, women and unisex, the full catalogue in a single place.",
+            "tag_label": "Explore",
+            "tags": "Designer, Arabian, Niche, Everyday"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Easy to Filter & Compare",
+            "body": "Use filters and sort to narrow the range by scent family, gender, price and more, then compare options side by side. Finding the right perfume is quick, even across a large selection.",
+            "tag_label": "Shop By",
+            "tags": "Family, Gender, Price, Brand"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "100% Genuine Fragrances",
+            "body": "Every product is sourced through trusted suppliers, so whatever you choose from the full range is genuine and quality-checked. Shop the entire catalogue with complete confidence.",
+            "tag_label": "Assured",
+            "tags": "Genuine, Quality-Checked, Trusted"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Something for Everyone",
+            "body": "From affordable everyday scents to premium niche and luxury houses, the range spans every budget, occasion and preference, so there is a perfect fragrance here for every person and every moment.",
+            "tag_label": "Best For",
+            "tags": "Men, Women, Gifts, Every Budget"
+          }
+        },
+        "sibling1": {
+          "type": "sibling",
+          "settings": {
+            "label": "Best Sellers",
+            "url": "/collections/best-sellers"
+          }
+        },
+        "sibling2": {
+          "type": "sibling",
+          "settings": {
+            "label": "New Arrivals",
+            "url": "/collections/new-arrivals"
+          }
+        },
+        "sibling3": {
+          "type": "sibling",
+          "settings": {
+            "label": "Crazy Deals",
+            "url": "/collections/crazy-deals"
+          }
+        },
+        "explore1": {
+          "type": "explore",
+          "settings": {
+            "icon": "grid_view",
+            "label": "Shop by Category",
+            "sub": "Men's, women's, unisex & more",
+            "url": "/collections",
+            "hub": "category"
+          }
+        },
+        "explore2": {
+          "type": "explore",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle",
+            "hub": "lifestyle"
+          }
+        },
+        "explore3": {
+          "type": "explore",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-weather",
+            "hub": "climate"
+          }
+        },
+        "explore4": {
+          "type": "explore",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Fresh, oud, spicy, sweet",
+            "url": "/collections/oud-woody",
+            "hub": "scent"
+          }
+        },
+        "explore5": {
+          "type": "explore",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands",
+            "hub": "brand"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I browse all perfumes online in the UAE?",
+            "answer": "You can browse the complete range here in the All Products collection at The Fragrance Secrets, with the full catalogue of designer and Arabian fragrances in one filterable place."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume brands can I buy online?",
+            "answer": "The Fragrance Secrets offers a wide selection of designer and Arabian fragrance houses, from everyday names to premium niche brands, all available to browse and buy online in one catalogue."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I find the right perfume in such a big range?",
+            "answer": "Use filters and sort to narrow by scent family, gender, price and occasion, then compare a shortlist. Our scent-family and lifestyle collections also help you explore by mood."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Are all the perfumes genuine?",
+            "answer": "Yes. Every perfume in the collection is sourced through trusted suppliers, so the entire range is genuine and quality-checked. You can shop the full catalogue with complete confidence."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I buy perfume online and get it delivered?",
+            "answer": "Yes. You can buy any perfume in the range online and have it delivered across the UAE, with delivery also available to the United States and Canada."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "sibling1",
+        "sibling2",
+        "sibling3",
+        "explore1",
+        "explore2",
+        "explore3",
+        "explore4",
+        "explore5",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
     }
   },
   "order": [
-    "main"
+    "main",
+    "editorial"
   ]
 }

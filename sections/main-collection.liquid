@@ -9,11 +9,39 @@
   assign hero_image = collection.image | default: collection.metafields.custom.hero_image.value
   assign paginate_by = section.settings.products_per_page | default: 24
 
-  assign hero_eyebrow = section.settings.hero_eyebrow | default: 'The Collection'
-  assign hero_heading = section.settings.hero_heading | default: collection.title
-  assign hero_image_alt = section.settings.hero_image_alt | default: collection.title
-  assign crumb_parent_label = section.settings.crumb_parent_label | default: 'Shop'
-  assign crumb_parent_url = section.settings.crumb_parent_url | default: '/collections/all'
+  # /collections/all is a built-in route with no collection to attach a template
+  # to, so its copy lives in the default collection template. That template is
+  # shared by 34 other collections, which must not inherit it. limit_to_path
+  # confines the copy to one path; elsewhere the section falls back to the
+  # collection's own title, exactly as before.
+  assign copy_applies = true
+  if section.settings.limit_to_path != blank and request.path != section.settings.limit_to_path
+    assign copy_applies = false
+  endif
+
+  if copy_applies
+    assign hero_eyebrow = section.settings.hero_eyebrow | default: 'The Collection'
+    assign hero_heading = section.settings.hero_heading | default: collection.title
+    assign hero_image_alt = section.settings.hero_image_alt | default: collection.title
+    assign crumb_parent_label = section.settings.crumb_parent_label | default: 'Shop'
+    assign crumb_parent_url = section.settings.crumb_parent_url | default: '/collections/all'
+  else
+    assign hero_eyebrow = 'The Collection'
+    assign hero_heading = collection.title
+    assign hero_image_alt = collection.title
+    assign crumb_parent_label = 'Shop'
+    assign crumb_parent_url = '/collections/all'
+  endif
+
+  assign show_intro = false
+  if copy_applies
+    if section.settings.intro_heading != blank
+      assign show_intro = true
+    endif
+    if section.settings.intro_text != blank
+      assign show_intro = true
+    endif
+  endif
 -%}
 
 <div data-collection-native>
@@ -90,7 +118,7 @@
   {%- endif -%}
 
   <!-- COLLECTION INTRODUCTION -->
-  {%- if section.settings.intro_heading != blank or section.settings.intro_text != blank -%}
+  {%- if show_intro -%}
     <section class="section-sm coll-intro"><div class="container coll-intro-grid{% if section.settings.intro_image != blank %} has-figure{% endif %}">
       <div class="coll-intro-copy">
         {%- if section.settings.intro_eyebrow != blank -%}<span class="label">{{ section.settings.intro_eyebrow }}</span>{%- endif -%}
@@ -441,6 +469,7 @@
     { "type": "text", "id": "hero_image_alt", "label": "Hero image alt text", "info": "Leave blank to use the collection title." },
     { "type": "text", "id": "hero_bg_image", "label": "Hero background image (theme asset filename)", "info": "e.g. mens-hero.webp — file must live in assets/. Used only when the collection has no image. Best at 2880 × 1000 with the left side dark." },
     { "type": "text", "id": "hero_bg_image_sm", "label": "Hero background image, small (theme asset filename)", "info": "Optional 1200 × 417 variant served to phones." },
+    { "type": "text", "id": "limit_to_path", "label": "Only use this copy on this path", "info": "For the default collection template, which many collections share. e.g. /collections/all — every other collection then falls back to its own title. Leave blank to always apply." },
     { "type": "checkbox", "id": "show_hero_description", "label": "Show collection description in hero", "default": true },
     { "type": "text", "id": "crumb_parent_label", "label": "Breadcrumb parent label", "default": "Shop" },
     { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent URL", "default": "/collections/all" },
