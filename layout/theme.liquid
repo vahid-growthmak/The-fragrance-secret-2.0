@@ -20,6 +20,7 @@
     on the resource itself (scripts/set-seo-meta.py). Two of the signed-off pages
     are built-in routes rather than resources, so there is nothing in the admin to
     attach them to and their copy has to live here:
+      /                — the home page, whose SEO otherwise lives in Preferences
       /collections/all — the built-in all-products route
       /collections     — the list-collections hub
   {%- endcomment -%}
@@ -27,7 +28,10 @@
     assign seo_title = page_title
     assign seo_description = page_description
 
-    if request.path == '/collections/all'
+    if request.page_type == 'index'
+      assign seo_title = 'Buy Perfume Online UAE | The Fragrance Secrets'
+      assign seo_description = 'Shop authentic designer, Arabic and luxury perfumes for men and women at The Fragrance Secrets. Delivery across the UAE with international shipping to the USA and Canada.'
+    elsif request.path == '/collections/all'
       assign seo_title = 'Shop All Perfumes Online UAE | The Fragrance Secrets'
       assign seo_description = 'Shop all perfumes online at The Fragrance Secrets. Browse the complete range of designer and Arabian fragrances for men and women in one place. Fast delivery across the UAE, USA and Canada.'
     elsif request.path == '/collections'

@@ -18,14 +18,15 @@
 {%- liquid
   assign house_handles = section.settings.house_handles | split: ','
   assign popular_handles = section.settings.popular_handles | split: ','
-  assign scent_handles = section.settings.scent_handles | split: ','
 -%}
 
 <!-- 1 · HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <p class="hero-pretitle">{{ section.settings.hero_eyebrow }}</p>
+    {%- if section.settings.hero_eyebrow != blank -%}
+      <p class="hero-pretitle">{{ section.settings.hero_eyebrow }}</p>
+    {%- endif -%}
     {%- comment -%}
       Two explicit lines rather than one string with a <br>: each is its own
       block, so the heading is always exactly two lines and never breaks into a
@@ -37,6 +38,9 @@
         <span class="hero-h-line"><em>{{ section.settings.hero_line_2 }}</em></span>
       {%- endif -%}
     </h1>
+    {%- if section.settings.hero_tagline != blank -%}
+      <p class="hero-tagline">{{ section.settings.hero_tagline }}</p>
+    {%- endif -%}
     <p class="hero-sub">{{ section.settings.hero_sub }}</p>
     <div class="hero-ctas">
       <a class="btn-g" href="{{ section.settings.hero_cta_url }}">
@@ -102,8 +106,9 @@
   <div class="brands-inner">
     <div class="best-head fade-up">
       <div>
-        <span class="label">Shop by Brand</span>
+        <span class="label">{{ section.settings.brands_eyebrow }}</span>
         <h2 class="sec-title" style="font-size:1.9rem">{{ section.settings.brands_heading }}</h2>
+        {%- if section.settings.brands_sub != blank -%}<p class="sec-sub">{{ section.settings.brands_sub }}</p>{%- endif -%}
       </div>
       <a href="/pages/brands" class="see-all">All Brands A–Z <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
@@ -150,8 +155,9 @@
   <div class="best-inner">
     <div class="best-head fade-up">
       <div>
-        <span class="label">Most Popular</span>
-        <h2 class="sec-title">The Best Perfumes in UAE<br>Loved by <em>Our Customers</em></h2>
+        <span class="label">{{ section.settings.best_eyebrow }}</span>
+        <h2 class="sec-title">{{ section.settings.best_heading }}</h2>
+        {%- if section.settings.best_sub != blank -%}<p class="sec-sub">{{ section.settings.best_sub }}</p>{%- endif -%}
       </div>
       <a href="/collections/best-sellers" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
@@ -170,10 +176,9 @@
   <div class="best-inner">
     <div class="best-head fade-up">
       <div>
-        <span class="label">New Arrivals</span>
-        <h2 class="sec-title">Premium Fragrances <em>Newly Added for You</em></h2>
-        <p class="sec-sub">Explore our fresh arrivals featuring new scents that feel unique, elegant, and memorable —
-          fragrances that match every mood, style, and occasion.</p>
+        <span class="label">{{ section.settings.new_eyebrow }}</span>
+        <h2 class="sec-title">{{ section.settings.new_heading }}</h2>
+        {%- if section.settings.new_sub != blank -%}<p class="sec-sub">{{ section.settings.new_sub }}</p>{%- endif -%}
       </div>
       <a href="/collections/new-arrivals" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
@@ -190,9 +195,9 @@
   <div class="gender-inner">
     <div class="best-head fade-up">
       <div>
-        <span class="label">Shop by Category</span>
-        <h2 class="sec-title">Start With <em>Who It's For</em></h2>
-        <p class="sec-sub">The fastest way in. Most shoppers know the person before the perfume, so we lead with it.</p>
+        <span class="label">{{ section.settings.category_eyebrow }}</span>
+        <h2 class="sec-title">{{ section.settings.category_heading }}</h2>
+        {%- if section.settings.category_sub != blank -%}<p class="sec-sub">{{ section.settings.category_sub }}</p>{%- endif -%}
       </div>
       <a href="/collections" class="see-all">Explore All Categories <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
@@ -246,9 +251,9 @@
 <section class="scent-section" id="scent-family">
   <div class="container">
     <div class="sec-head center fade-up">
-      <span class="label">Shop by Scent Family</span>
-      <h2 class="sec-title">Find Your <em>Signature Note</em></h2>
-      <p class="sec-sub">Don't know the name, but you know what you love. Pick the family that speaks to you.</p>
+      <span class="label">{{ section.settings.scent_eyebrow }}</span>
+      <h2 class="sec-title">{{ section.settings.scent_heading }}</h2>
+      {%- if section.settings.scent_sub != blank -%}<p class="sec-sub">{{ section.settings.scent_sub }}</p>{%- endif -%}
     </div>
     <div class="scent-grid">
       {%- for block in section.blocks -%}
@@ -292,9 +297,9 @@
 <section class="moment-section" id="moment">
   <div class="container">
     <div class="sec-head center fade-up">
-      <span class="label">Shop by Moment</span>
-      <h2 class="sec-title" style="color:var(--white)">Perfume For <em>Where You're Headed</em></h2>
-      <p class="sec-sub">Match a scent to the moment or the weather — two more ways in for shoppers who don't know names.</p>
+      <span class="label">{{ section.settings.moment_eyebrow }}</span>
+      <h2 class="sec-title" style="color:var(--white)">{{ section.settings.moment_heading }}</h2>
+      {%- if section.settings.moment_sub != blank -%}<p class="sec-sub">{{ section.settings.moment_sub }}</p>{%- endif -%}
     </div>
     <div class="moment-wrap">
       {%- comment -%} Two columns: lifestyle and climate, six tiles each. {%- endcomment -%}
@@ -354,8 +359,9 @@
   <div class="blog-inner">
     <div class="blog-head fade-up">
       <div>
-        <span class="label">Know Before You Buy</span>
-        <h2 class="sec-title">Fragrance Insights &amp; <em>Expert Guides</em></h2>
+        <span class="label">{{ section.settings.guides_eyebrow }}</span>
+        <h2 class="sec-title">{{ section.settings.guides_heading }}</h2>
+        {%- if section.settings.guides_sub != blank -%}<p class="sec-sub">{{ section.settings.guides_sub }}</p>{%- endif -%}
       </div>
       <a href="/blogs/journal" class="see-all">All Articles <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
@@ -530,26 +536,26 @@
       "type": "text",
       "id": "hero_eyebrow",
       "label": "Eyebrow",
-      "default": "Luxury Perfumes · UAE"
+      "default": ""
     },
     {
       "type": "text",
       "id": "hero_line_1",
       "label": "Heading line 1",
-      "default": "Find The Scent That"
+      "default": "Buy Perfume Online UAE"
     },
     {
       "type": "text",
       "id": "hero_line_2",
       "label": "Heading line 2",
       "info": "Rendered italic in gold on its own line. Leave blank for a one-line heading.",
-      "default": "Feels Truly Yours"
+      "default": ""
     },
     {
       "type": "textarea",
       "id": "hero_sub",
       "label": "Subheading",
-      "default": "Authentic designer, Arabic and oud fragrances, curated in one trusted UAE destination."
+      "default": "Explore authentic designer, Arabic and luxury perfumes for every style and occasion at The Fragrance Secrets. Enjoy delivery across the UAE with international shipping to the USA and Canada."
     },
     {
       "type": "text",
@@ -581,7 +587,7 @@
       "type": "html",
       "id": "brands_heading",
       "label": "Heading",
-      "default": "Our Houses &amp; <em>World Brands</em>"
+      "default": "Explore Our Brands & <em>Global Fragrance Houses</em>"
     },
     {
       "type": "textarea",
@@ -643,6 +649,132 @@
       "id": "why_sub",
       "label": "Intro",
       "info": "The reference marks this section as a copy placeholder pending the approved homepage document. The cards below default to the wording already signed off in the collection documents."
+    },
+    {
+      "type": "text",
+      "id": "brands_eyebrow",
+      "label": "Brands Eyebrow",
+      "default": "Shop By Brand"
+    },
+    {
+      "type": "textarea",
+      "id": "brands_sub",
+      "label": "Brands Intro",
+      "default": "Browse authentic perfume brands, including our exclusive collections and globally trusted fragrance houses loved across the UAE."
+    },
+    {
+      "type": "text",
+      "id": "best_eyebrow",
+      "label": "Best Eyebrow",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "html",
+      "id": "best_heading",
+      "label": "Best Heading",
+      "default": "Best Selling Perfumes in UAE <em>Loved by Our Customers</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "best_sub",
+      "label": "Best Intro",
+      "default": "Explore our bestselling perfumes, carefully selected for lasting impressions, premium quality and unforgettable fragrance experiences."
+    },
+    {
+      "type": "text",
+      "id": "new_eyebrow",
+      "label": "New Eyebrow",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "html",
+      "id": "new_heading",
+      "label": "New Heading",
+      "default": "Fresh Fragrances, <em>Just Arrived for You</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "new_sub",
+      "label": "New Intro",
+      "default": "Shop our latest authentic designer, Arabic and luxury perfumes, carefully selected for every style and occasion."
+    },
+    {
+      "type": "text",
+      "id": "category_eyebrow",
+      "label": "Category Eyebrow",
+      "default": "Shop By Category"
+    },
+    {
+      "type": "html",
+      "id": "category_heading",
+      "label": "Category Heading",
+      "default": "Find the Perfect Perfume <em>for Everyone</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "category_sub",
+      "label": "Category Intro",
+      "default": "Every great fragrance journey starts with the right choice. Pick a category and find your perfect scent."
+    },
+    {
+      "type": "text",
+      "id": "scent_eyebrow",
+      "label": "Scent Eyebrow",
+      "default": "Shop By Scent Family"
+    },
+    {
+      "type": "html",
+      "id": "scent_heading",
+      "label": "Scent Heading",
+      "default": "Find Your <em>Signature Note</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "scent_sub",
+      "label": "Scent Intro",
+      "default": "Every signature fragrance starts with the right notes. Choose a scent family and find perfumes you'll love wearing every day."
+    },
+    {
+      "type": "text",
+      "id": "moment_eyebrow",
+      "label": "Moment Eyebrow",
+      "default": "Shop By Moment"
+    },
+    {
+      "type": "html",
+      "id": "moment_heading",
+      "label": "Moment Heading",
+      "default": "Find the Perfect Perfume for <em>Every Lifestyle & Climate</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "moment_sub",
+      "label": "Moment Intro",
+      "default": "Shop premium perfumes for every lifestyle, occasion and climate, thoughtfully curated for every moment and every season."
+    },
+    {
+      "type": "text",
+      "id": "guides_eyebrow",
+      "label": "Guides Eyebrow",
+      "default": "Know Before You Buy"
+    },
+    {
+      "type": "html",
+      "id": "guides_heading",
+      "label": "Guides Heading",
+      "default": "Fragrance Insights & <em>Expert Guides</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "guides_sub",
+      "label": "Guides Intro",
+      "default": "Get practical perfume guides, fragrance tips and expert advice to help you choose every scent confidently."
+    },
+    {
+      "type": "text",
+      "id": "hero_tagline",
+      "label": "Hero tagline",
+      "default": "Find Your Signature Scent at The Fragrance Secrets"
     }
   ],
   "blocks": [
@@ -1082,38 +1214,61 @@
           }
         },
         {
+          "type": "why",
+          "settings": {
+            "icon": "inventory_2",
+            "title": "Carefully Packed Orders",
+            "body": "Every order is packed with care so it arrives sealed, safe and gift-ready."
+          }
+        },
+        {
+          "type": "why",
+          "settings": {
+            "icon": "redeem",
+            "title": "Perfect for Gifting",
+            "body": "Ready-wrapped sets and premium packaging for weddings, Eid and birthdays."
+          }
+        },
+        {
           "type": "faq",
           "settings": {
-            "question": "What are the best luxury perfumes to buy online in UAE?",
-            "answer": "At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion."
+            "question": "What are the best luxury perfumes to buy online in the UAE?",
+            "answer": "The best luxury perfumes depend on your fragrance preferences, lifestyle and the occasion. Designer, Arabic and niche perfumes are popular for their quality, long-lasting performance and distinctive scent profiles. The Fragrance Secrets offers a carefully curated collection of authentic luxury perfumes from trusted global and regional brands."
           }
         },
         {
           "type": "faq",
           "settings": {
             "question": "How do I choose the right perfume for my personality?",
-            "answer": "Choosing the right perfume depends on your personal style, mood, and fragrance preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you discover fragrances that match your personality and create a lasting impression wherever you go."
+            "answer": "Choosing the right perfume starts with understanding the fragrance notes you enjoy most. Fresh and citrus scents suit energetic personalities, floral fragrances offer timeless elegance, woody and oud perfumes create a bold impression, while oriental fragrances bring warmth and sophistication. The Fragrance Secrets helps you find the perfect scent for your personality and lifestyle."
           }
         },
         {
           "type": "faq",
           "settings": {
             "question": "Where can I buy authentic perfumes online in Dubai?",
-            "answer": "If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes designed for those who value originality, luxury, and a seamless online shopping experience."
+            "answer": "You can buy authentic perfumes online from trusted retailers that source products directly from reputable brands and distributors. The Fragrance Secrets offers a premium collection of designer, Arabic and luxury perfumes with delivery across the UAE, making online fragrance shopping simple, secure and reliable."
           }
         },
         {
           "type": "faq",
           "settings": {
             "question": "Which perfumes last longer in UAE weather conditions?",
-            "answer": "Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment."
+            "answer": "Perfumes with oud, amber, musk, woody and oriental fragrance notes generally perform well in the UAE's warm climate because they provide excellent longevity and projection. The Fragrance Secrets offers carefully selected perfumes designed to deliver lasting freshness and rich fragrance performance throughout the day."
           }
         },
         {
           "type": "faq",
           "settings": {
-            "question": "Why should I buy perfumes from The Fragrance Secrets?",
-            "answer": "The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable, and timeless."
+            "question": "Are the perfumes sold at The Fragrance Secrets authentic?",
+            "answer": "Yes. Every perfume available at The Fragrance Secrets is sourced from trusted suppliers and carefully verified for authenticity. Our collection includes genuine designer, Arabic and luxury fragrances, giving you complete confidence with every purchase."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Does The Fragrance Secrets deliver perfumes outside the UAE?",
+            "answer": "Yes. The Fragrance Secrets delivers perfumes across the UAE and also offers international shipping to the USA and Canada. Customers can shop designer, Arabic and luxury perfumes online with reliable delivery and a seamless shopping experience."
           }
         }
       ]

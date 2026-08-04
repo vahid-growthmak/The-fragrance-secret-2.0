@@ -602,6 +602,19 @@
       color: var(--gold-lt)
     }
 
+    /* The document's second hero line: a tagline between the H1 and the
+       paragraph. Italic gold, matching the em treatment used in headings. */
+    .hero-tagline {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
+      font-weight: 300;
+      line-height: 1.25;
+      color: var(--gold-lt);
+      margin-bottom: 18px;
+      max-width: 560px
+    }
+
     .hero-sub {
       font-size: .9rem;
       color: rgba(255, 255, 255, .6);

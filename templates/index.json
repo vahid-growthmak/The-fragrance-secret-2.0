@@ -263,39 +263,62 @@
             "body": "Designer houses and Arabian perfumery, side by side in one place."
           }
         },
+        "why5": {
+          "type": "why",
+          "settings": {
+            "icon": "inventory_2",
+            "title": "Carefully Packed Orders",
+            "body": "Every order is packed with care so it arrives sealed, safe and gift-ready."
+          }
+        },
+        "why6": {
+          "type": "why",
+          "settings": {
+            "icon": "redeem",
+            "title": "Perfect for Gifting",
+            "body": "Ready-wrapped sets and premium packaging for weddings, Eid and birthdays."
+          }
+        },
         "faq1": {
           "type": "faq",
           "settings": {
-            "question": "What are the best luxury perfumes to buy online in UAE?",
-            "answer": "At The Fragrance Secrets, you can explore a premium collection of luxury perfumes carefully selected for fragrance lovers across the UAE. From signature scents to exclusive designer fragrances, we offer authentic perfumes that combine quality, elegance, and long-lasting performance for every occasion."
+            "question": "What are the best luxury perfumes to buy online in the UAE?",
+            "answer": "The best luxury perfumes depend on your fragrance preferences, lifestyle and the occasion. Designer, Arabic and niche perfumes are popular for their quality, long-lasting performance and distinctive scent profiles. The Fragrance Secrets offers a carefully curated collection of authentic luxury perfumes from trusted global and regional brands."
           }
         },
         "faq2": {
           "type": "faq",
           "settings": {
             "question": "How do I choose the right perfume for my personality?",
-            "answer": "Choosing the right perfume depends on your personal style, mood, and fragrance preferences. Whether you prefer floral, woody, fresh, or oriental scents, The Fragrance Secrets helps you discover fragrances that match your personality and create a lasting impression wherever you go."
+            "answer": "Choosing the right perfume starts with understanding the fragrance notes you enjoy most. Fresh and citrus scents suit energetic personalities, floral fragrances offer timeless elegance, woody and oud perfumes create a bold impression, while oriental fragrances bring warmth and sophistication. The Fragrance Secrets helps you find the perfect scent for your personality and lifestyle."
           }
         },
         "faq3": {
           "type": "faq",
           "settings": {
             "question": "Where can I buy authentic perfumes online in Dubai?",
-            "answer": "If you are looking for authentic perfumes online in Dubai, The Fragrance Secrets offers a trusted destination for premium fragrance shopping. Our collection includes carefully sourced perfumes designed for those who value originality, luxury, and a seamless online shopping experience."
+            "answer": "You can buy authentic perfumes online from trusted retailers that source products directly from reputable brands and distributors. The Fragrance Secrets offers a premium collection of designer, Arabic and luxury perfumes with delivery across the UAE, making online fragrance shopping simple, secure and reliable."
           }
         },
         "faq4": {
           "type": "faq",
           "settings": {
             "question": "Which perfumes last longer in UAE weather conditions?",
-            "answer": "Long-lasting perfumes in UAE weather usually include fragrances with oud, amber, musk, and woody notes because they perform well in warm climates. At The Fragrance Secrets, we offer premium fragrances specially chosen for durability, richness, and all-day freshness in the UAE environment."
+            "answer": "Perfumes with oud, amber, musk, woody and oriental fragrance notes generally perform well in the UAE's warm climate because they provide excellent longevity and projection. The Fragrance Secrets offers carefully selected perfumes designed to deliver lasting freshness and rich fragrance performance throughout the day."
           }
         },
         "faq5": {
           "type": "faq",
           "settings": {
-            "question": "Why should I buy perfumes from The Fragrance Secrets?",
-            "answer": "The Fragrance Secrets is dedicated to offering authentic premium fragrances for customers who appreciate quality and luxury. With carefully curated perfume collections, trusted sourcing, and a focus on premium fragrance experiences, we help customers discover scents that feel personal, memorable, and timeless."
+            "question": "Are the perfumes sold at The Fragrance Secrets authentic?",
+            "answer": "Yes. Every perfume available at The Fragrance Secrets is sourced from trusted suppliers and carefully verified for authenticity. Our collection includes genuine designer, Arabic and luxury fragrances, giving you complete confidence with every purchase."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Does The Fragrance Secrets deliver perfumes outside the UAE?",
+            "answer": "Yes. The Fragrance Secrets delivers perfumes across the UAE and also offers international shipping to the USA and Canada. Customers can shop designer, Arabic and luxury perfumes online with reliable delivery and a seamless shopping experience."
           }
         }
       },
@@ -327,11 +350,14 @@
         "why2",
         "why3",
         "why4",
+        "why5",
+        "why6",
         "faq1",
         "faq2",
         "faq3",
         "faq4",
-        "faq5"
+        "faq5",
+        "faq6"
       ],
       "settings": {
         "scent_all_label": "All Scent Families",
