@@ -77,6 +77,8 @@ TEMPLATES = {
     "sweet-gourmand": "sweet-gourmand",
     "spicy-oriental": "spicy-oriental",
     # Shop
+    # in-house house with a hero but no brand document yet
+    "secret-scents": "secret-scents",
     "best-sellers": "best-sellers",
     "new-arrivals": "new-arrivals",
     "crazy-deals": "crazy-deals",
