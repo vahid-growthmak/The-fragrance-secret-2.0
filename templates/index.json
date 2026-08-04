@@ -361,7 +361,9 @@
       ],
       "settings": {
         "scent_all_label": "All Scent Families",
-        "scent_all_url": "/pages/shop-by-scent-family"
+        "scent_all_url": "/pages/shop-by-scent-family",
+        "hero_cta_url": "/collections/all",
+        "hero_link_url": "/collections/best-sellers"
       }
     }
   },
