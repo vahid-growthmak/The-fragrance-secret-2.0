@@ -68,6 +68,114 @@
             "image_asset_sm": "perfume-oil-card-sm.webp"
           }
         },
+        "moment1": {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "office-wear",
+            "image_asset": "office-wear-tile.webp",
+            "image_asset_sm": "office-wear-tile-sm.webp"
+          }
+        },
+        "moment2": {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "date-night",
+            "image_asset": "date-night-tile.webp",
+            "image_asset_sm": "date-night-tile-sm.webp"
+          }
+        },
+        "moment3": {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "wedding",
+            "image_asset": "wedding-tile.webp",
+            "image_asset_sm": "wedding-tile-sm.webp"
+          }
+        },
+        "moment4": {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "gym",
+            "image_asset": "gym-tile.webp",
+            "image_asset_sm": "gym-tile-sm.webp"
+          }
+        },
+        "moment5": {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "travel-friendly",
+            "image_asset": "travel-friendly-tile.webp",
+            "image_asset_sm": "travel-friendly-tile-sm.webp"
+          }
+        },
+        "moment6": {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "dinner-evening",
+            "image_asset": "dinner-evening-tile.webp",
+            "image_asset_sm": "dinner-evening-tile-sm.webp"
+          }
+        },
+        "moment7": {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "summer-wear",
+            "image_asset": "summer-wear-tile.webp",
+            "image_asset_sm": "summer-wear-tile-sm.webp"
+          }
+        },
+        "moment8": {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "winter-holiday",
+            "image_asset": "winter-holiday-tile.webp",
+            "image_asset_sm": "winter-holiday-tile-sm.webp"
+          }
+        },
+        "moment9": {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "desert-climate",
+            "image_asset": "desert-climate-tile.webp",
+            "image_asset_sm": "desert-climate-tile-sm.webp"
+          }
+        },
+        "moment10": {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "humid-weather",
+            "image_asset": "humid-weather-tile.webp",
+            "image_asset_sm": "humid-weather-tile-sm.webp"
+          }
+        },
+        "moment11": {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "tropical-climate",
+            "image_asset": "tropical-climate-tile.webp",
+            "image_asset_sm": "tropical-climate-tile-sm.webp"
+          }
+        },
+        "moment12": {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "rainy-day",
+            "image_asset": "rainy-day-tile.webp",
+            "image_asset_sm": "rainy-day-tile-sm.webp"
+          }
+        },
         "scent1": {
           "type": "scent",
           "settings": {
@@ -198,6 +306,18 @@
         "category4",
         "category5",
         "category6",
+        "moment1",
+        "moment2",
+        "moment3",
+        "moment4",
+        "moment5",
+        "moment6",
+        "moment7",
+        "moment8",
+        "moment9",
+        "moment10",
+        "moment11",
+        "moment12",
         "scent1",
         "scent2",
         "scent3",

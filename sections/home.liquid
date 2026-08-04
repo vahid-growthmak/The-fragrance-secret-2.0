@@ -19,8 +19,6 @@
   assign house_handles = section.settings.house_handles | split: ','
   assign popular_handles = section.settings.popular_handles | split: ','
   assign scent_handles = section.settings.scent_handles | split: ','
-  assign lifestyle_handles = section.settings.lifestyle_handles | split: ','
-  assign climate_handles = section.settings.climate_handles | split: ','
 -%}
 
 <!-- 1 · HERO -->
@@ -68,9 +66,14 @@
         alt="{{ hero_image.alt | default: 'Luxury perfume' | escape }}"
         fetchpriority="high" onload="this.classList.add('loaded')" />
     {%- else -%}
-      <img class="hero-img" src="{{ 'hero-roses.jpg' | asset_url }}"
+      {%- assign hero_asset = section.settings.hero_image_asset | default: 'home-hero.webp' -%}
+      <img class="hero-img" src="{{ hero_asset | asset_url }}"
+        {%- if section.settings.hero_image_asset_sm != blank %}
+        srcset="{{ section.settings.hero_image_asset_sm | asset_url }} 900w, {{ hero_asset | asset_url }} 1672w"
+        sizes="100vw"
+        {%- endif %}
         style="object-position: {{ section.settings.hero_focus }}"
-        alt="Luxury perfume bottle among fresh roses"
+        alt="{{ section.settings.hero_image_alt | escape }}"
         fetchpriority="high" onload="this.classList.add('loaded')" />
     {%- endif -%}
   </div>
@@ -298,13 +301,11 @@
       {%- assign moment_cols = 'lifestyle,climate' | split: ',' -%}
       {%- for col in moment_cols -%}
         {%- if col == 'lifestyle' -%}
-          {%- assign col_handles = lifestyle_handles -%}
           {%- assign col_title = 'By Lifestyle' -%}
           {%- assign col_lead = 'Dress your scent for the occasion.' -%}
           {%- assign col_all_label = 'All lifestyles' -%}
           {%- assign col_all_url = '/pages/shop-by-lifestyle' -%}
         {%- else -%}
-          {%- assign col_handles = climate_handles -%}
           {%- assign col_title = 'By Climate' -%}
           {%- assign col_lead = 'Built for UAE heat, and beyond.' -%}
           {%- assign col_all_label = 'All climates' -%}
@@ -314,17 +315,29 @@
           <h3 class="moment-title">{{ col_title }}</h3>
           <p class="moment-lead">{{ col_lead }}</p>
           <div class="moment-tiles">
-            {%- for raw_handle in col_handles -%}
-              {%- assign moment_handle = raw_handle | strip -%}
-              {%- assign moment = collections[moment_handle] -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type != 'moment' or block.settings.column != col -%}{%- continue -%}{%- endif -%}
+              {%- assign moment = collections[block.settings.handle] -%}
               {%- if moment.handle == blank -%}{%- continue -%}{%- endif -%}
-              {%- assign moment_image = moment.image | default: moment.products.first.featured_image -%}
-              <a class="moment-tile" href="{{ moment.url }}">
-                {%- if moment_image -%}
-                  <img src="{{ moment_image | image_url: width: 400 }}"
-                       alt="{{ moment.title | escape }}" loading="lazy">
+              {%- assign moment_label = block.settings.title | default: moment.title | remove: ' Perfumes' -%}
+              {%- assign moment_asset = block.settings.image_asset -%}
+              {%- assign moment_image = block.settings.image | default: moment.image | default: moment.products.first.featured_image -%}
+              <a class="moment-tile" href="{{ moment.url }}" {{ block.shopify_attributes }}>
+                {%- if moment_asset != blank -%}
+                  <img src="{{ moment_asset | asset_url }}"
+                       {%- if block.settings.image_asset_sm != blank %}
+                       srcset="{{ block.settings.image_asset_sm | asset_url }} 350w, {{ moment_asset | asset_url }} 700w"
+                       sizes="(max-width: 900px) 30vw, 14vw"
+                       {%- endif %}
+                       alt="{{ moment_label | escape }}" loading="lazy" width="700" height="700">
+                {%- elsif moment_image -%}
+                  <img src="{{ moment_image | image_url: width: 700 }}"
+                       srcset="{{ moment_image | image_url: width: 350 }} 350w,
+                               {{ moment_image | image_url: width: 700 }} 700w"
+                       sizes="(max-width: 900px) 30vw, 14vw"
+                       alt="{{ moment_label | escape }}" loading="lazy">
                 {%- endif -%}
-                <span>{{ moment.title | remove: ' Perfumes' }}</span>
+                <span>{{ moment_label }}</span>
               </a>
             {%- endfor -%}
           </div>
@@ -465,6 +478,26 @@
       "info": "Full width behind the copy. Upload 2880 × 1620 px (16:9). Keep the subject right of centre — the left side carries a dark scrim for the text. Falls back to hero-roses.jpg."
     },
     {
+      "type": "text",
+      "id": "hero_image_asset",
+      "label": "Background image (theme asset filename)",
+      "info": "Used when no image is uploaded above. Defaults to home-hero.webp.",
+      "default": "home-hero.webp"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_asset_sm",
+      "label": "Small background image (theme asset)",
+      "info": "Optional narrower variant served to phones.",
+      "default": "home-hero-sm.webp"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Image alt text",
+      "default": "Luxury perfume bottles at The Fragrance Secrets"
+    },
+    {
       "type": "select",
       "id": "hero_focus",
       "label": "Image focus",
@@ -581,22 +614,6 @@
     },
     {
       "type": "header",
-      "content": "8 · Shop by moment"
-    },
-    {
-      "type": "textarea",
-      "id": "lifestyle_handles",
-      "label": "Lifestyle collections (comma separated handles)",
-      "default": "office-wear, date-night, wedding, gym, travel-friendly, dinner-evening"
-    },
-    {
-      "type": "textarea",
-      "id": "climate_handles",
-      "label": "Climate collections (comma separated handles)",
-      "default": "summer-wear, winter-holiday, desert-climate, humid-weather, tropical-climate, rainy-day"
-    },
-    {
-      "type": "header",
       "content": "10 · Instagram"
     },
     {
@@ -675,6 +692,57 @@
           "id": "image",
           "label": "Background image",
           "info": "Optional, 600 x 600 px. The card switches to light text over a dark scrim. Falls back to the collection image; without either it keeps the plain white card."
+        }
+      ]
+    },
+    {
+      "type": "moment",
+      "name": "Moment tile",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            {
+              "value": "lifestyle",
+              "label": "By Lifestyle"
+            },
+            {
+              "value": "climate",
+              "label": "By Climate"
+            }
+          ],
+          "default": "lifestyle"
+        },
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Collection handle"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Defaults to the collection title."
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Image (theme asset filename)",
+          "info": "e.g. gym-tile.webp — 700 x 700, must live in assets/. Takes precedence over the picker."
+        },
+        {
+          "type": "text",
+          "id": "image_asset_sm",
+          "label": "Small image (theme asset filename)",
+          "info": "Optional 350 x 350 variant, served to phones."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Square. Used when no theme asset is named. Falls back to the collection image, then its first product photo."
         }
       ]
     },
@@ -816,6 +884,114 @@
             "sub": "Alcohol-free & concentrated",
             "image_asset": "perfume-oil-card.webp",
             "image_asset_sm": "perfume-oil-card-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "office-wear",
+            "image_asset": "office-wear-tile.webp",
+            "image_asset_sm": "office-wear-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "date-night",
+            "image_asset": "date-night-tile.webp",
+            "image_asset_sm": "date-night-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "wedding",
+            "image_asset": "wedding-tile.webp",
+            "image_asset_sm": "wedding-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "gym",
+            "image_asset": "gym-tile.webp",
+            "image_asset_sm": "gym-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "travel-friendly",
+            "image_asset": "travel-friendly-tile.webp",
+            "image_asset_sm": "travel-friendly-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "lifestyle",
+            "handle": "dinner-evening",
+            "image_asset": "dinner-evening-tile.webp",
+            "image_asset_sm": "dinner-evening-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "summer-wear",
+            "image_asset": "summer-wear-tile.webp",
+            "image_asset_sm": "summer-wear-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "winter-holiday",
+            "image_asset": "winter-holiday-tile.webp",
+            "image_asset_sm": "winter-holiday-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "desert-climate",
+            "image_asset": "desert-climate-tile.webp",
+            "image_asset_sm": "desert-climate-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "humid-weather",
+            "image_asset": "humid-weather-tile.webp",
+            "image_asset_sm": "humid-weather-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "tropical-climate",
+            "image_asset": "tropical-climate-tile.webp",
+            "image_asset_sm": "tropical-climate-tile-sm.webp"
+          }
+        },
+        {
+          "type": "moment",
+          "settings": {
+            "column": "climate",
+            "handle": "rainy-day",
+            "image_asset": "rainy-day-tile.webp",
+            "image_asset_sm": "rainy-day-tile-sm.webp"
           }
         },
         {
