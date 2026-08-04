@@ -15,6 +15,8 @@
         "hero_eyebrow": "Lifestyle Collection",
         "hero_heading": "Formal Event <em>Perfumes</em>",
         "hero_image_alt": "Formal event perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "wedding-formal-hero.webp",
+        "hero_bg_image_sm": "wedding-formal-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Formal Event Perfumes UAE",
         "intro_text": "<p>Some occasions deserve a fragrance that is every bit as refined as your appearance. From corporate galas and awards ceremonies to black-tie dinners and formal receptions, the right perfume adds confidence without demanding attention. Rich iris, amber, oud, polished woods, and soft leather create elegant fragrances that suit distinguished occasions and leave a lasting impression. Whether you are attending a ceremony, a formal reception, or a distinguished evening occasion, our collection helps you choose a fragrance that feels poised, sophisticated, and appropriate for the moment.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "wedding-formal-hero.webp",
-        "hero_bg_image_sm": "wedding-formal-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "Black-Tie",
-        "cards_heading": "How to Choose a Perfume <em>for a Formal Event</em>",
-        "cards_sub": "A formal-event fragrance should feel elegant and composed, refined enough to match a dress code without dominating a room of people. The right choice is polished, quietly confident, and long-lasting enough to carry through a long evening. Here is how to choose one.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Occasion",
-        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
-        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
-        "sibling_all_label": "Explore All Lifestyle Collections",
-        "sibling_all_url": "/pages/shop-by-lifestyle",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
-        "current_hub": "lifestyle",
-        "show_reviews": true,
-        "crumb_name": "Formal Event Perfumes",
-        "schema_name": "Best Formal Event Perfumes UAE",
-        "schema_description": "Buy the best formal event perfumes online at The Fragrance Secrets. Explore long-lasting fragrances for black-tie events, corporate dinners, and special occasions, with shipping across the UAE, USA, and Canada.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -245,7 +224,26 @@
         "faq6",
         "faq7",
         "faq8"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "Black-Tie",
+        "cards_heading": "How to Choose a Perfume <em>for a Formal Event</em>",
+        "cards_sub": "A formal-event fragrance should feel elegant and composed, refined enough to match a dress code without dominating a room of people. The right choice is polished, quietly confident, and long-lasting enough to carry through a long evening. Here is how to choose one.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "current_hub": "lifestyle",
+        "show_reviews": true,
+        "crumb_name": "Formal Event Perfumes",
+        "schema_name": "Best Formal Event Perfumes UAE",
+        "schema_description": "Buy the best formal event perfumes online at The Fragrance Secrets. Explore long-lasting fragrances for black-tie events, corporate dinners, and special occasions, with shipping across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

@@ -15,6 +15,8 @@
         "hero_eyebrow": "Concentrated & Long-Lasting",
         "hero_heading": "Perfume <em>Oils</em>",
         "hero_image_alt": "Perfume oils collection The Fragrance Secrets UAE",
+        "hero_bg_image": "perfume-oil-hero.webp",
+        "hero_bg_image_sm": "perfume-oil-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,30 +25,11 @@
         "intro_eyebrow": "Concentrated & Long-Lasting",
         "intro_heading": "Perfume Oils UAE",
         "intro_text": "<p>If you're looking for a fragrance that stays close to the skin and lasts throughout the day, perfume oils are a timeless choice. These concentrated, alcohol-free fragrances are applied directly to the skin, offering a rich and personal scent experience with just a small amount. At The Fragrance Secrets, explore perfume oils for men and women, featuring oud, musk, amber, floral, and fresh fragrance notes from trusted designer and Arabian fragrance houses. Whether you're discovering perfume oils for the first time or adding a new favourite to your collection, you'll find long-lasting fragrances for every style and occasion.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "perfume-oil-hero.webp",
-        "hero_bg_image_sm": "perfume-oil-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The Difference",
-        "cards_heading": "Why Choose <em>a Perfume Oil?</em>",
-        "cards_sub": "A perfume oil is fragrance without the alcohol carrier. Instead of spraying a fine mist that lifts off the skin and evaporates, you apply a concentrated oil that stays put. The result is a scent that lasts longer, sits closer, and suits skin that alcohol tends to dry out.",
-        "show_numbers": false,
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Collections</em>",
-        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
-        "current_hub": "category",
-        "show_reviews": true,
-        "crumb_name": "Perfume Oils",
-        "schema_name": "Perfume Oils UAE",
-        "schema_description": "Shop concentrated perfume oils at The Fragrance Secrets. Explore long-lasting, alcohol-free perfume oils with oud, musk, floral, and amber notes for men and women, with shipping across the UAE, USA, and Canada.",
-        "cards_footnote": "Perfume oils are also an easy, affordable way to build a fragrance wardrobe, and they layer under a spray perfume to make any scent last longer.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -209,7 +192,22 @@
         "faq6",
         "faq7",
         "faq8"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The Difference",
+        "cards_heading": "Why Choose <em>a Perfume Oil?</em>",
+        "cards_sub": "A perfume oil is fragrance without the alcohol carrier. Instead of spraying a fine mist that lifts off the skin and evaporates, you apply a concentrated oil that stays put. The result is a scent that lasts longer, sits closer, and suits skin that alcohol tends to dry out.",
+        "cards_footnote": "Perfume oils are also an easy, affordable way to build a fragrance wardrobe, and they layer under a spray perfume to make any scent last longer.",
+        "show_numbers": false,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate and scent family to find the perfect scent for every occasion and personal preference.",
+        "current_hub": "category",
+        "show_reviews": true,
+        "crumb_name": "Perfume Oils",
+        "schema_name": "Perfume Oils UAE",
+        "schema_description": "Shop concentrated perfume oils at The Fragrance Secrets. Explore long-lasting, alcohol-free perfume oils with oud, musk, floral, and amber notes for men and women, with shipping across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

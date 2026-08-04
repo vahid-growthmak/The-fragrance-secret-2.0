@@ -15,6 +15,8 @@
         "hero_eyebrow": "Climate Collection",
         "hero_heading": "Winter Wear <em>Perfumes</em>",
         "hero_image_alt": "Winter wear perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "winter-holiday-hero.webp",
+        "hero_bg_image_sm": "winter-holiday-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Winter Perfumes UAE",
         "intro_text": "<p>Winter is the perfect season for rich and comforting fragrances. Cooler temperatures help warm notes develop more gradually, allowing deeper scents to last longer and leave a lasting impression. The Fragrance Secrets brings together winter perfumes for men and women featuring oud, amber, vanilla, cinnamon, leather, woody notes, and warm spices. Whether you are dressing for a winter night out, choosing a holiday perfume gift, or simply prefer richer scents, our collection helps you find your perfect cold-season signature.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "winter-holiday-hero.webp",
-        "hero_bg_image_sm": "winter-holiday-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "Cold Season",
-        "cards_heading": "How to Choose the Right <em>Winter Perfume</em>",
-        "cards_sub": "Winter is made for warmth and richness. The best cold-season fragrances feel cozy and comforting, develop beautifully in low temperatures, and carry the festive spirit of the holidays. Here is how to choose one that suits the season.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Season",
-        "sibling_heading": "Explore Other <em>Climate Collections</em>",
-        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
-        "sibling_all_label": "Browse All Climate Collections",
-        "sibling_all_url": "/pages/shop-by-weather",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
-        "current_hub": "climate",
-        "show_reviews": true,
-        "crumb_name": "Winter Wear Perfumes",
-        "schema_name": "Best Winter Perfumes UAE",
-        "schema_description": "Buy winter perfumes online at The Fragrance Secrets. Explore warm oud, amber, and spicy fragrances for men and women, with shipping across the UAE, USA, and Canada.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "Cold Season",
+        "cards_heading": "How to Choose the Right <em>Winter Perfume</em>",
+        "cards_sub": "Winter is made for warmth and richness. The best cold-season fragrances feel cozy and comforting, develop beautifully in low temperatures, and carry the festive spirit of the holidays. Here is how to choose one that suits the season.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "current_hub": "climate",
+        "show_reviews": true,
+        "crumb_name": "Winter Wear Perfumes",
+        "schema_name": "Best Winter Perfumes UAE",
+        "schema_description": "Buy winter perfumes online at The Fragrance Secrets. Explore warm oud, amber, and spicy fragrances for men and women, with shipping across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

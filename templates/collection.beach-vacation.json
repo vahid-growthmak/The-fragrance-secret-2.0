@@ -15,6 +15,8 @@
         "hero_eyebrow": "Lifestyle Collection",
         "hero_heading": "Beach <em>Perfumes</em>",
         "hero_image_alt": "Beach perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "beach-vacation-hero.webp",
+        "hero_bg_image_sm": "beach-vacation-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Beach Perfumes UAE",
         "intro_text": "<p>Some scents smell like the sea itself. Salt on the skin, sun on warm sand, a cool breeze coming off the water, that is what a beach fragrance captures. At The Fragrance Secrets, discover fresh, aquatic beach perfumes for men and women, built on marine notes, citrus, coconut, and airy musk that feel breezy and cooling in the heat. Whether you are by the water or just want to carry that seaside feeling into the city, our collection bottles the fresh, open scent of a day at the beach.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "beach-vacation-hero.webp",
-        "hero_bg_image_sm": "beach-vacation-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "Sea & Sun",
-        "cards_heading": "What Makes a Great <em>Beach Fragrance</em>",
-        "cards_sub": "A beach scent is all about freshness and the ocean. The best ones are light, aquatic and cooling, evoking salt water, sea air and warm skin rather than anything heavy or sweet. Here is how to find a fragrance that smells like the shore.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Occasion",
-        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
-        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
-        "sibling_all_label": "Explore All Lifestyle Collections",
-        "sibling_all_url": "/pages/shop-by-lifestyle",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
-        "current_hub": "lifestyle",
-        "show_reviews": true,
-        "crumb_name": "Beach Perfumes",
-        "schema_name": "Best Beach Perfumes UAE",
-        "schema_description": "Shop the best beach perfumes online at The Fragrance Secrets. Fresh, aquatic, cooling summer scents with marine and coconut notes for men and women, with fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -245,7 +224,26 @@
         "faq6",
         "faq7",
         "faq8"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "Sea & Sun",
+        "cards_heading": "What Makes a Great <em>Beach Fragrance</em>",
+        "cards_sub": "A beach scent is all about freshness and the ocean. The best ones are light, aquatic and cooling, evoking salt water, sea air and warm skin rather than anything heavy or sweet. Here is how to find a fragrance that smells like the shore.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "current_hub": "lifestyle",
+        "show_reviews": true,
+        "crumb_name": "Beach Perfumes",
+        "schema_name": "Best Beach Perfumes UAE",
+        "schema_description": "Shop the best beach perfumes online at The Fragrance Secrets. Fresh, aquatic, cooling summer scents with marine and coconut notes for men and women, with fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

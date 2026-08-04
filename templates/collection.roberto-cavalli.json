@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Roberto Cavalli <em>Perfumes</em>",
         "hero_image_alt": "Roberto Cavalli Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "roberto-cavalli-hero.webp",
+        "hero_bg_image_sm": "roberto-cavalli-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Roberto Cavalli Perfumes UAE",
         "intro_text": "<p>Roberto Cavalli is a bold Italian luxury house, founded by the designer whose glamorous, sensual style, all animal prints and Mediterranean flair, carries straight into fragrance. The Fragrance Secrets brings together authentic Roberto Cavalli perfumes for men and women, from the radiant floral Paradiso collection to the charismatic Roberto Cavalli Uomo and glamorous Just Cavalli. Crafted with quality ingredients and unmistakable Italian flair, these are luxurious, expressive scents that make a statement. If you want confident, glamorous fragrance with genuine designer heritage, Roberto Cavalli is a house to explore.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "roberto-cavalli-hero.webp",
-        "hero_bg_image_sm": "roberto-cavalli-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Roberto Cavalli <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Roberto Cavalli? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Roberto Cavalli Perfumes",
-        "schema_name": "Shop Roberto Cavalli Perfumes UAE",
-        "schema_description": "Explore authentic Roberto Cavalli perfumes at The Fragrance Secrets. Order the radiant Paradiso collection and Roberto Cavalli Uomo, glamorous Italian scents for men and women. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Roberto Cavalli <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Roberto Cavalli? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Roberto Cavalli Perfumes",
+        "schema_name": "Shop Roberto Cavalli Perfumes UAE",
+        "schema_description": "Explore authentic Roberto Cavalli perfumes at The Fragrance Secrets. Order the radiant Paradiso collection and Roberto Cavalli Uomo, glamorous Italian scents for men and women. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

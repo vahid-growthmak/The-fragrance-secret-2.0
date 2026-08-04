@@ -15,6 +15,8 @@
         "hero_eyebrow": "Climate Collection",
         "hero_heading": "Rainy Day <em>Perfumes</em>",
         "hero_image_alt": "Rainy day perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "rainy-day-hero.webp",
+        "hero_bg_image_sm": "rainy-day-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Rainy Day Perfumes UAE",
         "intro_text": "<p>Rainy weather calls for warm, earthy, and comforting fragrances. Damp air carries scent differently, so cozy and green notes feel especially soothing when it rains. The Fragrance Secrets brings together rainy day perfumes for men and women featuring petrichor-style earthy notes, green accords, warm woods, soft spice, and comforting musk. Whether you love the smell of fresh rain, want a cozy scent for grey days, or prefer moody fragrances, our collection helps you find your perfect rainy-day signature.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "rainy-day-hero.webp",
-        "hero_bg_image_sm": "rainy-day-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "Wet Weather",
-        "cards_heading": "How to Choose the Right <em>Rainy Day Perfume</em>",
-        "cards_sub": "Rainy weather is made for warmth and earthiness. The best rainy-day fragrances feel cozy and grounding, complement the fresh, damp air, and add comfort to grey days. Here is how to choose one that suits the weather.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Season",
-        "sibling_heading": "Explore Other <em>Climate Collections</em>",
-        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
-        "sibling_all_label": "Browse All Climate Collections",
-        "sibling_all_url": "/pages/shop-by-weather",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
-        "current_hub": "climate",
-        "show_reviews": true,
-        "crumb_name": "Rainy Day Perfumes",
-        "schema_name": "Best Rainy Day Perfumes UAE",
-        "schema_description": "Buy rainy day perfumes online at The Fragrance Secrets. Find earthy, green, and cozy fragrances for wet weather for men and women, with shipping across the UAE, USA, and Canada.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "Wet Weather",
+        "cards_heading": "How to Choose the Right <em>Rainy Day Perfume</em>",
+        "cards_sub": "Rainy weather is made for warmth and earthiness. The best rainy-day fragrances feel cozy and grounding, complement the fresh, damp air, and add comfort to grey days. Here is how to choose one that suits the weather.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "current_hub": "climate",
+        "show_reviews": true,
+        "crumb_name": "Rainy Day Perfumes",
+        "schema_name": "Best Rainy Day Perfumes UAE",
+        "schema_description": "Buy rainy day perfumes online at The Fragrance Secrets. Find earthy, green, and cozy fragrances for wet weather for men and women, with shipping across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

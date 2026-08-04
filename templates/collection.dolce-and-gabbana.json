@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Dolce & Gabbana <em>Perfumes</em>",
         "hero_image_alt": "Dolce & Gabbana Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "dolce-and-gabbana-hero.webp",
+        "hero_bg_image_sm": "dolce-and-gabbana-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Dolce & Gabbana Perfumes UAE",
         "intro_text": "<p>Dolce & Gabbana is one of Italy's most celebrated luxury houses, founded by Domenico Dolce and Stefano Gabbana and known for scents that capture the warmth and glamour of Mediterranean life. The Fragrance Secrets brings together authentic Dolce & Gabbana perfumes for men and women, led by the iconic, Sicily-inspired Light Blue, alongside the elegant The One and vibrant K by Dolce & Gabbana. Crafted with quality ingredients and unmistakable Italian style, these are fresh, sensual, and effortlessly wearable scents. If you want sun-soaked Italian luxury with a distinctive character, Dolce & Gabbana is a house to explore.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "dolce-and-gabbana-hero.webp",
-        "hero_bg_image_sm": "dolce-and-gabbana-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Dolce & Gabbana <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Dolce & Gabbana? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Dolce & Gabbana Perfumes",
-        "schema_name": "Shop Dolce & Gabbana Perfumes UAE",
-        "schema_description": "Find authentic Dolce & Gabbana perfumes at The Fragrance Secrets. Browse icons like Light Blue, The One and K, fresh Italian luxury for men and women. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Dolce & Gabbana <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Dolce & Gabbana? Explore more luxury designer houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Dolce & Gabbana Perfumes",
+        "schema_name": "Shop Dolce & Gabbana Perfumes UAE",
+        "schema_description": "Find authentic Dolce & Gabbana perfumes at The Fragrance Secrets. Browse icons like Light Blue, The One and K, fresh Italian luxury for men and women. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

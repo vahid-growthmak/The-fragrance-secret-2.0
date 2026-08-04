@@ -15,6 +15,8 @@
         "hero_eyebrow": "Lifestyle Collection",
         "hero_heading": "Gym <em>Perfumes</em>",
         "hero_image_alt": "Gym perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "gym-hero.webp",
+        "hero_bg_image_sm": "gym-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Gym Perfumes UAE",
         "intro_text": "<p>The right gym scent keeps you feeling fresh, not fighting the room. It should lift you before a workout and stay fresh throughout your training session without ever becoming heavy in a shared, air-conditioned space. The Fragrance Secrets brings together gym perfumes and body sprays for men and women, carefully selected for active lifestyles. Whether you are heading in for an early session or a post-work burn, our collection keeps you smelling fresh from warm-up to cool-down.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "gym-hero.webp",
-        "hero_bg_image_sm": "gym-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "Active Lifestyle",
-        "cards_heading": "How to Choose the Right <em>Gym Fragrance</em>",
-        "cards_sub": "A gym fragrance follows one rule above all: keep it light. The best workout scents are fresh and clean rather than heavy or sweet, so they refresh you without overwhelming the person on the next treadmill. Here is what to look for.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Occasion",
-        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
-        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
-        "sibling_all_label": "Explore All Lifestyle Collections",
-        "sibling_all_url": "/pages/shop-by-lifestyle",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
-        "current_hub": "lifestyle",
-        "show_reviews": true,
-        "crumb_name": "Gym Perfumes",
-        "schema_name": "Best Gym Perfumes UAE",
-        "schema_description": "Shop the best gym perfumes at The Fragrance Secrets. Explore fresh, light perfumes and body sprays for men and women, with shipping across the UAE, USA, and Canada.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -245,7 +224,26 @@
         "faq6",
         "faq7",
         "faq8"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "Active Lifestyle",
+        "cards_heading": "How to Choose the Right <em>Gym Fragrance</em>",
+        "cards_sub": "A gym fragrance follows one rule above all: keep it light. The best workout scents are fresh and clean rather than heavy or sweet, so they refresh you without overwhelming the person on the next treadmill. Here is what to look for.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "current_hub": "lifestyle",
+        "show_reviews": true,
+        "crumb_name": "Gym Perfumes",
+        "schema_name": "Best Gym Perfumes UAE",
+        "schema_description": "Shop the best gym perfumes at The Fragrance Secrets. Explore fresh, light perfumes and body sprays for men and women, with shipping across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

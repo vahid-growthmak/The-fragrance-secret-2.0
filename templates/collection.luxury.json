@@ -15,6 +15,8 @@
         "hero_eyebrow": "Premium Collection",
         "hero_heading": "Luxury <em>Perfumes</em>",
         "hero_image_alt": "Luxury perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "luxury-hero.webp",
+        "hero_bg_image_sm": "luxury-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,30 +25,11 @@
         "intro_eyebrow": "Premium Collection",
         "intro_heading": "Luxury Perfumes UAE",
         "intro_text": "<p>Luxury is more than a fragrance. It reflects craftsmanship, premium ingredients, and the confidence that comes with wearing a scent that leaves a lasting impression. At The Fragrance Secrets, explore luxury perfumes for men and women from leading designer and Arabian fragrance houses, featuring elegant florals, rich oud, refined woods, warm amber, and sophisticated gourmand creations. Whether you're searching for a signature scent, a thoughtful gift, or long-lasting luxury perfumes for everyday wear, our collection brings together premium perfumes designed for every occasion.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "luxury-hero.webp",
-        "hero_bg_image_sm": "luxury-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The Difference",
-        "cards_heading": "Why Choose <em>Luxury Perfumes?</em>",
-        "cards_sub": "Luxury perfumes are created for those who appreciate exceptional craftsmanship, premium ingredients, and fragrances that develop beautifully throughout the day. From elegant everyday scents to statement fragrances for special occasions, each perfume is designed to deliver lasting performance, refined character, and an unforgettable fragrance experience.",
-        "show_numbers": false,
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Collections</em>",
-        "explore_sub": "Discover more fragrances based on category, lifestyle, climate, and scent family to find the perfect fragrance for every occasion and personal preference.",
-        "current_hub": "category",
-        "show_reviews": true,
-        "crumb_name": "Luxury Perfumes",
-        "schema_name": "Luxury Perfumes UAE",
-        "schema_description": "Explore luxury perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances with premium ingredients, long-lasting performance, and shipping across the UAE, USA, and Canada.",
-        "cards_footnote": "Luxury perfumes also make memorable gifts for birthdays, anniversaries, weddings, Eid, and corporate occasions, and they become signature fragrances for everyday confidence, helping you create lasting impressions wherever you go.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -217,7 +200,22 @@
         "faq7",
         "faq8",
         "faq9"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The Difference",
+        "cards_heading": "Why Choose <em>Luxury Perfumes?</em>",
+        "cards_sub": "Luxury perfumes are created for those who appreciate exceptional craftsmanship, premium ingredients, and fragrances that develop beautifully throughout the day. From elegant everyday scents to statement fragrances for special occasions, each perfume is designed to deliver lasting performance, refined character, and an unforgettable fragrance experience.",
+        "cards_footnote": "Luxury perfumes also make memorable gifts for birthdays, anniversaries, weddings, Eid, and corporate occasions, and they become signature fragrances for everyday confidence, helping you create lasting impressions wherever you go.",
+        "show_numbers": false,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
+        "explore_sub": "Discover more fragrances based on category, lifestyle, climate, and scent family to find the perfect fragrance for every occasion and personal preference.",
+        "current_hub": "category",
+        "show_reviews": true,
+        "crumb_name": "Luxury Perfumes",
+        "schema_name": "Luxury Perfumes UAE",
+        "schema_description": "Explore luxury perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances with premium ingredients, long-lasting performance, and shipping across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

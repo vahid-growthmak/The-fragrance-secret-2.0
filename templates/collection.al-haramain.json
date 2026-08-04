@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Al Haramain <em>Perfumes</em>",
         "hero_image_alt": "Al Haramain Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "al-haramain-hero.webp",
+        "hero_bg_image_sm": "al-haramain-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Al Haramain Perfumes UAE",
         "intro_text": "<p>Al Haramain is one of the most established names in Arabian perfumery, a heritage house rooted in the Gulf and known worldwide for rich, opulent oriental fragrances. The Fragrance Secrets brings together authentic Al Haramain perfumes for men and women, led by the globally loved Amber Oud collection and elegant lines like L'Aventure. Blending precious oud, amber, and warm spice with modern sophistication, Al Haramain creates scents built for presence and longevity. If you love deep, luxurious Arabian fragrance that commands attention, this is a house to explore.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "al-haramain-hero.webp",
-        "hero_bg_image_sm": "al-haramain-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Al Haramain <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Al Haramain? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Al Haramain Perfumes",
-        "schema_name": "Shop Al Haramain Perfumes UAE",
-        "schema_description": "Shop authentic Al Haramain perfumes at The Fragrance Secrets. Discover the celebrated Amber Oud collection and rich Arabian orientals for men and women. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Al Haramain <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Al Haramain? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Al Haramain Perfumes",
+        "schema_name": "Shop Al Haramain Perfumes UAE",
+        "schema_description": "Shop authentic Al Haramain perfumes at The Fragrance Secrets. Discover the celebrated Amber Oud collection and rich Arabian orientals for men and women. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

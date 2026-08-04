@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Arabiyat Prestige <em>Perfumes</em>",
         "hero_image_alt": "Arabiyat Prestige Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "arabiyat-prestige-hero.webp",
+        "hero_bg_image_sm": "arabiyat-prestige-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Arabiyat Prestige Perfumes UAE",
         "intro_text": "<p>Arabiyat Prestige is a Dubai fragrance house under the House of My Perfumes group, known for modern Arabian scents that pair rich oriental character with accessible luxury. Drawing on Middle Eastern perfumery heritage, the brand is famous for its sophisticated packaging and its innovative Layering in a Bottle concept, multiple scent dimensions unfolding within one composition. The Fragrance Secrets brings together authentic Arabiyat Prestige perfumes for men and women, including popular scents like Nyla, Marwa, and Khashab & Oud. If you love long-lasting oud, amber, and oriental fragrance with luxury feel at a fair price, this is a house to explore.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "arabiyat-prestige-hero.webp",
-        "hero_bg_image_sm": "arabiyat-prestige-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Arabiyat Prestige <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Arabiyat Prestige? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Arabiyat Prestige Perfumes",
-        "schema_name": "Shop Arabiyat Prestige Perfumes UAE",
-        "schema_description": "Browse authentic Arabiyat Prestige perfumes at The Fragrance Secrets. Explore modern Arabian oud and oriental scents for men and women, including Nyla and Khashab & Oud. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Arabiyat Prestige <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Arabiyat Prestige? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Arabiyat Prestige Perfumes",
+        "schema_name": "Shop Arabiyat Prestige Perfumes UAE",
+        "schema_description": "Browse authentic Arabiyat Prestige perfumes at The Fragrance Secrets. Explore modern Arabian oud and oriental scents for men and women, including Nyla and Khashab & Oud. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

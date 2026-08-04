@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "French Avenue <em>Perfumes</em>",
         "hero_image_alt": "French Avenue Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "french-avenue-hero.webp",
+        "hero_bg_image_sm": "french-avenue-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop French Avenue Perfumes UAE",
         "intro_text": "<p>French Avenue is a Dubai perfume house that pairs French-inspired elegance with the depth of oriental perfumery. The Fragrance Secrets brings together authentic French Avenue perfumes, led by the standout woody-amber Liquid Brun, alongside creations like El Dorado Extrait and Opus Magnum. Made in high concentration for strong projection and lasting wear, these are refined yet accessible fragrances built on modern, mostly unisex compositions. If you want premium Dubai perfumery with a polished, contemporary character and dependable performance, French Avenue is a house to explore.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "french-avenue-hero.webp",
-        "hero_bg_image_sm": "french-avenue-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose French Avenue <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love French Avenue? Explore more premium and Arabian-inspired fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "French Avenue Perfumes",
-        "schema_name": "Shop French Avenue Perfumes UAE",
-        "schema_description": "Browse authentic French Avenue perfumes at The Fragrance Secrets. Discover Dubai favourites like Liquid Brun, refined woody-amber scents with lasting power. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose French Avenue <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love French Avenue? Explore more premium and Arabian-inspired fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "French Avenue Perfumes",
+        "schema_name": "Shop French Avenue Perfumes UAE",
+        "schema_description": "Browse authentic French Avenue perfumes at The Fragrance Secrets. Discover Dubai favourites like Liquid Brun, refined woody-amber scents with lasting power. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

@@ -15,6 +15,8 @@
         "hero_eyebrow": "For Everyone",
         "hero_heading": "Unisex <em>Perfumes</em>",
         "hero_image_alt": "Unisex perfumes collection The Fragrance Secrets UAE",
+        "hero_bg_image": "unisex-hero.webp",
+        "hero_bg_image_sm": "unisex-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -23,29 +25,11 @@
         "intro_eyebrow": "For Everyone",
         "intro_heading": "Unisex Perfumes UAE",
         "intro_text": "<p>A great fragrance has never belonged to just one person. Long before perfume was divided into his and hers, the oud and attar traditions of Arabian perfumery were created to be shared, and many of those timeless scents still are. At The Fragrance Secrets, our collection of authentic unisex perfumes brings together balanced fragrance compositions that suit every style and occasion. Whether you're sharing a favourite scent or looking for a signature fragrance that feels uniquely yours, you'll find long-lasting perfumes designed to perform beautifully in the UAE's warm climate.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "unisex-hero.webp",
-        "hero_bg_image_sm": "unisex-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "Find Your Match",
-        "cards_heading": "Scents Made <em>to Be Shared</em>",
-        "cards_sub": "What makes a perfume unisex is simple, it leans on notes almost everyone loves, rather than the florals or aquatics marketing assigns to one gender. Here is where to start, whatever you are drawn to.",
-        "show_numbers": true,
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Collections</em>",
-        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
-        "current_hub": "category",
-        "show_reviews": true,
-        "crumb_name": "Unisex Perfumes",
-        "schema_name": "Unisex Perfumes UAE",
-        "schema_description": "Explore authentic unisex perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances, from fresh citrus and floral to rich oud and amber, with fast delivery across the UAE, USA, and Canada.",
-        "crumb_parent_label": "Perfumes",
-        "crumb_parent_url": "/collections/all"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -216,7 +200,21 @@
         "faq6",
         "faq7",
         "faq8"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "Find Your Match",
+        "cards_heading": "Scents Made <em>to Be Shared</em>",
+        "cards_sub": "What makes a perfume unisex is simple, it leans on notes almost everyone loves, rather than the florals or aquatics marketing assigns to one gender. Here is where to start, whatever you are drawn to.",
+        "show_numbers": true,
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Collections</em>",
+        "explore_sub": "Continue exploring fragrances based on category, lifestyle, climate and scent family to discover your next signature fragrance.",
+        "current_hub": "category",
+        "show_reviews": true,
+        "crumb_name": "Unisex Perfumes",
+        "schema_name": "Unisex Perfumes UAE",
+        "schema_description": "Explore authentic unisex perfumes at The Fragrance Secrets. Discover designer and Arabian fragrances, from fresh citrus and floral to rich oud and amber, with fast delivery across the UAE, USA, and Canada."
+      }
     }
   },
   "order": [

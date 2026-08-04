@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Farzanas Collection <em>Perfumes</em>",
         "hero_image_alt": "Farzanas Collection Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "farzanas-collection-hero.webp",
+        "hero_bg_image_sm": "farzanas-collection-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Farzanas Collection Perfumes UAE",
         "intro_text": "<p>Farzanas Collection is an exclusive Arabic-inspired line crafted and presented by The Fragrance Secrets. Rooted in traditional Middle Eastern perfumery, it features bold, expressive scents like the oud-driven Lion of the Arabs, the citrus-and-floral Dirham Silver, and the powdery-rose Raya. Made with quality ingredients for strong projection and lasting wear, these are unisex fragrances built for those who love rich, cultural Arabian character. If you want distinctive Arabic perfumery with real depth and value, delivered fast across the UAE, the Farzanas Collection is a line worth exploring.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "farzanas-collection-hero.webp",
-        "hero_bg_image_sm": "farzanas-collection-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Farzanas Collection <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love the Farzanas Collection? Explore our other in-house and Arabian fragrance lines with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Farzanas Collection Perfumes",
-        "schema_name": "Shop Farzanas Collection Perfumes UAE",
-        "schema_description": "Find the Farzanas Collection at The Fragrance Secrets. Browse exclusive Arabic scents like Lion of the Arabs and Raya, bold and long-lasting. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Farzanas Collection <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love the Farzanas Collection? Explore our other in-house and Arabian fragrance lines with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Farzanas Collection Perfumes",
+        "schema_name": "Shop Farzanas Collection Perfumes UAE",
+        "schema_description": "Find the Farzanas Collection at The Fragrance Secrets. Browse exclusive Arabic scents like Lion of the Arabs and Raya, bold and long-lasting. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [

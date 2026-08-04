@@ -15,6 +15,8 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Cristiano Ronaldo <em>Perfumes</em>",
         "hero_image_alt": "Cristiano Ronaldo Perfumes at The Fragrance Secrets UAE",
+        "hero_bg_image": "cristiano-ronaldo-hero.webp",
+        "hero_bg_image_sm": "cristiano-ronaldo-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -23,34 +25,11 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Cristiano Ronaldo Perfumes UAE",
         "intro_text": "<p>Cristiano Ronaldo's CR7 fragrance line brings the football icon's sporty, confident, modern energy to men's scent. The Fragrance Secrets brings together authentic Cristiano Ronaldo perfumes, led by the original aromatic CR7, alongside CR7 Game On, CR7 Origins, and the bold Fearless. Fresh, woody, and energetic, these are accessible everyday colognes designed for the active, on-the-go man. If you want a confident, sporty signature scent inspired by one of the world's most famous athletes at a friendly price, Cristiano Ronaldo is a house to explore.</p>",
-        "show_why_rotator": true,
-        "hero_bg_image": "cristiano-ronaldo-hero.webp",
-        "hero_bg_image_sm": "cristiano-ronaldo-hero-sm.webp"
+        "show_why_rotator": true
       }
     },
     "editorial": {
       "type": "category-editorial",
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Cristiano Ronaldo <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Cristiano Ronaldo? Explore more standout fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Cristiano Ronaldo Perfumes",
-        "schema_name": "Shop Cristiano Ronaldo Perfumes UAE",
-        "schema_description": "Find authentic Cristiano Ronaldo perfumes at The Fragrance Secrets. Browse the CR7 line, Game On and Fearless, fresh sporty colognes for men. Fast UAE, USA and Canada delivery.",
-        "crumb_parent_label": "Brands",
-        "crumb_parent_url": "/pages/brands"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -229,7 +208,26 @@
         "faq4",
         "faq5",
         "faq6"
-      ]
+      ],
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Cristiano Ronaldo <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Cristiano Ronaldo? Explore more standout fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Cristiano Ronaldo Perfumes",
+        "schema_name": "Shop Cristiano Ronaldo Perfumes UAE",
+        "schema_description": "Find authentic Cristiano Ronaldo perfumes at The Fragrance Secrets. Browse the CR7 line, Game On and Fearless, fresh sporty colognes for men. Fast UAE, USA and Canada delivery."
+      }
     }
   },
   "order": [
