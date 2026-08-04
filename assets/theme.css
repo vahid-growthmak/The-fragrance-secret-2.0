@@ -1294,9 +1294,14 @@
       color: var(--white)
     }
 
-    .moment-all {
+    /* .see-all re-declares display:flex further down the file, and at equal
+       specificity the later rule wins, which stretched this link to the column
+       width and dragged its hover underline with it. Scoped one level deeper so
+       it stays as wide as its text. */
+    .moment-col .moment-all {
       margin-top: 20px;
-      display: inline-flex
+      display: inline-flex;
+      width: fit-content
     }
 
     /* ── 12 · why choose ── */
