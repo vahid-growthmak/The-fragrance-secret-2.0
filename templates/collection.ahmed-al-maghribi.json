@@ -15,8 +15,6 @@
         "hero_eyebrow": "By Brand",
         "hero_heading": "Ahmed Al Maghribi <em>Perfumes</em>",
         "hero_image_alt": "Ahmed Al Maghribi Perfumes at The Fragrance Secrets UAE",
-        "hero_bg_image": "ahmed-al-maghribi-hero.webp",
-        "hero_bg_image_sm": "ahmed-al-maghribi-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Brands",
         "crumb_parent_url": "/pages/brands",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop Ahmed Al Maghribi Perfumes UAE",
         "intro_text": "<p>Ahmed Al Maghribi is a Dubai-based Arabian perfume house celebrated for its traditional, handcrafted approach to fragrance. Rooted in Arabic cultural heritage, the brand is known for meticulously made scents built on natural ingredients like oud, musk, and amber. The Fragrance Secrets brings together authentic Ahmed Al Maghribi perfumes for men and women, from rich Dehn Al Oud and oriental Eau de Parfums to traditional parfum oils and Arabic dakhoon. If you love deep, artisanal Arabian perfumery with genuine craftsmanship and lasting character, this is a house worth exploring.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "ahmed-al-maghribi-hero.webp",
+        "hero_bg_image_sm": "ahmed-al-maghribi-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "The House",
+        "cards_heading": "Why Choose Ahmed Al Maghribi <em>Perfumes</em>",
+        "cards_sub": "",
+        "show_numbers": false,
+        "sibling_eyebrow": "Similar Houses",
+        "sibling_heading": "Explore Other <em>Brands</em>",
+        "sibling_sub": "Love Ahmed Al Maghribi? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
+        "sibling_all_label": "See All Brands",
+        "sibling_all_url": "/pages/brands",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
+        "current_hub": "brand",
+        "show_reviews": true,
+        "crumb_name": "Ahmed Al Maghribi Perfumes",
+        "schema_name": "Shop Ahmed Al Maghribi Perfumes UAE",
+        "schema_description": "Shop authentic Ahmed Al Maghribi perfumes at The Fragrance Secrets. Discover traditional Arabian oud, oriental Eau de Parfums and parfum oils for men and women. Fast UAE, USA and Canada delivery.",
+        "crumb_parent_label": "Brands",
+        "crumb_parent_url": "/pages/brands"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -208,26 +229,7 @@
         "faq4",
         "faq5",
         "faq6"
-      ],
-      "settings": {
-        "cards_eyebrow": "The House",
-        "cards_heading": "Why Choose Ahmed Al Maghribi <em>Perfumes</em>",
-        "cards_sub": "",
-        "show_numbers": false,
-        "sibling_eyebrow": "Similar Houses",
-        "sibling_heading": "Explore Other <em>Brands</em>",
-        "sibling_sub": "Love Ahmed Al Maghribi? Explore more Arabian fragrance houses with a similar style and discover your next favourite scent.",
-        "sibling_all_label": "See All Brands",
-        "sibling_all_url": "/pages/brands",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse fragrances by category, lifestyle, climate, scent family, or brand to find the perfect fragrance for every preference and occasion.",
-        "current_hub": "brand",
-        "show_reviews": true,
-        "crumb_name": "Ahmed Al Maghribi Perfumes",
-        "schema_name": "Shop Ahmed Al Maghribi Perfumes UAE",
-        "schema_description": "Shop authentic Ahmed Al Maghribi perfumes at The Fragrance Secrets. Discover traditional Arabian oud, oriental Eau de Parfums and parfum oils for men and women. Fast UAE, USA and Canada delivery."
-      }
+      ]
     }
   },
   "order": [

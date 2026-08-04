@@ -15,8 +15,6 @@
         "hero_eyebrow": "Climate Collection",
         "hero_heading": "Dry Weather <em>Perfumes</em>",
         "hero_image_alt": "Dry weather perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "dry-weather-hero.webp",
-        "hero_bg_image_sm": "dry-weather-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "Climate Collection",
         "intro_heading": "Best Perfumes for Dry Weather UAE",
         "intro_text": "<p>Dry air treats fragrance differently. With little moisture to carry scent, perfume can fade faster on dry skin, so dry climates reward richer, creamier fragrances that cling and last. The Fragrance Secrets brings together dry weather perfumes for men and women featuring musk, amber, creamy woods, and warm skin-like notes that hold on beautifully in low humidity. Whether you live in an arid region, face dry desert air, or simply want a scent that lasts on dry skin, our collection helps you find your perfect dry-weather fragrance.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "dry-weather-hero.webp",
+        "hero_bg_image_sm": "dry-weather-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "Dry Air",
+        "cards_heading": "How to Choose the Right <em>Dry Weather Perfume</em>",
+        "cards_sub": "Dry weather is made for richness and staying power. The best dry-climate fragrances are creamy and warm, cling to the skin despite low humidity, and resist the fading that dry air causes. Here is how to choose one that lasts.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Season",
+        "sibling_heading": "Explore Other <em>Climate Collections</em>",
+        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
+        "sibling_all_label": "Browse All Climate Collections",
+        "sibling_all_url": "/pages/shop-by-weather",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
+        "current_hub": "climate",
+        "show_reviews": true,
+        "crumb_name": "Dry Weather Perfumes",
+        "schema_name": "Best Perfumes for Dry Weather UAE",
+        "schema_description": "Shop dry weather perfumes at The Fragrance Secrets. Rich musk, amber and creamy woods cling to dry skin and resist fading in low humidity. Quick delivery to the UAE, USA and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -208,26 +229,7 @@
         "faq4",
         "faq5",
         "faq6"
-      ],
-      "settings": {
-        "cards_eyebrow": "Dry Air",
-        "cards_heading": "How to Choose the Right <em>Dry Weather Perfume</em>",
-        "cards_sub": "Dry weather is made for richness and staying power. The best dry-climate fragrances are creamy and warm, cling to the skin despite low humidity, and resist the fading that dry air causes. Here is how to choose one that lasts.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Season",
-        "sibling_heading": "Explore Other <em>Climate Collections</em>",
-        "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
-        "sibling_all_label": "Browse All Climate Collections",
-        "sibling_all_url": "/pages/shop-by-weather",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",
-        "current_hub": "climate",
-        "show_reviews": true,
-        "crumb_name": "Dry Weather Perfumes",
-        "schema_name": "Best Perfumes for Dry Weather UAE",
-        "schema_description": "Shop dry weather perfumes at The Fragrance Secrets. Rich musk, amber and creamy woods cling to dry skin and resist fading in low humidity. Quick delivery to the UAE, USA and Canada."
-      }
+      ]
     }
   },
   "order": [

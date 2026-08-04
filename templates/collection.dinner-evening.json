@@ -15,8 +15,6 @@
         "hero_eyebrow": "Lifestyle Collection",
         "hero_heading": "Formal Evening <em>Perfumes</em>",
         "hero_image_alt": "Evening wear perfumes collection The Fragrance Secrets UAE",
-        "hero_bg_image": "dinner-evening-hero.webp",
-        "hero_bg_image_sm": "dinner-evening-hero-sm.webp",
         "show_hero_description": false,
         "crumb_parent_label": "Perfumes",
         "crumb_parent_url": "/collections/all",
@@ -25,11 +23,34 @@
         "intro_eyebrow": "Lifestyle Collection",
         "intro_heading": "Best Evening Perfumes UAE",
         "intro_text": "<p>The fragrance you wear during the day is not always the one you reach for in the evening. As the occasion changes, so does the mood, calling for richer notes, warmer blends, and a fragrance with greater depth. Amber, oud, soft musk, elegant florals, and warm spices come together in a collection created for dinners, celebrations, formal occasions, and memorable nights out. The Fragrance Secrets brings together long-lasting evening perfumes for men and women, helping you find a fragrance that feels refined, confident, and perfectly suited to every special evening.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "dinner-evening-hero.webp",
+        "hero_bg_image_sm": "dinner-evening-hero-sm.webp"
       }
     },
     "editorial": {
       "type": "category-editorial",
+      "settings": {
+        "cards_eyebrow": "After Dark",
+        "cards_heading": "How to Choose a Sophisticated <em>Evening Perfume</em>",
+        "cards_sub": "Evening fragrance follows a simple principle: richer and warmer than what you would wear by day. The cooler night air and the occasion both call for more depth and presence. Here is how to choose an evening scent that feels elegant and appropriately grand.",
+        "show_numbers": false,
+        "sibling_eyebrow": "By Occasion",
+        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
+        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
+        "sibling_all_label": "Explore All Lifestyle Collections",
+        "sibling_all_url": "/pages/shop-by-lifestyle",
+        "explore_eyebrow": "Keep Looking",
+        "explore_heading": "Explore More <em>Fragrance Collections</em>",
+        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
+        "current_hub": "lifestyle",
+        "show_reviews": true,
+        "crumb_name": "Evening Wear Perfumes",
+        "schema_name": "Best Evening Perfumes UAE",
+        "schema_description": "Buy evening perfumes online at The Fragrance Secrets. Explore elegant, long-lasting fragrances for men and women with shipping across the UAE, USA, and Canada.",
+        "crumb_parent_label": "Perfumes",
+        "crumb_parent_url": "/collections/all"
+      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -224,26 +245,7 @@
         "faq6",
         "faq7",
         "faq8"
-      ],
-      "settings": {
-        "cards_eyebrow": "After Dark",
-        "cards_heading": "How to Choose a Sophisticated <em>Evening Perfume</em>",
-        "cards_sub": "Evening fragrance follows a simple principle: richer and warmer than what you would wear by day. The cooler night air and the occasion both call for more depth and presence. Here is how to choose an evening scent that feels elegant and appropriately grand.",
-        "show_numbers": false,
-        "sibling_eyebrow": "By Occasion",
-        "sibling_heading": "Explore Other <em>Lifestyle Collections</em>",
-        "sibling_sub": "Every occasion deserves a fragrance that feels just right. Explore more lifestyle collections to discover perfumes designed for evenings, celebrations, travel, and everyday moments.",
-        "sibling_all_label": "Explore All Lifestyle Collections",
-        "sibling_all_url": "/pages/shop-by-lifestyle",
-        "explore_eyebrow": "Keep Looking",
-        "explore_heading": "Explore More <em>Fragrance Collections</em>",
-        "explore_sub": "Looking for something different? Browse our fragrance collections by category, brand, climate, or scent family to discover perfumes that match your personal preferences and every occasion.",
-        "current_hub": "lifestyle",
-        "show_reviews": true,
-        "crumb_name": "Evening Wear Perfumes",
-        "schema_name": "Best Evening Perfumes UAE",
-        "schema_description": "Buy evening perfumes online at The Fragrance Secrets. Explore elegant, long-lasting fragrances for men and women with shipping across the UAE, USA, and Canada."
-      }
+      ]
     }
   },
   "order": [
