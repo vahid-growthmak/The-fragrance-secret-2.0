@@ -117,6 +117,12 @@
   </div>
 </footer>
 
+{%- comment -%}
+  Sitewide structured data. It lives here because the business details it needs
+  are this section's settings, and the footer renders on every page.
+{%- endcomment -%}
+{% render 'site-schema', f: section.settings %}
+
 {% schema %}
 {
   "name": "Footer",
