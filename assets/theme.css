@@ -599,7 +599,7 @@
 
     .hero-h {
       font-family: var(--fd);
-      font-size: clamp(2.3rem, 3.8vw, 3.5rem);
+      font-size: clamp(2.45rem, 4.1vw, 3.8rem);
       font-weight: 300;
       line-height: 1.06;
       color: var(--white);
