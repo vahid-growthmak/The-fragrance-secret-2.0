@@ -1,3 +1,16 @@
+{%- comment -%}
+  Wishlist page.
+
+  Previously this rendered four hardcoded demo products with invented prices,
+  and its buttons only removed DOM nodes. It now reads the saved handles from
+  TFSWishlist (localStorage) and rehydrates each one from /products/<handle>.js,
+  so titles, images, prices and variant ids are always live rather than a stale
+  copy captured at save time.
+
+  Products that 404 — unpublished, deleted, or handle changed — are dropped from
+  the saved list as they are discovered, so the wishlist cannot rot into links
+  that go nowhere.
+{%- endcomment -%}
 
     <style>
     /* ── Wishlist ── */
@@ -13,9 +26,13 @@
     }
     .wish-remove:hover { border-color: #C0392B; color: #C0392B; background: rgba(192, 57, 43, .05); }
     .wish-remove .mi { font-size: 19px; }
+    .wish-actions .btn-g[disabled], .wish-toolbar .btn-g[disabled] { opacity: .6; cursor: not-allowed; }
+    /* Toolbar and grid stay hidden until we know whether anything is saved, so
+       an empty wishlist never flashes a "0 fragrances saved" bar first. */
+    .wish-toolbar[hidden], .wish-empty[hidden], .wish-loading[hidden] { display: none; }
+    .wish-loading { text-align: center; padding: 44px 0; color: var(--warm); font-size: .9rem; }
     /* Empty state */
-    .wish-empty { display: none; text-align: center; max-width: 520px; margin: 20px auto 0; padding: 40px 0; }
-    .wish-empty.show { display: block; }
+    .wish-empty { text-align: center; max-width: 520px; margin: 20px auto 0; padding: 40px 0; }
     .wish-empty .we-ic { width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 22px; display: flex; align-items: center; justify-content: center; background: var(--cream-mid); border: 1px solid var(--cream-dk); }
     .wish-empty .we-ic .mi { font-size: 40px; color: var(--gold-dk); }
     .wish-empty h3 { font-family: var(--fd); font-weight: 400; font-size: 1.9rem; margin-bottom: 10px; }
@@ -45,86 +62,18 @@
       <div class="container">
         <div class="sec-head"><span class="label">Saved For Later</span><h2 class="sec-title">Your <em>Wishlist</em></h2></div>
 
-        <div class="wish-toolbar" id="wishToolbar">
-          <span class="wish-count"><b id="wishNum">4</b> fragrances saved</span>
-          <button class="btn-g" style="padding:12px 22px" onclick="addAllToCart()"><span class="mi" aria-hidden="true">shopping_bag</span>Add All to Cart</button>
+        <div class="wish-toolbar" id="wishToolbar" hidden>
+          <span class="wish-count"><b id="wishNum">0</b> <span id="wishNoun">fragrances</span> saved</span>
+          <button class="btn-g" style="padding:12px 22px" id="wishAddAll" onclick="wishAddAllToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Add All to Cart</button>
         </div>
 
-        <!-- SAVED ITEMS -->
-        <div class="products-grid" id="wishGrid">
+        <div class="wish-loading" id="wishLoading">Loading your saved fragrances…</div>
 
-          <div class="prod-card wish-card fade-up">
-            <a class="prod-img-wrap" href="{{ routes.all_products_collection_url }}" style="display:block">
-              <img class="prod-img" src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="Bouquet of Oud EDP" loading="lazy" />
-              <div class="prod-badge badge-best">Bestseller</div>
-            </a>
-            <div class="prod-info">
-              <div class="prod-brand">Ahmed Al Maghribi</div>
-              <div class="prod-name"><a href="{{ routes.all_products_collection_url }}" style="color:inherit">Bouquet of Oud EDP</a></div>
-              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(1,284)</span></div>
-              <div class="prod-price"><span class="price-now">AED 189</span><span class="price-was">AED 280</span><span class="price-save">Save 32%</span></div>
-              <div class="wish-actions">
-                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
-                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="prod-card wish-card fade-up">
-            <a class="prod-img-wrap" href="{{ routes.all_products_collection_url }}" style="display:block">
-              <img class="prod-img" src="{{ 'prod-amber-oud.jpg' | asset_url }}" alt="Amber Oud Gold EDP" loading="lazy" />
-              <div class="prod-badge badge-sale">Save 32%</div>
-            </a>
-            <div class="prod-info">
-              <div class="prod-brand">Al Haramain</div>
-              <div class="prod-name"><a href="{{ routes.all_products_collection_url }}" style="color:inherit">Amber Oud Gold EDP</a></div>
-              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(946)</span></div>
-              <div class="prod-price"><span class="price-now">AED 259</span><span class="price-was">AED 380</span><span class="price-save">Save 32%</span></div>
-              <div class="wish-actions">
-                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
-                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="prod-card wish-card fade-up">
-            <a class="prod-img-wrap" href="{{ routes.all_products_collection_url }}" style="display:block">
-              <img class="prod-img" src="{{ 'prod-hawas.jpg' | asset_url }}" alt="Hawas for Him EDP" loading="lazy" />
-              <div class="prod-badge badge-best">Bestseller</div>
-            </a>
-            <div class="prod-info">
-              <div class="prod-brand">Rasasi</div>
-              <div class="prod-name"><a href="{{ routes.all_products_collection_url }}" style="color:inherit">Hawas for Him EDP</a></div>
-              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(2,013)</span></div>
-              <div class="prod-price"><span class="price-now">AED 215</span><span class="price-was">AED 300</span><span class="price-save">Save 28%</span></div>
-              <div class="wish-actions">
-                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
-                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="prod-card wish-card fade-up">
-            <a class="prod-img-wrap" href="{{ routes.all_products_collection_url }}" style="display:block">
-              <img class="prod-img" src="{{ 'prod-oud-roses.jpg' | asset_url }}" alt="Oud Roses EDP" loading="lazy" />
-              <div class="prod-badge badge-new">New</div>
-            </a>
-            <div class="prod-info">
-              <div class="prod-brand">Ahmed Al Maghribi</div>
-              <div class="prod-name"><a href="{{ routes.all_products_collection_url }}" style="color:inherit">Oud Roses EDP</a></div>
-              <div class="prod-rating"><div class="stars"><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span><span class="mi mi-f">star</span></div><span>(571)</span></div>
-              <div class="prod-price"><span class="price-now">AED 179</span><span class="price-was">AED 240</span><span class="price-save">Save 25%</span></div>
-              <div class="wish-actions">
-                <button class="btn-g" onclick="moveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>
-                <button class="wish-remove" title="Remove from wishlist" aria-label="Remove from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <!-- SAVED ITEMS — built by the script below -->
+        <div class="products-grid" id="wishGrid" hidden></div>
 
         <!-- EMPTY STATE -->
-        <div class="wish-empty" id="wishEmpty">
+        <div class="wish-empty" id="wishEmpty" hidden>
           <div class="we-ic"><span class="mi" aria-hidden="true">favorite</span></div>
           <h3>Your wishlist is empty</h3>
           <p>Tap the heart on any fragrance to save it here for later. Start with our most-loved scents.</p>
@@ -145,43 +94,181 @@
     </section>
 
   <script>
-    function updateWishCount() {
-      var n = document.querySelectorAll('#wishGrid .wish-card').length;
-      var numEl = document.getElementById('wishNum');
-      if (numEl) numEl.textContent = n;
-      var empty = document.getElementById('wishEmpty');
-      var grid = document.getElementById('wishGrid');
-      var toolbar = document.getElementById('wishToolbar');
-      if (n === 0) {
-        if (empty) empty.classList.add('show');
-        if (grid) grid.style.display = 'none';
-        if (toolbar) toolbar.style.display = 'none';
+  (function () {
+    var MONEY_FORMAT = {{ shop.money_format | json }};
+    var FALLBACK_IMG = {{ 'prod-bouquet-oud.png' | asset_url | json }};
+
+    /* Shopify's money filter runs server-side; these cards are built in the
+       browser from /products/*.js, which returns cents. This covers the four
+       placeholder forms a money_format can use, so the page follows whatever
+       currency the store is set to instead of hardcoding one. */
+    function money(cents) {
+      var n = (cents || 0) / 100;
+      function group(v, dec) {
+        var parts = v.toFixed(dec).split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return parts.join('.');
       }
+      return MONEY_FORMAT.replace(/\{\{\s*(\w+)\s*\}\}/g, function (_, name) {
+        switch (name) {
+          case 'amount_no_decimals': return group(n, 0);
+          case 'amount_with_comma_separator': return group(n, 2).replace(/,/g, ' ').replace('.', ',');
+          case 'amount_no_decimals_with_comma_separator': return group(n, 0).replace(/,/g, ' ');
+          default: return group(n, 2);
+        }
+      });
     }
-    function moveToCart(btn) {
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    var grid = document.getElementById('wishGrid');
+    var toolbar = document.getElementById('wishToolbar');
+    var empty = document.getElementById('wishEmpty');
+    var loading = document.getElementById('wishLoading');
+
+    function cardHTML(p) {
+      var v = (p.variants && p.variants[0]) || {};
+      var img = p.featured_image || (p.images && p.images[0]) || FALLBACK_IMG;
+      var onSale = p.compare_at_price && p.compare_at_price > p.price;
+      var save = onSale ? Math.round((p.compare_at_price - p.price) * 100 / p.compare_at_price) : 0;
+      var title = esc(p.title);
+
+      return '' +
+        '<div class="prod-card wish-card fade-up" data-handle="' + esc(p.handle) + '" data-variant="' + (v.id || '') + '">' +
+          '<a class="prod-img-wrap" href="' + esc(p.url) + '" style="display:block">' +
+            '<img class="prod-img" src="' + esc(img) + '" alt="' + title + '" loading="lazy" width="600" height="600" />' +
+            (onSale ? '<div class="prod-badge badge-sale">Save ' + save + '%</div>' : '') +
+          '</a>' +
+          '<div class="prod-info">' +
+            (p.vendor ? '<div class="prod-brand">' + esc(p.vendor) + '</div>' : '') +
+            '<div class="prod-name"><a href="' + esc(p.url) + '" style="color:inherit">' + title + '</a></div>' +
+            '<div class="prod-price">' +
+              '<span class="price-now">' + money(p.price) + '</span>' +
+              (onSale ? '<span class="price-was">' + money(p.compare_at_price) + '</span>' +
+                        '<span class="price-save">Save ' + save + '%</span>' : '') +
+            '</div>' +
+            '<div class="wish-actions">' +
+              (v.available
+                ? '<button class="btn-g" onclick="wishMoveToCart(this)"><span class="mi" aria-hidden="true">shopping_bag</span>Move to Cart</button>'
+                : '<button class="btn-g" disabled><span class="mi" aria-hidden="true">shopping_bag</span>Sold Out</button>') +
+              '<button class="wish-remove" title="Remove from wishlist" aria-label="Remove ' + title + ' from wishlist" onclick="wishRemove(this)"><span class="mi" aria-hidden="true">delete</span></button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function paint() {
+      var n = grid.querySelectorAll('.wish-card').length;
+      document.getElementById('wishNum').textContent = n;
+      document.getElementById('wishNoun').textContent = n === 1 ? 'fragrance' : 'fragrances';
+      toolbar.hidden = n === 0;
+      empty.hidden = n !== 0;
+      grid.hidden = n === 0;
+    }
+
+    function render() {
+      var handles = window.TFSWishlist ? window.TFSWishlist.all() : [];
+      if (!handles.length) {
+        loading.hidden = true;
+        grid.innerHTML = '';
+        paint();
+        return;
+      }
+
+      /* Fetched in parallel but rendered in saved order, so the grid does not
+         reshuffle depending on which request happens to land first. */
+      Promise.all(handles.map(function (h) {
+        return fetch('/products/' + encodeURIComponent(h) + '.js', { headers: { 'Accept': 'application/json' } })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .catch(function () { return null; });
+      })).then(function (products) {
+        loading.hidden = true;
+
+        products.forEach(function (p, i) {
+          if (p === null && window.TFSWishlist) window.TFSWishlist.remove(handles[i]);
+        });
+
+        grid.innerHTML = products.filter(Boolean).map(cardHTML).join('');
+        paint();
+      });
+    }
+
+    window.wishRemove = function (btn) {
       var card = btn.closest('.wish-card');
       var name = card.querySelector('.prod-name').textContent.trim();
-      card.remove();
-      if (typeof bumpCart === 'function') bumpCart(1);
-      if (typeof toast === 'function') toast('✓ Moved to cart — ' + name);
-      updateWishCount();
-    }
-    function wishRemove(btn) {
-      var card = btn.closest('.wish-card');
-      var name = card.querySelector('.prod-name').textContent.trim();
+      if (window.TFSWishlist) window.TFSWishlist.remove(card.getAttribute('data-handle'));
       card.remove();
       if (typeof toast === 'function') toast('Removed — ' + name);
-      updateWishCount();
+      paint();
+    };
+
+    window.wishMoveToCart = function (btn) {
+      var card = btn.closest('.wish-card');
+      var name = card.querySelector('.prod-name').textContent.trim();
+      btn.disabled = true;
+      addCartItems([{ id: parseInt(card.getAttribute('data-variant'), 10), quantity: 1 }]).then(function (ok) {
+        if (!ok) { btn.disabled = false; return; }
+        if (window.TFSWishlist) window.TFSWishlist.remove(card.getAttribute('data-handle'));
+        card.remove();
+        if (typeof toast === 'function') toast('✓ Moved to cart — ' + name);
+        paint();
+      });
+    };
+
+    window.wishAddAllToCart = function (btn) {
+      var cards = [].slice.call(grid.querySelectorAll('.wish-card')).filter(function (c) {
+        var b = c.querySelector('.wish-actions .btn-g');
+        return b && !b.disabled && c.getAttribute('data-variant');
+      });
+      if (!cards.length) { if (typeof toast === 'function') toast('Nothing available to add'); return; }
+
+      btn.disabled = true;
+      addCartItems(cards.map(function (c) {
+        return { id: parseInt(c.getAttribute('data-variant'), 10), quantity: 1 };
+      })).then(function (ok) {
+        btn.disabled = false;
+        if (!ok) return;
+        cards.forEach(function (c) {
+          if (window.TFSWishlist) window.TFSWishlist.remove(c.getAttribute('data-handle'));
+          c.remove();
+        });
+        if (typeof toast === 'function') toast('✓ ' + cards.length + ' fragrance' + (cards.length === 1 ? '' : 's') + ' moved to cart');
+        paint();
+      });
+    };
+
+    /* One POST for the whole batch — /cart/add.js takes an items array, so
+       "Add All" is a single request rather than one per card. */
+    function addCartItems(items) {
+      return fetch((window.routes && window.routes.cart_add_url) || '/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ items: items })
+      }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .then(function () {
+          return fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); });
+        })
+        .then(function (c) {
+          document.querySelectorAll('.cbadge:not(.wbadge)').forEach(function (b) { b.textContent = c.item_count; });
+          if (typeof cartCount !== 'undefined') cartCount = c.item_count;
+          return true;
+        })
+        .catch(function () {
+          if (typeof toast === 'function') toast('Could not add to cart — please try again');
+          return false;
+        });
     }
-    function addAllToCart() {
-      var cards = document.querySelectorAll('#wishGrid .wish-card');
-      var count = cards.length;
-      if (!count) return;
-      cards.forEach(function (c) { c.remove(); });
-      if (typeof bumpCart === 'function') bumpCart(count);
-      if (typeof toast === 'function') toast('✓ ' + count + ' fragrances moved to cart');
-      updateWishCount();
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', render);
+    } else {
+      render();
     }
+  })();
   </script>
 
 {% schema %}

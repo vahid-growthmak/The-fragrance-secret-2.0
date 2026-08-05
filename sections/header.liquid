@@ -92,7 +92,15 @@
     <div class="nav-actions">
       <a class="ni" href="{{ routes.search_url }}" title="Search"><span class="mi" aria-hidden="true">search</span></a>
       <a class="ni" href="{{ routes.account_url }}" title="Account"><span class="mi" aria-hidden="true">person</span></a>
-      <a class="ni" href="/pages/wishlist" title="Wishlist"><span class="mi" aria-hidden="true">favorite</span></a>
+      {%- comment -%}
+        The wishlist count lives in localStorage, so it cannot be rendered
+        server-side. The badge starts hidden and wishlist.js fills it in —
+        better than painting a "0" that flickers to a real number on load.
+      {%- endcomment -%}
+      <a class="ni" href="/pages/wishlist" title="Wishlist">
+        <span class="mi" aria-hidden="true">favorite</span>
+        <span class="cbadge wbadge" hidden>0</span>
+      </a>
       <a class="ni" href="{{ routes.cart_url }}" title="Cart">
         <span class="mi" aria-hidden="true">shopping_bag</span>
         <span class="cbadge">{{ cart_count }}</span>

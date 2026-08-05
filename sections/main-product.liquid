@@ -105,6 +105,17 @@
                 <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
               </div>
               <button type="submit" name="add" class="atc-btn"{% unless cv.available %} disabled{% endunless %}><span class="mi" aria-hidden="true">shopping_bag</span>{% if cv.available %}Add to Cart{% else %}Sold Out{% endif %}</button>
+              {%- comment -%}
+                Same store as the card hearts, so saving here shows as saved on
+                every collection page and vice versa.
+              {%- endcomment -%}
+              <button type="button" class="atc-wish pa-wish"
+                      data-wish="{{ product.handle }}"
+                      data-wish-label="{{ product.title | escape }}"
+                      aria-pressed="false"
+                      title="Save to wishlist"
+                      aria-label="Save {{ product.title | escape }} to wishlist"
+                      onclick="TFSWishlist.toggle(this.dataset.wish, this.dataset.wishLabel)"><span class="mi" aria-hidden="true">favorite</span></button>
             </div>
             {{ form | payment_button }}
             {% render 'pay-icons' %}

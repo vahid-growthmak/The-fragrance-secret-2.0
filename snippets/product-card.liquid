@@ -28,6 +28,13 @@
 
   assign rating = product.metafields.reviews.rating.value.rating | default: product.metafields.custom.rating.value
   assign review_count = product.metafields.reviews.rating_count.value | default: product.metafields.custom.review_count.value
+
+  # Quick Add posts to the real cart, so it needs a variant id. Every product
+  # in the catalogue is single-variant today; the size check keeps the button
+  # honest if a multi-size product is ever added, sending the shopper to the
+  # product page to choose rather than silently adding the first size.
+  assign card_variant = product.selected_or_first_available_variant
+  assign card_title = product.title | escape
 -%}
 
 <div class="prod-card fade-up" onclick="location.href='{{ product.url }}'">
@@ -39,8 +46,21 @@
     {%- endif -%}
     {%- if badge != blank -%}<div class="prod-badge {{ badge_class }}">{{ badge }}</div>{%- endif -%}
     <div class="prod-actions">
-      <button class="pa-btn" title="Wishlist" onclick="event.stopPropagation();toast('&#9825; Saved to wishlist')"><span class="mi" aria-hidden="true">favorite</span></button>
-      <button class="pa-btn quick-add" onclick="event.stopPropagation();addToCart('{{ product.title | escape | replace: "'", "\\'" }}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
+      <button type="button" class="pa-btn pa-wish"
+              data-wish="{{ product.handle }}"
+              data-wish-label="{{ card_title }}"
+              aria-pressed="false"
+              title="Save to wishlist"
+              aria-label="Save {{ card_title }} to wishlist"
+              onclick="event.stopPropagation();TFSWishlist.toggle(this.dataset.wish, this.dataset.wishLabel)"><span class="mi" aria-hidden="true">favorite</span></button>
+      {%- if product.variants.size > 1 -%}
+        <a class="pa-btn quick-add" href="{{ product.url }}" onclick="event.stopPropagation()"><span class="mi" aria-hidden="true">shopping_bag</span>Choose Size</a>
+      {%- elsif card_variant and card_variant.available -%}
+        <button type="button" class="pa-btn quick-add"
+                onclick="event.stopPropagation();addLiveToCart({{ card_variant.id }}, {{ product.title | json }})"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
+      {%- else -%}
+        <button type="button" class="pa-btn quick-add" disabled><span class="mi" aria-hidden="true">shopping_bag</span>Sold Out</button>
+      {%- endif -%}
     </div>
   </div>
   <div class="prod-info">

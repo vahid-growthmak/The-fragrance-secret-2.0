@@ -6949,3 +6949,42 @@ html body .jdgm-form select {
         min-height: 44px
       }
     }
+
+    /* ── Wishlist ─────────────────────────────────────────────────────
+       Saved state for the heart on a product card. The filled glyph comes
+       from the Material Symbols FILL axis (.mi-f), applied by wishlist.js;
+       these rules carry the colour so a saved card reads at a glance. */
+    .pa-btn.pa-wish .mi { transition: color .18s, transform .18s }
+
+    .pa-btn.pa-wish.is-wished { background: var(--gold) }
+
+    .pa-btn.pa-wish.is-wished .mi { color: #8E2C24 }
+
+    .pa-btn.pa-wish:active .mi { transform: scale(.82) }
+
+    /* Sold-out Quick Add stays legible but clearly inert. */
+    .pa-btn.quick-add[disabled] { opacity: .55; cursor: not-allowed }
+
+    .pa-btn.quick-add[disabled]:hover { background: var(--white) }
+
+    /* Header wishlist badge reuses the cart badge, offset so the two read
+       as a matched pair rather than one looking misplaced. */
+    .wbadge[hidden] { display: none }
+
+    /* PDP save-to-wishlist — squared off to sit beside the Add to Cart bar
+       at the same height, rather than the round card treatment. */
+    .atc-wish {
+      width: 52px; flex-shrink: 0; border-radius: 3px; cursor: pointer;
+      border: 1.5px solid var(--cream-dk); background: var(--white); color: var(--warm);
+      display: flex; align-items: center; justify-content: center; transition: all .3s;
+    }
+
+    .atc-wish .mi { font-size: 21px; transition: color .18s, transform .18s }
+
+    .atc-wish:hover { border-color: var(--gold); color: var(--gold-dk) }
+
+    .atc-wish.is-wished { border-color: var(--gold); background: var(--gold) }
+
+    .atc-wish.is-wished .mi { color: #8E2C24 }
+
+    .atc-wish:active .mi { transform: scale(.82) }

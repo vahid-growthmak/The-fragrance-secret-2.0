@@ -120,6 +120,7 @@ function loadLiveCatalog() {
           family: family, gender: gender, occasion: '',
           img: (p.images && p.images[0] && p.images[0].src) || '',
           url: '/products/' + p.handle,
+          handle: p.handle,          // wishlist keys off the handle
           variantId: v.id,
         };
       }).filter(function (p) { return p.name && p.variantId; }); // price may be 0 pre-launch
@@ -158,7 +159,7 @@ function productCardHTML(p) {
       <img class="prod-img" src="${assetURL(p.img)}" alt="${esc(p.name)}" loading="lazy"/>
       ${p.badge ? `<div class="prod-badge ${p.badgeClass}">${p.badge}</div>` : ''}
       <div class="prod-actions">
-        <button class="pa-btn" title="Wishlist" onclick="event.stopPropagation();toast('♡ Saved to wishlist')"><span class="mi" aria-hidden="true">favorite</span></button>
+        <button type="button" class="pa-btn pa-wish" data-wish="${esc(p.handle || '')}" data-wish-label="${esc(p.name)}" aria-pressed="false" title="Save to wishlist" onclick="event.stopPropagation();TFSWishlist.toggle(this.dataset.wish, this.dataset.wishLabel)"><span class="mi" aria-hidden="true">favorite</span></button>
         <button class="pa-btn quick-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${esc(p.name).replace(/'/g, "\\'")}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
       </div>
     </div>
@@ -244,6 +245,9 @@ function hydrateRenderables() {
       });
     }
   });
+  /* Cards injected here miss wishlist.js's own load-time pass, so repaint the
+     saved state for anything that just appeared. */
+  if (window.TFSWishlist) window.TFSWishlist.sync();
 }
 
 /* Compact alphabetical brand cloud (dense, low-scroll) */
@@ -536,7 +540,13 @@ function toast(msg) {
   requestAnimationFrame(() => { t.style.opacity = '1'; t.style.transform = 'translateX(-50%) translateY(0)'; });
   setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(10px)'; setTimeout(() => t.remove(), 350); }, 2300);
 }
-function addToCart(name, qty) { bumpCart(qty || 1); toast('✓ Added to cart — ' + name); }
+/* Fallback for callers that have no variant id and so cannot reach the real
+   cart. It deliberately does NOT move the badge: incrementing a counter while
+   Shopify's cart stayed empty is exactly what made Quick Add look like it had
+   worked. Anything with a variant id should call addLiveToCart instead. */
+function addToCart(name) {
+  toast('Open the product page to add ' + name + ' to your cart');
+}
 
 /* Real Shopify cart add by variant id (used by the concierge and any live card).
    Falls back to the demo toast when no variant id is available. */
