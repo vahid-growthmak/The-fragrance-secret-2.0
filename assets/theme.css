@@ -578,7 +578,10 @@
       max-width: 760px
     }
 
+    /* Now an h1, so the weight is set explicitly — browsers render h1 bold and
+       the eyebrow must keep its original light treatment. */
     .hero-pretitle {
+      font-weight: 400;
       font-size: .68rem;
       letter-spacing: .28em;
       text-transform: uppercase;

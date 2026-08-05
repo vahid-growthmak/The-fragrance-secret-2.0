@@ -25,19 +25,20 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     {%- if section.settings.hero_eyebrow != blank -%}
-      <p class="hero-pretitle">{{ section.settings.hero_eyebrow }}</p>
+      <h1 class="hero-pretitle">{{ section.settings.hero_eyebrow }}</h1>
     {%- endif -%}
     {%- comment -%}
-      Two explicit lines rather than one string with a <br>: each is its own
-      block, so the heading is always exactly two lines and never breaks into a
-      third when the longer line outgrows the column.
+      Display copy, not the H1 — the eyebrow above carries that now, so this is a
+      div and the page keeps a single H1. Each line is its own block rather than
+      one string with a <br>, so the split is deliberate and never becomes three
+      lines when the longer one outgrows the column.
     {%- endcomment -%}
-    <h1 class="hero-h">
+    <div class="hero-h">
       <span class="hero-h-line">{{ section.settings.hero_line_1 }}</span>
       {%- if section.settings.hero_line_2 != blank -%}
         <span class="hero-h-line"><em>{{ section.settings.hero_line_2 }}</em></span>
       {%- endif -%}
-    </h1>
+    </div>
     {%- if section.settings.hero_tagline != blank or section.settings.hero_tagline_2 != blank -%}
       <p class="hero-tagline">
         {%- if section.settings.hero_tagline != blank -%}
@@ -548,7 +549,8 @@
       "type": "text",
       "id": "hero_eyebrow",
       "label": "Eyebrow",
-      "info": "Left empty so it does not repeat the H1. The Home Page document provides no eyebrow."
+      "info": "Rendered as the page H1, at eyebrow size.",
+      "default": "Buy Perfume Online UAE"
     },
     {
       "type": "text",
