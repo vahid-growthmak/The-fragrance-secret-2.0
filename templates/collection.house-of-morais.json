@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop House of Morais Perfumes UAE",
         "intro_text": "<p>House of Morais is a fragrance house with a taste for elegant, floral-forward luxury. The Fragrance Secrets brings together authentic House of Morais perfumes, from the orchid-fresh Exotica Pour Homme to the sweet, refined Classy Caramilla, each a smooth, stylish Eau de Parfum designed to feel modern and sophisticated. Made for those who love graceful floral character with real staying power, these are fragrances for day or evening wear. If you want polished, floral luxury delivered fast across the UAE, House of Morais is a house worth exploring at The Fragrance Secrets.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "house-of-morais-hero.webp",
+        "hero_bg_image_sm": "house-of-morais-hero-sm.webp"
       }
     },
     "editorial": {
