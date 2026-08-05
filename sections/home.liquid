@@ -134,6 +134,14 @@
         {%- if house.handle == blank -%}{%- continue -%}{%- endif -%}
         {%- assign house_name = house.title | remove: ' Perfumes' -%}
         <a href="{{ house.url }}" class="ob-card fade-up">
+          {%- comment -%}
+            The collection's own banner, phone variant, sits behind the copy.
+            Liquid cannot test whether a theme asset exists, so a missing one
+            removes itself and the card falls back to its plain gradient.
+          {%- endcomment -%}
+          {%- assign house_banner = house.handle | append: '-hero-sm.webp' -%}
+          <img class="ob-img" src="{{ house_banner | asset_url }}" alt=""
+               onerror="this.remove()" loading="lazy" width="1200" height="417">
           <span class="ob-tag">Our Brand</span>
           <span class="ob-name">{{ house_name }}</span>
           <span class="ob-sub">{{ house.description | strip_html | truncatewords: 6 }}</span>
