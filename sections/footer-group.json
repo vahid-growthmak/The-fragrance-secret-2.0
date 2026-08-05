@@ -15,7 +15,7 @@
       "type": "footer",
       "blocks": {
         "shop": { "type": "column", "settings": { "heading": "Shop", "links": "Our Brands | /pages/brands\nMen's Perfumes | /collections/mens\nWomen's Perfumes | /collections/womens\nUnisex | /collections/unisex\nBest Sellers | /collections/best-sellers\nNew Arrivals | /collections/new-arrivals\nGift Sets | /pages/gift-sets" } },
-        "discover": { "type": "column", "settings": { "heading": "Discover", "links": "Occasions & Gifts | /pages/occasions-gifts\nDiscovery Kits | /collections/discovery-kits\nGuides | /blogs/journal\nFind My Scent | /pages/find-my-scent\nReviews | /pages/reviews" } },
+        "discover": { "type": "column", "settings": { "heading": "Discover", "links": "Guides | /blogs/journal\nFind My Scent | /pages/find-my-scent" } },
         "policies": { "type": "column", "settings": { "heading": "Policy Pages", "links": "Privacy Policy | /pages/privacy-policy\nShipping Policy | /pages/shipping-policy\nTerms of Service | /pages/terms-of-service\nRefund & Return Policy | /pages/return-policy\nAccessibility Statement | /pages/accessibility-statement\nContact Information | /pages/contact" } },
         "care": { "type": "column", "settings": { "heading": "Customer Care", "links": "About Us | /pages/about\nCopyright Notice | /pages/copyright-notice\nDo Not Sell My Personal Information | /pages/data-sharing-opt-out\nFAQs | /pages/faqs\nPayment Policy | /pages/payment-policy\nTrack Order | /account" } }
       },

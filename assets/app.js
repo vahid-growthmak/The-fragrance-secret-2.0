@@ -33,7 +33,6 @@ const blogs = [
 ];
 
 
-const discoveryKits = []; // no hardcoded kits — use a real discovery-kits collection
 
 /* Shared image pool for hero / editorial imagery */
 const IMG = {
@@ -227,7 +226,6 @@ function hydrateRenderables() {
     let list;
     if (kind === 'products') list = n ? products.slice(from, from + n) : products, node.innerHTML = list.map(productCardHTML).join('');
     else if (kind === 'reviews') node.innerHTML = (n ? reviews.slice(0, n) : reviews).map(reviewCardHTML).join('');
-    else if (kind === 'kits') node.innerHTML = discoveryKits.map(kitCardHTML).join('');
     else if (kind === 'blogs') node.innerHTML = (n ? blogs.slice(0, n) : blogs).map(blogCardHTML).join('');
     else if (kind === 'brands') node.innerHTML = brandsIndexHTML();
     else if (kind === 'brand-track') {
@@ -303,7 +301,6 @@ const A_ITEMS = [
 const NAV_LINKS = [
   { label: 'Shop', href: 'collection.html?c=all', key: 'shop', mega: true },
   { label: 'Brands', href: 'brand-index.html', key: 'brands' },
-  { label: 'Occasions &amp; Gifts', href: 'occasions-gifts.html', key: 'occasions' },
   { label: 'Guides', href: 'journal.html', key: 'guides' },
 ];
 
@@ -388,8 +385,6 @@ function footerHTML() {
         <div class="fg-col">
           <h4>Discover</h4>
           <ul>
-            <li><a href="occasions-gifts.html">Occasions &amp; Gifts</a></li>
-            <li><a href="collection.html?c=discovery-kits">Discovery Kits</a></li>
             <li><a href="journal.html">Guides</a></li>
             <li><a href="find-my-scent.html">Find My Scent</a></li>
             <li><a href="product.html">Custom Mixing <span class="fg-phase">Phase 2</span></a></li>
