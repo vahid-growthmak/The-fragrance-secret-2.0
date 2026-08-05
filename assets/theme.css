@@ -678,7 +678,7 @@
       display: grid;
       grid-template-columns: max-content max-content;
       justify-content: start;
-      gap: 16px 32px;
+      gap: 18px 48px;
       align-items: start;
       border-top: 1px solid rgba(255, 255, 255, .08);
       padding-top: 28px
