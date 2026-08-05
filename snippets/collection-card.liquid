@@ -1,9 +1,18 @@
 {%- comment -%}
-  Image card for a collection — used for the brand strip on the product page and
-  for the sibling-collection rows on collection pages.
+  Image card for a collection — used for the signature houses on the brands hub,
+  the sibling-collection rows on collection pages, and the brand strips on the
+  product page.
 
-  Falls back to the collection's first product image when the collection has no
-  image of its own, and to a monogram when it has neither.
+  Image order:
+    1. the collection's hero banner, phone variant <handle>-hero-sm.webp,
+       which at 1200px still covers a card twice over at a fraction of the weight
+    2. an image set on the collection in the admin
+    3. its first product photo
+    4. a monogram
+
+  Liquid cannot test whether a theme asset exists, so the banner is attempted and
+  an onerror hands off to the next option. 89 of 90 collections have one, and the
+  handoff costs a request only in the rare case where one does not.
 
   Usage:
     {% render 'collection-card', collection: some_collection %}
@@ -13,6 +22,7 @@
 {%- liquid
   assign card_label = label | default: collection.title
   assign card_cta = cta | default: 'Browse'
+  assign card_banner = collection.handle | append: '-hero-sm.webp'
   assign card_image = collection.image
   if card_image == blank
     assign card_image = collection.products.first.featured_image
@@ -20,11 +30,12 @@
 -%}
 
 <a class="hub-tile coll-tile" href="{{ collection.url }}">
-  {%- if card_image -%}
-    <img src="{{ card_image | image_url: width: 600 }}" alt="{{ card_label | escape }}" loading="lazy" width="600" height="480">
-  {%- else -%}
-    <span class="coll-tile-mark" aria-hidden="true">{{ card_label | slice: 0, 1 }}</span>
-  {%- endif -%}
+  {%- comment -%} sits underneath, revealed if every image option fails {%- endcomment -%}
+  <span class="coll-tile-mark" aria-hidden="true">{{ card_label | slice: 0, 1 }}</span>
+  <img src="{{ card_banner | asset_url }}"
+       {%- if card_image %} data-fallback="{{ card_image | image_url: width: 600 }}"{% endif %}
+       onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;delete this.dataset.fallback}else{this.remove()}"
+       alt="{{ card_label | escape }}" loading="lazy" width="1200" height="417">
   <div class="hub-body">
     <h3>{{ card_label }}</h3>
     {%- if collection.products_count > 0 -%}
