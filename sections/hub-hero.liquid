@@ -8,7 +8,22 @@
 
 {%- assign child_blocks = section.blocks | where: 'type', 'link' -%}
 
-<section class="page-hero tall">
+{%- comment -%}
+  Optional full-bleed banner, the same asset-plus-phone-variant arrangement the
+  collection hero uses. Without one the hero keeps its plain dark treatment.
+{%- endcomment -%}
+<section class="page-hero tall{% if section.settings.hero_bg_image != blank %} has-bg{% endif %}">
+  {%- if section.settings.hero_bg_image != blank -%}
+    <div class="ph-bg" aria-hidden="true">
+      <img src="{{ section.settings.hero_bg_image | asset_url }}"
+           {%- if section.settings.hero_bg_image_sm != blank %}
+           srcset="{{ section.settings.hero_bg_image_sm | asset_url }} 1200w,
+                   {{ section.settings.hero_bg_image | asset_url }} 2880w"
+           sizes="100vw"
+           {%- endif %}
+           alt="" width="2880" height="1000" loading="eager" fetchpriority="high" decoding="async">
+    </div>
+  {%- endif -%}
   <div class="container">
     <div class="breadcrumb">
       <a href="{{ routes.root_url }}">Home</a>
@@ -108,6 +123,8 @@
   "name": "Hub hero",
   "settings": [
     { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_bg_image", "label": "Hero background image (theme asset filename)", "info": "e.g. brands-hub-hero.webp — the file must live in assets/. Best at 2880 × 1000 with the left side dark." },
+    { "type": "text", "id": "hero_bg_image_sm", "label": "Hero background image, small (theme asset filename)", "info": "Optional 1200 × 417 variant served to phones." },
     { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow" },
     { "type": "text", "id": "hero_heading", "label": "Heading (H1)", "info": "Wrap words in <em></em> for the gold italic accent." },
     { "type": "header", "content": "Introduction" },
