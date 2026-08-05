@@ -38,8 +38,15 @@
         <span class="hero-h-line"><em>{{ section.settings.hero_line_2 }}</em></span>
       {%- endif -%}
     </h1>
-    {%- if section.settings.hero_tagline != blank -%}
-      <p class="hero-tagline">{{ section.settings.hero_tagline }}</p>
+    {%- if section.settings.hero_tagline != blank or section.settings.hero_tagline_2 != blank -%}
+      <p class="hero-tagline">
+        {%- if section.settings.hero_tagline != blank -%}
+          <span class="hero-tagline-line">{{ section.settings.hero_tagline }}</span>
+        {%- endif -%}
+        {%- if section.settings.hero_tagline_2 != blank -%}
+          <span class="hero-tagline-line">{{ section.settings.hero_tagline_2 }}</span>
+        {%- endif -%}
+      </p>
     {%- endif -%}
     <p class="hero-sub">{{ section.settings.hero_sub }}</p>
     <div class="hero-ctas">
@@ -541,7 +548,7 @@
       "type": "text",
       "id": "hero_eyebrow",
       "label": "Eyebrow",
-      "info": "Left empty deliberately: the Home Page document provides no value for this."
+      "default": "Buy Perfume Online UAE"
     },
     {
       "type": "text",
@@ -777,8 +784,15 @@
     {
       "type": "text",
       "id": "hero_tagline",
-      "label": "Hero tagline",
-      "default": "Find Your Signature Scent at The Fragrance Secrets"
+      "label": "Hero tagline line 1",
+      "default": "Find Your Signature Scent"
+    },
+    {
+      "type": "text",
+      "id": "hero_tagline_2",
+      "label": "Hero tagline line 2",
+      "info": "Rendered on its own line under the first. Leave blank for a one-line tagline.",
+      "default": "at The Fragrance Secrets"
     }
   ],
   "blocks": [

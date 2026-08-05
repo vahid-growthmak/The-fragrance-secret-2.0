@@ -604,6 +604,12 @@
 
     /* The document's second hero line: a tagline between the H1 and the
        paragraph. Italic gold, matching the em treatment used in headings. */
+    /* Each tagline line is its own block, so the split is deliberate rather than
+       left to wherever the text happens to wrap. */
+    .hero-tagline-line {
+      display: block
+    }
+
     .hero-tagline {
       font-family: var(--fd);
       font-style: italic;
