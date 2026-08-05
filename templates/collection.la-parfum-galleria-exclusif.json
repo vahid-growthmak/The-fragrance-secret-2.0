@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Brand",
         "intro_heading": "Shop La Parfum Galleria Exclusif Perfumes UAE",
         "intro_text": "<p>La Parfum Galleria Exclusif is the elevated tier of the Dubai house La Parfum Galleria, a line of refined, premium compositions. The Fragrance Secrets brings together authentic Exclusif perfumes, including unisex scents like Velora-Pop Heart and standout editions such as Leon and Opus, crafted with quality ingredients for a richer, more distinctive character. Made for strong projection and lasting wear, these are fragrances for those who want the Galleria house at its most luxurious. If you love modern Dubai perfumery with a premium edge, La Parfum Galleria Exclusif is a line to explore.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "la-parfum-galleria-exclusif-hero.webp",
+        "hero_bg_image_sm": "la-parfum-galleria-exclusif-hero-sm.webp"
       }
     },
     "editorial": {
