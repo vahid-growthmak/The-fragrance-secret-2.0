@@ -40,15 +40,30 @@
     /* Single-column on standard phones so Move-to-Cart + remove sit comfortably */
     @media (max-width: 560px) {
       #wishGrid { grid-template-columns: 1fr; gap: 16px; }
-      .wish-card { display: grid; grid-template-columns: 116px 1fr; align-items: stretch; }
+      /* minmax(0,1fr) rather than 1fr: a grid item defaults to min-width:auto,
+         so the text column refused to shrink below its content and pushed the
+         card wider than the screen instead — which clipped both the product
+         name and the Move to Cart label rather than wrapping them. */
+      .wish-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: stretch; }
       .wish-card .prod-img-wrap { height: 100%; }
       .wish-card .prod-img { height: 100%; object-fit: cover; }
-      .wish-card .prod-info { padding: 14px 14px 14px 16px; }
+      .wish-card .prod-info { padding: 14px 14px 16px 16px; min-width: 0; }
+      /* Titles here run long ("… | Black red"), and an unbroken run would
+         reintroduce the overflow the column now allows for. */
+      .wish-card .prod-name { font-size: 1rem; overflow-wrap: anywhere; }
+      .wish-actions { min-width: 0; }
+      .wish-actions .btn-g {
+        min-width: 0; padding: 12px 10px; font-size: .68rem; letter-spacing: .06em; gap: 6px;
+      }
+      .wish-actions .btn-g .mi { font-size: 16px; }
       .wish-toolbar .btn-g { width: 100%; justify-content: center; }
     }
-    @media (max-width: 360px) {
-      .wish-card { grid-template-columns: 96px 1fr; }
-      .wish-actions .btn-g { font-size: .72rem; padding: 11px 8px; }
+    /* Narrow phones: the label needs the ~22px the bag icon was taking. */
+    @media (max-width: 400px) {
+      .wish-card { grid-template-columns: 96px minmax(0, 1fr); }
+      .wish-actions .btn-g { padding: 12px 6px; letter-spacing: .04em; }
+      .wish-actions .btn-g .mi { display: none; }
+      .wish-remove { width: 40px; }
     }
     </style>
 
