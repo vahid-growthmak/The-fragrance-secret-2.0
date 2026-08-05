@@ -57,7 +57,7 @@
         <a class="pa-btn quick-add" href="{{ product.url }}" onclick="event.stopPropagation()"><span class="mi" aria-hidden="true">shopping_bag</span>Choose Size</a>
       {%- elsif card_variant and card_variant.available -%}
         <button type="button" class="pa-btn quick-add"
-                onclick="event.stopPropagation();addLiveToCart({{ card_variant.id }}, {{ product.title | json }})"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
+                onclick="event.stopPropagation();addLiveToCart({{ card_variant.id }}, {{ product.title | json | escape }})"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
       {%- else -%}
         <button type="button" class="pa-btn quick-add" disabled><span class="mi" aria-hidden="true">shopping_bag</span>Sold Out</button>
       {%- endif -%}

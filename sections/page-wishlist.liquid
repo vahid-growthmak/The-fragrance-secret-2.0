@@ -253,7 +253,7 @@
           return fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); });
         })
         .then(function (c) {
-          document.querySelectorAll('.cbadge:not(.wbadge)').forEach(function (b) { b.textContent = c.item_count; });
+          document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = c.item_count; });
           if (typeof cartCount !== 'undefined') cartCount = c.item_count;
           return true;
         })

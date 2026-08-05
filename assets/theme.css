@@ -6967,8 +6967,27 @@ html body .jdgm-form select {
 
     .pa-btn.quick-add[disabled]:hover { background: var(--white) }
 
-    /* Header wishlist badge reuses the cart badge, offset so the two read
-       as a matched pair rather than one looking misplaced. */
+    /* Header wishlist badge. Given its own class rather than reusing .cbadge:
+       the wishlist icon sits BEFORE the cart in the header, so a shared class
+       meant querySelector('.cbadge') resolved to the wishlist badge and the
+       cart count was written into the wrong element. */
+    .wbadge {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--gold);
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1
+    }
+
     .wbadge[hidden] { display: none }
 
     /* PDP save-to-wishlist — squared off to sit beside the Add to Cart bar
