@@ -572,6 +572,12 @@
       max-width: 620px
     }
 
+    /* The heading runs wider than the body copy so each of its two lines fits
+       without wrapping at the display size. */
+    .hero-content > .hero-h {
+      max-width: 760px
+    }
+
     .hero-pretitle {
       font-size: .68rem;
       letter-spacing: .28em;
