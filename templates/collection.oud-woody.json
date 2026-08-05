@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Scent Family",
         "intro_heading": "Oud & Woody Perfumes UAE",
         "intro_text": "<p>Oud and woody perfumes are the richest, most enduring scents in perfumery. Built on warm woods like sandalwood, cedar and vetiver, and crowned by oud, the deep, smoky agarwood resin treasured across Arabia, they feel warm, sophisticated, and unmistakably premium. At The Fragrance Secrets, discover oud and woody perfumes for men and women, from smooth creamy sandalwood to intense Arabian oud, prized for their depth, projection, and remarkable longevity. Whether you want a refined daily woody scent or a bold oud statement for evenings, this family delivers presence that lasts.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "oud-woody-hero.webp",
+        "hero_bg_image_sm": "oud-woody-hero-sm.webp"
       }
     },
     "editorial": {

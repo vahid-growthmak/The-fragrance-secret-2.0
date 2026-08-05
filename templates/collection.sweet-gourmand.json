@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Scent Family",
         "intro_heading": "Sweet & Gourmand Perfumes UAE",
         "intro_text": "<p>Sweet and gourmand perfumes smell good enough to eat. Built on warm vanilla, caramel, chocolate, honey and sugar, they are the cozy, comforting scents that feel like dessert in a bottle. At The Fragrance Secrets, explore sweet and gourmand perfumes for men and women, from creamy vanilla and praline to rich chocolate and coffee. Whether you want a soft everyday sweetness or a deep, indulgent gourmand for cool evenings, this warm and inviting family wraps you in comfort and draws people closer.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "sweet-gourmand-hero.webp",
+        "hero_bg_image_sm": "sweet-gourmand-hero-sm.webp"
       }
     },
     "editorial": {

@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Scent Family",
         "intro_heading": "Floral & Rose Perfumes UAE",
         "intro_text": "<p>Floral and rose perfumes are the largest, most beloved family in perfumery, romantic, elegant, and endlessly wearable. Built on rose, jasmine, and blossoming petals, they range from a single flower in full bloom to rich bouquets and modern fruity-florals. At The Fragrance Secrets, discover floral and rose perfumes for men and women, from soft, powdery blooms to deep, opulent rose and oud. Whether you want a fresh daytime bouquet or a warm, seductive floral for evening, this timeless family has a scent for every mood and moment.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "floral-rose-hero.webp",
+        "hero_bg_image_sm": "floral-rose-hero-sm.webp"
       }
     },
     "editorial": {

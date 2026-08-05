@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Scent Family",
         "intro_heading": "Spicy & Oriental Perfumes UAE",
         "intro_text": "<p>Some fragrances are made to leave a lasting impression. Spicy and oriental perfumes combine the warmth of cinnamon, cardamom, saffron, amber, vanilla, and rich resins to create bold, inviting scents with exceptional depth and character. The Fragrance Secrets brings together spicy and oriental perfumes for men and women, inspired by the timeless fragrance traditions of the Middle East. Whether you want a bold spicy statement or a smooth amber glow, this family delivers the rich, exotic character that defines Middle Eastern perfumery.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "spicy-oriental-hero.webp",
+        "hero_bg_image_sm": "spicy-oriental-hero-sm.webp"
       }
     },
     "editorial": {

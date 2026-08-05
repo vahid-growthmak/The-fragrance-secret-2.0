@@ -23,7 +23,9 @@
         "intro_eyebrow": "By Scent Family",
         "intro_heading": "Fresh & Citrus Perfumes UAE",
         "intro_text": "<p>Nothing feels as refreshing as a fragrance filled with bright citrus and crisp fresh notes. Bergamot, lemon, grapefruit, green accords, and aquatic blends create clean, uplifting scents that are easy to wear every day and especially suited to the UAE's warm climate. The Fragrance Secrets brings together fresh and citrus perfumes for men and women that feel light, energising, and comfortable from the first spray to the last. Whether you want a sharp citrus burst or a cool aquatic breeze, this family keeps you feeling fresh from morning to evening.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "fresh-citrus-hero.webp",
+        "hero_bg_image_sm": "fresh-citrus-hero-sm.webp"
       }
     },
     "editorial": {
