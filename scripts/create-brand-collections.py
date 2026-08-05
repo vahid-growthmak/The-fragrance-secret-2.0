@@ -63,7 +63,7 @@ BRANDS = [
     ('jean-paul-gaultier', 'Jean Paul Gaultier Perfumes', 'Jean Paul Gaultier'),
     ('khaleej-pride', 'Khaleej Pride Perfumes', 'Khaleej Pride'),
     ('la-parfum-galleria', 'La Parfum Galleria Perfumes', 'La Parfum Galleria'),
-    ('la-parfum-galleria-exclusif', 'La Parfum Galleria Exclusif Perfumes', ''),
+    ('la-parfum-galleria-exclusif', 'La Parfum Galleria Exclusif Perfumes', 'La Parfum Galleria Exclusif'),
     ('lattafa', 'Lattafa Perfumes', 'Lattafa'),
     ('mancera', 'Mancera Perfumes', 'Mancera'),
     ('marxzelle', 'Marxzelle Perfumes', 'Marxzelle'),
