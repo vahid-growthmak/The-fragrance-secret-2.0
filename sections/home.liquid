@@ -108,24 +108,6 @@
   </div>
 </section>
 
-<!-- 2 · PERSISTENT TRUST BAR -->
-<div class="trust-strip">
-  <div class="trust-inner">
-    <div class="ts-item"><span class="mi" aria-hidden="true">verified_user</span>
-      <div><strong>100% Authentic</strong> — Verified sourcing</div>
-    </div>
-    <div class="ts-item"><span class="mi" aria-hidden="true">diamond</span>
-      <div><strong>Premium Fragrance Collection</strong> — designer &amp; Arabian houses</div>
-    </div>
-    <div class="ts-item"><span class="mi" aria-hidden="true">payments</span>
-      <div><strong>Cash on Delivery</strong> available UAE-wide</div>
-    </div>
-    <div class="ts-item"><span class="mi" aria-hidden="true">chat</span>
-      <div><strong>WhatsApp Support</strong> — daily 10am–7pm</div>
-    </div>
-  </div>
-</div>
-
 <!-- 3 · FEATURED BRANDS -->
 <section class="brands" id="brands">
   <div class="brands-inner">
@@ -198,7 +180,7 @@
     {%- if bestsellers.products.size == 0 -%}{%- assign bestsellers = collections['featured'] -%}{%- endif -%}
     {%- if bestsellers.products.size > 0 -%}
       <div class="products-grid">
-        {%- for product in bestsellers.products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
+        {%- for product in bestsellers.products limit: 4 -%}{% render 'product-card', product: product, hide_new: true %}{%- endfor -%}
       </div>
     {%- endif -%}
   </div>

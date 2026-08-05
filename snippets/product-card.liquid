@@ -1,6 +1,8 @@
 {%- comment -%}
   Product card — native Shopify port of app.js productCardHTML().
   Usage: {% render 'product-card', product: product %}
+  Pass hide_new: true to drop a "New" badge, which most of the catalogue carries.
+
   Reads optional metafields (custom.badge, reviews.rating / custom.rating,
   reviews.rating_count / custom.review_count) with graceful fallbacks so a
   bare product still renders.
@@ -9,6 +11,11 @@
 {%- liquid
   assign badge = product.metafields.custom.badge.value
   assign badge_class = product.metafields.custom.badge_class.value | default: 'badge-best'
+  # 898 of the 928 products carry a "New" badge from the bulk upload, so callers
+  # can suppress it where it says nothing or contradicts the row it sits in.
+  if hide_new and badge == 'New'
+    assign badge = blank
+  endif
   if badge == blank
     if product.compare_at_price > product.price
       assign badge = 'Sale'
