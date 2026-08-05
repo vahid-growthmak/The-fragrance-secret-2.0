@@ -2406,20 +2406,18 @@
       height: 100%;
       object-fit: cover;
       object-position: center right;
-      opacity: .45;
-      transition: transform .8s var(--ease), opacity .3s
+      transition: transform .8s var(--ease)
     }
 
     .ob-card:hover .ob-img {
-      transform: scale(1.06);
-      opacity: .6
+      transform: scale(1.06)
     }
 
     .ob-card::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(105deg, rgba(13, 10, 6, .92) 0%, rgba(13, 10, 6, .72) 45%, rgba(13, 10, 6, .35) 100%)
+      background: linear-gradient(105deg, rgba(13, 10, 6, .8) 0%, rgba(13, 10, 6, .46) 48%, rgba(13, 10, 6, .08) 100%)
     }
 
     .ob-card > .ob-tag,
