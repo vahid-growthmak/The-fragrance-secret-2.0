@@ -23,7 +23,9 @@
         "intro_eyebrow": "Shop",
         "intro_heading": "Crazy Perfume Deals UAE",
         "intro_text": "<p>Great fragrances, even better prices. The Crazy Deals collection brings together the best perfume offers at The Fragrance Secrets, discounts, sale prices, clearance, and value picks across designer and Arabian scents. Every deal is on a genuine, quality-checked fragrance, so you save without ever compromising on authenticity. Whether you are hunting for a bargain on a favourite, a budget-friendly everyday scent, or a discounted designer name, this is where value meets genuine perfume. Deals move fast, so grab yours before it is gone.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "crazy-deals-hero.webp",
+        "hero_bg_image_sm": "crazy-deals-hero-sm.webp"
       }
     },
     "editorial": {

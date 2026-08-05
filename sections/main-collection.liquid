@@ -25,12 +25,16 @@
     assign hero_image_alt = section.settings.hero_image_alt | default: collection.title
     assign crumb_parent_label = section.settings.crumb_parent_label | default: 'Shop'
     assign crumb_parent_url = section.settings.crumb_parent_url | default: '/collections/all'
+    assign hero_bg = section.settings.hero_bg_image
+    assign hero_bg_sm = section.settings.hero_bg_image_sm
   else
     assign hero_eyebrow = 'The Collection'
     assign hero_heading = collection.title
     assign hero_image_alt = collection.title
     assign crumb_parent_label = 'Shop'
     assign crumb_parent_url = '/collections/all'
+    assign hero_bg = ''
+    assign hero_bg_sm = ''
   endif
 
   assign show_intro = false
@@ -79,17 +83,17 @@
       </div>
     </section>
   {%- else -%}
-    <section class="page-hero tall{% if section.settings.hero_bg_image != blank %} has-bg{% endif %}">
-      {%- if section.settings.hero_bg_image != blank -%}
+    <section class="page-hero tall{% if hero_bg != blank %} has-bg{% endif %}">
+      {%- if hero_bg != blank -%}
         <div class="ph-bg" aria-hidden="true">
           {%- comment -%}
             Full-bleed banner. A narrower variant is served to phones when one is
             named, so a handset does not download the 2880px desktop file.
           {%- endcomment -%}
-          <img src="{{ section.settings.hero_bg_image | asset_url }}"
-               {%- if section.settings.hero_bg_image_sm != blank %}
-               srcset="{{ section.settings.hero_bg_image_sm | asset_url }} 1200w,
-                       {{ section.settings.hero_bg_image | asset_url }} 2880w"
+          <img src="{{ hero_bg | asset_url }}"
+               {%- if hero_bg_sm != blank %}
+               srcset="{{ hero_bg_sm | asset_url }} 1200w,
+                       {{ hero_bg | asset_url }} 2880w"
                sizes="100vw"
                {%- endif %}
                alt="" width="2880" height="1000" loading="eager" fetchpriority="high" decoding="async">

@@ -23,7 +23,9 @@
         "intro_eyebrow": "Shop",
         "intro_heading": "New Perfume Arrivals UAE",
         "intro_text": "<p>Every new fragrance brings a new experience worth exploring. The New Arrivals collection at The Fragrance Secrets brings together the latest designer launches, newly released Arabian perfumes, and the newest additions to our fragrance collection. Explore fresh arrivals before they become customer favourites and discover scents that have just landed in our store. Whether you're looking for the latest perfume trends, a recently launched fragrance, or something unique that stands out, this collection is updated regularly with the newest perfumes available online.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "new-arrivals-hero.webp",
+        "hero_bg_image_sm": "new-arrivals-hero-sm.webp"
       }
     },
     "editorial": {

@@ -24,7 +24,9 @@
         "intro_heading": "Shop All Perfumes Online UAE",
         "intro_text": "<p>Finding the right fragrance is easier when everything is in one place. The Fragrance Secrets brings together its complete collection of designer and Arabian fragrances, including oud and woody, fresh and floral, sweet and spicy scents for men, women, and unisex preferences. Browse the entire catalogue, filter by what matters most to you, and compare fragrances side by side to find your perfect match. Whether you're looking for a signature scent, shopping for a gift, or simply exploring something new, this is the easiest way to discover the full collection and buy perfumes online with confidence.</p>",
         "show_why_rotator": true,
-        "limit_to_path": "/collections/all"
+        "limit_to_path": "/collections/all",
+        "hero_bg_image": "all-products-hero.webp",
+        "hero_bg_image_sm": "all-products-hero-sm.webp"
       }
     },
     "editorial": {

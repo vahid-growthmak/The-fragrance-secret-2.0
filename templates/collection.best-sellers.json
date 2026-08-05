@@ -23,7 +23,9 @@
         "intro_eyebrow": "Shop",
         "intro_heading": "Best Selling Perfumes UAE",
         "intro_text": "<p>Some fragrances become best sellers because people keep coming back for them. The best selling perfumes collection at The Fragrance Secrets features the fragrances our customers buy, recommend, and repurchase most across the UAE. Discover bestselling designer perfumes, authentic Arabian fragrances, long-lasting oud scents, fresh everyday favourites, and luxury perfumes that have earned their reputation through real customer demand. Whether you're searching for your first signature fragrance, a thoughtful gift, or a perfume trusted by thousands of fragrance lovers, this collection makes it easy to shop the most-loved perfumes with confidence.</p>",
-        "show_why_rotator": true
+        "show_why_rotator": true,
+        "hero_bg_image": "best-sellers-hero.webp",
+        "hero_bg_image_sm": "best-sellers-hero-sm.webp"
       }
     },
     "editorial": {
