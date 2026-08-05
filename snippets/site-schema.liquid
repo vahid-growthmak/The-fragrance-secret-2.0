@@ -22,14 +22,24 @@
 {%- assign shop_url = shop.url -%}
 
 {%- if request.page_type == 'index' -%}
+  {%- comment -%}
+    Collect the profiles that are set, then join them. An earlier version appended
+    a comma after each and trimmed with remove_last, but that filter removes the
+    last occurrence anywhere in the string, not a trailing one — so it deleted the
+    separator between the final two entries and the JSON would not parse.
+  {%- endcomment -%}
+  {%- assign social_raw = '' -%}
+  {%- if f.instagram != blank %}{%- assign social_raw = social_raw | append: f.instagram | append: '~' -%}{%- endif -%}
+  {%- if f.facebook != blank %}{%- assign social_raw = social_raw | append: f.facebook | append: '~' -%}{%- endif -%}
+  {%- if f.twitter != blank %}{%- assign social_raw = social_raw | append: f.twitter | append: '~' -%}{%- endif -%}
+  {%- if f.youtube != blank %}{%- assign social_raw = social_raw | append: f.youtube | append: '~' -%}{%- endif -%}
+  {%- if f.tiktok != blank %}{%- assign social_raw = social_raw | append: f.tiktok | append: '~' -%}{%- endif -%}
+  {%- assign social_list = social_raw | split: '~' -%}
   {%- capture social_profiles -%}
-    {%- if f.instagram != blank %}{{ f.instagram | json }},{% endif -%}
-    {%- if f.facebook != blank %}{{ f.facebook | json }},{% endif -%}
-    {%- if f.twitter != blank %}{{ f.twitter | json }},{% endif -%}
-    {%- if f.youtube != blank %}{{ f.youtube | json }},{% endif -%}
-    {%- if f.tiktok != blank %}{{ f.tiktok | json }}{% endif -%}
+    {%- for profile in social_list -%}
+      {{ profile | json }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
   {%- endcapture -%}
-  {%- assign social_profiles = social_profiles | strip | remove_last: ',' -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
