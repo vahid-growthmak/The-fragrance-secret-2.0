@@ -573,8 +573,10 @@
     }
 
     /* The heading runs wider than the body copy so each of its two lines fits
-       without wrapping at the display size. */
-    .hero-content > .hero-h {
+       without wrapping at the display size. The trust points get the same room,
+       so four of them sit two-by-two rather than stacking. */
+    .hero-content > .hero-h,
+    .hero-content > .hero-trust {
       max-width: 760px
     }
 
