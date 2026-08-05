@@ -46,6 +46,18 @@
       assign show_intro = true
     endif
   endif
+
+  # The intro heading carries the primary keyword, "Kids Perfumes UAE" where the
+  # hero says only "Kids Perfumes", so it takes the H1 and the hero steps down to
+  # H2. That keeps one H1 per page. Where a collection has no intro heading, or
+  # the copy belongs to another path, the hero keeps the H1 so no page is left
+  # without one. Styling is by class, so nothing changes visually.
+  assign hero_tag = 'h1'
+  assign intro_tag = 'h2'
+  if show_intro and section.settings.intro_heading != blank
+    assign hero_tag = 'h2'
+    assign intro_tag = 'h1'
+  endif
 -%}
 
 <div data-collection-native>
@@ -75,7 +87,7 @@
         <div>
           {{ collection_breadcrumb }}
           <span class="ph-eyebrow">{{ hero_eyebrow }}</span>
-          <h1 class="ph-title">{{ hero_heading }}</h1>
+          <{{ hero_tag }} class="ph-title">{{ hero_heading }}</{{ hero_tag }}>
           {%- if collection.description != blank and section.settings.show_hero_description -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
           {{ hero_facts }}
         </div>
@@ -102,7 +114,7 @@
       <div class="container">
         {{ collection_breadcrumb }}
         <span class="ph-eyebrow">{{ hero_eyebrow }}</span>
-        <h1 class="ph-title">{{ hero_heading }}</h1>
+        <{{ hero_tag }} class="ph-title">{{ hero_heading }}</{{ hero_tag }}>
         {%- if collection.description != blank and section.settings.show_hero_description -%}<p class="ph-sub">{{ collection.description }}</p>{%- endif -%}
         {{ hero_facts }}
       </div>
@@ -126,7 +138,7 @@
     <section class="section-sm coll-intro"><div class="container coll-intro-grid{% if section.settings.intro_image != blank %} has-figure{% endif %}">
       <div class="coll-intro-copy">
         {%- if section.settings.intro_eyebrow != blank -%}<span class="label">{{ section.settings.intro_eyebrow }}</span>{%- endif -%}
-        {%- if section.settings.intro_heading != blank -%}<h2 class="sec-title">{{ section.settings.intro_heading }}</h2>{%- endif -%}
+        {%- if section.settings.intro_heading != blank -%}<{{ intro_tag }} class="sec-title">{{ section.settings.intro_heading }}</{{ intro_tag }}>{%- endif -%}
         {%- if section.settings.intro_text != blank -%}<div class="sec-sub coll-intro-body">{{ section.settings.intro_text }}</div>{%- endif -%}
       </div>
 
