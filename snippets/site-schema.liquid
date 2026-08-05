@@ -1,0 +1,154 @@
+{%- comment -%}
+  Structured data for the page types that carry none of their own.
+
+    index    Organization + WebSite, declared once for the whole site
+    page     WebPage, or ContactPage on the contact page, + BreadcrumbList
+    blog     Blog + BreadcrumbList
+    article  BlogPosting + BreadcrumbList
+
+  Deliberately silent on collection and product pages: those already emit
+  CollectionPage/ItemList from category-editorial and Product from
+  product-schema, and a second description of the same page would compete.
+
+  Business details come in as `f`, the footer section's settings, so there is one
+  source of truth. Anything blank is omitted rather than emitted empty. Rendered
+  from the footer because that is where those settings live; JSON-LD is valid
+  anywhere in the document.
+
+  Usage:
+    {% render 'site-schema', f: section.settings %}
+{%- endcomment -%}
+
+{%- assign shop_url = shop.url -%}
+
+{%- if request.page_type == 'index' -%}
+  {%- capture social_profiles -%}
+    {%- if f.instagram != blank %}{{ f.instagram | json }},{% endif -%}
+    {%- if f.facebook != blank %}{{ f.facebook | json }},{% endif -%}
+    {%- if f.twitter != blank %}{{ f.twitter | json }},{% endif -%}
+    {%- if f.youtube != blank %}{{ f.youtube | json }},{% endif -%}
+    {%- if f.tiktok != blank %}{{ f.tiktok | json }}{% endif -%}
+  {%- endcapture -%}
+  {%- assign social_profiles = social_profiles | strip | remove_last: ',' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": {{ shop_url | append: '/#organization' | json }},
+    "name": {{ shop.name | json }},
+    {% if f.company_name != blank %}"legalName": {{ f.company_name | json }},{% endif %}
+    "url": {{ shop_url | append: '/' | json }},
+    {% if settings.favicon %}"logo": {{ settings.favicon | image_url: width: 512 | prepend: 'https:' | json }},{% endif %}
+    {% if f.tagline != blank %}"description": {{ f.tagline | strip_html | json }},{% endif %}
+    "address": {
+      "@type": "PostalAddress",
+      {% if f.address != blank %}"streetAddress": {{ f.address | json }},{% endif %}
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      {% if f.phone != blank %}"telephone": {{ f.phone | json }},{% endif %}
+      {% if f.email != blank %}"email": {{ f.email | json }},{% endif %}
+      "areaServed": ["AE", "US", "CA"],
+      "availableLanguage": ["en"]
+    }{% if social_profiles != blank %},
+    "sameAs": [{{ social_profiles }}]{% endif %}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": {{ shop_url | append: '/#website' | json }},
+    "url": {{ shop_url | append: '/' | json }},
+    "name": {{ shop.name | json }},
+    "publisher": { "@id": {{ shop_url | append: '/#organization' | json }} },
+    "potentialAction": {
+      "@type": "SearchAction",
+      {%- comment -%}
+        The braces of the search placeholder must sit outside the Liquid tag, or
+        the parser reads them as the end of the output and rejects the file.
+      {%- endcomment -%}
+      {%- assign search_base = shop_url | append: '/search?q=' -%}
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ search_base }}{search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+{%- elsif request.page_type == 'page' and page != blank -%}
+  {%- assign page_url = shop_url | append: page.url -%}
+  {%- assign page_kind = 'WebPage' -%}
+  {%- if page.handle contains 'contact' -%}{%- assign page_kind = 'ContactPage' -%}{%- endif -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {{ page_kind | json }},
+    "@id": {{ page_url | append: '#webpage' | json }},
+    "url": {{ page_url | json }},
+    "name": {{ page.title | json }},
+    {% if page.content != blank %}"description": {{ page.content | strip_html | truncatewords: 40 | json }},{% endif %}
+    "isPartOf": { "@id": {{ shop_url | append: '/#website' | json }} },
+    "publisher": { "@id": {{ shop_url | append: '/#organization' | json }} },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop_url | append: '/' | json }} },
+        { "@type": "ListItem", "position": 2, "name": {{ page.title | json }}, "item": {{ page_url | json }} }
+      ]
+    }
+  }
+  </script>
+
+{%- elsif request.page_type == 'blog' and blog != blank -%}
+  {%- assign blog_url = shop_url | append: blog.url -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": {{ blog_url | append: '#blog' | json }},
+    "url": {{ blog_url | json }},
+    "name": {{ blog.title | json }},
+    "isPartOf": { "@id": {{ shop_url | append: '/#website' | json }} },
+    "publisher": { "@id": {{ shop_url | append: '/#organization' | json }} },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop_url | append: '/' | json }} },
+        { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ blog_url | json }} }
+      ]
+    }
+  }
+  </script>
+
+{%- elsif request.page_type == 'article' and article != blank -%}
+  {%- assign article_url = shop_url | append: article.url -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": {{ article_url | append: '#article' | json }},
+    "url": {{ article_url | json }},
+    "headline": {{ article.title | json }},
+    {% if article.excerpt_or_content != blank %}"description": {{ article.excerpt_or_content | strip_html | truncatewords: 40 | json }},{% endif %}
+    {% if article.image %}"image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }},{% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }},
+    {% if article.author != blank %}"author": { "@type": "Person", "name": {{ article.author | json }} },{% endif %}
+    "publisher": { "@id": {{ shop_url | append: '/#organization' | json }} },
+    "mainEntityOfPage": { "@id": {{ article_url | append: '#article' | json }} },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop_url | append: '/' | json }} },
+        { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ shop_url | append: blog.url | json }} },
+        { "@type": "ListItem", "position": 3, "name": {{ article.title | json }}, "item": {{ article_url | json }} }
+      ]
+    }
+  }
+  </script>
+{%- endif -%}
