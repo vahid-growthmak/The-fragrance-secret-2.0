@@ -21,7 +21,18 @@
 
 <a class="hub-tile coll-tile" href="{{ collection.url }}">
   {%- if card_image -%}
-    <img src="{{ card_image | image_url: width: 600 }}" alt="{{ card_label | escape }}" loading="lazy" width="600" height="480">
+    {%- comment -%}
+      The tile is a 5:4 box (aspect-ratio 4/3.2) and renders up to 491 CSS px
+      wide — at the point the grid drops to two columns, not at full desktop.
+      A single 600px source was therefore soft on every retina screen, so serve
+      a srcset and let the browser pick.
+    {%- endcomment -%}
+    <img src="{{ card_image | image_url: width: 800 }}"
+         srcset="{{ card_image | image_url: width: 500 }} 500w,
+                 {{ card_image | image_url: width: 800 }} 800w,
+                 {{ card_image | image_url: width: 1200 }} 1200w"
+         sizes="(max-width: 560px) calc(100vw - 40px), (max-width: 1100px) calc(50vw - 59px), calc((min(100vw, 1380px) - 140px) / 3)"
+         alt="{{ card_label | escape }}" loading="lazy" width="1200" height="960">
   {%- else -%}
     <span class="coll-tile-mark" aria-hidden="true">{{ card_label | slice: 0, 1 }}</span>
   {%- endif -%}
