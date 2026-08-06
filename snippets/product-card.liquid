@@ -37,7 +37,7 @@
   assign card_title = product.title | escape
 -%}
 
-<div class="prod-card fade-up" onclick="location.href='{{ product.url }}'">
+<div class="prod-card fade-up" data-handle="{{ product.handle }}"{% if card_variant %} data-variant="{{ card_variant.id }}"{% endif %} onclick="location.href='{{ product.url }}'">
   <div class="prod-img-wrap">
     {%- if product.featured_image -%}
       <img class="prod-img" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">

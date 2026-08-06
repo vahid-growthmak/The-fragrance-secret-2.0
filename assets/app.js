@@ -585,6 +585,9 @@ function addLiveToCart(variantId, name, qty) {
       cartCount = c.item_count;
       document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = cartCount; });
       toast('✓ Added to cart — ' + name);
+      /* The cart page listens for this so an add from its own cross-sell
+         updates the lines above, instead of only moving the badge. */
+      document.dispatchEvent(new CustomEvent('cart:updated', { detail: c }));
     })
     .catch(function () { toast('Could not add to cart — please try again'); });
 }

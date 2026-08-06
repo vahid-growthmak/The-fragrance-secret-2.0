@@ -51,7 +51,24 @@
         <div class="upsell">
           <div class="upsell-head"><span class="mi" aria-hidden="true">auto_awesome</span>Complete your order</div>
           <div class="upsell-sub">Customers who bought these items also loved</div>
-          {%- if collections['featured'].products.size > 0 -%}<div class="upsell-row products-grid">{%- for product in collections['featured'].products limit: 3 -%}{% render 'product-card', product: product %}{%- endfor -%}</div>{%- else -%}<div class="upsell-row products-grid" data-render="products" data-count="3"></div>{%- endif -%}
+          {%- comment -%}
+            Recommending something already in the bag is noise, so build a
+            delimited id list and skip those. Delimiters matter: a bare
+            "contains" would treat 123 as a match inside 1234.
+          {%- endcomment -%}
+          {%- capture cart_product_ids -%},{% for item in cart.items %}{{ item.product_id }},{% endfor %}{%- endcapture -%}
+          {%- if collections['featured'].products.size > 0 -%}
+            <div class="upsell-row products-grid">
+              {%- assign shown = 0 -%}
+              {%- for product in collections['featured'].products -%}
+                {%- if shown >= 3 -%}{%- break -%}{%- endif -%}
+                {%- capture id_probe -%},{{ product.id }},{%- endcapture -%}
+                {%- if cart_product_ids contains id_probe -%}{%- continue -%}{%- endif -%}
+                {% render 'product-card', product: product %}
+                {%- assign shown = shown | plus: 1 -%}
+              {%- endfor -%}
+            </div>
+          {%- else -%}<div class="upsell-row products-grid" data-render="products" data-count="3"></div>{%- endif -%}
         </div>
       </div>
 
@@ -107,12 +124,42 @@
   var FREE_SHIP = {{ free_ship_threshold | json }};
   var busy = false;
 
+  function esc(v) {
+    return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  /* Mirrors the Liquid row above, for a product added from the cross-sell that
+     this page has never rendered. */
+  function rowHTML(item) {
+    var meta = [];
+    if (item.variant_title && item.variant_title !== 'Default Title') meta.push(esc(item.variant_title));
+    if (item.vendor) meta.push(esc(item.vendor));
+    return '<div class="co-line" data-price="' + item.final_price + '" data-qty="' + item.quantity +
+             '" data-key="' + esc(item.key) + '">' +
+        (item.image ? '<a href="' + esc(item.url) + '" class="cl-img"><img src="' + esc(item.image) +
+             '" alt="' + esc(item.product_title) + '" width="80"></a>' : '') +
+        '<div class="cl-body">' +
+          '<div class="cl-name"><a href="' + esc(item.url) + '">' + esc(item.product_title) + '</a></div>' +
+          '<div class="cl-meta">' + meta.join(' · ') + '</div>' +
+          '<div class="qty-wrap">' +
+            '<button type="button" class="qty-btn" data-cart-step="-1" aria-label="Decrease quantity">&minus;</button>' +
+            '<input class="qty-num" type="text" value="' + item.quantity + '" readonly>' +
+            '<button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="cl-price" data-line-price>' + window.formatMoney(item.final_line_price) + '</div>' +
+        '<button type="button" class="cart-remove" aria-label="Remove" data-cart-remove><span class="mi" aria-hidden="true">close</span></button>' +
+      '</div>';
+  }
+
   /* Everything the summary needs is keyed by id, so the whole page never has to
      be re-fetched just to move a quantity by one. */
   function repaint(cart) {
     (cart.items || []).forEach(function (item) {
       var row = lines.querySelector('.co-line[data-key="' + item.key + '"]');
-      if (!row) return;
+      if (!row) { lines.insertAdjacentHTML('beforeend', rowHTML(item)); return; }
       row.setAttribute('data-qty', item.quantity);
       row.setAttribute('data-price', item.final_price);
       var num = row.querySelector('.qty-num');
@@ -148,6 +195,17 @@
     document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = cart.item_count; });
     if (typeof cartCount !== 'undefined') cartCount = cart.item_count;
 
+    /* A recommendation the shopper has just accepted is no longer a
+       recommendation — drop any cross-sell card whose variant is now in the bag. */
+    var inCart = {};
+    (cart.items || []).forEach(function (i) { inCart[i.variant_id] = true; });
+    document.querySelectorAll('.upsell-row .prod-card[data-variant]').forEach(function (card) {
+      if (inCart[card.getAttribute('data-variant')]) card.remove();
+    });
+    var row = document.querySelector('.upsell-row');
+    var upsell = document.querySelector('.upsell');
+    if (upsell && row && !row.querySelector('.prod-card')) upsell.hidden = true;
+
     /* Emptying the bag has to change the page rather than leave an empty grid.
        Built here instead of reloading, which is the whole point of this. */
     if (cart.item_count === 0) {
@@ -181,6 +239,14 @@
       .catch(function () { if (typeof toast === 'function') toast('Could not update cart'); })
       .then(function () { busy = false; if (row) row.style.opacity = ''; });
   }
+
+  /* Quick Add in the cross-sell posts through addLiveToCart, which announces
+     the fresh cart. Without this the bag changed server-side — including the
+     quantity bump when the product was already in it — while the lines above
+     kept showing the old state. */
+  document.addEventListener('cart:updated', function (e) {
+    if (e.detail) repaint(e.detail);
+  });
 
   lines.addEventListener('click', function (e) {
     var step = e.target.closest('[data-cart-step]');
