@@ -138,6 +138,20 @@
         {%- assign tiles_shown = tiles_shown | plus: 1 -%}
       {%- endfor -%}
     </div>
+    {%- comment -%}
+      The hub pages close this block with a see-all link; collection pages had
+      the tiles and nothing after them. Defaulted in Liquid rather than through
+      the schema because a `url` setting cannot carry a default — left unset it
+      renders href="", so relying on the setting alone would have meant the link
+      stayed missing across all 90 collection templates until each was edited.
+    {%- endcomment -%}
+    {%- assign explore_all_label = section.settings.explore_all_label | default: 'See All Collections' -%}
+    {%- assign explore_all_url = section.settings.explore_all_url | default: '/collections' -%}
+    {%- if explore_all_label != blank and explore_all_url != blank -%}
+      <div class="sibling-all">
+        <a class="btn-ghost" href="{{ explore_all_url }}">{{ explore_all_label }} <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    {%- endif -%}
   </div></section>
 {%- endif -%}
 
@@ -286,6 +300,8 @@
     { "type": "header", "content": "Explore more" },
     { "type": "text", "id": "explore_eyebrow", "label": "Eyebrow", "default": "Keep Looking" },
     { "type": "text", "id": "explore_heading", "label": "Heading (H2)", "default": "Explore More <em>Collections</em>" },
+    { "type": "text", "id": "explore_all_label", "label": "See-all link label", "info": "Defaults to \"See All Collections\" when left blank." },
+    { "type": "url", "id": "explore_all_url", "label": "See-all link", "info": "Defaults to /collections when left blank." },
     { "type": "textarea", "id": "explore_sub", "label": "Intro paragraph" },
     {
       "type": "select", "id": "current_hub", "label": "This page's hub", "default": "none",
