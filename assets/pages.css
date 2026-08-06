@@ -964,3 +964,27 @@ header.light .nav-burger { color: var(--warm); }
 }
 /* Overlays must never swallow the pointer the zoom is tracking. */
 .zoom-hint, .img-badge { pointer-events: none; }
+
+/* ── PDP reviews ───────────────────────────────────────────────────
+   The section already carries its own heading ("What Customers Say"), and the
+   Judge.me widget prints a second one — "CUSTOMER REVIEWS" — directly beneath
+   it. Hide the widget's title rather than the theme's, so the wording stays
+   under our control and matches the rest of the page. */
+#judgeme_product_reviews .jdgm-rev-widg__title { display: none; }
+
+/* Shown when a product has no reviews, so the section is not just a heading
+   over empty space. */
+.rv-empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 640px;
+  margin: 4px 0 26px;
+  padding: 20px 22px;
+  background: var(--white);
+  border: 1px dashed rgba(201, 168, 76, .45);
+  border-radius: 10px;
+}
+.rv-empty .mi { font-size: 22px; color: var(--gold-dk); flex-shrink: 0; }
+.rv-empty p { margin: 0; font-size: .9rem; line-height: 1.7; color: var(--warm); }
+.rv-empty strong { color: var(--ink); }
