@@ -66,6 +66,20 @@ header.light .nav-toplink { color: var(--warm); }
 .nav-overlay.open { opacity: 1; visibility: visible; }
 body.nav-open { overflow: hidden; }
 
+/* The drawer lives inside <header>, and both the header and the Shopify section
+   wrapper around it are position:sticky with z-index:1000 — each opening a
+   stacking context. So .nav-links' own z-index:1200 could only ever compete
+   *inside* that 1000, while .nav-overlay is a sibling of the header at 1150.
+   The overlay therefore painted over the open drawer: its rgba(0,0,0,.5) and
+   3px blur are why the menu read as dim and unreadable, and taps landed on the
+   overlay, which closes the menu rather than following the link.
+
+   Lift the header above the overlay, but only while the drawer is open, so
+   normal page stacking is untouched. */
+body.nav-open header,
+body.nav-open [id^="shopify-section"][id$="__header"],
+body.nav-open #shopify-section-header { z-index: 1250; }
+
 .nav-mega {
   position: fixed; left: 0; right: 0; top: 68px; z-index: 999;
   background: linear-gradient(180deg, #16110b, #0d0a06); backdrop-filter: blur(16px);
