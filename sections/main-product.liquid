@@ -478,6 +478,42 @@
   </div>
 </main-product>
 
+<script>
+(function () {
+  var wrap = document.querySelector('.main-img-wrap');
+  if (!wrap) return;
+  var img = wrap.querySelector('.main-img');
+  if (!img) return;
+  /* No hover on touch — binding here would leave the image stuck zoomed. */
+  if (!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches)) return;
+
+  /* The gallery serves a 900px image, which is soft once magnified. Rewriting
+     the width parameter gives a sharp source without paying for it on load, and
+     because it reads the CURRENT src it keeps working after a thumbnail swap. */
+  function hiRes(src) { return src.replace(/([?&])width=\d+/, '$1width=1800'); }
+  function upgrade() {
+    var target = hiRes(img.currentSrc || img.src);
+    if (!target || target === (img.currentSrc || img.src)) return;
+    var pre = new Image();
+    pre.onload = function () { img.src = target; };
+    pre.src = target;
+  }
+
+  function track(e) {
+    var r = wrap.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    var x = Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100));
+    var y = Math.max(0, Math.min(100, ((e.clientY - r.top) / r.height) * 100));
+    img.style.setProperty('--zx', x + '%');
+    img.style.setProperty('--zy', y + '%');
+  }
+
+  wrap.addEventListener('mouseenter', function (e) { track(e); upgrade(); wrap.classList.add('is-zoom'); });
+  wrap.addEventListener('mousemove', track);
+  wrap.addEventListener('mouseleave', function () { wrap.classList.remove('is-zoom'); });
+})();
+</script>
+
 {% schema %}
 {
   "name": "Product page",

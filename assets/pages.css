@@ -928,3 +928,31 @@ header.light .nav-burger { color: var(--warm); }
   .co-summary, .co-block, .upsell { padding-left: 16px; padding-right: 16px; }
   .fb-inner { gap: 10px; }
 }
+
+/* ── PDP gallery zoom ──────────────────────────────────────────────
+   "Hover to zoom" has always been in the markup, but nothing implemented it —
+   the label was decorative. The image scales from the cursor, whose position JS
+   writes into --zx/--zy.
+
+   transform is transitioned but transform-origin is not, deliberately: the zoom
+   eases in and out, while panning follows the pointer instantly instead of
+   lagging behind it.
+
+   Gated on a real hovering pointer. On touch there is no hover, so the hint is
+   hidden rather than promising a gesture that cannot happen. */
+@media (hover: hover) and (pointer: fine) {
+  .main-img-wrap { cursor: zoom-in; }
+  .main-img-wrap .main-img {
+    transform-origin: var(--zx, 50%) var(--zy, 50%);
+    transition: transform .3s var(--ease), opacity .3s;
+    will-change: transform;
+  }
+  .main-img-wrap.is-zoom .main-img { transform: scale(2.2); }
+  .main-img-wrap .zoom-hint { transition: opacity .25s; }
+  .main-img-wrap.is-zoom .zoom-hint { opacity: 0; }
+}
+@media (hover: none) {
+  .zoom-hint { display: none; }
+}
+/* Overlays must never swallow the pointer the zoom is tracking. */
+.zoom-hint, .img-badge { pointer-events: none; }
