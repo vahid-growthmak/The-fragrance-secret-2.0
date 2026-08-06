@@ -191,8 +191,18 @@
       grid.hidden = n === 0;
     }
 
+    /* Handles currently drawn in the grid. The change listener below compares
+       this against the store so a save made elsewhere on the page repaints,
+       while a removal handled here — which already updated the DOM — does not
+       trigger a pointless refetch. */
+    var rendered = [];
+    function sameSet(a, b) {
+      return a.length === b.length && a.every(function (h, i) { return h === b[i]; });
+    }
+
     function render() {
       var handles = window.TFSWishlist ? window.TFSWishlist.all() : [];
+      rendered = handles.slice();
       if (!handles.length) {
         loading.hidden = true;
         grid.innerHTML = '';
@@ -214,15 +224,25 @@
         });
 
         grid.innerHTML = products.filter(Boolean).map(cardHTML).join('');
+        rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
         paint();
       });
     }
+
+    /* The Keep Exploring cards at the foot of this page carry the same heart
+       button as any collection page, so saving one changed the store and the
+       badge but left the grid above showing the old list until a reload. */
+    document.addEventListener('wishlist:change', function () {
+      var now = window.TFSWishlist ? window.TFSWishlist.all() : [];
+      if (!sameSet(now, rendered)) render();
+    });
 
     window.wishRemove = function (btn) {
       var card = btn.closest('.wish-card');
       var name = card.querySelector('.prod-name').textContent.trim();
       if (window.TFSWishlist) window.TFSWishlist.remove(card.getAttribute('data-handle'));
       card.remove();
+      rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
       if (typeof toast === 'function') toast('Removed — ' + name);
       paint();
     };
@@ -235,6 +255,7 @@
         if (!ok) { btn.disabled = false; return; }
         if (window.TFSWishlist) window.TFSWishlist.remove(card.getAttribute('data-handle'));
         card.remove();
+        rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
         if (typeof toast === 'function') toast('✓ Moved to cart — ' + name);
         paint();
       });
@@ -257,6 +278,7 @@
           if (window.TFSWishlist) window.TFSWishlist.remove(c.getAttribute('data-handle'));
           c.remove();
         });
+        rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
         if (typeof toast === 'function') toast('✓ ' + cards.length + ' fragrance' + (cards.length === 1 ? '' : 's') + ' moved to cart');
         paint();
       });

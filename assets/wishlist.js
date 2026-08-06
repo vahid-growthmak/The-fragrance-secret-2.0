@@ -128,9 +128,12 @@
     });
   }
 
-  /* Keep tabs in step — the storage event only fires in the *other* tabs. */
+  /* Keep tabs in step — the storage event only fires in the *other* tabs.
+     announce rather than sync alone, so a page listening for wishlist:change
+     (the wishlist grid) repaints when another tab edits the list. It does not
+     write, so this cannot loop back. */
   window.addEventListener('storage', function (e) {
-    if (e.key === KEY) sync();
+    if (e.key === KEY) announce(read());
   });
 
   document.addEventListener('DOMContentLoaded', sync);
