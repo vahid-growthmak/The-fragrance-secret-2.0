@@ -7007,3 +7007,18 @@ html body .jdgm-form select {
     .atc-wish.is-wished .mi { color: #8E2C24 }
 
     .atc-wish:active .mi { transform: scale(.82) }
+
+    /* ── Figure style ─────────────────────────────────────────────────
+       Cormorant Garamond defaults to old-style (text) figures: measured
+       against a 1000-unit em with a 625 cap-height, 3 4 5 7 9 descend as far
+       as -275 below the baseline and top out around 400. So a heading like
+       "49 Fragrance Houses" renders its number low and small beside the caps.
+
+       lnum switches the display face to lining figures, which sit on the
+       baseline at cap height. Set here rather than per-selector because
+       font-variant-numeric inherits, and the display serif carries numbers in
+       ~60 places — headings, prices, countdown units, stat blocks.
+
+       Jost exposes neither lnum nor onum and already draws lining figures, so
+       this is inert for body copy. */
+    body { font-variant-numeric: lining-nums; }
