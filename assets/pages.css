@@ -614,11 +614,26 @@ header.light .nav-burger { color: var(--warm); }
 .ship-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold-dk), var(--gold)); transition: width .5s; }
 
 /* ── About: timeline / team / stats ──────────────────────────────── */
+/* Timeline geometry, worked from the shared box-sizing:border-box — the 16px
+   dot includes its 3px borders, so its centre is left+8.
+
+   The rail sits at left:8px, 2px wide, so its centre is 9px. The dot used
+   left:-33px against .tl-item's padding box, which starts at the .timeline's
+   40px padding — putting its centre at 15px, six pixels right of the rail, so
+   the line clipped the side of every circle instead of running through it.
+   -39px puts the dot centre on 9px exactly.
+
+   Vertically the dot was pinned at a flat 4px while .tl-year is 1.5rem, so it
+   floated near the top of the year rather than beside it. .tl-year now has a
+   fixed 1.2 line-height, and calc(0.9rem - 8px) centres the dot against it —
+   expressed in rem so it survives a change of root font size. The rail starts
+   at 0.9rem, which is that same centre, so it begins at the first dot rather
+   than above it. */
 .timeline { position: relative; max-width: 780px; margin: 0 auto; padding-left: 40px; }
-.timeline::before { content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--gold), rgba(201,168,76,.1)); }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0.9rem; bottom: 6px; width: 2px; background: linear-gradient(var(--gold), rgba(201,168,76,.1)); }
 .tl-item { position: relative; padding: 0 0 40px 34px; }
-.tl-item::before { content: ''; position: absolute; left: -33px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--cream); border: 3px solid var(--gold); }
-.tl-year { font-family: var(--fd); font-style: italic; font-size: 1.5rem; color: var(--gold-dk); margin-bottom: 6px; }
+.tl-item::before { content: ''; position: absolute; left: -39px; top: calc(0.9rem - 8px); width: 16px; height: 16px; border-radius: 50%; background: var(--cream); border: 3px solid var(--gold); box-shadow: 0 0 0 4px var(--cream-mid); }
+.tl-year { font-family: var(--fd); font-style: italic; font-size: 1.5rem; line-height: 1.2; color: var(--gold-dk); margin-bottom: 6px; }
 .tl-item h3 { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
 .tl-item p { font-size: .87rem; color: var(--warm); line-height: 1.7; }
 
