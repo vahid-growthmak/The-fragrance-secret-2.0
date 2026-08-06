@@ -145,11 +145,16 @@ header.light .nav-burger { color: var(--warm); }
   .nav-links .nav-drawer-extra .mi { font-size: 20px; color: var(--gold); }
 }
 
-/* Phones: collapse header to logo + Cart + Burger (rest live in the drawer) */
+/* Phones: collapse the header to logo + Wishlist + Cart + Burger.
+
+   Wishlist used to be hidden here too, but that predates it carrying a count
+   badge — saving a fragrance on a phone changed a number nobody could see, and
+   the drawer link gives no at-a-glance feedback. Search and Account stay in the
+   drawer: neither has state to report, and there is room for two icons at
+   320px (logo 110 + icons 76 + burger 40 + gaps 24 + padding 28 = 278). */
 @media (max-width: 767px) {
   .nav-actions .ni[title="Search"],
-  .nav-actions .ni[title="Account"],
-  .nav-actions .ni[title="Wishlist"] { display: none; }
+  .nav-actions .ni[title="Account"] { display: none; }
 }
 
 /* ── Page hero (collection / editorial headers) ──────────────────── */
