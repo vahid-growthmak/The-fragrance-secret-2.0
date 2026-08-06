@@ -203,6 +203,11 @@ header.light .nav-burger { color: var(--warm); }
 .ph-title { font-family: var(--fd); font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 400; line-height: 1.08; letter-spacing: -.01em; }
 .ph-title em { font-style: italic; color: var(--gold-lt); }
 .ph-sub { margin-top: 18px; max-width: 640px; color: rgba(255,255,255,.66); font-size: 1rem; line-height: 1.75; }
+/* The article hero puts the byline straight under the H1, and .ph-title has
+   line-height 1.08 with no margin of its own — .ph-sub brings its own
+   margin-top, .bl-meta does not. On a two-line title the descenders ran into
+   the date. Scoped to the hero so the byline inside .bl-card is untouched. */
+.page-hero .bl-meta { margin-top: 18px; }
 .ph-meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 26px; }
 .ph-meta span { display: inline-flex; align-items: center; gap: 8px; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.6); }
 .ph-meta .mi { font-size: 18px; color: var(--gold); }
