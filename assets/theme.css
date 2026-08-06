@@ -105,7 +105,22 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px
+      /* Root size drives almost the whole scale — 364 of the 465 font-size
+         declarations are in rem — so this is the one place to fix a type scale
+         that ran small: body copy was .9rem (14.4px) and the two commonest
+         sizes, .72/.74rem, landed near 11.6px.
+
+         Expressed as a percentage rather than the previous hard 16px, which
+         silently overrode the reader's own browser font-size preference. A
+         percentage scales from whatever they have set instead of replacing it.
+
+           106.25%  ->  17px at a default browser setting
+           112.5%   ->  18px from 1280px up, where there is room for it */
+      font-size: 106.25%
+    }
+
+    @media (min-width: 1280px) {
+      html { font-size: 112.5% }
     }
 
     body {
