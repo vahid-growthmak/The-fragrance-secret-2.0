@@ -668,6 +668,20 @@ const quizData = [
   { q: 'What\'s the main occasion?', opts: ['Daily Wear', 'Work & Office', 'Evening & Dates', 'Special Events', 'Travel & Casual'] },
 ];
 let qStep = 0, qAnswers = [];
+/* The quiz's first answer is a scent family, and each one is a real collection
+   — so the result can send people somewhere specific instead of a generic list.
+   Falls back to best sellers if the answer is ever unrecognised. */
+const QUIZ_FAMILY_URL = {
+  'Fresh & Citrus': '/collections/fresh-citrus',
+  'Deep Oud & Woody': '/collections/oud-woody',
+  'Floral & Rose': '/collections/floral-rose',
+  'Sweet & Gourmand': '/collections/sweet-gourmand',
+  'Spicy & Oriental': '/collections/spicy-oriental',
+};
+function quizResultURL() {
+  return QUIZ_FAMILY_URL[qAnswers[0]] || '/collections/best-sellers';
+}
+
 function renderQuiz() {
   document.querySelectorAll('.quiz-progress-wrap').forEach(prog => {
     prog.innerHTML = quizData.map((_, i) => `<div class="qp-dot${i <= qStep ? ' active' : ''}"></div>`).join('');
@@ -679,7 +693,7 @@ function renderQuiz() {
         <p style="color:rgba(255,255,255,.55);margin-bottom:28px">Based on your answers, we've narrowed it down. Want to refine further? Ask our AI stylist anything — budget, similar scents, gifting.</p>
         <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center">
           <button class="btn-g" onclick="openAIFromQuiz()"><span class="mi" aria-hidden="true">forum</span> Refine with our AI Stylist</button>
-          <a class="btn-o" href="collection.html?c=best-sellers">See Recommendations</a>
+          <a class="btn-o" href="${quizResultURL()}">See Recommendations</a>
           <button class="btn-o" onclick="qStep=0;qAnswers=[];renderQuiz()">Retake Quiz</button>
         </div>
       </div>`;
