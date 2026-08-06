@@ -748,6 +748,22 @@ header.light .nav-burger { color: var(--warm); }
 
 @media (max-width: 640px) { .brand-cloud { grid-template-columns: 1fr 1fr; } }
 
+/* "View all brands" is the section's real call to action, but it is a chip in
+   the same grid as the brand links, so on phones it took one of the two columns
+   and wrapped onto two lines. Span the full row and centre it so it reads as a
+   CTA rather than a fifteenth brand.
+
+   (.brand-cloud-row asks for display:flex in theme.css, but .brand-cloud here
+   matches at the same specificity from a later stylesheet, so the grid wins —
+   which is why grid-column is the right lever.) */
+@media (max-width: 640px) {
+  .brand-cloud .brand-chip-all {
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding: 15px 16px;
+  }
+}
+
 /* The A–Z brand list is followed by "How to Shop by Brand", and both are
    .section.alt — so their 88px paddings met as 176px of unbroken cream with no
    colour change to explain the gap. Trimmed on this section rather than on
