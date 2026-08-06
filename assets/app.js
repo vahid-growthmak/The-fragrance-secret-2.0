@@ -610,6 +610,56 @@ function cartChangeQty(key, quantity) {
 }
 
 /* ═══════════════════════════════════════
+   JUDGE.ME MODAL STATE
+   The "Write a review" form opens in Judge.me's own modal, which does not lock
+   the page behind it. On a phone that leaves two scrollbars — the modal's and
+   the document's — and the floating buttons sit half-under the overlay, which
+   reads as the WhatsApp icon vanishing.
+
+   Judge.me gives us no open/close event, so watch the DOM for its modal and
+   mirror the state onto <body>. Everything visual is then CSS, and the floats
+   are guaranteed to come back when the modal closes.
+═══════════════════════════════════════ */
+(function () {
+  if (!window.MutationObserver) return;
+  var SEL = '.jdgm-modal, .jdgm-rev-modal, .jdgm-form-modal, [class*="jdgm"][class*="modal"]';
+
+  function isOpen() {
+    var nodes = document.querySelectorAll(SEL);
+    for (var i = 0; i < nodes.length; i++) {
+      var cs = window.getComputedStyle(nodes[i]);
+      if (cs.display !== 'none' && cs.visibility !== 'hidden' && parseFloat(cs.opacity) !== 0) return true;
+    }
+    return false;
+  }
+
+  var last = false, queued = false;
+  function apply() {
+    queued = false;
+    var open = isOpen();
+    if (open === last) return;
+    last = open;
+    document.body.classList.toggle('jdgm-modal-open', open);
+  }
+  /* Coalesce to one check per frame — the observer watches the whole subtree
+     and Judge.me mutates it heavily while the form renders. */
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(apply);
+  }
+
+  function start() {
+    new MutationObserver(schedule).observe(document.body, {
+      childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style']
+    });
+    apply();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
+})();
+
+/* ═══════════════════════════════════════
    FIND MY SCENT — QUIZ
 ═══════════════════════════════════════ */
 const quizData = [

@@ -988,3 +988,21 @@ header.light .nav-burger { color: var(--warm); }
 .rv-empty .mi { font-size: 22px; color: var(--gold-dk); flex-shrink: 0; }
 .rv-empty p { margin: 0; font-size: .9rem; line-height: 1.7; color: var(--warm); }
 .rv-empty strong { color: var(--ink); }
+
+/* ── While the Judge.me review modal is open ───────────────────────
+   Judge.me does not lock the document behind its modal, so the page kept its
+   own scrollbar alongside the modal's — two bars on a phone. Locking the body
+   leaves one.
+
+   The floats sit at z-index 999, well under the modal, so they were showing
+   through as clipped shapes rather than disappearing cleanly. Faded out here
+   and restored on close, which the observer in app.js guarantees. */
+body.jdgm-modal-open { overflow: hidden; }
+
+body.jdgm-modal-open .wa-float,
+body.jdgm-modal-open .ai-launcher,
+body.jdgm-modal-open .sticky-atc {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
