@@ -585,6 +585,13 @@ header.light .nav-burger { color: var(--warm); }
 .upsell-sub { font-size: .82rem; color: var(--warm); margin-bottom: 18px; }
 .upsell-row { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 6px; }
 .upsell-card { flex: 0 0 210px; background: var(--white); border: 1px solid rgba(13,10,6,.08); border-radius: 8px; padding: 14px; }
+/* .upsell-row is a horizontal scroller (display:flex + overflow-x:auto), and
+   .upsell-card gave its children a fixed basis. But the cart renders the shared
+   product-card snippet, so the children are .prod-card and never matched that
+   rule — they fell back to flex-shrink:1, squeezed three across the phone, and
+   the titles broke one word per line instead of the row scrolling. */
+.upsell-row .prod-card { flex: 0 0 210px; }
+@media (max-width: 420px) { .upsell-row .prod-card { flex-basis: 168px; } }
 .upsell-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 6px; margin-bottom: 10px; background: var(--cream-dk); }
 .upsell-card .uc-name { font-size: .82rem; font-weight: 500; color: var(--ink); line-height: 1.35; min-height: 2.4em; }
 .upsell-card .uc-price { display: flex; align-items: baseline; gap: 8px; margin: 8px 0 12px; }

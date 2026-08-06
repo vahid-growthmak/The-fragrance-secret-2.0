@@ -45,8 +45,14 @@
          card wider than the screen instead — which clipped both the product
          name and the Move to Cart label rather than wrapping them. */
       .wish-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: stretch; }
-      .wish-card .prod-img-wrap { height: 100%; }
-      .wish-card .prod-img { height: 100%; object-fit: cover; }
+      /* The base card image is aspect-ratio:1. Combined with height:100% here
+         the square constraint drove the width off the card's height instead of
+         the 112px column, so the wrap overflowed its column — and because it is
+         position:relative it painted over .prod-info, hiding the left of the
+         title and the Move to Cart label. Pin both axes explicitly and drop the
+         ratio: the grid row sets the height, the column sets the width. */
+      .wish-card .prod-img-wrap { width: 100%; height: 100%; aspect-ratio: auto; min-width: 0; }
+      .wish-card .prod-img { width: 100%; height: 100%; object-fit: cover; }
       .wish-card .prod-info { padding: 14px 14px 16px 16px; min-width: 0; }
       /* Titles here run long ("… | Black red"), and an unbroken run would
          reintroduce the overflow the column now allows for. */
