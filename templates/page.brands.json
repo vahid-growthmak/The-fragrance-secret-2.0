@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -190,7 +199,7 @@
         "ways_heading": "Explore More <em>Fragrance Collections</em>",
         "ways_sub": "Prefer to shop another way? Browse our main fragrance collections by category, lifestyle, climate, and scent family to find the perfect scent for every occasion.",
         "shop_eyebrow": "The Shop",
-        "shop_heading": "Explore Other <em>Shop Collections</em>",
+        "shop_heading": "Explore Our <em>Shop Collections</em>",
         "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
         "crumb_name": "Shop by Brand",
         "ways_all_label": "See All Collections",
