@@ -7,6 +7,41 @@
 {%- liquid
   assign header_theme = section.settings.theme | default: 'dark'
   assign cart_count = cart.item_count | default: 0
+
+  # Which top-level nav item the current page belongs to. The .nav-active
+  # underline has always existed in the stylesheet, but the only thing that
+  # ever set it was navItemHTML() in app.js — the demo renderer this section
+  # replaced — so on the live site nothing was ever marked current.
+  #
+  # Brand and category pages are collections, so they light up Shop. The Brands
+  # hub itself is a page and is matched by handle below.
+  assign nav_active = ''
+  case request.page_type
+    when 'collection'
+      assign nav_active = 'shop'
+    when 'product'
+      assign nav_active = 'shop'
+    when 'list-collections'
+      assign nav_active = 'shop'
+    when 'blog'
+      assign nav_active = 'guides'
+    when 'article'
+      assign nav_active = 'guides'
+  endcase
+
+  if request.page_type == 'page'
+    assign shop_hub_pages = 'shop-by-lifestyle,shop-by-weather,shop-by-scent-family,gift-sets,crazy-deals,luxury-recommendations,category-collection' | split: ','
+    assign guide_pages = 'buying-guides,guide-article,journal,scent-education,care-storage,seasonal-trends' | split: ','
+    if page.handle == 'brands'
+      assign nav_active = 'brands'
+    elsif page.handle == 'about'
+      assign nav_active = 'about'
+    elsif shop_hub_pages contains page.handle
+      assign nav_active = 'shop'
+    elsif guide_pages contains page.handle
+      assign nav_active = 'guides'
+    endif
+  endif
 -%}
 
 <header id="hdr" class="{{ header_theme }}">
@@ -24,7 +59,7 @@
     <nav class="nav-links" id="navLinks">
       {%- comment -%} Shop — with mega-menu {%- endcomment -%}
       <div class="nav-item has-mega">
-        <a href="/collections/all" class="nav-toplink">Shop<span class="mi nav-caret" aria-hidden="true">expand_more</span></a>
+        <a href="/collections/all" class="nav-toplink{% if nav_active == 'shop' %} nav-active{% endif %}"{% if nav_active == 'shop' %} aria-current="page"{% endif %}>Shop<span class="mi nav-caret" aria-hidden="true">expand_more</span></a>
         <div class="nav-mega"><div class="nav-mega-inner container">
           <div class="nm-col"><h5>Shop</h5>
             <a href="/collections/all">All Products</a>
@@ -79,9 +114,9 @@
         </div></div>
       </div>
 
-      <a href="/pages/brands" class="nav-toplink">Brands</a>
-      <a href="/blogs/journal" class="nav-toplink">Guides</a>
-      <a href="/pages/about" class="nav-toplink">About Us</a>
+      <a href="/pages/brands" class="nav-toplink{% if nav_active == 'brands' %} nav-active{% endif %}"{% if nav_active == 'brands' %} aria-current="page"{% endif %}>Brands</a>
+      <a href="/blogs/journal" class="nav-toplink{% if nav_active == 'guides' %} nav-active{% endif %}"{% if nav_active == 'guides' %} aria-current="page"{% endif %}>Guides</a>
+      <a href="/pages/about" class="nav-toplink{% if nav_active == 'about' %} nav-active{% endif %}"{% if nav_active == 'about' %} aria-current="page"{% endif %}>About Us</a>
 
       <a href="#" class="nav-toplink nav-quiz" onclick="openAI();closeMobileNav();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</a>
       <a href="{{ routes.search_url }}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">search</span>Search</a>
