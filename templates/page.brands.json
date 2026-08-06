@@ -68,8 +68,8 @@
           "type": "way",
           "settings": {
             "icon": "grid_view",
-            "label": "Shop by Category",
-            "sub": "Men's, women's, unisex & more",
+            "label": "Shop by Collection",
+            "sub": "Every way to shop, in one place",
             "url": "/collections"
           }
         },
