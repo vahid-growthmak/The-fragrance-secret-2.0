@@ -203,17 +203,23 @@
     {%- endif -%}
   {%- endif -%}
 
-  <!-- FILTER BAR (mobile toggle) -->
-  <div class="filter-bar" id="filterBar"><div class="container"><div class="fb-inner">
-    <button type="button" class="fb-toggle" id="fbToggle" onclick="document.getElementById('shopFilters').classList.add('open');document.getElementById('sfOverlay').classList.add('open')"><span class="mi" aria-hidden="true">tune</span>Filters &amp; Sort</button>
-  </div></div></div>
-
   {%- paginate collection.products by paginate_by -%}
   <section class="section" id="grid"><div class="container">
     <div class="results-head">
       <div><span class="label">The Collection</span><h2 class="sec-title results-title">Shop the Range</h2></div>
       <div class="results-count">{{ collection.products_count }} products</div>
     </div>
+
+    {%- comment -%}
+      Filters & Sort sits after the heading, not before it. It used to precede
+      the whole grid section, so on phones the first thing under the intro was a
+      control bar rather than the name of what you were looking at. It is a
+      mobile-only control — .fb-toggle is display:none above 900px — so on
+      desktop this only removes an empty sticky strip.
+    {%- endcomment -%}
+    <div class="filter-bar" id="filterBar"><div class="fb-inner">
+      <button type="button" class="fb-toggle" id="fbToggle" onclick="document.getElementById('shopFilters').classList.add('open');document.getElementById('sfOverlay').classList.add('open')"><span class="mi" aria-hidden="true">tune</span>Filters &amp; Sort</button>
+    </div></div>
 
     <div class="shop-layout">
       <aside class="shop-filters" id="shopFilters" aria-label="Product filters">

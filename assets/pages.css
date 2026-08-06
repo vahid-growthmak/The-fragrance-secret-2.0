@@ -238,9 +238,17 @@ header.light .nav-burger { color: var(--warm); }
 .crumb-bar .breadcrumb a:hover, .pdp-hero .breadcrumb a:hover { color: var(--gold-dk); }
 
 /* ── Filter & sort bar ───────────────────────────────────────────── */
-.filter-bar {
-  position: sticky; top: 68px; z-index: 90; background: rgba(247,242,234,.94);
-  backdrop-filter: blur(12px); border-bottom: 1px solid rgba(13,10,6,.08); padding: 14px 0;
+/* The bar holds one control, .fb-toggle, which only exists below 900px — above
+   that it rendered as an empty sticky strip with a border. It now lives inside
+   the grid section, after the heading, and appears only where its button does. */
+.filter-bar { display: none; }
+@media (max-width: 900px) {
+  .filter-bar {
+    display: block; position: sticky; top: 68px; z-index: 90;
+    background: rgba(247,242,234,.94); backdrop-filter: blur(12px);
+    border: 1px solid rgba(13,10,6,.08); border-radius: 40px;
+    padding: 8px 12px; margin: -8px 0 22px;
+  }
 }
 .fb-inner { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .fb-count { font-size: .78rem; color: var(--warm); letter-spacing: .04em; }
