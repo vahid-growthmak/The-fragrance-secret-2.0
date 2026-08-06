@@ -201,7 +201,9 @@
         "shop_eyebrow": "The Shop",
         "shop_heading": "Explore Other <em>Shop Collections</em>",
         "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
-        "crumb_name": "Shop by Brand"
+        "crumb_name": "Shop by Brand",
+        "ways_all_label": "See All Collections",
+        "ways_all_url": "/collections"
       }
     }
   },

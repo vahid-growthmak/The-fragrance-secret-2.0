@@ -843,7 +843,8 @@ header.light .nav-burger { color: var(--warm); }
 .price-card, .benefit-item, .src-card, .stats-band > *, .trust-band > *,
 .trust-band .tb-item, .combo, .combo-grid > *, .fb-inner > *, .fb-group > *,
 .results-head > *, .wish-card, .wish-card > *, .oc-deliv > *, .otrack > *,
-.gallery-grid > *, .topic-grid > *, .feature-article > *, .deal-spotlight > * { min-width: 0; }
+.gallery-grid > *, .topic-grid > *, .feature-article > *, .deal-spotlight > *,
+.explore-grid > *, .hub-grid > *, .usp-grid > * { min-width: 0; }
 
 /* Long words / links never push width past the viewport */
 .co-line .cl-name, .prose, .prose p, .prose li, .prose a, .breadcrumb, .hub-body,

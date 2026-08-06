@@ -4224,7 +4224,10 @@
     /* Explore more — dark tiles */
     .explore-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      /* minmax(0,1fr), not 1fr: a 1fr track carries an automatic minimum of
+         auto, so the longest label ("Shop by Scent Family") set the column's
+         floor and pushed the whole row wider than the container. */
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px
     }
 
@@ -4282,11 +4285,11 @@
     .explore-card:hover .ex-go .mi { transform: translateX(4px) }
 
     @media(max-width:1080px) {
-      .explore-grid { grid-template-columns: repeat(2, 1fr) }
+      .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
     }
 
     @media(max-width:560px) {
-      .explore-grid { grid-template-columns: 1fr }
+      .explore-grid { grid-template-columns: minmax(0, 1fr) }
     }
 
     /* Membership band — copy left, perks card right */
