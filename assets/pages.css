@@ -715,6 +715,13 @@ header.light .nav-burger { color: var(--warm); }
 
 @media (max-width: 640px) { .brand-cloud { grid-template-columns: 1fr 1fr; } }
 
+/* The A–Z brand list is followed by "How to Shop by Brand", and both are
+   .section.alt — so their 88px paddings met as 176px of unbroken cream with no
+   colour change to explain the gap. Trimmed on this section rather than on
+   .section, which would move every seam on the site. The section below still
+   brings its own 88px, so the pair reads as one comfortable break. */
+.section.brands-az { padding-bottom: 30px; }
+
 /* ── Trust strip on light sections (variant of theme .trust-strip) ── */
 .trust-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .trust-band .tb-item { display: flex; align-items: center; gap: 12px; padding: 18px 20px; background: var(--white); border: 1px solid rgba(13,10,6,.07); border-radius: 8px; }
