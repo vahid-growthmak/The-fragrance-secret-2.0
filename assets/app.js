@@ -589,8 +589,13 @@ function addLiveToCart(variantId, name, qty) {
     .catch(function () { toast('Could not add to cart — please try again'); });
 }
 
-/* Native Shopify cart line change (quantity update / remove). Posts to the
-   cart change endpoint by line-item key, then reloads to re-render totals. */
+/* Native Shopify cart line change by line-item key.
+
+   The cart page no longer uses this — it updates the row, the totals and the
+   free-delivery bar in place from the response instead, so changing a quantity
+   does not throw the whole page away. Kept as a null-safe fallback for any
+   caller that has no UI to update; it still reloads, which is correct when
+   there is nothing else to repaint. */
 function cartChangeQty(key, quantity) {
   fetch((window.routes && window.routes.cart_change_url) || '/cart/change.js', {
     method: 'POST',
