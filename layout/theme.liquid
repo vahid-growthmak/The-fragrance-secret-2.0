@@ -92,6 +92,9 @@
     /* Base URL for the flat Shopify assets/ folder, consumed by IMG() in app.js */
     window.ASSET_BASE = {{ 'logo.png' | asset_url | split: 'logo.png' | first | json }};
     window.CURRENCY = {{ cart.currency.iso_code | default: shop.currency | json }};
+    /* Shopify's money filter runs server-side; JS that rebuilds a price after a
+       cart change needs the same format string. Consumed by formatMoney(). */
+    window.MONEY_FORMAT = {{ shop.money_format | json }};
     window.WHATSAPP_NUMBER = {{ settings.whatsapp_number | json }};
     window.routes = {
       cart_url: {{ routes.cart_url | json }},

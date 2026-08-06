@@ -36,13 +36,13 @@
                 <div class="cl-name"><a href="{{ item.url }}">{{ item.product.title }}</a></div>
                 <div class="cl-meta">{% unless item.variant.title == 'Default Title' %}{{ item.variant.title }}{% endunless %}{% if item.product.vendor %} · {{ item.product.vendor }}{% endif %}</div>
                 <div class="qty-wrap">
-                  <button type="button" class="qty-btn" onclick="cartChangeQty('{{ item.key }}', {{ item.quantity | minus: 1 }})">&minus;</button>
+                  <button type="button" class="qty-btn" data-cart-step="-1" aria-label="Decrease quantity">&minus;</button>
                   <input class="qty-num" type="text" value="{{ item.quantity }}" readonly>
-                  <button type="button" class="qty-btn" onclick="cartChangeQty('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+                  <button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>
                 </div>
               </div>
-              <div class="cl-price">{{ item.final_line_price | money }}</div>
-              <button type="button" class="cart-remove" aria-label="Remove" onclick="cartChangeQty('{{ item.key }}', 0)"><span class="mi" aria-hidden="true">close</span></button>
+              <div class="cl-price" data-line-price>{{ item.final_line_price | money }}</div>
+              <button type="button" class="cart-remove" aria-label="Remove" data-cart-remove><span class="mi" aria-hidden="true">close</span></button>
             </div>
           {%- endfor -%}
         </div>
@@ -98,6 +98,104 @@
     </div>
   {%- endif -%}
 </div></section>
+
+<script>
+(function () {
+  var lines = document.getElementById('cartLines');
+  if (!lines) return;
+
+  var FREE_SHIP = {{ free_ship_threshold | json }};
+  var busy = false;
+
+  /* Everything the summary needs is keyed by id, so the whole page never has to
+     be re-fetched just to move a quantity by one. */
+  function repaint(cart) {
+    (cart.items || []).forEach(function (item) {
+      var row = lines.querySelector('.co-line[data-key="' + item.key + '"]');
+      if (!row) return;
+      row.setAttribute('data-qty', item.quantity);
+      row.setAttribute('data-price', item.final_price);
+      var num = row.querySelector('.qty-num');
+      if (num) num.value = item.quantity;
+      var lp = row.querySelector('[data-line-price]');
+      if (lp) lp.textContent = window.formatMoney(item.final_line_price);
+    });
+
+    /* Rows the cart no longer contains were removed — drop them. */
+    var live = {};
+    (cart.items || []).forEach(function (i) { live[i.key] = true; });
+    [].slice.call(lines.querySelectorAll('.co-line')).forEach(function (row) {
+      if (!live[row.getAttribute('data-key')]) row.remove();
+    });
+
+    var sub = document.getElementById('cartSub');
+    var tot = document.getElementById('cartTotal');
+    if (sub) sub.textContent = window.formatMoney(cart.total_price);
+    if (tot) tot.textContent = window.formatMoney(cart.total_price);
+
+    var ship = document.getElementById('cartShip');
+    if (ship) ship.textContent = cart.total_price >= FREE_SHIP ? 'Free' : 'Calculated at checkout';
+
+    var bar = document.getElementById('shipBar');
+    if (bar) bar.style.width = Math.min(100, Math.round(cart.total_price * 100 / FREE_SHIP)) + '%';
+    var msg = document.getElementById('shipMsg');
+    if (msg) {
+      msg.innerHTML = cart.total_price >= FREE_SHIP
+        ? '<span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> \u2014 you\u2019re over ' + window.formatMoney(FREE_SHIP)
+        : '<span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>' + window.formatMoney(FREE_SHIP - cart.total_price) + '</b> more for <b>free delivery</b>';
+    }
+
+    document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = cart.item_count; });
+    if (typeof cartCount !== 'undefined') cartCount = cart.item_count;
+
+    /* Emptying the bag has to change the page rather than leave an empty grid.
+       Built here instead of reloading, which is the whole point of this. */
+    if (cart.item_count === 0) {
+      var form = document.getElementById('cart-form');
+      var head = form && form.previousElementSibling;
+      if (head && head.classList.contains('sec-head')) head.remove();
+      if (form) {
+        form.outerHTML =
+          '<div style="min-height:56vh;display:flex;align-items:center;justify-content:center">' +
+          '<div class="empty-state" style="max-width:560px;margin:0 auto;padding:40px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
+          '<span class="mi" aria-hidden="true" style="font-size:56px;color:var(--gold)">shopping_bag</span>' +
+          '<h3 class="sec-title" style="margin:0">Your cart is empty</h3>' +
+          '<p class="sec-sub" style="margin:0">Discover 218+ authentic houses \u2014 your signature scent is waiting.</p>' +
+          '<div class="cta-actions" style="justify-content:center;flex-wrap:wrap;margin-top:6px">' +
+          '<a class="btn-g" href="/collections/best-sellers">Shop Best Sellers</a>' +
+          '</div></div></div>';
+      }
+    }
+  }
+
+  function change(key, quantity, row) {
+    if (busy) return;
+    busy = true;
+    if (row) row.style.opacity = '.5';
+    fetch((window.routes && window.routes.cart_change_url) || '/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: quantity })
+    }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (cart) { repaint(cart); })
+      .catch(function () { if (typeof toast === 'function') toast('Could not update cart'); })
+      .then(function () { busy = false; if (row) row.style.opacity = ''; });
+  }
+
+  lines.addEventListener('click', function (e) {
+    var step = e.target.closest('[data-cart-step]');
+    var rm = e.target.closest('[data-cart-remove]');
+    if (!step && !rm) return;
+    var row = (step || rm).closest('.co-line');
+    if (!row) return;
+    var key = row.getAttribute('data-key');
+    /* Read the quantity off the DOM rather than a value baked in at render
+       time, so repeated clicks keep counting from where the cart actually is. */
+    var current = parseInt(row.getAttribute('data-qty'), 10) || 0;
+    change(key, rm ? 0 : Math.max(0, current + parseInt(step.getAttribute('data-cart-step'), 10)), row);
+  });
+})();
+</script>
 
 {% schema %}
 { "name": "Cart", "settings": [] }

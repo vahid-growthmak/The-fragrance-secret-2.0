@@ -48,6 +48,27 @@ const IMG = {
    SMALL HELPERS
 ═══════════════════════════════════════ */
 function money(n) { return (window.CURRENCY || 'AED') + ' ' + Number(n).toLocaleString('en-AE'); }
+
+/* Formats cents through the store's own money_format, so JS-rebuilt prices match
+   the ones Liquid rendered. Covers the four placeholder forms Shopify allows. */
+function formatMoney(cents) {
+  var fmt = window.MONEY_FORMAT || '{{amount}}';
+  var n = (cents || 0) / 100;
+  function group(v, dec) {
+    var parts = v.toFixed(dec).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  }
+  return fmt.replace(/\{\{\s*(\w+)\s*\}\}/g, function (_, name) {
+    switch (name) {
+      case 'amount_no_decimals': return group(n, 0);
+      case 'amount_with_comma_separator': return group(n, 2).replace(/,/g, ' ').replace('.', ',');
+      case 'amount_no_decimals_with_comma_separator': return group(n, 0).replace(/,/g, ' ');
+      default: return group(n, 2);
+    }
+  });
+}
+window.formatMoney = formatMoney;
 function savePct(price, was) { return Math.round((1 - price / was) * 100); }
 function qs(name) { return new URLSearchParams(location.search).get(name); }
 function el(id) { return document.getElementById(id); }
