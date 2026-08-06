@@ -679,6 +679,13 @@ header.light .nav-burger { color: var(--warm); }
 .legal-toc a { display: block; font-size: .84rem; color: var(--warm); padding: 7px 0; border-left: 2px solid transparent; padding-left: 12px; transition: all .2s; }
 .legal-toc a:hover { color: var(--ink); border-color: var(--gold); }
 .prose, .legal-prose, .rte { max-width: 760px; }
+/* The legal pages put .prose in .legal-layout, a grid with a sticky table of
+   contents beside it, so a left-aligned 760px column is right there. Articles
+   and Shopify-editor pages have no such column — .legal-prose / .rte sit
+   directly in the 1284px container, leaving ~520px of dead space down the whole
+   right-hand side. Centre those two only; 760px stays as the measure because
+   widening the line hurts readability rather than helping it. */
+.legal-prose, .rte { margin-left: auto; margin-right: auto; }
 .prose h2, .legal-prose h2, .rte h2 { font-family: var(--fd); font-size: 1.7rem; font-weight: 600; color: var(--ink); margin: 40px 0 14px; }
 .prose h2:first-child, .legal-prose h2:first-child, .rte h2:first-child { margin-top: 0; }
 .prose h3, .legal-prose h3, .rte h3 { font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin: 24px 0 8px; }
