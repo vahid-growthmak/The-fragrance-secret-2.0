@@ -147,6 +147,25 @@ header.light .nav-burger { color: var(--warm); }
 }
 .page-hero.tall { padding: 150px 0 88px; }
 
+/* Article hero image. This figure carried no styles at all, and the universal
+   reset zeroes margins, so it sat flush against the bottom of the dark hero
+   with nothing separating the two.
+
+   Sized to its natural width rather than stretched across the container: the
+   uploaded article images are small squares (360-533px), so a full-width rule
+   would upscale and blur them. fit-content keeps them crisp and centred. */
+.article-hero-img {
+  width: fit-content;
+  max-width: 100%;
+  margin: 56px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(13,10,6,.10);
+}
+.article-hero-img img { display: block; max-width: 100%; height: auto; }
+
+@media (max-width: 760px) { .article-hero-img { margin-top: 36px; } }
+
 /* Full-bleed hero artwork: image sits behind a left-weighted scrim so the
    breadcrumb, eyebrow, H1 and facts row stay legible over it. */
 .page-hero.has-bg { background: var(--ink); }
