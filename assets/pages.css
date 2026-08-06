@@ -673,17 +673,25 @@ header.light .nav-burger { color: var(--warm); }
 .legal-toc h4 { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 14px; }
 .legal-toc a { display: block; font-size: .84rem; color: var(--warm); padding: 7px 0; border-left: 2px solid transparent; padding-left: 12px; transition: all .2s; }
 .legal-toc a:hover { color: var(--ink); border-color: var(--gold); }
-.prose { max-width: 760px; }
-.prose h2 { font-family: var(--fd); font-size: 1.7rem; font-weight: 600; color: var(--ink); margin: 40px 0 14px; }
-.prose h2:first-child { margin-top: 0; }
-.prose h3 { font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin: 24px 0 8px; }
-.prose p { font-size: .92rem; color: var(--warm); line-height: 1.85; margin-bottom: 14px; }
-.prose ul { margin: 0 0 16px; padding-left: 4px; }
-.prose ul li { position: relative; padding-left: 26px; font-size: .92rem; color: var(--warm); line-height: 1.8; margin-bottom: 8px; }
-.prose ul li::before { content: ''; position: absolute; left: 6px; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
-.prose a { color: var(--gold-dk); text-decoration: underline; text-underline-offset: 3px; }
-.prose .updated { font-size: .78rem; color: var(--muted); letter-spacing: .04em; margin-bottom: 30px; }
-.prose strong { color: var(--charcoal); }
+.prose, .legal-prose, .rte { max-width: 760px; }
+.prose h2, .legal-prose h2, .rte h2 { font-family: var(--fd); font-size: 1.7rem; font-weight: 600; color: var(--ink); margin: 40px 0 14px; }
+.prose h2:first-child, .legal-prose h2:first-child, .rte h2:first-child { margin-top: 0; }
+.prose h3, .legal-prose h3, .rte h3 { font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin: 24px 0 8px; }
+.prose p, .legal-prose p, .rte p { font-size: .92rem; color: var(--warm); line-height: 1.85; margin-bottom: 14px; }
+.prose ul, .legal-prose ul, .rte ul { margin: 0 0 16px; padding-left: 4px; }
+.prose ul li, .legal-prose ul li, .rte ul li { position: relative; padding-left: 26px; font-size: .92rem; color: var(--warm); line-height: 1.8; margin-bottom: 8px; }
+.prose ul li::before, .legal-prose ul li::before, .rte ul li::before { content: ''; position: absolute; left: 6px; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+.prose a, .legal-prose a, .rte a { color: var(--gold-dk); text-decoration: underline; text-underline-offset: 3px; }
+.prose .updated, .legal-prose .updated, .rte .updated { font-size: .78rem; color: var(--muted); letter-spacing: .04em; margin-bottom: 30px; }
+.prose strong, .legal-prose strong, .rte strong { color: var(--charcoal); }
+.prose table, .legal-prose table, .rte table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: .88rem; }
+.prose th, .legal-prose th, .rte th { text-align: left; font-family: var(--fb); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-dk); padding: 10px 14px; border-bottom: 1.5px solid var(--cream-dk); white-space: nowrap; }
+.prose td, .legal-prose td, .rte td { padding: 11px 14px; color: var(--warm); line-height: 1.7; border-bottom: 1px solid rgba(13,10,6,.07); vertical-align: top; }
+.prose tbody tr:last-child td, .legal-prose tbody tr:last-child td, .rte tbody tr:last-child td { border-bottom: 0; }
+.prose td:first-child, .legal-prose td:first-child, .rte td:first-child { color: var(--charcoal); font-weight: 500; }
+.prose ol, .legal-prose ol, .rte ol { margin: 0 0 16px; padding-left: 20px; }
+.prose ol li, .legal-prose ol li, .rte ol li { font-size: .92rem; color: var(--warm); line-height: 1.8; margin-bottom: 8px; }
+.prose blockquote, .legal-prose blockquote, .rte blockquote { margin: 20px 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--gold); color: var(--charcoal); font-family: var(--fd); font-size: 1.15rem; line-height: 1.6; }
 
 /* ── Pricing tiers ───────────────────────────────────────────────── */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
@@ -862,8 +870,8 @@ header.light .nav-burger { color: var(--warm); }
   .pay-badges { flex-wrap: wrap; }
 
   /* tables become scrollable cards, never overflow the viewport */
-  .prose table, table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .prose { max-width: 100%; }
+  .prose table, .legal-prose table, .rte table, table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .prose, .legal-prose, .rte { max-width: 100%; }
 
   /* results header + combo bar stack cleanly */
   .results-head { align-items: flex-start; }
