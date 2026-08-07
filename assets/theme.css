@@ -7072,3 +7072,36 @@ html body .jdgm-form select {
        Jost exposes neither lnum nor onum and already draws lining figures, so
        this is inert for body copy. */
     body { font-variant-numeric: lining-nums; }
+
+    /* ── PDP reassurance strip ────────────────────────────────────────
+       The 1px rule between the two lines only reads as a divider while both
+       share a row. The pair needs ~590px and the info column is half the grid,
+       so that only holds above roughly 1440px — below it the block wraps and
+       the rule became a stray mark at the head of the second line.
+
+       So: stacked with no divider by default, and only inline-with-divider at
+       the width where it genuinely fits. */
+    .urgency-block {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px
+    }
+
+    .ub-sep { display: none }
+
+    @media (min-width: 1440px) {
+      .urgency-block { flex-direction: row; align-items: center; gap: 14px }
+      .ub-sep { display: block }
+    }
+
+    /* ── PDP buy row on phones ────────────────────────────────────────
+       qty stepper + Add to Cart + wishlist on one line leaves the button about
+       164px at a 390px viewport, against the ~189px "ADD TO CART" needs at this
+       letter-spacing — so it squeezed and the row looked mangled. Let the row
+       wrap: stepper and wishlist share the first line, the button takes the
+       second at full width. */
+    @media (max-width: 560px) {
+      .qty-row { flex-wrap: wrap }
+      .qty-row .atc-wish { margin-left: auto }
+      .qty-row .atc-btn { order: 3; flex: 1 0 100% }
+    }
