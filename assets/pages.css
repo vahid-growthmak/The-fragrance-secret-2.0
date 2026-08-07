@@ -566,7 +566,14 @@ header.light .nav-burger { color: var(--warm); }
 .field input, .field select, .field textarea {
   font-family: var(--fb); font-size: .9rem; padding: 12px 14px; border: 1px solid rgba(13,10,6,.16);
   border-radius: 6px; background: var(--cream); color: var(--ink); transition: border .2s;
+  /* width:100% + max-width so a control can never exceed its field, and
+     min-width:0 because .field sits in a two-column grid where an input's
+     intrinsic width would otherwise set the column floor. */
+  width: 100%; max-width: 100%; min-width: 0;
 }
+/* Textareas default to resize:both, so the drag handle let the message box be
+   pulled wider than the form and out of the card. Height only. */
+.field textarea { resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
 .pay-method { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1.5px solid rgba(13,10,6,.14); border-radius: 8px; margin-bottom: 12px; cursor: pointer; transition: all .2s; }
 .pay-method:hover { border-color: rgba(201,168,76,.5); }
