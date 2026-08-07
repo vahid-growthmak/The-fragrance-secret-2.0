@@ -1022,3 +1022,22 @@ body.jdgm-modal-open .sticky-atc {
   pointer-events: none;
   transition: opacity .2s;
 }
+
+/* ── One card per row on phones ────────────────────────────────────
+   theme.css already carries a single-column rule at 600px, but a two-column
+   rule at 767px sits later in the same file and wins wherever both match, so
+   it never took effect. Collection pages had a second override,
+   .shop-results .products-grid, which is two classes in a later stylesheet.
+
+   Declared here, last, and matching that specificity so it settles the
+   question at both. 480px keeps every common phone in portrait on one card
+   (390, 414, 428) while small tablets and landscape stay two-up. */
+@media (max-width: 480px) {
+  .products-grid,
+  .shop-results .products-grid,
+  .section .products-grid { grid-template-columns: 1fr; }
+
+  /* The cart cross-sell shares the class but is a horizontal scroller, not a
+     grid — leave it alone. */
+  .upsell-row.products-grid { display: flex; }
+}
