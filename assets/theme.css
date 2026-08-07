@@ -54,7 +54,12 @@
     /* ── Material Symbols icon system ── */
     .mi {
       font-family: 'Material Symbols Outlined';
-      font-weight: normal;
+      /* Matches the 'wght' 300 set below. It was `normal` (400), which disagreed
+         with the axis actually rendered — and a weight the engine thinks is
+         unavailable gets synthesised by drawing the glyph twice at a slight
+         offset, which shows on thin shapes like a chevron as a doubled edge. */
+      font-weight: 300;
+      font-synthesis: none;
       font-style: normal;
       line-height: 1;
       letter-spacing: normal;
@@ -76,6 +81,7 @@
     }
 
     .mi.mi-f {
+      font-weight: 400;
       font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24
     }
 
