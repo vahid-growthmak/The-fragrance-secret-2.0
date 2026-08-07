@@ -191,22 +191,30 @@
       grid.hidden = n === 0;
     }
 
-    /* Handles currently drawn in the grid. The change listener below compares
-       this against the store so a save made elsewhere on the page repaints,
-       while a removal handled here — which already updated the DOM — does not
-       trigger a pointless refetch. */
-    var rendered = [];
-    function sameSet(a, b) {
-      return a.length === b.length && a.every(function (h, i) { return h === b[i]; });
+    /* One rule: the store changes, the grid redraws. An earlier version tracked
+       which handles were drawn and skipped the redraw when it thought nothing
+       had changed, and removals patched the DOM by hand — two sources of truth
+       that could disagree. This keeps a single path.
+
+       rendering/pending guard the re-entrancy that creates: render() drops
+       handles that 404, which itself fires wishlist:change. */
+    var rendering = false, pending = false;
+
+    function done() {
+      rendering = false;
+      if (pending) { pending = false; render(); }
     }
 
     function render() {
+      if (rendering) { pending = true; return; }
+      rendering = true;
+
       var handles = window.TFSWishlist ? window.TFSWishlist.all() : [];
-      rendered = handles.slice();
       if (!handles.length) {
         loading.hidden = true;
         grid.innerHTML = '';
         paint();
+        done();
         return;
       }
 
@@ -218,33 +226,27 @@
           .catch(function () { return null; });
       })).then(function (products) {
         loading.hidden = true;
-
         products.forEach(function (p, i) {
           if (p === null && window.TFSWishlist) window.TFSWishlist.remove(handles[i]);
         });
-
         grid.innerHTML = products.filter(Boolean).map(cardHTML).join('');
-        rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
         paint();
+        done();
+      }).catch(function () {
+        loading.hidden = true;
+        done();
       });
     }
 
-    /* The Keep Exploring cards at the foot of this page carry the same heart
-       button as any collection page, so saving one changed the store and the
-       badge but left the grid above showing the old list until a reload. */
-    document.addEventListener('wishlist:change', function () {
-      var now = window.TFSWishlist ? window.TFSWishlist.all() : [];
-      if (!sameSet(now, rendered)) render();
-    });
+    /* Saving from the Keep Exploring cards at the foot of this page, from
+       another tab, or removing above — all land here. */
+    document.addEventListener('wishlist:change', render);
 
     window.wishRemove = function (btn) {
       var card = btn.closest('.wish-card');
       var name = card.querySelector('.prod-name').textContent.trim();
       if (window.TFSWishlist) window.TFSWishlist.remove(card.getAttribute('data-handle'));
-      card.remove();
-      rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
       if (typeof toast === 'function') toast('Removed — ' + name);
-      paint();
     };
 
     window.wishMoveToCart = function (btn) {
@@ -254,10 +256,7 @@
       addCartItems([{ id: parseInt(card.getAttribute('data-variant'), 10), quantity: 1 }]).then(function (ok) {
         if (!ok) { btn.disabled = false; return; }
         if (window.TFSWishlist) window.TFSWishlist.remove(card.getAttribute('data-handle'));
-        card.remove();
-        rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
         if (typeof toast === 'function') toast('✓ Moved to cart — ' + name);
-        paint();
       });
     };
 
@@ -276,11 +275,8 @@
         if (!ok) return;
         cards.forEach(function (c) {
           if (window.TFSWishlist) window.TFSWishlist.remove(c.getAttribute('data-handle'));
-          c.remove();
         });
-        rendered = window.TFSWishlist ? window.TFSWishlist.all() : [];
         if (typeof toast === 'function') toast('✓ ' + cards.length + ' fragrance' + (cards.length === 1 ? '' : 's') + ' moved to cart');
-        paint();
       });
     };
 
