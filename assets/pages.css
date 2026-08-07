@@ -584,8 +584,27 @@ header.light .nav-burger { color: var(--warm); }
 .co-lines { padding: 8px 26px; }
 .co-line { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(13,10,6,.06); }
 .co-line img { width: 62px; height: 62px; border-radius: 6px; object-fit: cover; background: var(--cream-dk); flex-shrink: 0; }
+/* .cl-body had no styles, so it was a plain block. That made .qty-wrap — which
+   is display:flex, and therefore block-level — stretch to the full width of the
+   line, and because the wrap carries the border, the space past the + button
+   rendered as an empty extra cell.
+
+   A flex column with align-items:flex-start shrink-wraps it to its three
+   buttons, and a single gap replaces the ad-hoc 3px-then-nothing rhythm that
+   made the name / variant / stepper spacing look uneven.
+
+   min-width:0 because .co-line is itself a flex row: without it a long product
+   title sets the column's floor and pushes the price and remove button out. */
+.co-line .cl-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
 .co-line .cl-name { font-size: .84rem; font-weight: 500; color: var(--ink); }
-.co-line .cl-meta { font-size: .74rem; color: var(--warm); margin-top: 3px; }
+.co-line .cl-meta { font-size: .74rem; color: var(--warm); }
+.co-line .qty-wrap { width: fit-content; flex-shrink: 0; }
 .co-line .cl-price { margin-left: auto; font-size: .86rem; color: var(--ink); font-weight: 600; white-space: nowrap; }
 .co-totals { padding: 18px 26px; background: var(--white); }
 .co-trow { display: flex; justify-content: space-between; font-size: .86rem; color: var(--warm); padding: 5px 0; }
