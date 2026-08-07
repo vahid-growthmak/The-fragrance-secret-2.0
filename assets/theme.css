@@ -4767,8 +4767,15 @@ html body .jdgm-rev-widg {
   text-align: center
 }
 
-html body .jdgm-rev-widg__title {
-  display: none  /* the section's "What Customers Say" heading already covers it */
+/* The section's own "What Customers Say" heading already covers this, so the
+   widget's title is a duplicate. !important because Judge.me v3 injects its own
+   stylesheet at runtime and was winning against a plain declaration; the extra
+   selectors cover the class names v3 uses alongside the legacy one. */
+html body .jdgm-rev-widg__title,
+html body #judgeme_product_reviews .jdgm-rev-widg__title,
+html body #judgeme_product_reviews .jdgm-widget-title,
+html body #judgeme_product_reviews .jdgm-rev-widg__header-title {
+  display: none !important
 }
 
 html body .jdgm-rev-widg__header {
