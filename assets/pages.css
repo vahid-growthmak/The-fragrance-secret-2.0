@@ -1057,3 +1057,18 @@ body.jdgm-modal-open .sticky-atc {
      grid — leave it alone. */
   .upsell-row.products-grid { display: flex; }
 }
+
+/* Contact form status messages (posted_successfully? / form.errors) */
+.form-note {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin: 0 0 22px; padding: 14px 16px;
+  border-radius: 8px; font-size: .86rem; line-height: 1.6;
+}
+.form-note .mi { font-size: 19px; flex-shrink: 0; }
+.form-note--ok  { background: rgba(46,125,50,.08);  border: 1px solid rgba(46,125,50,.3);  color: #2E7D32; }
+.form-note--err { background: rgba(192,57,43,.06);  border: 1px solid rgba(192,57,43,.28); color: #C0392B; }
+.form-note--err ul { margin: 0; padding-left: 18px; }
+
+/* A field the browser rejects on submit, so the error is visible not just spoken */
+.contact-form input:user-invalid,
+.contact-form textarea:user-invalid { border-color: #C0392B; background: rgba(192,57,43,.04); }

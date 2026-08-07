@@ -61,25 +61,49 @@
             </div>
           </div>
 
-          <form class="contact-form fade-up">
+          {%- comment -%}
+            Shopify's native contact form. It previously had no action, no field
+            names and a Send Message button wired to waChat(), so it collected
+            nothing and opened WhatsApp — which the card above already offers.
+
+            Fields carry real names so Shopify delivers them, required on the
+            three that matter, and the values are echoed back on error so a
+            failed submit does not wipe what was typed.
+          {%- endcomment -%}
+          {%- form 'contact', class: 'contact-form fade-up' -%}
+            {%- if form.posted_successfully? -%}
+              <p class="form-note form-note--ok" role="status">
+                <span class="mi" aria-hidden="true">check_circle</span>
+                Thank you — your message is with our team. We reply within a few hours during support hours.
+              </p>
+            {%- elsif form.errors -%}
+              <p class="form-note form-note--err" role="alert">
+                <span class="mi" aria-hidden="true">error</span>
+                {{ form.errors | default_errors }}
+              </p>
+            {%- endif -%}
+
             <div class="form-row">
               <div class="field">
-                <label>Name</label>
-                <input type="text" placeholder="Your full name" />
+                <label for="ContactName">Name</label>
+                <input id="ContactName" type="text" name="contact[name]" autocomplete="name" required
+                       placeholder="Your full name" value="{{ form.name }}">
               </div>
               <div class="field">
-                <label>Email</label>
-                <input type="email" placeholder="you@email.com" />
+                <label for="ContactEmail">Email</label>
+                <input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required
+                       placeholder="you@email.com" value="{{ form.email }}">
               </div>
             </div>
             <div class="form-row">
               <div class="field">
-                <label>Phone (optional)</label>
-                <input type="tel" placeholder="+971 5X XXX XXXX" />
+                <label for="ContactPhone">Phone (optional)</label>
+                <input id="ContactPhone" type="tel" name="contact[phone]" autocomplete="tel"
+                       placeholder="+971 5X XXX XXXX" value="{{ form.phone }}">
               </div>
               <div class="field">
-                <label>Topic</label>
-                <select>
+                <label for="ContactTopic">Topic</label>
+                <select id="ContactTopic" name="contact[topic]">
                   <option>General enquiry</option>
                   <option>Order &amp; delivery</option>
                   <option>Product &amp; authenticity</option>
@@ -89,12 +113,13 @@
               </div>
             </div>
             <div class="field full">
-              <label>Message</label>
-              <textarea rows="5" placeholder="How can we help?"></textarea>
+              <label for="ContactBody">Message</label>
+              <textarea id="ContactBody" name="contact[body]" rows="5" required
+                        placeholder="How can we help?">{{ form.body }}</textarea>
             </div>
-            <button class="btn-g" type="button" onclick="waChat()">Send Message</button>
-            <p class="sec-sub" style="margin-top:14px">We typically reply within a few hours during support hours.</p>
-          </form>
+            <button class="btn-g" type="submit">Send Message</button>
+            <p class="sec-sub">We typically reply within a few hours during support hours. Prefer to chat? <a href="#" onclick="waChat();return false">Message us on WhatsApp</a>.</p>
+          {%- endform -%}
         </div>
       </div>
     </section>
