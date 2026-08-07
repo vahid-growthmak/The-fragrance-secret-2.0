@@ -715,7 +715,11 @@ header.light .nav-burger { color: var(--warm); }
    child of the form rather than a row, so it contributed nothing — leaving the
    Send Message button flush against the textarea. */
 .contact-form > .field { margin-bottom: 16px; }
-.contact-form > .btn-g { margin-top: 8px; }
+/* 16 + 20 = 36px above the submit. The rows sit 16px apart, so the button needs
+   clearly more than that to read as an action rather than another field. */
+.contact-form > .btn-g { margin-top: 20px; }
+/* The helper line under it belongs to the button, not the form edge. */
+.contact-form > .btn-g + .sec-sub { margin-top: 12px; }
 .map-embed { height: 320px; border-radius: 12px; overflow: hidden; background: var(--cream-dk); position: relative; border: 1px solid rgba(13,10,6,.08); }
 .map-embed img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.2) sepia(.15); }
 .map-canvas { position: absolute; inset: 0; background-color: #ece3d0;
