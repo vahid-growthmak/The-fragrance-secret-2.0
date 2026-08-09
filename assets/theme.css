@@ -4418,11 +4418,22 @@
     }
 
 
+    /* Body face, not the display serif. Measured against Cormorant Garamond's
+       own outlines: with lnum active (see the figure-style rule) its "1" is
+       one.lf at 635 units tall and its cap "I" is 625 — the same slot, both
+       fully serifed, separated only by the 1's flag. At display size a bare
+       "10%" therefore reads as "IO%". The font carries no ss/salt alternate to
+       swap in — its whole GSUB set is calt ccmp dnom frac liga lnum locl numr
+       tnum — so the figure has to come from the other family. Jost draws "1" at
+       240 units wide against an 85-unit "I", a 2.8x difference that cannot be
+       misread. Size trimmed from 2.7rem because Jost's cap height is taller. */
     .member-card .mc-disc b {
       display: block;
-      font-family: var(--fd);
-      font-size: 2.7rem;
+      font-family: var(--fb);
+      font-size: 2.4rem;
       font-weight: 600;
+      letter-spacing: -.01em;
+      font-variant-numeric: lining-nums tabular-nums;
       line-height: 1;
       color: var(--gold-lt)
     }

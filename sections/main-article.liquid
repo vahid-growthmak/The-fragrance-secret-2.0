@@ -1,5 +1,100 @@
-{%- comment -%} Blog article (Guide article) — native port of guide-article.html. {%- endcomment -%}
-<article class="guide-article">
+{%- comment -%}
+  Guide article (blog post).
+
+  Replaces a 37-line port that rendered hero → image → {{ article.content }} →
+  comments and nothing else. The real guides are long — the EDP vs EDT vs Attar
+  post carries 7 h2s and 11 h3s — so the page now runs a two-column long-read:
+  a sticky table of contents built from the body's own headings, a reading
+  progress bar, then Shop the Guide and Related Guides.
+
+  Everything past the hero degrades on its own. Five of the six posts are still
+  short stubs; with fewer than two headings the contents rail hides itself and
+  the prose takes the full column, so a stub renders as a plain centred article
+  rather than a sidebar with one link in it.
+
+  Shop the Guide picks its collection from a `shop:<handle>` article tag when
+  one is present, so an editor can point a post at the collection it actually
+  discusses without touching the theme. It falls back to the section setting.
+{%- endcomment -%}
+
+{%- liquid
+  assign shop_collection = section.settings.shop_collection
+  for t in article.tags
+    if t contains 'shop:'
+      assign forced = t | remove: 'shop:' | strip
+      assign shop_collection = collections[forced]
+    endif
+  endfor
+-%}
+
+<style>
+  /* ── Reading progress ── */
+  .ga-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1001; background: transparent; pointer-events: none; }
+  .ga-progress i { display: block; height: 100%; width: 0; background: var(--gold); transition: width .1s linear; }
+
+  /* ── Hero meta row ── */
+  .ga-meta { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 18px; }
+  .ga-meta .bl-meta { margin: 0; }
+  .ga-share { display: flex; align-items: center; gap: 8px; }
+  .ga-share button {
+    width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; border: 1px solid rgba(226, 201, 126, .38); background: rgba(226, 201, 126, .1);
+    color: var(--gold-lt); cursor: pointer; transition: .25s var(--ease);
+  }
+  .ga-share button:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .ga-share button:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 2px; }
+  .ga-share .mi { font-size: 18px; }
+
+  /* ── Two-column body ──
+     Mirrors .legal-layout, which already solves this shape for the policy
+     pages — 240px sticky rail beside the 760px measure. Declared here rather
+     than reusing that class because the rail needs an active state the legal
+     one has no concept of. */
+  .article-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; align-items: start; }
+  /* Hiding the rail is not enough — its 240px track survives and leaves the
+     prose indented against empty space. Stub posts drop the track entirely and
+     centre the measure instead. */
+  .article-layout.no-toc { grid-template-columns: minmax(0, 1fr); }
+  .article-layout.no-toc .article-body { margin-left: auto; margin-right: auto; }
+  .ga-toc { position: sticky; top: 100px; }
+  .ga-toc summary { display: none; }
+  .ga-toc h4 { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 14px; }
+  .ga-toc a {
+    display: block; font-size: .84rem; color: var(--warm); padding: 7px 0 7px 12px;
+    border-left: 2px solid rgba(13, 10, 6, .1); transition: color .2s, border-color .2s;
+  }
+  .ga-toc a:hover { color: var(--ink); border-color: var(--gold); }
+  .ga-toc a.is-active { color: var(--ink); border-color: var(--gold); font-weight: 500; }
+  .ga-toc a.lvl-3 { padding-left: 24px; font-size: .78rem; }
+
+  /* The sticky header would otherwise sit over a heading you just jumped to. */
+  .article-body h2, .article-body h3 { scroll-margin-top: 104px; }
+  .article-body { max-width: 760px; margin-left: 0; }
+  .article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 22px 0; }
+
+  @media (max-width: 900px) {
+    /* Rail becomes a disclosure above the prose — a 240px sticky column has
+       nowhere to live once the grid collapses. */
+    .article-layout { grid-template-columns: 1fr; gap: 26px; }
+    .ga-toc { position: static; border: 1px solid rgba(13, 10, 6, .1); border-radius: 10px; padding: 0 16px; }
+    .ga-toc summary {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 14px 0; cursor: pointer; list-style: none;
+      font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dk);
+    }
+    .ga-toc summary::-webkit-details-marker { display: none; }
+    .ga-toc summary .mi { font-size: 20px; transition: transform .25s; }
+    .ga-toc[open] summary .mi { transform: rotate(180deg); }
+    .ga-toc h4 { display: none; }
+    .ga-toc nav { padding-bottom: 12px; }
+    .article-body { max-width: none; }
+  }
+</style>
+
+<div class="ga-progress" aria-hidden="true"><i data-ga-bar></i></div>
+
+<article class="guide-article" data-ga-root>
+  <!-- HERO -->
   <section class="page-hero tall">
     <div class="container">
       <div class="breadcrumb">
@@ -9,29 +104,248 @@
       </div>
       {%- if article.tags.size > 0 -%}<span class="ph-eyebrow">{{ article.tags.first }}</span>{%- endif -%}
       <h1 class="ph-title">{{ article.title }}</h1>
-      <div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}{% if article.author != blank %} · {{ article.author }}{% endif %}{% if article.reading_time %} · {{ article.reading_time }}{% endif %}</div>
+      {%- if article.excerpt != blank -%}
+        <p class="ph-sub">{{ article.excerpt | strip_html }}</p>
+      {%- endif -%}
+      <div class="ga-meta">
+        <div class="bl-meta">
+          {{ article.published_at | date: '%B %-d, %Y' }}
+          {%- if article.author != blank %} · {{ article.author }}{% endif -%}
+          <span data-ga-readtime></span>
+        </div>
+        <div class="ga-share">
+          <button type="button" data-ga-share aria-label="Share this guide"><span class="mi" aria-hidden="true">share</span></button>
+          <button type="button" data-ga-whatsapp aria-label="Share on WhatsApp"><span class="mi" aria-hidden="true">chat</span></button>
+          <button type="button" data-ga-copy aria-label="Copy link to this guide"><span class="mi" aria-hidden="true">link</span></button>
+        </div>
+      </div>
     </div>
   </section>
 
   {%- if article.image -%}
-    <div class="container"><figure class="article-hero-img"><img src="{{ article.image | image_url: width: 1400 }}" alt="{{ article.title | escape }}"></figure></div>
+    <div class="container">
+      <figure class="article-hero-img">
+        <img src="{{ article.image | image_url: width: 1400 }}"
+             srcset="{{ article.image | image_url: width: 700 }} 700w,
+                     {{ article.image | image_url: width: 1400 }} 1400w"
+             sizes="(max-width: 1284px) 92vw, 1284px"
+             alt="{{ article.image.alt | default: article.title | escape }}"
+             width="1400" height="{{ 1400 | divided_by: article.image.aspect_ratio | round }}">
+      </figure>
+    </div>
   {%- endif -%}
 
+  <!-- BODY + CONTENTS -->
   <section class="section"><div class="container">
-    <div class="legal-prose rte article-body">{{ article.content }}</div>
-
-    {%- if blog.comments_enabled? -%}
-      <div class="article-comments">
-        {%- if article.comments.size > 0 -%}
-          {%- for comment in article.comments -%}
-            <div class="rv-card"><div class="rv-name">{{ comment.author }}</div><div class="rv-text">{{ comment.content }}</div></div>
-          {%- endfor -%}
-        {%- endif -%}
-      </div>
-    {%- endif -%}
+    {%- comment -%}
+      Ships in the no-toc state and is upgraded by script once the headings are
+      counted. The other way round flashes an empty 240px column on every stub
+      post before JS runs.
+    {%- endcomment -%}
+    <div class="article-layout no-toc" data-ga-layout>
+      <details class="ga-toc" data-ga-toc hidden open>
+        <summary>On this page<span class="mi" aria-hidden="true">expand_more</span></summary>
+        <h4>On this page</h4>
+        <nav data-ga-toc-nav></nav>
+      </details>
+      <div class="rte article-body" data-ga-body>{{ article.content }}</div>
+    </div>
   </div></section>
+
+  <!-- SHOP THE GUIDE -->
+  {%- if shop_collection != blank and shop_collection.products.size > 0 -%}
+    <section class="section alt">
+      <div class="container">
+        <div class="sec-head center fade-up">
+          <span class="label">Editor's Shortlist</span>
+          <h2 class="sec-title">Shop the <em>Guide</em></h2>
+          <p class="sec-sub">Fragrances from {{ shop_collection.title }} that pair with this read — all 100% authentic, ready to ship across the UAE.</p>
+        </div>
+        <div class="products-grid">
+          {%- for product in shop_collection.products limit: 4 -%}
+            {% render 'product-card', product: product, hide_new: true %}
+          {%- endfor -%}
+        </div>
+        <div class="cta-actions" style="margin-top:36px">
+          <a class="btn-ghost" href="{{ shop_collection.url }}">Explore all {{ shop_collection.title }} <span class="mi" aria-hidden="true">arrow_forward</span></a>
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  <!-- RELATED GUIDES -->
+  {%- assign related = blog.articles | where_exp: 'a', 'a.id != article.id' -%}
+  {%- if related.size > 0 -%}
+    <section class="section{% unless shop_collection != blank and shop_collection.products.size > 0 %} alt{% endunless %}">
+      <div class="container">
+        <div class="sec-head center fade-up">
+          <span class="label">Keep Reading</span>
+          <h2 class="sec-title">Related <em>Guides</em></h2>
+        </div>
+        <div class="blog-grid fade-up">
+          {%- for a in related limit: 3 -%}
+            <a class="bl-card" href="{{ a.url }}">
+              <div class="bl-img-wrap">{% if a.image %}<img class="bl-img" src="{{ a.image | image_url: width: 700 }}" alt="{{ a.title | escape }}" loading="lazy">{% endif %}</div>
+              {% if a.tags.size > 0 %}<div class="bl-cat">{{ a.tags.first }}</div>{% endif %}
+              <div class="bl-title">{{ a.title }}</div>
+              <div class="bl-excerpt">{{ a.excerpt_or_content | strip_html | truncatewords: 24 }}</div>
+              <div class="bl-meta">{{ a.published_at | date: '%B %-d, %Y' }}</div>
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  {%- if blog.comments_enabled? and article.comments.size > 0 -%}
+    <section class="section"><div class="container-narrow">
+      <div class="article-comments">
+        {%- for comment in article.comments -%}
+          <div class="rv-card"><div class="rv-name">{{ comment.author }}</div><div class="rv-text">{{ comment.content }}</div></div>
+        {%- endfor -%}
+      </div>
+    </div></section>
+  {%- endif -%}
 </article>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ article.title | strip_html | truncate: 110 | json }},
+  "description": {{ article.excerpt_or_content | strip_html | truncatewords: 40 | json }},
+  {% if article.image %}"image": {{ article.image | image_url: width: 1400 | prepend: 'https:' | json }},{% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }},
+  "dateModified": {{ article.updated_at | default: article.published_at | date: '%Y-%m-%d' | json }},
+  "author": { "@type": "Organization", "name": {{ article.author | default: shop.name | json }} },
+  "publisher": { "@type": "Organization", "name": {{ shop.name | json }} },
+  "mainEntityOfPage": {{ request.origin | append: article.url | json }}
+}
+</script>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-ga-root]');
+    if (!root) return;
+    var body = root.querySelector('[data-ga-body]');
+    var toc = root.querySelector('[data-ga-toc]');
+    var nav = root.querySelector('[data-ga-toc-nav]');
+    var bar = document.querySelector('[data-ga-bar]');
+
+    /* ── Reading time ──
+       Shopify's article.reading_time is not available on every plan, so it is
+       measured from the rendered text instead of trusted to exist. */
+    var readtime = root.querySelector('[data-ga-readtime]');
+    if (readtime && body) {
+      var words = (body.textContent || '').trim().split(/\s+/).length;
+      var mins = Math.max(1, Math.round(words / 220));
+      readtime.textContent = ' · ' + mins + ' min read';
+    }
+
+    /* ── Contents ──
+       Built from the body's own headings because the copy is authored in
+       Shopify's editor, which emits no ids and no nav. Two headings is the
+       floor: a one-item contents list is noise, and most posts are stubs. */
+    var heads = body ? body.querySelectorAll('h2, h3') : [];
+    var items = [];
+    if (heads.length >= 2) {
+      var used = {};
+      heads.forEach(function (h) {
+        if (!h.id) {
+          var base = (h.textContent || 'section').toLowerCase()
+            .replace(/[^\w\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 50) || 'section';
+          var slug = base, n = 2;
+          while (used[slug] || document.getElementById(slug)) { slug = base + '-' + n++; }
+          used[slug] = 1;
+          h.id = slug;
+        }
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        if (h.tagName === 'H3') a.className = 'lvl-3';
+        nav.appendChild(a);
+        items.push({ head: h, link: a, top: 0 });
+      });
+      toc.hidden = false;
+      var layout = root.querySelector('[data-ga-layout]');
+      if (layout) layout.classList.remove('no-toc');
+    }
+
+    /* Closed by default on the collapsed layout, open on the sticky rail. */
+    var narrow = window.matchMedia('(max-width: 900px)');
+    function syncOpen() { if (toc) toc.open = !narrow.matches; }
+    syncOpen();
+    narrow.addEventListener ? narrow.addEventListener('change', syncOpen) : narrow.addListener(syncOpen);
+
+    function measure() {
+      var y = window.pageYOffset;
+      items.forEach(function (it) { it.top = it.head.getBoundingClientRect().top + y; });
+    }
+
+    var active = null;
+    function update() {
+      /* Progress is the body's own travel, not the document's — the hero,
+         related guides and footer are not part of the read. */
+      if (bar && body) {
+        var rect = body.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var done = total > 0 ? (-rect.top) / total : (rect.top < 0 ? 1 : 0);
+        bar.style.width = Math.max(0, Math.min(1, done)) * 100 + '%';
+      }
+      if (!items.length) return;
+      /* The heading nearest above the read line wins, so exactly one entry is
+         ever marked — an intersection-based version left none active while a
+         long section spanned the whole viewport. */
+      var line = window.pageYOffset + 140, current = items[0];
+      for (var i = 0; i < items.length; i++) { if (items[i].top <= line) current = items[i]; }
+      if (current !== active) {
+        if (active) active.link.classList.remove('is-active');
+        current.link.classList.add('is-active');
+        active = current;
+      }
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { update(); ticking = false; });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () { measure(); update(); });
+    if (document.readyState === 'complete') { measure(); update(); }
+    else window.addEventListener('load', function () { measure(); update(); });
+    measure(); update();
+
+    /* ── Share ── */
+    var url = window.location.href;
+    var title = {{ article.title | strip_html | json }};
+    function on(sel, fn) { var el = root.querySelector(sel); if (el) el.addEventListener('click', fn); }
+    on('[data-ga-share]', function () {
+      if (navigator.share) { navigator.share({ title: title, url: url }).catch(function () {}); }
+      else { copy(); }
+    });
+    on('[data-ga-whatsapp]', function () {
+      window.open('https://wa.me/?text=' + encodeURIComponent(title + ' ' + url), '_blank', 'noopener');
+    });
+    on('[data-ga-copy]', copy);
+    function copy() {
+      var done = function () { if (typeof toast === 'function') toast('✓ Link copied'); };
+      if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () {}); return; }
+      var t = document.createElement('textarea');
+      t.value = url; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      t.remove();
+    }
+  })();
+</script>
+
 {% schema %}
-{ "name": "Article", "settings": [] }
+{
+  "name": "Article",
+  "settings": [
+    { "type": "paragraph", "content": "The contents rail, reading time and progress bar are built from the article body — nothing to configure. A post with fewer than two headings hides the rail automatically." },
+    { "type": "collection", "id": "shop_collection", "label": "Shop the Guide collection", "info": "Shown below the article. Override per post by adding a tag like shop:oud-woody — the section is hidden when neither resolves to a collection with products." }
+  ]
+}
 {% endschema %}
