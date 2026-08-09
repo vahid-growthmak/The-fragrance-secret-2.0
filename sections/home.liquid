@@ -347,14 +347,14 @@
                   <img src="{{ moment_asset | asset_url }}"
                        {%- if block.settings.image_asset_sm != blank %}
                        srcset="{{ block.settings.image_asset_sm | asset_url }} 350w, {{ moment_asset | asset_url }} 700w"
-                       sizes="(max-width: 900px) 30vw, 14vw"
+                       sizes="(max-width: 600px) 92vw, (max-width: 900px) 30vw, 14vw"
                        {%- endif %}
                        alt="{{ moment_label | escape }}" loading="lazy" width="700" height="700">
                 {%- elsif moment_image -%}
                   <img src="{{ moment_image | image_url: width: 700 }}"
                        srcset="{{ moment_image | image_url: width: 350 }} 350w,
                                {{ moment_image | image_url: width: 700 }} 700w"
-                       sizes="(max-width: 900px) 30vw, 14vw"
+                       sizes="(max-width: 600px) 92vw, (max-width: 900px) 30vw, 14vw"
                        alt="{{ moment_label | escape }}" loading="lazy">
                 {%- endif -%}
                 <span>{{ moment_label }}</span>

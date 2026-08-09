@@ -149,58 +149,10 @@
                width="1536" height="1024" loading="lazy" decoding="async">
         </figure>
       {%- elsif section.settings.show_why_rotator -%}
-        <aside class="wc-rotator" id="wcRotator-{{ section.id }}" aria-label="Why choose The Fragrance Secrets">
-          <div class="wc-head">
-            <span class="label">Why Choose Us</span>
-            <span class="wc-count"><b data-wc-now>1</b>/6</span>
-          </div>
-          <div class="wc-stage">
-            <div class="wc-slide is-active"><span class="mi" aria-hidden="true">verified</span><b>100% Authentic Perfumes</b><p>Every fragrance is genuine and sourced through trusted suppliers, checked before it ships.</p></div>
-            <div class="wc-slide"><span class="mi" aria-hidden="true">local_shipping</span><b>Fast UAE Delivery</b><p>Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates.</p></div>
-            <div class="wc-slide"><span class="mi" aria-hidden="true">lock</span><b>Secure Payments</b><p>Pay safely by card, wallet or cash on delivery, whichever suits you best.</p></div>
-            <div class="wc-slide"><span class="mi" aria-hidden="true">diamond</span><b>Premium Fragrance Collection</b><p>Designer houses and Arabian perfumery, side by side in one place.</p></div>
-            <div class="wc-slide"><span class="mi" aria-hidden="true">inventory_2</span><b>Carefully Packed Orders</b><p>Every order is packed with care so it arrives sealed, safe and gift-ready.</p></div>
-            <div class="wc-slide"><span class="mi" aria-hidden="true">redeem</span><b>Perfect for Gifting</b><p>Ready-wrapped sets and premium packaging for weddings, Eid and birthdays.</p></div>
-          </div>
-          <div class="wc-dots">
-            <button type="button" class="is-active" aria-label="Slide 1"></button>
-            <button type="button" aria-label="Slide 2"></button>
-            <button type="button" aria-label="Slide 3"></button>
-            <button type="button" aria-label="Slide 4"></button>
-            <button type="button" aria-label="Slide 5"></button>
-            <button type="button" aria-label="Slide 6"></button>
-          </div>
-        </aside>
+        {% render 'why-choose-rotator', uid: section.id %}
       {%- endif -%}
     </div></section>
 
-    {%- if section.settings.show_why_rotator -%}
-      <script>
-          (function () {
-            var root = document.getElementById('wcRotator-{{ section.id }}');
-            if (!root) return;
-            var slides = root.querySelectorAll('.wc-slide');
-            var dots = root.querySelectorAll('.wc-dots button');
-            var now = root.querySelector('[data-wc-now]');
-            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var i = 0, timer = null;
-            function show(n) {
-              slides[i].classList.remove('is-active');
-              dots[i].classList.remove('is-active');
-              i = (n + slides.length) % slides.length;
-              slides[i].classList.add('is-active');
-              dots[i].classList.add('is-active');
-              if (now) now.textContent = i + 1;
-            }
-            function stop() { if (timer) { clearInterval(timer); timer = null; } }
-            function start() { if (reduce) return; stop(); timer = setInterval(function () { show(i + 1); }, 4000); }
-            dots.forEach(function (d, idx) { d.addEventListener('click', function () { show(idx); start(); }); });
-            root.addEventListener('mouseenter', stop);
-            root.addEventListener('mouseleave', start);
-            start();
-          })();
-      </script>
-    {%- endif -%}
   {%- endif -%}
 
   {%- paginate collection.products by paginate_by -%}

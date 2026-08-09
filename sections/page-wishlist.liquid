@@ -17,9 +17,38 @@
     .wish-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
     .wish-toolbar .wish-count { font-size: .86rem; color: var(--warm); }
     .wish-toolbar .wish-count b { color: var(--ink); }
-    .wish-card .prod-info { display: flex; flex-direction: column; }
-    .wish-actions { display: flex; gap: 8px; margin-top: 14px; }
-    .wish-actions .btn-g { flex: 1; justify-content: center; padding: 11px 14px; font-size: .74rem; }
+    /* Cards in a .products-grid row already stretch to a common height, but the
+       card itself stacked its children from the top, so the action row landed
+       wherever that card's title happened to end — a 3-line title pushed its
+       button a line lower than its neighbours'. Make the card a column, let
+       .prod-info absorb the slack, and pin the actions to the bottom edge so
+       every button in a row sits on the same line. */
+    .wish-card { display: flex; flex-direction: column; }
+    .wish-card .prod-img-wrap { flex-shrink: 0; }
+    .wish-card .prod-info { display: flex; flex-direction: column; flex: 1 1 auto; }
+    /* Two lines reserved and enforced, so the price row lines up too rather
+       than only the bottom-pinned button. Titles here run long ("… - 3
+       Bestselling Long-Lasting Fragrances (Unisex)"); the full text stays
+       reachable via the link's title attribute. */
+    .wish-card .prod-name {
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2;
+      overflow: hidden; min-height: 2.6em;
+    }
+    .wish-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 14px; }
+    /* nowrap + tighter tracking: at 4-up the column is ~180px wide and the
+       default .14em tracking pushed "Move to Cart" onto a second line, which
+       made the button look oversized next to the 44px remove square. */
+    .wish-actions .btn-g {
+      flex: 1; min-width: 0; justify-content: center; padding: 11px 12px;
+      font-size: .74rem; letter-spacing: .06em; gap: 7px;
+    }
+    .wish-actions .btn-g .mi { font-size: 16px; }
+    /* Above the single-column breakpoint only. Below it the card is already
+       tuned down to a 96px thumbnail and an icon-less button, and wrapping is
+       the safety valve there — nowrap would push the label out of its box. */
+    @media (min-width: 561px) {
+      .wish-actions .btn-g { white-space: nowrap; }
+    }
     .wish-remove {
       width: 44px; flex-shrink: 0; border: 1px solid var(--cream-dk); border-radius: 8px; background: var(--white);
       color: var(--muted); display: flex; align-items: center; justify-content: center; transition: all .2s;
@@ -55,8 +84,14 @@
       .wish-card .prod-img { width: 100%; height: 100%; object-fit: cover; }
       .wish-card .prod-info { padding: 14px 14px 16px 16px; min-width: 0; }
       /* Titles here run long ("… | Black red"), and an unbroken run would
-         reintroduce the overflow the column now allows for. */
-      .wish-card .prod-name { font-size: 1rem; overflow-wrap: anywhere; }
+         reintroduce the overflow the column now allows for.
+         Single column at this width, so there is no neighbouring card to line up
+         with — and the text column is narrow enough that the 2-line clamp above
+         would cut most titles mid-word. Third line, and no reserved height. */
+      .wish-card .prod-name {
+        font-size: 1rem; overflow-wrap: anywhere;
+        -webkit-line-clamp: 3; line-clamp: 3; min-height: 0;
+      }
       .wish-actions { min-width: 0; }
       .wish-actions .btn-g {
         min-width: 0; padding: 12px 10px; font-size: .68rem; letter-spacing: .06em; gap: 6px;
@@ -166,7 +201,7 @@
           '</a>' +
           '<div class="prod-info">' +
             (p.vendor ? '<div class="prod-brand">' + esc(p.vendor) + '</div>' : '') +
-            '<div class="prod-name"><a href="' + esc(p.url) + '" style="color:inherit">' + title + '</a></div>' +
+            '<div class="prod-name"><a href="' + esc(p.url) + '" style="color:inherit" title="' + title + '">' + title + '</a></div>' +
             '<div class="prod-price">' +
               '<span class="price-now">' + money(p.price) + '</span>' +
               (onSale ? '<span class="price-was">' + money(p.compare_at_price) + '</span>' +

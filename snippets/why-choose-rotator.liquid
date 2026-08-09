@@ -1,0 +1,77 @@
+{%- comment -%}
+  "Why Choose Us" rotator that sits beside the intro copy.
+
+  Was duplicated verbatim — markup and script — in hub-hero.liquid and
+  main-collection.liquid, so any change had to be made twice. Rendered from
+  both now.
+
+  Usage: {% render 'why-choose-rotator', uid: section.id %}
+  uid only has to be unique on the page; it scopes the script to its own root.
+{%- endcomment -%}
+
+<aside class="wc-rotator" id="wcRotator-{{ uid }}" aria-label="Why choose The Fragrance Secrets">
+  <div class="wc-head">
+    <span class="label">Why Choose Us</span>
+    <span class="wc-count"><b data-wc-now>1</b>/6</span>
+  </div>
+  <div class="wc-stage">
+    <div class="wc-slide is-active"><span class="mi" aria-hidden="true">verified</span><b>100% Authentic Perfumes</b><p>Every fragrance is genuine and sourced through trusted suppliers, checked before it ships.</p></div>
+    <div class="wc-slide"><span class="mi" aria-hidden="true">local_shipping</span><b>Fast UAE Delivery</b><p>Quick delivery across Dubai, Abu Dhabi, Sharjah and the wider Emirates.</p></div>
+    <div class="wc-slide"><span class="mi" aria-hidden="true">lock</span><b>Secure Payments</b><p>Pay safely by card, wallet or cash on delivery, whichever suits you best.</p></div>
+    <div class="wc-slide"><span class="mi" aria-hidden="true">diamond</span><b>Premium Fragrance Collection</b><p>Designer houses and Arabian perfumery, side by side in one place.</p></div>
+    <div class="wc-slide"><span class="mi" aria-hidden="true">inventory_2</span><b>Carefully Packed Orders</b><p>Every order is packed with care so it arrives sealed, safe and gift-ready.</p></div>
+    <div class="wc-slide"><span class="mi" aria-hidden="true">redeem</span><b>Perfect for Gifting</b><p>Ready-wrapped sets and premium packaging for weddings, Eid and birthdays.</p></div>
+  </div>
+  <div class="wc-foot">
+    <div class="wc-dots">
+      <button type="button" class="is-active" aria-label="Slide 1"></button>
+      <button type="button" aria-label="Slide 2"></button>
+      <button type="button" aria-label="Slide 3"></button>
+      <button type="button" aria-label="Slide 4"></button>
+      <button type="button" aria-label="Slide 5"></button>
+      <button type="button" aria-label="Slide 6"></button>
+    </div>
+    {%- comment -%}
+      The dots alone gave no obvious way to advance, and they read as a progress
+      indicator rather than a control. Explicit prev/next sit here rather than
+      overlaying the card edges, where they would cover the slide icon on the
+      left and the heading on the right.
+    {%- endcomment -%}
+    <div class="wc-nav">
+      <button type="button" class="wc-prev" aria-label="Previous slide"><span class="mi" aria-hidden="true">chevron_left</span></button>
+      <button type="button" class="wc-next" aria-label="Next slide"><span class="mi" aria-hidden="true">chevron_right</span></button>
+    </div>
+  </div>
+</aside>
+
+<script>
+  (function () {
+    var root = document.getElementById('wcRotator-{{ uid }}');
+    if (!root) return;
+    var slides = root.querySelectorAll('.wc-slide');
+    var dots = root.querySelectorAll('.wc-dots button');
+    var now = root.querySelector('[data-wc-now]');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var i = 0, timer = null, hovering = false;
+    function show(n) {
+      slides[i].classList.remove('is-active');
+      dots[i].classList.remove('is-active');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('is-active');
+      dots[i].classList.add('is-active');
+      if (now) now.textContent = i + 1;
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    /* hovering is checked here rather than only at mouseleave: clicking a dot or
+       an arrow restarts the timer, and without this the slide would keep
+       advancing under a cursor that is parked on the control. */
+    function start() { if (reduce || hovering) return; stop(); timer = setInterval(function () { show(i + 1); }, 4000); }
+    function goTo(n) { show(n); start(); }
+    dots.forEach(function (d, idx) { d.addEventListener('click', function () { goTo(idx); }); });
+    root.querySelector('.wc-prev').addEventListener('click', function () { goTo(i - 1); });
+    root.querySelector('.wc-next').addEventListener('click', function () { goTo(i + 1); });
+    root.addEventListener('mouseenter', function () { hovering = true; stop(); });
+    root.addEventListener('mouseleave', function () { hovering = false; start(); });
+    start();
+  })();
+</script>

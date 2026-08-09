@@ -1433,15 +1433,30 @@
       background: linear-gradient(180deg, rgba(13, 10, 6, .05) 40%, rgba(13, 10, 6, .82))
     }
 
+    /* Anchored to the full width rather than offset from the left only. With
+       just `left:12px` the label was shrink-to-fit against the tile's right
+       EDGE, so long names ran flush to the border with no matching gutter, and
+       because it grew upward from `bottom` a three-line name climbed most of
+       the way up the tile while "Gym" sat alone at the base — the labels landed
+       at a different height in every tile. Fixed padding box + a 2-line cap
+       keeps them on a common baseline. */
     .moment-tile span {
       position: absolute;
-      left: 12px;
-      bottom: 11px;
+      left: 0;
+      right: 0;
+      bottom: 0;
       z-index: 1;
+      padding: 0 12px 11px;
       font-family: var(--fd);
       font-size: .95rem;
       font-weight: 600;
-      color: var(--white)
+      line-height: 1.2;
+      color: var(--white);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden
     }
 
     /* .see-all re-declares display:flex further down the file, and at equal
@@ -1480,14 +1495,21 @@
        appears on hover. Deliberately no button: the whole card is the link. */
     .cat-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px
     }
 
+    /* min-width:0 is load-bearing. A box with an aspect-ratio transfers its
+       min-height through that ratio into an automatic minimum WIDTH — here
+       230px x 16/10 = 368px — and a `1fr` track cannot shrink below an item's
+       automatic minimum. Two such tracks demanded 750px regardless of viewport,
+       so the grid overflowed to the right instead of the cards getting shorter.
+       minmax(0,1fr) on the tracks plus this cover both halves of that rule. */
     .cat-card {
       position: relative;
       display: flex;
       align-items: flex-end;
+      min-width: 0;
       min-height: 230px;
       aspect-ratio: 16/10;
       border-radius: 14px;
@@ -2738,17 +2760,35 @@
       cursor: pointer;
     }
 
+    /* Every article photo is a product shot on a flat backdrop, but the backdrop
+       is baked into the JPEG — five are #FFFFFF and one is #EFEFEF. On a white
+       page the white ones dissolved into it while the grey one read as a proper
+       tile, so the row looked like one card had a background and the rest had
+       none.
+
+       multiply against a tinted wrapper fixes that without re-shooting anything:
+       a #FFFFFF backdrop multiplied by the tint becomes the tint exactly, so
+       every card lands on the same field. The product pixels darken by the
+       tint's ~6%, which is uniform across the row and not perceptible.
+       isolation:isolate keeps the blend inside the card. */
     .bl-img-wrap {
       border-radius: 6px;
       overflow: hidden;
       aspect-ratio: 4/3;
-      margin-bottom: 20px
+      margin-bottom: 20px;
+      background: var(--cream-mid);
+      isolation: isolate
     }
 
+    /* contain, not cover: these are square images in a 4/3 box, so cover was
+       cropping the top and bottom off the bottle. Containing them shows the
+       whole product and lets the tinted field frame it. */
     .bl-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 14px;
+      mix-blend-mode: multiply;
       transition: transform .5s var(--ease)
     }
 
@@ -3223,8 +3263,19 @@
         padding: 20px 14px
       }
 
+      /* One tile per row on phones. At 3-up the tile is ~115px wide, which broke
+         "Office Wear Fragrances" across three lines while "Gym" sat on one — the
+         labels are kept in full, so the column count gives way instead.
+         The square ratio goes with it: six full-width 1/1 tiles would run about
+         2200px per column. A wide strip keeps the whole set scannable and gives
+         even the longest label a single line. */
       .moment-tiles {
-        gap: 8px
+        gap: 8px;
+        grid-template-columns: 1fr
+      }
+
+      .moment-tile {
+        aspect-ratio: 3/1
       }
 
       .pdp-hero {
@@ -4423,14 +4474,21 @@
         gap: 34px
       }
 
-      .cat-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
       .cta-band.member-band {
         grid-template-columns: 1fr;
         gap: 28px;
         padding: 32px 22px
+      }
+    }
+
+    /* Bounded below at 601px, and deliberately not folded into the
+       max-width:900px block above. That block sits LATER in the file than the
+       max-width:600px rule that drops .cat-grid to one column, so at equal
+       specificity it was also winning on phones — leaving two columns on a
+       430px screen and pushing the second one off the right edge. */
+    @media (min-width:601px) and (max-width:900px) {
+      .cat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
       }
     }
 
@@ -4568,6 +4626,18 @@
       max-width: 340px
     }
 
+    /* Dots left, prev/next right. The dots read as a progress indicator, so on
+       their own they left no obvious way to advance the rotator. */
+    .wc-foot {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 16px
+    }
+
     .wc-dots {
       position: relative;
       z-index: 2;
@@ -4575,6 +4645,42 @@
       gap: 8px;
       margin-top: 16px
     }
+
+    .wc-foot .wc-dots { margin-top: 0 }
+
+    .wc-nav {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0
+    }
+
+    .wc-nav button {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(226, 201, 126, .36);
+      background: rgba(226, 201, 126, .1);
+      color: var(--gold-lt);
+      cursor: pointer;
+      transition: .25s var(--ease)
+    }
+
+    .wc-nav button:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink)
+    }
+
+    .wc-nav button:focus-visible {
+      outline: 2px solid var(--gold-lt);
+      outline-offset: 2px
+    }
+
+    .wc-nav .mi { font-size: 19px }
 
     .wc-dots button {
       width: 22px;

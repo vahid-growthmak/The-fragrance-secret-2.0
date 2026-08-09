@@ -282,12 +282,16 @@ header.light .nav-burger { color: var(--warm); }
 .results-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; flex-wrap: wrap; gap: 12px; }
 .results-title { font-size: 2rem; }
 .pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 56px; }
-.pagination a, .pagination span {
+/* Direct children only: the prev/next links wrap a <span class="mi"> icon, and a
+   descendant selector gave that inner span its own 42px bordered box — a second
+   outline nested inside the link, which read as a doubled/distorted chevron. */
+.pagination > a, .pagination > span {
   min-width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center;
   border: 1px solid rgba(13,10,6,.14); border-radius: 4px; font-size: .8rem; color: var(--charcoal); transition: all .2s; padding: 0 6px;
 }
 .pagination a:hover { border-color: var(--gold); color: var(--gold-dk); }
 .pagination .current { background: var(--ink); color: var(--gold-lt); border-color: var(--ink); }
+.pagination .mi { font-size: 18px; }
 .load-more-wrap { text-align: center; margin-top: 52px; }
 
 /* While a filter request is in flight */
@@ -935,7 +939,7 @@ header.light .nav-burger { color: var(--warm); }
   .btn-g, .btn-ol, .btn-o { min-height: 48px; }
   .fb-chip, .fb-select, .fb-view button { min-height: 44px; }
   .fb-chip, .fb-select { padding-top: 11px; padding-bottom: 11px; }
-  .pagination a, .pagination span { min-width: 46px; height: 46px; }
+  .pagination > a, .pagination > span { min-width: 46px; height: 46px; }
 
   /* funnel blocks: tighter, edge-safe padding */
   .co-summary { padding: 24px 20px; }

@@ -30,7 +30,7 @@
   endcase
 
   if request.page_type == 'page'
-    assign shop_hub_pages = 'shop-by-lifestyle,shop-by-weather,shop-by-scent-family,gift-sets,crazy-deals,luxury-recommendations,category-collection' | split: ','
+    assign shop_hub_pages = 'shop-by-lifestyle,shop-by-weather,shop-by-scent-family,crazy-deals,luxury-recommendations,category-collection' | split: ','
     assign guide_pages = 'buying-guides,guide-article,journal,scent-education,care-storage,seasonal-trends' | split: ','
     if page.handle == 'brands'
       assign nav_active = 'brands'
