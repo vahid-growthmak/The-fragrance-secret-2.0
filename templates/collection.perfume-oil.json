@@ -62,9 +62,9 @@
           "type": "explore",
           "settings": {
             "icon": "grid_view",
-            "label": "Shop by Collection",
+            "label": "Shop by Category",
             "sub": "Every way to shop, in one place",
-            "url": "/collections",
+            "url": "/pages/shop-by-category",
             "hub": "category"
           }
         },
@@ -84,7 +84,7 @@
             "icon": "wb_sunny",
             "label": "Shop by Climate",
             "sub": "Summer, humid, cooler days",
-            "url": "/pages/shop-by-weather",
+            "url": "/pages/shop-by-climate",
             "hub": "climate"
           }
         },

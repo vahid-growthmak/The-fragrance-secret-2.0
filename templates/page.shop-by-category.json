@@ -1,22 +1,13 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
       "type": "hub-hero",
       "settings": {
         "hero_eyebrow": "Browse Everything",
-        "hero_heading": "Shop by <em>Collection</em>",
+        "hero_heading": "Shop by <em>Category</em>",
         "intro_eyebrow": "Browse Everything",
         "intro_heading": "Shop Perfume Categories in the UAE",
-        "intro_text": "<p>Every way to shop, in one place. The Shop by Collection hub is the complete map of The Fragrance Secrets, browse by category and gender, by fragrance type like Eau de Parfum, attar and perfume oil, and by the ways we curate scents for lifestyle, climate, brand and scent family. Whether you know exactly what you want or prefer to explore, this is where every collection begins. Choose a category below to narrow the range, or dive into a curated edit to discover something new.</p>",
+        "intro_text": "<p>Every way to shop, in one place. The Shop by Category hub is the complete map of The Fragrance Secrets, browse by category and gender, by fragrance type like Eau de Parfum, attar and perfume oil, and by the ways we curate scents for lifestyle, climate, brand and scent family. Whether you know exactly what you want or prefer to explore, this is where every collection begins. Choose a category below to narrow the range, or dive into a curated edit to discover something new.</p>",
         "children_eyebrow": "Start Here",
         "children_heading": "Shop by <em>Category</em>",
         "children_sub": "Browse our core perfume categories by who they are for and the type of fragrance. Choose a category to narrow the full range to what suits you."
@@ -102,17 +93,17 @@
       "type": "hub-editorial",
       "settings": {
         "cards_eyebrow": "How It Works",
-        "cards_heading": "How to Shop <em>by Collection</em>",
+        "cards_heading": "How to Shop <em>by Category</em>",
         "cards_sub": "With a large catalogue, the fastest way to your perfect scent is to start with a collection. Every fragrance is organised by category, type and curated edit, so you can narrow the range in a click. Here is how the collections are structured.",
         "ways_eyebrow": "Keep Looking",
-        "ways_heading": "Explore Curated <em>Collections</em>",
+        "ways_heading": "Explore More <em>Fragrance Collections</em>",
         "ways_sub": "Prefer to shop a different way? Explore our other collections to find your perfect fragrance by category, brand, scent family, climate, or lifestyle.",
         "shop_eyebrow": "The Shop",
         "shop_heading": "Explore Our <em>Shop Collections</em>",
         "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
-        "crumb_name": "Shop by Collection",
-        "ways_all_label": "",
-        "ways_all_url": ""
+        "crumb_name": "Shop by Category",
+        "ways_all_label": "See All Products",
+        "ways_all_url": "/collections/all"
       },
       "blocks": {
         "card1": {
@@ -211,7 +202,7 @@
           "type": "faq",
           "settings": {
             "question": "How do I browse all perfume categories?",
-            "answer": "Use this Shop by Collection hub. It maps every category, type and curated edit in one place, so you can narrow by gender, type, lifestyle, climate, brand or scent family."
+            "answer": "Use this Shop by Category hub. It maps every category, type and curated edit in one place, so you can narrow by gender, type, lifestyle, climate, brand or scent family."
           }
         },
         "faq6": {
@@ -224,22 +215,13 @@
         "way1": {
           "type": "way",
           "settings": {
-            "icon": "category",
-            "label": "Shop by Category",
-            "sub": "Men, women, unisex, attar, oils",
-            "url": "/pages/shop-by-category"
-          }
-        },
-        "way2": {
-          "type": "way",
-          "settings": {
             "icon": "auto_awesome",
             "label": "Shop by Lifestyle",
             "sub": "Office, date night, everyday",
             "url": "/pages/shop-by-lifestyle"
           }
         },
-        "way3": {
+        "way2": {
           "type": "way",
           "settings": {
             "icon": "wb_sunny",
@@ -248,7 +230,7 @@
             "url": "/pages/shop-by-climate"
           }
         },
-        "way4": {
+        "way3": {
           "type": "way",
           "settings": {
             "icon": "spa",
@@ -257,7 +239,7 @@
             "url": "/pages/shop-by-scent-family"
           }
         },
-        "way5": {
+        "way4": {
           "type": "way",
           "settings": {
             "icon": "storefront",
@@ -276,7 +258,6 @@
         "way2",
         "way3",
         "way4",
-        "way5",
         "shop1",
         "shop2",
         "shop3",

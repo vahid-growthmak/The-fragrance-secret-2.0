@@ -17,7 +17,7 @@
         "hero_image_alt": "The full fragrance range at The Fragrance Secrets UAE",
         "show_hero_description": false,
         "crumb_parent_label": "Shop",
-        "crumb_parent_url": "/collections",
+        "crumb_parent_url": "/pages/shop-by-category",
         "show_trust_band": false,
         "show_reviews": false,
         "intro_eyebrow": "Shop",
@@ -48,7 +48,7 @@
         "schema_name": "Shop All Perfumes Online UAE",
         "schema_description": "Shop all perfumes online at The Fragrance Secrets. Browse the complete range of designer and Arabian fragrances for men and women in one place. Fast delivery across the UAE, USA and Canada.",
         "crumb_parent_label": "Shop",
-        "crumb_parent_url": "/collections",
+        "crumb_parent_url": "/pages/shop-by-category",
         "limit_to_path": "/collections/all"
       },
       "blocks": {
@@ -113,9 +113,9 @@
           "type": "explore",
           "settings": {
             "icon": "grid_view",
-            "label": "Shop by Collection",
+            "label": "Shop by Category",
             "sub": "Every way to shop, in one place",
-            "url": "/collections",
+            "url": "/pages/shop-by-category",
             "hub": "category"
           }
         },
@@ -135,7 +135,7 @@
             "icon": "wb_sunny",
             "label": "Shop by Climate",
             "sub": "Summer, humid, cooler days",
-            "url": "/pages/shop-by-weather",
+            "url": "/pages/shop-by-climate",
             "hub": "climate"
           }
         },

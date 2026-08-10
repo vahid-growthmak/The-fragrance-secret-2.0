@@ -4315,10 +4315,14 @@
     /* Explore more — dark tiles */
     .explore-grid {
       display: grid;
-      /* minmax(0,1fr), not 1fr: a 1fr track carries an automatic minimum of
+      /* auto-fit rather than a fixed 4, because the hubs now cross-link to all
+         five of their siblings and a hard four-column track left the fifth card
+         stranded alone on a second row. auto-fit collapses the empty track, so
+         four cards still fill one row exactly as before.
+         minmax(200px,1fr), not 1fr: a 1fr track carries an automatic minimum of
          auto, so the longest label ("Shop by Scent Family") set the column's
          floor and pushed the whole row wider than the container. */
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px
     }
 
@@ -6067,39 +6071,11 @@ html body .jdgm-form select {
       box-shadow: 0 16px 36px -8px rgba(201, 168, 76, .75)
     }
 
-    /* ── Collapse the launcher to its icon, expand the label on hover ──
-       The full "Find my Scent" pill is wide enough to sit on top of the footer
-       links on a phone.
-
-       Written blind: this is the app's markup, the storefront is password-
-       protected, and the widget bundle is not reachable from here, so the label
-       element's own class is unknown. Hence the negation — collapse every direct
-       child of the wrapper EXCEPT the two classes the theme has already
-       confirmed exist. If the label turns out to be a bare text node rather than
-       an element this selector matches nothing and the launcher simply stays as
-       it is today; it cannot clip the icon or the unread badge either way.
-
-       Only the child collapses. Nothing here sets display, position, inset,
-       opacity or transform ON THE WRAPPER, per the note at the top of this
-       block — the app animates those itself. */
-    .chizy-bubble-wrapper > :not(.chizy-bubble-default-icon):not(.chizy-unread-badge) {
-      max-width: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      opacity: 0;
-      transition: max-width .35s var(--snap), opacity .2s var(--ease);
-    }
-
-    /* Hover-capable pointers only. On touch there is no hover state to expand
-       from, and the collapsed icon is the intended resting form there anyway.
-       focus-within keeps it reachable by keyboard. */
-    @media (hover: hover) and (pointer: fine) {
-      .chizy-bubble-wrapper:hover > :not(.chizy-bubble-default-icon):not(.chizy-unread-badge),
-      .chizy-bubble-wrapper:focus-within > :not(.chizy-bubble-default-icon):not(.chizy-unread-badge) {
-        max-width: 14rem;
-        opacity: 1;
-      }
-    }
+    /* A rule collapsing the launcher to its icon and expanding the label on
+       hover was tried here and reverted: it was written without sight of the
+       app's markup and broke the widget. Do not reinstate it without inspecting
+       the real DOM first — the label element's class is not knowable from this
+       repo, and the negation selector it relied on caught more than intended. */
 
     /* the icon inside is an inline svg: a speech-bubble face (unclassed
        ellipse + path) with three dots (a circle and the two blinking

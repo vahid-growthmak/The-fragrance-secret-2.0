@@ -1,0 +1,286 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hub-hero",
+      "settings": {
+        "hero_eyebrow": "Match the Weather",
+        "hero_heading": "Shop by <em>Climate</em>",
+        "intro_eyebrow": "Match the Weather",
+        "intro_heading": "Shop Perfume by Weather and Season in the UAE",
+        "intro_text": "<p>The right fragrance can make all the difference when temperatures change. The Fragrance Secrets makes it easier to shop perfumes based on the weather you actually experience in the UAE, from hot and humid summer days to cooler winter evenings, dry desert weather, and refreshing rainy afternoons. Instead of browsing through hundreds of fragrances, explore curated collections designed around different weather conditions and seasonal preferences. Discover fresh scents for the heat, richer fragrances for cooler days, and versatile options that perform beautifully throughout the year. Explore every weather-based collection and build a fragrance wardrobe suited to the UAE climate.</p>",
+        "children_eyebrow": "Start Here",
+        "children_heading": "Explore <em>Climate Collections</em>",
+        "children_sub": "Every edit is curated for a specific type of weather. Choose the one that fits your day and discover fragrances suited to it."
+      },
+      "blocks": {
+        "child1": {
+          "type": "link",
+          "settings": {
+            "label": "Summer Wear",
+            "url": "/collections/summer-wear"
+          }
+        },
+        "child2": {
+          "type": "link",
+          "settings": {
+            "label": "Winter Wear",
+            "url": "/collections/winter-holiday"
+          }
+        },
+        "child3": {
+          "type": "link",
+          "settings": {
+            "label": "Spring Wear",
+            "url": "/collections/spring-bloom"
+          }
+        },
+        "child4": {
+          "type": "link",
+          "settings": {
+            "label": "Rainy Day",
+            "url": "/collections/rainy-day"
+          }
+        },
+        "child5": {
+          "type": "link",
+          "settings": {
+            "label": "Humid Weather",
+            "url": "/collections/humid-weather"
+          }
+        },
+        "child6": {
+          "type": "link",
+          "settings": {
+            "label": "Tropical Climate",
+            "url": "/collections/tropical-climate"
+          }
+        },
+        "child7": {
+          "type": "link",
+          "settings": {
+            "label": "Desert Climate",
+            "url": "/collections/desert-climate"
+          }
+        },
+        "child8": {
+          "type": "link",
+          "settings": {
+            "label": "Hot Weather",
+            "url": "/collections/hot-weather"
+          }
+        },
+        "child9": {
+          "type": "link",
+          "settings": {
+            "label": "Cold Weather",
+            "url": "/collections/cold-weather"
+          }
+        },
+        "child10": {
+          "type": "link",
+          "settings": {
+            "label": "Dry Weather",
+            "url": "/collections/dry-weather"
+          }
+        }
+      },
+      "block_order": [
+        "child1",
+        "child2",
+        "child3",
+        "child4",
+        "child5",
+        "child6",
+        "child7",
+        "child8",
+        "child9",
+        "child10"
+      ]
+    },
+    "body": {
+      "type": "hub-editorial",
+      "settings": {
+        "cards_eyebrow": "How It Works",
+        "cards_heading": "How to Shop <em>by Climate</em>",
+        "cards_sub": "Shopping by climate takes the guesswork out of choosing a scent that lasts. Instead of browsing thousands of options, you start with the weather and let it guide you. Here is how to make the most of the climate edits.",
+        "ways_eyebrow": "Keep Looking",
+        "ways_heading": "Explore More <em>Fragrance Collections</em>",
+        "ways_sub": "Prefer to shop a different way? Explore our other collections to find your perfect fragrance by category, brand, scent family, lifestyle, or occasion.",
+        "ways_all_label": "See All Products",
+        "ways_all_url": "/collections/all",
+        "shop_eyebrow": "The Shop",
+        "shop_heading": "Explore Our <em>Shop Collections</em>",
+        "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
+        "crumb_name": "Shop by Climate"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Read the Temperature",
+            "body": "Heat lifts a fragrance and makes it project more, while cold holds it close to the skin. Start with how hot or cool your day is, and let that guide how strong a scent you reach for.",
+            "tag_label": "Explore",
+            "tags": "Hot, Warm, Cool, Cold"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "Mind the Humidity",
+            "body": "Humid air makes rich scents feel heavier and can turn them sharp. On sticky days, lighter fresh and citrus fragrances stay clean, while in dry air deeper scents bloom without feeling overwhelming.",
+            "tag_label": "Best For",
+            "tags": "Humid, Dry, Tropical"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Match the Season",
+            "body": "Summer suits fresh, aquatic and citrus notes. Winter is made for oud, amber and spice. Spring and cooler months sit in between, where soft florals and light woods feel just right.",
+            "tag_label": "Best For",
+            "tags": "Summer, Winter, Spring, Rainy"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "title": "Build a Seasonal Rotation",
+            "body": "Most people need more than one signature. Shopping by climate helps you build a small rotation, a fresh scent for the heat, a warm one for cooler months, and something easy for in between.",
+            "tag_label": "Best For",
+            "tags": "Everyday, Seasonal, Signature"
+          }
+        },
+        "shop1": {
+          "type": "shoplink",
+          "settings": {
+            "label": "All Products",
+            "url": "/collections/all"
+          }
+        },
+        "shop2": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Best Sellers",
+            "url": "/collections/best-sellers"
+          }
+        },
+        "shop3": {
+          "type": "shoplink",
+          "settings": {
+            "label": "New Arrivals",
+            "url": "/collections/new-arrivals"
+          }
+        },
+        "shop4": {
+          "type": "shoplink",
+          "settings": {
+            "label": "Crazy Deals",
+            "url": "/collections/crazy-deals"
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose a perfume for the UAE climate?",
+            "answer": "Start with the temperature. For hot, humid days pick fresh and citrus scents in lighter concentrations, and save rich oud, amber and spice for cooler evenings. Our climate edits group them for you."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How does weather affect how a perfume smells?",
+            "answer": "Heat lifts and speeds up a fragrance, so scents feel stronger and fade faster in UAE summers. Cold air holds them closer to the skin, which is why the same perfume can smell different across seasons."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "What perfume is best for hot, humid weather?",
+            "answer": "For hot, humid weather, choose fresh, citrus, aquatic and light floral scents in lighter concentrations. They stay crisp without turning heavy, so your fragrance feels clean and comfortable through a UAE summer day."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Should I change my perfume by season?",
+            "answer": "You do not have to, but many people do. Lighter, fresher scents suit summer heat, while warmer oud, amber and spice come alive in cooler months. A small seasonal rotation keeps you comfortable year round."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Why does my perfume smell different in summer?",
+            "answer": "Warmth and humidity change how a fragrance evaporates from your skin. In summer, top notes burn off faster and the scent can feel sharper or heavier than the same perfume does in cooler winter air."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        },
+        "way1": {
+          "type": "way",
+          "settings": {
+            "icon": "category",
+            "label": "Shop by Category",
+            "sub": "Men, women, unisex, attar, oils",
+            "url": "/pages/shop-by-category"
+          }
+        },
+        "way2": {
+          "type": "way",
+          "settings": {
+            "icon": "auto_awesome",
+            "label": "Shop by Lifestyle",
+            "sub": "Office, date night, everyday",
+            "url": "/pages/shop-by-lifestyle"
+          }
+        },
+        "way3": {
+          "type": "way",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Oud, fresh, floral, sweet, spicy",
+            "url": "/pages/shop-by-scent-family"
+          }
+        },
+        "way4": {
+          "type": "way",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "way1",
+        "way2",
+        "way3",
+        "way4",
+        "shop1",
+        "shop2",
+        "shop3",
+        "shop4",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "body"
+  ]
+}

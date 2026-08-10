@@ -90,9 +90,9 @@
           "type": "explore",
           "settings": {
             "icon": "grid_view",
-            "label": "Shop by Collection",
+            "label": "Shop by Category",
             "sub": "Every way to shop, in one place",
-            "url": "/collections",
+            "url": "/pages/shop-by-category",
             "hub": "category"
           }
         },
@@ -112,7 +112,7 @@
             "icon": "wb_sunny",
             "label": "Shop by Climate",
             "sub": "Summer, humid, cooler days",
-            "url": "/pages/shop-by-weather",
+            "url": "/pages/shop-by-climate",
             "hub": "climate"
           }
         },
@@ -209,7 +209,7 @@
         "sibling_heading": "Explore Other <em>Climate Collections</em>",
         "sibling_sub": "Discover fragrances created for different seasons and weather conditions. Explore more climate collections to find the perfect scent for every environment.",
         "sibling_all_label": "Browse All Climate Collections",
-        "sibling_all_url": "/pages/shop-by-weather",
+        "sibling_all_url": "/pages/shop-by-climate",
         "explore_eyebrow": "Keep Looking",
         "explore_heading": "Explore More <em>Fragrance Collections</em>",
         "explore_sub": "Browse our main fragrance collections to discover perfumes by category, lifestyle, brand, and scent family.",

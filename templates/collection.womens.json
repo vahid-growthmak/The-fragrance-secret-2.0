@@ -86,9 +86,9 @@
           "type": "explore",
           "settings": {
             "icon": "grid_view",
-            "label": "Shop by Collection",
+            "label": "Shop by Category",
             "sub": "Every way to shop, in one place",
-            "url": "/collections",
+            "url": "/pages/shop-by-category",
             "hub": "category"
           }
         },
@@ -108,7 +108,7 @@
             "icon": "wb_sunny",
             "label": "Shop by Climate",
             "sub": "Summer, humid, cooler days",
-            "url": "/pages/shop-by-weather",
+            "url": "/pages/shop-by-climate",
             "hub": "climate"
           }
         },
@@ -178,7 +178,7 @@
           "type": "faq",
           "settings": {
             "question": "Can I wear these perfumes throughout the year?",
-            "answer": "Yes. Our collection includes fragrances for every season. Fresh citrus and floral perfumes are popular during warmer months, while gourmand, amber, and oud fragrances are ideal for cooler evenings and special occasions. You can also explore our Shop by Weather & Season collections for personalised recommendations."
+            "answer": "Yes. Our collection includes fragrances for every season. Fresh citrus and floral perfumes are popular during warmer months, while gourmand, amber, and oud fragrances are ideal for cooler evenings and special occasions. You can also explore our Shop by Climate collections for personalised recommendations."
           }
         },
         "faq8": {

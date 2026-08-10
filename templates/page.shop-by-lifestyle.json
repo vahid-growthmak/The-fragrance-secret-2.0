@@ -118,8 +118,8 @@
         "shop_heading": "Explore Our <em>Shop Collections</em>",
         "shop_sub": "Looking for something specific? Explore our shop collections to browse the full range, bestsellers, new launches, and limited-time offers.",
         "crumb_name": "Shop by Lifestyle",
-        "ways_all_label": "See All Collections",
-        "ways_all_url": "/collections"
+        "ways_all_label": "See All Products",
+        "ways_all_url": "/collections/all"
       },
       "blocks": {
         "card1": {
@@ -156,42 +156,6 @@
             "body": "Most people need more than one signature. Shopping by lifestyle helps you build a small wardrobe of scents, a versatile daily, a bold evening, a fresh active, so you are ready for anything.",
             "tag_label": "Best For",
             "tags": "Men, Women, Every Occasion"
-          }
-        },
-        "way1": {
-          "type": "way",
-          "settings": {
-            "icon": "grid_view",
-            "label": "Shop by Collection",
-            "sub": "Every way to shop, in one place",
-            "url": "/collections"
-          }
-        },
-        "way2": {
-          "type": "way",
-          "settings": {
-            "icon": "wb_sunny",
-            "label": "Shop by Climate",
-            "sub": "Summer, humid, cooler days",
-            "url": "/pages/shop-by-weather"
-          }
-        },
-        "way3": {
-          "type": "way",
-          "settings": {
-            "icon": "spa",
-            "label": "Shop by Scent Family",
-            "sub": "Fresh, oud, spicy, sweet",
-            "url": "/pages/shop-by-scent-family"
-          }
-        },
-        "way4": {
-          "type": "way",
-          "settings": {
-            "icon": "storefront",
-            "label": "Shop by Brand",
-            "sub": "Every house we carry",
-            "url": "/pages/brands"
           }
         },
         "shop1": {
@@ -262,6 +226,42 @@
           "settings": {
             "question": "Do you ship internationally?",
             "answer": "Yes. The Fragrance Secrets ships across the UAE and also delivers to customers in the United States and Canada. Shipping options and delivery estimates are available during checkout."
+          }
+        },
+        "way1": {
+          "type": "way",
+          "settings": {
+            "icon": "category",
+            "label": "Shop by Category",
+            "sub": "Men, women, unisex, attar, oils",
+            "url": "/pages/shop-by-category"
+          }
+        },
+        "way2": {
+          "type": "way",
+          "settings": {
+            "icon": "wb_sunny",
+            "label": "Shop by Climate",
+            "sub": "Summer, humid, cooler days",
+            "url": "/pages/shop-by-climate"
+          }
+        },
+        "way3": {
+          "type": "way",
+          "settings": {
+            "icon": "spa",
+            "label": "Shop by Scent Family",
+            "sub": "Oud, fresh, floral, sweet, spicy",
+            "url": "/pages/shop-by-scent-family"
+          }
+        },
+        "way4": {
+          "type": "way",
+          "settings": {
+            "icon": "storefront",
+            "label": "Shop by Brand",
+            "sub": "Every house we carry",
+            "url": "/pages/brands"
           }
         }
       },
