@@ -26,63 +26,81 @@
           "type": "link",
           "settings": {
             "label": "Women's Perfumes",
-            "url": "/collections/womens"
+            "url": "/collections/womens",
+            "image_asset": "womens-hero.webp",
+            "image_asset_sm": "womens-hero-sm.webp"
           }
         },
         "child2": {
           "type": "link",
           "settings": {
             "label": "Men's Perfumes",
-            "url": "/collections/mens"
+            "url": "/collections/mens",
+            "image_asset": "mens-hero.webp",
+            "image_asset_sm": "mens-hero-sm.webp"
           }
         },
         "child3": {
           "type": "link",
           "settings": {
             "label": "Unisex Perfumes",
-            "url": "/collections/unisex"
+            "url": "/collections/unisex",
+            "image_asset": "unisex-hero.webp",
+            "image_asset_sm": "unisex-hero-sm.webp"
           }
         },
         "child4": {
           "type": "link",
           "settings": {
             "label": "Kids Perfumes",
-            "url": "/collections/kids"
+            "url": "/collections/kids",
+            "image_asset": "kids-hero.webp",
+            "image_asset_sm": "kids-hero-sm.webp"
           }
         },
         "child5": {
           "type": "link",
           "settings": {
             "label": "Luxury Perfumes",
-            "url": "/collections/luxury"
+            "url": "/collections/luxury",
+            "image_asset": "luxury-hero.webp",
+            "image_asset_sm": "luxury-hero-sm.webp"
           }
         },
         "child6": {
           "type": "link",
           "settings": {
             "label": "Attar",
-            "url": "/collections/attar"
+            "url": "/collections/attar",
+            "image_asset": "attar-hero.webp",
+            "image_asset_sm": "attar-hero-sm.webp"
           }
         },
         "child7": {
           "type": "link",
           "settings": {
             "label": "Perfume Oils",
-            "url": "/collections/perfume-oil"
+            "url": "/collections/perfume-oil",
+            "image_asset": "perfume-oil-hero.webp",
+            "image_asset_sm": "perfume-oil-hero-sm.webp"
           }
         },
         "child8": {
           "type": "link",
           "settings": {
             "label": "Arabic Perfumes",
-            "url": "/collections/arabic"
+            "url": "/collections/arabic",
+            "image_asset": "arabic-hero.webp",
+            "image_asset_sm": "arabic-hero-sm.webp"
           }
         },
         "child9": {
           "type": "link",
           "settings": {
             "label": "Inspired Perfumes",
-            "url": "/collections/inspired"
+            "url": "/collections/inspired",
+            "image_asset": "inspired-hero.webp",
+            "image_asset_sm": "inspired-hero-sm.webp"
           }
         }
       },

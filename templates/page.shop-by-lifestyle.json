@@ -17,77 +17,99 @@
           "type": "link",
           "settings": {
             "label": "Office Wear Perfumes",
-            "url": "/collections/office-wear"
+            "url": "/collections/office-wear",
+            "image_asset": "office-wear-tile.webp",
+            "image_asset_sm": "office-wear-tile-sm.webp"
           }
         },
         "child2": {
           "type": "link",
           "settings": {
             "label": "Everyday Perfumes",
-            "url": "/collections/everyday-signature"
+            "url": "/collections/everyday-signature",
+            "image_asset": "everyday-signature-hero.webp",
+            "image_asset_sm": "everyday-signature-hero-sm.webp"
           }
         },
         "child3": {
           "type": "link",
           "settings": {
             "label": "Date Night Perfumes",
-            "url": "/collections/date-night"
+            "url": "/collections/date-night",
+            "image_asset": "date-night-tile.webp",
+            "image_asset_sm": "date-night-tile-sm.webp"
           }
         },
         "child4": {
           "type": "link",
           "settings": {
             "label": "Party Wear Perfumes",
-            "url": "/collections/party-clubbing"
+            "url": "/collections/party-clubbing",
+            "image_asset": "party-clubbing-hero.webp",
+            "image_asset_sm": "party-clubbing-hero-sm.webp"
           }
         },
         "child5": {
           "type": "link",
           "settings": {
             "label": "Wedding Perfumes",
-            "url": "/collections/wedding"
+            "url": "/collections/wedding",
+            "image_asset": "wedding-tile.webp",
+            "image_asset_sm": "wedding-tile-sm.webp"
           }
         },
         "child6": {
           "type": "link",
           "settings": {
             "label": "Formal Evening Perfumes",
-            "url": "/collections/dinner-evening"
+            "url": "/collections/dinner-evening",
+            "image_asset": "dinner-evening-tile.webp",
+            "image_asset_sm": "dinner-evening-tile-sm.webp"
           }
         },
         "child7": {
           "type": "link",
           "settings": {
             "label": "Gym Perfumes",
-            "url": "/collections/gym"
+            "url": "/collections/gym",
+            "image_asset": "gym-tile.webp",
+            "image_asset_sm": "gym-tile-sm.webp"
           }
         },
         "child8": {
           "type": "link",
           "settings": {
             "label": "Travel Perfumes",
-            "url": "/collections/travel-friendly"
+            "url": "/collections/travel-friendly",
+            "image_asset": "travel-friendly-tile.webp",
+            "image_asset_sm": "travel-friendly-tile-sm.webp"
           }
         },
         "child9": {
           "type": "link",
           "settings": {
             "label": "Beach Perfumes",
-            "url": "/collections/beach-vacation"
+            "url": "/collections/beach-vacation",
+            "image_asset": "beach-vacation-hero.webp",
+            "image_asset_sm": "beach-vacation-hero-sm.webp"
           }
         },
         "child10": {
           "type": "link",
           "settings": {
             "label": "Vacation Perfumes",
-            "url": "/collections/vacation-beach"
+            "url": "/collections/vacation-beach",
+            "image_asset": "vacation-beach-hero.webp",
+            "image_asset_sm": "vacation-beach-hero-sm.webp"
           }
         },
         "child11": {
           "type": "link",
           "settings": {
             "label": "Formal Event Perfumes",
-            "url": "/collections/wedding-formal"
+            "url": "/collections/wedding-formal",
+            "image_asset": "wedding-formal-hero.webp",
+            "image_asset_sm": "wedding-formal-hero-sm.webp"
           }
         }
       },

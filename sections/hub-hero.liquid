@@ -60,11 +60,41 @@
       {%- if section.settings.children_heading != blank -%}<h2 class="sec-title">{{ section.settings.children_heading }}</h2>{%- endif -%}
       {%- if section.settings.children_sub != blank -%}<p class="sec-sub">{{ section.settings.children_sub }}</p>{%- endif -%}
     </div>
-    <div class="crosslink-grid four">
+    {%- comment -%}
+      Image tiles rather than text links, reusing .moment-tile from the home
+      page's Lifestyle/Climate grid so the hubs and the home page present their
+      child collections identically.
+
+      Image priority: the block's own asset, then the collection's image, then
+      its first product photo. A child that resolves to none of those keeps
+      .moment-tile's gradient, which is the same fallback the home page relies
+      on — the tile still reads as deliberate rather than broken.
+    {%- endcomment -%}
+    <div class="hub-children fade-up">
       {%- for block in child_blocks -%}
-        <a class="crosslink" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+        {%- liquid
+          assign child_coll = nil
+          if block.settings.url contains '/collections/'
+            assign child_handle = block.settings.url | split: '/collections/' | last | split: '?' | first
+            assign child_coll = collections[child_handle]
+          endif
+          assign child_img = child_coll.image | default: child_coll.products.first.featured_image
+        -%}
+        <a class="moment-tile" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image_asset != blank -%}
+            <img src="{{ block.settings.image_asset | asset_url }}"
+                 {%- if block.settings.image_asset_sm != blank %}
+                 srcset="{{ block.settings.image_asset_sm | asset_url }} 400w, {{ block.settings.image_asset | asset_url }} 800w"
+                 sizes="(max-width: 600px) 46vw, (max-width: 1200px) 30vw, 18vw"
+                 {%- endif %}
+                 alt="{{ block.settings.label | escape }}" loading="lazy" width="800" height="800">
+          {%- elsif child_img -%}
+            <img src="{{ child_img | image_url: width: 800 }}"
+                 srcset="{{ child_img | image_url: width: 400 }} 400w, {{ child_img | image_url: width: 800 }} 800w"
+                 sizes="(max-width: 600px) 46vw, (max-width: 1200px) 30vw, 18vw"
+                 alt="{{ block.settings.label | escape }}" loading="lazy">
+          {%- endif -%}
           <span>{{ block.settings.label }}</span>
-          <span class="mi" aria-hidden="true">arrow_forward</span>
         </a>
       {%- endfor -%}
     </div>
@@ -95,7 +125,9 @@
       "name": "Child collection",
       "settings": [
         { "type": "text", "id": "label", "label": "Label" },
-        { "type": "url", "id": "url", "label": "Link" }
+        { "type": "url", "id": "url", "label": "Link" },
+        { "type": "text", "id": "image_asset", "label": "Tile image (theme asset filename)", "info": "e.g. desert-climate-tile.webp — the file must live in assets/. Leave blank to fall back to the collection's own image, then its first product photo." },
+        { "type": "text", "id": "image_asset_sm", "label": "Tile image, small (theme asset filename)", "info": "Optional smaller variant served to phones." }
       ]
     }
   ],

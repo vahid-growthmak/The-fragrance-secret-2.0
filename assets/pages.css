@@ -96,6 +96,20 @@ body.nav-open #shopify-section-header { z-index: 1250; }
 .nm-col a { display: block; font-family: var(--fd); font-size: 1.02rem; line-height: 1.28; font-weight: 400; letter-spacing: normal; text-transform: none; color: rgba(255,255,255,.78); padding: 5px 0; transition: color .2s, padding-left .2s; }
 .nm-col a::after { display: none; }
 .nm-col a:hover { color: var(--gold-lt) !important; padding-left: 6px; }
+/* Column headings are links to their hub. .nm-col a above restyles anchors in
+   this menu into serif title-case list items, so the heading has to take every
+   type property back from its h5 — font shorthand alone would not, since
+   letter-spacing and text-transform sit outside it and are set explicitly
+   above. Higher specificity (.nm-col h5 a) carries it. */
+.nm-col h5 a {
+  display: inline-block;
+  font-family: inherit; font-size: inherit; font-weight: inherit;
+  line-height: inherit; letter-spacing: inherit; text-transform: inherit;
+  color: inherit; padding: 0;
+}
+/* cancel the 6px nudge the list items use; the heading should not shift */
+.nm-col h5 a:hover { padding-left: 0; }
+.nm-col h5 a:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; }
 
 /* AI concierge inline CTA (custom-blend action button) */
 .ai-cta { display: inline-flex; align-items: center; gap: 8px; margin: 4px 0 8px; padding: 11px 18px; background: var(--gold); color: var(--ink); border-radius: 8px; font-family: var(--fb); font-size: .8rem; font-weight: 600; letter-spacing: .02em; transition: all .2s; }

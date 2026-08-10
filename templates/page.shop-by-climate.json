@@ -17,70 +17,90 @@
           "type": "link",
           "settings": {
             "label": "Summer Wear",
-            "url": "/collections/summer-wear"
+            "url": "/collections/summer-wear",
+            "image_asset": "summer-wear-tile.webp",
+            "image_asset_sm": "summer-wear-tile-sm.webp"
           }
         },
         "child2": {
           "type": "link",
           "settings": {
             "label": "Winter Wear",
-            "url": "/collections/winter-holiday"
+            "url": "/collections/winter-holiday",
+            "image_asset": "winter-holiday-tile.webp",
+            "image_asset_sm": "winter-holiday-tile-sm.webp"
           }
         },
         "child3": {
           "type": "link",
           "settings": {
             "label": "Spring Wear",
-            "url": "/collections/spring-bloom"
+            "url": "/collections/spring-bloom",
+            "image_asset": "spring-bloom-hero.webp",
+            "image_asset_sm": "spring-bloom-hero-sm.webp"
           }
         },
         "child4": {
           "type": "link",
           "settings": {
             "label": "Rainy Day",
-            "url": "/collections/rainy-day"
+            "url": "/collections/rainy-day",
+            "image_asset": "rainy-day-tile.webp",
+            "image_asset_sm": "rainy-day-tile-sm.webp"
           }
         },
         "child5": {
           "type": "link",
           "settings": {
             "label": "Humid Weather",
-            "url": "/collections/humid-weather"
+            "url": "/collections/humid-weather",
+            "image_asset": "humid-weather-tile.webp",
+            "image_asset_sm": "humid-weather-tile-sm.webp"
           }
         },
         "child6": {
           "type": "link",
           "settings": {
             "label": "Tropical Climate",
-            "url": "/collections/tropical-climate"
+            "url": "/collections/tropical-climate",
+            "image_asset": "tropical-climate-tile.webp",
+            "image_asset_sm": "tropical-climate-tile-sm.webp"
           }
         },
         "child7": {
           "type": "link",
           "settings": {
             "label": "Desert Climate",
-            "url": "/collections/desert-climate"
+            "url": "/collections/desert-climate",
+            "image_asset": "desert-climate-tile.webp",
+            "image_asset_sm": "desert-climate-tile-sm.webp"
           }
         },
         "child8": {
           "type": "link",
           "settings": {
             "label": "Hot Weather",
-            "url": "/collections/hot-weather"
+            "url": "/collections/hot-weather",
+            "image_asset": "hot-weather-hero.webp",
+            "image_asset_sm": "hot-weather-hero-sm.webp"
           }
         },
         "child9": {
           "type": "link",
           "settings": {
             "label": "Cold Weather",
-            "url": "/collections/cold-weather"
+            "url": "/collections/cold-weather",
+            "image_asset": "cold-weather-hero.webp",
+            "image_asset_sm": "cold-weather-hero-sm.webp"
           }
         },
         "child10": {
           "type": "link",
           "settings": {
             "label": "Dry Weather",
-            "url": "/collections/dry-weather"
+            "url": "/collections/dry-weather",
+            "image_asset": "dry-weather-hero.webp",
+            "image_asset_sm": "dry-weather-hero-sm.webp"
           }
         }
       },

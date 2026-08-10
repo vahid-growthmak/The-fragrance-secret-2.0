@@ -1402,6 +1402,27 @@
       gap: 12px
     }
 
+    /* Hub child collections — same .moment-tile as the home page grid, but five
+       across instead of three, because a hub runs the full set (Climate has ten)
+       rather than the home page's curated six inside a half-width column. */
+    .hub-children {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px
+    }
+
+    @media (max-width: 1200px) {
+      .hub-children { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+    }
+
+    @media (max-width: 900px) {
+      .hub-children { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+    }
+
+    @media (max-width: 600px) {
+      .hub-children { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px }
+    }
+
     /* No collection carries an image yet, so tiles fall back to the first
        product photo and, failing that, to this gradient — imageless tiles
        still read as deliberate rather than broken. */

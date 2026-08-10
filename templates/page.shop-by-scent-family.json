@@ -17,35 +17,45 @@
           "type": "link",
           "settings": {
             "label": "Oud & Woody",
-            "url": "/collections/oud-woody"
+            "url": "/collections/oud-woody",
+            "image_asset": "oud-woody-hero.webp",
+            "image_asset_sm": "oud-woody-hero-sm.webp"
           }
         },
         "child2": {
           "type": "link",
           "settings": {
             "label": "Fresh & Citrus",
-            "url": "/collections/fresh-citrus"
+            "url": "/collections/fresh-citrus",
+            "image_asset": "fresh-citrus-hero.webp",
+            "image_asset_sm": "fresh-citrus-hero-sm.webp"
           }
         },
         "child3": {
           "type": "link",
           "settings": {
             "label": "Floral & Rose",
-            "url": "/collections/floral-rose"
+            "url": "/collections/floral-rose",
+            "image_asset": "floral-rose-hero.webp",
+            "image_asset_sm": "floral-rose-hero-sm.webp"
           }
         },
         "child4": {
           "type": "link",
           "settings": {
             "label": "Sweet & Gourmand",
-            "url": "/collections/sweet-gourmand"
+            "url": "/collections/sweet-gourmand",
+            "image_asset": "sweet-gourmand-hero.webp",
+            "image_asset_sm": "sweet-gourmand-hero-sm.webp"
           }
         },
         "child5": {
           "type": "link",
           "settings": {
             "label": "Spicy & Oriental",
-            "url": "/collections/spicy-oriental"
+            "url": "/collections/spicy-oriental",
+            "image_asset": "spicy-oriental-hero.webp",
+            "image_asset_sm": "spicy-oriental-hero-sm.webp"
           }
         }
       },
