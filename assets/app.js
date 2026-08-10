@@ -624,11 +624,34 @@ function cartChangeQty(key, quantity) {
   if (!window.MutationObserver) return;
   var SEL = '.jdgm-modal, .jdgm-rev-modal, .jdgm-form-modal, [class*="jdgm"][class*="modal"]';
 
+  /* Being merely present and not display:none was far too loose a test. SEL ends
+     in [class*="jdgm"][class*="modal"], which matches any Judge.me element whose
+     class list contains both substrings — and the review widget renders its
+     modal scaffolding inline on the product page, closed. So on every PDP the
+     check returned true, jdgm-modal-open latched onto <body> permanently, and
+     the rule in pages.css took the WhatsApp float and the sticky Add to Cart to
+     opacity:0 / pointer-events:none for the whole visit. Nothing ever cleared
+     it, because the element it tripped on never went away.
+
+     A real open modal is an overlay: taken out of flow, sizeable, and actually
+     on screen. Requiring all three keeps the scaffolding from counting.
+
+     Deliberately biased toward "closed". A false positive costs the two floats
+     for the entire session; a false negative merely leaves them visible over a
+     modal for a moment. */
   function isOpen() {
     var nodes = document.querySelectorAll(SEL);
+    var vw = window.innerWidth, vh = window.innerHeight;
     for (var i = 0; i < nodes.length; i++) {
-      var cs = window.getComputedStyle(nodes[i]);
-      if (cs.display !== 'none' && cs.visibility !== 'hidden' && parseFloat(cs.opacity) !== 0) return true;
+      var el = nodes[i];
+      var cs = window.getComputedStyle(el);
+      if (cs.display === 'none' || cs.visibility === 'hidden' || parseFloat(cs.opacity) === 0) continue;
+      if (cs.position !== 'fixed' && cs.position !== 'absolute') continue;
+      var r = el.getBoundingClientRect();
+      if (r.width < 200 || r.height < 200) continue;
+      // must actually intersect the viewport, not sit parked off-screen
+      if (r.bottom <= 0 || r.top >= vh || r.right <= 0 || r.left >= vw) continue;
+      return true;
     }
     return false;
   }
