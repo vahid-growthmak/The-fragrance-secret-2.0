@@ -916,29 +916,66 @@ function initThumbs() {
      it well past 500px, so the bar appeared while the real button was still on
      screen; short ones the other way. Hence "not there on all products".
 
-   Toggling a class instead leaves the cascade in charge, and observing the
-   button makes the trigger identical on every product. */
+   Toggling a class instead leaves the cascade in charge, and keying off the
+   button makes the trigger identical on every product.
+
+   That trigger is measured, not observed. An IntersectionObserver here only
+   showed the bar some of the time, because it reports state CHANGES: the button
+   is small, intersections are recomputed about once a frame, and a fast flick,
+   a scrollbar drag or an #anchor jump can carry it from below the fold to well
+   above it inside a single frame. Intersecting never became true, so the state
+   never changed, so no callback ever ran and the bar stayed hidden — while a
+   slow scroll over the same button passed through the intersecting state and
+   worked. Reading live geometry each frame has no such gap. */
 function initStickyAtc() {
   const bar = el('stickyatc'); if (!bar) return;
-  const real = document.querySelector('.atc-btn');
   const show = on => bar.classList.toggle('is-visible', on);
+  const real = document.querySelector('.atc-btn');
 
-  if (real && 'IntersectionObserver' in window) {
-    new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        // top < 0 means it left upward. Without that check the bar would also
-        // show while the button is still below the fold, on first paint.
-        show(!e.isIntersecting && e.boundingClientRect.top < 0);
-      });
-    }).observe(real);
+  if (!real) {
+    // Not a product page layout we recognise: fall back to a plain threshold,
+    // and seed the opening state rather than waiting for a scroll.
+    const onScroll = () => show(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
     return;
   }
 
-  // No button on the page, or no observer: fall back to the old threshold, but
-  // set the opening state rather than waiting for a scroll that may not come.
-  const onScroll = () => show(window.scrollY > 500);
+  const header = el('hdr');
+
+  function update() {
+    /* The header's BOTTOM edge, not its height: initHeaderScroll toggles
+       .scrolled which changes that height, and reading the live edge also stays
+       correct if the header is ever translated out of the way — height would
+       still report a full-size bar covering nothing. Clamped at 0 so a header
+       scrolled above the viewport contributes no offset. */
+    const rect = header ? header.getBoundingClientRect() : null;
+    const offset = rect ? Math.max(0, rect.bottom) : 0;
+    // Behind the sticky header counts as gone — it is unreachable there, which
+    // is the whole reason the bar exists.
+    show(real.getBoundingClientRect().bottom <= offset);
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { update(); ticking = false; });
+  }
+
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('resize', onScroll, { passive: true });
+  // Images settling below the fold move the button with no scroll event.
+  window.addEventListener('load', update);
+  /* Restored from the back/forward cache the listeners survive but no scroll
+     fires, so the bar would keep whatever state it had when the page was left. */
+  window.addEventListener('pageshow', update);
+  /* Judge.me's review badge and other app widgets inject above the button long
+     after load, moving it while the visitor sits still — no scroll, resize or
+     load event covers that, and the bar would hold a stale state until the next
+     touch of the wheel. */
+  if ('ResizeObserver' in window) new ResizeObserver(onScroll).observe(document.body);
+  update();
 }
 /* Featured-product widget (home) */
 function swapFpImg(node, src) {
