@@ -3311,11 +3311,18 @@
     }
 
     /* IMAGE GALLERY */
+    /* align-self is what makes the sticky work, and it is stated here rather
+       than left to .pdp-main-inner's align-items:start. A grid item defaults to
+       stretching to its row height — at which point it fills its own containing
+       block and sticky has nowhere to travel, so the gallery just scrolls away
+       with the page. Declaring it on the item keeps that contract local to the
+       thing that depends on it. */
     .pdp-gallery {
       display: grid;
       grid-template-columns: 88px 1fr;
       gap: 14px;
       position: sticky;
+      align-self: start;
       top: 90px
     }
 
@@ -5045,6 +5052,9 @@ html body .jdgm-form select {
     }
 
     /* STICKY ATC (mobile) */
+    /* Visibility is a class now, driven off the real Add to Cart leaving the
+       viewport (initStickyAtc). It used to be an inline display written on
+       every scroll event, which silently beat every rule in this file. */
     .sticky-atc {
       display: none;
       position: fixed;
@@ -5057,6 +5067,8 @@ html body .jdgm-form select {
       padding: 12px 24px;
       box-shadow: 0 -4px 20px rgba(0, 0, 0, .1)
     }
+
+    .sticky-atc.is-visible { display: block }
 
     .sticky-atc-inner {
       display: flex;
@@ -5310,9 +5322,9 @@ html body .jdgm-form select {
         grid-template-columns: 80px 1fr
       }
 
-      .sticky-atc {
-        display: block
-      }
+      /* No unconditional display here any more. It never actually took effect —
+         the scroll handler's inline style outranked it — and the bar now shows
+         on the same trigger at every width: the real button leaving the view. */
 
       .nav-links {
         display: none
@@ -6053,6 +6065,40 @@ html body .jdgm-form select {
 
     .chizy-bubble-wrapper:hover {
       box-shadow: 0 16px 36px -8px rgba(201, 168, 76, .75)
+    }
+
+    /* ── Collapse the launcher to its icon, expand the label on hover ──
+       The full "Find my Scent" pill is wide enough to sit on top of the footer
+       links on a phone.
+
+       Written blind: this is the app's markup, the storefront is password-
+       protected, and the widget bundle is not reachable from here, so the label
+       element's own class is unknown. Hence the negation — collapse every direct
+       child of the wrapper EXCEPT the two classes the theme has already
+       confirmed exist. If the label turns out to be a bare text node rather than
+       an element this selector matches nothing and the launcher simply stays as
+       it is today; it cannot clip the icon or the unread badge either way.
+
+       Only the child collapses. Nothing here sets display, position, inset,
+       opacity or transform ON THE WRAPPER, per the note at the top of this
+       block — the app animates those itself. */
+    .chizy-bubble-wrapper > :not(.chizy-bubble-default-icon):not(.chizy-unread-badge) {
+      max-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0;
+      transition: max-width .35s var(--snap), opacity .2s var(--ease);
+    }
+
+    /* Hover-capable pointers only. On touch there is no hover state to expand
+       from, and the collapsed icon is the intended resting form there anyway.
+       focus-within keeps it reachable by keyboard. */
+    @media (hover: hover) and (pointer: fine) {
+      .chizy-bubble-wrapper:hover > :not(.chizy-bubble-default-icon):not(.chizy-unread-badge),
+      .chizy-bubble-wrapper:focus-within > :not(.chizy-bubble-default-icon):not(.chizy-unread-badge) {
+        max-width: 14rem;
+        opacity: 1;
+      }
     }
 
     /* the icon inside is an inline svg: a speech-bubble face (unclassed

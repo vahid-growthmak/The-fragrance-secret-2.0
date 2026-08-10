@@ -901,9 +901,44 @@ function initThumbs() {
     });
   });
 }
+/* The bar is there for when the real Add to Cart has scrolled out of reach, so
+   that button is now what drives it. The previous version had three problems:
+
+   - It only ever assigned display inside the scroll handler, so the bar kept
+     whatever the stylesheet said until the first scroll. Open a product at a
+     restored scroll position (back navigation) or via an #anchor and it stayed
+     hidden with the real button already far above.
+   - It assigned an INLINE display, which outranks any stylesheet rule. The
+     @media(max-width:900px) rule that wants the bar permanently visible on
+     phones was therefore dead from the first scroll event onward.
+   - It keyed off a flat 500px, which has no relationship to where a given
+     product's button actually sits. Long-titled or variant-heavy products push
+     it well past 500px, so the bar appeared while the real button was still on
+     screen; short ones the other way. Hence "not there on all products".
+
+   Toggling a class instead leaves the cascade in charge, and observing the
+   button makes the trigger identical on every product. */
 function initStickyAtc() {
   const bar = el('stickyatc'); if (!bar) return;
-  window.addEventListener('scroll', () => { bar.style.display = window.scrollY > 500 ? 'block' : 'none'; }, { passive: true });
+  const real = document.querySelector('.atc-btn');
+  const show = on => bar.classList.toggle('is-visible', on);
+
+  if (real && 'IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        // top < 0 means it left upward. Without that check the bar would also
+        // show while the button is still below the fold, on first paint.
+        show(!e.isIntersecting && e.boundingClientRect.top < 0);
+      });
+    }).observe(real);
+    return;
+  }
+
+  // No button on the page, or no observer: fall back to the old threshold, but
+  // set the opening state rather than waiting for a scroll that may not come.
+  const onScroll = () => show(window.scrollY > 500);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 /* Featured-product widget (home) */
 function swapFpImg(node, src) {
