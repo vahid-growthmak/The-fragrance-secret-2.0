@@ -573,6 +573,12 @@ function addToCart(name) {
    Falls back to the demo toast when no variant id is available. */
 function addLiveToCart(variantId, name, qty) {
   if (!variantId) { addToCart(name, qty); return; }
+  /* Quick Add and the concierge go through the drawer as well, so every add on
+     the site ends in the same place instead of only the product form doing so. */
+  if (typeof window.cartDrawerAdd === 'function' && document.getElementById('cartDrawer')) {
+    window.cartDrawerAdd([{ id: variantId, quantity: qty || 1 }]);
+    return;
+  }
   fetch((window.routes && window.routes.cart_add_url) || '/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -1054,3 +1060,178 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAI();
 // and its globals (renderCollection, COLLECTIONS) are available before initApp runs.
 if (document.readyState === 'complete') initApp();
 else document.addEventListener('DOMContentLoaded', initApp);
+
+/* ═══════════════════════════════════════
+   CART DRAWER
+
+   Adding to the cart used to hand the shopper to /cart, which ends the
+   browsing session at exactly the moment they are most willing to keep going.
+   The panel keeps them where they were; Checkout inside it is the only thing
+   that still leaves the page.
+
+   The panel's contents are re-rendered by Shopify rather than assembled here,
+   so prices, discounts and line properties stay formatted by the same Liquid
+   the cart page uses. Only [data-cd-body] and the footer are swapped, because
+   the scrim and panel carry the open/close transition and replacing them
+   mid-animation would restart it.
+═══════════════════════════════════════ */
+(function () {
+  var root = null, lastFocus = null, busy = false;
+
+  function el() { return document.getElementById('cartDrawer'); }
+
+  function openCart() {
+    root = el(); if (!root) return;
+    lastFocus = document.activeElement;
+    root.hidden = false;
+    /* Force a reflow so the transform transition runs from its start value —
+       without it the panel would appear already open. */
+    void root.offsetWidth;
+    root.classList.add('is-open');
+    document.documentElement.style.overflow = 'hidden';
+    var panel = root.querySelector('.cd-panel');
+    if (panel) panel.focus();
+  }
+
+  function closeCart() {
+    root = el(); if (!root || root.hidden) return;
+    root.classList.remove('is-open');
+    document.documentElement.style.overflow = '';
+    /* Wait out the slide before hiding, or it vanishes instead of sliding. */
+    setTimeout(function () { if (root && !root.classList.contains('is-open')) root.hidden = true; }, 380);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  /* Pull a freshly rendered drawer from Shopify and swap the parts that change. */
+  function refresh() {
+    var base = (window.routes && window.routes.root_url) || '/';
+    if (base.slice(-1) !== '/') base += '/';
+    return fetch(base + '?section_id=cart-drawer', { headers: { 'Accept': 'text/html' } })
+      .then(function (r) { if (!r.ok) throw 0; return r.text(); })
+      .then(function (html) {
+        var next = new DOMParser().parseFromString(html, 'text/html');
+        var live = el(); if (!live) return;
+        var a = next.querySelector('[data-cd-body]'), b = live.querySelector('[data-cd-body]');
+        if (a && b) b.innerHTML = a.innerHTML;
+        /* The footer is absent when the cart is empty, so swap the element
+           itself rather than its contents. */
+        var nf = next.querySelector('.cd-foot'), lf = live.querySelector('.cd-foot');
+        var panel = live.querySelector('.cd-panel');
+        if (nf && lf) lf.replaceWith(nf);
+        else if (nf && !lf && panel) panel.appendChild(nf);
+        else if (!nf && lf) lf.remove();
+        var nt = next.querySelector('.cd-title'), lt = live.querySelector('.cd-title');
+        if (nt && lt) lt.innerHTML = nt.innerHTML;
+      });
+  }
+
+  function syncBadges(count) {
+    if (typeof count !== 'number') return;
+    cartCount = count;
+    document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = count; });
+  }
+
+  /* Shared by every add path: the product form, Quick Add, the concierge. */
+  function addItems(items) {
+    if (busy) return Promise.resolve(false);
+    busy = true;
+    return fetch((window.routes && window.routes.cart_add_url) || '/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ items: items })
+    })
+      .then(function (r) {
+        if (!r.ok) return r.json().then(function (d) { throw new Error(d && d.description); }, function () { throw new Error(); });
+        return r.json();
+      })
+      .then(function () { return fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); }); })
+      .then(function (cart) {
+        syncBadges(cart.item_count);
+        document.dispatchEvent(new CustomEvent('cart:updated', { detail: cart }));
+        return refresh().then(function () { openCart(); return true; });
+      })
+      .catch(function (e) {
+        if (typeof toast === 'function') toast((e && e.message) || 'Could not add to cart — please try again');
+        return false;
+      })
+      .then(function (ok) { busy = false; return ok; });
+  }
+
+  /* Quantity and remove inside the panel, against the same endpoint the cart
+     page uses so the two can never disagree. */
+  function change(key, quantity) {
+    if (busy) return;
+    busy = true;
+    var live = el();
+    var body = live && live.querySelector('.cd-body');
+    if (body) body.style.opacity = '.55';
+    fetch((window.routes && window.routes.cart_change_url) || '/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: quantity })
+    })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (cart) {
+        syncBadges(cart.item_count);
+        document.dispatchEvent(new CustomEvent('cart:updated', { detail: cart }));
+        return refresh();
+      })
+      .catch(function () { if (typeof toast === 'function') toast('Could not update cart'); })
+      .then(function () {
+        busy = false;
+        var l = el(), lb = l && l.querySelector('.cd-body');
+        if (lb) lb.style.opacity = '';
+      });
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+
+    if (t.closest && t.closest('[data-cd-close]')) { e.preventDefault(); closeCart(); return; }
+
+    /* Header bag opens the panel. The href stays /cart so it still works with
+       no JS and still opens in a new tab on middle-click. */
+    var bag = t.closest && t.closest('a[href$="/cart"], a.ni[title="Cart"]');
+    if (bag && el() && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+      e.preventDefault(); openCart(); return;
+    }
+
+    var drawer = t.closest && t.closest('#cartDrawer');
+    if (!drawer) return;
+    var row = t.closest('.co-line');
+    if (!row) return;
+    var key = row.getAttribute('data-key');
+
+    if (t.closest('[data-cart-remove]')) { change(key, 0); return; }
+    var step = t.closest('[data-cart-step]');
+    if (step) {
+      var q = parseInt(row.getAttribute('data-qty'), 10) || 1;
+      change(key, Math.max(0, q + parseInt(step.getAttribute('data-cart-step'), 10)));
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeCart();
+  });
+
+  /* The product form is a native Shopify form, so without this it POSTs and
+     Shopify redirects to /cart — the behaviour this replaces. */
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (!form.matches || !form.matches('form[action*="/cart/add"]')) return;
+    if (!el()) return;                       // no drawer on the page: let it post
+    e.preventDefault();
+    var fd = new FormData(form);
+    var id = fd.get('id');
+    if (!id) { form.submit(); return; }       // nothing we can post as JSON
+    var btn = form.querySelector('[type="submit"][name="add"]');
+    if (btn) btn.disabled = true;
+    addItems([{ id: id, quantity: parseInt(fd.get('quantity'), 10) || 1 }])
+      .then(function () { if (btn) btn.disabled = false; });
+  });
+
+  window.openCart = openCart;
+  window.closeCart = closeCart;
+  window.cartDrawerAdd = addItems;
+  window.refreshCartDrawer = refresh;
+})();

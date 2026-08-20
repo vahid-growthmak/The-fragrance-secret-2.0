@@ -97,6 +97,7 @@
     window.MONEY_FORMAT = {{ shop.money_format | json }};
     window.WHATSAPP_NUMBER = {{ settings.whatsapp_number | json }};
     window.routes = {
+      root_url: {{ routes.root_url | json }},
       cart_url: {{ routes.cart_url | json }},
       cart_add_url: {{ routes.cart_add_url | json }},
       cart_change_url: {{ routes.cart_change_url | json }},
@@ -120,6 +121,13 @@
   {% section 'customer-login-cta' %}
   {% sections 'footer-group' %}
   {% sections 'overlay-group' %}
+  {%- comment -%}
+    Rendered statically rather than inside overlay-group so its section id is
+    literally "cart-drawer". app.js re-renders it through the Section Rendering
+    API (?section_id=cart-drawer) after every cart change, and sections inside a
+    group get a generated composite id that cannot be requested that way.
+  {%- endcomment -%}
+  {% section 'cart-drawer' %}
 
   {{ 'app.js' | asset_url | script_tag }}
   {{ 'collections.js' | asset_url | script_tag }}

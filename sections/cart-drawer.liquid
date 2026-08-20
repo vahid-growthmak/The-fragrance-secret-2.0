@@ -1,0 +1,97 @@
+{%- comment -%}
+  Cart drawer — slides in from the right after an add, so the shopper stays on
+  the product or collection page instead of being thrown to /cart.
+
+  The theme's product form is a native {% form 'product' %}, which POSTs and
+  lets Shopify redirect to the cart page. app.js intercepts that submit, posts
+  to /cart/add.js instead and opens this panel; without JS the form still
+  submits normally and the cart page still works, so nothing is lost.
+
+  Rendered inside overlay-group, so it exists on every template. Contents are
+  re-rendered through the Section Rendering API — app.js fetches
+  ?section_id=cart-drawer and swaps [data-cd-body] only, which is why the panel
+  chrome and the scrim sit outside that element. Styles live in theme.css
+  rather than here for the same reason: a <style> block inside the swapped
+  region would be re-injected on every refresh.
+{%- endcomment -%}
+
+{%- liquid
+  assign free_ship_threshold = 15000
+  assign remaining = free_ship_threshold | minus: cart.total_price
+  if cart.total_price >= free_ship_threshold
+    assign ship_pct = 100
+  else
+    assign ship_pct = cart.total_price | times: 100 | divided_by: free_ship_threshold
+  endif
+-%}
+
+<div class="cart-drawer" id="cartDrawer" hidden>
+  <div class="cd-scrim" data-cd-close></div>
+  <aside class="cd-panel" role="dialog" aria-modal="true" aria-label="Shopping cart" tabindex="-1">
+    <header class="cd-head">
+      <span class="cd-title">Your Bag{% if cart.item_count > 0 %} <b>({{ cart.item_count }})</b>{% endif %}</span>
+      <button type="button" class="cd-close" data-cd-close aria-label="Close cart"><span class="mi" aria-hidden="true">close</span></button>
+    </header>
+
+    <div class="cd-body" data-cd-body>
+      {%- if cart.item_count > 0 -%}
+        {%- comment -%} Free-delivery progress, same threshold as the cart page. {%- endcomment -%}
+        <div class="cd-ship">
+          {%- if cart.total_price >= free_ship_threshold -%}
+            <span class="cd-ship-msg is-met"><span class="mi" aria-hidden="true">local_shipping</span>You've unlocked free UAE delivery</span>
+          {%- else -%}
+            <span class="cd-ship-msg">Add <b>{{ remaining | money }}</b> more for free UAE delivery</span>
+          {%- endif -%}
+          <span class="cd-ship-bar"><i style="width:{{ ship_pct }}%"></i></span>
+        </div>
+
+        <div class="cd-lines">
+          {%- for item in cart.items -%}
+            <div class="co-line" data-key="{{ item.key }}" data-qty="{{ item.quantity }}">
+              {%- if item.image -%}
+                <a href="{{ item.url }}" class="cl-img"><img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" width="80" height="80" loading="lazy"></a>
+              {%- endif -%}
+              <div class="cl-body">
+                <div class="cl-name"><a href="{{ item.url }}">{{ item.product.title }}</a></div>
+                <div class="cl-meta">{% unless item.variant.title == 'Default Title' %}{{ item.variant.title }}{% endunless %}{% if item.product.vendor %} · {{ item.product.vendor }}{% endif %}</div>
+                <div class="qty-wrap">
+                  <button type="button" class="qty-btn" data-cart-step="-1" aria-label="Decrease quantity">&minus;</button>
+                  <input class="qty-num" type="text" value="{{ item.quantity }}" readonly>
+                  <button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+              <div class="cl-price" data-line-price>{{ item.final_line_price | money }}</div>
+              <button type="button" class="cart-remove" aria-label="Remove {{ item.product.title | escape }}" data-cart-remove><span class="mi" aria-hidden="true">close</span></button>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="cd-empty">
+          <div class="we-ic"><span class="mi" aria-hidden="true">shopping_bag</span></div>
+          <h3>Your bag is empty</h3>
+          <p>Browse the collection and add something you love.</p>
+          <a class="btn-g" href="{{ routes.all_products_collection_url }}" data-cd-close><span class="mi" aria-hidden="true">storefront</span>Continue Shopping</a>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      <footer class="cd-foot">
+        <div class="cd-sub"><span>Subtotal</span><b>{{ cart.total_price | money }}</b></div>
+        <p class="cd-note">Taxes and delivery calculated at checkout.</p>
+        {%- comment -%}
+          "Buy" leaves for the real checkout — the one place a full-page
+          handover is what the shopper wants.
+        {%- endcomment -%}
+        <form action="{{ routes.cart_url }}" method="post">
+          <button type="submit" name="checkout" class="btn-g cd-checkout"><span class="mi" aria-hidden="true">lock</span>Checkout</button>
+        </form>
+        <a class="cd-viewcart" href="{{ routes.cart_url }}">View full cart</a>
+      </footer>
+    {%- endif -%}
+  </aside>
+</div>
+
+{% schema %}
+{ "name": "Cart drawer", "settings": [] }
+{% endschema %}

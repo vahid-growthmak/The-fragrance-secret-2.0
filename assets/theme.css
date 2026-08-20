@@ -7278,3 +7278,201 @@ html body .jdgm-form select {
       .qty-row .atc-wish { margin-left: auto }
       .qty-row .atc-btn { order: 3; flex: 1 0 100% }
     }
+
+    /* ══ CART DRAWER ═══════════════════════════════════════════════
+       Slides in from the right after an add so the shopper keeps their place
+       in the catalogue. Checkout is the only step that leaves the page. */
+    .cart-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      /* [hidden] is honoured below; this is the open state */
+      display: block
+    }
+
+    /* The section renders with [hidden] and app.js removes it to open. Needed
+       because .cart-drawer sets display, which would otherwise beat [hidden]. */
+    .cart-drawer[hidden] { display: none }
+
+    .cd-scrim {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 10, 6, .55);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transition: opacity .35s var(--ease)
+    }
+
+    .cart-drawer.is-open .cd-scrim { opacity: 1 }
+
+    .cd-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: min(420px, 100vw);
+      display: flex;
+      flex-direction: column;
+      background: var(--cream);
+      box-shadow: -18px 0 60px rgba(13, 10, 6, .28);
+      transform: translateX(100%);
+      transition: transform .38s var(--snap);
+      will-change: transform
+    }
+
+    .cart-drawer.is-open .cd-panel { transform: translateX(0) }
+
+    .cd-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--cream-dk);
+      flex-shrink: 0
+    }
+
+    .cd-title {
+      font-family: var(--fd);
+      font-size: 1.35rem;
+      color: var(--ink)
+    }
+
+    .cd-title b { color: var(--gold-dk); font-weight: 400 }
+
+    .cd-close {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--cream-dk);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--charcoal);
+      cursor: pointer;
+      transition: all .2s
+    }
+
+    .cd-close:hover { border-color: var(--gold); color: var(--gold-dk) }
+
+    /* The only scrolling region, so the header and the checkout footer stay put */
+    .cd-body {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 22px
+    }
+
+    .cd-ship { padding: 16px 0 4px }
+
+    .cd-ship-msg {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .78rem;
+      color: var(--warm)
+    }
+
+    .cd-ship-msg b { color: var(--ink) }
+    .cd-ship-msg.is-met { color: var(--gold-dk) }
+    .cd-ship-msg .mi { font-size: 17px }
+
+    .cd-ship-bar {
+      display: block;
+      height: 4px;
+      margin-top: 9px;
+      border-radius: 2px;
+      background: var(--cream-dk);
+      overflow: hidden
+    }
+
+    .cd-ship-bar i {
+      display: block;
+      height: 100%;
+      background: var(--gold);
+      transition: width .4s var(--ease)
+    }
+
+    .cd-lines .co-line:last-child { border-bottom: none }
+
+    .cd-foot {
+      flex-shrink: 0;
+      padding: 18px 22px calc(18px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--cream-dk);
+      background: var(--white)
+    }
+
+    .cd-sub {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      font-size: .9rem;
+      color: var(--charcoal)
+    }
+
+    .cd-sub b {
+      font-family: var(--fd);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ink)
+    }
+
+    .cd-note {
+      font-size: .72rem;
+      color: var(--muted);
+      margin: 4px 0 14px
+    }
+
+    .cd-checkout { width: 100%; justify-content: center }
+
+    .cd-viewcart {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      font-size: .78rem;
+      color: var(--warm);
+      text-decoration: underline;
+      text-underline-offset: 3px
+    }
+
+    .cd-viewcart:hover { color: var(--gold-dk) }
+
+    .cd-empty { text-align: center; padding: 54px 6px }
+    .cd-empty h3 { font-family: var(--fd); font-weight: 400; font-size: 1.6rem; margin-bottom: 8px }
+    .cd-empty p { color: var(--warm); font-size: .88rem; margin-bottom: 22px }
+
+    /* Full-bleed on phones; a 420px panel on a 360px screen would overflow */
+    @media (max-width: 480px) {
+      .cd-panel { width: 100vw }
+      .cd-head, .cd-body, .cd-foot { padding-left: 16px; padding-right: 16px }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cd-panel, .cd-scrim, .cd-ship-bar i { transition: none }
+    }
+
+    /* Line-item remove button. Used by both the cart page and the drawer; it
+       had no rules at all, so it was rendering as a default browser button. */
+    .cart-remove {
+      align-self: flex-start;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color .2s, background .2s
+    }
+
+    .cart-remove:hover { color: #C0392B; background: rgba(192, 57, 43, .08) }
+    .cart-remove .mi { font-size: 17px }
+    .cart-remove:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px }
+
+    .cl-img { flex-shrink: 0; display: block; line-height: 0 }

@@ -318,6 +318,12 @@
     /* One POST for the whole batch — /cart/add.js takes an items array, so
        "Add All" is a single request rather than one per card. */
     function addCartItems(items) {
+      /* Hand off to the cart drawer where it exists, so moving something here
+         lands in the same panel as every other add on the site. It already
+         syncs the badge and fires cart:updated, so this returns straight out. */
+      if (typeof window.cartDrawerAdd === 'function' && document.getElementById('cartDrawer')) {
+        return window.cartDrawerAdd(items);
+      }
       return fetch((window.routes && window.routes.cart_add_url) || '/cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
