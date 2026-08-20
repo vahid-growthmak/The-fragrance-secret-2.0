@@ -68,13 +68,7 @@
         {%- assign brand_handle = raw_handle | strip -%}
         {%- assign brand = collections[brand_handle] -%}
         {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
-        {%- assign brand_name = brand.title | remove: ' Perfumes' -%}
-        <a class="brand-chip" href="{{ brand.url }}">
-          {{ brand_name }}
-          {%- if brand.products_count > 0 -%}
-            <span class="brand-chip-n">{{ brand.products_count }}</span>
-          {%- endif -%}
-        </a>
+        {% render 'brand-chip', brand: brand %}
       {%- endfor -%}
     </div>
   </div>

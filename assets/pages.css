@@ -851,6 +851,15 @@ header.light .nav-burger { color: var(--warm); }
 .brand-chip .mi { font-size: 15px; color: var(--muted); transition: color .2s; }
 .brand-chip:hover .mi { color: var(--gold); }
 /* live product count on each brand chip */
+/* Optional brand logo. The chip is justify-content:space-between, so the name
+   takes the free space to keep logo+name together on the left and the count
+   pinned right — with or without a logo present. */
+.brand-chip-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Fixed height, automatic width. These marks are not one shape: Armaf and Al
+   Haramain are square emblems, Amouage is a 187x24 wordmark, Ibrahim Al Qurashi
+   is 2039x493. Constraining to a square box would render the wordmarks a few
+   pixels tall; pinning the height and capping the width lets both read. */
+.brand-chip-logo { flex: 0 0 auto; height: 24px; width: auto; max-width: 76px; object-fit: contain; }
 .brand-chip-n { flex: 0 0 auto; min-width: 22px; padding: 2px 6px; border-radius: 11px; background: rgba(13,10,6,.06); color: var(--muted); font-size: .7rem; font-variant-numeric: tabular-nums; text-align: center; transition: all .2s; }
 .brand-chip:hover .brand-chip-n { background: rgba(201,168,76,.18); color: var(--gold-dk); }
 

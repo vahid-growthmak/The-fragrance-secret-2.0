@@ -1,0 +1,41 @@
+{%- comment -%}
+  One brand chip. Used by the home page's "Most Loved Houses" row and by the
+  A–Z cloud on the brands hub, which were identical markup in two places.
+
+  Usage: {% render 'brand-chip', brand: brand %}
+
+  The logo comes from the collection's own image, so a merchant sets it in
+  admin (Products → Collections → the brand → Image) and it appears here with
+  no theme change and no filename convention to remember. Liquid cannot test
+  whether a theme asset exists, so keying off an asset name instead would print
+  a broken image for every brand that has none — this way a brand without a
+  logo simply renders as it does today.
+{%- endcomment -%}
+
+{%- assign brand_name = brand.title | remove: ' Perfumes' -%}
+<a class="brand-chip{% if brand.image %} has-logo{% endif %}" href="{{ brand.url }}">
+  {%- if brand.image -%}
+    {%- comment -%}
+      Two of these marks are SVG (Lattafa, Amouage) and Shopify's CDN does not
+      rasterise or resize vector files, so they are served as-is; only rasters
+      get a srcset. Intrinsic width/height come from the image itself rather
+      than a hardcoded square — these range from 187x24 to 1328x1339, and a
+      wrong ratio here would reserve the wrong box and shift the row.
+    {%- endcomment -%}
+    {%- assign is_svg = brand.image.src | downcase | split: '?' | first | slice: -4, 4 -%}
+    <img class="brand-chip-logo"
+         {%- if is_svg == '.svg' %}
+         src="{{ brand.image.src }}"
+         {%- else %}
+         src="{{ brand.image | image_url: width: 240 }}"
+         srcset="{{ brand.image | image_url: width: 120 }} 120w, {{ brand.image | image_url: width: 240 }} 240w"
+         sizes="76px"
+         {%- endif %}
+         alt="{{ brand_name | escape }}"
+         width="{{ brand.image.width }}" height="{{ brand.image.height }}" loading="lazy">
+  {%- endif -%}
+  <span class="brand-chip-name">{{ brand_name }}</span>
+  {%- if brand.products_count > 0 -%}
+    <span class="brand-chip-n">{{ brand.products_count }}</span>
+  {%- endif -%}
+</a>

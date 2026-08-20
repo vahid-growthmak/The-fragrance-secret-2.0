@@ -154,10 +154,7 @@
         {%- assign popular_handle = raw_handle | strip -%}
         {%- assign brand = collections[popular_handle] -%}
         {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
-        <a class="brand-chip" href="{{ brand.url }}">
-          {{ brand.title | remove: ' Perfumes' }}
-          {%- if brand.products_count > 0 -%}<span class="brand-chip-n">{{ brand.products_count }}</span>{%- endif -%}
-        </a>
+        {% render 'brand-chip', brand: brand %}
       {%- endfor -%}
       <a class="brand-chip brand-chip-all" href="/pages/brands">View all brands
         <span class="mi" aria-hidden="true">arrow_forward</span></a>
