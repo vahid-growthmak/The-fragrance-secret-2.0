@@ -43,13 +43,20 @@
 </section>
 
 {%- if section.settings.intro_heading != blank or section.settings.intro_text != blank -%}
-  <section class="section-sm coll-intro"><div class="container coll-intro-grid">
+  {%- comment -%}
+    Intro copy only. The "Why Choose Us" rotator used to sit in the right-hand
+    column here; it is not wanted on the hubs. Without a second child the
+    two-column grid would leave the copy in a 1.25fr column with dead space
+    beside it, so the row collapses to one column via .no-aside.
+    The rotator itself is untouched — collection pages still opt into it through
+    main-collection's show_why_rotator setting.
+  {%- endcomment -%}
+  <section class="section-sm coll-intro"><div class="container coll-intro-grid no-aside">
     <div class="coll-intro-copy">
       {%- if section.settings.intro_eyebrow != blank -%}<span class="label">{{ section.settings.intro_eyebrow }}</span>{%- endif -%}
       {%- if section.settings.intro_heading != blank -%}<h2 class="sec-title">{{ section.settings.intro_heading }}</h2>{%- endif -%}
       {%- if section.settings.intro_text != blank -%}<div class="sec-sub coll-intro-body">{{ section.settings.intro_text }}</div>{%- endif -%}
     </div>
-    {% render 'why-choose-rotator', uid: section.id %}
   </div></section>
 {%- endif -%}
 

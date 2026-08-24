@@ -4559,6 +4559,11 @@
     /* image variant gets a more even split than the rotator variant */
     .coll-intro-grid.has-figure { grid-template-columns: 1.05fr .95fr }
 
+    /* Intro copy with nothing beside it — one column, and a readable measure
+       rather than a full 1284px line. */
+    .coll-intro-grid.no-aside { grid-template-columns: minmax(0, 1fr) }
+    .coll-intro-grid.no-aside .coll-intro-body { max-width: 820px }
+
     .coll-intro-figure {
       margin: 0;
       border-radius: 10px;
