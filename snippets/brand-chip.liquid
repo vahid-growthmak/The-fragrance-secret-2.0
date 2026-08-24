@@ -23,9 +23,17 @@
       wrong ratio here would reserve the wrong box and shift the row.
     {%- endcomment -%}
     {%- assign is_svg = brand.image.src | downcase | split: '?' | first | slice: -4, 4 -%}
+    {%- comment -%}
+      image_url, not image.src. src returns a partial CDN path
+      ("collections/foo.svg") with no host or leading slash, so the browser
+      resolved it against the current page and 404'd — which is why the two SVG
+      marks rendered as nothing while every raster was fine. image_url returns a
+      full protocol-relative URL. The width argument is dropped for SVG because
+      Shopify's CDN does not resize vector files.
+    {%- endcomment -%}
     <img class="brand-chip-logo"
          {%- if is_svg == '.svg' %}
-         src="{{ brand.image.src }}"
+         src="{{ brand.image | image_url }}"
          {%- else %}
          src="{{ brand.image | image_url: width: 240 }}"
          srcset="{{ brand.image | image_url: width: 120 }} 120w, {{ brand.image | image_url: width: 240 }} 240w"
