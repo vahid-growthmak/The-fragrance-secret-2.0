@@ -81,7 +81,15 @@
     </div>
   {%- endcapture -%}
 
-  {%- if hero_image -%}
+  {%- comment -%}
+    An explicitly configured banner wins over the collection's own image.
+    hero_image is collection.image, and the brand collections were given their
+    logo as that image so the brand chips could show it — which silently flipped
+    every brand page from its full-bleed banner to this split layout with the
+    logo blown up in the figure. A banner named in the template is a deliberate
+    choice about that page's hero; collection.image is not.
+  {%- endcomment -%}
+  {%- if hero_image and hero_bg == blank -%}
     <section class="page-hero split tall">
       <div class="container">
         <div>
