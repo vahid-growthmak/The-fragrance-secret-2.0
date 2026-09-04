@@ -14,12 +14,41 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "shop": { "type": "column", "settings": { "heading": "Shop", "links": "Our Brands | /pages/brands\nMen's Perfumes | /collections/mens\nWomen's Perfumes | /collections/womens\nUnisex | /collections/unisex\nBest Sellers | /collections/best-sellers\nNew Arrivals | /collections/new-arrivals" } },
-        "discover": { "type": "column", "settings": { "heading": "Discover", "links": "Guides | /blogs/journal\nFind My Scent | /pages/find-my-scent" } },
-        "policies": { "type": "column", "settings": { "heading": "Policy Pages", "links": "Privacy Policy | /pages/privacy-policy\nShipping Policy | /pages/shipping-policy\nTerms of Service | /pages/terms-of-service\nRefund & Return Policy | /pages/return-policy\nAccessibility Statement | /pages/accessibility-statement\nContact Information | /pages/contact" } },
-        "care": { "type": "column", "settings": { "heading": "Customer Care", "links": "About Us | /pages/about\nCopyright Notice | /pages/copyright-notice\nDo Not Sell My Personal Information | /pages/data-sharing-opt-out\nFAQs | /pages/faqs\nPayment Policy | /pages/payment-policy\nTrack Order | /account" } }
+        "shop": {
+          "type": "column",
+          "settings": {
+            "heading": "Shop",
+            "links": "Our Brands | /pages/brands\nMen's Perfumes | /collections/mens\nWomen's Perfumes | /collections/womens\nUnisex | /collections/unisex\nBest Sellers | /collections/best-sellers\nNew Arrivals | /collections/new-arrivals"
+          }
+        },
+        "discover": {
+          "type": "column",
+          "settings": {
+            "heading": "Discover",
+            "links": "Guides | /blogs/journal\nFind My Scent | /pages/find-my-scent"
+          }
+        },
+        "policies": {
+          "type": "column",
+          "settings": {
+            "heading": "Policy Pages",
+            "links": "Privacy Policy | /pages/privacy-policy\nShipping Policy | /pages/shipping-policy\nTerms of Service | /pages/terms-of-service\nRefund & Return Policy | /pages/return-policy\nAccessibility Statement | /pages/accessibility-statement\nContact Information | /pages/contact"
+          }
+        },
+        "care": {
+          "type": "column",
+          "settings": {
+            "heading": "Customer Care",
+            "links": "About Us | /pages/about\nCopyright Notice | /pages/copyright-notice\nDo Not Sell My Personal Information | /pages/data-sharing-opt-out\nFAQs | /pages/faqs\nPayment Policy | /pages/payment-policy\nTrack Order | /account"
+          }
+        }
       },
-      "block_order": ["shop", "discover", "policies", "care"],
+      "block_order": [
+        "shop",
+        "discover",
+        "policies",
+        "care"
+      ],
       "settings": {
         "tagline": "Your trusted destination for authentic fragrances, premium scents, and unforgettable perfume experiences across the UAE.",
         "company_name": "Fragrance Secrets Perfumes Trading L.L.C.",
@@ -37,9 +66,14 @@
         "hours": "Daily, 10:00 AM – 7:00 PM (UAE Time)",
         "response_time": "We aim to reply within 1–2 business days.",
         "copyright": "Copyright © 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE",
+        "credit_prefix": "Designed and Developed by",
+        "credit_text": "GrowthMak",
+        "credit_url": "https://growthmak.com",
         "policy_links": "Privacy policy | /pages/privacy-policy\nRefund policy | /pages/return-policy\nTerms of service | /pages/terms-of-service\nShipping policy | /pages/shipping-policy\nContact information | /pages/contact"
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }

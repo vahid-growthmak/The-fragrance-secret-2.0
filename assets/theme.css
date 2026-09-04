@@ -3170,6 +3170,28 @@
       color: rgba(255, 255, 255, .3)
     }
 
+    /* Copyright and build credit stacked in the row's left slot */
+    .fb-legal {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0
+    }
+
+    /* A shade brighter than the copyright so the link is findable, but still
+       clearly secondary to everything above it. */
+    .footer-credit a {
+      color: rgba(255, 255, 255, .5);
+      transition: color .2s
+    }
+
+    .footer-credit a:hover { color: var(--gold) }
+
+    .footer-credit a:focus-visible {
+      outline: 1px solid var(--gold);
+      outline-offset: 2px
+    }
+
     .footer-bottom .pay-icons {
       display: flex;
       gap: 8px;

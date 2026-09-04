@@ -77,7 +77,23 @@
   </div>
   <div class="footer-inner">
     <div class="footer-bottom">
-      <p>{{ section.settings.copyright | default: '© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE' }}</p>
+      {%- comment -%}
+        Copyright and the build credit share the left-hand slot. .footer-bottom
+        is space-between, so leaving the credit as a third child would have
+        parked it in the middle of the row instead of under the copyright.
+      {%- endcomment -%}
+      <div class="fb-legal">
+        <p>{{ section.settings.copyright | default: '© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE' }}</p>
+        {%- if section.settings.credit_text != blank -%}
+          <p class="footer-credit">
+            {%- if section.settings.credit_url != blank -%}
+              {{ section.settings.credit_prefix }} <a href="{{ section.settings.credit_url }}" target="_blank" rel="noopener">{{ section.settings.credit_text }}</a>
+            {%- else -%}
+              {{ section.settings.credit_prefix }} {{ section.settings.credit_text }}
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+      </div>
       <div class="pay-icons pay-icons-row" aria-label="Payment options">
         {%- comment -%}
           The cards the store actually accepts, falling back to the usual set
@@ -146,6 +162,9 @@
     { "type": "url", "id": "tiktok", "label": "TikTok" },
     { "type": "url", "id": "youtube", "label": "YouTube" },
     { "type": "text", "id": "copyright", "label": "Copyright line", "default": "© 2026 The Fragrance Secrets. All rights reserved. Dubai, UAE" },
+    { "type": "text", "id": "credit_prefix", "label": "Build credit prefix", "default": "Designed and Developed by" },
+    { "type": "text", "id": "credit_text", "label": "Build credit name", "info": "Leave blank to hide the credit line.", "default": "GrowthMak" },
+    { "type": "url", "id": "credit_url", "label": "Build credit link", "info": "Optional. Leave blank to render the name as plain text." },
     { "type": "textarea", "id": "policy_links", "label": "Bottom policy links (one per line: Label | /url)" }
   ],
   "blocks": [
