@@ -320,9 +320,85 @@
             "question": "Does The Fragrance Secrets deliver perfumes outside the UAE?",
             "answer": "Yes. The Fragrance Secrets delivers perfumes across the UAE and also offers international shipping to the USA and Canada. Customers can shop designer, Arabic and luxury perfumes online with reliable delivery and a seamless shopping experience."
           }
+        },
+        "brand_alezz_oud": {
+          "type": "brand",
+          "settings": {
+            "handle": "alezz-oud",
+            "eyebrow": "Shop the House",
+            "heading": "Alezz Oud <em>Perfumes</em>",
+            "sub": "Pure oud compositions from the Alezz Oud house, available in full at The Fragrance Secrets.",
+            "count": 4
+          }
+        },
+        "brand_ahmed_al_maghribi": {
+          "type": "brand",
+          "settings": {
+            "handle": "ahmed-al-maghribi",
+            "eyebrow": "Shop the House",
+            "heading": "Ahmed Al Maghribi <em>Perfumes</em>",
+            "sub": "The Ahmed Al Maghribi range, from oriental oud to soft floral musks.",
+            "count": 4
+          }
+        },
+        "brand_ibrahim_al_qurashi": {
+          "type": "brand",
+          "settings": {
+            "handle": "ibrahim-al-qurashi",
+            "eyebrow": "Shop the House",
+            "heading": "Ibrahim Al Qurashi <em>Perfumes</em>",
+            "sub": "Heritage Arabian perfumery from Ibrahim Al Qurashi, including the Diamond and Irth collections.",
+            "count": 4
+          }
+        },
+        "brand_rasasi": {
+          "type": "brand",
+          "settings": {
+            "handle": "rasasi",
+            "eyebrow": "Shop the House",
+            "heading": "Rasasi <em>Perfumes</em>",
+            "sub": "One of the Gulf's best known houses — the full Rasasi line-up, Hawas included.",
+            "count": 4
+          }
+        },
+        "brand_rayhaan": {
+          "type": "brand",
+          "settings": {
+            "handle": "rayhaan",
+            "eyebrow": "Shop the House",
+            "heading": "Rayhaan <em>Perfumes</em>",
+            "sub": "Bold oriental and woody signatures from Rayhaan.",
+            "count": 4
+          }
+        },
+        "brand_lattafa": {
+          "type": "brand",
+          "settings": {
+            "handle": "lattafa",
+            "eyebrow": "Shop the House",
+            "heading": "Lattafa <em>Perfumes</em>",
+            "sub": "The Lattafa range in full, from everyday wear to statement oud.",
+            "count": 4
+          }
+        },
+        "featured_product": {
+          "type": "featured_product",
+          "settings": {
+            "product": "luxury-oud-premium-perfume-bundle-3-bestselling-unisex-fragrances",
+            "eyebrow": "Featured",
+            "heading": "The Set Everyone <em>Starts With</em>",
+            "sub": "Three bestselling long-lasting unisex fragrances in one box — our most gifted set."
+          }
         }
       },
       "block_order": [
+        "featured_product",
+        "brand_alezz_oud",
+        "brand_ahmed_al_maghribi",
+        "brand_ibrahim_al_qurashi",
+        "brand_rasasi",
+        "brand_rayhaan",
+        "brand_lattafa",
         "category1",
         "category2",
         "category3",

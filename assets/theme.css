@@ -1713,6 +1713,13 @@
       padding: 96px 0
     }
 
+    /* Brand rows repeat the .best grid several times over. Alternating a faint
+       tint keeps eight consecutive product grids from reading as one slab; the
+       band is the same cream the page already uses elsewhere, not a new colour. */
+    .best-tint {
+      background: var(--cream-mid)
+    }
+
     .best-inner {
       max-width: 1380px;
       margin: 0 auto;
@@ -2221,9 +2228,13 @@
       cursor: pointer;
     }
     
+    /* The prototype had this gold and Buy-it-now dark. The theme since settled
+       the other way round on the PDP — .atc-btn is ink with gold text and the
+       dynamic checkout button is gold — so the pair is flipped here to match.
+       Left as-is it stacked two gold buttons, since payment_button is gold. */
     .fp-btn-add {
-      background: var(--gold);
-      color: var(--white);
+      background: var(--ink);
+      color: var(--gold);
       border: none;
       width: 100%;
       height: 52px;
@@ -2240,9 +2251,9 @@
       gap: 8px;
       transition: background 0.2s, transform 0.2s;
     }
-    .fp-btn-add:hover { background: #b6963e; transform: translateY(-2px); }
+    .fp-btn-add:hover { background: var(--charcoal); transform: translateY(-2px); }
     .fp-btn-add svg {
-      width: 16px; height: 16px; stroke: var(--white); fill:none; stroke-width: 2;
+      width: 16px; height: 16px; stroke: var(--gold); fill:none; stroke-width: 2;
     }
     .fp-btn-buy {
       background: var(--ink);

@@ -202,7 +202,153 @@
   </div>
 </section>
 
-<!-- 5 · SHOP BY CATEGORY -->
+<!-- 5 · FEATURED PRODUCT -->
+{%- comment -%}
+  Single-product spotlight. The styles for this block (.fp-split, .fp-gallery,
+  .fp-thumbs, .fp-btn-add ...) and its two JS handlers (swapFpImg, changeFpQty,
+  keyed to #fp-main-img and #fp-qty) both survived the port from the static
+  prototype in assets/theme.css and assets/app.js — only the markup was lost,
+  so this restores it against the contract that was already there.
+
+  Placed between New Arrivals and the brand rows: it breaks the run of four-up
+  grids with a single-product moment rather than stacking eight of them.
+
+  Add to cart posts the real product form and Buy it now is Shopify's dynamic
+  checkout button, so this behaves like the PDP, not a decorative panel.
+{%- endcomment -%}
+{%- for block in section.blocks -%}
+  {%- if block.type != 'featured_product' -%}{%- continue -%}{%- endif -%}
+  {%- assign fp = block.settings.product -%}
+  {%- if fp == blank -%}{%- continue -%}{%- endif -%}
+  {%- assign fpv = fp.selected_or_first_available_variant -%}
+  <section class="best best-tint" id="featured-product" {{ block.shopify_attributes }}>
+    <div class="best-inner">
+      {%- if block.settings.heading != blank or block.settings.eyebrow != blank -%}
+      <div class="best-head fade-up">
+        <div>
+          {%- if block.settings.eyebrow != blank -%}<span class="label">{{ block.settings.eyebrow }}</span>{%- endif -%}
+          {%- if block.settings.heading != blank -%}<h2 class="sec-title">{{ block.settings.heading }}</h2>{%- endif -%}
+          {%- if block.settings.sub != blank -%}<p class="sec-sub">{{ block.settings.sub }}</p>{%- endif -%}
+        </div>
+        <a href="{{ fp.url }}" class="see-all">View Product <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+      {%- endif -%}
+
+      {%- form 'product', fp, id: 'featured-product-form' -%}
+        <input type="hidden" name="id" value="{{ fpv.id }}">
+        <div class="fp-split fade-up">
+
+          <div class="fp-gallery">
+            <div class="fp-main-wrap">
+              {%- if fp.featured_media -%}
+                <img id="fp-main-img" src="{{ fp.featured_media | image_url: width: 900 }}" alt="{{ fp.title | escape }}" width="900" height="900" loading="lazy">
+              {%- else -%}
+                <img id="fp-main-img" src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="{{ fp.title | escape }}" loading="lazy">
+              {%- endif -%}
+            </div>
+            {%- if fp.media.size > 1 -%}
+            <div class="fp-thumbs">
+              {%- for media in fp.media limit: 5 -%}
+                <div class="fp-thumb{% if forloop.first %} active{% endif %}"
+                     onclick="swapFpImg(this, '{{ media | image_url: width: 900 }}')">
+                  <img src="{{ media | image_url: width: 200 }}" alt="{{ fp.title | escape }} view {{ forloop.index }}" loading="lazy">
+                </div>
+              {%- endfor -%}
+            </div>
+            {%- endif -%}
+          </div>
+
+          <div class="fp-details">
+            {%- if fp.vendor != blank -%}<div class="fp-brand">{{ fp.vendor }}</div>{%- endif -%}
+            <h3 class="fp-title">{{ fp.title }}</h3>
+
+            <div class="fp-price-block">
+              <span class="fp-price">{{ fpv.price | money }}</span>
+              {%- if fpv.compare_at_price > fpv.price -%}
+                <span class="fp-compare">{{ fpv.compare_at_price | money }}</span>
+                <span class="fp-badge">On sale</span>
+              {%- endif -%}
+            </div>
+            <div class="fp-tax">Tax included.</div>
+            <hr class="fp-divider">
+
+            <label class="fp-qty-label" for="fp-qty">Quantity</label>
+            <div class="fp-qty-row">
+              <div class="fp-qty-wrap">
+                <button type="button" onclick="changeFpQty(-1)" aria-label="Decrease quantity">&minus;</button>
+                <input id="fp-qty" name="quantity" type="text" value="1" inputmode="numeric" aria-label="Quantity">
+                <button type="button" onclick="changeFpQty(1)" aria-label="Increase quantity">+</button>
+              </div>
+              <svg class="fp-share-icon" viewBox="0 0 24 24" role="button" tabindex="0"
+                   aria-label="Share this product"
+                   onclick="if(navigator.share){navigator.share({title:{{ fp.title | json }},url:'{{ shop.url }}{{ fp.url }}'})}else if(navigator.clipboard){navigator.clipboard.writeText('{{ shop.url }}{{ fp.url }}')}">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
+              </svg>
+            </div>
+
+            <button type="submit" name="add" class="fp-btn-add"{% unless fpv.available %} disabled{% endunless %}>
+              <span class="mi" aria-hidden="true">shopping_bag</span>{% if fpv.available %}Add to cart{% else %}Sold out{% endif %}
+            </button>
+            {{ form | payment_button }}
+            <a href="{{ fp.url }}" class="fp-link-bold">View full details</a>
+          </div>
+
+        </div>
+      {%- endform -%}
+    </div>
+  </section>
+{%- endfor -%}
+
+<!-- 6 · BRAND ROWS -->
+{%- comment -%}
+  One product row per house, in the same shape as Best Sellers and New Arrivals
+  above: eyebrow, heading, intro, View All, four cards.
+
+  Driven by `brand` blocks rather than hardcoded, so houses can be added,
+  reordered or dropped in the editor the way category and moment tiles already
+  are. A block whose collection is empty or misspelled renders nothing at all
+  rather than an empty grid.
+
+  Placed here because it keeps all the product grids contiguous and pays off the
+  brand strip in section 2, without pushing Best Sellers and New Arrivals — the
+  two highest-intent rows — further down the page.
+
+  Rows alternate tinted / untinted so eight consecutive grids do not read as one
+  undifferentiated block; the first is tinted to separate it from New Arrivals.
+{%- endcomment -%}
+{%- assign brand_i = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type != 'brand' -%}{%- continue -%}{%- endif -%}
+  {%- assign brand_coll = collections[block.settings.handle] -%}
+  {%- if brand_coll.products.size == 0 -%}{%- continue -%}{%- endif -%}
+  {%- assign brand_i = brand_i | plus: 1 -%}
+  {%- assign brand_tint = '' -%}
+  {%- assign brand_odd = brand_i | modulo: 2 -%}
+  {%- if brand_odd == 1 -%}{%- assign brand_tint = ' best-tint' -%}{%- endif -%}
+  {%- assign brand_limit = block.settings.count | default: 4 -%}
+  <section class="best{{ brand_tint }}" id="brand-{{ block.settings.handle | handle }}" {{ block.shopify_attributes }}>
+    <div class="best-inner">
+      <div class="best-head fade-up">
+        <div>
+          {%- if block.settings.eyebrow != blank -%}<span class="label">{{ block.settings.eyebrow }}</span>{%- endif -%}
+          <h2 class="sec-title">
+            {%- if block.settings.heading != blank -%}{{ block.settings.heading }}{%- else -%}{{ brand_coll.title }}{%- endif -%}
+          </h2>
+          {%- if block.settings.sub != blank -%}<p class="sec-sub">{{ block.settings.sub }}</p>{%- endif -%}
+        </div>
+        <a href="{{ brand_coll.url }}" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
+      </div>
+      <div class="products-grid">
+        {%- for product in brand_coll.products limit: brand_limit -%}
+          {% render 'product-card', product: product, hide_new: true %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endfor -%}
+
+<!-- 7 · SHOP BY CATEGORY -->
 <section class="gender" id="category">
   <div class="gender-inner">
     <div class="best-head fade-up">
@@ -259,7 +405,7 @@
   </div>
 </section>
 
-<!-- 6 · SHOP BY SCENT FAMILY -->
+<!-- 8 · SHOP BY SCENT FAMILY -->
 <section class="scent-section" id="scent-family">
   <div class="container">
     <div class="sec-head center fade-up">
@@ -305,7 +451,7 @@
   </div>
 </section>
 
-<!-- 7 · SHOP BY MOMENT -->
+<!-- 9 · SHOP BY MOMENT -->
 <section class="moment-section" id="moment">
   <div class="container">
     <div class="sec-head center fade-up">
@@ -366,7 +512,7 @@
   </div>
 </section>
 
-<!-- 8 · GUIDES -->
+<!-- 10 · GUIDES -->
 <section class="blog" id="blog">
   <div class="blog-inner">
     <div class="blog-head fade-up">
@@ -393,7 +539,7 @@
   </div>
 </section>
 
-<!-- 9 · INSTAGRAM -->
+<!-- 11 · INSTAGRAM -->
 {%- comment -%}
   The feed itself comes from an Instagram app block, which holds and refreshes the
   Meta access token — a theme cannot do that safely, since anything it ships is
@@ -426,7 +572,7 @@
   </section>
 {%- endif -%}
 
-<!-- 10 · FAQ -->
+<!-- 12 · FAQ -->
 <section class="faq" id="faq">
   <div class="faq-inner">
     <div class="faq-head fade-up">
@@ -445,7 +591,7 @@
   </div>
 </section>
 
-<!-- 11 · WHY CHOOSE THE FRAGRANCE SECRETS -->
+<!-- 13 · WHY CHOOSE THE FRAGRANCE SECRETS -->
 <section class="section why-section">
   <div class="container">
     <div class="sec-head center fade-up">
@@ -794,6 +940,28 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "featured_product",
+      "name": "Featured product",
+      "limit": 1,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Featured" },
+        { "type": "html", "id": "heading", "label": "Heading (H2)", "info": "Wrap words in <em></em> for the gold italic accent. Leave blank to hide the whole heading row." },
+        { "type": "textarea", "id": "sub", "label": "Intro" }
+      ]
+    },
+    {
+      "type": "brand",
+      "name": "Brand row",
+      "settings": [
+        { "type": "text", "id": "handle", "label": "Collection handle", "info": "e.g. lattafa. The row is skipped entirely if the collection is empty or the handle is wrong." },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Shop the House" },
+        { "type": "html", "id": "heading", "label": "Heading (H2)", "info": "Wrap words in <em></em> for the gold accent. Defaults to the collection title." },
+        { "type": "textarea", "id": "sub", "label": "Intro" },
+        { "type": "range", "id": "count", "label": "Products shown", "min": 4, "max": 8, "step": 4, "default": 4 }
+      ]
     },
     {
       "type": "scent",
