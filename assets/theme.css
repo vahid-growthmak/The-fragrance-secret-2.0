@@ -37,10 +37,8 @@
       --c-accent-dk:   var(--gold-dk);
       --on-dark:       rgba(247, 242, 234, .68);  /* body text on secondary */
 
-      /* Display face is Marcellus, which exists in exactly one style: regular
-         400. No italic, no bold. Every rule below asks it for 400 only. */
-      --fd: 'Marcellus', Georgia, serif;
-      --fb: 'Montserrat', 'Helvetica Neue', sans-serif;
+      --fd: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'Lato', 'Helvetica Neue', sans-serif;
       --ease: cubic-bezier(.25, .1, .25, 1);
       --snap: cubic-bezier(.16, 1, .3, 1);
     }
@@ -136,15 +134,7 @@
       background: var(--cream);
       color: var(--ink);
       overflow-x: clip;
-      line-height: 1.65;
-      /* Marcellus has one style and no italic, so a bold or slanted request on
-         the display face can only be met by the browser faking it — smearing
-         the stem for weight, shearing the glyph ~12deg for slant. Every display
-         rule is pinned to 400 upright, but a <b> or <em> added later would
-         inherit the UA default and reintroduce it silently. This makes that
-         structural: the real outline renders or nothing does. Montserrat is
-         unaffected — its 400/500/600/700 and italic are all loaded. */
-      font-synthesis: none
+      line-height: 1.65
     }
 
     img {
@@ -268,7 +258,7 @@
     .nav-logo {
       font-family: var(--fd);
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: 600;
       letter-spacing: .04em;
       transition: color .25s;
       display: inline-flex;
@@ -512,6 +502,7 @@
     }
 
     .sec-title em {
+      font-style: italic;
       color: var(--gold-dk)
     }
 
@@ -632,19 +623,19 @@
     .hero-h {
       font-family: var(--fd);
       font-size: clamp(2.45rem, 4.1vw, 3.8rem);
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1.06;
       color: var(--white);
       margin-bottom: 20px
     }
 
     .hero-h em {
+      font-style: italic;
       color: var(--gold-lt)
     }
 
     /* The document's second hero line: a tagline between the H1 and the
-       paragraph. Gold, matching the em treatment used in headings — upright,
-       since Marcellus has no italic. */
+       paragraph. Italic gold, matching the em treatment used in headings. */
     /* Each tagline line is its own block, so the split is deliberate rather than
        left to wherever the text happens to wrap. */
     .hero-tagline-line {
@@ -653,8 +644,9 @@
 
     .hero-tagline {
       font-family: var(--fd);
+      font-style: italic;
       font-size: clamp(1.25rem, 2vw, 1.75rem);
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1.25;
       color: var(--gold-lt);
       margin-bottom: 18px;
@@ -845,7 +837,7 @@
     .src-card h3 {
       font-family: var(--fd);
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--ink);
       margin-bottom: 10px
     }
@@ -945,7 +937,7 @@
       gap: 18px;
       font-family: var(--fd);
       font-size: 1.12rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--ink);
       transition: color .2s ease
     }
@@ -1275,7 +1267,7 @@
     .scent-card h3 {
       font-family: var(--fd);
       font-size: 1.24rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--ink);
       margin-bottom: 5px;
       line-height: 1.1
@@ -1393,7 +1385,7 @@
     .moment-title {
       font-family: var(--fd);
       font-size: 1.6rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--white);
       margin-bottom: 6px
     }
@@ -1478,7 +1470,7 @@
       padding: 0 12px 11px;
       font-family: var(--fd);
       font-size: .95rem;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.2;
       color: var(--white);
       display: -webkit-box;
@@ -1602,7 +1594,7 @@
     .cat-ct h3 {
       font-family: var(--fd);
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--white);
       margin-bottom: 3px;
       line-height: 1.15
@@ -2000,7 +1992,7 @@
     .q-title {
       font-family: var(--fd);
       font-size: 1.9rem;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--white);
       margin-bottom: 32px;
       line-height: 1.3
@@ -2333,7 +2325,7 @@
     .rv-big {
       font-family: var(--fd);
       font-size: 4rem;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--ink);
       line-height: 1
     }
@@ -2389,7 +2381,7 @@
       justify-content: center;
       font-family: var(--fd);
       font-size: 1.1rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--gold-dk)
     }
 
@@ -3298,7 +3290,7 @@
     .pdp-hero-title {
       font-family: var(--fd);
       font-size: 2.6rem;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--ink)
     }
 
@@ -4288,6 +4280,7 @@
 
     .fam-card .fam-num {
       font-family: var(--fd);
+      font-style: italic;
       font-size: 1rem;
       color: var(--gold-dk);
       margin-bottom: 10px
@@ -4296,7 +4289,7 @@
     .fam-card h3 {
       font-family: var(--fd);
       font-size: 1.4rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--ink);
       margin-bottom: 10px
     }
@@ -4407,7 +4400,7 @@
     .explore-card b {
       font-family: var(--fd);
       font-size: 1.25rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--cream);
       margin-bottom: 6px
     }
@@ -4484,22 +4477,16 @@
     }
 
 
-    /* Body face, not the display serif — and still the right call under
-       Marcellus. The rule was written because Cormorant Garamond set "1" and
-       cap "I" in the same slot, both fully serifed, so a bare "10%" read as
-       "IO%" at display size. Marcellus is an all-caps-flavoured roman with the
-       same hazard: its "1" is a serifed stem with a short flag sitting beside
-       an "I" that is a serifed stem, and it offers no alternate to separate
-       them: measured on the served woff2, its "1" inks 307 units wide against
-       a 239-unit "I" at an identical 1434-unit height, and its whole GSUB set
-       is frac liga. Montserrat inks "1" at 237 against a 74-unit "I", a 3.2x
-       difference that cannot be misread, so the figure keeps coming from the
-       body family.
-
-       The 2.4rem is held over from Jost, whose 0.700 em cap towered over
-       Cormorant's 0.625 and needed trimming from 2.7rem. Marcellus and
-       Montserrat both cap at 0.700 em, so that no longer applies — 2.4rem is
-       now just the chosen size, and 2.7rem would be equally correct. */
+    /* Body face, not the display serif. Measured against Cormorant Garamond's
+       own outlines: with lnum active (see the figure-style rule) its "1" is
+       one.lf at 635 units tall and its cap "I" is 625 — the same slot, both
+       fully serifed, separated only by the 1's flag. At display size a bare
+       "10%" therefore reads as "IO%". The font carries no ss/salt alternate to
+       swap in — its whole GSUB set is calt ccmp dnom frac liga lnum locl numr
+       tnum — so the figure has to come from the other family. Lato inks "1" at
+       853 units against a 194-unit "I" on a 2000-unit em, a 4.4x difference
+       that cannot be misread. Size trimmed from 2.7rem because Lato's cap
+       height is taller: 0.717 em against Cormorant's 0.625. */
     .member-card .mc-disc b {
       display: block;
       font-family: var(--fb);
@@ -4703,7 +4690,7 @@
     .wc-slide b {
       font-family: var(--fd);
       font-size: 1.35rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--cream);
       margin-bottom: 8px
     }
@@ -4857,7 +4844,7 @@
     .why-grid.six .why-card h3 {
       font-family: var(--fd);
       font-size: 1.05rem;
-      font-weight: 400
+      font-weight: 500
     }
 
     @media(max-width:1080px) {
@@ -5954,6 +5941,7 @@ html body .jdgm-form select {
     }
 
     .ref-title em {
+      font-style: italic;
       color: var(--gold-dk)
     }
 
@@ -5968,7 +5956,7 @@ html body .jdgm-form select {
       font-family: var(--fd);
       font-size: 1.5rem;
       color: var(--ink);
-      font-weight: 400
+      font-weight: 600
     }
 
     .ref-offer .ref-was {
@@ -6612,6 +6600,7 @@ html body .jdgm-form select {
     }
 
     .mix-head h3 em {
+      font-style: italic;
       color: var(--gold-dk)
     }
 
@@ -7276,14 +7265,18 @@ html body .jdgm-form select {
     .atc-wish:active .mi { transform: scale(.82) }
 
     /* ── Figure style ─────────────────────────────────────────────────
-       Held over from Cormorant Garamond, which defaulted to old-style figures
-       and needed lnum to bring numerals up to cap height.
+       Cormorant Garamond defaults to old-style (text) figures: measured
+       against a 1000-unit em with a 625 cap-height, 3 4 5 7 9 descend as far
+       as -275 below the baseline and top out around 400. So a heading like
+       "49 Fragrance Houses" renders its number low and small beside the caps.
 
-       Marcellus is an inscriptional roman: it draws lining figures already and
-       carries no onum, and Montserrat likewise. So this is inert against both
-       faces now. Kept because it is the correct intent for the ~60 places the
-       display face sets numbers — headings, prices, countdown units, stat
-       blocks — and it keeps them right if the display face changes again. */
+       lnum switches the display face to lining figures, which sit on the
+       baseline at cap height. Set here rather than per-selector because
+       font-variant-numeric inherits, and the display serif carries numbers in
+       ~60 places — headings, prices, countdown units, stat blocks.
+
+       Lato exposes neither lnum nor onum — its whole GSUB set is liga — and
+       already draws lining figures, so this is inert for body copy. */
     body { font-variant-numeric: lining-nums; }
 
     /* ── PDP reassurance strip ────────────────────────────────────────
@@ -7454,7 +7447,7 @@ html body .jdgm-form select {
     .cd-sub b {
       font-family: var(--fd);
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--ink)
     }
 
