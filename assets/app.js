@@ -508,6 +508,24 @@ function closeMobileNav() {
   if (n && n.classList.contains('open')) toggleMobileNav();
 }
 
+/* Mobile nav accordions. The mega-menu is a five-column grid on desktop; in
+   the drawer it used to render every column expanded, which is why the menu
+   was an unbroken list of ~40 links. Each column heading now toggles its own
+   group, and Shop toggles the whole mega. Desktop is untouched — these only
+   bind below the drawer breakpoint. */
+function toggleNavGroup(node, event) {
+  if (window.innerWidth > 1024) return;          // desktop hover menu, leave it
+  if (event && event.target.closest('a')) return; // let the heading's own link work
+  if (event) event.preventDefault();
+  node.classList.toggle('open');
+}
+
+function toggleShopGroup(node, event) {
+  if (window.innerWidth > 1024) return;
+  if (event) event.preventDefault();
+  node.closest('.nav-item').classList.toggle('open');
+}
+
 function toggleMobileNav() {
   const n = el('navLinks');
   if (!n) return;

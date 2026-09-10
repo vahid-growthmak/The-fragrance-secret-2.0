@@ -167,16 +167,50 @@ header.light .nav-burger { color: var(--warm); }
     transition: right .4s var(--snap); box-shadow: -20px 0 60px rgba(0,0,0,.4);
     display: flex;
   }
-  .nav-links.open { right: 0; overflow-y: auto; }
+  /* contain stops the drawer's scroll chaining to the page underneath once it
+     hits its end, which is the other half of why the page moved. */
+  .nav-links.open { right: 0; overflow-y: auto; overscroll-behavior: contain; }
   .nav-item { display: block; width: 100%; }
   .nav-links .nav-toplink { color: rgba(255,255,255,.85) !important; font-size: .9rem !important; padding: 14px 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.08); letter-spacing: .1em; }
   .nav-links .nav-toplink::after { display: none; }
   .nav-caret { margin-left: auto; }
-  /* mega menu becomes a static nested list inside the drawer */
-  .nav-mega { position: static; opacity: 1; visibility: visible; transform: none; background: transparent; box-shadow: none; border: none; padding: 4px 0 10px 12px; backdrop-filter: none; }
+  /* Mega menu becomes a nested accordion inside the drawer. It used to render
+     every column expanded, which made the menu one ~40-link scroll with no
+     structure. Shop opens the group; each column heading opens its own. */
+  .nav-mega {
+    position: static; transform: none; background: transparent; box-shadow: none;
+    border: none; backdrop-filter: none;
+    opacity: 1; visibility: visible;
+    display: none; padding: 4px 0 10px 12px;
+  }
+  .nav-item.open .nav-mega { display: block; }
+  .nav-item.open > .nav-toplink .nav-caret { transform: rotate(180deg); }
+
   .nav-mega-inner { display: block; }
-  .nm-col { margin-bottom: 12px; }
-  .nm-col h5 { margin-bottom: 6px; }
+  .nm-col { margin-bottom: 2px; }
+
+  /* the heading is the toggle; its own link still navigates */
+  .nm-col h5 {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .nm-col h5::after {
+    content: 'expand_more';
+    font-family: 'Material Symbols Outlined';
+    font-size: 19px;
+    color: rgba(255,255,255,.45);
+    transition: transform .25s;
+  }
+  .nm-col.open h5::after { transform: rotate(180deg); }
+
+  /* the column's links, hidden until its heading is opened */
+  .nm-col > a { display: none; }
+  .nm-col.open > a { display: block; }
   .nm-col a { font-family: var(--fb); font-size: .82rem; color: rgba(255,255,255,.62); padding: 6px 0; }
   /* drawer-only shortcuts (Search / Account / Wishlist) */
   .nav-links .nav-drawer-extra {
