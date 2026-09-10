@@ -1085,7 +1085,7 @@ function initApp() {
   if (typeof renderComboGrid === 'function' && document.getElementById('comboGrid') && !document.querySelector('[data-collection]')) renderComboGrid();
   observeFadeUps();
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAI(); closeMix(); closeReferral(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAI(); closeMix(); closeReferral(); closeMobileNav(); } });
 // Defer to DOMContentLoaded so a later <script> (e.g. collections.js) is parsed
 // and its globals (renderCollection, COLLECTIONS) are available before initApp runs.
 if (document.readyState === 'complete') initApp();

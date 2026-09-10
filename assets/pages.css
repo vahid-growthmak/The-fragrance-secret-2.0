@@ -66,19 +66,10 @@ header.light .nav-toplink { color: var(--warm); }
 .nav-overlay.open { opacity: 1; visibility: visible; }
 body.nav-open { overflow: hidden; }
 
-/* The drawer lives inside <header>, and both the header and the Shopify section
-   wrapper around it are position:sticky with z-index:1000 — each opening a
-   stacking context. So .nav-links' own z-index:1200 could only ever compete
-   *inside* that 1000, while .nav-overlay is a sibling of the header at 1150.
-   The overlay therefore painted over the open drawer: its rgba(0,0,0,.5) and
-   3px blur are why the menu read as dim and unreadable, and taps landed on the
-   overlay, which closes the menu rather than following the link.
-
-   Lift the header above the overlay, but only while the drawer is open, so
-   normal page stacking is untouched. */
-body.nav-open header,
-body.nav-open [id^="shopify-section"][id$="__header"],
-body.nav-open #shopify-section-header { z-index: 1250; }
+/* No z-index lift on the header is needed: the backdrop now lives inside
+   <header> alongside the drawer, so 1200 over 1150 resolves within one
+   stacking context. The old rule raised the whole header to 1250 while the
+   drawer was open, which also put it above modal overlays at 1100. */
 
 .nav-mega {
   position: fixed; left: 0; right: 0; top: 68px; z-index: 999;
@@ -120,6 +111,43 @@ body.nav-open #shopify-section-header { z-index: 1250; }
 .fg-phase { display: inline-block; font-size: .54rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,.4); border-radius: 20px; padding: 1px 7px; margin-left: 6px; vertical-align: middle; opacity: .8; }
 
 /* ── Mobile nav drawer (new pages) ───────────────────────────────── */
+/* Close control inside the panel. The drawer reserves 88px of top padding for
+   the header to show through; that band is where this sits, so it costs no
+   extra space and lands where a thumb expects it. Hidden on desktop, where
+   the drawer does not exist. */
+.nav-drawer-close { display: none; }
+
+@media (max-width: 1024px) {
+  /* A flex item at the head of the column, not an absolutely positioned one.
+     Absolute placement here resolved against the wrong containing block and
+     put the button 4px past the right edge of the viewport — invisible and
+     untappable. As the drawer's first child it simply sits where it belongs. */
+  .nav-drawer-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    flex: 0 0 auto;
+    margin-bottom: 14px;
+    width: 44px;                 /* a comfortable tap target */
+    height: 44px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    color: rgba(255,255,255,.9);
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+  }
+
+  .nav-drawer-close:hover,
+  .nav-drawer-close:focus-visible {
+    background: rgba(201,168,76,.16);
+    border-color: var(--gold)
+  }
+
+  .nav-drawer-close .mi { font-size: 22px }
+}
+
 .nav-burger { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 50%; color: inherit; }
 header.dark .nav-burger { color: rgba(255,255,255,.85); }
 header.light .nav-burger { color: var(--warm); }
@@ -135,7 +163,7 @@ header.light .nav-burger { color: var(--warm); }
   .nav-links {
     position: fixed; top: 0; right: -100%; width: min(78vw, 320px); height: 100vh; height: 100dvh;
     flex-direction: column; align-items: flex-start; gap: 4px;
-    background: var(--ink); padding: 88px 30px 30px; z-index: 1200;
+    background: var(--ink); padding: 22px 30px 30px; z-index: 1200;
     transition: right .4s var(--snap); box-shadow: -20px 0 60px rgba(0,0,0,.4);
     display: flex;
   }

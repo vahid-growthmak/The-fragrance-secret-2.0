@@ -57,6 +57,18 @@
     <button class="nav-burger" aria-label="Menu" onclick="toggleMobileNav()"><span class="mi" aria-hidden="true">menu</span></button>
 
     <nav class="nav-links" id="navLinks">
+      {%- comment -%}
+        Close button lives inside the drawer, not in the header. The burger
+        turns into a cross when the menu opens, but the drawer is z-index 1200
+        inside a sticky header that opens its own stacking context, so whether
+        that cross is reachable depends on a lift rule landing on the right
+        Shopify section wrapper. A control inside the panel cannot be covered
+        by the panel. Hidden above 1024px, where there is no drawer.
+      {%- endcomment -%}
+      <button type="button" class="nav-drawer-close" aria-label="Close menu" onclick="closeMobileNav()">
+        <span class="mi" aria-hidden="true">close</span>
+      </button>
+
       {%- comment -%} Shop — with mega-menu {%- endcomment -%}
       <div class="nav-item has-mega">
         <a href="/collections/all" class="nav-toplink{% if nav_active == 'shop' %} nav-active{% endif %}"{% if nav_active == 'shop' %} aria-current="page"{% endif %}>Shop<span class="mi nav-caret" aria-hidden="true">expand_more</span></a>
@@ -147,8 +159,21 @@
       </a>
     </div>
   </div>
+  {%- comment -%}
+    The backdrop sits inside <header>, not after it, and that placement is the
+    whole fix. The header is sticky at z-index 1000, which opens a stacking
+    context, so the drawer's z-index 1200 only ever competed *inside* it. As a
+    sibling of the header the overlay at 1150 therefore painted straight over
+    the open drawer — dimming it and swallowing every tap, including on the
+    close button.
+
+    Inside the header the two are siblings in one context, so 1200 beats 1150
+    honestly and no z-index lift on the section wrapper is needed. position:
+    fixed still resolves against the viewport, since nothing here is
+    transformed.
+  {%- endcomment -%}
+  <div class="nav-overlay" id="navOverlay" onclick="toggleMobileNav()" aria-hidden="true"></div>
 </header>
-<div class="nav-overlay" id="navOverlay" onclick="toggleMobileNav()" aria-hidden="true"></div>
 
 {% schema %}
 {
