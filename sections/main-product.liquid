@@ -20,6 +20,7 @@
   assign badge = product.metafields.custom.badge.value | default: 'Bestseller'
   assign mf = product.metafields.custom
   assign fragrance_experience = mf.fragrance_experience.value
+  assign why_love = mf.why_youll_love.value
   assign best_for_details = mf.best_for_details.value
   assign faq = mf.faq.value
 -%}
@@ -193,6 +194,34 @@
               <div class="tab-pane active" id="desc">
                 {%- if product.description != blank -%}{{ product.description }}
                 {%- else -%}<p>Crafted for those who want to stand out, this fragrance blends deep, resonant notes with warmth and sharpness — a truly magnetic presence that commands attention from the first spray.</p>{%- endif -%}
+
+                {%- comment -%}
+                  "Why you'll love it" follows the description in the same tab.
+                  Each line of the metafield is "Label: sentence", so the label
+                  is pulled out and set in bold — split on the first colon only,
+                  since the prose after it can contain one. A line with no colon
+                  is printed whole rather than mangled.
+
+                  Reuses .tab-pane h4 / ul, which the Best For tab already uses,
+                  so this needs no styling of its own.
+                {%- endcomment -%}
+                {%- if why_love != blank -%}
+                  <h4>Why You'll Love It</h4>
+                  <ul>
+                    {%- assign wyl_lines = why_love | strip | newline_to_br | split: '<br />' -%}
+                    {%- for raw_line in wyl_lines -%}
+                      {%- assign wyl = raw_line | strip -%}
+                      {%- if wyl == blank -%}{%- continue -%}{%- endif -%}
+                      {%- assign wyl_label = wyl | split: ':' | first | strip -%}
+                      {%- assign wyl_rest = wyl | remove_first: wyl_label | remove_first: ':' | strip -%}
+                      {%- if wyl_rest != blank -%}
+                        <li><strong>{{ wyl_label }}</strong> {{ wyl_rest }}</li>
+                      {%- else -%}
+                        <li>{{ wyl }}</li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
               </div>
 
               <!-- Best For -->
