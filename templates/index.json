@@ -338,7 +338,13 @@
             "eyebrow": "Shop the House",
             "heading": "Ahmed Al Maghribi <em>Perfumes</em>",
             "sub": "The Ahmed Al Maghribi range, from oriental oud to soft floral musks.",
-            "count": 4
+            "count": 4,
+            "products": [
+              "ahmed-al-maghribi-zumar-eau-de-parfum-60ml-unisex-long-lasting-perfume",
+              "ignite-oud-edp-60ml",
+              "bin-shaikh-edp-90ml",
+              "ahmed-al-maghribi-rawdha-edp-50ml-floral-woody-musk-perfume"
+            ]
           }
         },
         "brand_ibrahim_al_qurashi": {

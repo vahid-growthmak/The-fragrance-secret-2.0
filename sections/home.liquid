@@ -203,8 +203,16 @@
             {%- else -%}<span></span>{%- endif -%}
             <a href="{{ bt_coll.url }}" class="bt-viewall">View all {{ bt_name }}</a>
           </div>
+          {%- comment -%}
+            A hand-picked list wins over the collection's own order, which is
+            "most relevant" and so decides for itself which four of sixty-eight
+            products represent the house. Leave the picker empty and the
+            collection order applies as before.
+          {%- endcomment -%}
+          {%- assign bt_items = block.settings.products -%}
+          {%- if bt_items.size == 0 -%}{%- assign bt_items = bt_coll.products -%}{%- endif -%}
           <div class="products-grid">
-            {%- for product in bt_coll.products limit: bt_count -%}
+            {%- for product in bt_items limit: bt_count -%}
               {% render 'product-card', product: product, hide_new: true %}
             {%- endfor -%}
           </div>
@@ -967,6 +975,13 @@
           "step": 4,
           "default": 4,
           "info": "One, two or three rows of four."
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Featured products",
+          "limit": 12,
+          "info": "Optional. Pick exactly which products this house shows on the home page. Leave empty to fall back to the collection's own order."
         }
       ]
     },
