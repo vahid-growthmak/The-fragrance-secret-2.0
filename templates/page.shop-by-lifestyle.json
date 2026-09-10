@@ -10,7 +10,9 @@
         "intro_text": "<p>Every occasion deserves the right fragrance. The Shop by Lifestyle collection at The Fragrance Secrets helps you find perfumes based on the moments that matter most, from work, everyday wear, and the gym to date nights, weddings, parties, travel, and holidays. Instead of searching through hundreds of fragrances, simply choose the lifestyle that matches your plans and discover scents selected to suit every occasion. Explore all lifestyle collections, find your perfect fragrance for every moment, and build a versatile perfume wardrobe for every part of your life.</p>",
         "children_eyebrow": "Start Here",
         "children_heading": "Explore <em>Lifestyle Collections</em>",
-        "children_sub": "Every edit is curated for a specific occasion or moment. Choose the one that fits your day and discover fragrances suited to it."
+        "children_sub": "Every edit is curated for a specific occasion or moment. Choose the one that fits your day and discover fragrances suited to it.",
+        "hero_bg_image": "lifestyle-hub-hero.webp",
+        "hero_bg_image_sm": "lifestyle-hub-hero-sm.webp"
       },
       "blocks": {
         "child1": {

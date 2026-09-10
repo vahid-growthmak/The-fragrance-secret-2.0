@@ -10,7 +10,9 @@
         "intro_text": "<p>Finding your favourite fragrance is easier when you know the scent family you enjoy most. The Fragrance Secrets groups its collection into five distinct fragrance families, from rich oud & woody and fresh citrus to elegant floral & rose, indulgent sweet gourmand, and bold spicy & oriental scents. Instead of browsing hundreds of perfumes, start with the fragrance notes you already love and explore collections built around them. Discover all five scent families, learn what makes each one unique, and find the fragrance that perfectly matches your style.</p>",
         "children_eyebrow": "Start Here",
         "children_heading": "Explore <em>Scent Family Collections</em>",
-        "children_sub": "Each family is defined by a distinct character and set of notes. Choose the one that matches your taste and discover fragrances built around it."
+        "children_sub": "Each family is defined by a distinct character and set of notes. Choose the one that matches your taste and discover fragrances built around it.",
+        "hero_bg_image": "scent-family-hub-hero.webp",
+        "hero_bg_image_sm": "scent-family-hub-hero-sm.webp"
       },
       "blocks": {
         "child1": {

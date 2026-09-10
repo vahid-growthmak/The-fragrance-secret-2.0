@@ -10,7 +10,9 @@
         "intro_text": "<p>Every way to shop, in one place. The Shop by Category hub is the complete map of The Fragrance Secrets, browse by category and gender, by fragrance type like Eau de Parfum, attar and perfume oil, and by the ways we curate scents for lifestyle, climate, brand and scent family. Whether you know exactly what you want or prefer to explore, this is where every collection begins. Choose a category below to narrow the range, or dive into a curated edit to discover something new.</p>",
         "children_eyebrow": "Start Here",
         "children_heading": "Shop by <em>Category</em>",
-        "children_sub": "Browse our core perfume categories by who they are for and the type of fragrance. Choose a category to narrow the full range to what suits you."
+        "children_sub": "Browse our core perfume categories by who they are for and the type of fragrance. Choose a category to narrow the full range to what suits you.",
+        "hero_bg_image": "category-hub-hero.webp",
+        "hero_bg_image_sm": "category-hub-hero-sm.webp"
       },
       "blocks": {
         "child1": {
