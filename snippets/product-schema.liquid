@@ -1,14 +1,23 @@
 {%- comment -%}
   Structured data for the product page: Product, FAQPage and BreadcrumbList.
 
-  The catalogue upload stored a per-product FAQPage in custom.faq_schema, which
-  matches the FAQs rendered on the page, so that one is emitted as supplied
-  (falling back to building it from custom.faq).
+  Both the FAQPage and the Product node come from the catalogue upload when it
+  supplied them, and are built here from live data when it did not.
 
-  Product schema is built here from live product data rather than the stored
-  custom.product_schema, because the stored copy carries a null price and a
-  hardcoded availability and image list — Google requires those to match what
-  the page actually shows, and they change with the catalogue.
+  custom.product_schema is the SEO-written Product node, imported by
+  scripts/import-product-schema.py, which repairs it on the way in: the stored
+  copy had a null price on 1,015 of 1,308 rows, so 996 were filled from the
+  sheet's price column and the 19 with no price anywhere had their offers
+  block dropped rather than emitted broken. sku, gtin and @id are injected
+  there too, since the stored copy omits them.
+
+  It declares AED and thefragrancesecrets.com URLs, which are correct for the
+  live store. On any other store — a dev or preview copy — those will not match
+  the page, so the fallback below is what should be used there.
+
+  One thing the stored node cannot carry is aggregateRating, which depends on
+  live review counts. The fallback still emits it. Once reviews exist on live,
+  that has to be merged in at render time or the stars are lost.
 
   Usage: {% render 'product-schema', product: product %}
 {%- endcomment -%}
@@ -33,6 +42,10 @@
   endif
 -%}
 
+{%- assign stored_product = product.metafields.custom.product_schema.value | default: product.metafields.custom.product_schema -%}
+{%- if stored_product != blank -%}
+<script type="application/ld+json">{{ stored_product }}</script>
+{%- else -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -107,6 +120,8 @@
   "isPartOf": { "@id": {{ shop.url | append: '/#website' | json }} }
 }
 </script>
+
+{%- endif -%}
 
 {%- comment -%} FAQ: the uploaded schema when present, otherwise built from the same metafield the page renders {%- endcomment -%}
 {%- assign faq_schema = product.metafields.custom.faq_schema.value | default: product.metafields.custom.faq_schema -%}

@@ -191,15 +191,19 @@ def main():
             unmatched += 1
             continue
         job = {"id": p["id"], "title": p["title"]}
-        seo = {}
-        if row["seo_title"] and (p["seo"]["title"] or "") != row["seo_title"]:
-            seo["title"] = row["seo_title"][:70]
-        if row["seo_desc"] and (p["seo"]["description"] or "") != row["seo_desc"]:
-            seo["description"] = row["seo_desc"][:320]
-        if seo:
-            job["seo"] = seo
-            for k in seo:
-                counts["seo_" + k] += 1
+        # SEOInput is not a patch: a field left out is written as null. Sending
+        # {title} alone on a product whose description already matched wiped
+        # that description — it did exactly that to 177 products before this
+        # was caught. Always send both fields, sourcing each from the sheet and
+        # falling back to whatever the product already has.
+        want_title = row["seo_title"][:70] if row["seo_title"] else (p["seo"]["title"] or "")
+        want_desc = row["seo_desc"][:320] if row["seo_desc"] else (p["seo"]["description"] or "")
+        if want_title != (p["seo"]["title"] or "") or want_desc != (p["seo"]["description"] or ""):
+            job["seo"] = {"title": want_title, "description": want_desc}
+            if want_title != (p["seo"]["title"] or ""):
+                counts["seo_title"] += 1
+            if want_desc != (p["seo"]["description"] or ""):
+                counts["seo_description"] += 1
         media = p["media"]["nodes"]
         if row["alt"] and media and (media[0]["alt"] or "") != row["alt"]:
             job["alt"] = {"id": media[0]["id"], "alt": row["alt"][:512]}
