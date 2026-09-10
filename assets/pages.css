@@ -907,7 +907,7 @@ header.light .nav-burger { color: var(--warm); }
 .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ── Brand cloud (compact, alphabetical, low-scroll) ─────────────── */
-.brand-cloud { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+.brand-cloud { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr)); gap: 10px; }
 .brand-chip { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 16px; background: var(--white); border: 1px solid rgba(13,10,6,.08); border-radius: 7px; font-size: .88rem; color: var(--charcoal); transition: all .2s var(--snap); }
 .brand-chip:hover { border-color: var(--gold); color: var(--gold-dk); background: rgba(201,168,76,.05); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13,10,6,.06); }
 .brand-chip .mi { font-size: 15px; color: var(--muted); transition: color .2s; }
@@ -919,7 +919,22 @@ header.light .nav-burger { color: var(--warm); }
 .brand-chip-n { flex: 0 0 auto; min-width: 22px; padding: 2px 6px; border-radius: 11px; background: rgba(13,10,6,.06); color: var(--muted); font-size: .7rem; font-variant-numeric: tabular-nums; text-align: center; transition: all .2s; }
 .brand-chip:hover .brand-chip-n { background: rgba(201,168,76,.18); color: var(--gold-dk); }
 
-@media (max-width: 640px) { .brand-cloud { grid-template-columns: 1fr 1fr; } }
+/* minmax(0, 1fr), not 1fr. A bare 1fr is minmax(auto, 1fr), and that auto
+   floor is the track's min-content width — which a chip like "La Parfum
+   Galleria Exclusif" pushes well past half the screen. On a 390px phone the
+   two tracks resolved to 238px and 173px against a 350px grid and the second
+   column ran off the edge. A zero floor lets both tracks share the row, and
+   the chip name already ellipses. */
+@media (max-width: 640px) { .brand-cloud { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Two columns on a 390px screen leave about 170px a chip, so trim the padding
+   and the gap to give the brand name as many characters as possible before
+   the ellipsis takes over. */
+@media (max-width: 430px) {
+  .brand-cloud { gap: 8px; }
+  .brand-chip { padding: 12px 11px; font-size: .84rem; gap: 6px; }
+  .brand-chip-n { min-width: 20px; padding: 2px 5px; font-size: .66rem; }
+}
 
 /* "View all brands" is the section's real call to action, but it is a chip in
    the same grid as the brand links, so on phones it took one of the two columns
