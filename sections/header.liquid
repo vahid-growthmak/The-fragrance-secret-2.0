@@ -115,7 +115,12 @@
       </div>
 
       <a href="/pages/brands" class="nav-toplink{% if nav_active == 'brands' %} nav-active{% endif %}"{% if nav_active == 'brands' %} aria-current="page"{% endif %}>Brands</a>
-      <a href="/blogs/journal" class="nav-toplink{% if nav_active == 'guides' %} nav-active{% endif %}"{% if nav_active == 'guides' %} aria-current="page"{% endif %}>Guides</a>
+      {%- comment -%}
+        The Guides link is hidden from the nav. The guide pages and the journal
+        blog still exist and are still reachable by URL and from search — only
+        the top-level entry point is gone. The nav_active = 'guides' branches
+        above are left in place so restoring this link is a one-line change.
+      {%- endcomment -%}
       <a href="/pages/about" class="nav-toplink{% if nav_active == 'about' %} nav-active{% endif %}"{% if nav_active == 'about' %} aria-current="page"{% endif %}>About Us</a>
 
       <a href="#" class="nav-toplink nav-quiz" onclick="openAI();closeMobileNav();return false"><span class="mi" aria-hidden="true">auto_awesome</span>Find My Scent</a>

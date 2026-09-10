@@ -1764,26 +1764,35 @@
       gap: 24px
     }
 
+    /* The card is deliberately unboxed: no white panel, no border, no drop
+       shadow. The tinted image tile is the only frame, which lets a row of
+       bottles read as a set of objects rather than a row of containers, and
+       keeps the cream ground continuous behind them. */
     .prod-card {
-      background: var(--white);
-      border-radius: 6px;
-      overflow: hidden;
-      transition: box-shadow .3s, transform .3s;
+      background: none;
       cursor: pointer
-    }
-
-    .prod-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, .1)
     }
 
     .prod-img-wrap {
       position: relative;
       aspect-ratio: 1;
       overflow: hidden;
+      border-radius: 8px;
+      background: var(--cream-mid);
+      transition: background .3s
+    }
+
+    .prod-card:hover .prod-img-wrap {
       background: var(--cream-dk)
     }
 
+    /* cover, not contain. The reference design floats each bottle inside a
+       tinted tile, which only works when the packshot is transparent or
+       already on that ground. This catalogue's photography is mostly shot on
+       white, plus some full-bleed lifestyle frames, so contain rendered a
+       white rectangle inside a cream tile on most cards and letterboxed the
+       rest. Cover fills the tile cleanly for both. Revisit if the catalogue
+       ever moves to transparent PNGs. */
     .prod-img {
       width: 100%;
       height: 100%;
@@ -1792,18 +1801,19 @@
     }
 
     .prod-card:hover .prod-img {
-      transform: scale(1.06)
+      transform: scale(1.05)
     }
 
     .prod-badge {
       position: absolute;
       top: 12px;
       left: 12px;
-      padding: 4px 10px;
-      border-radius: 2px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-family: var(--fb);
       font-size: .62rem;
       font-weight: 600;
-      letter-spacing: .1em;
+      letter-spacing: .08em;
       text-transform: uppercase
     }
 
@@ -1880,7 +1890,7 @@
     }
 
     .prod-info {
-      padding: 18px 18px 20px
+      padding: 16px 2px 4px
     }
 
     .prod-brand {
@@ -1896,8 +1906,17 @@
       font-size: 1.1rem;
       font-weight: 400;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       line-height: 1.3
+    }
+
+    /* Size and audience — what a shopper compares when scanning a row. */
+    .prod-spec {
+      font-family: var(--fb);
+      font-size: .76rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      line-height: 1.4
     }
 
     .prod-rating {
@@ -1924,8 +1943,10 @@
     }
 
     .price-now {
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-family: var(--fb);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .01em;
       color: var(--ink)
     }
 
@@ -7289,6 +7310,123 @@ html body .jdgm-form select {
        Lato exposes neither lnum nor onum — its whole GSUB set is liga — and
        already draws lining figures, so this is inert for body copy. */
     body { font-variant-numeric: lining-nums; }
+
+    /* ── Home "Shop by Brand" house tabs ──────────────────────────────
+       Replaces six near-identical product rows with one switchable row, so
+       the houses can be compared in place rather than scrolled past. */
+    .brandtabs {
+      margin-top: 44px
+    }
+
+    .bt-tabs {
+      display: flex;
+      gap: 34px;
+      overflow-x: auto;
+      border-bottom: 1px solid rgba(13, 10, 6, .1);
+      margin-bottom: 30px;
+      scrollbar-width: none
+    }
+
+    .bt-tabs::-webkit-scrollbar { display: none }
+
+    .bt-tab {
+      background: none;
+      border: 0;
+      padding: 0 0 13px;
+      white-space: nowrap;
+      cursor: pointer;
+      font-family: var(--fb);
+      font-size: .92rem;
+      color: var(--warm);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color .2s, border-color .2s
+    }
+
+    .bt-tab:hover { color: var(--ink) }
+
+    .bt-tab.active {
+      color: var(--ink);
+      font-weight: 600;
+      border-bottom-color: var(--gold)
+    }
+
+    .bt-tab:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    .bt-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 26px
+    }
+
+    .bt-sub {
+      font-family: var(--fb);
+      font-size: .86rem;
+      color: var(--warm);
+      line-height: 1.6;
+      max-width: 60ch;
+      margin: 0
+    }
+
+    .bt-viewall {
+      font-family: var(--fb);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px
+    }
+
+    .bt-viewall:hover { color: var(--gold-dk) }
+
+    @media (max-width: 700px) {
+      .bt-tabs { gap: 22px }
+      .bt-panel-head { flex-direction: column; align-items: flex-start; gap: 10px }
+    }
+
+    /* ── "Inspired by" box ────────────────────────────────────────────
+       Shown only when custom.inspired_by is set. Deliberately quiet: it is a
+       factual attribution, not a selling point, and the disclaimer has to sit
+       with it rather than being buried in the terms. */
+    .inspired-box {
+      border: 1px solid rgba(201, 168, 76, .3);
+      background: rgba(201, 168, 76, .06);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 22px
+    }
+
+    .inspired-box .ib-label {
+      font-family: var(--fb);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-dk);
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .inspired-box .ib-value {
+      font-family: var(--fd);
+      font-size: 1.25rem;
+      color: var(--ink);
+      display: block;
+      line-height: 1.2
+    }
+
+    .inspired-box .ib-note {
+      font-family: var(--fb);
+      font-size: .68rem;
+      line-height: 1.5;
+      color: var(--warm);
+      margin-top: 8px
+    }
 
     /* ── PDP reassurance strip ────────────────────────────────────────
        The 1px rule between the two lines only reads as a divider while both

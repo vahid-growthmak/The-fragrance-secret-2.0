@@ -144,21 +144,75 @@
       {%- endfor -%}
     </div>
 
-    {%- comment -%} Most-loved houses, then the full A-Z on the brands hub. {%- endcomment -%}
-    <div class="azbrands-head fade-up">
-      <span class="label" style="margin:0">Most Loved Houses</span>
-      <span class="az-note">Verified Resale</span>
-    </div>
-    <div class="brand-cloud brand-cloud-row fade-up">
-      {%- for raw_handle in popular_handles -%}
-        {%- assign popular_handle = raw_handle | strip -%}
-        {%- assign brand = collections[popular_handle] -%}
-        {%- if brand.handle == blank -%}{%- continue -%}{%- endif -%}
-        {% render 'brand-chip', brand: brand %}
+    {%- comment -%}
+      House browser. One tab per brand block, each panel a four-up product row
+      in the same shape as Best Sellers — so a shopper can compare houses in
+      place instead of scrolling past six near-identical sections.
+
+      Driven by the same `brand` blocks the editor already manages, so adding
+      or reordering a house is a block change, not a code change. A block whose
+      collection is empty or misspelled drops out entirely rather than
+      rendering an empty tab.
+    {%- endcomment -%}
+    {%- comment -%}
+      Counted with an explicit loop rather than `where: 'type', 'brand'`, so
+      the wrapper only renders when at least one house actually has products.
+    {%- endcomment -%}
+    {%- assign bt_total = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type != 'brand' -%}{%- continue -%}{%- endif -%}
+      {%- assign bt_coll = collections[block.settings.handle] -%}
+      {%- if bt_coll.products.size > 0 -%}{%- assign bt_total = bt_total | plus: 1 -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if bt_total > 0 -%}
+    <div class="brandtabs fade-up">
+      <div class="bt-tabs" role="tablist" aria-label="Shop by house">
+        {%- assign bt_i = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type != 'brand' -%}{%- continue -%}{%- endif -%}
+          {%- assign bt_coll = collections[block.settings.handle] -%}
+          {%- if bt_coll.products.size == 0 -%}{%- continue -%}{%- endif -%}
+          {%- assign bt_i = bt_i | plus: 1 -%}
+          {%- assign bt_name = bt_coll.title | remove: ' Perfumes' -%}
+          <button type="button"
+                  class="bt-tab{% if bt_i == 1 %} active{% endif %}"
+                  role="tab"
+                  id="bt-tab-{{ block.settings.handle | handle }}"
+                  aria-controls="bt-panel-{{ block.settings.handle | handle }}"
+                  aria-selected="{% if bt_i == 1 %}true{% else %}false{% endif %}"
+                  onclick="switchBrandTab(this)">{{ bt_name }}</button>
+        {%- endfor -%}
+      </div>
+
+      {%- assign bt_j = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'brand' -%}{%- continue -%}{%- endif -%}
+        {%- assign bt_coll = collections[block.settings.handle] -%}
+        {%- if bt_coll.products.size == 0 -%}{%- continue -%}{%- endif -%}
+        {%- assign bt_j = bt_j | plus: 1 -%}
+        {%- assign bt_name = bt_coll.title | remove: ' Perfumes' -%}
+        {%- assign bt_count = block.settings.count | default: 4 -%}
+        <div class="bt-panel{% if bt_j == 1 %} active{% endif %}"
+             id="bt-panel-{{ block.settings.handle | handle }}"
+             role="tabpanel"
+             aria-labelledby="bt-tab-{{ block.settings.handle | handle }}"
+             {% unless bt_j == 1 %}hidden{% endunless %}>
+          <div class="bt-panel-head">
+            {%- if block.settings.sub != blank -%}
+              <p class="bt-sub">{{ block.settings.sub }}</p>
+            {%- else -%}<span></span>{%- endif -%}
+            <a href="{{ bt_coll.url }}" class="bt-viewall">View all {{ bt_name }}</a>
+          </div>
+          <div class="products-grid">
+            {%- for product in bt_coll.products limit: bt_count -%}
+              {% render 'product-card', product: product, hide_new: true %}
+            {%- endfor -%}
+          </div>
+        </div>
       {%- endfor -%}
-      <a class="brand-chip brand-chip-all" href="/pages/brands">View all brands
-        <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
+    {%- endif -%}
+
   </div>
 </section>
 
@@ -300,55 +354,7 @@
   </section>
 {%- endfor -%}
 
-<!-- 6 · BRAND ROWS -->
-{%- comment -%}
-  One product row per house, in the same shape as Best Sellers and New Arrivals
-  above: eyebrow, heading, intro, View All, four cards.
-
-  Driven by `brand` blocks rather than hardcoded, so houses can be added,
-  reordered or dropped in the editor the way category and moment tiles already
-  are. A block whose collection is empty or misspelled renders nothing at all
-  rather than an empty grid.
-
-  Placed here because it keeps all the product grids contiguous and pays off the
-  brand strip in section 2, without pushing Best Sellers and New Arrivals — the
-  two highest-intent rows — further down the page.
-
-  Rows alternate tinted / untinted so eight consecutive grids do not read as one
-  undifferentiated block; the first is tinted to separate it from New Arrivals.
-{%- endcomment -%}
-{%- assign brand_i = 0 -%}
-{%- for block in section.blocks -%}
-  {%- if block.type != 'brand' -%}{%- continue -%}{%- endif -%}
-  {%- assign brand_coll = collections[block.settings.handle] -%}
-  {%- if brand_coll.products.size == 0 -%}{%- continue -%}{%- endif -%}
-  {%- assign brand_i = brand_i | plus: 1 -%}
-  {%- assign brand_tint = '' -%}
-  {%- assign brand_odd = brand_i | modulo: 2 -%}
-  {%- if brand_odd == 1 -%}{%- assign brand_tint = ' best-tint' -%}{%- endif -%}
-  {%- assign brand_limit = block.settings.count | default: 4 -%}
-  <section class="best{{ brand_tint }}" id="brand-{{ block.settings.handle | handle }}" {{ block.shopify_attributes }}>
-    <div class="best-inner">
-      <div class="best-head fade-up">
-        <div>
-          {%- if block.settings.eyebrow != blank -%}<span class="label">{{ block.settings.eyebrow }}</span>{%- endif -%}
-          <h2 class="sec-title">
-            {%- if block.settings.heading != blank -%}{{ block.settings.heading }}{%- else -%}{{ brand_coll.title }}{%- endif -%}
-          </h2>
-          {%- if block.settings.sub != blank -%}<p class="sec-sub">{{ block.settings.sub }}</p>{%- endif -%}
-        </div>
-        <a href="{{ brand_coll.url }}" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
-      </div>
-      <div class="products-grid">
-        {%- for product in brand_coll.products limit: brand_limit -%}
-          {% render 'product-card', product: product, hide_new: true %}
-        {%- endfor -%}
-      </div>
-    </div>
-  </section>
-{%- endfor -%}
-
-<!-- 7 · SHOP BY CATEGORY -->
+<!-- 6 · SHOP BY CATEGORY -->
 <section class="gender" id="category">
   <div class="gender-inner">
     <div class="best-head fade-up">
@@ -405,7 +411,7 @@
   </div>
 </section>
 
-<!-- 8 · SHOP BY SCENT FAMILY -->
+<!-- 7 · SHOP BY SCENT FAMILY -->
 <section class="scent-section" id="scent-family">
   <div class="container">
     <div class="sec-head center fade-up">
@@ -451,7 +457,7 @@
   </div>
 </section>
 
-<!-- 9 · SHOP BY MOMENT -->
+<!-- 8 · SHOP BY MOMENT -->
 <section class="moment-section" id="moment">
   <div class="container">
     <div class="sec-head center fade-up">
@@ -512,34 +518,7 @@
   </div>
 </section>
 
-<!-- 10 · GUIDES -->
-<section class="blog" id="blog">
-  <div class="blog-inner">
-    <div class="blog-head fade-up">
-      <div>
-        <span class="label">{{ section.settings.guides_eyebrow }}</span>
-        <h2 class="sec-title">{{ section.settings.guides_heading }}</h2>
-        {%- if section.settings.guides_sub != blank -%}<p class="sec-sub">{{ section.settings.guides_sub }}</p>{%- endif -%}
-      </div>
-      <a href="/blogs/journal" class="see-all">All Articles <span class="mi" aria-hidden="true">arrow_forward</span></a>
-    </div>
-    {%- if blogs['journal'].articles.size > 0 -%}
-      <div class="blog-grid">
-        {%- for article in blogs['journal'].articles limit: 3 -%}
-          <a class="bl-card" href="{{ article.url }}">
-            <div class="bl-img-wrap">{% if article.image %}<img class="bl-img" src="{{ article.image | image_url: width: 700 }}" alt="{{ article.title | escape }}" loading="lazy">{% endif %}</div>
-            {% if article.tags.size > 0 %}<div class="bl-cat">{{ article.tags.first }}</div>{% endif %}
-            <div class="bl-title">{{ article.title }}</div>
-            <div class="bl-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</div>
-            <div class="bl-meta">{{ article.published_at | date: '%B %-d, %Y' }}</div>
-          </a>
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-  </div>
-</section>
-
-<!-- 11 · INSTAGRAM -->
+<!-- 9 · INSTAGRAM -->
 {%- comment -%}
   The feed itself comes from an Instagram app block, which holds and refreshes the
   Meta access token — a theme cannot do that safely, since anything it ships is
@@ -572,7 +551,7 @@
   </section>
 {%- endif -%}
 
-<!-- 12 · FAQ -->
+<!-- 10 · FAQ -->
 <section class="faq" id="faq">
   <div class="faq-inner">
     <div class="faq-head fade-up">
@@ -591,7 +570,7 @@
   </div>
 </section>
 
-<!-- 13 · WHY CHOOSE THE FRAGRANCE SECRETS -->
+<!-- 11 · WHY CHOOSE THE FRAGRANCE SECRETS -->
 <section class="section why-section">
   <div class="container">
     <div class="sec-head center fade-up">
@@ -908,24 +887,6 @@
     },
     {
       "type": "text",
-      "id": "guides_eyebrow",
-      "label": "Guides Eyebrow",
-      "default": "Know Before You Buy"
-    },
-    {
-      "type": "html",
-      "id": "guides_heading",
-      "label": "Guides Heading",
-      "default": "Fragrance Insights & <em>Expert Guides</em>"
-    },
-    {
-      "type": "textarea",
-      "id": "guides_sub",
-      "label": "Guides Intro",
-      "default": "Get practical perfume guides, fragrance tips and expert advice to help you choose every scent confidently."
-    },
-    {
-      "type": "text",
       "id": "hero_tagline",
       "label": "Hero tagline line 1",
       "info": "Optional line under the heading. Empty by default — the heading carries this copy now."
@@ -946,21 +907,67 @@
       "name": "Featured product",
       "limit": 1,
       "settings": [
-        { "type": "product", "id": "product", "label": "Product" },
-        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Featured" },
-        { "type": "html", "id": "heading", "label": "Heading (H2)", "info": "Wrap words in <em></em> for the gold italic accent. Leave blank to hide the whole heading row." },
-        { "type": "textarea", "id": "sub", "label": "Intro" }
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Featured"
+        },
+        {
+          "type": "html",
+          "id": "heading",
+          "label": "Heading (H2)",
+          "info": "Wrap words in <em></em> for the gold italic accent. Leave blank to hide the whole heading row."
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Intro"
+        }
       ]
     },
     {
       "type": "brand",
       "name": "Brand row",
       "settings": [
-        { "type": "text", "id": "handle", "label": "Collection handle", "info": "e.g. lattafa. The row is skipped entirely if the collection is empty or the handle is wrong." },
-        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Shop the House" },
-        { "type": "html", "id": "heading", "label": "Heading (H2)", "info": "Wrap words in <em></em> for the gold accent. Defaults to the collection title." },
-        { "type": "textarea", "id": "sub", "label": "Intro" },
-        { "type": "range", "id": "count", "label": "Products shown", "min": 4, "max": 12, "step": 4, "default": 4, "info": "One, two or three rows of four." }
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Collection handle",
+          "info": "e.g. lattafa. The row is skipped entirely if the collection is empty or the handle is wrong."
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Shop the House"
+        },
+        {
+          "type": "html",
+          "id": "heading",
+          "label": "Heading (H2)",
+          "info": "Wrap words in <em></em> for the gold accent. Defaults to the collection title."
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Intro"
+        },
+        {
+          "type": "range",
+          "id": "count",
+          "label": "Products shown",
+          "min": 4,
+          "max": 12,
+          "step": 4,
+          "default": 4,
+          "info": "One, two or three rows of four."
+        }
       ]
     },
     {

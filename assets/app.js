@@ -1015,6 +1015,36 @@ function swapFpImg(node, src) {
 function changeFpQty(v) { const q = el('fp-qty'); if (q) { let val = parseInt(q.value) + v; if (val < 1) val = 1; q.value = val; } }
 
 /* ═══════════════════════════════════════
+   BRAND TABS (home "Shop by Brand")
+═══════════════════════════════════════ */
+function switchBrandTab(btn) {
+  const wrap = btn.closest('.brandtabs'); if (!wrap) return;
+  const id = btn.getAttribute('aria-controls');
+  wrap.querySelectorAll('.bt-tab').forEach(t => {
+    const on = t === btn;
+    t.classList.toggle('active', on);
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  /* hidden, not display:none in CSS — the attribute keeps the panel out of the
+     accessibility tree as well as out of the layout. */
+  wrap.querySelectorAll('.bt-panel').forEach(p => {
+    const on = p.id === id;
+    p.classList.toggle('active', on);
+    p.hidden = !on;
+  });
+}
+/* Left/right arrows move between tabs, which is what a tablist is expected to
+   do once it announces itself as one. */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const cur = document.activeElement;
+  if (!cur || !cur.classList || !cur.classList.contains('bt-tab')) return;
+  const tabs = [...cur.closest('.bt-tabs').querySelectorAll('.bt-tab')];
+  const next = tabs[(tabs.indexOf(cur) + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+  if (next) { next.focus(); switchBrandTab(next); e.preventDefault(); }
+});
+
+/* ═══════════════════════════════════════
    COUNTDOWN TIMER (deals)
 ═══════════════════════════════════════ */
 function initCountdowns() {

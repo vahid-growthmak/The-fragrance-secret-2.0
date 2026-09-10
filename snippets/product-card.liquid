@@ -35,6 +35,31 @@
   # product page to choose rather than silently adding the first size.
   assign card_variant = product.selected_or_first_available_variant
   assign card_title = product.title | escape
+
+  # Spec line under the name — the size and who it is for, which is what a
+  # shopper scanning a row actually compares. Falls back through the variant
+  # title, then the product type, so a card without metafields still says
+  # something rather than leaving a gap.
+  assign card_size = product.metafields.custom.size.value
+  if card_size == blank and card_variant.title != 'Default Title'
+    assign card_size = card_variant.title
+  endif
+  assign card_gender = product.metafields.custom.gender.value
+  capture card_spec
+    if card_size != blank
+      echo card_size
+      if card_gender != blank
+        echo ' · '
+      endif
+    endif
+    if card_gender != blank
+      echo card_gender
+    endif
+  endcapture
+  assign card_spec = card_spec | strip
+  if card_spec == blank
+    assign card_spec = product.type
+  endif
 -%}
 
 <div class="prod-card fade-up" data-handle="{{ product.handle }}"{% if card_variant %} data-variant="{{ card_variant.id }}"{% endif %} onclick="location.href='{{ product.url }}'">
@@ -66,6 +91,7 @@
   <div class="prod-info">
     {%- if product.vendor != blank -%}<div class="prod-brand">{{ product.vendor }}</div>{%- endif -%}
     <div class="prod-name">{{ product.title }}</div>
+    {%- if card_spec != blank -%}<div class="prod-spec">{{ card_spec }}</div>{%- endif -%}
     <div class="prod-rating"><div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>{{ product.metafields.judgeme.badge }}</div></div>
     <div class="prod-price">
       <span class="price-now">{{ product.price | money }}</span>

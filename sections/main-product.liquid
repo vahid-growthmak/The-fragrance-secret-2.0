@@ -155,6 +155,21 @@
           </div>
           {%- endif -%}
 
+          {%- comment -%}
+            "Inspired by" box. The brand a fragrance interprets lives in this
+            metafield and nowhere else — never in the title, the description or
+            the tags — so it stays out of the Google Merchant feed, which reads
+            those fields. The disclaimer matches the wording already in the
+            terms of service.
+          {%- endcomment -%}
+          {%- if mf.inspired_by.value != blank -%}
+          <div class="inspired-box">
+            <span class="ib-label">Inspired by</span>
+            <span class="ib-value">{{ mf.inspired_by.value }}</span>
+            <p class="ib-note">An independent interpretation of this scent profile. Not produced by, affiliated with or endorsed by the original brand; the name is used only to describe the scent character.</p>
+          </div>
+          {%- endif -%}
+
           <!-- TRUST -->
           <div class="pdp-trust">
             <div class="pt-item"><span class="mi" aria-hidden="true">verified_user</span><span><strong>100% Authentic Perfumes</strong> — Sourced from trusted suppliers</span></div>
