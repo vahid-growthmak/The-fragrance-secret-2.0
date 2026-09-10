@@ -135,7 +135,23 @@
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">air</span></div><div class="ki-label">Projection</div><div class="ki-val">{{ sillage }}</div></div>
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">person</span></div><div class="ki-label">Best For</div><div class="ki-val">{{ best_for }}</div></div>
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Made In</div><div class="ki-val">{{ origin }}</div></div>
+            {%- comment -%}
+              Inspired-by sits with the other key facts rather than in a panel
+              of its own, because it is the same kind of fact. It renders only
+              where the metafield is set, so the strip stays four-up for every
+              product that does not interpret another fragrance.
+            {%- endcomment -%}
+            {%- if mf.inspired_by.value != blank -%}
+            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">auto_awesome</span></div><div class="ki-label">Inspired By</div><div class="ki-val">{{ mf.inspired_by.value }}</div></div>
+            {%- endif -%}
           </div>
+          {%- comment -%}
+            The disclaimer has to travel with the claim, so it follows the strip
+            rather than living only in the terms of service.
+          {%- endcomment -%}
+          {%- if mf.inspired_by.value != blank -%}
+          <p class="ki-inspired-note">An independent interpretation of this scent profile. Not produced by, affiliated with or endorsed by the original brand; the name is used only to describe the scent character.</p>
+          {%- endif -%}
 
           <!-- FRAGRANCE FAMILY + NOTES -->
           {%- if mf.fragrance_family.value != blank -%}
@@ -155,20 +171,6 @@
           </div>
           {%- endif -%}
 
-          {%- comment -%}
-            "Inspired by" box. The brand a fragrance interprets lives in this
-            metafield and nowhere else — never in the title, the description or
-            the tags — so it stays out of the Google Merchant feed, which reads
-            those fields. The disclaimer matches the wording already in the
-            terms of service.
-          {%- endcomment -%}
-          {%- if mf.inspired_by.value != blank -%}
-          <div class="inspired-box">
-            <span class="ib-label">Inspired by</span>
-            <span class="ib-value">{{ mf.inspired_by.value }}</span>
-            <p class="ib-note">An independent interpretation of this scent profile. Not produced by, affiliated with or endorsed by the original brand; the name is used only to describe the scent character.</p>
-          </div>
-          {%- endif -%}
 
           <!-- TRUST -->
           <div class="pdp-trust">

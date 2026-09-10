@@ -3575,9 +3575,12 @@
     }
 
     /* KEY INFO STRIP */
+    /* auto-fit rather than a fixed four: the strip gains a fifth "Inspired By"
+       tile on products that interpret another fragrance, and hardcoding four
+       columns would wrap that tile onto a second row on its own. */
     .key-info {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 1px;
       background: var(--cream-dk);
       border: 1px solid var(--cream-dk);
@@ -7390,42 +7393,16 @@ html body .jdgm-form select {
       .bt-panel-head { flex-direction: column; align-items: flex-start; gap: 10px }
     }
 
-    /* ── "Inspired by" box ────────────────────────────────────────────
-       Shown only when custom.inspired_by is set. Deliberately quiet: it is a
-       factual attribution, not a selling point, and the disclaimer has to sit
-       with it rather than being buried in the terms. */
-    .inspired-box {
-      border: 1px solid rgba(201, 168, 76, .3);
-      background: rgba(201, 168, 76, .06);
-      border-radius: 6px;
-      padding: 14px 16px;
-      margin-bottom: 22px
-    }
-
-    .inspired-box .ib-label {
-      font-family: var(--fb);
-      font-size: .62rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold-dk);
-      display: block;
-      margin-bottom: 4px
-    }
-
-    .inspired-box .ib-value {
-      font-family: var(--fd);
-      font-size: 1.25rem;
-      color: var(--ink);
-      display: block;
-      line-height: 1.2
-    }
-
-    .inspired-box .ib-note {
+    /* Disclaimer under the key-info strip, shown only alongside the
+       "Inspired By" tile. Quiet by design — it is a legal note, not a selling
+       point — but it sits with the claim rather than only in the terms. */
+    .ki-inspired-note {
       font-family: var(--fb);
       font-size: .68rem;
       line-height: 1.5;
-      color: var(--warm);
-      margin-top: 8px
+      color: var(--muted);
+      margin: -18px 0 26px;
+      padding-left: 2px
     }
 
     /* ── PDP reassurance strip ────────────────────────────────────────
