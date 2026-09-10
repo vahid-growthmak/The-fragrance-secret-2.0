@@ -51,6 +51,13 @@
   {%- endif -%}
 
   {%- comment -%}
+    Open Graph / Twitter cards. The Igloo theme got these from the Avada SEO
+    app, which is not carried over to this theme, so they are emitted here
+    from the same seo_title / seo_description the <title> above uses.
+  {%- endcomment -%}
+  {%- render 'meta-social', seo_title: seo_title, seo_description: seo_description -%}
+
+  {%- comment -%}
     Keep filtered / sorted collection URLs out of the index (they are thin duplicates
     of the base collection). The canonical above already points at the clean URL.
   {%- endcomment -%}

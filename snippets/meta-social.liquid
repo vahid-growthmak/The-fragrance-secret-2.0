@@ -1,0 +1,85 @@
+{%- comment -%}
+  Open Graph and Twitter Card tags.
+
+  The old Igloo theme got these from the Avada SEO app. Avada is deliberately
+  not enabled on this theme — it emitted a second and third Product JSON-LD
+  alongside the theme's own, one of them invalid — so the tags it supplied
+  have to come from here instead. Without them a shared product link renders
+  a bare card on WhatsApp, Facebook, Instagram and X, which is where a large
+  share of this store's traffic starts.
+
+  Expects seo_title and seo_description to be assigned already; layout/
+  theme.liquid works those out for the built-in routes that have no resource
+  to hang SEO on, and passing them in keeps the social card identical to the
+  <title> and meta description rather than drifting from them.
+
+  Rendered before content_for_header so these win the first-occurrence rule
+  scrapers apply — Judge.me's app block emits its own og:image further down.
+
+  Usage:
+    {% render 'meta-social', seo_title: seo_title, seo_description: seo_description %}
+{%- endcomment -%}
+
+{%- liquid
+  assign og_title = seo_title | default: page_title | default: shop.name
+  assign og_description = seo_description | default: page_description | default: shop.description
+
+  assign og_type = 'website'
+  if request.page_type == 'product'
+    assign og_type = 'product'
+  elsif request.page_type == 'article'
+    assign og_type = 'article'
+  endif
+
+  assign og_image = nil
+  if product and product.featured_media.preview_image
+    assign og_image = product.featured_media.preview_image
+  elsif article and article.image
+    assign og_image = article.image
+  elsif collection and collection.image
+    assign og_image = collection.image
+  elsif settings.social_share_image
+    assign og_image = settings.social_share_image
+  endif
+
+  comment
+    twitter:site must be an @handle. The live store had the full profile URL
+    pasted in behind an @, which Twitter/X ignores, so it is derived from the
+    setting here and falls back to the known handle.
+  endcomment
+  assign tw_handle = settings.social_twitter_link | split: '/' | last | remove: '@'
+  if tw_handle == blank
+    assign tw_handle = 'thefs_services'
+  endif
+-%}
+
+<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{{ og_title | strip_html | escape }}">
+{%- if og_description != blank %}
+  <meta property="og:description" content="{{ og_description | strip_html | escape }}">
+{%- endif %}
+{%- if og_image %}
+  <meta property="og:image" content="http:{{ og_image | image_url: width: 1200 }}">
+  <meta property="og:image:secure_url" content="https:{{ og_image | image_url: width: 1200 }}">
+  <meta property="og:image:width" content="{{ og_image.width | at_most: 1200 }}">
+  <meta property="og:image:height" content="{{ og_image.height | at_most: 1200 }}">
+  {%- if og_image.alt != blank %}
+    <meta property="og:image:alt" content="{{ og_image.alt | escape }}">
+  {%- endif %}
+{%- endif %}
+{%- if request.page_type == 'product' and product %}
+  <meta property="og:price:amount" content="{{ product.selected_or_first_available_variant.price | money_without_currency | strip_html }}">
+  <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
+{%- endif %}
+
+<meta name="twitter:card" content="{% if og_image %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:site" content="@{{ tw_handle }}">
+<meta name="twitter:title" content="{{ og_title | strip_html | escape }}">
+{%- if og_description != blank %}
+  <meta name="twitter:description" content="{{ og_description | strip_html | escape }}">
+{%- endif %}
+{%- if og_image %}
+  <meta name="twitter:image" content="https:{{ og_image | image_url: width: 1200 }}">
+{%- endif %}
