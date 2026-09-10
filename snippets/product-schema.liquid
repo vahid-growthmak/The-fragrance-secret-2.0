@@ -72,9 +72,13 @@
   },
   {%- endif %}
   {%- comment -%}
-    Offers are emitted only with a real price. This catalogue currently has
-    none, and a zero or null price makes the rich result invalid, so the block
-    starts appearing on its own once prices are set.
+    Offers are emitted only with a real price, because a zero or null price
+    makes the rich result invalid. Since the catalogue import that is now
+    1,289 of 1,308 products; the remaining 19 carry no price in the source
+    sheet and so ship without an offers block rather than with a broken one.
+
+    priceCurrency follows the store, not a hardcoded value, so it corrects
+    itself the moment the shop currency is switched to AED.
   {%- endcomment -%}
   {%- if product.price > 0 %}
     {%- if product.price_min != product.price_max %}
