@@ -384,7 +384,13 @@
             "eyebrow": "Shop the House",
             "heading": "Lattafa <em>Perfumes</em>",
             "sub": "The Lattafa range in full, from everyday wear to statement oud.",
-            "count": 4
+            "count": 4,
+            "products": [
+              "lattafa-pride-art-of-universe-edp-100ml",
+              "al-qiam-gold-lattafa-100ml",
+              "lattafa-eternal-oud-eau-de-parfum-100ml-unisex",
+              "lattafa-khamrah-dukhan-edp-100ml"
+            ]
           }
         },
         "featured_product": {
