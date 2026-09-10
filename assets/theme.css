@@ -94,7 +94,7 @@
     .ht-item .mi { font-size: 17px; color: var(--gold) }
     .ts-item .mi { font-size: 23px; color: var(--gold) }
     .pc-btn .mi { font-size: 15px }
-    .see-all .mi { font-size: 16px }
+    .see-all .mi { font-size: 16px; color: var(--gold-dk) }
     .pa-btn .mi { font-size: 17px; color: var(--ink) }
     .fp-btn-add .mi { font-size: 17px }
     .rv-verify .mi { font-size: 14px }
@@ -1733,11 +1733,15 @@
       margin-bottom: 52px
     }
 
+    /* Ink, not gold. These sit beside section headings that already carry a
+       gold accent in their <em>, so a gold CTA competed with the heading
+       rather than reading as the next thing to click. Gold is kept for the
+       hover rule and the arrow, so the link still warms on interaction. */
     .see-all {
       font-size: .74rem;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--ink);
       font-weight: 500;
       display: flex;
       align-items: center;
@@ -1747,7 +1751,8 @@
     }
 
     .see-all:hover {
-      border-color: var(--gold)
+      border-color: var(--gold);
+      color: var(--gold-dk)
     }
 
     .see-all svg {
