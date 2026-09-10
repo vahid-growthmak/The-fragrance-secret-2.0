@@ -3302,14 +3302,38 @@
       padding: 0 48px
     }
 
+    /* A breadcrumb is a single line. Left to wrap it broke "Home" across two
+       lines mid-word on a phone and gave a long product title a paragraph of
+       its own, which pushed the product below the fold.
+
+       The links and chevrons hold their size; only the last crumb — the
+       current page, always a plain span, the chevrons being span.mi — gives
+       way and ellipses. Applies to every breadcrumb in the theme, product,
+       collection, article, account and hub alike. */
     .breadcrumb {
       display: flex;
       align-items: center;
+      flex-wrap: nowrap;
+      min-width: 0;
       gap: 8px;
       font-size: .72rem;
       color: var(--muted);
       letter-spacing: .06em;
       margin-bottom: 8px
+    }
+
+    .breadcrumb > a,
+    .breadcrumb > .mi {
+      flex: 0 0 auto;
+      white-space: nowrap
+    }
+
+    .breadcrumb > span:not(.mi) {
+      flex: 0 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
     }
 
     .breadcrumb a:hover {
@@ -5332,10 +5356,12 @@ html body .jdgm-form select {
 
     /* Tablet portrait / large phone landscape (≤900px) */
     @media(max-width:900px) {
-      /* Stays full-bleed on tablet; the image is behind the copy, not above it. */
+      /* Stays full-bleed on tablet; the image is behind the copy, not above it.
+         Full viewport height here: dvh rather than vh so the browser's own
+         chrome is accounted for and the hero is not cropped on a phone. */
       .hero {
-        min-height: 70vh;
-        min-height: 70dvh
+        min-height: 100vh;
+        min-height: 100dvh
       }
 
       .hero-content > * {
