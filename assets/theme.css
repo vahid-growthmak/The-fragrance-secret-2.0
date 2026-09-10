@@ -1176,29 +1176,9 @@
        family, and shop by moment. Everything else reuses existing classes. */
 
     /* hero: one primary button plus a quiet text link */
-    .hero-textlink {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .03em;
-      color: var(--muted);
-      transition: color .25s
-    }
 
-    .hero-textlink:hover {
-      color: var(--gold)
-    }
 
-    .hero-textlink .mi {
-      font-size: 17px;
-      transition: transform .25s var(--snap)
-    }
 
-    .hero-textlink:hover .mi {
-      transform: translateX(4px)
-    }
 
     /* most-loved houses: chips in a row rather than the auto-fill grid */
     .brand-cloud-row {
