@@ -119,7 +119,25 @@
       </div>
     </div>
 
-    {%- if section.settings.policy_links != blank -%}
+    {%- comment -%}
+      Policy links come from the store's own policies, not from the settings
+      textarea. The textarea held /pages/privacy-policy and four siblings,
+      which exist on the development store but not on the live one — there
+      the same documents are served by Shopify at /policies/..., so every one
+      of those links 404'd or redirected. shop.policies always resolves to
+      whatever the store actually publishes, with the store's own titles, so
+      it cannot drift out of step again.
+
+      The textarea still renders when a store has no policies configured, so
+      a manual list remains possible.
+    {%- endcomment -%}
+    {%- if shop.policies.size > 0 -%}
+      <nav class="footer-policies" aria-label="Policies">
+        {%- for policy in shop.policies -%}
+          <a href="{{ policy.url }}">{{ policy.title }}</a>
+        {%- endfor -%}
+      </nav>
+    {%- elsif section.settings.policy_links != blank -%}
       <nav class="footer-policies" aria-label="Policies">
         {%- assign policy_links = section.settings.policy_links | newline_to_br | split: '<br />' -%}
         {%- for link in policy_links -%}
