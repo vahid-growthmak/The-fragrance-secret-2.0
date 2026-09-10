@@ -1,0 +1,1673 @@
+{
+ "renamed": 333,
+ "redirected": 333,
+ "failed": 0,
+ "errors": [],
+ "done": [
+  {
+   "title": "Fragrance Secrets Saffron Rose Spices Extrait de Parfum – Fruity Amber",
+   "old": "fragrance-secrets-saffron-rose-spices-extrait-de-parfum-fruity-amber-unisex",
+   "new": "amethyst-ia-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Rose Raspberry Bergamot Extrait de Parfum – Rose Flo",
+   "old": "fragrance-secrets-rose-raspberry-bergamot-extrait-de-parfum-rose-floral-unisex",
+   "new": "ameerath-al-arab-prive-rose-36366-v2-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Sage Ginger Extrait de Parfum – Woody Aroma",
+   "old": "fragrance-secrets-bergamot-sage-ginger-extrait-de-parfum-woody-aromatic-unisex",
+   "new": "ameerath-al-arab-imprium-36209-v2-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Basil Cardamom Mint Extrait de Parfum – Amber Woody ",
+   "old": "fragrance-secrets-basil-cardamom-mint-extrait-de-parfum-amber-woody-unisex",
+   "new": "ameerat-al-arab-33167-v1-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Nutmeg Geranium Extrait de Parfum – Oud Wood",
+   "old": "fragrance-secrets-saffron-nutmeg-geranium-extrait-de-parfum-oud-woody-unisex",
+   "new": "ameer-al-oud-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Apple White Pepper Cardamom Extrait de Parfum – Ambe",
+   "old": "fragrance-secrets-apple-white-pepper-cardamom-extrait-de-parfum-amber-woody-unisex",
+   "new": "amber-wood-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Amber Floral Powdery Extrait de Parfum – Amber Flora",
+   "old": "fragrance-secrets-amber-floral-powdery-extrait-de-parfum-amber-floral-unisex",
+   "new": "amber-rijali-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Amber Rose Woody Extrait de Parfum – Amber Rose Unis",
+   "old": "fragrance-secrets-amber-rose-woody-extrait-de-parfum-amber-rose-unisex",
+   "new": "amber-nuit-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Clementine Pimento Jasmine Perfume Oil – Floral Frui",
+   "old": "fragrance-secrets-clementine-pimento-jasmine-perfume-oil-floral-fruity-unisex",
+   "new": "perfume-oil-inspired-by-very-sexy-roze-kazan-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Saffron Oud Perfume Oil – Oud Citrus Unisex",
+   "old": "fragrance-secrets-bergamot-saffron-oud-perfume-oil-oud-citrus-unisex",
+   "new": "perfume-oil-inspired-by-marj-ahmed-al-magribi-ess-unisex-5630"
+  },
+  {
+   "title": "Fragrance Secrets Tangerine Patchouli Rose Perfume Oil – Oud Citrus Un",
+   "old": "fragrance-secrets-tangerine-patchouli-rose-perfume-oil-oud-citrus-unisex",
+   "new": "perfume-oil-inspired-by-marj-ahmed-al-magribi-ess-unisex-6584"
+  },
+  {
+   "title": "Fragrance Secrets Cinnamon Nutmeg Bergamot Perfume Oil – Amber Gourman",
+   "old": "fragrance-secrets-cinnamon-nutmeg-bergamot-perfume-oil-amber-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-khamrah-lattafa-ess-unisex-7558"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Oud Leather Perfume Oil – Amber Woody Unise",
+   "old": "fragrance-secrets-bergamot-oud-leather-perfume-oil-amber-woody-unisex",
+   "new": "perfume-oil-inspired-by-imperial-valley-gissah-ess-unisex-8699"
+  },
+  {
+   "title": "Fragrance Secrets Davana Vetiver Amber Perfume Oil – Amber Woody Unise",
+   "old": "fragrance-secrets-davana-vetiver-amber-perfume-oil-amber-woody-unisex",
+   "new": "perfume-oil-inspired-by-imperial-valley-gissah-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Cardamom Saffron Bergamot Perfume Oil – Amber Woody ",
+   "old": "fragrance-secrets-cardamom-saffron-bergamot-perfume-oil-amber-woody-unisex",
+   "new": "perfume-oil-inspired-by-maydan-spirit-of-dubai-ess-unisex-6715"
+  },
+  {
+   "title": "Fragrance Secrets Cypress Myrtle Rose Perfume Oil – Woody Sandalwood U",
+   "old": "fragrance-secrets-cypress-myrtle-rose-perfume-oil-woody-sandalwood-unisex",
+   "new": "perfume-oil-inspired-by-tam-dao-diptyque-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Heliotrope Honey Orange Blossom Perfume Oil – Floral",
+   "old": "fragrance-secrets-heliotrope-honey-orange-blossom-perfume-oil-floral-sweet-women",
+   "new": "perfume-oil-inspired-by-voila-gissah-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Banana Coconut Raspberry Perfume Oil – Fruity Floral",
+   "old": "fragrance-secrets-banana-coconut-raspberry-perfume-oil-fruity-floral-unisex",
+   "new": "perfume-oil-inspired-by-ahl-ahmed-al-magribi-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Coconut Heliotrope Madagascar Vanilla Perfume Oil – ",
+   "old": "fragrance-secrets-coconut-heliotrope-madagascar-vanilla-perfume-oil-vanilla-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-vanilla-powder-matiere-premiere-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Sweet Woody Amber Perfume Oil – Sweet Woody Women",
+   "old": "fragrance-secrets-sweet-woody-amber-perfume-oil-sweet-woody-women",
+   "new": "perfume-oil-inspired-by-mousuf-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Passion Fruit Saffron Turkish Rose Perfume Oil – Fru",
+   "old": "fragrance-secrets-passion-fruit-saffron-turkish-rose-perfume-oil-fruity-oud-unisex",
+   "new": "perfume-oil-inspired-by-oud-maracuja-maison-crevelli-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Pepper Sichuan Pepper Perfume Oil – Fresh S",
+   "old": "fragrance-secrets-bergamot-pepper-sichuan-pepper-perfume-oil-fresh-spicy-men",
+   "new": "perfume-oil-inspired-by-sauvage-christian-dior-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Berries Bergamot Orange Perfume Oil – Sweet Woody Un",
+   "old": "fragrance-secrets-berries-bergamot-orange-perfume-oil-sweet-woody-unisex",
+   "new": "perfume-oil-inspired-by-akoya-gissah-ess-unisex-1018"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Blackcurrant Apple Perfume Oil – Fruity Chy",
+   "old": "fragrance-secrets-bergamot-blackcurrant-apple-perfume-oil-fruity-chypre-men",
+   "new": "perfume-oil-inspired-by-aventus-creed-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Thai Basil Timut Pepper Vetiver Perfume Oil – Woody ",
+   "old": "fragrance-secrets-thai-basil-timut-pepper-vetiver-perfume-oil-woody-aromatic-unisex",
+   "new": "perfume-oil-inspired-by-bois-imperial-essentials-parfums-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Citron Calabrian Bergamot Sicilian Orange Perfume Oi",
+   "old": "fragrance-secrets-citron-calabrian-bergamot-sicilian-orange-perfume-oil-citrus-aromatic-men",
+   "new": "perfume-oil-inspired-by-imagination-lv-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Peony Citruses Mandarin Orange Perfume Oil – Floral ",
+   "old": "fragrance-secrets-peony-citruses-mandarin-orange-perfume-oil-floral-citrus-women",
+   "new": "perfume-oil-inspired-by-gucci-flora-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Salt Turkish Rose Praline Perfume Oil – Aquatic Gour",
+   "old": "fragrance-secrets-salt-turkish-rose-praline-perfume-oil-aquatic-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-magic-al-jazeera-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Lemon Jasmine Perfume Oil – Fruity Floral U",
+   "old": "fragrance-secrets-bergamot-lemon-jasmine-perfume-oil-fruity-floral-unisex",
+   "new": "perfume-oil-inspired-by-erbapura-sospiro-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Peach Apple Blossom Pineapple Blossom Perfume Oil – ",
+   "old": "fragrance-secrets-peach-apple-blossom-pineapple-blossom-perfume-oil-fruity-floral-women",
+   "new": "perfume-oil-inspired-by-madawi-arabian-oud-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Oud Honey Nutmeg Perfume Oil – Oriental Woody Unisex",
+   "old": "fragrance-secrets-oud-honey-nutmeg-perfume-oil-oriental-woody-unisex",
+   "new": "perfume-oil-inspired-by-marj-ahmed-al-magribi-ess-unisex-6583"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Bergamot Agarwood (Oud) Perfume Oil – Orient",
+   "old": "fragrance-secrets-saffron-bergamot-agarwood-oud-perfume-oil-oriental-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-arabian-tonka-montale-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Black Currant Green Tangerine Strawberry Fizz Candy ",
+   "old": "fragrance-secrets-black-currant-green-tangerine-strawberry-fizz-candy-perfume-oil-fruity-gourmand-women",
+   "new": "perfume-oil-inspired-by-yara-candy-lattafa-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Cinnamon Nutmeg Bergamot Perfume Oil – Spicy Gourman",
+   "old": "fragrance-secrets-cinnamon-nutmeg-bergamot-perfume-oil-spicy-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-khamrah-lattafa-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Lemon Verbena Kaffir Lime Mate Perfume Oil – Citrus ",
+   "old": "fragrance-secrets-lemon-verbena-kaffir-lime-mate-perfume-oil-citrus-aromatic-unisex",
+   "new": "perfume-oil-inspired-by-tahnoun-hind-al-oud-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Sicilian Bergamot Pink Pepper Davana Perfume Oil – W",
+   "old": "fragrance-secrets-sicilian-bergamot-pink-pepper-davana-perfume-oil-woody-oriental-unisex",
+   "new": "perfume-oil-inspired-by-imperial-valley-gissah-ess-unisex-3091"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Rose Labdanum Perfume Oil – Oriental Oud Men",
+   "old": "fragrance-secrets-saffron-rose-labdanum-perfume-oil-oriental-oud-men",
+   "new": "perfume-oil-inspired-by-boss-bottled-oud-saffron-hugo-boss-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Rose Saffron White Flowers Perfume Oil – Oriental Fl",
+   "old": "fragrance-secrets-rose-saffron-white-flowers-perfume-oil-oriental-floral-unisex",
+   "new": "perfume-oil-inspired-by-bidun-ism-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Strawberry Blackberry Jasmine Perfume Oil – Fruity G",
+   "old": "fragrance-secrets-strawberry-blackberry-jasmine-perfume-oil-fruity-gourmand-women",
+   "new": "perfume-oil-inspired-by-burberry-her-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Grapefruit Ginger Ambrette Perfume Oil – Citrus Ambe",
+   "old": "fragrance-secrets-grapefruit-ginger-ambrette-perfume-oil-citrus-amber-men",
+   "new": "perfume-oil-inspired-by-bvlgari-tygar-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Grapefruit Rosemary Cardamom Perfume Oil – Aromatic ",
+   "old": "fragrance-secrets-grapefruit-rosemary-cardamom-perfume-oil-aromatic-woody-men",
+   "new": "perfume-oil-inspired-by-lacoste-white-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Black Currant Saffron Rose Perfume Oil – Fruity Flor",
+   "old": "fragrance-secrets-black-currant-saffron-rose-perfume-oil-fruity-floral-unisex",
+   "new": "perfume-oil-inspired-by-hudson-valley-gissah-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Rose Water Pear Hazelnut Perfume Oil – Floral Woody ",
+   "old": "fragrance-secrets-rose-water-pear-hazelnut-perfume-oil-floral-woody-unisex",
+   "new": "perfume-oil-inspired-by-guidance-amouage-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Melon Sea Salt Musk Perfume Oil – Aquatic Fruity Uni",
+   "old": "fragrance-secrets-melon-sea-salt-musk-perfume-oil-aquatic-fruity-unisex",
+   "new": "perfume-oil-inspired-by-muzn-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Cardamom Cade Oil Perfume Oil – Oriental Woo",
+   "old": "fragrance-secrets-saffron-cardamom-cade-oil-perfume-oil-oriental-woody-unisex",
+   "new": "perfume-oil-inspired-by-caden-oman-luxury-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Lavender Cypress Perfume Oil – Oriental Wood",
+   "old": "fragrance-secrets-saffron-lavender-cypress-perfume-oil-oriental-woody-unisex",
+   "new": "perfume-oil-inspired-by-maydan-spirit-of-dubai-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Freesia Italian Lemon Nectarine Blossom Perfume Oil ",
+   "old": "fragrance-secrets-freesia-italian-lemon-nectarine-blossom-perfume-oil-fruity-gourmand-women",
+   "new": "perfume-oil-inspired-by-yum-boujee-marshmallow-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Apple Cinnamon Wild Lavender Perfume Oil – Sweet Spi",
+   "old": "fragrance-secrets-apple-cinnamon-wild-lavender-perfume-oil-sweet-spicy-men",
+   "new": "perfume-oil-inspired-by-9-pm-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Raspberry Orange Oil Bergamot Perfume Oil – Fruity G",
+   "old": "fragrance-secrets-raspberry-orange-oil-bergamot-perfume-oil-fruity-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-akoya-gissah-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Pear Bergamot Pink Pepper Perfume Oil – Floral Fruit",
+   "old": "fragrance-secrets-pear-bergamot-pink-pepper-perfume-oil-floral-fruity-women",
+   "new": "perfume-oil-inspired-by-idole-lancome-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Caramel Coumarin Honey Perfume Oil – Gourmand Sweet ",
+   "old": "fragrance-secrets-caramel-coumarin-honey-perfume-oil-gourmand-sweet-unisex",
+   "new": "perfume-oil-inspired-by-bianco-latte-giardini-toscano-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Violet Leaf Coriander Bergamot Perfume Oil – Spicy W",
+   "old": "fragrance-secrets-violet-leaf-coriander-bergamot-perfume-oil-spicy-woody-unisex",
+   "new": "perfume-oil-inspired-by-tuxedo-ysl-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Saffron Apple Perfume Oil – Floral Woody Un",
+   "old": "fragrance-secrets-bergamot-saffron-apple-perfume-oil-floral-woody-unisex",
+   "new": "perfume-oil-inspired-by-castilla-gissah-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Litchi Pear Bergamot Perfume Oil – Floral Oriental W",
+   "old": "fragrance-secrets-litchi-pear-bergamot-perfume-oil-floral-oriental-women",
+   "new": "perfume-oil-inspired-by-delina-exclusive-pdm-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets Pineapple Bergamot Apple Perfume Oil – Fruity Woody ",
+   "old": "fragrance-secrets-pineapple-bergamot-apple-perfume-oil-fruity-woody-men",
+   "new": "perfume-oil-inspired-by-now-by-rave-ess-for-men"
+  },
+  {
+   "title": "Fragrance Secrets Peppermint Cassis Hibiscus Perfume Oil – Floral Frui",
+   "old": "fragrance-secrets-peppermint-cassis-hibiscus-perfume-oil-floral-fruity-unisex",
+   "new": "perfume-oil-inspired-by-hibiscus-mahajad-maison-crevelli-ess-unisex"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Red Berries Lily Perfume Oil – Floral Gourm",
+   "old": "fragrance-secrets-bergamot-red-berries-lily-perfume-oil-floral-gourmand-women",
+   "new": "perfume-oil-inspired-by-gaultier-divine-jpg-ess-for-women"
+  },
+  {
+   "title": "Fragrance Secrets juicy mango sweet tropical fruits Perfume Oil 100g, ",
+   "old": "fragrance-secrets-juicy-mango-sweet-tropical-fruits-perfume-oil-100g-250g-500g-1kg-floral-fruity-unisex",
+   "new": "perfume-oil-inspired-by-real-mango-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich white oud warm woody Perfume Oil 100g, 250g, 50",
+   "old": "fragrance-secrets-rich-white-oud-warm-woody-perfume-oil-100g-250g-500g-1kg-oud-woody-unisex",
+   "new": "perfume-oil-inspired-by-oud-abyaz-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich floral fresh Perfume Oil 100g, 250g, 500g, 1kg ",
+   "old": "fragrance-secrets-rich-floral-fresh-perfume-oil-100g-250g-500g-1kg-floral-musky-unisex",
+   "new": "perfume-oil-inspired-by-ward-no-1-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets fresh citrus spicy pepper Perfume Oil 100g, 250g, 50",
+   "old": "fragrance-secrets-fresh-citrus-spicy-pepper-perfume-oil-100g-250g-500g-1kg-woody-citrus-unisex",
+   "new": "perfume-oil-inspired-by-sauvage-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich coffee sweet vanilla Perfume Oil 100g, 250g, 50",
+   "old": "fragrance-secrets-rich-coffee-sweet-vanilla-perfume-oil-100g-250g-500g-1kg-gourmand-floral-unisex",
+   "new": "perfume-oil-inspired-by-black-opium-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets fresh herbs warm spices Perfume Oil 100g, 250g, 500g",
+   "old": "fragrance-secrets-fresh-herbs-warm-spices-perfume-oil-100g-250g-500g-1kg-woody-spicy-unisex",
+   "new": "perfume-oil-inspired-by-polo-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich cocoa sweet vanilla Perfume Oil 100g, 250g, 500",
+   "old": "fragrance-secrets-rich-cocoa-sweet-vanilla-perfume-oil-100g-250g-500g-1kg-gourmand-unisex",
+   "new": "perfume-oil-inspired-by-chocolate-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets soft floral fresh Perfume Oil 100g, 250g, 500g, 1kg ",
+   "old": "fragrance-secrets-soft-floral-fresh-perfume-oil-100g-250g-500g-1kg-floral-musky-unisex",
+   "new": "perfume-oil-inspired-by-hina-attar-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets deep oud warm spices Perfume Oil 100g, 250g, 500g, 1",
+   "old": "fragrance-secrets-deep-oud-warm-spices-perfume-oil-100g-250g-500g-1kg-oud-woody-unisex",
+   "new": "perfume-oil-inspired-by-oud-maliki-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets juicy litchi sweet fruity Perfume Oil 100g, 250g, 50",
+   "old": "fragrance-secrets-juicy-litchi-sweet-fruity-perfume-oil-100g-250g-500g-1kg-floral-fruity-unisex",
+   "new": "perfume-oil-inspired-by-litchi-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets citrus aquatic Perfume Oil 100g, 250g, 500g, 1kg – W",
+   "old": "fragrance-secrets-citrus-aquatic-perfume-oil-100g-250g-500g-1kg-woody-citrus-unisex",
+   "new": "perfume-oil-inspired-by-ck-one-blu-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich oriental woody Perfume Oil 100g, 250g, 500g, 1k",
+   "old": "fragrance-secrets-rich-oriental-woody-perfume-oil-100g-250g-500g-1kg-woody-floral-unisex",
+   "new": "perfume-oil-inspired-by-mashmoom-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich jasmine soft floral Perfume Oil 100g, 250g, 500",
+   "old": "fragrance-secrets-rich-jasmine-soft-floral-perfume-oil-100g-250g-500g-1kg-floral-musky-unisex",
+   "new": "perfume-oil-inspired-by-jasmin-super-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich oud aromatic spices Perfume Oil 100g, 250g, 500",
+   "old": "fragrance-secrets-rich-oud-aromatic-spices-perfume-oil-100g-250g-500g-1kg-oud-floral-unisex",
+   "new": "perfume-oil-inspired-by-mukhallat-oman-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets fresh Perfume Oil 100g, 250g, 500g, 1kg – Woody Flor",
+   "old": "fragrance-secrets-fresh-perfume-oil-100g-250g-500g-1kg-woody-floral-unisex",
+   "new": "perfume-oil-inspired-by-dkn-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oriental Perfume Oil 100g, 250g, 500g, 1kg – Orienta",
+   "old": "fragrance-secrets-oriental-perfume-oil-100g-250g-500g-1kg-oriental-unisex",
+   "new": "perfume-oil-inspired-by-khamra-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets sweet floral Perfume Oil 100g, 250g, 500g, 1kg – Flo",
+   "old": "fragrance-secrets-sweet-floral-perfume-oil-100g-250g-500g-1kg-floral-women",
+   "new": "perfume-oil-inspired-by-good-girl-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets oriental floral Perfume Oil 100g, 250g, 500g, 1kg – ",
+   "old": "fragrance-secrets-oriental-floral-perfume-oil-100g-250g-500g-1kg-woody-floral-unisex",
+   "new": "perfume-oil-inspired-by-tajibni-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets sweet fruity Perfume Oil 100g, 250g, 500g, 1kg – Flo",
+   "old": "fragrance-secrets-sweet-fruity-perfume-oil-100g-250g-500g-1kg-floral-fruity-unisex",
+   "new": "perfume-oil-inspired-by-armani-si-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich Perfume Oil 100g, 250g, 500g, 1kg – Floral Unis",
+   "old": "fragrance-secrets-rich-perfume-oil-100g-250g-500g-1kg-floral-unisex",
+   "new": "perfume-oil-inspired-by-marj-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets deep tobacco warm spices Perfume Oil 100g, 250g, 500",
+   "old": "fragrance-secrets-deep-tobacco-warm-spices-perfume-oil-100g-250g-500g-1kg-woody-spicy-unisex",
+   "new": "perfume-oil-inspired-by-tobacco-intense-dark-l-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets woody spicy Perfume Oil 100g, 250g, 500g, 1kg – Wood",
+   "old": "fragrance-secrets-woody-spicy-perfume-oil-100g-250g-500g-1kg-woody-spicy-unisex",
+   "new": "perfume-oil-inspired-by-safari-extreme-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets fresh floral Perfume Oil 100g, 250g, 500g, 1kg – Flo",
+   "old": "fragrance-secrets-fresh-floral-perfume-oil-100g-250g-500g-1kg-floral-musky-unisex",
+   "new": "perfume-oil-inspired-by-silver-scent-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets rich Perfume Oil 100g, 250g, 500g, 1kg – Oriental Un",
+   "old": "fragrance-secrets-rich-perfume-oil-100g-250g-500g-1kg-oriental-unisex",
+   "new": "perfume-oil-inspired-by-prestige-ruby-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets romantic floral Perfume Oil 100g, 250g, 500g, 1kg – ",
+   "old": "fragrance-secrets-romantic-floral-perfume-oil-100g-250g-500g-1kg-floral-unisex",
+   "new": "perfume-oil-inspired-by-nebras-al-ishq-shorouk-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets sweetness sophistication Perfume Oil – Oriental Unis",
+   "old": "fragrance-secrets-sweetness-sophistication-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-kayali-pistachio-gelato-33-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets intensity refinement Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-intensity-refinement-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-bade-al-oud-honour-glory-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Warm Amber Musk Extrait de Parfum – Amber Unisex",
+   "old": "fragrance-secrets-warm-amber-musk-extrait-de-parfum-amber-unisex",
+   "new": "amber-musk-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Amber Leather Woods Extrait de Parfum – Amber Unisex",
+   "old": "fragrance-secrets-amber-leather-woods-extrait-de-parfum-amber-unisex",
+   "new": "amber-leather-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Vanilla Bergamot Tonka Extrait de Parfum – Oriental ",
+   "old": "fragrance-secrets-vanilla-bergamot-tonka-extrait-de-parfum-oriental-unisex",
+   "new": "althair-34915-v1-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Citrus Pepper Cedar Extrait de Parfum – Oriental Uni",
+   "old": "fragrance-secrets-citrus-pepper-cedar-extrait-de-parfum-oriental-unisex",
+   "new": "allure-sport-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Mandarin Pepper Vanilla Extrait de Parfum – Oriental",
+   "old": "fragrance-secrets-mandarin-pepper-vanilla-extrait-de-parfum-oriental-unisex",
+   "new": "allure-homme-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Jasmine Amber Woods Extrait de Parfum – Oriental Uni",
+   "old": "fragrance-secrets-jasmine-amber-woods-extrait-de-parfum-oriental-unisex",
+   "new": "alien-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Tuberose Jasmine Musk Extrait de Parfum – Oriental U",
+   "old": "fragrance-secrets-tuberose-jasmine-musk-extrait-de-parfum-oriental-unisex",
+   "new": "alasko-of-lorraine-dirty-fluer504017-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Rose Oud Extrait de Parfum – Oriental Unisex",
+   "old": "fragrance-secrets-saffron-rose-oud-extrait-de-parfum-oriental-unisex",
+   "new": "al-zubra-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Floral Amber Musk Extrait de Parfum – Oriental Unise",
+   "old": "fragrance-secrets-floral-amber-musk-extrait-de-parfum-oriental-unisex",
+   "new": "al-nuaim-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Aquatic Amber Cedar Extrait de Parfum – Oriental Uni",
+   "old": "fragrance-secrets-aquatic-amber-cedar-extrait-de-parfum-oriental-unisex",
+   "new": "akoya-gissah-mkt-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Marine Citrus Musk Extrait de Parfum – Oriental Unis",
+   "old": "fragrance-secrets-marine-citrus-musk-extrait-de-parfum-oriental-unisex",
+   "new": "akoya-gissa-zlblue-pearl-330004-1-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Oud Extrait de Parfum – Oud Unisex",
+   "old": "fragrance-secrets-oud-extrait-de-parfum-oud-unisex",
+   "new": "agar-oud-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Orange Ginger Musk Extrait de Parfum – Aquatic Unise",
+   "old": "fragrance-secrets-orange-ginger-musk-extrait-de-parfum-aquatic-unisex",
+   "new": "afternoon-swim-30395-v1-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Mandarin Bergamot Ambrette Extrait de Parfum – Aquat",
+   "old": "fragrance-secrets-mandarin-bergamot-ambrette-extrait-de-parfum-aquatic-unisex",
+   "new": "after-noon-swim-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Rose Oud Saffron Extrait de Parfum – Oriental Unisex",
+   "old": "fragrance-secrets-rose-oud-saffron-extrait-de-parfum-oriental-unisex",
+   "new": "adrit-27461-v5-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Jasmine Vanilla Sandalwood Extrait de Parfum – Orien",
+   "old": "fragrance-secrets-jasmine-vanilla-sandalwood-extrait-de-parfum-oriental-unisex",
+   "new": "addict-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Pineapple Jasmine Amber Extrait de Parfum – Oriental",
+   "old": "fragrance-secrets-pineapple-jasmine-amber-extrait-de-parfum-oriental-unisex",
+   "new": "accento-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Amber Oud Rose Extrait de Parfum – Oriental Unisex",
+   "old": "fragrance-secrets-amber-oud-rose-extrait-de-parfum-oriental-unisex",
+   "new": "abdul-majeed-gissah-mkt-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Rose Extrait de Parfum – Rose Unisex",
+   "old": "fragrance-secrets-rose-extrait-de-parfum-rose-unisex",
+   "new": "212vip-rose-std-carola-rose-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Lime Ginger Leather Extrait de Parfum – Oriental Uni",
+   "old": "fragrance-secrets-lime-ginger-leather-extrait-de-parfum-oriental-unisex",
+   "new": "212-vip-men-mkt-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Mint Absinthe Vanilla Extrait de Parfum – Oriental U",
+   "old": "fragrance-secrets-mint-absinthe-vanilla-extrait-de-parfum-oriental-unisex",
+   "new": "212-vip-black-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Peach Rum Vanilla Extrait de Parfum – Oriental Unise",
+   "old": "fragrance-secrets-peach-rum-vanilla-extrait-de-parfum-oriental-unisex",
+   "new": "212-vip-std-carola-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Cotton Candy Sandalwood Extrait de Parfum –",
+   "old": "fragrance-secrets-bergamot-cotton-candy-sandalwood-extrait-de-parfum-oriental-unisex",
+   "new": "212-sexy-for-her-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Rose Oud Amber Extrait de Parfum – Oriental Unisex",
+   "old": "fragrance-secrets-rose-oud-amber-extrait-de-parfum-oriental-unisex",
+   "new": "1001-nights-inspired-edp"
+  },
+  {
+   "title": "Fragrance Secrets Apple Cinnamon Vanilla Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-apple-cinnamon-vanilla-perfume-oil-oriental-unisex",
+   "new": "fragrance-secrets-perfume-oil-inspired-by-afnan-9-pm-rebel-100g-250g-500g-1kg"
+  },
+  {
+   "title": "Fragrance Secrets Floral Perfume Oil – Floral Women",
+   "old": "fragrance-secrets-floral-perfume-oil-floral-women",
+   "new": "perfume-oil-inspired-by-bloom-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oud Rose Sandalwood Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-oud-rose-sandalwood-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-mukhallat-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Honey Patchouli Gardenia Perfume Oil – Oriental Unis",
+   "old": "fragrance-secrets-honey-patchouli-gardenia-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-scandle-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets White Oud Musk Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-white-oud-musk-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-white-oud-lt-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oud Saffron Musk Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-oud-saffron-musk-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-oud-al-qamar-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Aquatic Perfume Oil – Aquatic Unisex",
+   "old": "fragrance-secrets-aquatic-perfume-oil-aquatic-unisex",
+   "new": "perfume-oil-inspired-by-pacific-chill-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oud Vanilla Amber Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-oud-vanilla-amber-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-purple-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Cardamom Oud Amber Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-cardamom-oud-amber-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-paco-rabanne-one-million-royal-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Oud Leather Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-saffron-oud-leather-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-paco-rabanne-one-million-golden-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oud Rose Patchouli Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-oud-rose-patchouli-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-oud-wazir-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Lavender Oud Vanilla Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-lavender-oud-vanilla-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-oud-lavender-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oud Amber Musk Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-oud-amber-musk-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-oud-al-rakan-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Vanilla Almond Tonka Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-vanilla-almond-tonka-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-nuit-et-confidences-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Mirabelle Freesia Oakmoss Perfume Oil – Oriental Uni",
+   "old": "fragrance-secrets-mirabelle-freesia-oakmoss-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-nomade-16-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Neroli Bergamot Musk Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-neroli-bergamot-musk-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-creed-neroli-sauvage-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Smoky Oud Amber Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-smoky-oud-amber-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-mystic-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Amberwood Cedar Perfume Oil – Oriental Unise",
+   "old": "fragrance-secrets-saffron-amberwood-cedar-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-mukh-amsiyat-saffron-baccarat-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Marine Seaweed Ambergris Perfume Oil – Oriental Unis",
+   "old": "fragrance-secrets-marine-seaweed-ambergris-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-megamare-orto-parisi-super-g-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Coffee Oud Vanilla Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-coffee-oud-vanilla-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-kayali-cafe-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Leather Rose Vetiver Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-leather-rose-vetiver-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-kingsman-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Grapefruit Marine Guaiac Perfume Oil – Oriental Unis",
+   "old": "fragrance-secrets-grapefruit-marine-guaiac-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-invictus-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Berry Sugar Vanilla Perfume Oil – Sweet Unisex",
+   "old": "fragrance-secrets-berry-sugar-vanilla-perfume-oil-sweet-unisex",
+   "new": "perfume-oil-inspired-by-glittery-new-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Fruity Sugar Musk Perfume Oil – Sweet Unisex",
+   "old": "fragrance-secrets-fruity-sugar-musk-perfume-oil-sweet-unisex",
+   "new": "perfume-oil-inspired-by-glittery-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Fruity Oud Amber Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-fruity-oud-amber-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-fruity-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Citrus Spice Woods Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-citrus-spice-woods-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-freedom-2-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Mango Passionfruit Coconut Perfume Oil – Oriental Un",
+   "old": "fragrance-secrets-mango-passionfruit-coconut-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-escada-taj-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Citrus Perfume Oil – Citrus Men",
+   "old": "fragrance-secrets-citrus-perfume-oil-citrus-men",
+   "new": "perfume-oil-inspired-by-cool-water-men-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Sweet Berry Vanilla Perfume Oil – Sweet Unisex",
+   "old": "fragrance-secrets-sweet-berry-vanilla-perfume-oil-sweet-unisex",
+   "new": "perfume-oil-inspired-by-bling-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Floral Perfume Oil – Floral Unisex",
+   "old": "fragrance-secrets-floral-perfume-oil-floral-unisex",
+   "new": "perfume-oil-inspired-by-blue-lady-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Saffron Jasmine Amberwood Perfume Oil – Oriental Uni",
+   "old": "fragrance-secrets-saffron-jasmine-amberwood-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-baccarat-rough-aj-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Cognac Cinnamon Tonka Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-cognac-cinnamon-tonka-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-angels-share-kilian-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Rose Oud Vanilla Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-rose-oud-vanilla-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-ameerat-al-arab-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Citrus Perfume Oil – Citrus Unisex",
+   "old": "fragrance-secrets-citrus-perfume-oil-citrus-unisex",
+   "new": "perfume-oil-inspired-by-aqua-di-gio-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Pineapple Birch Musk Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-pineapple-birch-musk-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-asad-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oud Rose Leather Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-oud-rose-leather-perfume-oil-oud-unisex",
+   "new": "perfume-oil-inspired-by-amir-al-oud-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Apple Lavender Tonka Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-apple-lavender-tonka-perfume-oil-oriental-unisex",
+   "new": "perfume-oil-inspired-by-afnan-9-pm-alcohol-free-concentrated-oil"
+  },
+  {
+   "title": "Fragrance Secrets Oriental Eau de Parfum – Oriental Unisex",
+   "old": "fragrance-secrets-oriental-eau-de-parfum-oriental-unisex",
+   "new": "bakhoor-marj-20-tabs-luxurious-incense-inspired-by-perfume-marj"
+  },
+  {
+   "title": "Fragrance Secrets White Oud Amber Perfume Oil – Oud Unisex",
+   "old": "fragrance-secrets-white-oud-amber-perfume-oil-oud-unisex",
+   "new": "white-oud-oil"
+  },
+  {
+   "title": "Fragrance Secrets Floral Musk Amber Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-floral-musk-amber-perfume-oil-oriental-unisex",
+   "new": "suellen-sensual-oil"
+  },
+  {
+   "title": "Fragrance Secrets Floral Vanilla Woods Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-floral-vanilla-woods-perfume-oil-oriental-unisex",
+   "new": "splendor-oil"
+  },
+  {
+   "title": "Fragrance Secrets Clean White Musk Perfume Oil – Musk Unisex",
+   "old": "fragrance-secrets-clean-white-musk-perfume-oil-musk-unisex",
+   "new": "musk-tahara-oil"
+  },
+  {
+   "title": "Fragrance Secrets Powdery Musk Vanilla Perfume Oil – Musk Unisex",
+   "old": "fragrance-secrets-powdery-musk-vanilla-perfume-oil-musk-unisex",
+   "new": "musk-powder-oil"
+  },
+  {
+   "title": "Fragrance Secrets Rose Perfume Oil – Rose Unisex",
+   "old": "fragrance-secrets-rose-perfume-oil-rose-unisex",
+   "new": "maryam-oil"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot Amber Vetiver Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-bergamot-amber-vetiver-perfume-oil-oriental-unisex",
+   "new": "imperial-valley-oil"
+  },
+  {
+   "title": "Fragrance Secrets Woody Amber Cedar Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-woody-amber-cedar-perfume-oil-oriental-unisex",
+   "new": "hudson-valley-oil"
+  },
+  {
+   "title": "Fragrance Secrets Powdery Floral Musk Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-powdery-floral-musk-perfume-oil-oriental-unisex",
+   "new": "dove-oil-tlt"
+  },
+  {
+   "title": "Fragrance Secrets Clean Floral Musk Perfume Oil – Oriental Unisex",
+   "old": "fragrance-secrets-clean-floral-musk-perfume-oil-oriental-unisex",
+   "new": "dove-oil-ib"
+  },
+  {
+   "title": "Fragrance Secrets Bergamot and Lemon Seaweed Calone and Hedione Perfum",
+   "old": "fragrance-secrets-bergamot-and-lemon-seaweed-calone-and-hedione-perfume-oil-aquatic-marine-unisex",
+   "new": "megamare-orto-parisi-ess"
+  },
+  {
+   "title": "Ahmed Al Maghribi Nihlah Eau De Parfum 75ML Unisex | Oriental Oud Leat",
+   "old": "ahmed-al-maghribi-nihlah-eau-de-parfum-75ml-unisex-oriental-oud-leather-perfume",
+   "new": "ahmed-al-maghribi-nihlah-eau-de-parfum-100ml-unisex-oriental-oud-leather-perfume"
+  },
+  {
+   "title": "Al Majed Oud Boisée Eau De Parfum 150ML Unisex | Woody Leather Perfume",
+   "old": "al-majed-oud-bois-e-eau-de-parfum-150ml-unisex-woody-leather-perfume",
+   "new": "al-majed-oud-boisee-eau-de-parfum-100ml-unisex-woody-leather-perfume"
+  },
+  {
+   "title": "Armaf Club De Nuit Intense Overdose Eau De Parfum for Men 105ml | Frui",
+   "old": "armaf-club-de-nuit-intense-overdose-eau-de-parfum-for-men-105ml-fruity-woody-amber-perfume",
+   "new": "armaf-club-de-nuit-intense-overdose-eau-de-parfum-for-men-fruity-woody-amber-perfume"
+  },
+  {
+   "title": "Armaf Miss Armaf Chic Eau De Parfum 100ML for Women | Fruity Floral Mu",
+   "old": "armaf-miss-armaf-chic-eau-de-parfum-100ml-for-women-fruity-floral-musk-perfume",
+   "new": "armaf-miss-armaf-chic-eau-de-parfum-100ml-for-women-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Miss Armaf Dazzling Eau De Parfum 100ML for Women | Fruity Flora",
+   "old": "armaf-miss-armaf-dazzling-eau-de-parfum-100ml-for-women-fruity-floral-woody-perfume",
+   "new": "armaf-miss-armaf-dazzling-eau-de-parfum-100ml-for-women-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Miss Armaf Grandeur Eau De Parfum 100ML for Women | Floral Fruit",
+   "old": "armaf-miss-armaf-grandeur-eau-de-parfum-100ml-for-women-floral-fruity-amber-perfume",
+   "new": "armaf-miss-armaf-grandeur-eau-de-parfum-100ml-for-women-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Miss Armaf Magnifiq Eau De Parfum 100ML for Women | Citrus Flora",
+   "old": "armaf-miss-armaf-magnifiq-eau-de-parfum-100ml-for-women-citrus-floral-musk-perfume",
+   "new": "armaf-miss-armaf-magnifiq-eau-de-parfum-100ml-for-women-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Miss Armaf Mystique Eau De Parfum 100ML for Women | Fruity Flora",
+   "old": "armaf-miss-armaf-mystique-eau-de-parfum-100ml-for-women-fruity-floral-gourmand-perfume",
+   "new": "armaf-miss-armaf-mystique-eau-de-parfum-100ml-for-women-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Miss Armaf Voce Viva Eau De Parfum 100ML for Women | Floral Frui",
+   "old": "armaf-miss-armaf-voce-viva-eau-de-parfum-100ml-for-women-floral-fruity-woody-perfume",
+   "new": "armaf-miss-armaf-voce-viva-eau-de-parfum-100ml-for-women-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Odyssey Limoni Fresh Edition Eau De Parfum 100ML Unisex | Citrus",
+   "old": "armaf-odyssey-limoni-fresh-edition-eau-de-parfum-100ml-unisex-citrus-fresh-marine-perfume",
+   "new": "armaf-odyssey-limoni-fresh-edition-edp-100ml"
+  },
+  {
+   "title": "Armaf Odyssey Mandarin Sky Limited Edition Eau De Parfum 100ML for Men",
+   "old": "armaf-odyssey-mandarin-sky-limited-edition-eau-de-parfum-100ml-for-men-citrus-aromatic-woody-perfume",
+   "new": "armaf-odyssey-mandarin-sky-limited-edition-eau-de-parfum-100ml-aramf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf Ombre d'Or Eau De Parfum 100ML Unisex | Oriental Woody Amber Per",
+   "old": "armaf-ombre-d-or-eau-de-parfum-100ml-unisex-oriental-woody-amber-perfume",
+   "new": "armaf-ombre-dor-eau-de-parfum-100ml-unisex-oriental-woody-amber-perfume"
+  },
+  {
+   "title": "Armaf Perle d'Or Eau De Parfum 100ML Unisex | Floral Gourmand Amber Pe",
+   "old": "armaf-perle-d-or-eau-de-parfum-100ml-unisex-floral-gourmand-amber-perfume",
+   "new": "armaf-perle-dor-eau-de-parfum-100ml-unisex-floral-gourmand-amber-perfume"
+  },
+  {
+   "title": "Armaf The Lion's Club Feroce Eau De Parfum 100ML for Men | Fresh Aroma",
+   "old": "armaf-the-lion-s-club-feroce-eau-de-parfum-100ml-for-men-fresh-aromatic-woody-perfume",
+   "new": "armaf-the-lions-club-feroce-eau-de-parfum-100ml-for-men-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf The Lion's Club Majestueux Eau De Parfum 100ML for Men | Spicy T",
+   "old": "armaf-the-lion-s-club-majestueux-eau-de-parfum-100ml-for-men-spicy-tobacco-woody-perfume",
+   "new": "armaf-the-lions-club-majestueux-eau-de-parfum-100ml-for-men-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf The Lion's Club Monarque Eau De Parfum 100ML for Men | Oriental ",
+   "old": "armaf-the-lion-s-club-monarque-eau-de-parfum-100ml-for-men-oriental-vanilla-gourmand-perfume",
+   "new": "armaf-the-lions-club-monarque-eau-de-parfum-100ml-for-men-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Armaf The Lion's Club Rugir Eau De Parfum 100ML for Men | Citrus Fresh",
+   "old": "armaf-the-lion-s-club-rugir-eau-de-parfum-100ml-for-men-citrus-fresh-marine-perfume",
+   "new": "armaf-the-lions-club-rugir-eau-de-parfum-100ml-for-men-armaf-fragrance-secrets"
+  },
+  {
+   "title": "Assaf Glitch Eau De Parfum 150ML Unisex | Fruity Woody Perfume",
+   "old": "assaf-glitch-eau-de-parfum-150ml-unisex-fruity-woody-perfume",
+   "new": "assaf-glitch-eau-de-parfum-150ml-assaf-fragrance-secrets"
+  },
+  {
+   "title": "Assaf Wild Colt Eau De Parfum  Unisex | Woody Oriental Leather Perfume",
+   "old": "assaf-wild-colt-eau-de-parfum-unisex-woody-oriental-leather-perfume",
+   "new": "assaf-wild-colt-eau-de-parfum-200ml-assaf-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works A Thousand Wishes Body Cream 226G | Fruity Floral Am",
+   "old": "bath-body-works-a-thousand-wishes-body-cream-226g-fruity-floral-amber-body-cream",
+   "new": "bath-body-works-a-thousand-wishes-body-cream-226g-for-women-fruity-floral-amber-body-cream"
+  },
+  {
+   "title": "Bath & Body Works A Thousand Wishes Body Lotion 236ML | Fruity Floral ",
+   "old": "bath-body-works-a-thousand-wishes-body-lotion-236ml-fruity-floral-amber-body-lotion",
+   "new": "bath-body-works-a-thousand-wishes-body-lotion-236ml-for-women-fruity-floral-amber-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works A Thousand Wishes Body Scrub 226G | Fruity Floral Am",
+   "old": "bath-body-works-a-thousand-wishes-body-scrub-226g-fruity-floral-amber-body-scrub",
+   "new": "bath-body-works-a-thousand-wishes-body-scrub-226g-for-women-fruity-floral-body-exfoliator"
+  },
+  {
+   "title": "Bath & Body Works A Thousand Wishes Candle | Fruity Floral Amber Candl",
+   "old": "bath-body-works-a-thousand-wishes-candle-fruity-floral-amber-candle",
+   "new": "bath-body-works-a-thousand-wishes-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works A Thousand Wishes Shower Gel 295ML | Fruity Floral A",
+   "old": "bath-body-works-a-thousand-wishes-shower-gel-295ml-fruity-floral-amber-shower-gel",
+   "new": "bath-body-works-a-thousand-wishes-shower-gel-fruity-floral-amber-body-wash"
+  },
+  {
+   "title": "Bath & Body Works At The Beach Body Cream 226G | Coconut Floral Musk B",
+   "old": "bath-body-works-at-the-beach-body-cream-226g-coconut-floral-musk-body-cream",
+   "new": "bath-body-works-at-the-beach-body-cream-tropical-coconut-floral"
+  },
+  {
+   "title": "Bath & Body Works At The Beach Body Mist 236ML | Coconut Floral Musk B",
+   "old": "bath-body-works-at-the-beach-body-mist-236ml-coconut-floral-musk-body-mist",
+   "new": "bath-body-works-at-the-beach-fine-fragrance-mist-236ml-for-women-floral-coconut-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Black Cherry Merlot Candle | Fruity Berry Sweet Cand",
+   "old": "bath-body-works-black-cherry-merlot-candle-fruity-berry-sweet-candle",
+   "new": "bath-body-works-black-cherry-merlot-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Butterfly Body Cream 226G | Fruity Floral Vanilla Bo",
+   "old": "bath-body-works-butterfly-body-cream-226g-fruity-floral-vanilla-body-cream",
+   "new": "bath-body-works-butterfly-body-cream-226g-for-women-fruity-floral-vanilla-body-cream"
+  },
+  {
+   "title": "Bath & Body Works Butterfly Body Lotion 236ML | Fruity Floral Vanilla ",
+   "old": "bath-body-works-butterfly-body-lotion-236ml-fruity-floral-vanilla-body-lotion",
+   "new": "bath-body-works-butterfly-body-lotion-236ml-for-women-fruity-floral-vanilla-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Butterfly Body Mist 236ML | Fruity Floral Vanilla Bo",
+   "old": "bath-body-works-butterfly-body-mist-236ml-fruity-floral-vanilla-body-mist",
+   "new": "bath-body-works-butterfly-fine-fragrance-mist-236ml-for-women-floral-coconut-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Butterfly Shower Gel 295ML | Fruity Floral Vanilla S",
+   "old": "bath-body-works-butterfly-shower-gel-295ml-fruity-floral-vanilla-shower-gel",
+   "new": "bath-body-works-butterfly-shower-gel-295ml-for-women-fruity-floral-vanilla-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Caramel & Oud Candle | Gourmand Woody Oud Candle",
+   "old": "bath-body-works-caramel-oud-candle-gourmand-woody-oud-candle",
+   "new": "bath-body-works-caramel-oud-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Cinnamon Spiced Vanilla Candle | Spicy Vanilla Woody",
+   "old": "bath-body-works-cinnamon-spiced-vanilla-candle-spicy-vanilla-woody-candle",
+   "new": "bath-body-works-cinnamon-spiced-vanilla-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Covered In Roses Body Butter | Fruity Floral Amber B",
+   "old": "bath-body-works-covered-in-roses-body-butter-fruity-floral-amber-body-butter",
+   "new": "bath-body-works-covered-in-roses-body-butter-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Covered In Roses Body Cream 226G | Fruity Floral Amb",
+   "old": "bath-body-works-covered-in-roses-body-cream-226g-fruity-floral-amber-body-cream",
+   "new": "bath-body-works-covered-in-roses-body-cream-ruby-berries-sugared-rosebuds-blush-amber"
+  },
+  {
+   "title": "Bath & Body Works Covered In Roses Body Lotion 236ML | Fruity Floral A",
+   "old": "bath-body-works-covered-in-roses-body-lotion-236ml-fruity-floral-amber-body-lotion",
+   "new": "bath-body-works-covered-in-roses-body-lotion-236ml-for-women-fruity-floral-amber-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Covered In Roses Body Mist 236ML | Fruity Floral Amb",
+   "old": "bath-body-works-covered-in-roses-body-mist-236ml-fruity-floral-amber-body-mist",
+   "new": "bath-body-works-covered-in-roses-fine-fragrance-mist-236ml-for-women-fruity-floral-amber-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Dark Amber Candle | Woody Amber Oud Candle",
+   "old": "bath-body-works-dark-amber-candle-woody-amber-oud-candle",
+   "new": "bath-body-works-dark-amber-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Dark Kiss Body Lotion 236ML | Fruity Floral Vanilla ",
+   "old": "bath-body-works-dark-kiss-body-lotion-236ml-fruity-floral-vanilla-body-lotion",
+   "new": "bath-body-works-dark-kiss-body-lotion-236ml-for-women-fruity-floral-vanilla-musk-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Dark Kiss Body Mist 236ML | Fruity Floral Vanilla Bo",
+   "old": "bath-body-works-dark-kiss-body-mist-236ml-fruity-floral-vanilla-body-mist",
+   "new": "bath-body-works-dark-kiss-fine-fragrance-mist-236ml-for-women-fruity-floral-vanilla-musk-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Dark Kiss Shower Gel 295ML | Fruity Floral Vanilla S",
+   "old": "bath-body-works-dark-kiss-shower-gel-295ml-fruity-floral-vanilla-shower-gel",
+   "new": "bath-body-works-dark-kiss-shower-gel-295ml-for-women-fruity-floral-vanilla-musk-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Dark Velvet Oud Candle | Spicy Woody Oud Candle",
+   "old": "bath-body-works-dark-velvet-oud-candle-spicy-woody-oud-candle",
+   "new": "bath-body-works-dark-velvet-oud-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Dreaming of Rio Body Lotion 236ML | Fruity Floral Wo",
+   "old": "bath-body-works-dreaming-of-rio-body-lotion-236ml-fruity-floral-woody-body-lotion",
+   "new": "bath-body-works-dreaming-of-rio-body-lotion-banana-floral-cedarwood"
+  },
+  {
+   "title": "Bath & Body Works Eucalyptus Mint Candle | Fresh Herbal Aromatic Candl",
+   "old": "bath-body-works-eucalyptus-mint-candle-fresh-herbal-aromatic-candle",
+   "new": "bath-body-works-eucalyptus-mint-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Fairytale Body Lotion 236ML | Fruity Floral Vanilla ",
+   "old": "bath-body-works-fairytale-body-lotion-236ml-fruity-floral-vanilla-body-lotion",
+   "new": "bath-body-works-fairytale-body-lotion-pomegranate-vanilla-amber"
+  },
+  {
+   "title": "Bath & Body Works Fairytale Shower Gel 295ML | Fruity Floral Vanilla S",
+   "old": "bath-body-works-fairytale-shower-gel-295ml-fruity-floral-vanilla-shower-gel",
+   "new": "bath-body-works-fairytale-shower-gel-fruity-floral-vanilla-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Forever Red Body Lotion 236ML | Fruity Floral Woody ",
+   "old": "bath-body-works-forever-red-body-lotion-236ml-fruity-floral-woody-body-lotion",
+   "new": "bath-body-works-forever-red-body-lotion-fiery-pomegranate-red-peony-vanilla-rum"
+  },
+  {
+   "title": "Bath & Body Works Forever Red Body Mist 236ML | Fruity Floral Woody Bo",
+   "old": "bath-body-works-forever-red-body-mist-236ml-fruity-floral-woody-body-mist",
+   "new": "bath-body-works-forever-red-fine-fragrance-mist-236ml-for-women-fruity-floral-woody-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Gingham Body Lotion 236ML | Fruity Floral Amber Body",
+   "old": "bath-body-works-gingham-body-lotion-236ml-fruity-floral-amber-body-lotion",
+   "new": "bath-body-works-gingham-body-lotion-236ml-for-women-fruity-floral-amber-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works In The Stars Body Cream 226G | Woody Amber Musk Body",
+   "old": "bath-body-works-in-the-stars-body-cream-226g-woody-amber-musk-body-cream",
+   "new": "bath-body-works-in-the-stars-body-cream-226g-for-women-woody-amber-musk-body-cream"
+  },
+  {
+   "title": "Bath & Body Works Into The Night Candle | Fruity Floral Amber Candle",
+   "old": "bath-body-works-into-the-night-candle-fruity-floral-amber-candle",
+   "new": "bath-body-works-into-the-night-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Into The Night Body Cream 226G | Fruity Floral Amber",
+   "old": "bath-body-works-into-the-night-body-cream-226g-fruity-floral-amber-body-cream",
+   "new": "bath-body-works-into-the-night-body-cream-226g-for-women-fruity-floral-amber-body-cream"
+  },
+  {
+   "title": "Bath & Body Works Into The Night Body Lotion 236ML | Fruity Floral Amb",
+   "old": "bath-body-works-into-the-night-body-lotion-236ml-fruity-floral-amber-body-lotion",
+   "new": "bath-body-works-into-the-night-body-lotion-236ml-for-women-fruity-floral-amber-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Into The Night Body Scrub 226G | Fruity Floral Amber",
+   "old": "bath-body-works-into-the-night-body-scrub-226g-fruity-floral-amber-body-scrub",
+   "new": "bath-body-works-into-the-night-body-scrub-226g-for-women-fruity-floral-amber-body-exfoliator"
+  },
+  {
+   "title": "Bath & Body Works Into The Night Body Mist 236ML | Fruity Floral Amber",
+   "old": "bath-body-works-into-the-night-body-mist-236ml-fruity-floral-amber-body-mist",
+   "new": "bath-body-works-into-the-night-fine-fragrance-mist-236ml-for-women-fruity-floral-amber-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Into The Night Shower Gel 295ML | Fruity Floral Ambe",
+   "old": "bath-body-works-into-the-night-shower-gel-295ml-fruity-floral-amber-shower-gel",
+   "new": "bath-body-works-into-the-night-shower-gel-295ml-raspberry-rose-patchouli-musk"
+  },
+  {
+   "title": "Bath & Body Works Japanese Cherry Blossom Body Butter | Floral Fruity ",
+   "old": "bath-body-works-japanese-cherry-blossom-body-butter-floral-fruity-woody-body-butter",
+   "new": "bath-body-works-japanese-cherry-blossom-body-butter-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Japanese Cherry Blossom Body Cream 226G | Floral Fru",
+   "old": "bath-body-works-japanese-cherry-blossom-body-cream-226g-floral-fruity-body-cream",
+   "new": "bath-body-works-japanese-cherry-blossom-body-cream-226g-for-women-floral-fruity-body-cream"
+  },
+  {
+   "title": "Bath & Body Works Japanese Cherry Blossom Body Lotion 236ML | Floral F",
+   "old": "bath-body-works-japanese-cherry-blossom-body-lotion-236ml-floral-fruity-body-lotion",
+   "new": "bath-body-works-japanese-cherry-blossom-body-lotion-236ml-for-women-floral-fruity-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Japanese Cherry Blossom Candle | Floral Fruity Woody",
+   "old": "bath-body-works-japanese-cherry-blossom-candle-floral-fruity-woody-candle",
+   "new": "bath-body-works-japanese-cherry-blossom-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Japanese Cherry Blossom Body Mist 236ML | Floral Fru",
+   "old": "bath-body-works-japanese-cherry-blossom-body-mist-236ml-floral-fruity-woody-body-mist",
+   "new": "bath-body-works-japanese-cherry-blossom-fine-fragrance-mist-236ml-for-women-floral-fruity-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Japanese Cherry Blossom Shower Gel 295ML | Floral Fr",
+   "old": "bath-body-works-japanese-cherry-blossom-shower-gel-295ml-floral-fruity-woody-shower-gel",
+   "new": "bath-body-works-japanese-cherry-blossom-shower-gel-295ml-floral-fruity-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Jasmine & Oud Candle | Floral Oud Woody Candle",
+   "old": "bath-body-works-jasmine-oud-candle-floral-oud-woody-candle",
+   "new": "bath-body-works-jasmine-oud-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Lovely Dreamer Body Lotion 236ML | Floral Woody Musk",
+   "old": "bath-body-works-lovely-dreamer-body-lotion-236ml-floral-woody-musk-body-lotion",
+   "new": "bath-body-works-lovely-dreamer-body-lotion-floral-woody-musk"
+  },
+  {
+   "title": "Bath & Body Works Lovely Dreamer Body Mist 236ML | Floral Woody Musk B",
+   "old": "bath-body-works-lovely-dreamer-body-mist-236ml-floral-woody-musk-body-mist",
+   "new": "bath-body-works-lovely-dreamer-fine-fragrance-mist-236ml-for-women-floral-woody-musk-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Mahogany Coconut Candle | Woody Coconut Aromatic Can",
+   "old": "bath-body-works-mahogany-coconut-candle-woody-coconut-aromatic-candle",
+   "new": "bath-body-works-mahogany-coconut-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Mahogany Teakwood Intense Candle | Woody Earthy Arom",
+   "old": "bath-body-works-mahogany-teakwood-intense-candle-woody-earthy-aromatic-candle",
+   "new": "bath-body-works-mahogany-teakwood-intense-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Mango Papaya Paradise Candle | Fruity Tropical Fresh",
+   "old": "bath-body-works-mango-papaya-paradise-candle-fruity-tropical-fresh-candle",
+   "new": "bath-body-works-mango-papaya-paradise-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Midnight Blue Citrus Candle | Citrus Fresh Fruity Ca",
+   "old": "bath-body-works-midnight-blue-citrus-candle-citrus-fresh-fruity-candle",
+   "new": "bath-body-works-midnight-blue-citrus-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Pink Chiffon Body Lotion 236ML | Fruity Floral Vanil",
+   "old": "bath-body-works-pink-chiffon-body-lotion-236ml-fruity-floral-vanilla-body-lotion",
+   "new": "bath-body-works-pink-chiffon-body-lotion-oriental-floral-fragrance-for-women"
+  },
+  {
+   "title": "Bath & Body Works Pink Chiffon Body Mist 236ML | Fruity Floral Vanilla",
+   "old": "bath-body-works-pink-chiffon-body-mist-236ml-fruity-floral-vanilla-body-mist",
+   "new": "bath-body-works-pink-chiffon-fine-fragrance-mist-236ml-for-women-fruity-floral-musk-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Rose Body Lotion 236ML | Floral Rose Musk Body Lotio",
+   "old": "bath-body-works-rose-body-lotion-236ml-floral-rose-musk-body-lotion",
+   "new": "bath-body-works-rose-body-lotion-floral-rose-musk-jasmine"
+  },
+  {
+   "title": "Bath & Body Works Scotch & Oud Candle | Woody Smoky Oud Candle",
+   "old": "bath-body-works-scotch-oud-candle-woody-smoky-oud-candle",
+   "new": "bath-body-works-scotch-oud-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Sea Salt Coast Candle | Fresh Marine Woody Candle",
+   "old": "bath-body-works-sea-salt-coast-candle-fresh-marine-woody-candle",
+   "new": "bath-body-works-sea-salt-coast-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Strawberry Pound Cake Candle | Fruity Gourmand Sweet",
+   "old": "bath-body-works-strawberry-pound-cake-candle-fruity-gourmand-sweet-candle",
+   "new": "bath-body-works-strawberry-pound-cake-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Sweet Pea Body Lotion 236ML | Fruity Floral Musk Bod",
+   "old": "bath-body-works-sweet-pea-body-lotion-236ml-fruity-floral-musk-body-lotion",
+   "new": "bath-body-works-sweet-pea-body-lotion-236ml-for-women-floral-fruity-musk-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Sweet Pea Body Mist 236ML | Fruity Floral Musk Body ",
+   "old": "bath-body-works-sweet-pea-body-mist-236ml-fruity-floral-musk-body-mist",
+   "new": "bath-body-works-sweet-pea-fine-fragrance-mist-236ml-for-women-floral-fruity-musk-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Sweet Pea Shower Gel 295ML | Fruity Floral Musk Show",
+   "old": "bath-body-works-sweet-pea-shower-gel-295ml-fruity-floral-musk-shower-gel",
+   "new": "bath-body-works-sweet-pea-shower-gel-floral-fruity-musk-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Sweetest Song Body Lotion 236ML | Fruity Sweet Musk ",
+   "old": "bath-body-works-sweetest-song-body-lotion-236ml-fruity-sweet-musk-body-lotion",
+   "new": "bath-body-works-sweetest-song-body-lotion-fruity-floral-musk"
+  },
+  {
+   "title": "Bath & Body Works Sweetest Song Body Mist 236ML | Fruity Sweet Musk Bo",
+   "old": "bath-body-works-sweetest-song-body-mist-236ml-fruity-sweet-musk-body-mist",
+   "new": "bath-body-works-sweetest-song-fine-fragrance-mist-236ml-for-women-fruity-musk-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Sweetest Song Shower Gel 295ML | Fruity Sweet Musk S",
+   "old": "bath-body-works-sweetest-song-shower-gel-295ml-fruity-sweet-musk-shower-gel",
+   "new": "bath-body-works-sweetest-song-shower-gel-fruity-sweet-musk-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Touch of Gold Body Butter | Fruity Floral Gourmand B",
+   "old": "bath-body-works-touch-of-gold-body-butter-fruity-floral-gourmand-body-butter",
+   "new": "bath-body-works-touch-of-gold-body-butter-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Touch of Gold Body Cream 226G | Fruity Floral Gourma",
+   "old": "bath-body-works-touch-of-gold-body-cream-226g-fruity-floral-gourmand-body-cream",
+   "new": "bath-body-works-touch-of-gold-body-cream-fruity-floral-tonka"
+  },
+  {
+   "title": "Bath & Body Works Touch Of Gold Body Mist 236ML | Fruity Floral Gourma",
+   "old": "bath-body-works-touch-of-gold-body-mist-236ml-fruity-floral-gourmand-body-mist",
+   "new": "bath-body-works-touch-of-gold-fine-fragrance-mist-236ml-for-women-fruity-floral-tonka-perfume-mist"
+  },
+  {
+   "title": "Bath & Body Works Touch of Gold Shower Gel 295ML | Fruity Floral Gourm",
+   "old": "bath-body-works-touch-of-gold-shower-gel-295ml-fruity-floral-gourmand-shower-gel",
+   "new": "bath-body-works-touch-of-gold-shower-gel-blackberry-orange-blossom-tonka"
+  },
+  {
+   "title": "Bath & Body Works Vanilla & Oud Candle | Vanilla Woody Oud Candle",
+   "old": "bath-body-works-vanilla-oud-candle-vanilla-woody-oud-candle",
+   "new": "bath-body-works-vanilla-oud-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Vanilla Romance Body Cream 226G | Vanilla Spicy Wood",
+   "old": "bath-body-works-vanilla-romance-body-cream-226g-vanilla-spicy-woody-body-cream",
+   "new": "bath-body-works-vanilla-romance-body-cream-vanilla-cardamom-woods"
+  },
+  {
+   "title": "Bath & Body Works Vanilla Romance Body Lotion 236ML | Vanilla Spicy Wo",
+   "old": "bath-body-works-vanilla-romance-body-lotion-236ml-vanilla-spicy-woody-body-lotion",
+   "new": "bath-body-works-vanilla-romance-body-lotion-oriental-vanilla-fragrance"
+  },
+  {
+   "title": "Bath & Body Works Vanilla Romance Body Mist 236ML | Vanilla Spicy Ambe",
+   "old": "bath-body-works-vanilla-romance-body-mist-236ml-vanilla-spicy-amber-body-mist",
+   "new": "bath-body-works-vanilla-romance-fine-fragrance-mist-vanilla-amber-musk-body-mist"
+  },
+  {
+   "title": "Bath & Body Works Vanilla Romance Shower Gel 295ML | Vanilla Spicy Woo",
+   "old": "bath-body-works-vanilla-romance-shower-gel-295ml-vanilla-spicy-woody-shower-gel",
+   "new": "bath-body-works-vanilla-romance-shower-gel-fresh-cardamom-vanilla-woods"
+  },
+  {
+   "title": "Bath & Body Works Vanilla Romance Body Butter | Vanilla Spicy Woody Bo",
+   "old": "bath-body-works-vanilla-romance-body-butter-vanilla-spicy-woody-body-butter",
+   "new": "bath-body-works-vanilla-romance-whipped-body-butter-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Viva Brazil Body Lotion 236ML | Fruity Tropical Fres",
+   "old": "bath-body-works-viva-brazil-body-lotion-236ml-fruity-tropical-fresh-body-lotion",
+   "new": "bath-body-works-viva-brazil-body-lotion-tropical-fruity-passion-fruit-coconut"
+  },
+  {
+   "title": "Bath & Body Works Waikiki Beach Coconut Candle | Coconut Marine Woody ",
+   "old": "bath-body-works-waikiki-beach-coconut-candle-coconut-marine-woody-candle",
+   "new": "bath-body-works-waikiki-beach-coconut-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Warm Ocean Breeze Candle | Fresh Woody Aromatic Cand",
+   "old": "bath-body-works-warm-ocean-breeze-candle-fresh-woody-aromatic-candle",
+   "new": "bath-body-works-warm-ocean-breeze-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Warm Summer Evening Candle | Floral Amber Woody Cand",
+   "old": "bath-body-works-warm-summer-evening-candle-floral-amber-woody-candle",
+   "new": "bath-body-works-warm-summer-evening-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Warm Vanilla Sugar Body Cream 226G | Vanilla Floral ",
+   "old": "bath-body-works-warm-vanilla-sugar-body-cream-226g-vanilla-floral-woody-body-cream",
+   "new": "bath-body-works-warm-vanilla-sugar-body-cream-226g-for-women-vanilla-floral-body-cream"
+  },
+  {
+   "title": "Bath & Body Works Warm Vanilla Sugar Body Lotion 236ML | Vanilla Flora",
+   "old": "bath-body-works-warm-vanilla-sugar-body-lotion-236ml-vanilla-floral-woody-body-lotion",
+   "new": "bath-body-works-warm-vanilla-sugar-body-lotion-236ml-for-women-vanilla-floral-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works Warm Vanilla Sugar Candle | Vanilla Floral Woody Can",
+   "old": "bath-body-works-warm-vanilla-sugar-candle-vanilla-floral-woody-candle",
+   "new": "bath-body-works-warm-vanilla-sugar-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works Warm Vanilla Sugar Shower Gel 295ML | Vanilla Floral",
+   "old": "bath-body-works-warm-vanilla-sugar-shower-gel-295ml-vanilla-floral-woody-shower-gel",
+   "new": "bath-body-works-warm-vanilla-sugar-shower-gel-sweet-vanilla-coconut-body-wash"
+  },
+  {
+   "title": "Bath & Body Works Watermelon Lemonade Candle | Fruity Fresh Citrus Can",
+   "old": "bath-body-works-watermelon-lemonade-candle-fruity-fresh-citrus-candle",
+   "new": "bath-body-works-watermelon-lemonade-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works White Gardenia Candle | Floral Green Fruity Candle",
+   "old": "bath-body-works-white-gardenia-candle-floral-green-fruity-candle",
+   "new": "bath-body-works-white-gardenia-3-wick-candle-fragrance-secrets"
+  },
+  {
+   "title": "Bath & Body Works You’re The One Body Lotion 236ML | Floral Fruity Woo",
+   "old": "bath-body-works-you-re-the-one-body-lotion-236ml-floral-fruity-woody-body-lotion",
+   "new": "bath-body-works-you-re-the-one-body-lotion-236ml-for-women-floral-fruity-body-lotion"
+  },
+  {
+   "title": "Bath & Body Works You’re The One Shower Gel 295ML | Floral Fruity Wood",
+   "old": "bath-body-works-you-re-the-one-shower-gel-295ml-floral-fruity-woody-shower-gel",
+   "new": "bath-body-works-you-re-the-one-shower-gel-295ml-floral-woody-body-wash"
+  },
+  {
+   "title": "Calvin Klein CK One Eau De Toilette 100ML Unisex | Citrus Green Musk P",
+   "old": "calvin-klein-ck-one-eau-de-toilette-100ml-unisex-citrus-green-musk-perfume",
+   "new": "calvin-klein-ck-one-eau-de-toilette-100ml-unisex-fresh-citrus-aromatic-perfume"
+  },
+  {
+   "title": "Calvin Klein CK One Eau De Toilette 200ML Unisex | Citrus Green Musk P",
+   "old": "calvin-klein-ck-one-eau-de-toilette-200ml-unisex-citrus-green-musk-perfume",
+   "new": "calvin-klein-ck-one-eau-de-toilette-200ml-unisex-fresh-citrus-aromatic-perfume"
+  },
+  {
+   "title": "Cavalier Scorpion Eau De Parfum Unisex | Spicy Woody Oriental Perfume",
+   "old": "cavalier-scorpion-eau-de-parfum-unisex-spicy-woody-oriental-perfume",
+   "new": "cavalier-scorpion-unisex-eau-de-parfum-bold-luxury-fragrance-fragrance-secrets"
+  },
+  {
+   "title": "Creed Fleurs de Gardenia Eau De Parfum 75ML for Women | Floral Green M",
+   "old": "creed-fleurs-de-gardenia-eau-de-parfum-75ml-for-women-floral-green-musk-perfume",
+   "new": "creed-fleurs-de-gardenia-eau-de-parfum-75ml-2-5-oz-authentic-luxury-fragrance-for-women"
+  },
+  {
+   "title": "Desire Eau De Parfum 100ML for Men | Spicy Woody Amber Perfume",
+   "old": "desire-eau-de-parfum-100ml-for-men-spicy-woody-amber-perfume",
+   "new": "desire-eau-de-parfum-100ml-for-men-fragrance-secrets"
+  },
+  {
+   "title": "Dumont Paris Nitro Red Eau De Parfum 100ML for Men | Fresh Fruity Wood",
+   "old": "dumont-paris-nitro-red-eau-de-parfum-100ml-for-men-fresh-fruity-woody-perfume",
+   "new": "dumont-paris-nitro-red-eau-de-parfum-100ml-for-men-dumont-paris-fragrance-secrets"
+  },
+  {
+   "title": "Fragrance Secrets Birch Single Note Perfume Oil | Woody Smoky Leathery",
+   "old": "fragrance-secrets-birch-single-note-perfume-oil-woody-smoky-leathery-attar",
+   "new": "fragrance-secrets-birch-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Caramel Single Note Perfume Oil | Gourmand Sweet Cre",
+   "old": "fragrance-secrets-caramel-single-note-perfume-oil-gourmand-sweet-creamy-attar",
+   "new": "fragrance-secrets-caramel-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Chocolate Single Note Perfume Oil | Gourmand Sweet R",
+   "old": "fragrance-secrets-chocolate-single-note-perfume-oil-gourmand-sweet-rich-attar",
+   "new": "fragrance-secrets-chocolate-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Cinnamon Single Note Perfume Oil | Spicy Warm Sweet ",
+   "old": "fragrance-secrets-cinnamon-single-note-perfume-oil-spicy-warm-sweet-attar",
+   "new": "fragrance-secrets-cinnamon-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Cocoa & Butter Single Note Perfume Oil | Gourmand Cr",
+   "old": "fragrance-secrets-cocoa-butter-single-note-perfume-oil-gourmand-creamy-sweet-attar",
+   "new": "fragrance-secrets-cocoa-butter-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Espresso Single Note Perfume Oil | Gourmand Coffee R",
+   "old": "fragrance-secrets-espresso-single-note-perfume-oil-gourmand-coffee-roasted-attar",
+   "new": "fragrance-secrets-espresso-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Incense Single Note Perfume Oil | Smoky Resinous Woo",
+   "old": "fragrance-secrets-incense-single-note-perfume-oil-smoky-resinous-woody-attar",
+   "new": "fragrance-secrets-incense-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Lavender Single Note Perfume Oil | Aromatic Herbal F",
+   "old": "fragrance-secrets-lavender-single-note-perfume-oil-aromatic-herbal-floral-attar",
+   "new": "fragrance-secrets-lavender-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Leather Single Note Perfume Oil | Leather Woody Smok",
+   "old": "fragrance-secrets-leather-single-note-perfume-oil-leather-woody-smoky-attar",
+   "new": "fragrance-secrets-leather-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Lemon Single Note Perfume Oil | Citrus Fresh Zesty A",
+   "old": "fragrance-secrets-lemon-single-note-perfume-oil-citrus-fresh-zesty-attar",
+   "new": "fragrance-secrets-lemon-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Moroccan Rose Single Note Perfume Oil | Floral Rose ",
+   "old": "fragrance-secrets-moroccan-rose-single-note-perfume-oil-floral-rose-sweet-attar",
+   "new": "fragrance-secrets-moroccan-rose-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "Fragrance Secrets Patchouli Single Note Perfume Oil | Woody Earthy Swe",
+   "old": "fragrance-secrets-patchouli-single-note-perfume-oil-woody-earthy-sweet-attar",
+   "new": "fragrance-secrets-patchouli-single-note-perfume-oil-100ml"
+  },
+  {
+   "title": "French Avenue Aromatix Teas Me Extrait De Parfum 100ML Unisex – Tea Wo",
+   "old": "french-avenue-aromatix-teas-me-extrait-de-parfum-100ml-unisex-tea-woody-amber-perfume-extrait-de-parfum-100ml-unisex-tea-woody-amber-perfume",
+   "new": "french-avenue-aromatix-teas-me-extrait-de-parfum-100ml-unisex-tea-woody-amber-perfume"
+  },
+  {
+   "title": "French Avenue Ravine Ginger Woody Extrait De Parfum 100ML Unisex – Cit",
+   "old": "french-avenue-ravine-ginger-woody-extrait-de-parfum-100ml-unisex-citrus-woody-perfume-extrait-de-parfum-100ml-unisex-citrus-woody-amber-perfume",
+   "new": "french-avenue-ravine-ginger-woody-extrait-de-parfum-100ml-unisex-citrus-woody-perfume"
+  },
+  {
+   "title": "Giorgio Armani Sì Passione Eau De Parfum 100ML for Women | Fruity Flor",
+   "old": "giorgio-armani-s-passione-eau-de-parfum-100ml-for-women-fruity-floral-vanilla-perfume",
+   "new": "giorgio-armani-si-passione-edp-100ml-women"
+  },
+  {
+   "title": "Gissah Imperial Valley Eau De Parfum 200ML Unisex | Woody Oud Leather ",
+   "old": "gissah-imperial-valley-eau-de-parfum-200ml-unisex-woody-oud-leather-perfume",
+   "new": "gissah-imperial-valley-eau-de-parfum-200ml-long-lasting-unisex-niche-fragrance-fragrance-secrets"
+  },
+  {
+   "title": "Gissah Legend of the Sky 2 x 90ML Eau De Parfum Gift Set for Men | Woo",
+   "old": "gissah-legend-of-the-sky-2-x-90ml-eau-de-parfum-gift-set-for-men-woody-aromatic-fresh-set",
+   "new": "gissah-legend-of-the-sky-2-set-for-him-2-90ml-eau-de-parfum-gift-set"
+  },
+  {
+   "title": "Gissah Legend of Valleys 2 x 90ML Eau De Parfum Gift Set Unisex | Flor",
+   "old": "gissah-legend-of-valleys-2-x-90ml-eau-de-parfum-gift-set-unisex-floral-woody-amber-set",
+   "new": "gissah-legend-of-valleys-set-2-90ml-eau-de-parfum-gift-set-unisex"
+  },
+  {
+   "title": "Gissah Siena Valley Eau De Parfum Unisex | Fresh Woody Amber Perfume",
+   "old": "gissah-siena-valley-eau-de-parfum-unisex-fresh-woody-amber-perfume",
+   "new": "gissah-siena-valley-eau-de-parfum-elegant-unisex-luxury-fragrance-gissah-fragrance-secrets"
+  },
+  {
+   "title": "Gissah Volt Eau De Parfum 200ML Unisex | Fresh Woody Amber Perfume",
+   "old": "gissah-volt-eau-de-parfum-200ml-unisex-fresh-woody-amber-perfume",
+   "new": "gissah-volt-eau-de-parfum-200ml-bold-luxury-unisex-fragrance-gissah-fragrance-secrets"
+  },
+  {
+   "title": "Givenchy Dahlia Divin Eau De Parfum 100ML for Women | Fruity Floral Wo",
+   "old": "givenchy-dahlia-divin-eau-de-parfum-100ml-for-women-fruity-floral-woody-perfume",
+   "new": "givenchy-dahlia-divin-eau-de-parfum-100ml-for-women-fruity-floral-woody-vanilla-perfume"
+  },
+  {
+   "title": "Givenchy Gentleman Réserve Privée Eau De Parfum 100ML for Men | Woody ",
+   "old": "givenchy-gentleman-r-serve-priv-e-eau-de-parfum-100ml-for-men-woody-amber-whisky-perfume",
+   "new": "givenchy-gentleman-reserve-privee-eau-de-parfum-100ml-for-men-woody-amber-whisky-perfume"
+  },
+  {
+   "title": "Givenchy Hot Couture 2023 Eau De Parfum 100ML for Women | Fruity Flora",
+   "old": "givenchy-hot-couture-2023-eau-de-parfum-100ml-for-women-fruity-floral-woody-perfume",
+   "new": "givenchy-hot-couture-2023-eau-de-parfum-100ml-for-women-fruity-floral-woody-musk-perfume"
+  },
+  {
+   "title": "Givenchy L’Interdit Eau De Parfum 80ML for Women | Floral Woody Vanill",
+   "old": "givenchy-l-interdit-eau-de-parfum-80ml-for-women-floral-woody-vanilla-perfume",
+   "new": "givenchy-l-interdit-eau-de-parfum-80ml-for-women-white-floral-woody-vanilla-perfume"
+  },
+  {
+   "title": "Givenchy Organza Eau De Parfum 100ML for Women | Floral Woody Amber Pe",
+   "old": "givenchy-organza-eau-de-parfum-100ml-for-women-floral-woody-amber-perfume",
+   "new": "givenchy-organza-eau-de-parfum-100ml-for-women-floral-vanilla-woody-perfume"
+  },
+  {
+   "title": "Givenchy Pi Eau De Toilette 100ML for Men | Aromatic Vanilla Woody Per",
+   "old": "givenchy-pi-eau-de-toilette-100ml-for-men-aromatic-vanilla-woody-perfume",
+   "new": "givenchy-pi-eau-de-toilette-100ml-for-men-aromatic-vanilla-tonka-perfume"
+  },
+  {
+   "title": "Guerlain Épices Exquises Eau De Parfum 125ML Unisex | Spicy Oud Woody ",
+   "old": "guerlain-pices-exquises-eau-de-parfum-125ml-unisex-spicy-oud-woody-perfume",
+   "new": "guerlain-epices-exquises-eau-de-parfum-125ml-unisex-spicy-woody-oud-perfume"
+  },
+  {
+   "title": "Guerlain Mon Guerlain Intense Eau De Parfum 100ML for Women | Floral V",
+   "old": "guerlain-mon-guerlain-intense-eau-de-parfum-100ml-for-women-floral-vanilla-amber-perfume",
+   "new": "guerlain-mon-guerlain-intense-eau-de-parfum-100ml-for-women-floral-vanilla-woody-perfume"
+  },
+  {
+   "title": "Hersh 2 & Hersh Mehwar 2 x 100ML Eau De Parfum Bundle Unisex | Citrus ",
+   "old": "hersh-2-hersh-mehwar-2-x-100ml-eau-de-parfum-bundle-unisex-citrus-spicy-woody-bundle",
+   "new": "hersh-2-hersh-mehwar-eau-de-parfum-bundle-100ml-each-unisex-alezz-oud"
+  },
+  {
+   "title": "Hersh Lahab & Asof 2 x 100ML Eau De Parfum Bundle Unisex | Aromatic Gr",
+   "old": "hersh-lahab-asof-2-x-100ml-eau-de-parfum-bundle-unisex-aromatic-green-woody-bundle",
+   "new": "hersh-lahab-asof-eau-de-parfum-bundle-100ml-each-unisex-alezz-oud"
+  },
+  {
+   "title": "Hersh Lahab & Hersh 2 2 x 100ML Eau De Parfum Bundle Unisex | Citrus A",
+   "old": "hersh-lahab-hersh-2-2-x-100ml-eau-de-parfum-bundle-unisex-citrus-aromatic-woody-bundle",
+   "new": "hersh-lahab-hersh-2-eau-de-parfum-bundle-100ml-each-unisex-alezz-oud"
+  },
+  {
+   "title": "Hersh Lahab & Hersh Bukhori 2 x 100ML Eau De Parfum Bundle Unisex | Wo",
+   "old": "hersh-lahab-hersh-bukhori-2-x-100ml-eau-de-parfum-bundle-unisex-woody-oud-aromatic-bundle",
+   "new": "hersh-lahab-hersh-bukhori-eau-de-parfum-bundle-100ml-each-unisex-alezz-oud"
+  },
+  {
+   "title": "Hersh Lahab & Hersh Mehwar 2 x 100ML Eau De Parfum Bundle Unisex | Cit",
+   "old": "hersh-lahab-hersh-mehwar-2-x-100ml-eau-de-parfum-bundle-unisex-citrus-aromatic-woody-bundle",
+   "new": "hersh-lahab-hersh-mehwar-eau-de-parfum-bundle-100ml-each-unisex-alezz-oud"
+  },
+  {
+   "title": "Hersh Lahab & Hersh Rouge 2 x 100ML Eau De Parfum Bundle Unisex | Arom",
+   "old": "hersh-lahab-hersh-rouge-2-x-100ml-eau-de-parfum-bundle-unisex-aromatic-spicy-woody-bundle",
+   "new": "hersh-lahab-hersh-rouge-eau-de-parfum-bundle-100ml-each-unisex-alezz-oud"
+  },
+  {
+   "title": "Hugo Boss Hugo Man Eau De Toilette 200ML for Men | Fruity Woody Aromat",
+   "old": "hugo-boss-hugo-man-eau-de-toilette-200ml-for-men-fruity-woody-aromatic-perfume",
+   "new": "hugo-boss-hugo-man-eau-de-toilette-spray-200ml-for-men-aromatic-woody-perfume"
+  },
+  {
+   "title": "IBRAQ Black Carbon Diamond Eau De Parfum 150ML Unisex | Woody Oud Ambe",
+   "old": "ibraq-black-carbon-diamond-eau-de-parfum-150ml-unisex-woody-oud-amber-perfume",
+   "new": "ibraq-black-carbon-diamond-eau-de-parfum-150ml-unisex-woody-oud-perfume"
+  },
+  {
+   "title": "Ibraq Diamond Blue Box 3 x 75ML Eau De Parfum 3-Piece Set Unisex | Aqu",
+   "old": "ibraq-diamond-blue-box-3-x-75ml-eau-de-parfum-3-piece-set-unisex-aquatic-woody-incense-set",
+   "new": "ibraq-diamond-blue-box-2-75ml-3-piece-set-ibraq-fragrance-secrets"
+  },
+  {
+   "title": "Ibraq Diamond Grey Box 3 x 75ML Eau De Parfum 3-Piece Set Unisex | Fru",
+   "old": "ibraq-diamond-grey-box-3-x-75ml-eau-de-parfum-3-piece-set-unisex-fruity-woody-amber-set",
+   "new": "ibraq-diamond-grey-box-2-75ml-3-piece-set-ibraq-fragrance-secrets"
+  },
+  {
+   "title": "IBRAQ Irth Collection 3 x 100ML Eau De Parfum 3-Piece Set Unisex | Gou",
+   "old": "ibraq-irth-collection-3-x-100ml-eau-de-parfum-3-piece-set-unisex-gourmand-fresh-woody-set",
+   "new": "ibraq-irth-collection-3-pcs-eau-de-parfum-gift-set-3-100ml-unisex"
+  },
+  {
+   "title": "Ibraq Diamond Maroon Box 3 x 75ML Eau De Parfum 3-Piece Set Unisex | F",
+   "old": "ibraq-diamond-maroon-box-3-x-75ml-eau-de-parfum-3-piece-set-unisex-floral-rose-fruity-set",
+   "new": "ibraq-maroon-diamond-collection-gift-set-3-piece-edp-ibraq"
+  },
+  {
+   "title": "IBRAQ Mega-Mini Diamond 10 x 20ML Eau De Parfum 10-Piece Set Unisex | ",
+   "old": "ibraq-mega-mini-diamond-10-x-20ml-eau-de-parfum-10-piece-set-unisex-fresh-floral-oriental-set",
+   "new": "ibraq-mega-mini-diamond-collection-10-20ml-perfume-gift-set-unisex"
+  },
+  {
+   "title": "Ibraq Moon Collection 3 x 75ML Eau De Parfum 3-Piece Set Unisex | Flor",
+   "old": "ibraq-moon-collection-3-x-75ml-eau-de-parfum-3-piece-set-unisex-floral-woody-amber-set",
+   "new": "ibraq-moon-collection-325ml-3-piece-perfume-set-ibraq-fragrance-secrets"
+  },
+  {
+   "title": "Ibraq Vintage Tobacco Ibrahim Al Qurashi Eau De Parfum Unisex | Tobacc",
+   "old": "ibraq-vintage-tobacco-ibrahim-al-qurashi-eau-de-parfum-unisex-tobacco-gourmand-oud-perfume",
+   "new": "ibraq-vintage-tobacco-ibrahim-al-qurashi-eau-de-parfum-for-women-men-tobacco-gourmand-oud-perfume"
+  },
+  {
+   "title": "Khadlaj Shiyaaka Sky Eau De Parfum 100ML Unisex | Citrus Floral Woody ",
+   "old": "khadlaj-shiyaaka-sky-eau-de-parfum-100ml-unisex-citrus-floral-woody-perfume",
+   "new": "khadlaj-shiyaaka-sky-eau-de-parfum-100ml"
+  },
+  {
+   "title": "Lattafa Atheeri Eau De Parfum 100ML Unisex | Floral Vanilla Amber Perf",
+   "old": "lattafa-atheeri-eau-de-parfum-100ml-unisex-floral-vanilla-amber-perfume",
+   "new": "lattafa-atheeri-eau-de-parfum-100ml-unisex-floral-vanilla-perfume"
+  },
+  {
+   "title": "Lattafa Dynasty Eau De Parfum 100ML Unisex | Woody Aromatic Amber Perf",
+   "old": "lattafa-dynasty-eau-de-parfum-100ml-unisex-woody-aromatic-amber-perfume",
+   "new": "lattafa-dynasty-eau-de-parfum-100ml-unisex-woody-aromatic-perfume"
+  },
+  {
+   "title": "Lattafa Pride Leen Eau De Parfum 100ML for Women | Fruity Floral Woody",
+   "old": "lattafa-pride-leen-eau-de-parfum-100ml-for-women-fruity-floral-woody-perfume",
+   "new": "lattafa-pride-leen-eau-de-parfum-100ml-for-women-lattafa-pride-fragrance-secrets"
+  },
+  {
+   "title": "Lattafa Vintage Radio Eau De Parfum 100ML Unisex | Aromatic Woody Ambe",
+   "old": "lattafa-vintage-radio-eau-de-parfum-100ml-unisex-aromatic-woody-amber-perfume",
+   "new": "lattafa-vintage-radio-eau-de-parfum-100ml-unisex-woody-aromatic-perfume"
+  },
+  {
+   "title": "Laverne Champion Eau De Parfum 200ML Unisex | Woody Aromatic Musk Perf",
+   "old": "laverne-champion-eau-de-parfum-200ml-unisex-woody-aromatic-musk-perfume",
+   "new": "laverne-champion-eau-de-parfum-200ml-unisex-woody-aromatic-perfume"
+  },
+  {
+   "title": "Laverne King Tobacco Eau De Parfum 200ML Unisex | Aromatic Tobacco Van",
+   "old": "laverne-king-tobacco-eau-de-parfum-200ml-unisex-aromatic-tobacco-vanilla-perfume",
+   "new": "laverne-king-tobacco-eau-de-parfum-100ml-unisex-aromatic-tobacco-vanilla-perfume"
+  },
+  {
+   "title": "Laverne Midnight Ocean Eau De Parfum 200ML for Men | Fresh Woody Amber",
+   "old": "laverne-midnight-ocean-eau-de-parfum-200ml-for-men-fresh-woody-amber-perfume",
+   "new": "laverne-midnight-ocean-eau-de-parfum-200ml-for-men-woody-aromatic-perfume"
+  },
+  {
+   "title": "Orchid The Fusion Scentology Cosmopolitan Eau De Parfum 100ML Unisex |",
+   "old": "orchid-the-fusion-scentology-cosmopolitan-eau-de-parfum-100ml-unisex-fresh-woody-amber-perfume",
+   "new": "orchid-the-fusion-scentology-cosmopolitan-eau-de-parfum-100ml-luxury-unisex-perfume-fragrance-secrets"
+  },
+  {
+   "title": "Oud Al Amberies Eau De Parfum 60ML Unisex | Gourmand Oud Amber Perfume",
+   "old": "oud-al-amberies-eau-de-parfum-60ml-unisex-gourmand-oud-amber-perfume",
+   "new": "oud-al-amberies-eau-de-parfum-60ml-unisex"
+  },
+  {
+   "title": "Oud Hersh Mehwar Silver Eau De Parfum 100ML Unisex | Floral Woody Musk",
+   "old": "oud-hersh-mehwar-silver-eau-de-parfum-100ml-unisex-floral-woody-musk-perfume",
+   "new": "oud-hersh-mehwar-silver-eau-de-parfum-100ml-unisex-floral-woody-amber-perfume"
+  },
+  {
+   "title": "Paris Belle Summer Ace Eau De Parfum 100ML Unisex | Citrus Fresh Amber",
+   "old": "paris-belle-summer-ace-eau-de-parfum-100ml-unisex-citrus-fresh-amber-perfume",
+   "new": "paris-belle-summer-ace-eau-de-parfum-100ml-unisex-citrus-aquatic-perfume"
+  },
+  {
+   "title": "Paris Belle Yacht D'Or Eau De Parfum 100ML Unisex | Marine Woody Aroma",
+   "old": "paris-belle-yacht-d-or-eau-de-parfum-100ml-unisex-marine-woody-aromatic-perfume",
+   "new": "paris-belle-yacht-dor-eau-de-parfum-100ml-unisex-marine-woody-aromatic-perfume"
+  },
+  {
+   "title": "Qissa Eau De Parfum 100ML Unisex | Woody Oud Leather Perfume",
+   "old": "qissa-eau-de-parfum-100ml-unisex-woody-oud-leather-perfume",
+   "new": "qissa-eau-de-parfum-100ml-unisex-farzanas-collection-fragrance-secrets"
+  },
+  {
+   "title": "Rasasi Hawas Gold Digger Eau De Parfum 100ML for Men | Fresh Spicy Woo",
+   "old": "rasasi-hawas-gold-digger-eau-de-parfum-100ml-for-men-fresh-spicy-woody-perfume",
+   "new": "rasasi-hawas-gold-digger-eau-de-parfum-100ml-for-men-fresh-spicy-vanilla-woody-perfume"
+  },
+  {
+   "title": "Rasasi Hawas Rouge For Her Eau De Parfum 100ML for Women | Floral Frui",
+   "old": "rasasi-hawas-rouge-for-her-eau-de-parfum-100ml-for-women-floral-fruity-amber-perfume",
+   "new": "rasasi-hawas-rouge-for-her-eau-de-parfum-100ml-floral-fruity-amber-perfume-for-women"
+  },
+  {
+   "title": "Rayhaan Cedrus Blanc Eau De Parfum 100ML Unisex | Citrus Floral Woody ",
+   "old": "rayhaan-cedrus-blanc-eau-de-parfum-100ml-unisex-citrus-floral-woody-perfume",
+   "new": "rayhaan-cedrus-blanc-eau-de-parfum-100ml-unisex-fragrance-secrets"
+  },
+  {
+   "title": "Rayhaan Nava Sol Eau De Parfum 100ML Unisex | Floral Woody Musk Perfum",
+   "old": "rayhaan-nava-sol-eau-de-parfum-100ml-unisex-floral-woody-musk-perfume",
+   "new": "rayhaan-nava-sol-eau-de-parfum-floral-woody-musk-fragrance-fragrance-secrets"
+  },
+  {
+   "title": "Remy Latour Cigar Eau De Toilette 100ML for Men | Aromatic Woody Tobac",
+   "old": "remy-latour-cigar-eau-de-toilette-100ml-for-men-aromatic-woody-tobacco-perfume",
+   "new": "remy-latour-cigar-edt-for-men-100ml"
+  },
+  {
+   "title": "Riiffs Fareed Extrait De Parfum 100ML for Men | Aromatic Woody Spicy P",
+   "old": "riiffs-fareed-extrait-de-parfum-100ml-for-men-aromatic-woody-spicy-perfume",
+   "new": "riiffs-fareed-extrait-de-parfum-100ml-for-men-riiffs-fragrance-secrets"
+  },
+  {
+   "title": "Sillage d'Orient Oud – Signature Eau De Parfum Unisex | Oud Spicy Leat",
+   "old": "sillage-d-orient-oud-signature-eau-de-parfum-unisex-oud-spicy-leather-perfume",
+   "new": "sillage-dorient-oud-signature-eau-de-parfum-luxurious-oriental-fragrance-for-men-women-fragrance-secrets"
+  },
+  {
+   "title": "Versace Blue Jeans Eau De Toilette for Men | Aromatic Fresh Woody Perf",
+   "old": "versace-blue-jeans-eau-de-toilette-for-men-aromatic-fresh-woody-perfume",
+   "new": "versace-blue-jeans-eau-de-toilette-for-men-versace-fragrance-secrets"
+  },
+  {
+   "title": "YSL Mon Paris Intensement Eau De Parfum 90ML for Women | Floral Fruity",
+   "old": "ysl-mon-paris-intensement-eau-de-parfum-90ml-for-women-floral-fruity-patchouli-perfume",
+   "new": "ysl-mon-paris-intensement-eau-de-parfum-90ml-for-women-floral-fruity-perfume"
+  },
+  {
+   "title": "YSL MYSLF Le Parfum Eau De Parfum 100ML for Men | Woody Amber Vanilla ",
+   "old": "ysl-myslf-le-parfum-eau-de-parfum-100ml-for-men-woody-amber-vanilla-perfume",
+   "new": "ysl-myslf-le-parfum-eau-de-parfum-100ml-for-men-woody-amber-vanilla-fragrance"
+  }
+ ]
+}
