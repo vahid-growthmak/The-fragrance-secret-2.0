@@ -260,10 +260,40 @@
 
       <div class="shop-results">
         {%- if collection.products.size > 0 -%}
+          {%- comment -%}
+            "Oils last" reorders the page so concentrated oils and attars sit
+            after the sprays. Shopify cannot do this itself: a smart collection
+            can only sort alpha / price / created / best-selling, none of which
+            groups by product type, and manual ordering is not available to
+            rule-based collections.
+
+            The grouping is therefore per page, which is why the collection's
+            sort order matters alongside it — set alphabetically, this
+            collection's first page holds no oils at all, and later pages show
+            their sprays before their oils.
+          {%- endcomment -%}
           <div class="products-grid" id="collGrid">
-            {%- for product in collection.products -%}
-              {% render 'product-card', product: product %}
-            {%- endfor -%}
+            {%- if section.settings.oils_last -%}
+              {%- assign oil_bucket = '' -%}
+              {%- for product in collection.products -%}
+                {%- assign ptype = product.type | downcase -%}
+                {%- if ptype contains 'oil' or ptype contains 'attar' -%}
+                  {%- assign oil_bucket = oil_bucket | append: product.id | append: ',' -%}
+                {%- else -%}
+                  {% render 'product-card', product: product %}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- for product in collection.products -%}
+                {%- assign needle = product.id | append: ',' -%}
+                {%- if oil_bucket contains needle -%}
+                  {% render 'product-card', product: product %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- for product in collection.products -%}
+                {% render 'product-card', product: product %}
+              {%- endfor -%}
+            {%- endif -%}
           </div>
           {%- if paginate.pages > 1 -%}
             <div class="pagination">
@@ -444,28 +474,140 @@
 {
   "name": "Collection page",
   "settings": [
-    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 48, "step": 4, "default": 24 },
-    { "type": "header", "content": "Hero" },
-    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "The Collection" },
-    { "type": "text", "id": "hero_heading", "label": "Heading (H1)", "info": "Leave blank to use the collection title." },
-    { "type": "text", "id": "hero_image_alt", "label": "Hero image alt text", "info": "Leave blank to use the collection title." },
-    { "type": "text", "id": "hero_bg_image", "label": "Hero background image (theme asset filename)", "info": "e.g. mens-hero.webp — file must live in assets/. Used only when the collection has no image. Best at 2880 × 1000 with the left side dark." },
-    { "type": "text", "id": "hero_bg_image_sm", "label": "Hero background image, small (theme asset filename)", "info": "Optional 1200 × 417 variant served to phones." },
-    { "type": "text", "id": "limit_to_path", "label": "Only use this copy on this path", "info": "For the default collection template, which many collections share. e.g. /collections/all — every other collection then falls back to its own title. Leave blank to always apply." },
-    { "type": "checkbox", "id": "show_hero_description", "label": "Show collection description in hero", "default": true },
-    { "type": "text", "id": "crumb_parent_label", "label": "Breadcrumb parent label", "default": "Shop" },
-    { "type": "text", "id": "crumb_parent_url", "label": "Breadcrumb parent URL", "default": "/collections/all" },
-    { "type": "header", "content": "Sections" },
-    { "type": "checkbox", "id": "show_trust_band", "label": "Show trust band under the hero", "default": true },
-    { "type": "checkbox", "id": "show_reviews", "label": "Show reviews after the grid", "default": true, "info": "Turn off when a page section renders reviews further down." },
-    { "type": "header", "content": "Collection introduction" },
-    { "type": "text", "id": "intro_eyebrow", "label": "Intro eyebrow" },
-    { "type": "text", "id": "intro_heading", "label": "Intro heading (H2)", "info": "Carries the page's primary keyword. Leave blank to hide the intro." },
-    { "type": "richtext", "id": "intro_text", "label": "Intro copy" },
-    { "type": "text", "id": "intro_image", "label": "Intro image (theme asset filename)", "info": "e.g. mens.png — file must live in assets/. Takes the place of the rotator." },
-    { "type": "text", "id": "intro_image_alt", "label": "Intro image alt text" },
-    { "type": "checkbox", "id": "show_why_rotator", "label": "Show 'Why choose us' rotator beside the intro", "default": false, "info": "Ignored when an intro image is set." }
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "oils_last",
+      "label": "Show perfume oils last",
+      "default": false,
+      "info": "Moves products whose type contains Oil or Attar to the end. Grouping is per page, so pair it with an alphabetical collection sort."
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Eyebrow",
+      "default": "The Collection"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Heading (H1)",
+      "info": "Leave blank to use the collection title."
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Hero image alt text",
+      "info": "Leave blank to use the collection title."
+    },
+    {
+      "type": "text",
+      "id": "hero_bg_image",
+      "label": "Hero background image (theme asset filename)",
+      "info": "e.g. mens-hero.webp — file must live in assets/. Used only when the collection has no image. Best at 2880 × 1000 with the left side dark."
+    },
+    {
+      "type": "text",
+      "id": "hero_bg_image_sm",
+      "label": "Hero background image, small (theme asset filename)",
+      "info": "Optional 1200 × 417 variant served to phones."
+    },
+    {
+      "type": "text",
+      "id": "limit_to_path",
+      "label": "Only use this copy on this path",
+      "info": "For the default collection template, which many collections share. e.g. /collections/all — every other collection then falls back to its own title. Leave blank to always apply."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hero_description",
+      "label": "Show collection description in hero",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "crumb_parent_label",
+      "label": "Breadcrumb parent label",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "crumb_parent_url",
+      "label": "Breadcrumb parent URL",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Sections"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_band",
+      "label": "Show trust band under the hero",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Show reviews after the grid",
+      "default": true,
+      "info": "Turn off when a page section renders reviews further down."
+    },
+    {
+      "type": "header",
+      "content": "Collection introduction"
+    },
+    {
+      "type": "text",
+      "id": "intro_eyebrow",
+      "label": "Intro eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "intro_heading",
+      "label": "Intro heading (H2)",
+      "info": "Carries the page's primary keyword. Leave blank to hide the intro."
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro copy"
+    },
+    {
+      "type": "text",
+      "id": "intro_image",
+      "label": "Intro image (theme asset filename)",
+      "info": "e.g. mens.png — file must live in assets/. Takes the place of the rotator."
+    },
+    {
+      "type": "text",
+      "id": "intro_image_alt",
+      "label": "Intro image alt text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_why_rotator",
+      "label": "Show 'Why choose us' rotator beside the intro",
+      "default": false,
+      "info": "Ignored when an intro image is set."
+    }
   ],
-  "presets": [ { "name": "Collection page" } ]
+  "presets": [
+    {
+      "name": "Collection page"
+    }
+  ]
 }
 {% endschema %}
