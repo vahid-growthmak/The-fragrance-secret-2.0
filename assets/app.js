@@ -783,7 +783,7 @@ const MIX_SIZES = [
 const MIX_CONC = [
   { id: 'edt', label: 'Eau de Toilette', premium: 0, longevity: '4–6 hrs', sillage: 'Soft', note: 'Light & fresh' },
   { id: 'edp', label: 'Eau de Parfum', premium: 30, longevity: '7–9 hrs', sillage: 'Moderate', note: 'Our most popular' },
-  { id: 'extrait', label: 'Extrait (Pure)', premium: 70, longevity: '10–14 hrs', sillage: 'Strong', note: 'Maximum depth' },
+  { id: 'extrait', label: 'Extrait', premium: 70, longevity: '10–14 hrs', sillage: 'Strong', note: 'Maximum depth' },
 ];
 const arrowSVG = '<span class="mi" aria-hidden="true" style="font-size:17px">arrow_forward</span>';
 function mixPrice() { return MIX.size ? MIX.size.price + (MIX.conc ? MIX.conc.premium : 0) : 0; }

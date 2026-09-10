@@ -1,7 +1,6 @@
 {%- comment -%}
   Product card — native Shopify port of app.js productCardHTML().
   Usage: {% render 'product-card', product: product %}
-  Pass hide_new: true to drop a "New" badge, which most of the catalogue carries.
 
   Reads optional metafields (custom.badge, reviews.rating / custom.rating,
   reviews.rating_count / custom.review_count) with graceful fallbacks so a
@@ -11,9 +10,12 @@
 {%- liquid
   assign badge = product.metafields.custom.badge.value
   assign badge_class = product.metafields.custom.badge_class.value | default: 'badge-best'
-  # 898 of the 928 products carry a "New" badge from the bulk upload, so callers
-  # can suppress it where it says nothing or contradicts the row it sits in.
-  if hide_new and badge == 'New'
+  # "New" never renders. 1,155 of the 1,308 products in the catalogue carry it,
+  # so it marked nothing out — a badge that is on 88% of the shelf is just
+  # decoration. It used to be suppressed per-caller with hide_new, which meant
+  # the same product looked new in one row and not in another. Dropped here
+  # instead, once, for every surface. Sale and Bestseller still show.
+  if badge == 'New'
     assign badge = blank
   endif
   if badge == blank

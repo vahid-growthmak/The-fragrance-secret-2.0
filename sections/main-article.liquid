@@ -163,7 +163,7 @@
         </div>
         <div class="products-grid">
           {%- for product in shop_collection.products limit: 4 -%}
-            {% render 'product-card', product: product, hide_new: true %}
+            {% render 'product-card', product: product %}
           {%- endfor -%}
         </div>
         <div class="cta-actions" style="margin-top:36px">
