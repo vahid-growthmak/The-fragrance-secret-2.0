@@ -7,15 +7,22 @@
     <h1 class="ph-title">What are you <em>searching for?</em></h1>
     <p class="ph-sub" style="margin-left:auto;margin-right:auto">Search across 218+ authentic houses — by brand, note, scent family or occasion. Every result is 100% genuine, verified-sourced, and ready to ship UAE-wide.</p>
 
-    <form action="{{ routes.search_url }}" method="get" role="search" style="max-width:720px;margin:36px auto 0">
+    {%- comment -%}
+      Styles moved out of the tag and into .search-field. They were inline, so
+      the phone rule that makes .btn-g full width had nothing to override: the
+      submit button is absolutely positioned inside the field, and at 390px it
+      stretched across the whole input and hid it. Below 600px the field now
+      stacks instead, so the input and the button each get a full row.
+    {%- endcomment -%}
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
       <input type="hidden" name="type" value="product">
-      <div style="position:relative;display:flex;align-items:center">
-        <span class="mi" aria-hidden="true" style="position:absolute;left:22px;font-size:26px;color:var(--gold)">search</span>
+      <div class="search-field">
+        <span class="mi search-field-icon" aria-hidden="true">search</span>
         <input id="searchInput" name="q" type="search" autocomplete="off" value="{{ search.terms | escape }}"
           placeholder="Try &ldquo;Lattafa&rdquo;, &ldquo;oud&rdquo;, &ldquo;gift for him&rdquo;…"
           aria-label="Search fragrances"
-          style="width:100%;font-family:var(--fb);font-size:1.05rem;color:var(--white);padding:20px 130px 20px 62px;background:rgba(255,255,255,.06);border:1.5px solid rgba(226,201,126,.28);border-radius:8px;outline:none;transition:border-color .25s">
-        <button type="submit" class="btn-g" style="position:absolute;right:8px;padding:12px 26px">Search</button>
+          class="search-field-input">
+        <button type="submit" class="btn-g search-field-btn">Search</button>
       </div>
     </form>
 

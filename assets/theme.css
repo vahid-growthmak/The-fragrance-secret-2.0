@@ -1959,6 +1959,84 @@
       letter-spacing: .05em
     }
 
+    /* ── Search field ─────────────────────────────────────────────────
+       The submit button sits inside the input on desktop, which only works
+       while it keeps its own width. Below 390px .btn-g is set to width:100%,
+       so an absolutely positioned one covered the whole field and the input
+       vanished. Below 600px the field stacks instead: input on one row,
+       button on the next, where full width is what you want anyway. */
+    .search-form {
+      max-width: 720px;
+      margin: 36px auto 0
+    }
+
+    .search-field {
+      position: relative;
+      display: flex;
+      align-items: center
+    }
+
+    .search-field-icon {
+      position: absolute;
+      left: 22px;
+      font-size: 26px;
+      color: var(--gold);
+      pointer-events: none            /* the icon must not eat the field's clicks */
+    }
+
+    .search-field-input {
+      width: 100%;
+      min-width: 0;
+      font-family: var(--fb);
+      font-size: 1.05rem;
+      color: var(--white);
+      padding: 20px 130px 20px 62px;  /* right clears the inset button */
+      background: rgba(255, 255, 255, .06);
+      border: 1.5px solid rgba(226, 201, 126, .28);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color .25s
+    }
+
+    .search-field-input:focus {
+      border-color: var(--gold)
+    }
+
+    .search-field-btn {
+      position: absolute;
+      right: 8px;
+      padding: 12px 26px
+    }
+
+    @media (max-width: 600px) {
+      .search-field {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px
+      }
+
+      .search-field-input {
+        padding: 17px 18px 17px 52px;
+        font-size: 1rem
+      }
+
+      .search-field-icon {
+        top: 19px;
+        left: 18px;
+        font-size: 22px
+      }
+
+      /* back in flow, so the full-width phone rule is exactly right here.
+         .btn-g only centres its label below 390px, so set it here too or the
+         text sits left in a full-width button. */
+      .search-field-btn {
+        position: static;
+        width: 100%;
+        justify-content: center;
+        padding: 15px 26px
+      }
+    }
+
     /* FINDER */
     .finder {
       padding: 80px 0;
