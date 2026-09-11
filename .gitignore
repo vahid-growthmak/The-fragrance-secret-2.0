@@ -11,3 +11,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 node_modules/
+
+# Store backups — contain customer, order and pricing data. Never commit.
+live-backups/
+store-backups/
