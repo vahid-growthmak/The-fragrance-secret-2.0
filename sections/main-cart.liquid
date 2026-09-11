@@ -41,7 +41,7 @@
                   <button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>
                 </div>
               </div>
-              <div class="cl-price" data-line-price>{{ item.final_line_price | money }}</div>
+              <div class="cl-price" data-line-price>{{ item.final_line_price | money_with_currency }}</div>
               <button type="button" class="cart-remove" aria-label="Remove" data-cart-remove><span class="mi" aria-hidden="true">close</span></button>
             </div>
           {%- endfor -%}
@@ -79,15 +79,15 @@
             {%- if cart.total_price >= free_ship_threshold -%}
               <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over AED 150 <span class="mi" aria-hidden="true" style="font-size:15px;vertical-align:-3px;color:var(--gold-dk)">check_circle</span></p>
             {%- else -%}
-              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>{{ remaining | money }}</b> more for <b>free delivery</b></p>
+              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>{{ remaining | money_with_currency }}</b> more for <b>free delivery</b></p>
             {%- endif -%}
             <div class="ship-bar"><i id="shipBar" style="width:{{ ship_pct }}%"></i></div>
           </div>
           <div class="co-totals">
-            <div class="co-trow"><span>Subtotal</span><span id="cartSub">{{ cart.total_price | money }}</span></div>
+            <div class="co-trow"><span>Subtotal</span><span id="cartSub">{{ cart.total_price | money_with_currency }}</span></div>
             <div class="co-trow"><span>Delivery</span><span id="cartShip" style="color:var(--gold-dk)">{% if cart.total_price >= free_ship_threshold %}Free{% else %}Calculated at checkout{% endif %}</span></div>
             <div class="co-trow"><span>VAT (5%)</span><span>Included</span></div>
-            <div class="co-trow grand"><span>Total</span><b id="cartTotal">{{ cart.total_price | money }}</b></div>
+            <div class="co-trow grand"><span>Total</span><b id="cartTotal">{{ cart.total_price | money_with_currency }}</b></div>
 
             <div class="pay-badges" aria-label="Payment options" style="margin-top:16px">
               <span class="pay-badge">COD</span><span class="pay-badge">Tabby</span><span class="pay-badge">Tamara</span><span class="pay-badge">Apple Pay</span><span class="pay-badge">Cards</span>

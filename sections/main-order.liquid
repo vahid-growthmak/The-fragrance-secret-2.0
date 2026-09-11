@@ -10,14 +10,14 @@
       <div class="co-line">
         {%- if line.image -%}<span class="cl-img"><img src="{{ line.image | image_url: width: 120 }}" alt="{{ line.title | escape }}" width="60"></span>{%- endif -%}
         <div class="cl-body"><div class="cl-name">{{ line.title }}</div><div class="cl-meta">Qty {{ line.quantity }}</div></div>
-        <div class="cl-price">{{ line.final_line_price | money }}</div>
+        <div class="cl-price">{{ line.final_line_price | money_with_currency }}</div>
       </div>
     {%- endfor -%}
   </div>
   <div class="co-totals" style="max-width:360px;margin-left:auto">
-    <div class="co-trow"><span>Subtotal</span><span>{{ order.line_items_subtotal_price | money }}</span></div>
-    <div class="co-trow"><span>Shipping</span><span>{{ order.shipping_price | money }}</span></div>
-    <div class="co-trow grand"><span>Total</span><b>{{ order.total_net_amount | money }}</b></div>
+    <div class="co-trow"><span>Subtotal</span><span>{{ order.line_items_subtotal_price | money_with_currency }}</span></div>
+    <div class="co-trow"><span>Shipping</span><span>{{ order.shipping_price | money_with_currency }}</span></div>
+    <div class="co-trow grand"><span>Total</span><b>{{ order.total_net_amount | money_with_currency }}</b></div>
   </div>
 </div></section>
 {% schema %}

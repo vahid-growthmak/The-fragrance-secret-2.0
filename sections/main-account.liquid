@@ -18,7 +18,7 @@
             <div class="cl-name"><a href="{{ order.customer_url }}">Order {{ order.name }}</a></div>
             <div class="cl-meta">{{ order.created_at | date: '%B %-d, %Y' }} · {{ order.financial_status_label }} · {{ order.fulfillment_status_label }}</div>
           </div>
-          <div class="cl-price">{{ order.total_net_amount | money }}</div>
+          <div class="cl-price">{{ order.total_net_amount | money_with_currency }}</div>
           <a class="btn-ghost" href="{{ order.customer_url }}">Reorder</a>
         </div>
       {%- endfor -%}

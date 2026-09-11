@@ -151,7 +151,7 @@
 
   <script>
   (function () {
-    var MONEY_FORMAT = {{ shop.money_format | json }};
+    var MONEY_FORMAT = {{ shop.money_with_currency_format | json }};
     var FALLBACK_IMG = {{ 'prod-bouquet-oud.png' | asset_url | json }};
 
     /* Shopify's money filter runs server-side; these cards are built in the

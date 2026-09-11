@@ -110,7 +110,7 @@
     window.CURRENCY = {{ cart.currency.iso_code | default: shop.currency | json }};
     /* Shopify's money filter runs server-side; JS that rebuilds a price after a
        cart change needs the same format string. Consumed by formatMoney(). */
-    window.MONEY_FORMAT = {{ shop.money_format | json }};
+    window.MONEY_FORMAT = {{ shop.money_with_currency_format | json }};
     window.WHATSAPP_NUMBER = {{ settings.whatsapp_number | json }};
     window.routes = {
       root_url: {{ routes.root_url | json }},

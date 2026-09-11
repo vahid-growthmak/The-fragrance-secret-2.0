@@ -81,9 +81,9 @@
             <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-template='product'>{{ product.metafields.judgeme.badge }}</div>
           </div>
           <div class="pdp-price-row" data-price-row>
-            <span class="pdp-price-now">{{ cv.price | money }}</span>
+            <span class="pdp-price-now">{{ cv.price | money_with_currency }}</span>
             {%- if cv.compare_at_price > cv.price -%}
-              <span class="pdp-price-was">{{ cv.compare_at_price | money }}</span>
+              <span class="pdp-price-was">{{ cv.compare_at_price | money_with_currency }}</span>
               <span class="pdp-price-save">Save {{ cv.compare_at_price | minus: cv.price | times: 100.0 | divided_by: cv.compare_at_price | round }}%</span>
             {%- endif -%}
           </div>
@@ -536,7 +536,7 @@
   <div class="sticky-atc" id="stickyatc">
     <div class="sticky-atc-inner">
       <span class="prod-name-mini">{{ product.title }}</span>
-      <span class="price-mini">{{ cv.price | money }}</span>
+      <span class="price-mini">{{ cv.price | money_with_currency }}</span>
       <button type="button" class="atc-mini" onclick="document.getElementById('product-form').requestSubmit()">Add to Cart</button>
     </div>
   </div>

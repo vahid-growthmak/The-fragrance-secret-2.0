@@ -96,9 +96,9 @@
     {%- if card_spec != blank -%}<div class="prod-spec">{{ card_spec }}</div>{%- endif -%}
     <div class="prod-rating"><div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>{{ product.metafields.judgeme.badge }}</div></div>
     <div class="prod-price">
-      <span class="price-now">{{ product.price | money }}</span>
+      <span class="price-now">{{ product.price | money_with_currency }}</span>
       {%- if product.compare_at_price > product.price -%}
-        <span class="price-was">{{ product.compare_at_price | money }}</span>
+        <span class="price-was">{{ product.compare_at_price | money_with_currency }}</span>
         <span class="price-save">Save {{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%</span>
       {%- endif -%}
     </div>

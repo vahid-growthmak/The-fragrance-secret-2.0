@@ -40,7 +40,7 @@
           {%- if cart.total_price >= free_ship_threshold -%}
             <span class="cd-ship-msg is-met"><span class="mi" aria-hidden="true">local_shipping</span>You've unlocked free UAE delivery</span>
           {%- else -%}
-            <span class="cd-ship-msg">Add <b>{{ remaining | money }}</b> more for free UAE delivery</span>
+            <span class="cd-ship-msg">Add <b>{{ remaining | money_with_currency }}</b> more for free UAE delivery</span>
           {%- endif -%}
           <span class="cd-ship-bar"><i style="width:{{ ship_pct }}%"></i></span>
         </div>
@@ -60,7 +60,7 @@
                   <button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>
                 </div>
               </div>
-              <div class="cl-price" data-line-price>{{ item.final_line_price | money }}</div>
+              <div class="cl-price" data-line-price>{{ item.final_line_price | money_with_currency }}</div>
               <button type="button" class="cart-remove" aria-label="Remove {{ item.product.title | escape }}" data-cart-remove><span class="mi" aria-hidden="true">close</span></button>
             </div>
           {%- endfor -%}
@@ -77,7 +77,7 @@
 
     {%- if cart.item_count > 0 -%}
       <footer class="cd-foot">
-        <div class="cd-sub"><span>Subtotal</span><b>{{ cart.total_price | money }}</b></div>
+        <div class="cd-sub"><span>Subtotal</span><b>{{ cart.total_price | money_with_currency }}</b></div>
         <p class="cd-note">Taxes and delivery calculated at checkout.</p>
         {%- comment -%}
           "Buy" leaves for the real checkout — the one place a full-page

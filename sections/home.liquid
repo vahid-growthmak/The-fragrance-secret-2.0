@@ -332,9 +332,9 @@
             <h3 class="fp-title">{{ fp.title }}</h3>
 
             <div class="fp-price-block">
-              <span class="fp-price">{{ fpv.price | money }}</span>
+              <span class="fp-price">{{ fpv.price | money_with_currency }}</span>
               {%- if fpv.compare_at_price > fpv.price -%}
-                <span class="fp-compare">{{ fpv.compare_at_price | money }}</span>
+                <span class="fp-compare">{{ fpv.compare_at_price | money_with_currency }}</span>
                 <span class="fp-badge">On sale</span>
               {%- endif -%}
             </div>
