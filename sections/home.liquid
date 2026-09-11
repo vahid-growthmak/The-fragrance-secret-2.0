@@ -263,7 +263,19 @@
       </div>
       <a href="/collections/new-arrivals" class="see-all">View All <span class="mi" aria-hidden="true">arrow_forward</span></a>
     </div>
-    {%- if collections['new-arrivals'].products.size > 0 -%}
+    {%- comment -%}
+      new-arrivals is a smart collection of ~890 products sorted by best
+      selling, so the four shown here reshuffled on their own as sales moved,
+      and at one point three of the four slots were the same house. A curated
+      list pins the row; leaving it empty falls back to the collection's own
+      order, so the section still works on a store that has not set one.
+    {%- endcomment -%}
+    {%- assign new_picks = section.settings.new_products -%}
+    {%- if new_picks != blank and new_picks.count > 0 -%}
+      <div class="products-grid">
+        {%- for product in new_picks limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
+      </div>
+    {%- elsif collections['new-arrivals'].products.size > 0 -%}
       <div class="products-grid">
         {%- for product in collections['new-arrivals'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
       </div>
@@ -845,6 +857,13 @@
       "id": "new_sub",
       "label": "New Intro",
       "default": "Shop our latest authentic designer, Arabic and luxury perfumes, carefully selected for every style and occasion."
+    },
+    {
+      "type": "product_list",
+      "id": "new_products",
+      "label": "New Arrivals products",
+      "limit": 4,
+      "info": "Optional. Pick exactly the four products this row shows. Leave empty to fall back to the New Arrivals collection's own order, which is sorted by best selling and changes on its own."
     },
     {
       "type": "text",
