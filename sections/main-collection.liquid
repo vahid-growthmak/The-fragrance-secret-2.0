@@ -272,26 +272,94 @@
             collection's first page holds no oils at all, and later pages show
             their sprays before their oils.
           {%- endcomment -%}
+          {%- comment -%}
+            Hersh deferral. The three Alezz Oud Hersh fragrances are the
+            store's top sellers by a wide margin (95, 59 and 49 units), so
+            under best-selling sort they opened almost every collection and
+            every page started to look like the same collection. Rather than
+            give up best-selling order on ~110 collections, any Hersh product
+            that would land in the first two rows is held back and released
+            right after the sixth other product — the start of row three on
+            the three-column desktop grid, and lower still on smaller screens.
+            Hersh products that already sit further down stay put, so nothing
+            gets promoted by this.
+
+            It only applies on page one with the collection's default sort. A
+            shopper who picks price or A–Z gets exactly that order, and later
+            pages are untouched so no gaps open up. Alezz Oud's own brand
+            pages are exempt, because there Hersh is the point.
+
+            Buckets are comma-delimited on both sides so one product id can
+            never match as a substring of another.
+          {%- endcomment -%}
+          {%- liquid
+            assign oils_last = section.settings.oils_last
+            assign defer_hersh = false
+            if section.settings.defer_hersh and paginate.current_page == 1
+              if collection.sort_by == blank or collection.sort_by == collection.default_sort_by
+                unless collection.handle contains 'alezz'
+                  assign defer_hersh = true
+                endunless
+              endif
+            endif
+            assign lead_slots = 6
+            assign lead_done = 0
+            assign held = ','
+            assign released = false
+            assign oil_bucket = ','
+          -%}
           <div class="products-grid" id="collGrid">
-            {%- if section.settings.oils_last -%}
-              {%- assign oil_bucket = '' -%}
-              {%- for product in collection.products -%}
-                {%- assign ptype = product.type | downcase -%}
-                {%- if ptype contains 'oil' or ptype contains 'attar' -%}
-                  {%- assign oil_bucket = oil_bucket | append: product.id | append: ',' -%}
-                {%- else -%}
-                  {% render 'product-card', product: product %}
+            {%- for product in collection.products -%}
+              {%- liquid
+                assign needle = ',' | append: product.id | append: ','
+                assign ptitle = product.title | downcase
+                assign ptype = product.type | downcase
+                assign is_oil = false
+                if oils_last
+                  if ptype contains 'oil' or ptype contains 'attar'
+                    assign is_oil = true
+                  endif
+                endif
+                assign hold_it = false
+                if defer_hersh and released == false and ptitle contains 'hersh'
+                  assign hold_it = true
+                endif
+              -%}
+              {%- if is_oil -%}
+                {%- assign oil_bucket = oil_bucket | append: product.id | append: ',' -%}
+              {%- elsif hold_it -%}
+                {%- assign held = held | append: product.id | append: ',' -%}
+              {%- else -%}
+                {% render 'product-card', product: product %}
+                {%- assign lead_done = lead_done | plus: 1 -%}
+                {%- if defer_hersh and released == false and lead_done == lead_slots -%}
+                  {%- for held_product in collection.products -%}
+                    {%- assign held_needle = ',' | append: held_product.id | append: ',' -%}
+                    {%- if held contains held_needle -%}
+                      {% render 'product-card', product: held_product %}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- assign released = true -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- comment -%} Fewer than six other products on the page: the held ones still render, last. {%- endcomment -%}
+            {%- if defer_hersh and released == false and held != ',' -%}
+              {%- for held_product in collection.products -%}
+                {%- assign held_needle = ',' | append: held_product.id | append: ',' -%}
+                {%- if held contains held_needle -%}
+                  {% render 'product-card', product: held_product %}
                 {%- endif -%}
               {%- endfor -%}
+            {%- endif -%}
+
+            {%- if oils_last -%}
               {%- for product in collection.products -%}
-                {%- assign needle = product.id | append: ',' -%}
+                {%- assign needle = ',' | append: product.id | append: ',' -%}
                 {%- if oil_bucket contains needle -%}
                   {% render 'product-card', product: product %}
                 {%- endif -%}
-              {%- endfor -%}
-            {%- else -%}
-              {%- for product in collection.products -%}
-                {% render 'product-card', product: product %}
               {%- endfor -%}
             {%- endif -%}
           </div>
@@ -489,6 +557,13 @@
       "label": "Show perfume oils last",
       "default": false,
       "info": "Moves products whose type contains Oil or Attar to the end. Grouping is per page, so pair it with an alphabetical collection sort."
+    },
+    {
+      "type": "checkbox",
+      "id": "defer_hersh",
+      "label": "Start Hersh fragrances from row 3",
+      "default": true,
+      "info": "The Alezz Oud Hersh fragrances are the top sellers, so under best-selling sort they open almost every collection. This keeps them out of the first two rows on page one. Ignored when a shopper picks another sort, and on Alezz Oud's own pages."
     },
     {
       "type": "header",
