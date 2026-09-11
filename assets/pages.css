@@ -692,7 +692,13 @@ header.light .nav-burger { color: var(--warm); }
 .co-line .cl-name { font-size: .84rem; font-weight: 500; color: var(--ink); }
 .co-line .cl-meta { font-size: .74rem; color: var(--warm); }
 .co-line .qty-wrap { width: fit-content; flex-shrink: 0; }
-.co-line .cl-price { margin-left: auto; font-size: .86rem; color: var(--ink); font-weight: 600; white-space: nowrap; }
+/* The price never shrinks. The overflow guard further down gives every
+   .co-line child min-width:0, and with white-space:nowrap that let the price
+   box shrink narrower than its own text — which then spilled out under the
+   remove button once prices gained the " AED" suffix. The name column is the
+   one built to wrap (min-width:0, overflow-wrap:anywhere), so it gives way.
+   Two-class specificity beats the guard's single class regardless of order. */
+.co-line .cl-price { margin-left: auto; font-size: .86rem; color: var(--ink); font-weight: 600; white-space: nowrap; flex-shrink: 0; min-width: max-content; }
 .co-totals { padding: 18px 26px; background: var(--white); }
 .co-trow { display: flex; justify-content: space-between; font-size: .86rem; color: var(--warm); padding: 5px 0; }
 .co-trow.grand { font-size: 1.15rem; color: var(--ink); font-weight: 600; padding-top: 14px; margin-top: 8px; border-top: 1px solid rgba(13,10,6,.12); }
