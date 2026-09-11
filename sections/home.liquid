@@ -271,13 +271,10 @@
       order, so the section still works on a store that has not set one.
     {%- endcomment -%}
     {%- assign new_picks = section.settings.new_products -%}
-    {%- if new_picks != blank and new_picks.count > 0 -%}
+    {%- if new_picks.size == 0 -%}{%- assign new_picks = collections['new-arrivals'].products -%}{%- endif -%}
+    {%- if new_picks.size > 0 -%}
       <div class="products-grid">
         {%- for product in new_picks limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
-      </div>
-    {%- elsif collections['new-arrivals'].products.size > 0 -%}
-      <div class="products-grid">
-        {%- for product in collections['new-arrivals'].products limit: 4 -%}{% render 'product-card', product: product %}{%- endfor -%}
       </div>
     {%- endif -%}
   </div>
