@@ -1,0 +1,106 @@
+{
+ "created": 25,
+ "failed": 0,
+ "log": [
+  {
+   "key": "custom.rating",
+   "id": "gid://shopify/MetafieldDefinition/219928330353"
+  },
+  {
+   "key": "custom.review_count",
+   "id": "gid://shopify/MetafieldDefinition/219928363121"
+  },
+  {
+   "key": "custom.longevity",
+   "id": "gid://shopify/MetafieldDefinition/219928395889"
+  },
+  {
+   "key": "custom.sillage",
+   "id": "gid://shopify/MetafieldDefinition/219928428657"
+  },
+  {
+   "key": "custom.best_for",
+   "id": "gid://shopify/MetafieldDefinition/219928461425"
+  },
+  {
+   "key": "custom.origin",
+   "id": "gid://shopify/MetafieldDefinition/219928494193"
+  },
+  {
+   "key": "custom.notes_top",
+   "id": "gid://shopify/MetafieldDefinition/219928526961"
+  },
+  {
+   "key": "custom.notes_heart",
+   "id": "gid://shopify/MetafieldDefinition/219928559729"
+  },
+  {
+   "key": "custom.notes_base",
+   "id": "gid://shopify/MetafieldDefinition/219928592497"
+  },
+  {
+   "key": "custom.hook",
+   "id": "gid://shopify/MetafieldDefinition/219928625265"
+  },
+  {
+   "key": "custom.badge",
+   "id": "gid://shopify/MetafieldDefinition/219928658033"
+  },
+  {
+   "key": "custom.badge_class",
+   "id": "gid://shopify/MetafieldDefinition/219928690801"
+  },
+  {
+   "key": "custom.barcode",
+   "id": "gid://shopify/MetafieldDefinition/219928723569"
+  },
+  {
+   "key": "custom.gender",
+   "id": "gid://shopify/MetafieldDefinition/219928756337"
+  },
+  {
+   "key": "custom.fragrance_family",
+   "id": "gid://shopify/MetafieldDefinition/219928789105"
+  },
+  {
+   "key": "custom.concentration",
+   "id": "gid://shopify/MetafieldDefinition/219928821873"
+  },
+  {
+   "key": "custom.size",
+   "id": "gid://shopify/MetafieldDefinition/219928854641"
+  },
+  {
+   "key": "custom.product_form",
+   "id": "gid://shopify/MetafieldDefinition/219928887409"
+  },
+  {
+   "key": "custom.dispenser",
+   "id": "gid://shopify/MetafieldDefinition/219928920177"
+  },
+  {
+   "key": "custom.occasion",
+   "id": "gid://shopify/MetafieldDefinition/219928952945"
+  },
+  {
+   "key": "custom.bottle_colour",
+   "id": "gid://shopify/MetafieldDefinition/219928985713"
+  },
+  {
+   "key": "custom.ships_to",
+   "id": "gid://shopify/MetafieldDefinition/219929018481"
+  },
+  {
+   "key": "custom.fragrance_experience",
+   "id": "gid://shopify/MetafieldDefinition/219929051249"
+  },
+  {
+   "key": "custom.best_for_details",
+   "id": "gid://shopify/MetafieldDefinition/219929084017"
+  },
+  {
+   "key": "custom.faq",
+   "id": "gid://shopify/MetafieldDefinition/219929116785"
+  }
+ ]
+}
