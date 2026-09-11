@@ -13,10 +13,17 @@
 {%- liquid
   assign card_label = label | default: collection.title
   assign card_cta = cta | default: 'Browse'
+
+  comment
+    Only the collection's own image is used. Falling back to the first
+    product's photo meant every collection without an image showed whatever
+    happened to sort first — which, with these collections sorted by best
+    selling, was the same bottle on Office Wear, Date Night, Party Wear and
+    Wedding & Formal alike. With no image the card keeps its dark .coll-tile
+    ground and monogram, which reads as a deliberate card rather than an
+    accidental product shot.
+  endcomment
   assign card_image = collection.image
-  if card_image == blank
-    assign card_image = collection.products.first.featured_image
-  endif
 -%}
 
 <a class="hub-tile coll-tile" href="{{ collection.url }}">

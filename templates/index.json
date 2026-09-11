@@ -182,9 +182,9 @@
             "handle": "oud-woody",
             "title": "Oud & Woody",
             "sub": "Deep, warm, resinous",
-            "icon": "park",
             "image_asset": "oud-woody-card.webp",
-            "image_asset_sm": "oud-woody-card-sm.webp"
+            "image_asset_sm": "oud-woody-card-sm.webp",
+            "icon": "park"
           }
         },
         "scent2": {
@@ -193,9 +193,9 @@
             "handle": "fresh-citrus",
             "title": "Fresh & Citrus",
             "sub": "Bright, clean, energetic",
-            "icon": "water_drop",
             "image_asset": "fresh-citrus-card.webp",
-            "image_asset_sm": "fresh-citrus-card-sm.webp"
+            "image_asset_sm": "fresh-citrus-card-sm.webp",
+            "icon": "water_drop"
           }
         },
         "scent3": {
@@ -204,9 +204,9 @@
             "handle": "floral-rose",
             "title": "Floral & Rose",
             "sub": "Elegant, soft, romantic",
-            "icon": "local_florist",
             "image_asset": "floral-rose-card.webp",
-            "image_asset_sm": "floral-rose-card-sm.webp"
+            "image_asset_sm": "floral-rose-card-sm.webp",
+            "icon": "local_florist"
           }
         },
         "scent4": {
@@ -215,9 +215,9 @@
             "handle": "sweet-gourmand",
             "title": "Sweet & Gourmand",
             "sub": "Rich, indulgent, cosy",
-            "icon": "cake",
             "image_asset": "sweet-gourmand-card.webp",
-            "image_asset_sm": "sweet-gourmand-card-sm.webp"
+            "image_asset_sm": "sweet-gourmand-card-sm.webp",
+            "icon": "cake"
           }
         },
         "scent5": {
@@ -226,9 +226,9 @@
             "handle": "spicy-oriental",
             "title": "Spicy & Oriental",
             "sub": "Bold, warm, exotic",
-            "icon": "local_fire_department",
             "image_asset": "spicy-oriental-card.webp",
-            "image_asset_sm": "spicy-oriental-card-sm.webp"
+            "image_asset_sm": "spicy-oriental-card-sm.webp",
+            "icon": "local_fire_department"
           }
         },
         "why1": {
@@ -448,16 +448,10 @@
         "faq6"
       ],
       "settings": {
-        "scent_all_label": "All Scent Families",
-        "scent_all_url": "/pages/shop-by-scent-family",
         "hero_cta_url": "/collections/all",
         "hero_link_url": "/collections/best-sellers",
-        "new_products": [
-          "ibrahim-al-qurashi-tobacco-collection-gift-set-9-20ml-edp-luxury-tobacco-perfume-set",
-          "rayhaan-aquatica-edp-100ml-for-men",
-          "ahmed-al-maghribi-marj-edp-60ml",
-          "arabiyat-prestige-marwa-edp-100ml-for-men-citrus-aromatic-long-lasting-perfume"
-        ]
+        "scent_all_label": "All Scent Families",
+        "scent_all_url": "/pages/shop-by-scent-family"
       }
     }
   },
