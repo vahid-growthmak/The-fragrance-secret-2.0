@@ -782,9 +782,30 @@ function chatApi() {
   return null;
 }
 
+/* The app mounts into #chizy-chat-root and renders its own launcher inside.
+   An earlier attempt to drive the bubble guessed at class names and opened
+   nothing, so this does not assume any: it takes the first genuinely
+   clickable node within the app's own root (shadow DOM included, since the
+   widget may be encapsulated) and clicks that. If the root is absent or holds
+   nothing clickable, the caller falls through to the quiz page. */
+function chatLauncher() {
+  const root = document.getElementById('chizy-chat-root');
+  if (!root) return null;
+  const scopes = [root];
+  if (root.shadowRoot) scopes.push(root.shadowRoot);
+  const sel = 'button, [role="button"], a[href="#"], .chizy-chat-logo-default';
+  for (const scope of scopes) {
+    const hit = scope.querySelector(sel);
+    if (hit) return hit.closest('button, [role="button"], a') || hit;
+  }
+  return null;
+}
+
 function openAI() {
   const open = chatApi();
   if (open) { open(); return; }
+  const launcher = chatLauncher();
+  if (launcher) { launcher.click(); return; }
   if (location.pathname !== FIND_MY_SCENT_URL) location.href = FIND_MY_SCENT_URL;
 }
 function closeAI() { /* the chat app owns its own close control */ }

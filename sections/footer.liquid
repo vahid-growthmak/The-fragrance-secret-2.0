@@ -66,7 +66,19 @@
               {%- for link in links -%}
                 {%- assign parts = link | strip | split: '|' -%}
                 {%- if parts.size >= 2 -%}
-                  <li><a href="{{ parts[1] | strip }}">{{ parts[0] | strip }}</a></li>
+                  {%- assign link_url = parts[1] | strip -%}
+                  {%- comment -%}
+                    Find My Scent opens the chat concierge in place rather than
+                    navigating, matching the header link. The href stays as the
+                    quiz page so the link still works without JavaScript and
+                    still looks like a real destination to crawlers; openAI()
+                    falls back to that same page when the chat app is absent.
+                  {%- endcomment -%}
+                  {%- if link_url contains '/pages/find-my-scent' -%}
+                    <li><a href="{{ link_url }}" onclick="openAI();return false">{{ parts[0] | strip }}</a></li>
+                  {%- else -%}
+                    <li><a href="{{ link_url }}">{{ parts[0] | strip }}</a></li>
+                  {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
             </ul>
