@@ -44,7 +44,33 @@
 
 {%- assign stored_product = product.metafields.custom.product_schema.value | default: product.metafields.custom.product_schema -%}
 {%- if stored_product != blank -%}
-<script type="application/ld+json">{{ stored_product }}</script>
+  {%- comment -%}
+    The stored node supplies the written content — description, brand,
+    category, audience, images — and nothing that moves. offers and
+    aggregateRating are appended here from live data instead, because a
+    snapshot cannot track them: when this was measured, 249 products still
+    claimed InStock while sold out and 3 carried a stale price, which is what
+    gets items disapproved in Merchant Center. scripts/strip-schema-offers.py
+    removed both keys from the stored copy so this is the only source.
+
+    remove_last on the closing brace lets the live keys be appended without
+    parsing the JSON in Liquid. It is safe because the stored value is
+    machine-generated, minified, and verified to end with "}" — the strip
+    script refuses to write anything that does not.
+  {%- endcomment -%}
+  {%- assign schema_base = stored_product | strip | remove_last: '}' -%}
+<script type="application/ld+json">{{ schema_base }}
+{%- if rating_count > 0 and rating_value != blank -%}
+,"aggregateRating":{"@type":"AggregateRating","ratingValue":{{ rating_value | json }},"reviewCount":{{ rating_count | json }}}
+{%- endif -%}
+{%- if product.price > 0 -%}
+  {%- if product.price_min != product.price_max -%}
+,"offers":{"@type":"AggregateOffer","offerCount":{{ product.variants.size }},"lowPrice":{{ product.price_min | divided_by: 100.0 | json }},"highPrice":{{ product.price_max | divided_by: 100.0 | json }},"priceCurrency":{{ currency | json }},"availability":{% if product.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},"url":{{ product_url | json }},"seller":{"@type":"Organization","name":{{ shop.name | json }}}}
+  {%- else -%}
+,"offers":{"@type":"Offer","url":{{ product_url | json }},"priceCurrency":{{ currency | json }},"price":{{ variant.price | default: product.price | divided_by: 100.0 | json }},"availability":{% if product.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},"itemCondition":"https://schema.org/NewCondition","seller":{"@type":"Organization","name":{{ shop.name | json }}}}
+  {%- endif -%}
+{%- endif -%}
+}</script>
 {%- else -%}
 <script type="application/ld+json">
 {
