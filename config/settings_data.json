@@ -15,6 +15,7 @@
     "color_gold": "#C9A84C",
     "header_theme": "dark",
     "text_direction": "ltr",
+    "whatsapp_number": "971564278624",
     "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
@@ -29,9 +30,18 @@
           "api_base_url": "https://ai-agent.chizy.io",
           "app_url": "https://chatbot.chizy.io"
         }
+      },
+      "8776485610325655785": {
+        "type": "shopify://apps/hiko-social-login/blocks/hiko-auth/3832d7e1-5bcd-4b72-91da-236b57feef8f",
+        "disabled": false,
+        "settings": {}
+      },
+      "2339102615225557431": {
+        "type": "shopify://apps/apploy-mobile-app-builder/blocks/apploy/b1c49136-afa0-4125-ac0d-1f6b7aca1d88",
+        "disabled": false,
+        "settings": {}
       }
-    },
-    "whatsapp_number": "971564278624"
+    }
   },
   "presets": {}
 }
