@@ -1906,6 +1906,26 @@
       line-height: 1.3
     }
 
+    /* Stretched link. The product name is the card's one real <a>, and its
+       ::after covers the whole card, so a click anywhere on the card is a
+       native link click: ⌘/Ctrl-click, middle-click and right-click → Open in
+       new tab all work, and the browser shows the URL on hover. The card used
+       to navigate from an onclick, and none of that worked.
+
+       .prod-card is the positioned ancestor, so the overlay stops at the
+       card's edge. .prod-img-wrap and .prod-info are deliberately left
+       unpositioned — positioning either would trap the overlay inside it.
+       The action buttons sit at z-index 2, above the overlay at 1, so the
+       heart and Quick Add still get their own clicks. */
+    .prod-card { position: relative }
+    .prod-card .prod-link { color: inherit; text-decoration: none }
+    .prod-card .prod-link::after { content: ""; position: absolute; inset: 0; z-index: 1 }
+    .prod-card .prod-actions { z-index: 2 }
+
+    /* Keyboard focus: the link is tiny, so the ring goes on the card instead */
+    .prod-card .prod-link:focus-visible { outline: none }
+    .prod-card:has(.prod-link:focus-visible) { outline: 2px solid var(--gold); outline-offset: 3px }
+
     /* Size and audience — what a shopper compares when scanning a row. */
     .prod-spec {
       font-family: var(--fb);

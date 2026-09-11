@@ -64,7 +64,16 @@
   endif
 -%}
 
-<div class="prod-card fade-up" data-handle="{{ product.handle }}"{% if card_variant %} data-variant="{{ card_variant.id }}"{% endif %} onclick="location.href='{{ product.url }}'">
+{%- comment -%}
+  The whole card is clickable through one real link, the product name,
+  stretched over the card by .prod-link::after in theme.css. The card used to
+  be a div with onclick="location.href=…", which navigates from JavaScript.
+  That meant ⌘/Ctrl-click, middle-click and right-click → Open in new tab did
+  nothing, there was no URL preview on hover, and crawlers saw no link. The
+  wishlist and Quick Add buttons are raised above the stretched link, so
+  they still work on their own.
+{%- endcomment -%}
+<div class="prod-card fade-up" data-handle="{{ product.handle }}"{% if card_variant %} data-variant="{{ card_variant.id }}"{% endif %}>
   <div class="prod-img-wrap">
     {%- if product.featured_image -%}
       <img class="prod-img" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
@@ -92,7 +101,7 @@
   </div>
   <div class="prod-info">
     {%- if product.vendor != blank -%}<div class="prod-brand">{{ product.vendor }}</div>{%- endif -%}
-    <div class="prod-name">{{ product.title }}</div>
+    <div class="prod-name"><a class="prod-link" href="{{ product.url }}">{{ product.title }}</a></div>
     {%- if card_spec != blank -%}<div class="prod-spec">{{ card_spec }}</div>{%- endif -%}
     <div class="prod-rating"><div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>{{ product.metafields.judgeme.badge }}</div></div>
     <div class="prod-price">

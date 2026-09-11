@@ -175,7 +175,7 @@ function starsHTML(r) {
    REUSABLE CARD RENDERERS
 ═══════════════════════════════════════ */
 function productCardHTML(p) {
-  return `<div class="prod-card fade-up" onclick="location.href='${p.url || R('product.html')}'">
+  return `<div class="prod-card fade-up">
     <div class="prod-img-wrap">
       <img class="prod-img" src="${assetURL(p.img)}" alt="${esc(p.name)}" loading="lazy"/>
       ${p.badge ? `<div class="prod-badge ${p.badgeClass}">${p.badge}</div>` : ''}
@@ -186,7 +186,7 @@ function productCardHTML(p) {
     </div>
     <div class="prod-info">
       <div class="prod-brand">${esc(p.brand)}</div>
-      <div class="prod-name">${esc(p.name)}</div>
+      <div class="prod-name"><a class="prod-link" href="${p.url || R('product.html')}">${esc(p.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(p.rating)}</div><span>(${p.reviews.toLocaleString()})</span></div>
       <div class="prod-price"><span class="price-now">${money(p.price)}</span><span class="price-was">${money(p.was)}</span><span class="price-save">Save ${savePct(p.price, p.was)}%</span></div>
     </div>
@@ -211,7 +211,7 @@ function reviewCardHTML(r) {
 
 function kitCardHTML(k) {
   const save = savePct(k.price, k.was);
-  return `<div class="prod-card fade-up" onclick="location.href='${R('product.html')}'">
+  return `<div class="prod-card fade-up">
     <div class="prod-img-wrap">
       <img class="prod-img" src="${assetURL(k.img)}" alt="${esc(k.name)}" loading="lazy"/>
       <div class="prod-badge badge-kit">${k.badge}</div>
@@ -222,7 +222,7 @@ function kitCardHTML(k) {
     </div>
     <div class="prod-info">
       <div class="kit-pieces"><span class="mi" aria-hidden="true">layers</span>${k.pieces}</div>
-      <div class="prod-name">${esc(k.name)}</div>
+      <div class="prod-name"><a class="prod-link" href="${R('product.html')}">${esc(k.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(k.rating)}</div><span>(${k.reviews.toLocaleString()})</span></div>
       <div class="prod-price"><span class="price-from">From</span><span class="price-now">${money(k.price)}</span><span class="price-was">${money(k.was)}</span><span class="price-save">Save ${save}%</span></div>
     </div>

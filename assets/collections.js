@@ -401,7 +401,7 @@ function comboAddToCart() {
 
 /* ── Product card w/ filter data attributes ──────────────────────── */
 function collCardHTML(p) {
-  return `<div class="prod-card fade-up" onclick="location.href='${R('product.html')}'" data-fam="${p.family}" data-brand="${esc(p.brand)}" data-gender="${p.gender}" data-price="${p.price}" data-rating="${p.rating}">
+  return `<div class="prod-card fade-up" data-fam="${p.family}" data-brand="${esc(p.brand)}" data-gender="${p.gender}" data-price="${p.price}" data-rating="${p.rating}">
     <div class="prod-img-wrap">
       <img class="prod-img" src="${assetURL(p.img)}" alt="${esc(p.name)}" loading="lazy"/>
       <div class="prod-badge ${p.badgeClass}">${p.badge}</div>
@@ -412,7 +412,7 @@ function collCardHTML(p) {
     </div>
     <div class="prod-info">
       <div class="prod-brand">${esc(p.brand)}</div>
-      <div class="prod-name">${esc(p.name)}</div>
+      <div class="prod-name"><a class="prod-link" href="${R('product.html')}">${esc(p.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(p.rating)}</div><span>(${p.reviews.toLocaleString()})</span></div>
       <div class="prod-price"><span class="price-now">${money(p.price)}</span><span class="price-was">${money(p.was)}</span><span class="price-save">Save ${savePct(p.price, p.was)}%</span></div>
     </div>
