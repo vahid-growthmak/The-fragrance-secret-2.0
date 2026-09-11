@@ -1,0 +1,2075 @@
+[
+ {
+  "step": "redirect",
+  "path": "/collections/afnan-perfumes",
+  "target": "/collections/afnan",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/ahmed-al-maghribi-perfumes",
+  "target": "/collections/ahmed-al-maghribi",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/ajmal-perfumes",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/al-anfar-perfumes-collection-buy-original-al-anfar-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/al-gazal",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/al-gazal-perfumes",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/al-haramain-perfumes",
+  "target": "/collections/al-haramain",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/al-majed-oud-perfumes-collection-authentic-arabian-fragrances-uae",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/alezz-oud-perfumes",
+  "target": "/collections/alezz-oud",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/amber-perfumes-collection-buy-original-amber-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/amber-woody",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/amouage-perfumes",
+  "target": "/collections/amouage",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/ar-rahmani-perfume-collection",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/arabic-perfumes-collection-buy-original-arabic-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/arabic",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/arabiyat-prestige-perfumes-collection-buy-original-arabiyat-prestige-fragrances-online-uae",
+  "target": "/collections/arabiyat-prestige",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/armaf-odyssey-limoni-fresh-edition",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/armaf-perfumes",
+  "target": "/collections/armaf",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/attar-roll-on-set",
+  "target": "/collections/attar",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/azzaro-perfumes-collection-buy-original-azzaro-fragrances-online-uae",
+  "target": "/collections/azzaro",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/bath-body-works-collection-buy-original-bath-body-works-fragrances-online-fragrance-secrets",
+  "target": "/collections/bath-body-works",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/best-perfumes-under-100-aed",
+  "target": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/best-perfumes-under-50-aed",
+  "target": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/best-rasasi-perfumes",
+  "target": "/collections/rasasi",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/best-selling",
+  "target": "/collections/best-sellers",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/billie-eilish-perfumes",
+  "target": "/collections/billie-eilish",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/borntostandout-perfumes",
+  "target": "/collections/borntostandout",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-bath-body-works-japanese-cherry-blossom-shower-gel-with-asian-pear-cherry-blossom-jasmine-sandalwood-musk-vanilla-and-amber",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-bath-body-works-sweet-pea-shower-gel-with-sweet-pea-watery-pear-freesia-raspberry-and-soft-musk-for-a-fresh-floral-body-care-experience",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-dumont-nitro-red-edp-100ml-for-men-with-bergamot-lavender-apple-watermelon-cedarwood-sandalwood-and-amber-shop-now-at-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-amarige-edt-100ml-for-women-a-radiant-floral-fragrance-with-orange-blossom-peach-plum-tuberose-jasmine-vanilla-amber-and-musk",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-ange-ou-demon-edp-100ml-for-women-a-floral-woody-fragrance-with-white-thyme-mandarin-saffron-lily-ylang-ylang-and-tonka-bean",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-dahlia-divin-edp-100ml-for-women-a-fruity-floral-fragrance-with-mirabelle-plum-jasmine-peach-rose-vanilla-sandalwood-and-musk",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-gentleman-reserve-privee-edp-100ml-for-men-a-sophisticated-fragrance-with-bergamot-whisky-chestnut-orris-benzoin-cedarwood-and-vetiver",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-hot-couture-2023-edp-100ml-for-women-a-fruity-floral-fragrance-with-blackcurrant-freesia-rose-of-mai-and-blond-wood-musk",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-irresistible-rose-velvet-edp-80ml-for-women-a-rose-focused-fragrance-with-pink-pepper-blackcurrant-neroli-and-indonesian-patchouli",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-organza-edp-100ml-for-women-a-floral-woody-fragrance-with-nutmeg-gardenia-tuberose-jasmine-vanilla-amber-and-cedar",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-givenchy-pi-edt-100ml-for-men-a-warm-aromatic-fragrance-with-tarragon-rosemary-basil-jasmine-almond-vanilla-tonka-bean-and-benzoin",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-guerlain-epices-exquises-edp-125ml-a-sophisticated-unisex-fragrance-with-cardamom-black-pepper-incense-neroli-oud-sandalwood-and-patchouli",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-guerlain-mon-guerlain-edp-100ml-for-women-a-floral-vanilla-fragrance-with-lavender-bergamot-iris-jasmine-tahitian-vanilla-sandalwood-and-patchouli",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-guerlain-mon-guerlain-intense-edp-100ml-for-women-a-floral-vanilla-fragrance-with-bergamot-mandarin-lavender-jasmine-vanilla-musk-and-sandalwood",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-khadlaj-shiyaaka-sky-edp-100ml-with-bergamot-neroli-musk-ambroxan-vetiver-and-sandalwood-for-a-fresh-elegant-fragrance",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/buy-tubbees-lemon-a-licious-perfume-online-in-uae",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/calvin-klein-perfumes",
+  "target": "/collections/calvin-klein",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/cavalier-collection-where-bold-scents-meet-refined-elegance-discover-your-signature-scent",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/chanel-perfumes-luxury-chanel-fragrance-collection-uae",
+  "target": "/collections/chanel",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/channel",
+  "target": "/collections/chanel",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/cosmopolitan-collection-sophisticated-scents-for-the-modern-individual",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/cristiano-ronaldo-perfumes",
+  "target": "/collections/cristiano-ronaldo",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/davidoff-perfumes",
+  "target": "/collections/davidoff",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/dior-perfumes",
+  "target": "/collections/dior",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/discover-assaf-perfumes-at-fragrance-secrets-featuring-distinctive-fragrances-for-men-women-and-unisex-wear-explore-assaf-s-collections-signature-scents-and-bestselling-perfumes-with-captivating-aromas-and-lasting-presence",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/dolce-and-gabbana-perfumes",
+  "target": "/collections/dolce-and-gabbana",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/eid-sale-perfumes-exclusive-eid-offers-on-luxury-fragrances-uae",
+  "target": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/elan-dor-perfumes-collection-buy-original-elan-dor-fragrances-online-uae",
+  "target": "/collections/elan-dor",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/elevate-your-scent-game-with-afnan-perfumes-where-arabian-heritage-meets-modern-luxury",
+  "target": "/collections/afnan",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/europe",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/ex-nihilo-perfumes",
+  "target": "/collections/ex-nihilo",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/experience-timeless-elegance-with-creed-perfumes-the-art-of-luxury-fragrance-crafted-for-generations",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/farzanas-collection-perfumes",
+  "target": "/collections/farzanas-collection",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/floral-perfumes-collection-buy-original-floral-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/floral",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/fragrance-in-sabrina-carpenters-sweet-tooth-range",
+  "target": "/collections/sabrina-carpenter",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/fragrance-secrets-perfumes",
+  "target": "/collections/fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/fragrance-secrets-single-note-perfume-oils-collection-by-fragrance-secrets",
+  "target": "/collections/perfume-oil",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/french-avenue-perfumes-collection-buy-original-french-avenue-fragrances-online-at-fragrance-secrets",
+  "target": "/collections/french-avenue",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/gift-hampers",
+  "target": "/collections/gift-sets",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/giorgio-armani-perfumes",
+  "target": "/collections/giorgio-armani",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/gissah-perfumes-collection-buy-original-gissah-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/givenchy-l-interdit-edp-80ml-for-women",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/gourmand-perfumes-collection-buy-original-gourmand-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/gourmand",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/hevora-perfumes-collection-buy-original-hevora-fragrances-online-at-fragrance-secrets",
+  "target": "/collections/hevora",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/house-of-morais-perfumes",
+  "target": "/collections/house-of-morais",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/hugo-boss-perfumes",
+  "target": "/collections/hugo-boss",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/ibrahim-al-qurashi-perfumes-collection-buy-original-ibrahim-al-qurashi-fragrances-online-at-fragrance-secrets",
+  "target": "/collections/ibrahim-al-qurashi",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/inspired-perfumes",
+  "target": "/collections/inspired",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/jean-paul-gaultier-perfumes",
+  "target": "/collections/jean-paul-gaultier",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/khadlaj-2",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/khaleej-pride-collection",
+  "target": "/collections/khaleej-pride",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/kids-perfume",
+  "target": "/collections/kids",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/lattafa-perfumes",
+  "target": "/collections/lattafa",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/laverne-perfumes-collection-buy-original-laverne-perfume-online-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/maison-asrar-perfumes-discover-luxury-fragrances-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/mancera-perfumes",
+  "target": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/marxelle",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/men-s-perfumes-collection-buy-original-men-s-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/mens-collection",
+  "target": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/musk-perfumes-collection-buy-original-musk-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/new-arrivals-perfume-collection-shop-new-fragrances-online-at-fragrance-secrets",
+  "target": "/collections/new-arrivals",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/orchid-perfumes",
+  "target": "/collections/orchid",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/oud-perfumes-collection-buy-original-oud-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/oud-woody",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/oud-perfumes-collection-buy-original-oud-perfumes-online-at-fragrance-secrets-1",
+  "target": "/collections/oud-woody",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/oudiction-collection-buy-original-oudiction-fragrances-online-at-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/panucci-perfumes-collection-buy-original-panucci-fragrance-online-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/paris-collections",
+  "target": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/parisbelle-perfumes",
+  "target": "/collections/parisbelle",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/perfume-for-womens-collection",
+  "target": "/collections/womens",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/perfume-oil-collection",
+  "target": "/collections/perfume-oil",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/perfumes-below-30",
+  "target": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/prada-perfumes",
+  "target": "/collections/prada",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/premium-attar-perfume-collection-fragrance-perfume-perfume-and-attar",
+  "target": "/collections/attar",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/raees-roll-on",
+  "target": "/collections/attar",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/ralph-lauren-perfumes",
+  "target": "/collections/ralph-lauren",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/rayhaan-perfumes-collection-original-rayhaan-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/rayhaan",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/reef-perfumes",
+  "target": "/collections/reef",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/remy-latour-timeless-french-fragrance-classic-elegance-buy-best-perfumes-online-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/riiffs-perfumes-collection-original-riiffs-fragrances-online-uae",
+  "target": "/collections/riiffs",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/roberto-cavalli-perfumes",
+  "target": "/collections/roberto-cavalli",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/roja-dove-perfumes-collection-buy-original-roja-dove-fragrance-online-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/secret-scents-perfumes",
+  "target": "/collections/secret-scents",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/shazine-attar-roll-on-collection-premium-concentrated-perfume-oils",
+  "target": "/collections/attar",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/signature-collection-where-bold-scents-meet-timeless-elegance-discover-your-signature-scent",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/stephane-humbert-lucas-perfumes",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/super-sale",
+  "target": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/swiss-arabian-perfumes",
+  "target": "/collections/swiss-arabian",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/tubbees-in-a-tub-collection-sweet-delights-and-playful-scents",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/unisex-collection",
+  "target": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets-1",
+  "target": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets-2",
+  "target": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/valentine-s-day-exclusive-perfume-bundles-romantic-gifts-online-at-fragrance-secrets",
+  "target": "/collections/gift-sets",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/versace-perfumes-collection-buy-original-versace-fragrance-online-fragrance-secrets",
+  "target": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/women-s-perfumes-collection-buy-original-women-s-perfumes-online-at-fragrance-secrets",
+  "target": "/collections/womens",
+  "ok": true
+ },
+ {
+  "step": "redirect",
+  "path": "/collections/yves-saint-laurent-perfumes-collection-buy-original-ysl-fragrances-online-uae",
+  "target": "/collections/yves-saint-laurent",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/armaf-perfume",
+  "from": "/collections/armaf-perfumes",
+  "to": "/collections/armaf",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-50-aed?page=1",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/product-category/gender/mens",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-443",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/al-gazal-trend-force-wood-legacy-100ml",
+  "from": "/collections/al-gazal",
+  "to": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/french-perfume-brands?page=16",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/unisex-perfume/products/al-ameer-100ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/calvin-klein-ck-in-2-u-m-edt",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/calvin-klein-ck-free-men-edt-100ml",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/perfume-for-men",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/mancera-perfume",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/unisex-perfume/products/fragrance-194",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/unisex-perfume/products/fragrance-169",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/boucheron-quatre-for-men-edt-100ml",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-89",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-484",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/product-category/type/french",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-273",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/under-100-aed",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/under-100-aed/products/french-leather-80ml-eau-de-parfum",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/fragrance-224",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/elie-saab-le-parfum-royal-french-perfume",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/25-aed-100-aed",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-597",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/mancera-juicy-flowers-edp-french-perfume-fragrance",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/set-of-4-piece-100ml-perfume",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/xerjoff-jtc-comandante-unisex-eau-de-perfume-100-ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/pasha-de-cartier-edition-noire-edt-for-men-100ml",
+  "from": "/collections/ahmed-al-maghribi-perfumes",
+  "to": "/collections/ahmed-al-maghribi",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-615",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/fragrance-771",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-431",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-102",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/mancera/products/mancera-juicy-flowers-edp-french-perfume-fragrance",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume/products/fragrance-757",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/unisex-perfume",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/mens-fragrances",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/branded-perfumes",
+  "from": "/collections/ahmed-al-maghribi-perfumes",
+  "to": "/collections/ahmed-al-maghribi",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/alexandre-j-the-collector-morning-musca-100ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/fragrance-515",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-200",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/jack-of-clubs-edp-80ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/chantel-de-blue-edp-100ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-431",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-773",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/under-50-aed",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-279",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/chanel-allure-m-edt-100ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/fragrance-503",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-220",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/all/products/soverign-ventures-edp-100ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/alexandre-j-the-collector-rose-oud-100ml",
+  "from": "/collections/ahmed-al-maghribi-perfumes",
+  "to": "/collections/ahmed-al-maghribi",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/al-gazal-blissful-rouge-100ml",
+  "from": "/collections/al-gazal",
+  "to": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume/products/billion-heir-edp-perfume",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-754",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-446",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-122",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-39",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/fragrance-43",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/branded-perfumes/products/fragrance-161",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/wild-rover",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/men/products/fragrance-113",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/mukhawi-al-lail-edp-100ml",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-50-aed/products/phoenix-edp-100ml",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/french-perfume-brands/products/fragrance-732",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/french-perfume-brands/products/212-vip-rose",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/french-perfume-brands/products/fragrance-453",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume/products/mancera-aoud-lemon-mint-edp-french-perfume-fragrance",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-683",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/calvin-klein-ck-one-shock-w-french-perfume",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/unisex-perfume/products/fragrance-767",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/fragrance-500",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/200-aed-to-500-aed/products/mancera-rose-vanille-edp-french-perfume-fragrance",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/special-for-men-best-men-perfume-set",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/all/products/mancera-blackline-edp-french-perfume-fragrance",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/25-aed-100-aed",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-598",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/3-piece-arabic-perfume-bundle-arabic-perfumes-combo-copy",
+  "from": "/collections/ahmed-al-maghribi-perfumes",
+  "to": "/collections/ahmed-al-maghribi",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/yves-saint-laurent-myself-perfume-for-men-edp-100ml-refillable",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/all/products/mancera-roses-greedy-edp-french-perfume",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/product/bravery-hero-edp-100ml",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/spanish-knights-80ml-eau-de-parfume",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/shaklan-edp-arabic-perfume",
+  "from": "/collections/ahmed-al-maghribi-perfumes",
+  "to": "/collections/ahmed-al-maghribi",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french-perfume-brands/products/yves-saint-laurent-lhomme-brand-perfumes",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/fragrance-195",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/fragrance-510",
+  "from": "/collections/khaleej-pride-collection",
+  "to": "/collections/khaleej-pride",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/all/products/mancera-wild-fruits-edp-french-perfume-offer",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-100-aed/products/calvin-klein-ck-one-shock-m-edt-100ml",
+  "from": "/collections/khaleej-pride-collection",
+  "to": "/collections/khaleej-pride",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/collections/mancera-perfume",
+  "from": "/collections/mancera-perfumes",
+  "to": "/collections/mancera",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/french/products/fragrance-508",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/imperium-edp-100ml",
+  "from": "/collections/paris-collections",
+  "to": "/collections/paris-collection",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/arabic-perfume",
+  "from": "/collections/khaleej-pride-collection",
+  "to": "/collections/khaleej-pride",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/al-nawal-edp-100ml-khulood-edp-100ml",
+  "from": "/collections/al-gazal",
+  "to": "/collections/all",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/leader-brown-edp-khulood-edp-perfume-for-men",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/executive-vip-prive-pour-homme-edp-100ml",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/lanvin-eclat-d-arpege-pour-homme-100ml",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/ar/products/clive-christian-1872-men-s-50ml",
+  "from": "/collections/mens-collection",
+  "to": "/collections/mens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/unisex/products/memo-paris-african-leather-eau-de-parfum-for-unisex-75ml",
+  "from": "/collections/unisex-collection",
+  "to": "/collections/unisex",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/under-50-aed",
+  "from": "/collections/perfumes-below-30",
+  "to": "/collections/crazy-deals",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/oil-collection?srsltid=afmbooqoecrmqlkvcwdinvfybozuqz1hdsu70sokklmmqps7-llndgav",
+  "from": "/collections/perfume-oil-collection",
+  "to": "/collections/perfume-oil",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/womens-collection",
+  "from": "/collections/perfume-for-womens-collection",
+  "to": "/collections/womens",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/product/hugo-boss-energise-for-man-edt-75ml",
+  "from": "/collections/hugo-boss-perfumes",
+  "to": "/collections/hugo-boss",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/collections/rasasi-perfumes",
+  "from": "/collections/best-rasasi-perfumes",
+  "to": "/collections/rasasi",
+  "ok": true
+ },
+ {
+  "step": "repoint",
+  "path": "/products/custom-perfume-100ml-choose-perfume-oil-concentration-edt-edp-parfum-extrait-personalized-fragrance",
+  "from": "/collections/inspired-perfumes",
+  "to": "/collections/inspired",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "afnan-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "ahmed-al-maghribi-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "ajmal-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "al-anfar-perfumes-collection-buy-original-al-anfar-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "al-gazal",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "al-gazal-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "al-haramain-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "al-majed-oud-perfumes-collection-authentic-arabian-fragrances-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "alezz-oud-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "amber-perfumes-collection-buy-original-amber-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "amouage-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "ar-rahmani-perfume-collection",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "arabic-perfumes-collection-buy-original-arabic-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "arabiyat-prestige-perfumes-collection-buy-original-arabiyat-prestige-fragrances-online-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "armaf-odyssey-limoni-fresh-edition",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "armaf-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "attar-roll-on-set",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "azzaro-perfumes-collection-buy-original-azzaro-fragrances-online-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "bath-body-works-collection-buy-original-bath-body-works-fragrances-online-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "best-perfumes-under-100-aed",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "best-perfumes-under-50-aed",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "best-rasasi-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "best-selling",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "billie-eilish-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "borntostandout-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-bath-body-works-japanese-cherry-blossom-shower-gel-with-asian-pear-cherry-blossom-jasmine-sandalwood-musk-vanilla-and-amber",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-bath-body-works-sweet-pea-shower-gel-with-sweet-pea-watery-pear-freesia-raspberry-and-soft-musk-for-a-fresh-floral-body-care-experience",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-dumont-nitro-red-edp-100ml-for-men-with-bergamot-lavender-apple-watermelon-cedarwood-sandalwood-and-amber-shop-now-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-amarige-edt-100ml-for-women-a-radiant-floral-fragrance-with-orange-blossom-peach-plum-tuberose-jasmine-vanilla-amber-and-musk",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-ange-ou-demon-edp-100ml-for-women-a-floral-woody-fragrance-with-white-thyme-mandarin-saffron-lily-ylang-ylang-and-tonka-bean",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-dahlia-divin-edp-100ml-for-women-a-fruity-floral-fragrance-with-mirabelle-plum-jasmine-peach-rose-vanilla-sandalwood-and-musk",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-gentleman-reserve-privee-edp-100ml-for-men-a-sophisticated-fragrance-with-bergamot-whisky-chestnut-orris-benzoin-cedarwood-and-vetiver",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-hot-couture-2023-edp-100ml-for-women-a-fruity-floral-fragrance-with-blackcurrant-freesia-rose-of-mai-and-blond-wood-musk",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-irresistible-rose-velvet-edp-80ml-for-women-a-rose-focused-fragrance-with-pink-pepper-blackcurrant-neroli-and-indonesian-patchouli",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-organza-edp-100ml-for-women-a-floral-woody-fragrance-with-nutmeg-gardenia-tuberose-jasmine-vanilla-amber-and-cedar",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-givenchy-pi-edt-100ml-for-men-a-warm-aromatic-fragrance-with-tarragon-rosemary-basil-jasmine-almond-vanilla-tonka-bean-and-benzoin",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-guerlain-epices-exquises-edp-125ml-a-sophisticated-unisex-fragrance-with-cardamom-black-pepper-incense-neroli-oud-sandalwood-and-patchouli",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-guerlain-mon-guerlain-edp-100ml-for-women-a-floral-vanilla-fragrance-with-lavender-bergamot-iris-jasmine-tahitian-vanilla-sandalwood-and-patchouli",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-guerlain-mon-guerlain-intense-edp-100ml-for-women-a-floral-vanilla-fragrance-with-bergamot-mandarin-lavender-jasmine-vanilla-musk-and-sandalwood",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-khadlaj-shiyaaka-sky-edp-100ml-with-bergamot-neroli-musk-ambroxan-vetiver-and-sandalwood-for-a-fresh-elegant-fragrance",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "buy-tubbees-lemon-a-licious-perfume-online-in-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "calvin-klein-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "cavalier-collection-where-bold-scents-meet-refined-elegance-discover-your-signature-scent",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "chanel-perfumes-luxury-chanel-fragrance-collection-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "channel",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "cosmopolitan-collection-sophisticated-scents-for-the-modern-individual",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "cristiano-ronaldo-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "davidoff-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "dior-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "discover-assaf-perfumes-at-fragrance-secrets-featuring-distinctive-fragrances-for-men-women-and-unisex-wear-explore-assaf-s-collections-signature-scents-and-bestselling-perfumes-with-captivating-aromas-and-lasting-presence",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "dolce-and-gabbana-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "eid-sale-perfumes-exclusive-eid-offers-on-luxury-fragrances-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "elan-dor-perfumes-collection-buy-original-elan-dor-fragrances-online-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "elevate-your-scent-game-with-afnan-perfumes-where-arabian-heritage-meets-modern-luxury",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "europe",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "ex-nihilo-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "experience-timeless-elegance-with-creed-perfumes-the-art-of-luxury-fragrance-crafted-for-generations",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "farzanas-collection-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "floral-perfumes-collection-buy-original-floral-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "fragrance-in-sabrina-carpenters-sweet-tooth-range",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "fragrance-secrets-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "fragrance-secrets-single-note-perfume-oils-collection-by-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "french-avenue-perfumes-collection-buy-original-french-avenue-fragrances-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "gift-hampers",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "giorgio-armani-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "gissah-perfumes-collection-buy-original-gissah-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "givenchy-l-interdit-edp-80ml-for-women",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "gourmand-perfumes-collection-buy-original-gourmand-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "hevora-perfumes-collection-buy-original-hevora-fragrances-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "house-of-morais-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "hugo-boss-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "ibrahim-al-qurashi-perfumes-collection-buy-original-ibrahim-al-qurashi-fragrances-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "inspired-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "jean-paul-gaultier-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "khadlaj-2",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "khaleej-pride-collection",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "kids-perfume",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "lattafa-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "laverne-perfumes-collection-buy-original-laverne-perfume-online-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "maison-asrar-perfumes-discover-luxury-fragrances-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "mancera-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "marxelle",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "men-s-perfumes-collection-buy-original-men-s-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "mens-collection",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "musk-perfumes-collection-buy-original-musk-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "new-arrivals-perfume-collection-shop-new-fragrances-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "orchid-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "oud-perfumes-collection-buy-original-oud-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "oud-perfumes-collection-buy-original-oud-perfumes-online-at-fragrance-secrets-1",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "oudiction-collection-buy-original-oudiction-fragrances-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "panucci-perfumes-collection-buy-original-panucci-fragrance-online-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "paris-collections",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "parisbelle-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "perfume-for-womens-collection",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "perfume-oil-collection",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "perfumes-below-30",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "prada-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "premium-attar-perfume-collection-fragrance-perfume-perfume-and-attar",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "raees-roll-on",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "ralph-lauren-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "rayhaan-perfumes-collection-original-rayhaan-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "reef-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "remy-latour-timeless-french-fragrance-classic-elegance-buy-best-perfumes-online-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "riiffs-perfumes-collection-original-riiffs-fragrances-online-uae",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "roberto-cavalli-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "roja-dove-perfumes-collection-buy-original-roja-dove-fragrance-online-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "secret-scents-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "shazine-attar-roll-on-collection-premium-concentrated-perfume-oils",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "signature-collection-where-bold-scents-meet-timeless-elegance-discover-your-signature-scent",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "stephane-humbert-lucas-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "super-sale",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "swiss-arabian-perfumes",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "tubbees-in-a-tub-collection-sweet-delights-and-playful-scents",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "unisex-collection",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets-1",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets-2",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "valentine-s-day-exclusive-perfume-bundles-romantic-gifts-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "versace-perfumes-collection-buy-original-versace-fragrance-online-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "women-s-perfumes-collection-buy-original-women-s-perfumes-online-at-fragrance-secrets",
+  "ok": true
+ },
+ {
+  "step": "delete",
+  "handle": "yves-saint-laurent-perfumes-collection-buy-original-ysl-fragrances-online-uae",
+  "ok": true
+ }
+]
