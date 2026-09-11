@@ -349,7 +349,13 @@
     if brand_collection.handle
       assign brand_url = brand_collection.url
     else
-      assign brand_url = '/collections/vendors?q=' | append: product.vendor | url_encode
+      comment
+        /collections/vendors is not a Shopify route — page-brands.liquid says
+        so in its own header comment, and it 404s. Search is a real route and
+        always resolves, so a vendor with no collection of its own still lands
+        the shopper on that brand's products instead of a dead page.
+      endcomment
+      assign brand_url = '/search?type=product&q=' | append: product.vendor | url_encode
     endif
 
     assign brand_count = 0
