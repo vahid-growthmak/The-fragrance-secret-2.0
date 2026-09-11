@@ -699,6 +699,53 @@ header.light .nav-burger { color: var(--warm); }
    one built to wrap (min-width:0, overflow-wrap:anywhere), so it gives way.
    Two-class specificity beats the guard's single class regardless of order. */
 .co-line .cl-price { margin-left: auto; font-size: .86rem; color: var(--ink); font-weight: 600; white-space: nowrap; flex-shrink: 0; min-width: max-content; }
+
+/* Editable lines — the cart drawer and the cart page, identified by their
+   remove button, so the read-only lines on the order, account and checkout
+   pages keep the flex row above.
+
+   In a single flex row the price and the remove button both sat beside the
+   name for the full height of the line. That cost the name ~115px of width,
+   and on a phone it broke letter by letter. Here the name has the whole width
+   bar the 28px remove button. The price moves down to share the quantity row,
+   stepper on the left and price on the right:
+
+       [img]  Rayhaan Jungle Vibe Eau De Parfum…     [×]
+              · Rayhaan
+              [− 1 +]                        120.00 AED
+
+   .cl-body becomes display:contents so its three children can be placed on
+   the grid directly. The price and stepper share one area, aligned to
+   opposite ends, which keeps the right-hand column exactly as wide as the
+   remove button. Grid track sizing leaves out items that span a flexible
+   track. Browsers without :has() keep the flex layout, where the price at
+   least no longer overlaps. */
+.co-line:has(> .cart-remove) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: 14px;
+  row-gap: 8px;
+  align-items: start;
+}
+.co-line:has(> .cart-remove) > .cl-img { grid-column: 1; grid-row: 1 / span 3; }
+.co-line:has(> .cart-remove) > .cl-body { display: contents; }
+.co-line:has(> .cart-remove) .cl-name { grid-column: 2; grid-row: 1; align-self: center; }
+.co-line:has(> .cart-remove) > .cart-remove { grid-column: 3; grid-row: 1; }
+.co-line:has(> .cart-remove) .cl-meta { grid-column: 2 / 4; grid-row: 2; }
+.co-line:has(> .cart-remove) .qty-wrap { grid-column: 2 / 4; grid-row: 3; justify-self: start; }
+.co-line:has(> .cart-remove) > .cl-price { grid-column: 2 / 4; grid-row: 3; justify-self: end; align-self: center; margin-left: 0; }
+
+/* Narrow lines: the stepper (122px) plus a four-digit price (95px) needs about
+   305px of line width to share a row. Below that the price takes its own row
+   rather than colliding. It is a container query, not a media query, because
+   the drawer's width is what matters, not the screen's: the drawer is 420px
+   on a desktop and full-bleed on a phone. In practice only 320px phones (288px
+   of line) drop to the extra row; 360px phones and up keep the shared row. */
+.cd-lines, #cartLines { container-type: inline-size; }
+@container (max-width: 319px) {
+  .co-line:has(> .cart-remove) > .cl-img { grid-row: 1 / span 4; }
+  .co-line:has(> .cart-remove) > .cl-price { grid-row: 4; justify-self: start; }
+}
 .co-totals { padding: 18px 26px; background: var(--white); }
 .co-trow { display: flex; justify-content: space-between; font-size: .86rem; color: var(--warm); padding: 5px 0; }
 .co-trow.grand { font-size: 1.15rem; color: var(--ink); font-weight: 600; padding-top: 14px; margin-top: 8px; border-top: 1px solid rgba(13,10,6,.12); }
