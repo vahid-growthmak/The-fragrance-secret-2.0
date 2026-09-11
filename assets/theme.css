@@ -1792,12 +1792,27 @@
     .prod-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform .5s var(--ease)
+      object-fit: cover
     }
 
-    .prod-card:hover .prod-img {
-      transform: scale(1.05)
+    /* Hover shows the product's next image instead of zooming the first.
+       The second <img> sits exactly over the first (the wrap is a fixed 1:1
+       box) and cross-fades in. It only happens on devices with a real hover:
+       a phone reports a tap as a hover and would otherwise leave the second
+       image stuck on screen after the tap. */
+    .prod-img-hover {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .45s var(--ease)
+    }
+
+    @media (hover: hover) {
+      .prod-card:hover .prod-img-hover { opacity: 1 }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .prod-img-hover { transition: none }
     }
 
     .prod-badge {

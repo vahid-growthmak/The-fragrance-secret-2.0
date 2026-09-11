@@ -140,6 +140,7 @@ function loadLiveCatalog() {
           rating: 4.8, reviews: 0,
           family: family, gender: gender, occasion: '',
           img: (p.images && p.images[0] && p.images[0].src) || '',
+          img2: (p.images && p.images[1] && p.images[1].src) || '',   // hover image
           url: '/products/' + p.handle,
           handle: p.handle,          // wishlist keys off the handle
           variantId: v.id,
@@ -178,6 +179,7 @@ function productCardHTML(p) {
   return `<div class="prod-card fade-up">
     <div class="prod-img-wrap">
       <img class="prod-img" src="${assetURL(p.img)}" alt="${esc(p.name)}" loading="lazy"/>
+      ${p.img2 ? `<img class="prod-img prod-img-hover" src="${assetURL(p.img2)}" alt="" aria-hidden="true" loading="lazy"/>` : ''}
       ${p.badge ? `<div class="prod-badge ${p.badgeClass}">${p.badge}</div>` : ''}
       <div class="prod-actions">
         <button type="button" class="pa-btn pa-wish" data-wish="${esc(p.handle || '')}" data-wish-label="${esc(p.name)}" aria-pressed="false" title="Save to wishlist" onclick="event.stopPropagation();TFSWishlist.toggle(this.dataset.wish, this.dataset.wishLabel)"><span class="mi" aria-hidden="true">favorite</span></button>

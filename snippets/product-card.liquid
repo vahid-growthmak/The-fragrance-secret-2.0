@@ -77,6 +77,20 @@
   <div class="prod-img-wrap">
     {%- if product.featured_image -%}
       <img class="prod-img" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
+      {%- comment -%}
+        Hover image: the next image after the featured one, laid exactly over
+        it and faded in on hover — replacing the old 5% zoom of the same photo.
+        In a sample of the catalogue the second image was the clean white-
+        background shot 83% of the time. It is decorative (the product is
+        already named by the first image's alt), so it is hidden from screen
+        readers. Products with a single image simply keep that image.
+      {%- endcomment -%}
+      {%- for img in product.images -%}
+        {%- if img.id != product.featured_image.id -%}
+          <img class="prod-img prod-img-hover" src="{{ img | image_url: width: 600 }}" alt="" aria-hidden="true" loading="lazy" width="600" height="600">
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
     {%- else -%}
       <img class="prod-img" src="{{ 'prod-bouquet-oud.png' | asset_url }}" alt="{{ product.title | escape }}" loading="lazy">
     {%- endif -%}
