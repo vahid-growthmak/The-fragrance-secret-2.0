@@ -70,6 +70,12 @@ function formatMoney(cents) {
 }
 window.formatMoney = formatMoney;
 function savePct(price, was) { return Math.round((1 - price / was) * 100); }
+/* Struck-through price + "Save N%", only for a real markdown. Live products with
+   no compare-at price come through as 0, which printed "AED 0 · Save -Infinity%". */
+function wasPriceHTML(price, was) {
+  if (!(was > price)) return '';
+  return `<span class="price-was">${money(was)}</span><span class="price-save">Save ${savePct(price, was)}%</span>`;
+}
 function qs(name) { return new URLSearchParams(location.search).get(name); }
 function el(id) { return document.getElementById(id); }
 function esc(s) { return String(s).replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
@@ -190,7 +196,7 @@ function productCardHTML(p) {
       <div class="prod-brand">${esc(p.brand)}</div>
       <div class="prod-name"><a class="prod-link" href="${p.url || R('product.html')}">${esc(p.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(p.rating)}</div><span>(${p.reviews.toLocaleString()})</span></div>
-      <div class="prod-price"><span class="price-now">${money(p.price)}</span><span class="price-was">${money(p.was)}</span><span class="price-save">Save ${savePct(p.price, p.was)}%</span></div>
+      <div class="prod-price"><span class="price-now">${money(p.price)}</span>${wasPriceHTML(p.price, p.was)}</div>
     </div>
   </div>`;
 }
@@ -212,7 +218,6 @@ function reviewCardHTML(r) {
 }
 
 function kitCardHTML(k) {
-  const save = savePct(k.price, k.was);
   return `<div class="prod-card fade-up">
     <div class="prod-img-wrap">
       <img class="prod-img" src="${assetURL(k.img)}" alt="${esc(k.name)}" loading="lazy"/>
@@ -226,7 +231,7 @@ function kitCardHTML(k) {
       <div class="kit-pieces"><span class="mi" aria-hidden="true">layers</span>${k.pieces}</div>
       <div class="prod-name"><a class="prod-link" href="${R('product.html')}">${esc(k.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(k.rating)}</div><span>(${k.reviews.toLocaleString()})</span></div>
-      <div class="prod-price"><span class="price-from">From</span><span class="price-now">${money(k.price)}</span><span class="price-was">${money(k.was)}</span><span class="price-save">Save ${save}%</span></div>
+      <div class="prod-price"><span class="price-from">From</span><span class="price-now">${money(k.price)}</span>${wasPriceHTML(k.price, k.was)}</div>
     </div>
   </div>`;
 }
@@ -1261,9 +1266,11 @@ else document.addEventListener('DOMContentLoaded', initApp);
     if (t.closest && t.closest('[data-cd-close]')) { e.preventDefault(); closeCart(); return; }
 
     /* Header bag opens the panel. The href stays /cart so it still works with
-       no JS and still opens in a new tab on middle-click. */
+       no JS and still opens in a new tab on middle-click. Links inside the
+       panel are left alone: "View full cart" also ends in /cart, so it was
+       re-opening the already-open panel instead of going to the cart page. */
     var bag = t.closest && t.closest('a[href$="/cart"], a.ni[title="Cart"]');
-    if (bag && el() && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+    if (bag && !bag.closest('#cartDrawer') && el() && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
       e.preventDefault(); openCart(); return;
     }
 

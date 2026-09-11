@@ -1799,11 +1799,15 @@
        The second <img> sits exactly over the first (the wrap is a fixed 1:1
        box) and cross-fades in. It only happens on devices with a real hover:
        a phone reports a tap as a hover and would otherwise leave the second
-       image stuck on screen after the tap. */
+       image stuck on screen after the tap.
+       It carries the tile's ground: a transparent-PNG second image let the
+       first photo show straight through it, so hovering stacked two sets of
+       bottles on top of each other. inherit tracks the tile's hover shade. */
     .prod-img-hover {
       position: absolute;
       inset: 0;
       opacity: 0;
+      background: inherit;
       transition: opacity .45s var(--ease)
     }
 
@@ -5152,6 +5156,60 @@ html body .jdgm-rev-widg__summary-text {
   color: var(--ink)
 }
 
+/* ── Header row: summary | histogram | write-a-review ──
+   The header is a centred column, so this row shrank to its content width, and
+   Judge.me sizes the three columns as percentages of the row. That left ~80px a
+   column: the summary and the button both wrapped, and the button sat flush
+   against the divider. The row gets the full measure back and each column pads
+   away from its divider. Scoped to Judge.me's wide layout (it adds --medium /
+   --small at 680px and below and stacks the columns itself); the id outranks
+   its :not()-chained selectors, which plain html-body boosting did not. */
+html body #judgeme_product_reviews:not(.jdgm-review-widget--small):not(.jdgm-review-widget--medium) .jdgm-row-stars {
+  align-self: stretch;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 0 28px
+}
+
+html body #judgeme_product_reviews:not(.jdgm-review-widget--small):not(.jdgm-review-widget--medium) .jdgm-row-stars > div {
+  margin: 0;
+  padding: 6px 32px
+}
+
+/* Stars on their own line above the average, so "5.00 out of 5" never wraps */
+html body #judgeme_product_reviews .jdgm-rev-widg__summary-inner {
+  text-align: center
+}
+
+html body #judgeme_product_reviews .jdgm-rev-widg__summary-average {
+  display: block;
+  margin: 4px 0 2px;
+  line-height: 1.15
+}
+
+/* No reviews yet: one centred column, no divider */
+html body #judgeme_product_reviews .jdgm-rev-widg[data-number-of-reviews='0'] .jdgm-row-stars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0
+}
+
+html body #judgeme_product_reviews .jdgm-rev-widg[data-number-of-reviews='0'] .jdgm-row-stars > div {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0
+}
+
+/* The section's .rv-empty note already invites the first review, so Judge.me's
+   own "Be the first to write a review" said it twice. Only the button stays. */
+html body .rv-empty ~ #judgeme_product_reviews .jdgm-rev-widg[data-number-of-reviews='0'] .jdgm-rev-widg__summary {
+  display: none
+}
+
 /* Stars → brand gold */
 html body .jdgm-widget .jdgm-star.jdgm--on,
 html body .jdgm-widget .jdgm-star.jdgm--half {
@@ -5234,6 +5292,8 @@ html body .jdgm-rev-widg__body--empty .jdgm-rev-widg__actions {
 html body .jdgm-write-rev-link.jdgm-write-rev-link.jdgm-write-rev-link {
   display: inline-block;
   width: auto;
+  max-width: none;
+  white-space: nowrap;
   padding: 13px 32px;
   font-family: var(--fb);
   font-size: .76rem;
@@ -5272,8 +5332,11 @@ html body .jdgm-rev.jdgm-rev {
   margin: 0 0 14px
 }
 
+/* The widget centres its header, which cascaded into every card: the name sat
+   mid-card between a left avatar and a right-aligned date */
 html body .jdgm-rev-widg__reviews {
-  margin-top: 26px
+  margin-top: 26px;
+  text-align: left
 }
 
 /* Author line: the name carries the weight, the date recedes */

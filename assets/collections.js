@@ -414,7 +414,7 @@ function collCardHTML(p) {
       <div class="prod-brand">${esc(p.brand)}</div>
       <div class="prod-name"><a class="prod-link" href="${R('product.html')}">${esc(p.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(p.rating)}</div><span>(${p.reviews.toLocaleString()})</span></div>
-      <div class="prod-price"><span class="price-now">${money(p.price)}</span><span class="price-was">${money(p.was)}</span><span class="price-save">Save ${savePct(p.price, p.was)}%</span></div>
+      <div class="prod-price"><span class="price-now">${money(p.price)}</span>${wasPriceHTML(p.price, p.was)}</div>
     </div>
   </div>`;
 }
