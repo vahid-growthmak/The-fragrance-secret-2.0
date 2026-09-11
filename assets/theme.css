@@ -5224,6 +5224,164 @@ html body .jdgm-form select {
   background: var(--white)
 }
 
+/* ── Review cards ──
+   The rules above only recoloured the card's border, so everything inside a
+   review still rendered in Judge.me's own type and spacing. These carry the
+   card itself: a padded panel on white with the theme's hairline rule, rather
+   than the stock full-width divider list. */
+html body .jdgm-rev.jdgm-rev {
+  background: var(--white);
+  border: 1px solid rgba(13, 10, 6, .08) !important;
+  border-radius: 4px;
+  padding: 24px 26px;
+  margin: 0 0 14px
+}
+
+html body .jdgm-rev-widg__reviews {
+  margin-top: 26px
+}
+
+/* Author line: the name carries the weight, the date recedes */
+html body .jdgm-rev .jdgm-rev__author {
+  font-family: var(--fb);
+  font-weight: 700;
+  font-size: .92rem;
+  color: var(--ink) !important;
+  letter-spacing: .01em
+}
+
+html body .jdgm-rev .jdgm-rev__timestamp {
+  font-family: var(--fb);
+  font-size: .76rem;
+  color: var(--warm) !important
+}
+
+/* Review title in the display face, matching every other heading on the page */
+html body .jdgm-rev .jdgm-rev__title {
+  font-family: var(--fd);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--ink) !important;
+  margin: 10px 0 6px;
+  letter-spacing: .01em
+}
+
+html body .jdgm-rev .jdgm-rev__body,
+html body .jdgm-rev .jdgm-rev__body p {
+  font-family: var(--fb);
+  font-size: .93rem;
+  line-height: 1.75;
+  color: var(--warm) !important
+}
+
+/* Avatar initials — gold on a tinted disc instead of the stock grey square */
+html body .jdgm-rev .jdgm-rev__icon {
+  background: rgba(201, 168, 76, .14) !important;
+  color: var(--gold-dk) !important;
+  border-radius: 50%;
+  font-family: var(--fb);
+  font-weight: 700
+}
+
+/* "Verified buyer" reads as a quiet credential, not a loud pill */
+html body .jdgm-rev .jdgm-rev__buyer-badge,
+html body .jdgm-rev .jdgm-rev__transparency-badge {
+  font-family: var(--fb);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold-dk) !important;
+  background: rgba(201, 168, 76, .1) !important;
+  border: none !important;
+  border-radius: 2px;
+  padding: 3px 8px
+}
+
+html body .jdgm-rev .jdgm-rev__variant-label,
+html body .jdgm-rev .jdgm-rev__prod-link-prefix {
+  font-family: var(--fb);
+  font-size: .76rem;
+  color: var(--warm) !important
+}
+
+/* Review photos */
+html body .jdgm-rev .jdgm-rev__pics img,
+html body .jdgm-rev__product-picture {
+  border-radius: 3px
+}
+
+/* Sort control + pagination: same quiet chrome as the rest of the site */
+html body .jdgm-widget .jdgm-sort-dropdown,
+html body .jdgm-widget .jdgm-rev-widg__sort-wrapper select {
+  font-family: var(--fb) !important;
+  font-size: .82rem !important;
+  color: var(--ink) !important;
+  border: 1px solid rgba(13, 10, 6, .15) !important;
+  border-radius: 3px !important;
+  background: var(--white) !important;
+  padding: 8px 12px !important
+}
+
+html body .jdgm-widget .jdgm-paginate__page {
+  font-family: var(--fb) !important;
+  font-size: .82rem !important;
+  color: var(--warm) !important;
+  border-radius: 3px !important
+}
+
+html body .jdgm-widget .jdgm-paginate__page:hover {
+  color: var(--gold-dk) !important
+}
+
+/* Summary block: the average in the display face, at a size that leads */
+html body .jdgm-rev-widg__summary-average {
+  font-family: var(--fd);
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--ink) !important
+}
+
+html body .jdgm-widget .jdgm-histogram__row:hover .jdgm-histogram__bar-content {
+  background: var(--gold-dk) !important
+}
+
+html body .jdgm-widget .jdgm-histogram__frequency,
+html body .jdgm-widget .jdgm-histogram__star {
+  font-family: var(--fb);
+  color: var(--warm) !important
+}
+
+/* Form: labels and the fieldset legend, so the write-a-review panel matches
+   the checkout and account forms rather than Judge.me's defaults */
+html body .jdgm-form label,
+html body .jdgm-form .jdgm-form__fieldset-label,
+html body .jdgm-form legend {
+  font-family: var(--fb);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--warm) !important
+}
+
+html body .jdgm-form input[type='text']:focus,
+html body .jdgm-form input[type='email']:focus,
+html body .jdgm-form textarea:focus {
+  border-color: var(--gold) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, .16) !important
+}
+
+@media (max-width: 640px) {
+  html body .jdgm-rev.jdgm-rev {
+    padding: 18px 16px
+  }
+
+  html body .jdgm-rev .jdgm-rev__title {
+    font-size: 1.06rem
+  }
+}
+
 /* RELATED */
     .related {
       padding: 80px 0;
