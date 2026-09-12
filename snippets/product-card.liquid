@@ -119,6 +119,12 @@
     {%- if card_spec != blank -%}<div class="prod-spec">{{ card_spec }}</div>{%- endif -%}
     <div class="prod-rating"><div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>{{ product.metafields.judgeme.badge }}</div></div>
     <div class="prod-price">
+      {%- comment -%}
+        product.price is the range's low end, so on a multi-size product the
+        card quoted a price the PDP would not open on. "From" makes the card
+        honest without reordering anyone's variants.
+      {%- endcomment -%}
+      {%- if product.price_min != product.price_max -%}<span class="price-from">From</span>{%- endif -%}
       <span class="price-now">{{ product.price | money_with_currency }}</span>
       {%- if product.compare_at_price > product.price -%}
         <span class="price-was">{{ product.compare_at_price | money_with_currency }}</span>

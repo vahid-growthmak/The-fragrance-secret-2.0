@@ -138,10 +138,20 @@ function loadLiveCatalog() {
         if (tags.indexOf('bestseller') > -1) { badge = 'Bestseller'; badgeClass = 'badge-best'; }
         else if (tags.indexOf('new-arrival') > -1) { badge = 'New'; badgeClass = 'badge-new'; }
         else if (tags.indexOf('sale') > -1) { badge = 'Sale'; badgeClass = 'badge-sale'; }
+        /* Quote the cheapest sellable variant, not variants[0]. On the oils
+           that ladder 100g → 1kg the first variant is the 1kg, so the card
+           advertised the dearest size while the Liquid cards next to it
+           quoted the range's low end. */
+        var all = (p.variants || []).filter(function (x) { return x && x.price != null; });
+        var live = all.filter(function (x) { return x.available; });
+        var cheapest = (live.length ? live : all).slice().sort(function (a, b) {
+          return parseFloat(a.price) - parseFloat(b.price);
+        })[0] || v;
         return {
           id: p.id, brand: p.vendor || '', name: p.title || '',
-          price: parseFloat(v.price) || 0,
-          was: parseFloat(v.compare_at_price) || 0,
+          price: parseFloat(cheapest.price) || 0,
+          was: parseFloat(cheapest.compare_at_price) || 0,
+          multi: all.length > 1,
           badge: badge, badgeClass: badgeClass,
           rating: 4.8, reviews: 0,
           family: family, gender: gender, occasion: '',
@@ -149,7 +159,7 @@ function loadLiveCatalog() {
           img2: (p.images && p.images[1] && p.images[1].src) || '',   // hover image
           url: '/products/' + p.handle,
           handle: p.handle,          // wishlist keys off the handle
-          variantId: v.id,
+          variantId: cheapest.id || v.id,
         };
       }).filter(function (p) { return p.name && p.variantId; }); // price may be 0 pre-launch
       if (live.length) {
@@ -189,14 +199,18 @@ function productCardHTML(p) {
       ${p.badge ? `<div class="prod-badge ${p.badgeClass}">${p.badge}</div>` : ''}
       <div class="prod-actions">
         <button type="button" class="pa-btn pa-wish" data-wish="${esc(p.handle || '')}" data-wish-label="${esc(p.name)}" aria-pressed="false" title="Save to wishlist" onclick="event.stopPropagation();TFSWishlist.toggle(this.dataset.wish, this.dataset.wishLabel)"><span class="mi" aria-hidden="true">favorite</span></button>
-        <button class="pa-btn quick-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${esc(p.name).replace(/'/g, "\\'")}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>
+        ${p.multi
+      /* A multi-size product has nothing to quick-add: the size is the
+         customer's choice, so the button goes to the picker on the PDP. */
+      ? `<a class="pa-btn quick-add" href="${p.url || R('product.html')}" onclick="event.stopPropagation()"><span class="mi" aria-hidden="true">shopping_bag</span>Choose Size</a>`
+      : `<button class="pa-btn quick-add" onclick="event.stopPropagation();addLiveToCart(${p.variantId || 0}, '${esc(p.name).replace(/'/g, "\\'")}')"><span class="mi" aria-hidden="true">shopping_bag</span>Quick Add</button>`}
       </div>
     </div>
     <div class="prod-info">
       <div class="prod-brand">${esc(p.brand)}</div>
       <div class="prod-name"><a class="prod-link" href="${p.url || R('product.html')}">${esc(p.name)}</a></div>
       <div class="prod-rating"><div class="stars">${starsHTML(p.rating)}</div><span>(${p.reviews.toLocaleString()})</span></div>
-      <div class="prod-price"><span class="price-now">${money(p.price)}</span>${wasPriceHTML(p.price, p.was)}</div>
+      <div class="prod-price">${p.multi ? '<span class="price-from">From</span>' : ''}<span class="price-now">${money(p.price)}</span>${wasPriceHTML(p.price, p.was)}</div>
     </div>
   </div>`;
 }
@@ -952,18 +966,131 @@ function selectVar(btn, size, price) {
   btn.classList.add('active');
   const now = document.querySelector('.pdp-price-now'); if (now) now.textContent = price;
 }
-/* Native Shopify variant switch — updates the product form's hidden id,
-   the visible price and the sticky bar price from the button's data-*. */
-function selectShopifyVariant(btn, variantId) {
-  document.querySelectorAll('[data-variant-picker] .var-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const idInput = document.querySelector('#product-form input[name="id"]');
-  if (idInput) idInput.value = variantId;
-  const price = btn.getAttribute('data-variant-price');
-  if (price) {
-    const now = document.querySelector('.pdp-price-now'); if (now) now.textContent = price;
-    const mini = document.querySelector('.price-mini'); if (mini) mini.textContent = price;
+/* ── PDP variant picker ──
+   The buttons carry their option index and value, and main-product.liquid
+   ships the variant list as JSON beside them. Picking a value re-resolves the
+   variant and updates everything that quotes it: the price (including the
+   struck compare-at and the saving), the stock line, add-to-cart, the sticky
+   bar and ?variant= in the URL, so a copied link reopens the same size.
+   Prices arrive pre-formatted by Liquid, so the store's money format holds. */
+function initVariantPicker() {
+  var wrap = document.querySelector('[data-variant-picker]');
+  if (!wrap) return;
+  var src = wrap.querySelector('[data-variant-data]');
+  var variants;
+  try { variants = JSON.parse(src.textContent); } catch (e) { return; }
+  if (!variants || !variants.length) return;
+
+  var groups = [].slice.call(wrap.querySelectorAll('.var-group'));
+
+  function selection() {
+    return groups.map(function (g) {
+      var on = g.querySelector('.var-btn.active');
+      return on ? on.getAttribute('data-option-value') : null;
+    });
   }
+
+  function find(sel) {
+    return variants.filter(function (v) {
+      return sel.every(function (val, i) { return val === null || v.options[i] === val; });
+    })[0];
+  }
+
+  /* Liquid marks the selected value, but if nothing came through marked, sync
+     the buttons to the variant the form is actually going to post so the
+     highlight never contradicts the price. */
+  if (!wrap.querySelector('.var-btn.active')) {
+    var form0 = document.getElementById('product-form');
+    var id0 = form0 && form0.querySelector('input[name="id"]');
+    var current = id0 && variants.filter(function (v) { return String(v.id) === String(id0.value); })[0];
+    if (current) {
+      groups.forEach(function (g, gi) {
+        g.querySelectorAll('.var-btn').forEach(function (b) {
+          var on = b.getAttribute('data-option-value') === current.options[gi];
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-checked', on ? 'true' : 'false');
+        });
+      });
+    }
+  }
+
+  /* A value is dead when no variant carrying it can be bought at all, so the
+     button says so up front rather than only after it is picked. */
+  groups.forEach(function (g, gi) {
+    g.querySelectorAll('.var-btn').forEach(function (b) {
+      var val = b.getAttribute('data-option-value');
+      var live = variants.some(function (v) { return v.options[gi] === val && v.available; });
+      if (!live) b.classList.add('is-unavailable');
+    });
+  });
+
+  function apply(v) {
+    var form = document.getElementById('product-form');
+    var idInput = form && form.querySelector('input[name="id"]');
+    if (idInput && v) idInput.value = v.id;
+
+    var row = document.querySelector('[data-price-row]');
+    if (row && v) {
+      var html = '<span class="pdp-price-now">' + v.price + '</span>';
+      if (v.compare) {
+        html += '<span class="pdp-price-was">' + v.compare + '</span>' +
+                '<span class="pdp-price-save">Save ' + v.save + '%</span>';
+      }
+      row.innerHTML = html;
+    }
+
+    var mini = document.querySelector('.price-mini');
+    if (mini && v) mini.textContent = v.price;
+
+    var stock = document.querySelector('.ub-stock');
+    if (stock) {
+      stock.innerHTML = '<span class="mi" aria-hidden="true">local_shipping</span>' +
+        (v && v.available ? 'In stock — ships within 48 hours' : 'Currently out of stock');
+    }
+
+    /* Both add-to-cart buttons: the one in the page and the sticky bar's. */
+    var sellable = !!(v && v.available);
+    var label = v ? (v.available ? 'Add to Cart' : 'Sold Out') : 'Unavailable';
+    var atc = document.querySelector('.atc-btn');
+    if (atc) {
+      atc.disabled = !sellable;
+      atc.innerHTML = '<span class="mi" aria-hidden="true">shopping_bag</span>' + label;
+    }
+    var atcMini = document.querySelector('.atc-mini');
+    if (atcMini) {
+      atcMini.disabled = !sellable;
+      atcMini.textContent = label;
+    }
+
+    if (v && v.img) {
+      var main = el('mainimg');
+      if (main) main.src = v.img;
+    }
+
+    if (v && window.history && history.replaceState) {
+      try {
+        var u = new URL(location.href);
+        u.searchParams.set('variant', v.id);
+        history.replaceState({}, '', u);
+      } catch (e) { /* older browsers keep the unparameterised URL */ }
+    }
+  }
+
+  wrap.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.var-btn');
+    if (!btn || btn.classList.contains('active')) return;
+    var gi = parseInt(btn.getAttribute('data-option-index'), 10) || 0;
+    var group = groups[gi];
+    if (group) {
+      group.querySelectorAll('.var-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-checked', 'false');
+      });
+    }
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    apply(find(selection()));
+  });
 }
 function initThumbs() {
   const list = el('thumblist'); if (!list) return;
@@ -1121,6 +1248,7 @@ function initApp() {
   hydrateRenderables();
   initHeaderScroll();
   initThumbs();
+  initVariantPicker();
   initStickyAtc();
   initCountdowns();
   document.querySelectorAll('.quiz-container-wrap').length && renderQuiz();

@@ -88,6 +88,67 @@
             {%- endif -%}
           </div>
 
+          {%- comment -%}
+            VARIANT PICKER
+            158 products carry a real second option — mostly the perfume oils'
+            100g/250g/500g/1kg ladder — and without this the page could only
+            ever sell `selected_or_first_available_variant`, which on those
+            products is the 1kg. The catalogue spells the option name
+            weight / size / Size / SIZE depending on when the product was
+            imported, and two products carry a stray name (a vendor string and
+            "SIZER"), so the label is normalised instead of printed raw.
+
+            Values render as buttons and the variant list ships as JSON beside
+            them; app.js resolves the chosen values to a variant and updates
+            the price, stock line, add-to-cart and ?variant= in the URL. With
+            no JS the buttons are inert but the form still posts the default
+            variant, exactly as before.
+          {%- endcomment -%}
+          {%- unless product.has_only_default_variant -%}
+            <div class="variants-block" data-variant-picker>
+              {%- for option in product.options_with_values -%}
+                {%- liquid
+                  assign oname = option.name | downcase | strip
+                  assign last_value = option.values | last | downcase
+                  assign label = option.name
+                  if oname == 'weight' or oname == 'size' or oname == 'sizer'
+                    assign label = 'Size'
+                  elsif last_value contains 'kg' or last_value contains 'ml' or last_value contains 'g'
+                    assign label = 'Size'
+                  endif
+                -%}
+                <div class="var-group" data-option-index="{{ forloop.index0 }}">
+                  <div class="var-title" id="var-label-{{ forloop.index0 }}">{{ label }}</div>
+                  <div class="var-options" role="radiogroup" aria-labelledby="var-label-{{ forloop.index0 }}">
+                    {%- for value in option.values -%}
+                      {%- if option.selected_value == value -%}{%- assign is_on = true -%}{%- else -%}{%- assign is_on = false -%}{%- endif -%}
+                      <button type="button" class="var-btn{% if is_on %} active{% endif %}"
+                              role="radio"
+                              aria-checked="{{ is_on }}"
+                              data-option-index="{{ forloop.parentloop.index0 }}"
+                              data-option-value="{{ value | escape }}">{{ value }}</button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endfor -%}
+              <script type="application/json" data-variant-data>
+                [
+                {%- for v in product.variants -%}
+                  {
+                    "id": {{ v.id }},
+                    "options": {{ v.options | json }},
+                    "available": {{ v.available }},
+                    "price": {{ v.price | money_with_currency | json }},
+                    "compare": {% if v.compare_at_price > v.price %}{{ v.compare_at_price | money_with_currency | json }}{% else %}null{% endif %},
+                    "save": {% if v.compare_at_price > v.price %}{{ v.compare_at_price | minus: v.price | times: 100.0 | divided_by: v.compare_at_price | round }}{% else %}null{% endif %},
+                    "img": {% if v.featured_media %}{{ v.featured_media | image_url: width: 900 | json }}{% else %}null{% endif %}
+                  }{% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+                ]
+              </script>
+            </div>
+          {%- endunless -%}
+
           <!-- REASSURANCE -->
           <div class="urgency-block" style="background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.22)">
             <div class="ub-stock" style="color:var(--gold-dk)"><span class="mi" aria-hidden="true">local_shipping</span>
