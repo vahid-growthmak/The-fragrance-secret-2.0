@@ -853,20 +853,19 @@ header.light .nav-burger { color: var(--warm); }
 .contact-form > .btn-g { margin-top: 20px; }
 /* The helper line under it belongs to the button, not the form edge. */
 .contact-form > .btn-g + .sec-sub { margin-top: 12px; }
+/* Holds the embedded Google map. The .map-canvas / .map-pin rules that used to
+   live here drew a fake street grid with a static pin; the contact section now
+   embeds the real location, so they went with the markup they styled. */
 .map-embed { height: 320px; border-radius: 12px; overflow: hidden; background: var(--cream-dk); position: relative; border: 1px solid rgba(13,10,6,.08); }
 .map-embed img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.2) sepia(.15); }
-.map-canvas { position: absolute; inset: 0; background-color: #ece3d0;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(139,105,20,.10) 0 1px, transparent 1px 42px),
-    repeating-linear-gradient(90deg, rgba(139,105,20,.10) 0 1px, transparent 1px 42px),
-    linear-gradient(125deg, rgba(201,168,76,.16), transparent 55%); }
-.map-canvas::before { content: ''; position: absolute; inset: 0;
-  background:
-    linear-gradient(56deg, transparent 45%, rgba(139,105,20,.22) 45% 47.5%, transparent 47.5%),
-    linear-gradient(-22deg, transparent 60%, rgba(139,105,20,.18) 60% 62%, transparent 62%),
-    linear-gradient(88deg, transparent 72%, rgba(139,105,20,.16) 72% 73.5%, transparent 73.5%); }
-.map-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-100%); color: var(--gold-dk); }
-.map-pin .mi { font-size: 42px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.3)); }
+.map-embed iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+.map-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 12px; font-size: .84rem; font-weight: 500; color: var(--gold-dk);
+}
+.map-link:hover { text-decoration: underline; }
+.map-link .mi { font-size: 18px; }
 
 /* ── Legal / prose body ──────────────────────────────────────────── */
 .legal-layout { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }

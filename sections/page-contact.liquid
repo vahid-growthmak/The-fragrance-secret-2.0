@@ -132,19 +132,49 @@
           <h2 class="sec-title">Our <em>Location</em></h2>
           <p class="sec-sub">Proudly based in Dubai, delivering to all seven Emirates.</p>
         </div>
+        {%- comment -%}
+          The map was a decorative div: CSS gradients drawing streets under a
+          static pin. It pointed at nothing, could not be opened or zoomed, and
+          the card beside it named Business Bay while the business is in Deira.
+          This embeds the real location instead. Google's ?output=embed needs no
+          API key, and both the address and the search are settings, so they can
+          be corrected in the theme editor rather than in Liquid.
+
+          The map searches the business name rather than the street address: the
+          shop is a listed place, so the name drops a labelled pin on the door,
+          while "5 37 St - Deira…" geocodes to the same block unlabelled. The
+          card still shows the street address.
+        {%- endcomment -%}
+        {%- liquid
+          assign map_address = section.settings.map_address | default: '5 37 St - Deira - Al Sabkha - Dubai, UAE'
+          assign map_search = section.settings.map_query | default: 'Fragrance Secrets Perfumes Trading LLC, Al Sabkha, Deira, Dubai'
+          if map_search == blank
+            assign map_search = map_address
+          endif
+          assign map_link = section.settings.map_link | default: 'https://maps.google.com/?q=Fragrance+Secrets+Perfumes+Trading+LLC,+Al+Sabkha,+Deira,+Dubai'
+          assign map_zoom = section.settings.map_zoom | default: 16
+          assign map_query = map_search | url_encode
+        -%}
         <div class="contact-grid">
           <div class="fade-up">
             <div class="map-embed">
-              <div class="map-canvas" role="img" aria-label="Map of our Dubai location"></div>
-              <span class="map-pin"><span class="mi mi-f" aria-hidden="true">location_on</span></span>
+              <iframe
+                src="https://maps.google.com/maps?q={{ map_query }}&amp;z={{ map_zoom }}&amp;hl=en&amp;output=embed"
+                title="Map showing {{ map_address | escape }}"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
             </div>
+            <a class="map-link" href="{{ map_link }}" target="_blank" rel="noopener">
+              <span class="mi" aria-hidden="true">directions</span>Get directions
+            </a>
           </div>
           <div class="contact-methods fade-up">
             <div class="cm-card">
               <div class="cm-ic"><span class="mi" aria-hidden="true">store</span></div>
               <div>
                 <h3>Head Office</h3>
-                <p>The Fragrance Secrets<br />Business Bay, Dubai, United Arab Emirates</p>
+                <p>The Fragrance Secrets<br /><a href="{{ map_link }}" target="_blank" rel="noopener">{{ map_address }}</a></p>
               </div>
             </div>
             <div class="cm-card">
@@ -182,5 +212,14 @@
     </section>
 
 {% schema %}
-{ "name": "Contact page", "settings": [] }
+{
+  "name": "Contact page",
+  "settings": [
+    { "type": "header", "content": "Location map" },
+    { "type": "text", "id": "map_address", "label": "Address", "info": "Shown on the Head Office card.", "default": "5 37 St - Deira - Al Sabkha - Dubai, UAE" },
+    { "type": "text", "id": "map_query", "label": "Map search", "info": "What the map looks up. The business name pins the exact shop; leave blank to search the address above.", "default": "Fragrance Secrets Perfumes Trading LLC, Al Sabkha, Deira, Dubai" },
+    { "type": "url", "id": "map_link", "label": "Directions link", "info": "Where \"Get directions\" and the address open." },
+    { "type": "range", "id": "map_zoom", "label": "Map zoom", "min": 10, "max": 19, "step": 1, "default": 16 }
+  ]
+}
 {% endschema %}
