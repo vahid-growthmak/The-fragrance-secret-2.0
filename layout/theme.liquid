@@ -122,6 +122,27 @@
     };
   </script>
 
+  {%- comment -%}
+    Microsoft Clarity (project qypu7kamyp) — session recordings and heatmaps.
+
+    This lived in the old Igloo theme's layout and was not carried across in the
+    port, so recording stopped the day this theme was published (10 Sep 2026)
+    and every recording in the dashboard predates it. Shopify's Customer-events
+    custom pixels are sandboxed away from the DOM, so Clarity cannot be moved
+    there — a replay needs to read the page. It has to sit in the layout (or
+    come from the Clarity app), which means it travels with the theme: carry it
+    over if the theme is ever replaced again.
+
+    Loads async and last in the head, so it never blocks first paint.
+  {%- endcomment -%}
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "qypu7kamyp");
+  </script>
+
   {{ content_for_header }}
 </head>
 
