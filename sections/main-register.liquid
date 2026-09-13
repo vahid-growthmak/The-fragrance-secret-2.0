@@ -1,20 +1,54 @@
-{%- comment -%} Customer registration {%- endcomment -%}
+{%- comment -%}
+  Customer registration. Same rebuild as the login page: the fields used a
+  .fld class no stylesheet defined, so they rendered as raw browser controls.
+{%- endcomment -%}
 <section class="page-hero tall"><div class="container">
   <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Create account</span></div>
   <span class="ph-eyebrow">Join Us</span>
   <h1 class="ph-title">Create <em>Account</em></h1>
 </div></section>
-<section class="section"><div class="container" style="max-width:460px">
-  {%- form 'create_customer' -%}
-    {{ form.errors | default_errors }}
-    <label>First name</label><input type="text" name="customer[first_name]" class="fld">
-    <label style="margin-top:12px">Last name</label><input type="text" name="customer[last_name]" class="fld">
-    <label style="margin-top:12px">Email</label><input type="email" name="customer[email]" class="fld" required>
-    <label style="margin-top:12px">Password</label><input type="password" name="customer[password]" class="fld" required>
-    <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Create Account</button>
-  {%- endform -%}
-  <a href="{{ routes.account_login_url }}" class="btn-ghost" style="display:flex;justify-content:center;margin-top:12px">Already have an account? Sign in</a>
+
+<section class="section"><div class="container">
+  <div class="auth-wrap">
+    <div class="auth-card">
+      {%- form 'create_customer' -%}
+        {%- if form.errors -%}
+          <div class="form-note form-note--err" role="alert">
+            <span class="mi" aria-hidden="true">error</span>
+            <ul>
+              {%- for field in form.errors -%}
+                <li>{% if field == 'form' %}{{ form.errors.messages[field] }}{% else %}{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}{% endif %}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        <div class="form-row">
+          <div class="field">
+            <label for="RegisterFirstName">First name</label>
+            <input type="text" id="RegisterFirstName" name="customer[first_name]" autocomplete="given-name" placeholder="First name" value="{{ form.first_name }}">
+          </div>
+          <div class="field">
+            <label for="RegisterLastName">Last name</label>
+            <input type="text" id="RegisterLastName" name="customer[last_name]" autocomplete="family-name" placeholder="Last name" value="{{ form.last_name }}">
+          </div>
+        </div>
+        <div class="field">
+          <label for="RegisterEmail">Email</label>
+          <input type="email" id="RegisterEmail" name="customer[email]" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@email.com" value="{{ form.email }}" required>
+        </div>
+        <div class="field">
+          <label for="RegisterPassword">Password</label>
+          <input type="password" id="RegisterPassword" name="customer[password]" autocomplete="new-password" placeholder="At least 5 characters" required>
+        </div>
+        <button type="submit" class="btn-g auth-submit">Create Account</button>
+      {%- endform -%}
+      <div class="auth-alt auth-alt--center">
+        <a class="auth-link" href="{{ routes.account_login_url }}">Already have an account? Sign in</a>
+      </div>
+    </div>
+  </div>
 </div></section>
+
 {% schema %}
 { "name": "Customer register", "settings": [] }
 {% endschema %}

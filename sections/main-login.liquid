@@ -1,37 +1,111 @@
-{%- comment -%} Customer login (+ recover password) {%- endcomment -%}
+{%- comment -%}
+  Customer login (+ recover password).
+
+  The fields carried a .fld class and bare <label>s that no stylesheet ever
+  defined, so under a fully styled hero the form rendered as raw browser
+  controls on one line — "Email [box] Password [box]". They now use the same
+  furniture as the contact form: .field for the label/input pairs, .form-note
+  for status, .btn-g for the action, inside a card.
+
+  The social-login app injects its buttons as the first children of
+  #customer_login, so they land inside the card above the email fields.
+
+  Which pane opens is decided in Liquid rather than by a script, so a failed
+  reset or a sent reset link still shows the reset pane with no JS.
+{%- endcomment -%}
+
+{%- capture recover_pane -%}
+  {%- form 'recover_customer_password' -%}
+    {%- if form.posted_successfully? -%}
+      {%- assign show_recover = true -%}
+      <div class="form-note form-note--ok" role="status">
+        <span class="mi" aria-hidden="true">mark_email_read</span>
+        <span>We've sent you an email with a link to update your password.</span>
+      </div>
+    {%- endif -%}
+    {%- if form.errors -%}
+      {%- assign show_recover = true -%}
+      <div class="form-note form-note--err" role="alert">
+        <span class="mi" aria-hidden="true">error</span>
+        <ul>
+          {%- for field in form.errors -%}
+            <li>{% if field == 'form' %}{{ form.errors.messages[field] }}{% else %}{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}{% endif %}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+    <h2 class="auth-title">Reset your password</h2>
+    <p class="auth-note">Enter the email on your account and we'll send you a link to set a new password.</p>
+    <div class="field">
+      <label for="RecoverEmail">Email</label>
+      <input type="email" id="RecoverEmail" name="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@email.com" required>
+    </div>
+    <button type="submit" class="btn-g auth-submit">Send reset link</button>
+  {%- endform -%}
+  <div class="auth-alt">
+    <button type="button" class="auth-link" data-auth-show="LoginForm" data-auth-hide="RecoverPassword">Back to sign in</button>
+  </div>
+{%- endcapture -%}
+
 <section class="page-hero tall"><div class="container">
   <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a><span class="mi" aria-hidden="true">chevron_right</span><span>Account</span></div>
   <span class="ph-eyebrow">Welcome Back</span>
   <h1 class="ph-title">Sign <em>In</em></h1>
 </div></section>
 
-<section class="section"><div class="container" style="max-width:460px">
-  <div id="RecoverPassword" style="display:none">
-    <h3 class="sec-title" style="font-size:1.5rem">Reset your password</h3>
-    {%- form 'recover_customer_password' -%}
-      {% if form.posted_successfully? %}<p class="form-success">We've sent you an email with a link to update your password.</p>{% endif %}
-      <label>Email</label>
-      <input type="email" name="email" class="fld" required>
-      <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Send reset link</button>
-      <a href="#" onclick="document.getElementById('RecoverPassword').style.display='none';document.getElementById('LoginForm').style.display='block';return false" class="btn-ghost" style="display:flex;justify-content:center;margin-top:12px">Back to sign in</a>
-    {%- endform -%}
-  </div>
+<section class="section"><div class="container">
+  <div class="auth-wrap">
+    <div id="RecoverPassword" class="auth-card"{% unless show_recover %} hidden{% endunless %}>
+      {{ recover_pane }}
+    </div>
 
-  <div id="LoginForm">
-    {%- form 'customer_login' -%}
-      {{ form.errors | default_errors }}
-      <label>Email</label>
-      <input type="email" name="customer[email]" class="fld" required>
-      <label style="margin-top:12px">Password</label>
-      <input type="password" name="customer[password]" class="fld">
-      <button type="submit" class="btn-g" style="width:100%;margin-top:14px">Sign In</button>
-    {%- endform -%}
-    <div class="cta-actions" style="justify-content:space-between;margin-top:16px">
-      <a href="#" onclick="document.getElementById('LoginForm').style.display='none';document.getElementById('RecoverPassword').style.display='block';return false" class="fg-email">Forgot password?</a>
-      <a href="{{ routes.account_register_url }}" class="fg-email">Create account</a>
+    <div id="LoginForm" class="auth-card"{% if show_recover %} hidden{% endif %}>
+      {%- form 'customer_login' -%}
+        {%- if form.errors -%}
+          <div class="form-note form-note--err" role="alert">
+            <span class="mi" aria-hidden="true">error</span>
+            <ul>
+              {%- for field in form.errors -%}
+                <li>{% if field == 'form' %}{{ form.errors.messages[field] }}{% else %}{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}{% endif %}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        <div class="field">
+          <label for="CustomerEmail">Email</label>
+          <input type="email" id="CustomerEmail" name="customer[email]" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@email.com" required>
+        </div>
+        <div class="field">
+          <label for="CustomerPassword">Password</label>
+          <input type="password" id="CustomerPassword" name="customer[password]" autocomplete="current-password" placeholder="Your password" required>
+        </div>
+        <button type="submit" class="btn-g auth-submit">Sign In</button>
+      {%- endform -%}
+      <div class="auth-alt">
+        <button type="button" class="auth-link" data-auth-show="RecoverPassword" data-auth-hide="LoginForm">Forgot password?</button>
+        <a class="auth-link" href="{{ routes.account_register_url }}">Create account</a>
+      </div>
     </div>
   </div>
 </div></section>
+
+<script>
+  /* Swap the two panes. Delegated so it works for the buttons in either card,
+     and keyboard focus follows, otherwise the pane changes silently for anyone
+     not looking at the mouse. */
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-auth-show]');
+    if (!t) return;
+    var show = document.getElementById(t.getAttribute('data-auth-show'));
+    var hide = document.getElementById(t.getAttribute('data-auth-hide'));
+    if (hide) hide.hidden = true;
+    if (show) {
+      show.hidden = false;
+      var first = show.querySelector('input');
+      if (first) first.focus();
+    }
+  });
+</script>
 
 {% schema %}
 { "name": "Customer login", "settings": [] }
