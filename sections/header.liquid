@@ -159,27 +159,6 @@
       </a>
     </div>
   </div>
-
-  {%- comment -%}
-    Mobile search bar. Below 768px the header icon row has no space for the
-    Search icon — it is hidden there, so searching meant opening the drawer
-    first and tapping through to the search page. The field gets its own row
-    under the logo instead, where it is the one thing on a phone people reach
-    for most. Hidden from 768px up, where the icon is back in .nav-actions.
-  {%- endcomment -%}
-  <form class="nav-search" action="{{ routes.search_url }}" method="get" role="search">
-    <input type="hidden" name="type" value="product">
-    <div class="nav-search-field">
-      <span class="mi nav-search-icon" aria-hidden="true">search</span>
-      <input class="nav-search-input" type="search" name="q" autocomplete="off"
-        value="{{ search.terms | escape }}"
-        placeholder="Search perfumes, brands…"
-        aria-label="Search fragrances">
-    </div>
-    <button type="submit" class="nav-search-go" aria-label="Search">
-      <span class="mi" aria-hidden="true">arrow_forward</span>
-    </button>
-  </form>
   {%- comment -%}
     The backdrop sits inside <header>, not after it, and that placement is the
     whole fix. The header is sticky at z-index 1000, which opens a stacking
