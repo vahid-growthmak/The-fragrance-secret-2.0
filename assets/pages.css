@@ -233,6 +233,137 @@ header.light .nav-burger { color: var(--warm); }
   .nav-actions .ni[title="Account"] { display: none; }
 }
 
+/* ── Mobile header search bar ─────────────────────────────────────
+   Second row under the logo, phones only. The icon row above has no
+   width left for a text field at 320px, and the Search icon is hidden
+   there anyway, so searching used to cost a drawer open plus a page
+   load before a single character could be typed.
+
+   The form posts to the same place the search page does — routes.search_url
+   with type=product — so Enter on the phone keyboard is a complete search;
+   the arrow button is there for the people who look for one. */
+.nav-search { display: none }
+
+@media (max-width: 767px) {
+  .nav-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 20px 10px;         /* matches .nav-wrap's phone gutter */
+  }
+
+  .nav-search-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;                 /* lets the field shrink inside the flex row */
+  }
+
+  .nav-search-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 20px;
+    color: var(--gold);
+    pointer-events: none;         /* the icon must not eat the field's taps */
+  }
+
+  .nav-search-input {
+    width: 100%;
+    min-width: 0;
+    height: 44px;                 /* comfortable tap target */
+    font-family: var(--fb);
+    /* 16px exactly, not a rem fraction of it: iOS Safari zooms the whole page
+       in on any focused input below 16px, and a header that jumps to 1.3x
+       scale on the first tap is worse than no search bar. */
+    font-size: 16px;
+    letter-spacing: .01em;
+    padding: 0 14px 0 42px;       /* left clears the magnifier */
+    border-radius: 8px;
+    outline: none;
+    transition: border-color .25s, background .25s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Outlined, not a gold fill: this button sits in the sticky header on every
+     phone page, and a solid accent block there would out-shout the cart badge
+     and the CTAs further down. Enter on the keyboard submits the form anyway —
+     the button is the visible affordance, not the only way through. */
+  .nav-search-go {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(226, 201, 126, .38);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--gold);
+    cursor: pointer;
+    transition: background .25s, border-color .25s;
+  }
+
+  .nav-search-go .mi { font-size: 20px }
+
+  .nav-search-go:hover,
+  .nav-search-go:focus-visible {
+    background: rgba(201, 168, 76, .14);
+    border-color: var(--gold);
+  }
+
+  /* Dark header (the default on every template) */
+  header.dark .nav-search-input {
+    color: var(--white);
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(226, 201, 126, .28);
+  }
+
+  header.dark .nav-search-input::placeholder { color: rgba(255, 255, 255, .45) }
+
+  header.dark .nav-search-input:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, .10);
+  }
+
+  /* Light header */
+  header.light .nav-search-input {
+    color: var(--ink);
+    background: rgba(13, 10, 6, .04);
+    border: 1px solid rgba(13, 10, 6, .14);
+  }
+
+  header.light .nav-search-input::placeholder { color: var(--muted) }
+
+  header.light .nav-search-input:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+
+  /* Antique gold on cream is barely there at .38 — the light header gets the
+     darker end of the accent so the button still reads as a control. */
+  header.light .nav-search-go {
+    border-color: rgba(139, 105, 20, .32);
+    color: var(--gold-dk);
+  }
+
+  header.light .nav-search-go:hover,
+  header.light .nav-search-go:focus-visible {
+    background: rgba(201, 168, 76, .16);
+    border-color: var(--gold-dk);
+  }
+}
+
+/* Small phones — tighten the gutter the way the rest of the header does */
+@media (max-width: 380px) {
+  .nav-search { padding: 0 16px 10px; gap: 6px }
+  .nav-search-input { padding-left: 38px }
+  .nav-search-icon { left: 12px; font-size: 18px }
+}
+
 /* ── Page hero (collection / editorial headers) ──────────────────── */
 .page-hero { position: relative; background: var(--ink); color: var(--white); overflow: hidden; padding: 128px 0 64px; }
 .page-hero::before {
@@ -326,6 +457,11 @@ header.light .nav-burger { color: var(--warm); }
     padding: 8px 12px; margin: -8px 0 22px;
   }
 }
+/* 68px was the header's whole height. Phones now carry a search row under the
+   logo, so the bar has to clear both or it parks itself behind the header:
+   68 + 44 field + 10 padding at 601–767px, and 60 + 54 below that. */
+@media (max-width: 767px) { .filter-bar { top: 122px } }
+@media (max-width: 600px) { .filter-bar { top: 114px } }
 .fb-inner { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .fb-count { font-size: .78rem; color: var(--warm); letter-spacing: .04em; }
 .fb-count b { color: var(--ink); font-weight: 600; }
