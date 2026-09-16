@@ -7803,7 +7803,40 @@ html body .jdgm-form textarea:focus {
     .ub-sep { display: none }
 
     @media (min-width: 1440px) {
-      .urgency-block { flex-direction: row; align-items: center; gap: 14px }
+      /* One row, and it now actually fits.
+
+         The stock line and the authenticity line were always meant to share a
+         row — the 1px divider and this rule both say so — but they wrapped,
+         leaving that divider dangling at the end of the first line. The
+         breakpoint was never the problem; the width budget was.
+
+         Measured against the real column with the real webfonts:
+         .pdp-main-inner caps at 1380px with 48px padding and a 72px gap
+         between two 1fr tracks, so the info column is 606px at every width
+         from 1380 up, and this block offered 570px of inner width against the
+         589px the two lines wanted. Nineteen short.
+
+         Dropping "on faults" from the returns line took about 55px off it,
+         which is the whole deficit and more — so the spacing here is the
+         original 14px gap, 18px padding and 17px icons, untouched. The copy
+         change did the work; nothing had to be squeezed.
+
+         `nowrap` stays as the guarantee. There is comfortable slack now, but
+         this block is one settings-driven word away from being long again —
+         `returns_window_days` renders "10-day" as easily as "2-day" — and a
+         wrap here is not a graceful degradation, it is a stray rule floating
+         at the end of a line. If it ever exceeds, it overflows by a few pixels
+         instead, which is the better of the two failures. */
+      .urgency-block {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 14px
+      }
+
+      .ub-stock,
+      .ub-views { white-space: nowrap }
+
       .ub-sep { display: block }
     }
 
