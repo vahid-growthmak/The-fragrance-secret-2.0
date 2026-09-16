@@ -106,17 +106,67 @@ def published_theme_has(client, suffix):
     return live["name"], bool(found), True
 
 
+def audit(client):
+    """Every page template in the repo, against the pages that should use it.
+
+    A template renders nothing unless a page in admin names it, and nothing
+    anywhere reports that mismatch — the page just quietly falls back to the
+    generic one, which is how sections/page-faqs.liquid came to be maintained
+    for a page that never rendered it.
+    """
+    repo = os.path.dirname(HERE)
+    suffixes = sorted(
+        name[len("page."):-len(".json")]
+        for name in os.listdir(os.path.join(repo, "templates"))
+        if name.startswith("page.") and name.endswith(".json") and name != "page.json")
+
+    cursor, pages = None, []
+    while True:
+        data = client.call(FIND_PAGE, {"cursor": cursor})["pages"]
+        pages.extend(data["nodes"])
+        if not data["pageInfo"]["hasNextPage"]:
+            break
+        cursor = data["pageInfo"]["endCursor"]
+    by_handle = {p["handle"]: p for p in pages}
+
+    print("%s%-26s %-26s %s%s" % (DIM, "theme template", "admin page", "suffix in admin", RESET))
+    wrong = []
+    for suffix in suffixes:
+        page = by_handle.get(suffix)
+        if not page:
+            print("  %-24s %s%-26s%s —" % ("page." + suffix, YELLOW, "no page with that handle", RESET))
+            continue
+        current = page.get("templateSuffix") or ""
+        ok = current == suffix
+        print("  %-24s %-26s %s%s%s"
+              % ("page." + suffix, page["title"][:26],
+                 GREEN if ok else RED, current or "(default)", RESET))
+        if not ok:
+            wrong.append((suffix, page, current))
+
+    if wrong:
+        print("\n%s%d page(s) are not using the template built for them:%s" % (RED, len(wrong), RESET))
+        for suffix, page, current in wrong:
+            print("  python3 scripts/set-page-template.py %s %s --apply" % (page["handle"], suffix))
+    else:
+        print("\n%sEvery page template is in use.%s" % (GREEN, RESET))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("handle", help="page handle, e.g. payment-policy")
-    parser.add_argument("suffix", help='template suffix, or "" for the default page template')
+    parser.add_argument("handle", nargs="?", help="page handle, e.g. payment-policy")
+    parser.add_argument("suffix", nargs="?", help='template suffix, or "" for the default page template')
+    parser.add_argument("--audit", action="store_true",
+                        help="report every page template in the repo and whether a page uses it")
     parser.add_argument("--apply", action="store_true", help="actually write it")
     parser.add_argument("--force", action="store_true",
                         help="write even if the published theme has no such template")
     args = parser.parse_args()
 
-    suffix = args.suffix.strip()
+    if not args.audit and (args.handle is None or args.suffix is None):
+        parser.error("give a handle and a suffix, or use --audit")
+    suffix = (args.suffix or "").strip()
 
     dotenv = sct.load_dotenv()
     store = sct.credential(dotenv, "SHOPIFY_STORE_DOMAIN")
@@ -130,6 +180,10 @@ def main():
     print("%sStore%s %s (%s)" % (DIM, RESET, shop["name"], shop["myshopifyDomain"]))
     print("%sMode %s %s\n" % (DIM, RESET,
                               (GREEN + "APPLY" + RESET) if args.apply else (YELLOW + "dry run" + RESET)))
+
+    if args.audit:
+        audit(client)
+        return
 
     page = find_page(client, args.handle)
     if not page:
