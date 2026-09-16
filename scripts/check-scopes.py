@@ -56,6 +56,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--need", help="comma-separated scopes to check for; exits 1 if any is missing")
+    parser.add_argument("--expect", metavar="LIST|@FILE",
+                        help="the app's configured scope list, to diff against what the "
+                             "install actually granted — a release changes the config, "
+                             "the merchant's Update button changes the grant")
     args = parser.parse_args()
 
     dotenv = sct.load_dotenv()
@@ -88,6 +92,27 @@ def main():
         print("\n%sNot granted%s" % (DIM, RESET))
         for scope in sorted(missing):
             print("  %s%-22s%s %s" % (YELLOW, scope, RESET, WANTED[scope]))
+
+    if args.expect:
+        raw = args.expect
+        if raw.startswith("@"):
+            with open(raw[1:], encoding="utf-8") as handle:
+                raw = handle.read()
+        expected = sorted({s.strip() for s in raw.replace("\n", ",").split(",") if s.strip()})
+        not_granted = [s for s in expected if s not in granted]
+        not_configured = [s for s in granted if s not in expected]
+
+        print("\n%sConfigured but not granted%s  (%d of %d)"
+              % (DIM, RESET, len(not_granted), len(expected)))
+        for scope in not_granted:
+            print("  %s%s%s" % (RED, scope, RESET))
+        if not not_granted:
+            print("  %s— none: the install is up to date with the config%s" % (DIM, RESET))
+
+        if not_configured:
+            print("\n%sGranted but not in that list%s" % (DIM, RESET))
+            for scope in not_configured:
+                print("  %s%s%s" % (YELLOW, scope, RESET))
 
     if args.need:
         need = [s.strip() for s in args.need.split(",") if s.strip()]
