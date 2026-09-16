@@ -924,6 +924,14 @@ a.wo-row:hover { background: rgba(201,168,76,.16); border-color: var(--gold); }
    widening the line hurts readability rather than helping it. */
 .legal-prose, .rte { margin-left: auto; margin-right: auto; }
 .prose h2, .legal-prose h2, .rte h2 { font-family: var(--fd); font-size: 1.7rem; font-weight: 600; color: var(--ink); margin: 40px 0 14px; }
+/* Admin rich text puts section titles at whatever level the person typing
+   chose — the privacy policy and the terms use h1, shipping uses h2, the
+   refund policy uses both. app.js demotes body h1s so the page keeps one
+   real h1, but that runs after paint and not at all without JS, so h1 is
+   styled as the same section heading here and nothing ever renders at
+   browser-default size inside the prose. */
+.prose h1, .legal-prose h1, .rte h1 { font-family: var(--fd); font-size: 1.7rem; font-weight: 600; color: var(--ink); margin: 40px 0 14px; }
+.prose h1:first-child, .legal-prose h1:first-child, .rte h1:first-child { margin-top: 0; }
 .prose h2:first-child, .legal-prose h2:first-child, .rte h2:first-child { margin-top: 0; }
 .prose h3, .legal-prose h3, .rte h3 { font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin: 24px 0 8px; }
 .prose p, .legal-prose p, .rte p { font-size: .92rem; color: var(--warm); line-height: 1.85; margin-bottom: 14px; }

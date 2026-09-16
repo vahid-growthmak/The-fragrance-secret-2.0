@@ -578,6 +578,67 @@ function initHeaderScroll() {
   onScroll();
 }
 
+/* The legal pages' "On This Page" rail.
+
+   Their text now comes from Settings › Policies, and admin HTML carries no
+   anchors — the merchant writes headings, not ids. So the rail is built from
+   whatever headings arrive: ids are added where missing, links are generated
+   in document order, and the aside stays hidden if the policy has no headings
+   at all rather than leaving an empty rail pinned beside the text. */
+function initLegalToc() {
+  const nav = document.querySelector('[data-legal-toc]');
+  const body = document.querySelector('[data-legal-body]');
+  if (!nav || !body) return;
+
+  /* The five documents disagree about heading levels, because five different
+     people typed them into admin: the privacy policy and the terms put their
+     sections at h1, shipping and payment at h2, and the refund policy has
+     seven sections at h2 with a single stray h1 at the end. The theme is not
+     going to rewrite anyone's legal text, so it works out which level this
+     document means by "section" and shifts everything to match — leaving the
+     page with exactly one h1, its own title in the hero.
+
+     Whichever level is more numerous wins. When h1 is the section level the
+     whole document shifts down one, so sub-headings stay a step below their
+     section; when h2 is, only the strays move, joining the sections they read
+     as peers of. Deepest first, or a heading demoted twice would land two
+     levels down. */
+  const demote = (tags) => tags.forEach((tag) => {
+    body.querySelectorAll(tag).forEach((el) => {
+      const next = document.createElement('h' + (Number(tag[1]) + 1));
+      next.innerHTML = el.innerHTML;
+      if (el.id) next.id = el.id;
+      el.replaceWith(next);
+    });
+  });
+
+  const tops = body.querySelectorAll('h1').length;
+  if (tops) demote(tops >= body.querySelectorAll('h2').length ? ['h3', 'h2', 'h1'] : ['h1']);
+
+  const heads = body.querySelectorAll('h2');
+  if (!heads.length) return;
+
+  const used = {};
+  heads.forEach((h, i) => {
+    if (!h.id) {
+      /* Slug from the heading's own words, so the URL a reader copies still
+         says what it points at. Deduped, because "Contact Us" appears twice
+         in more than one of these documents. */
+      let slug = (h.textContent || '').toLowerCase().trim()
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || ('section-' + i);
+      if (used[slug]) slug += '-' + (++used[slug]);
+      else used[slug] = 1;
+      h.id = slug;
+    }
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    nav.appendChild(a);
+  });
+
+  nav.hidden = false;
+}
+
 function observeFadeUps() {
   const els = document.querySelectorAll('.fade-up:not(.visible)');
   if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('visible')); return; }
@@ -1251,6 +1312,7 @@ function initApp() {
   initVariantPicker();
   initStickyAtc();
   initCountdowns();
+  initLegalToc();
   document.querySelectorAll('.quiz-container-wrap').length && renderQuiz();
   observeFadeUps();
   // Collection engine, if present on this page

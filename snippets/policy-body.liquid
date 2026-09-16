@@ -1,0 +1,55 @@
+{%- comment -%}
+  The body of a legal page, taken from the store rather than from the theme.
+
+  Every one of these pages used to carry its own hand-written policy in
+  Liquid — several thousand words each, invented at build time, describing a
+  business that did not quite match the one in Settings › Policies. The
+  merchant maintains the real text in admin, Shopify publishes it at
+  /policies/…, and the storefront was quietly contradicting it.
+
+  So the text comes from admin now, and the theme keeps only what it is
+  actually for: the hero above, this layout, and the prose styling.
+
+  Params
+    policy_body  the admin content to render — shop.<policy>.body for the four
+                 Shopify policies, page.content for anything that is a page
+                 rather than a policy (the payment policy is one)
+    policy_url   where Shopify publishes the same text, used only if there is
+                 nothing to render at all
+
+  The table of contents is built by app.js from the headings that arrive,
+  because admin HTML has no anchors to link to. It stays hidden until there is
+  something in it, so a short policy does not leave an empty rail behind.
+{%- endcomment -%}
+
+{%- liquid
+  assign body = policy_body
+  if body == blank
+    assign body = page.content
+  endif
+-%}
+
+<section class="section">
+  <div class="container">
+    <div class="legal-layout">
+      <aside class="legal-toc" data-legal-toc hidden>
+        <h4>On This Page</h4>
+      </aside>
+
+      <div class="prose rte" data-legal-body>
+        {%- if body != blank -%}
+          {{ body }}
+        {%- else -%}
+          {%- comment -%}
+            Nothing in admin and nothing on the page. Better to say so and
+            point at the published document than to serve a blank legal page.
+          {%- endcomment -%}
+          <p>This policy is maintained by our team and is being updated.
+          {%- if policy_url != blank %} The current version is published at
+            <a href="{{ policy_url }}">{{ policy_url }}</a>.{% endif %}
+          Please <a href="/pages/contact">contact us</a> if you need it in the meantime.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>

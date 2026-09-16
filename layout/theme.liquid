@@ -4,7 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="{{ settings.color_ink | default: '#0D0A06' }}">
-  <link rel="canonical" href="{{ canonical_url }}">
+  {%- comment -%}
+    The four legal pages render the store's own policy text, which Shopify also
+    publishes at /policies/…. Two URLs, one document — so each page points its
+    canonical at Shopify's copy rather than competing with it. Every other
+    template keeps the canonical Shopify worked out for it.
+  {%- endcomment -%}
+  {%- liquid
+    assign canonical = canonical_url
+    if request.page_type == 'page'
+      case page.handle
+        when 'privacy-policy'
+          assign policy_canonical = shop.privacy_policy.url
+        when 'return-policy'
+          assign policy_canonical = shop.refund_policy.url
+        when 'shipping-policy'
+          assign policy_canonical = shop.shipping_policy.url
+        when 'terms-of-service'
+          assign policy_canonical = shop.terms_of_service.url
+      endcase
+      if policy_canonical != blank
+        assign canonical = policy_canonical
+      endif
+    endif
+  -%}
+  <link rel="canonical" href="{{ canonical }}">
 
   {%- if settings.favicon != blank -%}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 48, height: 48 }}">
