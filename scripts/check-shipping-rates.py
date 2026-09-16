@@ -90,7 +90,16 @@ def main():
         for group in profile["profileLocationGroups"]:
             for zone_node in group["locationGroupZones"]["nodes"]:
                 zone = zone_node["zone"]
-                print("  %szone%s %s" % (DIM, RESET, zone["name"]))
+                # Which countries a zone covers decides whether "Asia" means
+                # the UAE or forty other places, and the rate applies to all
+                # of them either way.
+                countries = zone.get("countries") or []
+                names = ", ".join(c.get("name") or (c.get("code") or {}).get("countryCode", "?")
+                                  for c in countries[:8])
+                if len(countries) > 8:
+                    names += " +%d more" % (len(countries) - 8)
+                print("  %szone%s %s%s" % (DIM, RESET, zone["name"],
+                                           (" — %s" % names) if names else ""))
                 for method in zone_node["methodDefinitions"]["nodes"]:
                     provider = method.get("rateProvider") or {}
                     price = provider.get("price")
@@ -98,6 +107,9 @@ def main():
                         else provider.get("__typename", "carrier-calculated")
                     state = "" if method["active"] else " %s(inactive)%s" % (YELLOW, RESET)
                     print("    %-34s %s%s" % (method["name"], cost, state))
+                    if not method.get("methodConditions"):
+                        print("      %sno conditions — charged on every order in this zone%s"
+                              % (DIM, RESET))
                     for condition in method.get("methodConditions") or []:
                         criteria = condition.get("conditionCriteria") or {}
                         if "amount" in criteria:
