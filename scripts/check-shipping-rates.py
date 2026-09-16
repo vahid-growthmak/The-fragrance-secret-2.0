@@ -70,13 +70,20 @@ def main():
     shop = client.call("{ shop { name myshopifyDomain } }")["shop"]
     print("%sStore%s %s (%s)\n" % (DIM, RESET, shop["name"], shop["myshopifyDomain"]))
 
-    try:
-        profiles = client.call(PROFILES)["deliveryProfiles"]["nodes"]
-    except SystemExit:
-        print("%sCould not read delivery profiles — this app needs read_shipping.%s"
-              % (YELLOW, RESET))
-        print("%sCheck Settings › Shipping and delivery by hand instead.%s" % (DIM, RESET))
+    body = client.call_raw(PROFILES)
+    if body.get("errors"):
+        # Quote Shopify rather than assuming which scope is missing: an app can
+        # be re-released with a hundred new scopes and still not the one this
+        # query needs, and "needs read_shipping" from memory would be a guess.
+        for error in body["errors"]:
+            required = (error.get("extensions") or {}).get("requiredAccess")
+            print("  %s%s%s" % (YELLOW, error.get("message", error), RESET))
+            if required:
+                print("  %srequired access: %s%s" % (DIM, required, RESET))
+        print("\n%sCheck Settings › Shipping and delivery by hand until that scope is granted.%s"
+              % (DIM, RESET))
         return
+    profiles = body["data"]["deliveryProfiles"]["nodes"]
 
     for profile in profiles:
         print("%s%s%s%s" % (GREEN, profile["name"], " (default)" if profile["default"] else "", RESET))

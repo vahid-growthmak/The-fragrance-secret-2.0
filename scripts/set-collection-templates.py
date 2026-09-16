@@ -176,6 +176,16 @@ class Shopify:
         self.ssl = ssl_context()
 
     def call(self, query, variables=None):
+        """Data, or exit. A GraphQL error is fatal for the scripts that write."""
+        body = self.call_raw(query, variables)
+        if body.get("errors"):
+            sys.exit("%sGraphQL error: %s%s" % (RED, json.dumps(body["errors"], indent=2), RESET))
+        return body["data"]
+
+    def call_raw(self, query, variables=None):
+        """The whole response body, errors included, for callers that expect
+        some of them — a missing access scope is a state to report, not a
+        crash, and the caller can only say which scope if it sees the error."""
         payload = json.dumps({"query": query, "variables": variables or {}}).encode()
         request = urllib.request.Request(
             self.url,
@@ -195,9 +205,7 @@ class Shopify:
         except urllib.error.URLError as exc:
             sys.exit("%sCould not reach %s: %s%s" % (RED, self.url, exc.reason, RESET))
 
-        if body.get("errors"):
-            sys.exit("%sGraphQL error: %s%s" % (RED, json.dumps(body["errors"], indent=2), RESET))
-        return body["data"]
+        return body
 
 
 def list_all_handles(client):

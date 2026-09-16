@@ -88,21 +88,19 @@ def published_theme_has(client, suffix):
     say "unverified" rather than pretend either answer.
     """
     wanted = ["templates/page.%s.json" % suffix, "templates/page.%s.liquid" % suffix]
-    try:
-        themes = client.call(THEMES)["themes"]["nodes"]
-    except SystemExit:
+    body = client.call_raw(THEMES)
+    if body.get("errors"):
         return None, None, False
 
-    live = next((t for t in themes if t["role"] == "MAIN"), None)
+    live = next((t for t in body["data"]["themes"]["nodes"] if t["role"] == "MAIN"), None)
     if not live:
         return None, None, False
 
-    try:
-        files = client.call(THEME_FILES, {"id": live["id"], "names": wanted})
-    except SystemExit:
+    body = client.call_raw(THEME_FILES, {"id": live["id"], "names": wanted})
+    if body.get("errors"):
         return live["name"], None, False
 
-    found = [f["filename"] for f in files["theme"]["files"]["nodes"]]
+    found = [f["filename"] for f in body["data"]["theme"]["files"]["nodes"]]
     return live["name"], bool(found), True
 
 

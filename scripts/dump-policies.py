@@ -107,17 +107,24 @@ def main():
         os.makedirs(args.out, exist_ok=True)
 
     print("%sSettings › Policies%s" % (DIM, RESET))
-    # The shared client treats a GraphQL error as fatal, which is right for the
-    # scripts that write. Here a missing scope is a state to report and work
-    # around, not a crash: reading policy bodies needs read_legal_policies,
-    # which this custom app was not granted, but the same text is published at
-    # /policies/* for anyone to read.
-    try:
-        policies = client.call(POLICIES)["shop"]["shopPolicies"] or []
-    except SystemExit:
-        print("  %sread_legal_policies not granted to this app — reading the "
-              "published pages instead%s" % (YELLOW, RESET))
+    # A missing scope is a state to report and work around, not a crash: the
+    # same text is published at /policies/* for anyone to read. Shopify's own
+    # message is printed rather than a remembered scope name, because which
+    # scope a field needs is Shopify's to say.
+    body = client.call_raw(POLICIES)
+    if body.get("errors"):
+        for error in body["errors"]:
+            message = str(error.get("message", error))
+            # Shopify usually names the scope in the message itself; only add
+            # the extension when it would say something new.
+            required = (error.get("extensions") or {}).get("requiredAccess")
+            if required and str(required).strip("`") not in message:
+                message += " (needs %s)" % required
+            print("  %s%s%s" % (YELLOW, message, RESET))
+        print("  %sreading the published pages instead%s" % (DIM, RESET))
         policies = None
+    else:
+        policies = body["data"]["shop"]["shopPolicies"] or []
 
     if policies is None:
         domain = client.call(DOMAIN)["shop"]["primaryDomain"]["url"].rstrip("/")
