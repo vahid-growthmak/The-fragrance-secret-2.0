@@ -108,7 +108,7 @@
                 <li><span class="mi" aria-hidden="true">chat</span><b>We'll WhatsApp you</b> a confirmation and tracking link within a few minutes.</li>
                 <li><span class="mi" aria-hidden="true">inventory_2</span><b>We pack &amp; verify</b> every bottle for authenticity before it leaves our facility.</li>
                 <li><span class="mi" aria-hidden="true">payments</span><b>Keep AED 407 ready</b> in cash for the courier on delivery — or pay by card at the door.</li>
-                <li><span class="mi" aria-hidden="true">autorenew</span>Changed your mind? <b>7-day easy returns</b> on sealed items, no questions asked.</li>
+                <li><span class="mi" aria-hidden="true">autorenew</span>Something wrong with the order? <b>{{ settings.returns_window_days | default: '2' }}-day returns</b> on anything damaged, defective, incorrect or incomplete.</li>
               </ul>
               <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
                 <a class="btn-ol" href="#" onclick="waChat();return false"><span class="mi" aria-hidden="true">chat</span>Chat on WhatsApp</a>
@@ -134,7 +134,7 @@
                 <a class="btn-g co-place" href="/account" style="justify-content:center;margin-top:16px"><span class="mi" aria-hidden="true">local_shipping</span>Track Your Order</a>
                 <a class="btn-ol" href="/collections/all" style="justify-content:center;margin-top:12px;display:flex"><span class="mi" aria-hidden="true">arrow_forward</span>Continue Shopping</a>
                 <a class="btn-ghost" href="#" onclick="toast('📄 Invoice sent to your email');return false" style="justify-content:center;margin-top:12px;display:flex"><span class="mi" aria-hidden="true">receipt_long</span>Email My Invoice</a>
-                <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:14px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · 7-day returns · Secure checkout</p>
+                <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:14px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · {{ settings.returns_window_days | default: '2' }}-day returns on faults · Secure checkout</p>
               </div>
             </div>
           </aside>

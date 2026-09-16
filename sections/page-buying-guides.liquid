@@ -15,7 +15,7 @@
         <div class="ph-meta">
           <span><span class="mi" aria-hidden="true">verified_user</span>100% authentic sourcing</span>
           <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE delivery over AED {{ settings.free_shipping_threshold | default: '250' }}</span>
-          <span><span class="mi" aria-hidden="true">autorenew</span>7-day easy returns</span>
+          <span><span class="mi" aria-hidden="true">autorenew</span>{{ settings.returns_window_days | default: '2' }}-day returns on faults</span>
         </div>
       </div>
     </section>

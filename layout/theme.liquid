@@ -150,6 +150,7 @@
        quotes the setting and the collection pages quote a number frozen
        into a script. */
     window.FREE_SHIPPING_THRESHOLD = {{ settings.free_shipping_threshold | default: 250 | times: 1 | json }};
+    window.RETURNS_WINDOW_DAYS = {{ settings.returns_window_days | default: 2 | times: 1 | json }};
     window.routes = {
       root_url: {{ routes.root_url | json }},
       cart_url: {{ routes.cart_url | json }},

@@ -105,7 +105,7 @@
                 <div class="co-trow"><span>VAT (5%)</span><span>Included</span></div>
                 <div class="co-trow grand"><span>Total</span><b id="coTotal">AED 407</b></div>
                 <a class="btn-g co-place" href="#" onclick="placeOrder();return false" style="justify-content:center;margin-top:16px"><span class="mi" aria-hidden="true">lock</span>Place Order</a>
-                <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:12px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · 7-day returns · Secure checkout</p>
+                <p style="font-size:.72rem;color:var(--warm);text-align:center;margin-top:12px"><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-2px">verified_user</span> 100% authentic · {{ settings.returns_window_days | default: '2' }}-day returns on faults · Secure checkout</p>
               </div>
             </div>
           </aside>

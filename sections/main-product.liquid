@@ -155,7 +155,7 @@
               {%- if cv.available -%}In stock — ships within 48 hours{%- else -%}Currently out of stock{%- endif -%}
             </div>
             <div class="ub-sep" style="background:rgba(201,168,76,.3)"></div>
-            <div class="ub-views"><span class="mi" aria-hidden="true">verified_user</span>Authenticity guaranteed · 7-day returns</div>
+            <div class="ub-views"><span class="mi" aria-hidden="true">verified_user</span>Authenticity guaranteed · {{ settings.returns_window_days | default: '2' }}-day returns on faults</div>
           </div>
 
           <!-- CTA BLOCK (primary action — kept above the fold) -->
@@ -337,7 +337,7 @@
               <!-- Shipping & Returns -->
               <div class="tab-pane" id="ship">
                 <h4>Shipping Information</h4>
-                <p>We deliver across the UAE within 1–4 business days. Orders placed after 6:00 PM (UAE Time) are processed the next business day. Shipping costs AED 8, and tracking details are shared once your order has been dispatched.</p>
+                <p>We deliver across the UAE within 1–4 business days. Orders placed after 6:00 PM (UAE Time) are processed the next business day. Delivery is free on orders of AED {{ settings.free_shipping_threshold | default: '250' }} or more, and AED 8 below that. Tracking details are shared once your order has been dispatched.</p>
                 <h4>Return Policy</h4>
                 <p>Returns are accepted within 2 days only for damaged, defective, incorrect, or incomplete orders. Products must remain unused, sealed, and in their original packaging. Opened perfume bottles and change-of-mind returns cannot be accepted.</p>
               </div>

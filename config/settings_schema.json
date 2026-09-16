@@ -31,10 +31,11 @@
     ]
   },
   {
-    "name": "Delivery",
+    "name": "Delivery & returns",
     "settings": [
       { "type": "paragraph", "content": "The free-delivery threshold was hard-coded in eighteen files \u2014 the cart bar, the trust strips, the FAQs, the announcement bar \u2014 and changing it meant finding all of them. It is one number now. It must match the shipping rate in Shopify admin \u203a Settings \u203a Shipping and delivery, and the Shipping policy text, neither of which the theme can set." },
-      { "type": "text", "id": "free_shipping_threshold", "label": "Free delivery above", "default": "250", "info": "Digits only, in store currency. Orders at or above this total ship free." }
+      { "type": "text", "id": "free_shipping_threshold", "label": "Free delivery above", "default": "250", "info": "Digits only, in store currency. Orders at or above this total ship free." },
+      { "type": "text", "id": "returns_window_days", "label": "Return window (days)", "default": "2", "info": "Digits only. Must match Settings \u203a Policies \u203a Refund policy. The storefront also states what returns are accepted for \u2014 faulty, wrong or incomplete orders \u2014 because a bare number reads as a change-of-mind window, which this store does not offer." }
     ]
   },
   {

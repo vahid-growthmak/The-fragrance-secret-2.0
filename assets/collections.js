@@ -15,13 +15,19 @@
    reads wrong mid-sentence. */
 const FREE_SHIP_LABEL = 'AED ' + (window.FREE_SHIPPING_THRESHOLD || 250);
 
+/* The return window, from the same settings. The wording around it is fixed
+   rather than generated: this store accepts returns only on faulty, wrong or
+   incomplete orders, so a bare "N-day returns" would promise the change-of-mind
+   window the refund policy explicitly refuses. */
+const RETURN_DAYS = window.RETURNS_WINDOW_DAYS || 2;
+
 const FAM = ['Fresh & Citrus', 'Oud & Woody', 'Floral & Rose', 'Sweet & Gourmand', 'Spicy & Oriental'];
 
 const FAQ_TRUST = [
   { q: 'Are your perfumes 100% authentic?', a: 'Yes. Every fragrance is either from our own manufactured brands or sourced through verified wholesalers and market-authorised channels — genuine, sealed stock. Questions about a specific item? Our human team confirms sourcing on WhatsApp before you buy.' },
   { q: 'Do you offer Cash on Delivery?', a: 'Absolutely. Cash on Delivery is available across all seven Emirates, alongside Tabby & Tamara interest-free instalments, Apple Pay, Google Pay and cards.' },
   { q: 'How fast is delivery in the UAE?', a: 'Free delivery on orders above ' + FREE_SHIP_LABEL + '. In-stock orders are dispatched within 48 hours, with same-day options available in Dubai for orders placed before 2 PM.' },
-  { q: 'What is your return policy?', a: 'We offer 7-day hassle-free returns on unopened, sealed products. Message our team on WhatsApp and we will arrange a collection.' },
+  { q: 'What is your return policy?', a: 'Returns are accepted within ' + RETURN_DAYS + ' days of delivery on unused, sealed products that arrive damaged, defective, incorrect or incomplete. Opened bottles cannot be returned and change-of-mind returns are not accepted on fragrance. Message our team within 48 hours and we will arrange a collection.' },
 ];
 
 const XLINKS = [
@@ -76,7 +82,7 @@ function secTrust() {
       <div class="tb-item"><span class="mi" aria-hidden="true">verified_user</span><div><strong>100% Authentic</strong><span>Verified sourcing</span></div></div>
       <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above ${FREE_SHIP_LABEL}</span></div></div>
       <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Available UAE-wide</span></div></div>
-      <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
+      <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>${RETURN_DAYS}-Day Returns</strong><span>Faulty or wrong items</span></div></div>
     </div>
     <div style="text-align:center;margin-top:22px"><a class="btn-ghost" href="sourcing-promise.html">See our Sourcing Promise <span class="mi" aria-hidden="true">arrow_forward</span></a></div>
   </div></section>`;
@@ -719,7 +725,7 @@ const COLLECTIONS = {
     usps: [
       { ic: 'verified_user', title: 'Skin-Friendly', text: 'Gentle, low-alcohol and dermatologically considerate formulations designed for delicate skin.' },
       { ic: 'spa', title: 'Soft & Subtle', text: 'Light, playful scents that are never overpowering — perfect for school, play and special days.' },
-      { ic: 'child_care', title: 'Age-Appropriate', text: 'Clear guidance on suitable ages, with parent-approved picks and easy returns.' },
+      { ic: 'child_care', title: 'Age-Appropriate', text: 'Clear guidance on suitable ages, with parent-approved picks and sealed, verified stock.' },
     ],
     sections: ['header', 'usps', 'filter', 'grid', 'trust', 'crosslinks', 'reviews', 'faq'],
     xHead: 'For the Whole Family', xTitle: 'Explore <em>Family Favourites</em>',
