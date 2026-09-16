@@ -1,0 +1,609 @@
+{
+ "plan": [
+  {
+   "label": "Men's Perfumes",
+   "group": "SHOP BY CATEGORY",
+   "old": "mens",
+   "new": "mens-perfumes",
+   "id": "gid://shopify/Collection/310583066737",
+   "title": "Men's Perfumes",
+   "products": 219
+  },
+  {
+   "label": "Women's Perfumes",
+   "group": null,
+   "old": "womens",
+   "new": "womens-perfumes",
+   "id": "gid://shopify/Collection/310584279153",
+   "title": "Women's Perfumes",
+   "products": 169
+  },
+  {
+   "label": "Kids Perfumes",
+   "group": null,
+   "old": "kids",
+   "new": "kids-perfumes",
+   "id": "gid://shopify/Collection/310582935665",
+   "title": "Kids Perfumes",
+   "products": 1
+  },
+  {
+   "label": "Unisex Perfumes",
+   "group": null,
+   "old": "unisex",
+   "new": "unisex-perfumes",
+   "id": "gid://shopify/Collection/310584115313",
+   "title": "Unisex Perfumes",
+   "products": 759
+  },
+  {
+   "label": "Luxury Perfumes",
+   "group": null,
+   "old": "luxury",
+   "new": "luxury-perfumes",
+   "id": "gid://shopify/Collection/310583001201",
+   "title": "Luxury Perfumes",
+   "products": 353
+  },
+  {
+   "label": "Arabic Perfumes",
+   "group": null,
+   "old": "arabic",
+   "new": "arabic-perfumes",
+   "id": "gid://shopify/Collection/310581002353",
+   "title": "Arabic Perfumes",
+   "products": 324
+  },
+  {
+   "label": "Inspired Perfumes",
+   "group": null,
+   "old": "inspired",
+   "new": "inspired-perfumes",
+   "id": "gid://shopify/Collection/310582804593",
+   "title": "Inspired Perfumes",
+   "products": 156
+  },
+  {
+   "label": "Everyday Perfumes",
+   "group": "SHOP BY LIFESTYLE",
+   "old": "everyday-signature",
+   "new": "everyday-perfumes",
+   "id": "gid://shopify/Collection/310581821553",
+   "title": "Everyday Signature Scents",
+   "products": 507
+  },
+  {
+   "label": "Office Wear Perfumes",
+   "group": null,
+   "old": "office-wear",
+   "new": "office-wear-perfumes",
+   "id": "gid://shopify/Collection/310583165041",
+   "title": "Office Wear Fragrances",
+   "products": 518
+  },
+  {
+   "label": "Date Night Perfumes",
+   "group": null,
+   "old": "date-night",
+   "new": "date-night-perfumes",
+   "id": "gid://shopify/Collection/310581526641",
+   "title": "Date Night Perfumes",
+   "products": 227
+  },
+  {
+   "label": "Party Wear Perfumes",
+   "group": null,
+   "old": "party-clubbing",
+   "new": "party-wear-perfumes",
+   "id": "gid://shopify/Collection/310583361649",
+   "title": "Party & Clubbing Fragrances",
+   "products": 239
+  },
+  {
+   "label": "Wedding Perfumes",
+   "group": null,
+   "old": "wedding",
+   "new": "wedding-perfumes",
+   "id": "gid://shopify/Collection/310584180849",
+   "title": "Wedding & Formal",
+   "products": 602
+  },
+  {
+   "label": "Formal Event Perfumes",
+   "group": null,
+   "old": "wedding-formal",
+   "new": "formal-event-perfumes",
+   "id": "gid://shopify/Collection/310584213617",
+   "title": "Wedding & Formal Event Perfumes",
+   "products": 405
+  },
+  {
+   "label": "Gym Perfumes",
+   "group": null,
+   "old": "gym",
+   "new": "gym-perfumes",
+   "id": "gid://shopify/Collection/310582575217",
+   "title": "Gym Perfumes",
+   "products": 198
+  },
+  {
+   "label": "Travel Perfumes",
+   "group": null,
+   "old": "travel-friendly",
+   "new": "travel-perfumes",
+   "id": "gid://shopify/Collection/310584049777",
+   "title": "Travel Friendly Fragrances",
+   "products": 11
+  },
+  {
+   "label": "Beach Perfumes",
+   "group": null,
+   "old": "beach-vacation",
+   "new": "beach-perfumes",
+   "id": "gid://shopify/Collection/310581231729",
+   "title": "Beach Vacation Fragrances",
+   "products": 122
+  },
+  {
+   "label": "Vacation Perfumes",
+   "group": null,
+   "old": "vacation-beach",
+   "new": "vacation-perfumes",
+   "id": "gid://shopify/Collection/310584148081",
+   "title": "Vacation & Beach Perfumes",
+   "products": 138
+  },
+  {
+   "label": "Evening Wear Perfumes",
+   "group": null,
+   "old": "dinner-evening",
+   "new": "evening-wear-perfumes",
+   "id": "gid://shopify/Collection/310581624945",
+   "title": "Dinner & Evening Wear Fragrances",
+   "products": 140
+  },
+  {
+   "label": "Summer Wear Perfumes",
+   "group": "SHOP BY CLIMATE",
+   "old": "summer-wear",
+   "new": "summer-wear-perfumes",
+   "id": "gid://shopify/Collection/310583885937",
+   "title": "Summer Wear Perfumes",
+   "products": 370
+  },
+  {
+   "label": "Winter Wear Perfumes",
+   "group": null,
+   "old": "winter-holiday",
+   "new": "winter-wear-perfumes",
+   "id": "gid://shopify/Collection/310584246385",
+   "title": "Winter Holiday Fragrances",
+   "products": 306
+  },
+  {
+   "label": "Spring Wear Perfumes",
+   "group": null,
+   "old": "spring-bloom",
+   "new": "spring-wear-perfumes",
+   "id": "gid://shopify/Collection/310583853169",
+   "title": "Spring Bloom Perfumes",
+   "products": 270
+  },
+  {
+   "label": "Rainy Day Perfumes",
+   "group": null,
+   "old": "rainy-day",
+   "new": "rainy-day-perfumes",
+   "id": "gid://shopify/Collection/310583459953",
+   "title": "Rainy Day Perfumes",
+   "products": 128
+  },
+  {
+   "label": "Humid Weather Perfumes",
+   "group": null,
+   "old": "humid-weather",
+   "new": "humid-weather-perfumes",
+   "id": "gid://shopify/Collection/310582739057",
+   "title": "Humid Weather Fragrances",
+   "products": 559
+  },
+  {
+   "label": "Tropical Climate Perfumes",
+   "group": null,
+   "old": "tropical-climate",
+   "new": "tropical-climate-perfumes",
+   "id": "gid://shopify/Collection/310584082545",
+   "title": "Tropical Climate Perfumes",
+   "products": 112
+  },
+  {
+   "label": "Desert Climate Perfumes",
+   "group": null,
+   "old": "desert-climate",
+   "new": "desert-climate-perfumes",
+   "id": "gid://shopify/Collection/310581592177",
+   "title": "Desert Climate Perfumes",
+   "products": 688
+  },
+  {
+   "label": "Hot Weather Perfumes",
+   "group": null,
+   "old": "hot-weather",
+   "new": "hot-weather-perfumes",
+   "id": "gid://shopify/Collection/310582640753",
+   "title": "Hot Weather Perfumes",
+   "products": 660
+  },
+  {
+   "label": "Cold Weather Perfumes",
+   "group": null,
+   "old": "cold-weather",
+   "new": "cold-weather-perfumes",
+   "id": "gid://shopify/Collection/310581428337",
+   "title": "Cold Weather Perfumes",
+   "products": 309
+  },
+  {
+   "label": "Dry Weather Perfumes",
+   "group": null,
+   "old": "dry-weather",
+   "new": "dry-weather-perfumes",
+   "id": "gid://shopify/Collection/310581723249",
+   "title": "Dry Weather Perfumes",
+   "products": 702
+  },
+  {
+   "label": "Oud & Woody",
+   "group": "BY SCENT FAMILY",
+   "old": "oud-woody",
+   "new": "oud-woody-perfumes",
+   "id": "gid://shopify/Collection/310583230577",
+   "title": "Oud & Woody",
+   "products": 522
+  },
+  {
+   "label": "Fresh & Citrus",
+   "group": null,
+   "old": "fresh-citrus",
+   "new": "fresh-citrus-perfumes",
+   "id": "gid://shopify/Collection/310582247537",
+   "title": "Fresh & Citrus",
+   "products": 358
+  },
+  {
+   "label": "Floral & Rose",
+   "group": null,
+   "old": "floral-rose",
+   "new": "floral-rose-perfumes",
+   "id": "gid://shopify/Collection/310582050929",
+   "title": "Floral & Rose",
+   "products": 451
+  },
+  {
+   "label": "Sweet & Gourmand",
+   "group": null,
+   "old": "sweet-gourmand",
+   "new": "sweet-gourmand-perfumes",
+   "id": "gid://shopify/Collection/310583984241",
+   "title": "Sweet & Gourmand",
+   "products": 269
+  },
+  {
+   "label": "Spicy & Oriental",
+   "group": null,
+   "old": "spicy-oriental",
+   "new": "spicy-oriental-perfumes",
+   "id": "gid://shopify/Collection/310583787633",
+   "title": "Spicy & Oriental",
+   "products": 560
+  }
+ ],
+ "skipped": [
+  [
+   "Shop (main)",
+   "all",
+   "not linked from the theme menu"
+  ],
+  [
+   "All Products",
+   "all-products",
+   "/collections/all is built in, cannot be renamed"
+  ]
+ ],
+ "rechained": [
+  {
+   "id": "gid://shopify/UrlRedirect/309878784113",
+   "path": "/product-category/gender/mens",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/309879767153",
+   "path": "/collections/unisex-perfume/products/al-ameer-100ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310027124849",
+   "path": "/collections/perfume-for-men",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310029779057",
+   "path": "/collections/unisex-perfume/products/fragrance-194",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310029811825",
+   "path": "/collections/unisex-perfume/products/fragrance-169",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310030303345",
+   "path": "/products/boucheron-quatre-for-men-edt-100ml",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310734946417",
+   "path": "/products/xerjoff-jtc-comandante-unisex-eau-de-perfume-100-ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310735241329",
+   "path": "/products/fragrance-615",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310735339633",
+   "path": "/ar/products/fragrance-771",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310735503473",
+   "path": "/products/fragrance-102",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310736257137",
+   "path": "/ar/collections/unisex-perfume",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310736289905",
+   "path": "/collections/mens-fragrances",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310737764465",
+   "path": "/ar/products/alexandre-j-the-collector-morning-musca-100ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310737797233",
+   "path": "/ar/products/fragrance-515",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310737895537",
+   "path": "/ar/products/jack-of-clubs-edp-80ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310737928305",
+   "path": "/ar/products/chantel-de-blue-edp-100ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310737993841",
+   "path": "/products/fragrance-773",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310738518129",
+   "path": "/ar/products/chanel-allure-m-edt-100ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310739271793",
+   "path": "/collections/all/products/soverign-ventures-edp-100ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310776463473",
+   "path": "/products/wild-rover",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310776725617",
+   "path": "/collections/men/products/fragrance-113",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310776954993",
+   "path": "/products/mukhawi-al-lail-edp-100ml",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/310914646129",
+   "path": "/collections/unisex-perfume/products/fragrance-767",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/311053222001",
+   "path": "/products/special-for-men-best-men-perfume-set",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/311056466033",
+   "path": "/ar/products/yves-saint-laurent-myself-perfume-for-men-edp-100ml-refillable",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/311238590577",
+   "path": "/product/bravery-hero-edp-100ml",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/311238983793",
+   "path": "/collections/under-100-aed/products/spanish-knights-80ml-eau-de-parfume",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/311240196209",
+   "path": "/collections/french-perfume-brands/products/yves-saint-laurent-lhomme-brand-perfumes",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/311240261745",
+   "path": "/ar/products/fragrance-195",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/314419150961",
+   "path": "/products/leader-brown-edp-khulood-edp-perfume-for-men",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/314419445873",
+   "path": "/products/executive-vip-prive-pour-homme-edp-100ml",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/314419740785",
+   "path": "/ar/products/lanvin-eclat-d-arpege-pour-homme-100ml",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/314420592753",
+   "path": "/ar/products/clive-christian-1872-men-s-50ml",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/314421149809",
+   "path": "/collections/unisex/products/memo-paris-african-leather-eau-de-parfum-for-unisex-75ml",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/318231216241",
+   "path": "/collections/womens-collection",
+   "was": "/collections/womens",
+   "now": "/collections/womens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/328841199729",
+   "path": "/products/custom-perfume-100ml-choose-perfume-oil-concentration-edt-edp-parfum-extrait-personalized-fragrance",
+   "was": "/collections/inspired",
+   "now": "/collections/inspired-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342524723313",
+   "path": "/collections/arabic-perfumes-collection-buy-original-arabic-perfumes-online-at-fragrance-secrets",
+   "was": "/collections/arabic",
+   "now": "/collections/arabic-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342526754929",
+   "path": "/collections/inspired-perfumes",
+   "was": "/collections/inspired",
+   "now": "/collections/inspired-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342526918769",
+   "path": "/collections/kids-perfume",
+   "was": "/collections/kids",
+   "now": "/collections/kids-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342527115377",
+   "path": "/collections/men-s-perfumes-collection-buy-original-men-s-perfumes-online-at-fragrance-secrets",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342527148145",
+   "path": "/collections/mens-collection",
+   "was": "/collections/mens",
+   "now": "/collections/mens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342527279217",
+   "path": "/collections/oud-perfumes-collection-buy-original-oud-perfumes-online-at-fragrance-secrets",
+   "was": "/collections/oud-woody",
+   "now": "/collections/oud-woody-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342527311985",
+   "path": "/collections/oud-perfumes-collection-buy-original-oud-perfumes-online-at-fragrance-secrets-1",
+   "was": "/collections/oud-woody",
+   "now": "/collections/oud-woody-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342527475825",
+   "path": "/collections/perfume-for-womens-collection",
+   "was": "/collections/womens",
+   "now": "/collections/womens-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342528131185",
+   "path": "/collections/unisex-collection",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342528163953",
+   "path": "/collections/unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342528196721",
+   "path": "/collections/unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets-1",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342528229489",
+   "path": "/collections/unisex-perfumes-collection-buy-original-unisex-perfumes-online-at-fragrance-secrets-2",
+   "was": "/collections/unisex",
+   "now": "/collections/unisex-perfumes"
+  },
+  {
+   "id": "gid://shopify/UrlRedirect/342528327793",
+   "path": "/collections/women-s-perfumes-collection-buy-original-women-s-perfumes-online-at-fragrance-secrets",
+   "was": "/collections/womens",
+   "now": "/collections/womens-perfumes"
+  }
+ ]
+}

@@ -19,7 +19,7 @@
           "type": "link",
           "settings": {
             "label": "Summer Wear",
-            "url": "/collections/summer-wear",
+            "url": "/collections/summer-wear-perfumes",
             "image_asset": "summer-wear-tile.webp",
             "image_asset_sm": "summer-wear-tile-sm.webp"
           }
@@ -28,7 +28,7 @@
           "type": "link",
           "settings": {
             "label": "Winter Wear",
-            "url": "/collections/winter-holiday",
+            "url": "/collections/winter-wear-perfumes",
             "image_asset": "winter-holiday-tile.webp",
             "image_asset_sm": "winter-holiday-tile-sm.webp"
           }
@@ -37,7 +37,7 @@
           "type": "link",
           "settings": {
             "label": "Spring Wear",
-            "url": "/collections/spring-bloom",
+            "url": "/collections/spring-wear-perfumes",
             "image_asset": "spring-bloom-hero.webp",
             "image_asset_sm": "spring-bloom-hero-sm.webp"
           }
@@ -46,7 +46,7 @@
           "type": "link",
           "settings": {
             "label": "Rainy Day",
-            "url": "/collections/rainy-day",
+            "url": "/collections/rainy-day-perfumes",
             "image_asset": "rainy-day-tile.webp",
             "image_asset_sm": "rainy-day-tile-sm.webp"
           }
@@ -55,7 +55,7 @@
           "type": "link",
           "settings": {
             "label": "Humid Weather",
-            "url": "/collections/humid-weather",
+            "url": "/collections/humid-weather-perfumes",
             "image_asset": "humid-weather-tile.webp",
             "image_asset_sm": "humid-weather-tile-sm.webp"
           }
@@ -64,7 +64,7 @@
           "type": "link",
           "settings": {
             "label": "Tropical Climate",
-            "url": "/collections/tropical-climate",
+            "url": "/collections/tropical-climate-perfumes",
             "image_asset": "tropical-climate-tile.webp",
             "image_asset_sm": "tropical-climate-tile-sm.webp"
           }
@@ -73,7 +73,7 @@
           "type": "link",
           "settings": {
             "label": "Desert Climate",
-            "url": "/collections/desert-climate",
+            "url": "/collections/desert-climate-perfumes",
             "image_asset": "desert-climate-tile.webp",
             "image_asset_sm": "desert-climate-tile-sm.webp"
           }
@@ -82,7 +82,7 @@
           "type": "link",
           "settings": {
             "label": "Hot Weather",
-            "url": "/collections/hot-weather",
+            "url": "/collections/hot-weather-perfumes",
             "image_asset": "hot-weather-hero.webp",
             "image_asset_sm": "hot-weather-hero-sm.webp"
           }
@@ -91,7 +91,7 @@
           "type": "link",
           "settings": {
             "label": "Cold Weather",
-            "url": "/collections/cold-weather",
+            "url": "/collections/cold-weather-perfumes",
             "image_asset": "cold-weather-hero.webp",
             "image_asset_sm": "cold-weather-hero-sm.webp"
           }
@@ -100,7 +100,7 @@
           "type": "link",
           "settings": {
             "label": "Dry Weather",
-            "url": "/collections/dry-weather",
+            "url": "/collections/dry-weather-perfumes",
             "image_asset": "dry-weather-hero.webp",
             "image_asset_sm": "dry-weather-hero-sm.webp"
           }

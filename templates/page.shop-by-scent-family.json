@@ -19,7 +19,7 @@
           "type": "link",
           "settings": {
             "label": "Oud & Woody",
-            "url": "/collections/oud-woody",
+            "url": "/collections/oud-woody-perfumes",
             "image_asset": "oud-woody-hero.webp",
             "image_asset_sm": "oud-woody-hero-sm.webp"
           }
@@ -28,7 +28,7 @@
           "type": "link",
           "settings": {
             "label": "Fresh & Citrus",
-            "url": "/collections/fresh-citrus",
+            "url": "/collections/fresh-citrus-perfumes",
             "image_asset": "fresh-citrus-hero.webp",
             "image_asset_sm": "fresh-citrus-hero-sm.webp"
           }
@@ -37,7 +37,7 @@
           "type": "link",
           "settings": {
             "label": "Floral & Rose",
-            "url": "/collections/floral-rose",
+            "url": "/collections/floral-rose-perfumes",
             "image_asset": "floral-rose-hero.webp",
             "image_asset_sm": "floral-rose-hero-sm.webp"
           }
@@ -46,7 +46,7 @@
           "type": "link",
           "settings": {
             "label": "Sweet & Gourmand",
-            "url": "/collections/sweet-gourmand",
+            "url": "/collections/sweet-gourmand-perfumes",
             "image_asset": "sweet-gourmand-hero.webp",
             "image_asset_sm": "sweet-gourmand-hero-sm.webp"
           }
@@ -55,7 +55,7 @@
           "type": "link",
           "settings": {
             "label": "Spicy & Oriental",
-            "url": "/collections/spicy-oriental",
+            "url": "/collections/spicy-oriental-perfumes",
             "image_asset": "spicy-oriental-hero.webp",
             "image_asset_sm": "spicy-oriental-hero-sm.webp"
           }

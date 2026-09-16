@@ -81,28 +81,28 @@
           "type": "sibling",
           "settings": {
             "label": "Oud & Woody",
-            "url": "/collections/oud-woody"
+            "url": "/collections/oud-woody-perfumes"
           }
         },
         "sibling2": {
           "type": "sibling",
           "settings": {
             "label": "Fresh & Citrus",
-            "url": "/collections/fresh-citrus"
+            "url": "/collections/fresh-citrus-perfumes"
           }
         },
         "sibling3": {
           "type": "sibling",
           "settings": {
             "label": "Sweet & Gourmand",
-            "url": "/collections/sweet-gourmand"
+            "url": "/collections/sweet-gourmand-perfumes"
           }
         },
         "sibling4": {
           "type": "sibling",
           "settings": {
             "label": "Spicy & Oriental",
-            "url": "/collections/spicy-oriental"
+            "url": "/collections/spicy-oriental-perfumes"
           }
         },
         "explore1": {
@@ -141,7 +141,7 @@
             "icon": "spa",
             "label": "Shop by Scent Family",
             "sub": "Fresh, oud, spicy, sweet",
-            "url": "/collections/oud-woody",
+            "url": "/collections/oud-woody-perfumes",
             "hub": "scent"
           }
         },

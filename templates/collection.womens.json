@@ -46,7 +46,7 @@
             "tag_label": "Best For",
             "tags": "Everyday Wear, Office, Weddings",
             "link_label": "Explore Floral & Rose",
-            "link_url": "/collections/floral-rose"
+            "link_url": "/collections/floral-rose-perfumes"
           }
         },
         "card2": {
@@ -57,7 +57,7 @@
             "tag_label": "Best For",
             "tags": "Daily Wear, Summer, Travel",
             "link_label": "Explore Fresh & Citrus",
-            "link_url": "/collections/fresh-citrus"
+            "link_url": "/collections/fresh-citrus-perfumes"
           }
         },
         "card3": {
@@ -68,7 +68,7 @@
             "tag_label": "Best For",
             "tags": "Date Nights, Evenings, Cooler Weather",
             "link_label": "Explore Sweet & Gourmand",
-            "link_url": "/collections/sweet-gourmand"
+            "link_url": "/collections/sweet-gourmand-perfumes"
           }
         },
         "card4": {
@@ -79,7 +79,7 @@
             "tag_label": "Best For",
             "tags": "Formal Events, Evening Wear, Luxury Occasions",
             "link_label": "Explore Oud & Woody",
-            "link_url": "/collections/oud-woody"
+            "link_url": "/collections/oud-woody-perfumes"
           }
         },
         "explore1": {
@@ -118,7 +118,7 @@
             "icon": "spa",
             "label": "Shop by Scent Family",
             "sub": "Fresh, oud, spicy, sweet",
-            "url": "/collections/oud-woody",
+            "url": "/collections/oud-woody-perfumes",
             "hub": "scent"
           }
         },

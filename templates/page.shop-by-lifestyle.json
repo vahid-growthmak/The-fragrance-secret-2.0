@@ -19,7 +19,7 @@
           "type": "link",
           "settings": {
             "label": "Office Wear Perfumes",
-            "url": "/collections/office-wear",
+            "url": "/collections/office-wear-perfumes",
             "image_asset": "office-wear-tile.webp",
             "image_asset_sm": "office-wear-tile-sm.webp"
           }
@@ -28,7 +28,7 @@
           "type": "link",
           "settings": {
             "label": "Everyday Perfumes",
-            "url": "/collections/everyday-signature",
+            "url": "/collections/everyday-perfumes",
             "image_asset": "everyday-signature-hero.webp",
             "image_asset_sm": "everyday-signature-hero-sm.webp"
           }
@@ -37,7 +37,7 @@
           "type": "link",
           "settings": {
             "label": "Date Night Perfumes",
-            "url": "/collections/date-night",
+            "url": "/collections/date-night-perfumes",
             "image_asset": "date-night-tile.webp",
             "image_asset_sm": "date-night-tile-sm.webp"
           }
@@ -46,7 +46,7 @@
           "type": "link",
           "settings": {
             "label": "Party Wear Perfumes",
-            "url": "/collections/party-clubbing",
+            "url": "/collections/party-wear-perfumes",
             "image_asset": "party-clubbing-hero.webp",
             "image_asset_sm": "party-clubbing-hero-sm.webp"
           }
@@ -55,7 +55,7 @@
           "type": "link",
           "settings": {
             "label": "Wedding Perfumes",
-            "url": "/collections/wedding",
+            "url": "/collections/wedding-perfumes",
             "image_asset": "wedding-tile.webp",
             "image_asset_sm": "wedding-tile-sm.webp"
           }
@@ -64,7 +64,7 @@
           "type": "link",
           "settings": {
             "label": "Formal Evening Perfumes",
-            "url": "/collections/dinner-evening",
+            "url": "/collections/evening-wear-perfumes",
             "image_asset": "dinner-evening-tile.webp",
             "image_asset_sm": "dinner-evening-tile-sm.webp"
           }
@@ -73,7 +73,7 @@
           "type": "link",
           "settings": {
             "label": "Gym Perfumes",
-            "url": "/collections/gym",
+            "url": "/collections/gym-perfumes",
             "image_asset": "gym-tile.webp",
             "image_asset_sm": "gym-tile-sm.webp"
           }
@@ -82,7 +82,7 @@
           "type": "link",
           "settings": {
             "label": "Travel Perfumes",
-            "url": "/collections/travel-friendly",
+            "url": "/collections/travel-perfumes",
             "image_asset": "travel-friendly-tile.webp",
             "image_asset_sm": "travel-friendly-tile-sm.webp"
           }
@@ -91,7 +91,7 @@
           "type": "link",
           "settings": {
             "label": "Beach Perfumes",
-            "url": "/collections/beach-vacation",
+            "url": "/collections/beach-perfumes",
             "image_asset": "beach-vacation-hero.webp",
             "image_asset_sm": "beach-vacation-hero-sm.webp"
           }
@@ -100,7 +100,7 @@
           "type": "link",
           "settings": {
             "label": "Vacation Perfumes",
-            "url": "/collections/vacation-beach",
+            "url": "/collections/vacation-perfumes",
             "image_asset": "vacation-beach-hero.webp",
             "image_asset_sm": "vacation-beach-hero-sm.webp"
           }
@@ -109,7 +109,7 @@
           "type": "link",
           "settings": {
             "label": "Formal Event Perfumes",
-            "url": "/collections/wedding-formal",
+            "url": "/collections/formal-event-perfumes",
             "image_asset": "wedding-formal-hero.webp",
             "image_asset_sm": "wedding-formal-hero-sm.webp"
           }

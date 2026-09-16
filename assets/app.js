@@ -801,11 +801,11 @@ let qStep = 0, qAnswers = [];
    — so the result can send people somewhere specific instead of a generic list.
    Falls back to best sellers if the answer is ever unrecognised. */
 const QUIZ_FAMILY_URL = {
-  'Fresh & Citrus': '/collections/fresh-citrus',
-  'Deep Oud & Woody': '/collections/oud-woody',
-  'Floral & Rose': '/collections/floral-rose',
-  'Sweet & Gourmand': '/collections/sweet-gourmand',
-  'Spicy & Oriental': '/collections/spicy-oriental',
+  'Fresh & Citrus': '/collections/fresh-citrus-perfumes',
+  'Deep Oud & Woody': '/collections/oud-woody-perfumes',
+  'Floral & Rose': '/collections/floral-rose-perfumes',
+  'Sweet & Gourmand': '/collections/sweet-gourmand-perfumes',
+  'Spicy & Oriental': '/collections/spicy-oriental-perfumes',
 };
 function quizResultURL() {
   return QUIZ_FAMILY_URL[qAnswers[0]] || '/collections/best-sellers';

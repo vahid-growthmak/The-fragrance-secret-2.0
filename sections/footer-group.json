@@ -18,7 +18,7 @@
           "type": "column",
           "settings": {
             "heading": "Shop",
-            "links": "Our Brands | /pages/brands\nMen's Perfumes | /collections/mens\nWomen's Perfumes | /collections/womens\nUnisex | /collections/unisex\nBest Sellers | /collections/best-sellers\nNew Arrivals | /collections/new-arrivals"
+            "links": "Our Brands | /pages/brands\nMen's Perfumes | /collections/mens-perfumes\nWomen's Perfumes | /collections/womens-perfumes\nUnisex | /collections/unisex-perfumes\nBest Sellers | /collections/best-sellers\nNew Arrivals | /collections/new-arrivals"
           }
         },
         "discover": {

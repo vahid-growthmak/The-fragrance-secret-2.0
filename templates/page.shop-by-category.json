@@ -19,7 +19,7 @@
           "type": "link",
           "settings": {
             "label": "Women's Perfumes",
-            "url": "/collections/womens",
+            "url": "/collections/womens-perfumes",
             "image_asset": "womens-hero.webp",
             "image_asset_sm": "womens-hero-sm.webp"
           }
@@ -28,7 +28,7 @@
           "type": "link",
           "settings": {
             "label": "Men's Perfumes",
-            "url": "/collections/mens",
+            "url": "/collections/mens-perfumes",
             "image_asset": "mens-hero.webp",
             "image_asset_sm": "mens-hero-sm.webp"
           }
@@ -37,7 +37,7 @@
           "type": "link",
           "settings": {
             "label": "Unisex Perfumes",
-            "url": "/collections/unisex",
+            "url": "/collections/unisex-perfumes",
             "image_asset": "unisex-hero.webp",
             "image_asset_sm": "unisex-hero-sm.webp"
           }
@@ -46,7 +46,7 @@
           "type": "link",
           "settings": {
             "label": "Kids Perfumes",
-            "url": "/collections/kids",
+            "url": "/collections/kids-perfumes",
             "image_asset": "kids-hero.webp",
             "image_asset_sm": "kids-hero-sm.webp"
           }
@@ -55,7 +55,7 @@
           "type": "link",
           "settings": {
             "label": "Luxury Perfumes",
-            "url": "/collections/luxury",
+            "url": "/collections/luxury-perfumes",
             "image_asset": "luxury-hero.webp",
             "image_asset_sm": "luxury-hero-sm.webp"
           }
@@ -82,7 +82,7 @@
           "type": "link",
           "settings": {
             "label": "Arabic Perfumes",
-            "url": "/collections/arabic",
+            "url": "/collections/arabic-perfumes",
             "image_asset": "arabic-hero.webp",
             "image_asset_sm": "arabic-hero-sm.webp"
           }
@@ -91,7 +91,7 @@
           "type": "link",
           "settings": {
             "label": "Inspired Perfumes",
-            "url": "/collections/inspired",
+            "url": "/collections/inspired-perfumes",
             "image_asset": "inspired-hero.webp",
             "image_asset_sm": "inspired-hero-sm.webp"
           }

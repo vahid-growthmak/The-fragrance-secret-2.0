@@ -62,28 +62,28 @@
           "type": "sibling",
           "settings": {
             "label": "Everyday Perfumes",
-            "url": "/collections/everyday-signature"
+            "url": "/collections/everyday-perfumes"
           }
         },
         "sibling2": {
           "type": "sibling",
           "settings": {
             "label": "Office Wear Perfumes",
-            "url": "/collections/office-wear"
+            "url": "/collections/office-wear-perfumes"
           }
         },
         "sibling3": {
           "type": "sibling",
           "settings": {
             "label": "Date Night Perfumes",
-            "url": "/collections/date-night"
+            "url": "/collections/date-night-perfumes"
           }
         },
         "sibling4": {
           "type": "sibling",
           "settings": {
             "label": "Party Wear Perfumes",
-            "url": "/collections/party-clubbing"
+            "url": "/collections/party-wear-perfumes"
           }
         },
         "explore1": {
@@ -122,7 +122,7 @@
             "icon": "spa",
             "label": "Shop by Scent Family",
             "sub": "Fresh, oud, spicy, sweet",
-            "url": "/collections/oud-woody",
+            "url": "/collections/oud-woody-perfumes",
             "hub": "scent"
           }
         },

@@ -46,7 +46,7 @@
             "tag_label": "Best For",
             "tags": "Shared Signature, Formal Wear, All-Day Wear",
             "link_label": "Explore Oud & Woody",
-            "link_url": "/collections/oud-woody"
+            "link_url": "/collections/oud-woody-perfumes"
           }
         },
         "card2": {
@@ -57,7 +57,7 @@
             "tag_label": "Best For",
             "tags": "Evenings, Cooler Weather, Statement",
             "link_label": "Explore Spicy & Oriental",
-            "link_url": "/collections/spicy-oriental"
+            "link_url": "/collections/spicy-oriental-perfumes"
           }
         },
         "card3": {
@@ -68,7 +68,7 @@
             "tag_label": "Best For",
             "tags": "Daily Wear, Hot Weather, First Fragrance",
             "link_label": "Explore Fresh & Citrus",
-            "link_url": "/collections/fresh-citrus"
+            "link_url": "/collections/fresh-citrus-perfumes"
           }
         },
         "card4": {
@@ -79,7 +79,7 @@
             "tag_label": "Best For",
             "tags": "Gifting, Cool Season, Evenings",
             "link_label": "Explore Sweet & Gourmand",
-            "link_url": "/collections/sweet-gourmand"
+            "link_url": "/collections/sweet-gourmand-perfumes"
           }
         },
         "explore1": {
@@ -118,7 +118,7 @@
             "icon": "spa",
             "label": "Shop by Scent Family",
             "sub": "Fresh, oud, spicy, sweet",
-            "url": "/collections/oud-woody",
+            "url": "/collections/oud-woody-perfumes",
             "hub": "scent"
           }
         },
