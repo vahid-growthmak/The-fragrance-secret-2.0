@@ -14,7 +14,7 @@
         <p class="ph-sub">Choosing perfume should feel exciting, not overwhelming. These guides walk you through everything — reading fragrance notes, matching a scent to the occasion, and knowing what to expect before you spend a single dirham.</p>
         <div class="ph-meta">
           <span><span class="mi" aria-hidden="true">verified_user</span>100% authentic sourcing</span>
-          <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE delivery over AED 150</span>
+          <span><span class="mi" aria-hidden="true">local_shipping</span>Free UAE delivery over AED {{ settings.free_shipping_threshold | default: '250' }}</span>
           <span><span class="mi" aria-hidden="true">autorenew</span>7-day easy returns</span>
         </div>
       </div>

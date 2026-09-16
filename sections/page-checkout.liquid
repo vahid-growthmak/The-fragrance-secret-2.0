@@ -87,7 +87,7 @@
             <div class="co-summary">
               <div class="co-sum-head">Order Summary</div>
               <div class="ship-nudge">
-                <p><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over AED 150</p>
+                <p><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over AED {{ settings.free_shipping_threshold | default: '250' }}</p>
                 <div class="ship-bar"><i style="width:100%"></i></div>
               </div>
               <div class="co-lines" id="coLines">

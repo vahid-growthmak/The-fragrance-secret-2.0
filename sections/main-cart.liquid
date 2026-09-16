@@ -1,6 +1,9 @@
 {%- comment -%} Cart — native Shopify port of cart.html, driven by the `cart` object. {%- endcomment -%}
 {%- liquid
-  assign free_ship_threshold = 15000
+  # One number, in Theme settings › Delivery, instead of the 15000 that used
+  # to be written into this file and the copy of it in the other cart
+  # surface — and into sixteen sentences that quoted it in prose.
+  assign free_ship_threshold = settings.free_shipping_threshold | default: 250 | times: 100
   assign remaining = free_ship_threshold | minus: cart.total_price
   if cart.total_price >= free_ship_threshold
     assign ship_pct = 100
@@ -77,7 +80,7 @@
           <div class="co-sum-head">Order Summary</div>
           <div class="ship-nudge" id="shipNudge">
             {%- if cart.total_price >= free_ship_threshold -%}
-              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over AED 150 <span class="mi" aria-hidden="true" style="font-size:15px;vertical-align:-3px;color:var(--gold-dk)">check_circle</span></p>
+              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over {{ free_ship_threshold | money_with_currency }} <span class="mi" aria-hidden="true" style="font-size:15px;vertical-align:-3px;color:var(--gold-dk)">check_circle</span></p>
             {%- else -%}
               <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>{{ remaining | money_with_currency }}</b> more for <b>free delivery</b></p>
             {%- endif -%}

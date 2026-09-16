@@ -16,7 +16,10 @@
 {%- endcomment -%}
 
 {%- liquid
-  assign free_ship_threshold = 15000
+  # One number, in Theme settings › Delivery, instead of the 15000 that used
+  # to be written into this file and the copy of it in the other cart
+  # surface — and into sixteen sentences that quoted it in prose.
+  assign free_ship_threshold = settings.free_shipping_threshold | default: 250 | times: 100
   assign remaining = free_ship_threshold | minus: cart.total_price
   if cart.total_price >= free_ship_threshold
     assign ship_pct = 100

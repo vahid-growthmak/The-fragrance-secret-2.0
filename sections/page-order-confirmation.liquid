@@ -97,7 +97,7 @@
                 </div>
                 <div>
                   <div class="label" style="margin-bottom:6px">Estimated Delivery</div>
-                  <p style="color:var(--warm);line-height:1.6"><b style="color:var(--ink)">11–13 July 2026</b><br>Standard UAE delivery (2–4 working days)<br><span style="color:var(--gold-dk)">Free — order over AED 150</span></p>
+                  <p style="color:var(--warm);line-height:1.6"><b style="color:var(--ink)">11–13 July 2026</b><br>Standard UAE delivery (2–4 working days)<br><span style="color:var(--gold-dk)">Free — order over AED {{ settings.free_shipping_threshold | default: '250' }}</span></p>
                 </div>
               </div>
             </div>

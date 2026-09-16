@@ -19,7 +19,7 @@
         <div class="usp-grid fade-up">
           <div class="usp-card"><div class="usp-ic"><span class="mi" aria-hidden="true">sell</span></div><h3>Deep Discounts</h3><p>Up to 60% off recommended retail on genuine designer and Arabic-house fragrances — real markdowns, not inflated "was" prices.</p></div>
           <div class="usp-card"><div class="usp-ic"><span class="mi" aria-hidden="true">inventory</span></div><h3>Limited Stock</h3><p>Deal quantities are strictly capped. Once a run sells out it's removed — so the price you see is the price while it lasts.</p></div>
-          <div class="usp-card"><div class="usp-ic"><span class="mi" aria-hidden="true">local_shipping</span></div><h3>Next-Day Delivery</h3><p>Order today, wear it tomorrow. Free UAE delivery over AED 150, with Cash on Delivery available everywhere.</p></div>
+          <div class="usp-card"><div class="usp-ic"><span class="mi" aria-hidden="true">local_shipping</span></div><h3>Next-Day Delivery</h3><p>Order today, wear it tomorrow. Free UAE delivery over AED {{ settings.free_shipping_threshold | default: '250' }}, with Cash on Delivery available everywhere.</p></div>
         </div>
       </div>
     </section>

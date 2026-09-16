@@ -3,7 +3,7 @@
   "name": "Header group",
   "sections": {
     "announcement-bar": { "type": "announcement-bar", "blocks": {
-      "m1": { "type": "message", "settings": { "text": "Complimentary delivery anywhere in the UAE on orders above AED 150" } },
+      "m1": { "type": "message", "settings": { "text": "Complimentary delivery anywhere in the UAE on orders above AED 250" } },
       "m2": { "type": "message", "settings": { "text": "Every fragrance is 100% authentic with fully verified sourcing" } },
       "m3": { "type": "message", "settings": { "text": "Cash on delivery available across all Emirates for easy shopping" } },
       "m4": { "type": "message", "settings": { "text": "Explore 218+ fragrance houses trusted by perfume lovers in the UAE" } },

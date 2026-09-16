@@ -170,7 +170,7 @@
           </details>
           <details class="faq-item">
             <summary class="faq-q">Do you offer payment plans on luxury purchases?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">Yes. Tabby and Tamara let you pay later, interest-free in instalments, and Cash on Delivery is available across all Emirates. Free delivery applies to every order above AED 150.</div>
+            <div class="faq-a">Yes. Tabby and Tamara let you pay later, interest-free in instalments, and Cash on Delivery is available across all Emirates. Free delivery applies to every order above AED {{ settings.free_shipping_threshold | default: '250' }}.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">What if the fragrance isn't right for me?<span class="mi" aria-hidden="true">add</span></summary>

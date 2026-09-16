@@ -31,6 +31,13 @@
     ]
   },
   {
+    "name": "Delivery",
+    "settings": [
+      { "type": "paragraph", "content": "The free-delivery threshold was hard-coded in eighteen files \u2014 the cart bar, the trust strips, the FAQs, the announcement bar \u2014 and changing it meant finding all of them. It is one number now. It must match the shipping rate in Shopify admin \u203a Settings \u203a Shipping and delivery, and the Shipping policy text, neither of which the theme can set." },
+      { "type": "text", "id": "free_shipping_threshold", "label": "Free delivery above", "default": "250", "info": "Digits only, in store currency. Orders at or above this total ship free." }
+    ]
+  },
+  {
     "name": "Welcome offer",
     "settings": [
       { "type": "paragraph", "content": "The first-order discount shown above the footer. A theme cannot create a discount, so the code below must exist in Shopify admin \u203a Discounts: a discount code, percentage off the order, customer eligibility set to customers with an account, and \"limit to one use per customer\" ticked. The theme puts the code on the bag; Shopify decides who may keep it." },

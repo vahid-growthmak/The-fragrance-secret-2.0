@@ -145,6 +145,11 @@
        cart change needs the same format string. Consumed by formatMoney(). */
     window.MONEY_FORMAT = {{ shop.money_with_currency_format | json }};
     window.WHATSAPP_NUMBER = {{ settings.whatsapp_number | json }};
+    /* collections.js writes its own trust strips and delivery FAQ, so the
+       free-delivery figure has to reach JS too — otherwise half the site
+       quotes the setting and the collection pages quote a number frozen
+       into a script. */
+    window.FREE_SHIPPING_THRESHOLD = {{ settings.free_shipping_threshold | default: 250 | times: 1 | json }};
     window.routes = {
       root_url: {{ routes.root_url | json }},
       cart_url: {{ routes.cart_url | json }},

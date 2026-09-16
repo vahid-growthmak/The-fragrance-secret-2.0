@@ -11,7 +11,7 @@
         <h1 class="ph-title">Frequently Asked <em>Questions</em></h1>
         <p class="ph-sub">Find quick answers and support. Everything you need to know about shipping, payment, authenticity, gifting and returns — and if you can't find it here, our team is a WhatsApp message away.</p>
         <div class="ph-meta">
-          <span><span class="mi" aria-hidden="true">local_shipping</span>Free delivery over AED 150</span>
+          <span><span class="mi" aria-hidden="true">local_shipping</span>Free delivery over AED {{ settings.free_shipping_threshold | default: '250' }}</span>
           <span><span class="mi" aria-hidden="true">payments</span>Cash on delivery</span>
           <span><span class="mi" aria-hidden="true">autorenew</span>7-day returns</span>
         </div>
@@ -34,11 +34,11 @@
         <div class="faq-list fade-up" style="margin-bottom:44px">
           <details class="faq-item">
             <summary class="faq-q">Do you deliver across the whole UAE?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">Yes — we deliver to all seven Emirates, including Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain. Orders above AED 150 ship free.</div>
+            <div class="faq-a">Yes — we deliver to all seven Emirates, including Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain. Orders above AED {{ settings.free_shipping_threshold | default: '250' }} ship free.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">How much is delivery and how long does it take?<span class="mi" aria-hidden="true">add</span></summary>
-            <div class="faq-a">Delivery is free on orders over AED 150; a small flat fee applies below that. Standard delivery takes 2–4 business days, and in-stock orders are dispatched within 48 hours. Same-day delivery is available in Dubai for orders placed before 2pm.</div>
+            <div class="faq-a">Delivery is free on orders over AED {{ settings.free_shipping_threshold | default: '250' }}; a small flat fee applies below that. Standard delivery takes 2–4 business days, and in-stock orders are dispatched within 48 hours. Same-day delivery is available in Dubai for orders placed before 2pm.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">Can I track my order?<span class="mi" aria-hidden="true">add</span></summary>

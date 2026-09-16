@@ -133,7 +133,7 @@
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:16px">
               <a class="btn-ol" href="#" onclick="toast('Edit your saved address');return false"><span class="mi" aria-hidden="true">edit</span>Edit Address</a>
-              <span style="display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--warm)"><span class="mi" aria-hidden="true" style="color:var(--gold-dk);font-size:18px">local_shipping</span>Free delivery over AED 150</span>
+              <span style="display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--warm)"><span class="mi" aria-hidden="true" style="color:var(--gold-dk);font-size:18px">local_shipping</span>Free delivery over AED {{ settings.free_shipping_threshold | default: '250' }}</span>
             </div>
           </div>
 

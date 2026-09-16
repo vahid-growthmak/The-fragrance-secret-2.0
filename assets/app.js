@@ -336,7 +336,7 @@ function R(path) { return /^(https?:|mailto:|tel:|#|\/)/.test(path) ? path : BAS
    CHROME — ANNOUNCE / HEADER / FOOTER / FLOATS
 ═══════════════════════════════════════ */
 const A_ITEMS = [
-  'Complimentary delivery anywhere in the UAE on orders above AED 150',
+  'Complimentary delivery anywhere in the UAE on orders above AED ' + (window.FREE_SHIPPING_THRESHOLD || 250),
   'Every fragrance is 100% authentic with fully verified sourcing',
   'Cash on delivery available across all Emirates for easy shopping',
   'Explore 218+ fragrance houses trusted by perfume lovers in the UAE',

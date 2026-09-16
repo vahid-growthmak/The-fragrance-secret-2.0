@@ -134,7 +134,7 @@
     <section class="section-sm alt"><div class="container">
       <div class="trust-band">
         <div class="tb-item"><span class="mi" aria-hidden="true">verified_user</span><div><strong>100% Authentic</strong><span>Verified sourcing</span></div></div>
-        <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above AED 150</span></div></div>
+        <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above AED {{ settings.free_shipping_threshold | default: '250' }}</span></div></div>
         <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Available UAE-wide</span></div></div>
         <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
       </div>

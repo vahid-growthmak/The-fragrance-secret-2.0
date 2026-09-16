@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════
    COLLECTION ENGINE (collections.js)
+
    Renders any product-listing / collection page from a config object,
    selected via ?c=<slug>. One template (collection.html) → 35 pages,
    each honouring the exact section list from the sitemap. Loaded after
@@ -7,12 +8,19 @@
 ═══════════════════════════════════════════════════════════════════ */
 
 /* ── Shared content pools ────────────────────────────────────────── */
+/* The free-delivery threshold, as the store currently promises it, set from
+   Theme settings in layout/theme.liquid. The fallback keeps this file honest
+   if it is ever loaded without that global. Written "AED 250" to match how
+   the rest of the site says it in prose — money_with_currency's "250.00 AED"
+   reads wrong mid-sentence. */
+const FREE_SHIP_LABEL = 'AED ' + (window.FREE_SHIPPING_THRESHOLD || 250);
+
 const FAM = ['Fresh & Citrus', 'Oud & Woody', 'Floral & Rose', 'Sweet & Gourmand', 'Spicy & Oriental'];
 
 const FAQ_TRUST = [
   { q: 'Are your perfumes 100% authentic?', a: 'Yes. Every fragrance is either from our own manufactured brands or sourced through verified wholesalers and market-authorised channels — genuine, sealed stock. Questions about a specific item? Our human team confirms sourcing on WhatsApp before you buy.' },
   { q: 'Do you offer Cash on Delivery?', a: 'Absolutely. Cash on Delivery is available across all seven Emirates, alongside Tabby & Tamara interest-free instalments, Apple Pay, Google Pay and cards.' },
-  { q: 'How fast is delivery in the UAE?', a: 'Free delivery on orders above AED 150. In-stock orders are dispatched within 48 hours, with same-day options available in Dubai for orders placed before 2 PM.' },
+  { q: 'How fast is delivery in the UAE?', a: 'Free delivery on orders above ' + FREE_SHIP_LABEL + '. In-stock orders are dispatched within 48 hours, with same-day options available in Dubai for orders placed before 2 PM.' },
   { q: 'What is your return policy?', a: 'We offer 7-day hassle-free returns on unopened, sealed products. Message our team on WhatsApp and we will arrange a collection.' },
 ];
 
@@ -66,7 +74,7 @@ function secTrust() {
   return `<section class="section-sm alt"><div class="container">
     <div class="trust-band">
       <div class="tb-item"><span class="mi" aria-hidden="true">verified_user</span><div><strong>100% Authentic</strong><span>Verified sourcing</span></div></div>
-      <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above AED 150</span></div></div>
+      <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Free UAE Delivery</strong><span>On orders above ${FREE_SHIP_LABEL}</span></div></div>
       <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Available UAE-wide</span></div></div>
       <div class="tb-item"><span class="mi" aria-hidden="true">autorenew</span><div><strong>7-Day Returns</strong><span>No questions asked</span></div></div>
     </div>
@@ -433,7 +441,7 @@ function fillCollectionGrid(cfg) {
 function secDelivery() {
   return `<section class="section-sm"><div class="container"><div class="trust-band">
     <div class="tb-item"><span class="mi" aria-hidden="true">bolt</span><div><strong>Order by 2 PM</strong><span>Same-day dispatch in Dubai</span></div></div>
-    <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Next-Day UAE</strong><span>Free over AED 150</span></div></div>
+    <div class="tb-item"><span class="mi" aria-hidden="true">local_shipping</span><div><strong>Next-Day UAE</strong><span>Free over ${FREE_SHIP_LABEL}</span></div></div>
     <div class="tb-item"><span class="mi" aria-hidden="true">card_giftcard</span><div><strong>Gift Wrapping</strong><span>Premium, ready to give</span></div></div>
     <div class="tb-item"><span class="mi" aria-hidden="true">payments</span><div><strong>Cash on Delivery</strong><span>Pay when it arrives</span></div></div>
   </div></div></section>`;

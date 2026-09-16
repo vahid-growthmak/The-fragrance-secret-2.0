@@ -181,7 +181,7 @@
               <div class="cm-ic"><span class="mi" aria-hidden="true">local_shipping</span></div>
               <div>
                 <h3>Delivery Coverage</h3>
-                <p>Free delivery on orders above AED 150. Cash on delivery available across all seven Emirates. Same-day dispatch on in-stock orders.</p>
+                <p>Free delivery on orders above AED {{ settings.free_shipping_threshold | default: '250' }}. Cash on delivery available across all seven Emirates. Same-day dispatch on in-stock orders.</p>
               </div>
             </div>
             <div class="cm-card">

@@ -1,4 +1,12 @@
-{%- comment -%} Scrolling announcement marquee — ported from app.js announceHTML() {%- endcomment -%}
+{%- comment -%}
+  Scrolling announcement marquee — ported from app.js announceHTML().
+
+  The messages are merchant-editable blocks, so the free-delivery figure below
+  is a literal: schema is static JSON and a Liquid tag inside it would be shown
+  to shoppers verbatim. It is the one place the Delivery setting cannot reach —
+  and only a default at that, since the live text lives in header-group.json
+  once the section has been saved.
+{%- endcomment -%}
 {%- if section.blocks.size > 0 -%}
   <div class="announce">
     <div class="announce-track" id="atrack">
@@ -23,7 +31,7 @@
   ],
   "presets": [
     { "name": "Announcement bar", "blocks": [
-      { "type": "message", "settings": { "text": "Complimentary delivery anywhere in the UAE on orders above AED 150" } },
+      { "type": "message", "settings": { "text": "Complimentary delivery anywhere in the UAE on orders above AED 250" } },
       { "type": "message", "settings": { "text": "Every fragrance is 100% authentic with fully verified sourcing" } },
       { "type": "message", "settings": { "text": "Cash on delivery available across all Emirates for easy shopping" } },
       { "type": "message", "settings": { "text": "Explore 218+ fragrance houses trusted by perfume lovers in the UAE" } },
