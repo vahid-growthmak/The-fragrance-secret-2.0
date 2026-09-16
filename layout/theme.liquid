@@ -23,8 +23,17 @@
         when 'terms-of-service'
           assign policy_canonical = shop.terms_of_service.url
       endcase
+      # shop.<policy>.url is a path, not a URL, and a canonical that reads
+      # "/policies/privacy-policy" is resolved against whatever host served
+      # the page — including the myshopify domain. shop.url is the primary
+      # domain, which is the one the canonical is for. Left alone if Shopify
+      # ever hands back something already absolute.
       if policy_canonical != blank
-        assign canonical = policy_canonical
+        if policy_canonical contains '://'
+          assign canonical = policy_canonical
+        else
+          assign canonical = shop.url | append: policy_canonical
+        endif
       endif
     endif
   -%}
