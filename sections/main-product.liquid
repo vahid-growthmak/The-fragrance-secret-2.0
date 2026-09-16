@@ -234,12 +234,43 @@
           {%- endif -%}
 
 
+          {%- comment -%}
+            Every figure here is a setting, not a number typed into the line:
+            the delivery threshold, the welcome discount and its minimum are
+            the same values the cart, the band and the checkout rate use. A
+            trust list is the worst place for a stale promise, because it is
+            read at the moment someone decides to buy.
+          {%- endcomment -%}
           <!-- TRUST -->
           <div class="pdp-trust">
             <div class="pt-item"><span class="mi" aria-hidden="true">verified_user</span><span><strong>100% Authentic Perfumes</strong> — Sourced from trusted suppliers</span></div>
-            <div class="pt-item"><span class="mi" aria-hidden="true">local_shipping</span><span><strong>Fast Delivery</strong> — Across Dubai, Abu Dhabi, Sharjah and the wider Emirates</span></div>
+            <div class="pt-item"><span class="mi" aria-hidden="true">local_shipping</span><span><strong>Free Delivery</strong> — On orders above AED {{ settings.free_shipping_threshold | default: '250' }}</span></div>
             <div class="pt-item"><span class="mi" aria-hidden="true">autorenew</span><span><strong>Easy Returns</strong> — Eligible damaged or incorrect orders only</span></div>
             <div class="pt-item"><span class="mi" aria-hidden="true">lock</span><span><strong>Secure Payments</strong> — Visa, Mastercard, Apple Pay &amp; Cash on Delivery</span></div>
+            {%- comment -%}
+              The discount line is shown only while it is true: hidden when the
+              offer is switched off, and hidden from a customer who has already
+              ordered, since a first-order discount they cannot use is an
+              irritation rather than a reason to buy.
+            {%- endcomment -%}
+            {%- liquid
+              # Truthiness, not `customer == nil` — the same equality test read
+              # false for a logged-out visitor when this was written into the
+              # membership band, and showed them the signed-in control.
+              assign wo_show = false
+              if settings.welcome_offer_enabled and settings.welcome_offer_code != blank
+                if customer
+                  if customer.orders_count == 0
+                    assign wo_show = true
+                  endif
+                else
+                  assign wo_show = true
+                endif
+              endif
+            -%}
+            {%- if wo_show -%}
+              <div class="pt-item"><span class="mi" aria-hidden="true">redeem</span><span><strong>Claim {{ settings.welcome_offer_percent | default: '10' }}% Discount</strong> — Get {{ settings.welcome_offer_percent | default: '10' }}% off your first order above AED {{ settings.welcome_offer_min | default: '150' }}</span></div>
+            {%- endif -%}
           </div>
 
           <!-- TABS — one per detail section, driven by metafields -->
