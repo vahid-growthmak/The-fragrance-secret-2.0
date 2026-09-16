@@ -54,6 +54,13 @@ query($cursor: String) {
           title status startsAt endsAt appliesOncePerCustomer usageLimit
           codes(first: 10) { nodes { code } }
           customerGets { value { ... on DiscountPercentage { percentage } } }
+          minimumRequirement {
+            __typename
+            ... on DiscountMinimumSubtotal {
+              greaterThanOrEqualToSubtotal { amount currencyCode }
+            }
+            ... on DiscountMinimumQuantity { greaterThanOrEqualToQuantity }
+          }
           customerSelection {
             __typename
             ... on DiscountCustomerSegments { segments { id name query } }
@@ -75,6 +82,21 @@ mutation($name: String!, $query: String!) {
   segmentCreate(name: $name, query: $query) {
     segment { id name query }
     userErrors { field message }
+  }
+}
+"""
+
+UPDATE_DISCOUNT = """
+mutation($id: ID!, $d: DiscountCodeBasicInput!) {
+  discountCodeBasicUpdate(id: $id, basicCodeDiscount: $d) {
+    codeDiscountNode {
+      id
+      codeDiscount { ... on DiscountCodeBasic { title status
+        codes(first: 5) { nodes { code } }
+        minimumRequirement { ... on DiscountMinimumSubtotal {
+          greaterThanOrEqualToSubtotal { amount currencyCode } } } } }
+    }
+    userErrors { field code message }
   }
 }
 """
@@ -143,6 +165,14 @@ def describe(discount):
           % ("%g%%" % (percentage * 100) if percentage else "?"))
     print("  who            %s" % (", ".join('%s (%s)' % (s["name"], s["query"]) for s in segments)
                                    or selection.get("__typename", "?")))
+    minimum = discount.get("minimumRequirement") or {}
+    floor = (minimum.get("greaterThanOrEqualToSubtotal") or {})
+    if floor:
+        print("  minimum        %s %s subtotal" % (floor.get("currencyCode"), floor.get("amount")))
+    elif minimum.get("greaterThanOrEqualToQuantity"):
+        print("  minimum        %s items" % minimum["greaterThanOrEqualToQuantity"])
+    else:
+        print("  minimum        none")
     print("  per customer   %s" % ("once, ever" if discount.get("appliesOncePerCustomer") else "unlimited"))
     print("  total uses     %s" % (discount.get("usageLimit") or "uncapped"))
     print("  starts         %s" % discount.get("startsAt"))
@@ -158,6 +188,10 @@ def main():
     parser.add_argument("--title", default=None, help="name shown in admin")
     parser.add_argument("--everyone", action="store_true",
                         help="offer it to all customers instead of first-time buyers only")
+    parser.add_argument("--min-subtotal", type=float, default=None, metavar="AMOUNT",
+                        help="only apply above this order subtotal, in store currency")
+    parser.add_argument("--update", action="store_true",
+                        help="change an existing code instead of refusing to touch it")
     parser.add_argument("--list", action="store_true",
                         help="print every code discount on the store and exit")
     parser.add_argument("--apply", action="store_true", help="actually create it")
@@ -175,8 +209,14 @@ def main():
                  % (RED, RESET))
 
     client = sct.Shopify(store, token, version)
-    shop = client.call("{ shop { name myshopifyDomain currencyCode } }")["shop"]
+    shop = client.call("""{ shop { name myshopifyDomain currencyCode
+      currencyFormats { moneyFormat moneyWithCurrencyFormat } } }""")["shop"]
     print("%sStore%s %s (%s)" % (DIM, RESET, shop["name"], shop["myshopifyDomain"]))
+    # The storefront repeats this discount's minimum in prose, so how the shop
+    # renders money decides which Liquid filter reads like a sentence.
+    formats = shop.get("currencyFormats") or {}
+    print("%sMoney%s %s  |  with currency: %s"
+          % (DIM, RESET, formats.get("moneyFormat"), formats.get("moneyWithCurrencyFormat")))
     print("%sMode %s %s\n" % (DIM, RESET,
                               (GREEN + "APPLY" + RESET) if args.apply else (YELLOW + "dry run" + RESET)))
 
@@ -200,12 +240,47 @@ def main():
         return
 
     node, discount, codes = find_existing(client, code)
-    if node:
+    if node and not args.update:
         print("%s%s already exists%s — %s, %s"
               % (YELLOW, code, RESET, discount.get("title"), discount.get("status")))
         describe(discount)
-        print("%sLeaving it alone. Edit it in admin, or run with a different --code.%s"
+        print("%sLeaving it alone. Re-run with --update to change it, or use a different --code.%s"
               % (DIM, RESET))
+        return
+
+    if args.update:
+        if not node:
+            sys.exit("%s%s does not exist — drop --update to create it.%s" % (RED, code, RESET))
+        print("%s%s today%s" % (DIM, code, RESET))
+        describe(discount)
+
+        # Only the named fields travel. A DiscountCodeBasicInput carrying just
+        # minimumRequirement leaves the value, the segment and the usage rules
+        # exactly as they are, which is the point: this is an edit, not a
+        # rebuild from whatever defaults this script happens to hold.
+        changes = {}
+        if args.min_subtotal is not None:
+            changes["minimumRequirement"] = {
+                "subtotal": {"greaterThanOrEqualToSubtotal": "%.2f" % args.min_subtotal}
+            }
+        if not changes:
+            sys.exit("%sNothing to update — pass --min-subtotal.%s" % (RED, RESET))
+
+        print("\n%s%s%s" % (DIM, "Would change" if not args.apply else "Changing", RESET))
+        for field, value in changes.items():
+            print("  %-14s %s" % (field, json.dumps(value)))
+        if not args.apply:
+            print("\n%sDry run — nothing was written. Re-run with --apply.%s" % (YELLOW, RESET))
+            return
+
+        result = client.call(UPDATE_DISCOUNT, {"id": node["id"], "d": changes})
+        errors = result["discountCodeBasicUpdate"]["userErrors"]
+        if errors:
+            sys.exit("%sShopify rejected it: %s%s" % (RED, json.dumps(errors, indent=2), RESET))
+
+        _, fresh, _ = find_existing(client, code)
+        print("\n%sUpdated%s %s" % (GREEN, RESET, code))
+        describe(fresh)
         return
 
     segment = None
@@ -257,12 +332,18 @@ def main():
             "shippingDiscounts": True,
         },
     }
+    if args.min_subtotal is not None:
+        discount_input["minimumRequirement"] = {
+            "subtotal": {"greaterThanOrEqualToSubtotal": "%.2f" % args.min_subtotal}
+        }
 
     print("\n%sWould create%s" % (DIM, RESET) if not args.apply else "\n%sCreating%s" % (DIM, RESET))
     print("  code           %s" % code)
     print("  title          %s" % title)
     print("  value          %g%% off the whole order" % args.percent)
     print("  who            %s" % who)
+    print("  minimum        %s" % ("%.2f subtotal" % args.min_subtotal
+                                     if args.min_subtotal is not None else "none"))
     print("  per customer   once, ever")
     print("  expires        never")
     print("  combines with  product discounts, free shipping — not other order codes")

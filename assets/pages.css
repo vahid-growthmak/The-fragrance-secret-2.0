@@ -772,6 +772,10 @@ a.wo-row:hover { background: rgba(201,168,76,.16); border-color: var(--gold); }
 .wo-row .wo-go { margin-left: auto; font-size: 18px; }
 .wo-row.is-on { border-color: rgba(107,150,90,.45); background: rgba(107,150,90,.10); }
 .wo-row.is-on > .mi { color: #4F7A43; }
+/* On the bag, not yet earning: the code is attached but the order is under the
+   discount's minimum. Neutral rather than green — nothing has come off yet. */
+.wo-row.is-wait { border-color: rgba(13,10,6,.16); background: rgba(13,10,6,.04); color: var(--warm); }
+.wo-row.is-wait > .mi { color: var(--warm); }
 
 /* Band confirmation — on the ink band, so it reads light-on-dark */
 .wo-active {

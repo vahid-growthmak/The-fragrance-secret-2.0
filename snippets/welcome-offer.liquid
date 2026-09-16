@@ -3,10 +3,17 @@
 
   A theme cannot create a discount — only Shopify can. The code named in
   Settings › Welcome offer has to exist in admin › Discounts as a percentage
-  off the order, limited to one use per customer. This snippet is everything
-  the storefront can legitimately do about it: say whether it can still be
-  claimed, put it on the bag, and confirm once it is on. Before this existed
-  the band promised 10% and nothing anywhere ever applied anything.
+  off the order, limited to one use per customer, above the minimum purchase
+  amount named in the same settings. This snippet is everything the storefront
+  can legitimately do about it: say whether it can still be claimed, put it on
+  the bag, say how far a bag is from earning it, and confirm once it is on.
+  Before this existed the band promised 10% and nothing anywhere ever applied
+  anything.
+
+  The minimum is the one number that has to be kept in step by hand. Shopify
+  enforces what the discount says; the storefront only repeats it, so a
+  settings value that disagrees with admin turns into a promise checkout will
+  refuse.
 
   Claiming is a real navigation to /discount/CODE, not a background fetch.
   That URL is the documented way to attach a code to a cart and the only one
@@ -49,6 +56,24 @@
     assign wo_on = true
   endif
 
+  # The discount carries a minimum purchase amount, so the storefront has to
+  # as well: a code that silently declines under AED 150 reads as a broken
+  # code. Stated in whole currency units in settings, held in cents here
+  # because every price on the cart is.
+  assign wo_min = settings.welcome_offer_min | default: '' | strip
+  assign wo_min_cents = 0
+  if wo_min != blank
+    assign wo_min_cents = wo_min | times: 100
+  endif
+
+  # Measured against the price before discounts, which is what Shopify's
+  # minimum is tested against — comparing the discounted total would let a bag
+  # drop back under the floor the moment the discount came off it.
+  assign wo_short = 0
+  if wo_min_cents > 0 and cart.original_total_price < wo_min_cents
+    assign wo_short = wo_min_cents | minus: cart.original_total_price
+  endif
+
   # Come back to the page the shopper was on. request.path drops the query
   # string, which is what we want — no filters or pagination to re-encode.
   assign wo_back = request.path | default: '/'
@@ -65,7 +90,7 @@
   {%- if wo_style == 'cta' -%}
     {%- if customer -%}
       {%- if wo_applied -%}
-        <span class="wo-active"><span class="mi" aria-hidden="true">check_circle</span>Your {{ wo_pct }}% welcome discount is on the bag — <b>{{ wo_code }}</b></span>
+        <span class="wo-active"><span class="mi" aria-hidden="true">check_circle</span>Your {{ wo_pct }}% welcome discount is on the bag — <b>{{ wo_code }}</b>{% if wo_min_cents > 0 %}, from {{ wo_min_cents | money_with_currency }}{% endif %}</span>
         <a class="btn-o" href="{{ routes.all_products_collection_url }}"><span class="mi" aria-hidden="true">storefront</span>Start shopping</a>
       {%- else -%}
         <a class="btn-g" href="{{ wo_apply_url | strip }}"><span class="mi" aria-hidden="true">redeem</span>Apply my {{ wo_pct }}% discount</a>
@@ -81,14 +106,25 @@
   {%- endcomment -%}
   {%- elsif customer -%}
     {%- if wo_applied -%}
-      <div class="wo-row is-on">
-        <span class="mi" aria-hidden="true">check_circle</span>
-        <span>Welcome discount <b>{{ wo_code }}</b> applied — {{ wo_pct }}% off this order.</span>
-      </div>
+      {%- if wo_short > 0 -%}
+        {%- comment -%}
+          On the bag but not yet earning anything. Saying "applied" and showing
+          no money off is the version of this that gets support tickets.
+        {%- endcomment -%}
+        <div class="wo-row is-wait">
+          <span class="mi" aria-hidden="true">schedule</span>
+          <span><b>{{ wo_code }}</b> is on your bag — {{ wo_pct }}% comes off at {{ wo_min_cents | money_with_currency }}. Add <b>{{ wo_short | money_with_currency }}</b> more.</span>
+        </div>
+      {%- else -%}
+        <div class="wo-row is-on">
+          <span class="mi" aria-hidden="true">check_circle</span>
+          <span>Welcome discount <b>{{ wo_code }}</b> applied — {{ wo_pct }}% off this order.</span>
+        </div>
+      {%- endif -%}
     {%- else -%}
       <a class="wo-row" href="{{ wo_apply_url | strip }}">
         <span class="mi" aria-hidden="true">redeem</span>
-        <span>You have <b>{{ wo_pct }}% off</b> your first order — apply it</span>
+        <span>You have <b>{{ wo_pct }}% off</b> your first order{% if wo_min_cents > 0 %} over {{ wo_min_cents | money_with_currency }}{% endif %} — apply it</span>
         <span class="mi wo-go" aria-hidden="true">arrow_forward</span>
       </a>
     {%- endif -%}

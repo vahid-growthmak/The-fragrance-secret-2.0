@@ -16,6 +16,20 @@
 {%- liquid
   assign wo_pct = settings.welcome_offer_percent | default: '10' | strip
 
+  # The discount has a floor, so the band that advertises it says so. Kept as
+  # cents for the money filter, exactly as welcome-offer does.
+  assign wo_min = settings.welcome_offer_min | default: '' | strip
+  assign wo_min_cents = 0
+  if wo_min != blank
+    assign wo_min_cents = wo_min | times: 100
+  endif
+  capture wo_over
+    if wo_min_cents > 0
+      echo ' on orders over '
+      echo wo_min_cents | money_with_currency
+    endif
+  endcapture
+
   assign show_band = false
   if settings.welcome_offer_enabled and settings.welcome_offer_code != blank
     if customer
@@ -42,10 +56,10 @@
             way.
           {%- endcomment -%}
           <h2 class="sec-title">Your {{ wo_pct }}% <em>Welcome Discount</em></h2>
-          <p class="sec-sub">You're a member, so the welcome discount is yours on your first order — it comes off the total at checkout. It sits alongside everything else in your account: saved fragrances, faster checkout, full order history and member-only offers through the year.</p>
+          <p class="sec-sub">You're a member, so the welcome discount is yours on your first order{{ wo_over }} — it comes off the total at checkout. It sits alongside everything else in your account: saved fragrances, faster checkout, full order history and member-only offers through the year.</p>
         {%- else -%}
           <h2 class="sec-title">Enjoy {{ wo_pct }}% Off <em>Your First Perfume Order</em></h2>
-          <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Your {{ wo_pct }}% welcome discount is put on your bag the moment you join — no code to copy, no email to wait for. Save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
+          <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Your {{ wo_pct }}% welcome discount is put on your bag the moment you join — no code to copy, no email to wait for{% if wo_min_cents > 0 %}, on any first order over {{ wo_min_cents | money_with_currency }}{% endif %}. Save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
         {%- endif -%}
         <div class="cta-actions">
           {% render 'welcome-offer', style: 'cta' %}
@@ -53,7 +67,7 @@
       </div>
       <div class="member-card">
         <div class="mc-disc"><b>{{ wo_pct }}%</b><span>Welcome Discount</span></div>
-        <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant {{ wo_pct }}% welcome discount</b><span>On your bag the moment you join</span></div></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant {{ wo_pct }}% welcome discount</b><span>{% if wo_min_cents > 0 %}On first orders over {{ wo_min_cents | money_with_currency }}{% else %}On your bag the moment you join{% endif %}</span></div></div>
         <div class="mc-perk"><span class="mi" aria-hidden="true">favorite</span><div><b>Save your favourite fragrances</b><span>Build your personal wishlist</span></div></div>
         <div class="mc-perk"><span class="mi" aria-hidden="true">local_shipping</span><div><b>Track every order</b><span>Full order history in one place</span></div></div>
         <div class="mc-perk"><span class="mi" aria-hidden="true">bolt</span><div><b>Faster checkout</b><span>Saved details, fewer steps</span></div></div>

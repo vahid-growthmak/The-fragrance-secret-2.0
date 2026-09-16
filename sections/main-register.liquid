@@ -20,7 +20,14 @@
       {%- if settings.welcome_offer_enabled and settings.welcome_offer_code != blank -%}
         <div class="wo-row">
           <span class="mi" aria-hidden="true">redeem</span>
-          <span>Your <b>{{ settings.welcome_offer_percent | default: '10' | strip }}% welcome discount</b> goes on your bag as soon as the account is created.</span>
+          {%- liquid
+            assign reg_min = settings.welcome_offer_min | default: '' | strip
+            assign reg_min_cents = 0
+            if reg_min != blank
+              assign reg_min_cents = reg_min | times: 100
+            endif
+          -%}
+          <span>Your <b>{{ settings.welcome_offer_percent | default: '10' | strip }}% welcome discount</b> goes on your bag as soon as the account is created{% if reg_min_cents > 0 %}, and comes off any first order over {{ reg_min_cents | money_with_currency }}{% endif %}.</span>
         </div>
       {%- endif -%}
       {%- form 'create_customer' -%}

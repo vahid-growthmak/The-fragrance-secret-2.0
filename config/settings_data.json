@@ -19,6 +19,7 @@
     "welcome_offer_enabled": true,
     "welcome_offer_code": "WELCOME10",
     "welcome_offer_percent": "10",
+    "welcome_offer_min": "150",
     "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
