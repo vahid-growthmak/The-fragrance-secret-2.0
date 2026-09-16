@@ -1,0 +1,39 @@
+{%- comment -%}
+  Discount rows for the order summary, shared by the cart page and the drawer
+  so both reconcile the same way: Subtotal is the price before any discount,
+  each discount is named on its own row, and the Total is what Shopify will
+  actually charge. Until now neither surface showed a discount at all — a
+  welcome code came off silently at checkout, which is the same as not
+  believing it worked.
+
+  cart.total_discount also covers line-level discounts, and those have no
+  cart-level application to name, so whatever is left after the named ones
+  gets one honest row rather than a summary that does not add up.
+
+  Params: row_class — the caller's own row class, since the page and the
+  drawer style their summaries differently.
+{%- endcomment -%}
+
+{%- liquid
+  assign cd_row = row_class | default: 'co-trow'
+  assign cd_named = 0
+  for cd_d in cart.cart_level_discount_applications
+    assign cd_named = cd_named | plus: cd_d.total_allocated_amount
+  endfor
+  assign cd_rest = cart.total_discount | minus: cd_named
+-%}
+
+{%- if cart.total_discount > 0 -%}
+  {%- for cd_d in cart.cart_level_discount_applications -%}
+    <div class="{{ cd_row }} is-disc">
+      <span><span class="mi" aria-hidden="true">sell</span>{{ cd_d.title }}</span>
+      <span>&minus;{{ cd_d.total_allocated_amount | money_with_currency }}</span>
+    </div>
+  {%- endfor -%}
+  {%- if cd_rest > 0 -%}
+    <div class="{{ cd_row }} is-disc">
+      <span><span class="mi" aria-hidden="true">sell</span>Item discounts</span>
+      <span>&minus;{{ cd_rest | money_with_currency }}</span>
+    </div>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,115 @@
+{%- comment -%}
+  The first-order welcome discount, in one place.
+
+  A theme cannot create a discount — only Shopify can. The code named in
+  Settings › Welcome offer has to exist in admin › Discounts as a percentage
+  off the order, limited to one use per customer. This snippet is everything
+  the storefront can legitimately do about it: say whether it can still be
+  claimed, put it on the bag, and confirm once it is on. Before this existed
+  the band promised 10% and nothing anywhere ever applied anything.
+
+  Claiming is a real navigation to /discount/CODE, not a background fetch.
+  That URL is the documented way to attach a code to a cart and the only one
+  Shopify guarantees; it hands the shopper straight back to `redirect`, so the
+  trip costs a reload and nothing else.
+
+  Params
+    style  'cta'  gold button — the membership band
+           'row'  compact strip — cart page, cart drawer, account page
+    auto   true   claim it without being asked, once per browser. Only the
+                  account page passes this: it is where sign-up lands, and
+                  where "applied automatically" has to come true.
+{%- endcomment -%}
+
+{%- liquid
+  assign wo_code = settings.welcome_offer_code | default: '' | strip | upcase
+  assign wo_pct = settings.welcome_offer_percent | default: '10' | strip
+  assign wo_style = style | default: 'row'
+
+  # Cart-level applications carry the code as their title, so this is what
+  # "already on the bag" looks like from Liquid. Titles come back in whatever
+  # case the merchant typed, hence the upcase on both sides.
+  assign wo_applied = false
+  for wo_d in cart.cart_level_discount_applications
+    assign wo_title = wo_d.title | upcase
+    if wo_title == wo_code
+      assign wo_applied = true
+    endif
+  endfor
+
+  # One order is all it takes to spend a first-order discount. A guest is
+  # eligible in the sense that joining is what claims it.
+  assign wo_spent = false
+  if customer and customer.orders_count > 0
+    assign wo_spent = true
+  endif
+
+  assign wo_on = false
+  if settings.welcome_offer_enabled and wo_code != blank and wo_spent == false
+    assign wo_on = true
+  endif
+
+  # Come back to the page the shopper was on. request.path drops the query
+  # string, which is what we want — no filters or pagination to re-encode.
+  assign wo_back = request.path | default: '/'
+-%}
+
+{%- if wo_on -%}
+  {%- capture wo_apply_url -%}/discount/{{ wo_code | url_encode }}?redirect={{ wo_back | url_encode }}{%- endcapture -%}
+
+  {%- comment -%}
+    Truthiness, not `customer == blank`: a nil customer is only reliably
+    testable this way, and an equality test that quietly reads false hands the
+    signed-in apply button to logged-out visitors.
+  {%- endcomment -%}
+  {%- if wo_style == 'cta' -%}
+    {%- if customer -%}
+      {%- if wo_applied -%}
+        <span class="wo-active"><span class="mi" aria-hidden="true">check_circle</span>Your {{ wo_pct }}% welcome discount is on the bag — <b>{{ wo_code }}</b></span>
+        <a class="btn-o" href="{{ routes.all_products_collection_url }}"><span class="mi" aria-hidden="true">storefront</span>Start shopping</a>
+      {%- else -%}
+        <a class="btn-g" href="{{ wo_apply_url | strip }}"><span class="mi" aria-hidden="true">redeem</span>Apply my {{ wo_pct }}% discount</a>
+      {%- endif -%}
+    {%- else -%}
+      <a class="btn-g" href="{{ routes.account_register_url }}"><span class="mi" aria-hidden="true">person_add</span>Claim {{ wo_pct }}% Discount</a>
+    {%- endif -%}
+
+  {%- comment -%}
+    The compact strip is for signed-in customers only. A guest standing at the
+    cart is being asked to open an account mid-checkout, which is a worse trade
+    than the band above the footer already offers them.
+  {%- endcomment -%}
+  {%- elsif customer -%}
+    {%- if wo_applied -%}
+      <div class="wo-row is-on">
+        <span class="mi" aria-hidden="true">check_circle</span>
+        <span>Welcome discount <b>{{ wo_code }}</b> applied — {{ wo_pct }}% off this order.</span>
+      </div>
+    {%- else -%}
+      <a class="wo-row" href="{{ wo_apply_url | strip }}">
+        <span class="mi" aria-hidden="true">redeem</span>
+        <span>You have <b>{{ wo_pct }}% off</b> your first order — apply it</span>
+        <span class="mi wo-go" aria-hidden="true">arrow_forward</span>
+      </a>
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if auto and customer and wo_applied == false -%}
+    <script>
+      /* Straight after sign-up, this is the redirect that makes "applied
+         automatically" true. The flag is written before the trip, not after:
+         a code that has been deleted, expired or spent redirects back having
+         applied nothing, and a flag set afterwards would send the account
+         page round that loop on every load. Once set, the visible Apply
+         button above is the way back in. */
+      (function () {
+        var key = 'tfs_welcome_{{ wo_code | escape }}_{{ customer.id }}';
+        try {
+          if (localStorage.getItem(key)) return;
+          localStorage.setItem(key, '1');
+        } catch (e) { return; }
+        window.location.replace({{ wo_apply_url | strip | json }});
+      })();
+    </script>
+  {%- endif -%}
+{%- endif -%}

@@ -1,6 +1,7 @@
 {%- comment -%}
-  Global band above the footer. Uses the same 10% membership band as the
-  collection and hub pages, so there is one version of it across the site.
+  Global band above the footer. Uses the same membership band as the collection
+  and hub pages, so there is one version of it across the site. What it offers,
+  and whether it appears at all, is decided by the welcome-offer snippet.
 {%- endcomment -%}
 
 {% render 'member-band' %}
@@ -9,7 +10,7 @@
 {
   "name": "Membership band",
   "settings": [
-    { "type": "paragraph", "content": "Shows the 10% welcome-discount band above the footer, hidden for signed-in customers. The copy lives in snippets/member-band.liquid so every page stays identical." }
+    { "type": "paragraph", "content": "Shows the welcome-discount band above the footer. It follows the offer: guests are asked to join, members who have not ordered get the button that puts the code on their bag, and it disappears once the discount has been used. The code, the percentage and the on/off switch live in Theme settings \u203a Welcome offer; the copy lives in snippets/member-band.liquid so every page stays identical." }
   ],
   "presets": [ { "name": "Membership band" } ]
 }

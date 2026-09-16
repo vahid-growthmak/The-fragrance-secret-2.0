@@ -29,5 +29,14 @@
       ], "default": "ltr" },
       { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number", "info": "With country code, digits only (e.g. 971501234567). Used by the WhatsApp float and concierge." }
     ]
+  },
+  {
+    "name": "Welcome offer",
+    "settings": [
+      { "type": "paragraph", "content": "The first-order discount shown above the footer. A theme cannot create a discount, so the code below must exist in Shopify admin \u203a Discounts: a discount code, percentage off the order, customer eligibility set to customers with an account, and \"limit to one use per customer\" ticked. The theme puts the code on the bag; Shopify decides who may keep it." },
+      { "type": "checkbox", "id": "welcome_offer_enabled", "label": "Show the welcome offer", "default": true },
+      { "type": "text", "id": "welcome_offer_code", "label": "Discount code", "default": "WELCOME10", "info": "Must match the code in Shopify admin \u203a Discounts exactly. Case does not matter." },
+      { "type": "text", "id": "welcome_offer_percent", "label": "Percentage shown in the copy", "default": "10", "info": "Digits only. This is wording, not the discount itself \u2014 change the real amount on the discount in admin and keep the two in step." }
+    ]
   }
 ]

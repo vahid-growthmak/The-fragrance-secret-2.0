@@ -1,23 +1,59 @@
 {%- comment -%}
   Membership band — "Enjoy 10% off your first perfume order".
-  Rendered globally above the footer by the customer-login-cta section, and
-  hidden for signed-in customers.
+  Rendered globally above the footer by the customer-login-cta section.
+
+  It used to be hidden from every signed-in customer, which meant the one
+  person who could actually claim the discount — someone who had just made an
+  account and not yet ordered — was the one person never shown it. It now
+  follows the offer: a guest is asked to join, a member who has not ordered is
+  given the button that puts the code on their bag, and a member carrying the
+  code is told so. It disappears only once the discount is spent.
+
+  The percentage and the code both come from Settings › Welcome offer, so the
+  copy cannot drift away from the discount that Shopify will honour.
 {%- endcomment -%}
 
-{%- unless customer -%}
+{%- liquid
+  assign wo_pct = settings.welcome_offer_percent | default: '10' | strip
+
+  assign show_band = false
+  if settings.welcome_offer_enabled and settings.welcome_offer_code != blank
+    if customer
+      if customer.orders_count == 0
+        assign show_band = true
+      endif
+    else
+      assign show_band = true
+    endif
+  endif
+-%}
+
+{%- if show_band -%}
   <section class="section"><div class="container">
     <div class="cta-band member-band">
       <div class="member-copy">
         <span class="label" style="color:var(--gold)">Welcome to The Fragrance Secrets</span>
-        <h2 class="sec-title">Enjoy 10% Off <em>Your First Perfume Order</em></h2>
-        <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Receive an instant 10% welcome discount on your first purchase, save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
+        {%- if customer -%}
+          {%- comment -%}
+            Deliberately stateless copy: whether the code is already on the bag
+            is known inside welcome-offer, not here, and a headline that
+            guessed would tell half the members the wrong thing. The control
+            below carries the state; the heading just has to be true either
+            way.
+          {%- endcomment -%}
+          <h2 class="sec-title">Your {{ wo_pct }}% <em>Welcome Discount</em></h2>
+          <p class="sec-sub">You're a member, so the welcome discount is yours on your first order — it comes off the total at checkout. It sits alongside everything else in your account: saved fragrances, faster checkout, full order history and member-only offers through the year.</p>
+        {%- else -%}
+          <h2 class="sec-title">Enjoy {{ wo_pct }}% Off <em>Your First Perfume Order</em></h2>
+          <p class="sec-sub">Create your free account and become part of The Fragrance Secrets community. Your {{ wo_pct }}% welcome discount is put on your bag the moment you join — no code to copy, no email to wait for. Save your favourite fragrances, enjoy faster checkout, track every order, and unlock exclusive member-only offers throughout the year.</p>
+        {%- endif -%}
         <div class="cta-actions">
-          <a class="btn-g" href="{{ routes.account_register_url }}"><span class="mi" aria-hidden="true">person_add</span>Claim 10% Discount</a>
+          {% render 'welcome-offer', style: 'cta' %}
         </div>
       </div>
       <div class="member-card">
-        <div class="mc-disc"><b>10%</b><span>Welcome Discount</span></div>
-        <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant 10% welcome discount</b><span>Applied automatically at checkout</span></div></div>
+        <div class="mc-disc"><b>{{ wo_pct }}%</b><span>Welcome Discount</span></div>
+        <div class="mc-perk"><span class="mi" aria-hidden="true">percent</span><div><b>Instant {{ wo_pct }}% welcome discount</b><span>On your bag the moment you join</span></div></div>
         <div class="mc-perk"><span class="mi" aria-hidden="true">favorite</span><div><b>Save your favourite fragrances</b><span>Build your personal wishlist</span></div></div>
         <div class="mc-perk"><span class="mi" aria-hidden="true">local_shipping</span><div><b>Track every order</b><span>Full order history in one place</span></div></div>
         <div class="mc-perk"><span class="mi" aria-hidden="true">bolt</span><div><b>Faster checkout</b><span>Saved details, fewer steps</span></div></div>
@@ -25,4 +61,4 @@
       </div>
     </div>
   </div></section>
-{%- endunless -%}
+{%- endif -%}

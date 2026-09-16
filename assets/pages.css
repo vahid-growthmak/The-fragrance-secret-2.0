@@ -752,6 +752,42 @@ header.light .nav-burger { color: var(--warm); }
 .co-trow { display: flex; justify-content: space-between; font-size: .86rem; color: var(--warm); padding: 5px 0; }
 .co-trow.grand { font-size: 1.15rem; color: var(--ink); font-weight: 600; padding-top: 14px; margin-top: 8px; border-top: 1px solid rgba(13,10,6,.12); }
 .co-trow.grand b { font-family: var(--fb); font-weight: 700; }
+
+/* ── Welcome offer ────────────────────────────────────────────────
+   The first-order discount: a strip on the cart, the drawer and the account
+   page, plus the confirmation that replaces the band's CTA once the code is
+   on the bag. Gold as an outline and an icon, never as a fill — the band it
+   sits in is already the dark third of the palette. */
+.wo-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px; margin-bottom: 14px;
+  border: 1px solid rgba(201,168,76,.42); border-radius: 8px;
+  background: rgba(201,168,76,.08);
+  font-size: .82rem; color: var(--charcoal); line-height: 1.4;
+  transition: background .2s, border-color .2s;
+}
+a.wo-row:hover { background: rgba(201,168,76,.16); border-color: var(--gold); }
+.wo-row b { font-weight: 700; color: var(--ink); }
+.wo-row > .mi { font-size: 19px; color: var(--gold-dk); flex-shrink: 0; }
+.wo-row .wo-go { margin-left: auto; font-size: 18px; }
+.wo-row.is-on { border-color: rgba(107,150,90,.45); background: rgba(107,150,90,.10); }
+.wo-row.is-on > .mi { color: #4F7A43; }
+
+/* Band confirmation — on the ink band, so it reads light-on-dark */
+.wo-active {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 11px 16px; border-radius: 8px;
+  border: 1px solid rgba(226,201,126,.42); background: rgba(226,201,126,.10);
+  font-family: var(--fb); font-size: .8rem; color: var(--cream); letter-spacing: .02em;
+}
+.wo-active .mi { font-size: 19px; color: var(--gold-lt); }
+.wo-active b { color: var(--gold-lt); letter-spacing: .08em; }
+
+/* Discount rows in the order summary */
+.co-trow.is-disc { color: var(--gold-dk); }
+.co-trow.is-disc span:first-child { display: inline-flex; align-items: center; gap: 7px; }
+.co-trow.is-disc .mi { font-size: 15px; }
+.co-trow.is-disc span:last-child { font-weight: 700; }
 .co-promo { display: flex; gap: 8px; padding: 16px 26px; }
 .co-promo input { flex: 1; padding: 11px 14px; border: 1px solid rgba(13,10,6,.16); border-radius: 6px; font-family: var(--fb); font-size: .84rem; background: var(--cream); }
 .co-place { display: flex; align-items: center; justify-content: center; width: 100%; text-align: center; }

@@ -1326,6 +1326,17 @@ else document.addEventListener('DOMContentLoaded', initApp);
         else if (!nf && lf) lf.remove();
         var nt = next.querySelector('.cd-title'), lt = live.querySelector('.cd-title');
         if (nt && lt) lt.innerHTML = nt.innerHTML;
+
+        /* Shopify renders this drawer at /?section_id=cart-drawer, so any
+           Liquid that asked for request.path was told "/" — the welcome
+           discount link would have applied the code and then dropped the
+           shopper on the homepage, losing the page they were browsing. Point
+           it back at where they actually are. */
+        var apply = live.querySelector('a.wo-row[href*="/discount/"]');
+        if (apply) {
+          apply.href = apply.href.replace(/([?&]redirect=)[^&]*/,
+            '$1' + encodeURIComponent(location.pathname));
+        }
       });
   }
 

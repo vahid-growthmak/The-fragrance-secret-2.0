@@ -83,8 +83,16 @@
             {%- endif -%}
             <div class="ship-bar"><i id="shipBar" style="width:{{ ship_pct }}%"></i></div>
           </div>
+          {% render 'welcome-offer', style: 'row' %}
+          {%- comment -%}
+            Subtotal is the price before discounts and Total is what Shopify
+            will charge, so the two only differ when something has actually
+            come off — and when it has, #cartDiscounts names it. Both are kept
+            in step by repaint() below after every quantity change.
+          {%- endcomment -%}
           <div class="co-totals">
-            <div class="co-trow"><span>Subtotal</span><span id="cartSub">{{ cart.total_price | money_with_currency }}</span></div>
+            <div class="co-trow"><span>Subtotal</span><span id="cartSub">{{ cart.original_total_price | money_with_currency }}</span></div>
+            <div id="cartDiscounts">{% render 'cart-discounts', row_class: 'co-trow' %}</div>
             <div class="co-trow"><span>Delivery</span><span id="cartShip" style="color:var(--gold-dk)">{% if cart.total_price >= free_ship_threshold %}Free{% else %}Calculated at checkout{% endif %}</span></div>
             <div class="co-trow"><span>VAT (5%)</span><span>Included</span></div>
             <div class="co-trow grand"><span>Total</span><b id="cartTotal">{{ cart.total_price | money_with_currency }}</b></div>
@@ -128,6 +136,11 @@
     return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
+  }
+
+  function discRow(title, amount) {
+    return '<div class="co-trow is-disc"><span><span class="mi" aria-hidden="true">sell</span>' +
+      esc(title) + '</span><span>\u2212' + window.formatMoney(amount) + '</span></div>';
   }
 
   /* Mirrors the Liquid row above, for a product added from the cross-sell that
@@ -177,8 +190,24 @@
 
     var sub = document.getElementById('cartSub');
     var tot = document.getElementById('cartTotal');
-    if (sub) sub.textContent = window.formatMoney(cart.total_price);
+    if (sub) sub.textContent = window.formatMoney(cart.original_total_price);
     if (tot) tot.textContent = window.formatMoney(cart.total_price);
+
+    /* Mirrors snippets/cart-discounts.liquid. A percentage discount is
+       re-allocated across the lines on every change, so the amount moves with
+       the quantity — leaving the Liquid-rendered row in place would show the
+       discount for a bag that no longer exists. */
+    var discBox = document.getElementById('cartDiscounts');
+    if (discBox) {
+      var rows = '', named = 0;
+      (cart.cart_level_discount_applications || []).forEach(function (d) {
+        named += d.total_allocated_amount;
+        rows += discRow(d.title, d.total_allocated_amount);
+      });
+      var rest = (cart.total_discount || 0) - named;
+      if (rest > 0) rows += discRow('Item discounts', rest);
+      discBox.innerHTML = rows;
+    }
 
     var ship = document.getElementById('cartShip');
     if (ship) ship.textContent = cart.total_price >= FREE_SHIP ? 'Free' : 'Calculated at checkout';

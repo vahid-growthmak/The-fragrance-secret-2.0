@@ -7958,6 +7958,33 @@ html body .jdgm-form textarea:focus {
       color: var(--ink)
     }
 
+    /* Struck-through pre-discount subtotal, and the discount lines under it.
+       Only rendered when something has actually come off the bag. */
+    .cd-sub--was {
+      font-size: .82rem;
+      color: var(--muted)
+    }
+
+    .cd-sub--was span:last-child { text-decoration: line-through }
+
+    .cd-sub--disc {
+      font-size: .82rem;
+      color: var(--gold-dk);
+      margin-top: 2px
+    }
+
+    .cd-sub--disc span:first-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .cd-sub--disc .mi { font-size: 15px }
+
+    .cd-sub--disc span:last-child { font-weight: 700 }
+
+    .cd-foot .wo-row { margin-bottom: 12px }
+
     .cd-note {
       font-size: .72rem;
       color: var(--muted);

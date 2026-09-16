@@ -11,6 +11,18 @@
 <section class="section"><div class="container">
   <div class="auth-wrap">
     <div class="auth-card">
+      {%- comment -%}
+        The band sends people here promising a discount, so the promise has to
+        survive the trip. Static copy rather than the welcome-offer snippet:
+        this page is only ever seen logged out, where that snippet's job is to
+        render the button that got them here.
+      {%- endcomment -%}
+      {%- if settings.welcome_offer_enabled and settings.welcome_offer_code != blank -%}
+        <div class="wo-row">
+          <span class="mi" aria-hidden="true">redeem</span>
+          <span>Your <b>{{ settings.welcome_offer_percent | default: '10' | strip }}% welcome discount</b> goes on your bag as soon as the account is created.</span>
+        </div>
+      {%- endif -%}
       {%- form 'create_customer' -%}
         {%- if form.errors -%}
           <div class="form-note form-note--err" role="alert">

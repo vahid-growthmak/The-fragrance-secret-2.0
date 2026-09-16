@@ -8,6 +8,15 @@
     <a class="btn-o" href="{{ routes.account_logout_url }}">Log out</a>
   </div>
 </div></section>
+{%- comment -%}
+  Sign-up lands here, so this is where the welcome discount has to become
+  real. `auto` claims it once without being asked; after that the snippet
+  either confirms the code is on the bag or offers the button again.
+{%- endcomment -%}
+<section class="section" style="padding-bottom:0"><div class="container">
+  {% render 'welcome-offer', style: 'row', auto: true %}
+</div></section>
+
 <section class="section"><div class="container">
   <div class="sec-head"><span class="label">Order History</span><h2 class="sec-title">Your <em>Orders</em></h2></div>
   {%- if customer.orders.size > 0 -%}

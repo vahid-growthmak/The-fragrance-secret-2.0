@@ -77,7 +77,20 @@
 
     {%- if cart.item_count > 0 -%}
       <footer class="cd-foot">
-        <div class="cd-sub"><span>Subtotal</span><b>{{ cart.total_price | money_with_currency }}</b></div>
+        {% render 'welcome-offer', style: 'row' %}
+        {%- comment -%}
+          With a discount on the bag the single Subtotal line was a lie by
+          omission: it showed the discounted figure with nothing to say why it
+          differed from the prices above it. Before-price, named discounts,
+          then the real total.
+        {%- endcomment -%}
+        {%- if cart.total_discount > 0 -%}
+          <div class="cd-sub cd-sub--was"><span>Subtotal</span><span>{{ cart.original_total_price | money_with_currency }}</span></div>
+          {% render 'cart-discounts', row_class: 'cd-sub cd-sub--disc' %}
+          <div class="cd-sub"><span>Total</span><b>{{ cart.total_price | money_with_currency }}</b></div>
+        {%- else -%}
+          <div class="cd-sub"><span>Subtotal</span><b>{{ cart.total_price | money_with_currency }}</b></div>
+        {%- endif -%}
         <p class="cd-note">Taxes and delivery calculated at checkout.</p>
         {%- comment -%}
           "Buy" leaves for the real checkout — the one place a full-page
