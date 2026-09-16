@@ -27,7 +27,13 @@ spec.loader.exec_module(sct)
 GREEN, YELLOW, RED, DIM, RESET = sct.GREEN, sct.YELLOW, sct.RED, sct.DIM, sct.RESET
 
 SCOPES = """
-{ currentAppInstallation { accessScopes { handle } app { title } } }
+{
+  currentAppInstallation {
+    id
+    accessScopes { handle }
+    app { id title handle developerName installation { id } }
+  }
+}
 """
 
 # What the scripts in this folder need, and which of them needs it.
@@ -62,10 +68,17 @@ def main():
     client = sct.Shopify(store, token, version)
     data = client.call(SCOPES)["currentAppInstallation"]
     granted = sorted(s["handle"] for s in data["accessScopes"])
-    app = (data.get("app") or {}).get("title") or "this app"
+    app = data.get("app") or {}
 
+    # Identity, not just a name: a scope release only reaches this token if it
+    # was made on *this* app. Editing a different app in the same admin is the
+    # failure that looks exactly like a release that did not work.
     print("%sStore%s %s" % (DIM, RESET, store))
-    print("%sApp  %s %s — %d scopes\n" % (DIM, RESET, app, len(granted)))
+    print("%sApp  %s %s (handle %s, by %s)"
+          % (DIM, RESET, app.get("title") or "?", app.get("handle") or "?",
+             app.get("developerName") or "?"))
+    print("%s     %s%s" % (DIM, app.get("id") or "?", RESET))
+    print("%sScopes%s %d granted\n" % (DIM, RESET, len(granted)))
 
     for scope in granted:
         print("  %s%s%s" % (GREEN, scope, RESET))
