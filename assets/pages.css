@@ -152,6 +152,22 @@ body.nav-open { overflow: hidden; }
 header.dark .nav-burger { color: rgba(255,255,255,.85); }
 header.light .nav-burger { color: var(--warm); }
 .nav-burger .mi { font-size: 24px; }
+/* The top-level nav carries four entries since Perfume Oil joined it, and
+   between the drawer breakpoint and about 1150px the row ran out of room and
+   broke labels across two lines mid-phrase — "Perfume / Oil", "About / Us".
+   Tighter gaps and a slightly smaller face buy back the width; nowrap makes
+   sure a label is never split even if a future entry makes it tight again.
+   Desktop only: inside the drawer these are stacked rows with room to spare. */
+@media (min-width: 1025px) {
+  .nav-links > .nav-toplink,
+  .nav-item > .nav-toplink { white-space: nowrap; }
+}
+
+@media (min-width: 1025px) and (max-width: 1150px) {
+  .nav-links { gap: 18px; }
+  .nav-links .nav-toplink { font-size: .66rem; letter-spacing: .1em; }
+}
+
 .nav-links a.nav-active { color: var(--gold) !important; }
 .nav-links a.nav-active::after { width: 100%; }
 

@@ -19,6 +19,11 @@
   case request.page_type
     when 'collection'
       assign nav_active = 'shop'
+      # Perfume Oil has its own top-level entry, so it claims the underline on
+      # its own page instead of leaving Shop marked current.
+      if collection.handle == 'perfume-oil'
+        assign nav_active = 'oil'
+      endif
     when 'product'
       assign nav_active = 'shop'
     when 'list-collections'
@@ -125,6 +130,14 @@
           </div>
         </div></div>
       </div>
+
+      {%- comment -%}
+        Perfume Oil is in the Shop mega-menu as well, under Shop by Category.
+        It is repeated at the top level because it is a category people come
+        looking for by name rather than browse into — one tap from anywhere,
+        instead of opening Shop and reading a list of ten.
+      {%- endcomment -%}
+      <a href="/collections/perfume-oil" class="nav-toplink{% if nav_active == 'oil' %} nav-active{% endif %}"{% if nav_active == 'oil' %} aria-current="page"{% endif %}>Perfume Oil</a>
 
       <a href="/pages/brands" class="nav-toplink{% if nav_active == 'brands' %} nav-active{% endif %}"{% if nav_active == 'brands' %} aria-current="page"{% endif %}>Brands</a>
       {%- comment -%}
