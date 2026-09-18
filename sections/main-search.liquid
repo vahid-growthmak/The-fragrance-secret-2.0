@@ -14,17 +14,26 @@
       stretched across the whole input and hid it. Below 600px the field now
       stacks instead, so the input and the button each get a full row.
     {%- endcomment -%}
-    <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+    {%- comment -%}
+      data-predictive-search opts this field into the same suggestions the
+      header panel uses — one behaviour, wired in app.js, rather than a search
+      page that behaves differently from the search bar that leads to it.
+    {%- endcomment -%}
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-form"
+          data-predictive-search>
       <input type="hidden" name="type" value="product">
       <div class="search-field">
         <span class="mi search-field-icon" aria-hidden="true">search</span>
-        <input id="searchInput" name="q" type="search" autocomplete="off" value="{{ search.terms | escape }}"
+        <input id="searchInput" name="q" type="search" autocomplete="off" data-search-input
+          role="combobox" aria-expanded="false" aria-controls="searchPageResults" aria-autocomplete="list"
+          value="{{ search.terms | escape }}"
           placeholder="Try &ldquo;Lattafa&rdquo;, &ldquo;oud&rdquo;, &ldquo;gift for him&rdquo;…"
           aria-label="Search fragrances"
           class="search-field-input">
         <button type="submit" class="btn-g search-field-btn">Search</button>
       </div>
     </form>
+    <div class="search-page-panel" id="searchPageResults" data-search-results></div>
 
     <!-- POPULAR SEARCHES -->
     <div style="margin-top:30px">

@@ -1,0 +1,101 @@
+{%- comment -%}
+  Search suggestions, rendered by Shopify rather than assembled in JS.
+
+  app.js fetches /search/suggest?q=…&section_id=predictive-search and drops the
+  result straight into the dropdown. Doing it this way rather than reading
+  suggest.json means prices come out of the same money filter as every other
+  price on the site — this shop's format is "{{amount}} AED" wrapped in the
+  currency converter's span, so a price formatted by hand in JavaScript would
+  both look wrong and stop converting for anyone browsing in another currency.
+
+  The markup is a listbox: app.js moves aria-activedescendant between the
+  [role="option"] rows as the arrow keys are pressed, so every id here has to
+  stay unique and predictable.
+{%- endcomment -%}
+
+{%- if predictive_search.performed -%}
+  {%- liquid
+    assign products = predictive_search.resources.products
+    assign collections = predictive_search.resources.collections
+    assign queries = predictive_search.resources.queries
+    assign total = products.size | plus: collections.size | plus: queries.size
+  -%}
+
+  {%- if total == 0 -%}
+    <div class="ps-empty" role="status">
+      No matches for <b>{{ predictive_search.terms | escape }}</b>. Press Enter to search everything.
+    </div>
+  {%- else -%}
+    <div class="ps-results" role="listbox" aria-label="Search suggestions">
+      {%- if products.size > 0 -%}
+        <div class="ps-group">
+          <div class="ps-group-head">Products</div>
+          {%- for product in products -%}
+            <a class="ps-row ps-product" role="option" aria-selected="false"
+               id="ps-opt-p{{ forloop.index }}" href="{{ product.url }}" tabindex="-1">
+              <span class="ps-thumb">
+                {%- if product.featured_image -%}
+                  <img src="{{ product.featured_image | image_url: width: 120 }}"
+                       alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                       width="48" height="48" loading="lazy">
+                {%- else -%}
+                  <span class="mi" aria-hidden="true">image</span>
+                {%- endif -%}
+              </span>
+              <span class="ps-body">
+                <span class="ps-title">{{ product.title }}</span>
+                {%- if product.vendor != blank -%}
+                  <span class="ps-meta">{{ product.vendor }}</span>
+                {%- endif -%}
+              </span>
+              <span class="ps-price">
+                {%- if product.price_varies -%}From {% endif -%}
+                {{ product.price_min | money_with_currency }}
+              </span>
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if collections.size > 0 -%}
+        <div class="ps-group">
+          <div class="ps-group-head">Collections</div>
+          {%- for collection in collections -%}
+            <a class="ps-row" role="option" aria-selected="false"
+               id="ps-opt-c{{ forloop.index }}" href="{{ collection.url }}" tabindex="-1">
+              <span class="mi ps-ic" aria-hidden="true">category</span>
+              <span class="ps-body"><span class="ps-title">{{ collection.title }}</span></span>
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if queries.size > 0 -%}
+        <div class="ps-group">
+          <div class="ps-group-head">Suggestions</div>
+          {%- for query in queries -%}
+            <a class="ps-row" role="option" aria-selected="false"
+               id="ps-opt-q{{ forloop.index }}" href="{{ query.url }}" tabindex="-1">
+              <span class="mi ps-ic" aria-hidden="true">search</span>
+              <span class="ps-body"><span class="ps-title">{{ query.styled_text }}</span></span>
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- comment -%}
+        Always last, always reachable: the suggestions are capped, so the way
+        to the full result set has to be on the list rather than implied.
+      {%- endcomment -%}
+      <a class="ps-row ps-all" role="option" aria-selected="false" id="ps-opt-all"
+         href="{{ routes.search_url }}?q={{ predictive_search.terms | url_encode }}&type=product" tabindex="-1">
+        <span class="mi ps-ic" aria-hidden="true">arrow_forward</span>
+        <span class="ps-body"><span class="ps-title">See all results for “{{ predictive_search.terms | escape }}”</span></span>
+      </a>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{ "name": "Search suggestions", "settings": [] }
+{% endschema %}

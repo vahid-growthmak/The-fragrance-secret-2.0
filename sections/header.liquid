@@ -150,13 +150,25 @@
         together at the end.
       {%- endcomment -%}
       <a href="/collections/perfume-oil" class="nav-toplink{% if nav_active == 'oil' %} nav-active{% endif %}"{% if nav_active == 'oil' %} aria-current="page"{% endif %}>Perfume Oil</a>
-      <a href="{{ routes.search_url }}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">search</span>Search</a>
+      {%- comment -%}
+        Same treatment as the icon: opens the panel rather than loading the
+        search page. Tapping it closes the drawer first, since the panel it
+        opens sits behind it.
+      {%- endcomment -%}
+      <a href="{{ routes.search_url }}" class="nav-toplink nav-drawer-extra" data-search-toggle><span class="mi" aria-hidden="true">search</span>Search</a>
       <a href="{{ routes.account_url }}" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">person</span>Account</a>
       <a href="/pages/wishlist" class="nav-toplink nav-drawer-extra"><span class="mi" aria-hidden="true">favorite</span>Wishlist</a>
     </nav>
 
     <div class="nav-actions">
-      <a class="ni" href="{{ routes.search_url }}" title="Search"><span class="mi" aria-hidden="true">search</span></a>
+      {%- comment -%}
+        Still an anchor to /search, not a button: without JS it has to go
+        somewhere, and the search page is where. app.js intercepts the click
+        and opens the panel below instead, so the trip only happens for a
+        real search — on Enter, or on a suggestion.
+      {%- endcomment -%}
+      <a class="ni" href="{{ routes.search_url }}" title="Search" data-search-toggle
+         aria-expanded="false" aria-controls="hdrSearch"><span class="mi" aria-hidden="true">search</span></a>
       <a class="ni" href="{{ routes.account_url }}" title="Account"><span class="mi" aria-hidden="true">person</span></a>
       {%- comment -%}
         The wishlist count lives in localStorage, so it cannot be rendered
@@ -173,6 +185,33 @@
       </a>
     </div>
   </div>
+  {%- comment -%}
+    The search panel. Inside <header> so it travels with the sticky bar, and
+    after .nav-wrap so it drops below the icon row rather than displacing it.
+
+    The form is a plain GET to the search page: typing and pressing Enter
+    works with no JavaScript at all, which is the whole reason it is a form
+    and not a div. app.js adds the suggestions and the keyboard handling on
+    top of that.
+  {%- endcomment -%}
+  <div class="hdr-search" id="hdrSearch" hidden>
+    <form class="hdr-search-form" action="{{ routes.search_url }}" method="get" role="search"
+          data-predictive-search>
+      <input type="hidden" name="type" value="product">
+      <span class="mi hdr-search-ic" aria-hidden="true">search</span>
+      <input class="hdr-search-input" type="search" name="q" autocomplete="off"
+             placeholder="Search perfumes, brands, notes…"
+             aria-label="Search fragrances"
+             role="combobox" aria-expanded="false" aria-controls="hdrSearchResults"
+             aria-autocomplete="list" data-search-input>
+      <button type="button" class="hdr-search-close" aria-label="Close search" data-search-close>
+        <span class="mi" aria-hidden="true">close</span>
+      </button>
+    </form>
+    <div class="hdr-search-panel" id="hdrSearchResults" data-search-results></div>
+    <span class="visually-hidden" role="status" aria-live="polite" data-search-status></span>
+  </div>
+
   {%- comment -%}
     The backdrop sits inside <header>, not after it, and that placement is the
     whole fix. The header is sticky at z-index 1000, which opens a stacking

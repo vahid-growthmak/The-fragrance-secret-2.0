@@ -639,6 +639,178 @@ function initLegalToc() {
   nav.hidden = false;
 }
 
+/* ═══════════════════════════════════════
+   HEADER SEARCH + PREDICTIVE SUGGESTIONS
+═══════════════════════════════════════ */
+/* The search icon used to leave for /search on the first click, which made
+   every search a page load before a single character was typed. It now opens
+   a panel in the header and suggests as you type; the search page is reached
+   only by a real search — Enter, the See-all row, or picking a suggestion.
+
+   Suggestions are rendered by Shopify (sections/predictive-search.liquid) and
+   dropped in as HTML, so prices come out of the same money filter as the rest
+   of the site rather than being formatted by hand here.
+
+   Works on any form marked [data-predictive-search], which is both this panel
+   and the search page's own field. */
+function initSearchSuggest() {
+  const panel = document.getElementById('hdrSearch');
+  const toggles = [...document.querySelectorAll('[data-search-toggle]')];
+  /* The header icon is the one that reports state; the drawer's link is a
+     second way in, not a second combobox. */
+  const toggle = toggles.find((t) => t.classList.contains('ni')) || toggles[0];
+
+  function openPanel() {
+    if (!panel) return;
+    panel.hidden = false;
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    const input = panel.querySelector('[data-search-input]');
+    if (input) input.focus();
+  }
+
+  function closePanel() {
+    if (!panel || panel.hidden) return;
+    panel.hidden = true;
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    const results = panel.querySelector('[data-search-results]');
+    if (results) results.innerHTML = '';
+  }
+
+  if (toggles.length && panel) {
+    toggles.forEach((t) => t.addEventListener('click', (e) => {
+      e.preventDefault();
+      /* Opened from inside the mobile drawer, the panel would be behind it. */
+      if (t.classList.contains('nav-drawer-extra') && typeof closeMobileNav === 'function') {
+        closeMobileNav();
+      }
+      if (panel.hidden) openPanel(); else closePanel();
+    }));
+    /* A click anywhere outside closes it, but not one inside — the panel
+       contains links, and mousedown on a link must not remove it before the
+       click lands. */
+    document.addEventListener('mousedown', (e) => {
+      if (panel.hidden) return;
+      if (panel.contains(e.target)) return;
+      if (toggles.some((t) => t.contains(e.target))) return;
+      closePanel();
+    });
+    const closeBtn = panel.querySelector('[data-search-close]');
+    if (closeBtn) closeBtn.addEventListener('click', closePanel);
+  }
+
+  document.querySelectorAll('[data-predictive-search]').forEach((form) => {
+    const input = form.querySelector('[data-search-input]') || form.querySelector('input[name="q"]');
+    if (!input) return;
+    const results = (form.closest('#hdrSearch') || form.parentElement)
+      .querySelector('[data-search-results]') || form.parentElement.querySelector('[data-search-results]');
+    const status = (form.closest('#hdrSearch') || document).querySelector('[data-search-status]');
+    if (!results) return;
+
+    const base = (window.routes && window.routes.predictive_search_url) || '/search/suggest';
+    let timer = null, inflight = null, lastTerm = '';
+
+    const options = () => [...results.querySelectorAll('[role="option"]')];
+
+    function clearSelection() {
+      options().forEach((o) => o.setAttribute('aria-selected', 'false'));
+      input.removeAttribute('aria-activedescendant');
+    }
+
+    function select(index) {
+      const rows = options();
+      if (!rows.length) return;
+      /* Wrap at both ends: arrowing down past the last row returns to the
+         first, which is what a shopper flicking through six results expects. */
+      const at = ((index % rows.length) + rows.length) % rows.length;
+      rows.forEach((o, i) => o.setAttribute('aria-selected', i === at ? 'true' : 'false'));
+      input.setAttribute('aria-activedescendant', rows[at].id);
+      rows[at].scrollIntoView({ block: 'nearest' });
+    }
+
+    function selectedIndex() {
+      return options().findIndex((o) => o.getAttribute('aria-selected') === 'true');
+    }
+
+    function render(html) {
+      results.innerHTML = html;
+      const count = options().length;
+      input.setAttribute('aria-expanded', count ? 'true' : 'false');
+      if (status) {
+        status.textContent = count
+          ? count + ' suggestion' + (count === 1 ? '' : 's') + ' available'
+          : 'No suggestions';
+      }
+    }
+
+    function suggest(term) {
+      /* One character matches most of the catalogue and tells the shopper
+         nothing, so wait for two. */
+      if (term.length < 2) {
+        render('');
+        return;
+      }
+      if (term === lastTerm) return;
+      lastTerm = term;
+
+      if (inflight) inflight.abort();
+      inflight = new AbortController();
+      const url = base + '?q=' + encodeURIComponent(term) +
+        '&resources[type]=product,collection,query&resources[limit]=6' +
+        '&section_id=predictive-search';
+
+      fetch(url, { signal: inflight.signal, headers: { 'Accept': 'text/html' } })
+        .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+        .then((html) => {
+          /* The section comes back wrapped in Shopify's section div; take the
+             part we rendered and leave the wrapper behind. */
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const body = doc.querySelector('.ps-results, .ps-empty');
+          render(body ? body.outerHTML : '');
+        })
+        .catch((err) => {
+          if (err && err.name === 'AbortError') return;
+          /* A failed suggestion must not break searching: the form still
+             submits, so say nothing and let Enter do its job. */
+          render('');
+        });
+    }
+
+    input.addEventListener('input', () => {
+      const term = input.value.trim();
+      clearTimeout(timer);
+      timer = setTimeout(() => suggest(term), 220);
+    });
+
+    input.addEventListener('keydown', (e) => {
+      const rows = options();
+      if (e.key === 'ArrowDown' && rows.length) {
+        e.preventDefault(); select(selectedIndex() + 1);
+      } else if (e.key === 'ArrowUp' && rows.length) {
+        e.preventDefault(); select(selectedIndex() - 1);
+      } else if (e.key === 'Enter') {
+        /* A highlighted suggestion wins; otherwise the form submits and the
+           search page opens, which is the only time we leave. */
+        const at = selectedIndex();
+        if (at > -1) { e.preventDefault(); rows[at].click(); }
+      } else if (e.key === 'Escape') {
+        /* type="search" empties itself on Escape in Chrome and Safari, which
+           threw away the term along with the list — press Escape to dismiss
+           the suggestions and Enter no longer had anything to search. The
+           first Escape closes the list and keeps the text; a second closes
+           the panel. */
+        e.preventDefault();
+        if (rows.length) { render(''); clearSelection(); }
+        else if (panel && !panel.hidden) closePanel();
+      }
+    });
+
+    /* Never submit an empty search: it lands on a page listing nothing. */
+    form.addEventListener('submit', (e) => {
+      if (!input.value.trim()) e.preventDefault();
+    });
+  });
+}
+
 function observeFadeUps() {
   const els = document.querySelectorAll('.fade-up:not(.visible)');
   if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('visible')); return; }
@@ -1313,6 +1485,7 @@ function initApp() {
   initStickyAtc();
   initCountdowns();
   initLegalToc();
+  initSearchSuggest();
   document.querySelectorAll('.quiz-container-wrap').length && renderQuiz();
   observeFadeUps();
   // Collection engine, if present on this page

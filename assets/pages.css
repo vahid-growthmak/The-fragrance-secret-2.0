@@ -237,6 +237,165 @@ header.light .nav-burger { color: var(--warm); }
   .nav-links .nav-drawer-extra .mi { font-size: 20px; color: var(--gold); }
 }
 
+/* ── Header search panel + suggestions ───────────────────────────
+   The search icon opens this instead of leaving the page; the dedicated
+   search page is only reached on a real search. Sits inside the sticky
+   header, drops below the icon row, and carries its own scroll so a long
+   suggestion list never pushes the page around. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hdr-search { border-top: 1px solid rgba(226,201,126,.16); }
+header.light .hdr-search { border-top-color: rgba(13,10,6,.10); }
+
+.hdr-search-form {
+  position: relative;
+  display: flex; align-items: center;
+  max-width: 1380px; margin: 0 auto;
+  padding: 12px 48px;
+}
+
+.hdr-search-ic {
+  position: absolute; left: 62px;
+  font-size: 20px; color: var(--gold);
+  pointer-events: none;
+}
+
+.hdr-search-input {
+  flex: 1 1 auto; min-width: 0;
+  height: 46px;
+  font-family: var(--fb);
+  /* 16px exactly: iOS zooms the page in on a focused input below that, and a
+     header that jumps to 1.3x on the first tap is worse than no panel. */
+  font-size: 16px;
+  padding: 0 14px 0 42px;
+  border-radius: 8px; outline: none;
+  -webkit-appearance: none; appearance: none;
+  transition: border-color .25s, background .25s;
+}
+
+header.dark .hdr-search-input {
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(226,201,126,.28);
+}
+header.dark .hdr-search-input::placeholder { color: rgba(255,255,255,.45); }
+header.dark .hdr-search-input:focus { border-color: var(--gold); background: rgba(255,255,255,.10); }
+
+header.light .hdr-search-input {
+  color: var(--ink);
+  background: rgba(13,10,6,.04);
+  border: 1px solid rgba(13,10,6,.14);
+}
+header.light .hdr-search-input::placeholder { color: var(--muted); }
+header.light .hdr-search-input:focus { border-color: var(--gold); background: var(--white); }
+
+/* Chrome and Safari draw their own clear button inside type="search", in
+   their own blue, which reads as a stray UI element on a gold-on-ink bar.
+   The panel has a close control of its own. */
+.hdr-search-input::-webkit-search-cancel-button,
+.hdr-search-input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
+
+.hdr-search-close {
+  flex: 0 0 auto;
+  width: 44px; height: 44px; margin-left: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  border-radius: 50%;
+  color: inherit;
+}
+header.dark .hdr-search-close { color: rgba(255,255,255,.7); }
+header.light .hdr-search-close { color: var(--warm); }
+.hdr-search-close:hover { background: rgba(201,168,76,.14); color: var(--gold); }
+
+/* Suggestions live on the page surface, not the dark header: they are a list
+   of products and want to read like the rest of the catalogue. */
+.hdr-search-panel:empty { display: none; }
+.hdr-search-panel {
+  max-width: 1380px; margin: 0 auto;
+  padding: 0 48px 16px;
+}
+
+.ps-results, .ps-empty {
+  background: var(--white);
+  border: 1px solid rgba(13,10,6,.10);
+  border-radius: 10px;
+  box-shadow: 0 18px 46px rgba(13,10,6,.14);
+  overflow: hidden auto;
+  max-height: min(62vh, 520px);
+}
+
+.ps-empty { padding: 18px 20px; font-size: .86rem; color: var(--warm); }
+.ps-empty b { color: var(--ink); }
+
+.ps-group-head {
+  padding: 12px 18px 6px;
+  font-family: var(--fb); font-size: .62rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dk);
+}
+
+.ps-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 18px;
+  text-decoration: none;
+  border-top: 1px solid rgba(13,10,6,.05);
+}
+.ps-group-head + .ps-row { border-top: none; }
+
+/* One highlight style for hover and for keyboard selection, so arrowing
+   through the list looks like pointing at it. */
+.ps-row:hover,
+.ps-row[aria-selected="true"] { background: rgba(201,168,76,.10); }
+
+.ps-thumb {
+  flex: 0 0 48px; width: 48px; height: 48px;
+  border-radius: 6px; overflow: hidden;
+  background: var(--cream-mid);
+  display: flex; align-items: center; justify-content: center;
+}
+.ps-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ps-thumb .mi { font-size: 20px; color: var(--muted); }
+
+.ps-ic { flex: 0 0 24px; font-size: 19px; color: var(--gold-dk); }
+
+.ps-body { flex: 1 1 auto; min-width: 0; }
+.ps-title {
+  display: block; font-size: .88rem; color: var(--ink); line-height: 1.35;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ps-title mark { background: none; color: var(--gold-dk); font-weight: 700; }
+.ps-meta { display: block; font-size: .72rem; color: var(--muted); margin-top: 2px; }
+
+.ps-price { flex: 0 0 auto; font-size: .84rem; font-weight: 700; color: var(--charcoal); }
+
+.ps-all .ps-title { color: var(--gold-dk); font-weight: 600; }
+
+@media (max-width: 1100px) {
+  .hdr-search-form { padding: 12px 32px; }
+  .hdr-search-ic { left: 46px; }
+  .hdr-search-panel { padding: 0 32px 14px; }
+}
+
+@media (max-width: 600px) {
+  .hdr-search-form { padding: 10px 20px; }
+  .hdr-search-ic { left: 34px; font-size: 18px; }
+  .hdr-search-panel { padding: 0 20px 12px; }
+  .ps-row { padding: 9px 14px; }
+  .ps-price { font-size: .78rem; }
+  .ps-results, .ps-empty { max-height: min(56vh, 420px); }
+}
+
+/* The search page's own suggestions, under the hero field. Same rows as the
+   header panel; only the frame differs, because here it sits on the dark hero
+   rather than below it. */
+.search-page-panel { max-width: 720px; margin: 14px auto 0; text-align: left; }
+.search-page-panel:empty { display: none; }
+
 /* Phones: collapse the header to logo + Search + Cart + Burger.
 
    There is room for exactly two icons at 320px (logo 110 + icons 76 + burger 40
