@@ -55,7 +55,9 @@
       {%- if section.settings.logo != blank -%}
         <img src="{{ section.settings.logo | image_url: width: 320 }}" alt="{{ shop.name }}" width="160">
       {%- else -%}
-        <img src="{{ 'logo.webp' | asset_url }}" alt="{{ shop.name }}" width="400" height="154">
+        <img src="{{ 'logo.webp' | asset_url }}"
+             srcset="{{ 'logo-sm.webp' | asset_url }} 220w, {{ 'logo.webp' | asset_url }} 400w"
+             sizes="88px" alt="{{ shop.name }}" width="400" height="154">
       {%- endif -%}
     </a>
 

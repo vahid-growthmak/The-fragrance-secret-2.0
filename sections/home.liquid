@@ -136,11 +136,21 @@
         {%- assign house_name = house.title | remove: ' Perfumes' -%}
         <a href="{{ house.url }}" class="ob-card fade-up">
           {%- comment -%}
-            The collection's own banner, phone variant, sits behind the copy.
-            Liquid cannot test whether a theme asset exists, so a missing one
-            removes itself and the card falls back to its plain gradient.
+            The house's own card crop sits behind the copy. Liquid cannot test
+            whether a theme asset exists, so a missing one removes itself and
+            the card falls back to its plain gradient — which is also the
+            convention for adding a house: assets/<handle>-house-card.webp,
+            860 px wide. It used to reuse <handle>-hero-sm.webp, the
+            collection page's phone hero, and that is 1200 px for a card a
+            phone renders at 713: 90 KB of the home page spent on three
+            images nobody looks at directly.
+
+            The suffix is -house-card and not -card because assets/ already
+            holds category tiles on that name (mens-card.webp, arabic-card
+            .webp …) at a different crop, and a house handle that collided
+            with one would quietly render the wrong picture.
           {%- endcomment -%}
-          {%- assign house_banner = house.handle | append: '-hero-sm.webp' -%}
+          {%- assign house_banner = house.handle | append: '-house-card.webp' -%}
           {%- comment -%}
             fetchpriority="low": these are the first images below the hero, so
             Chrome's lazy-load threshold pulls them into the same opening burst
@@ -150,7 +160,7 @@
           {%- endcomment -%}
           <img class="ob-img" src="{{ house_banner | asset_url }}" alt=""
                onerror="this.remove()" loading="lazy" fetchpriority="low" decoding="async"
-               width="1200" height="417">
+               width="860" height="299">
           <span class="ob-tag">Our Brand</span>
           <span class="ob-name">{{ house_name }}</span>
           <span class="ob-sub">{{ house.description | strip_html | truncatewords: 6 }}</span>

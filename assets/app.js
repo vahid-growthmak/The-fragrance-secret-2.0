@@ -110,6 +110,23 @@ function familyBucket(tag) {
   if (/woody|wood|smoky|earthy|creamy|aromatic|chypre/.test(t)) return 'Oud & Woody';
   return '';
 }
+/* The live catalogue feeds exactly one thing: the [data-render] grids that
+   hydrateRenderables() fills. Nothing else on the site reads `products` or
+   `brands`.
+
+   It was fetched on every page regardless. On the home page — which has no
+   [data-render] hook at all — that is /products.json?limit=250 arriving 1.4s
+   in and 65 KB wide, the longest chain in the critical path, for a list
+   nothing on the page displays. Worse on a template that does need it: the
+   fetch paginates, so a 1,400-product catalogue is six round trips in series.
+
+   Asking the DOM what this page actually renders costs one querySelector. */
+function needsLiveCatalog() {
+  return !!document.querySelector(
+    '[data-render="products"],[data-render="brands"],[data-render="brand-track"]'
+  );
+}
+
 function loadLiveCatalog() {
   // Paginate — the storefront caps each page at 250 and the catalogue is larger
   var collected = [], MAX_PAGES = 8;
@@ -1490,7 +1507,7 @@ function initApp() {
   // Sync the JS cart counter with the Liquid-rendered badge (real cart count)
   const badge = document.querySelector('.cbadge');
   if (badge) cartCount = parseInt(badge.textContent, 10) || 0;
-  loadLiveCatalog();
+  if (needsLiveCatalog()) loadLiveCatalog();
   hydrateRenderables();
   initHeaderScroll();
   initThumbs();
