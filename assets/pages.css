@@ -1087,7 +1087,7 @@ a.wo-row:hover { background: rgba(201,168,76,.16); border-color: var(--gold); }
 /* ── Legal / prose body ──────────────────────────────────────────── */
 .legal-layout { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
 .legal-toc { position: sticky; top: 92px; }
-.legal-toc h4 { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 14px; }
+.legal-toc h2 { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 14px; }
 .legal-toc a { display: block; font-size: .84rem; color: var(--warm); padding: 7px 0; border-left: 2px solid transparent; padding-left: 12px; transition: all .2s; }
 .legal-toc a:hover { color: var(--ink); border-color: var(--gold); }
 .prose, .legal-prose, .rte { max-width: 760px; }

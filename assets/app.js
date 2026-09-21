@@ -417,7 +417,7 @@ function footerHTML() {
           </div>
         </div>
         <div class="fg-col">
-          <h4>Shop</h4>
+          <h2>Shop</h2>
           <ul>
             <li><a href="brand-index.html#our-brands">Our Brands</a></li>
             <li><a href="brand-index.html">All Brands</a></li>
@@ -429,7 +429,7 @@ function footerHTML() {
           </ul>
         </div>
         <div class="fg-col">
-          <h4>Discover</h4>
+          <h2>Discover</h2>
           <ul>
             <li><a href="journal.html">Guides</a></li>
             <li><a href="find-my-scent.html">Find My Scent</a></li>
@@ -437,7 +437,7 @@ function footerHTML() {
           </ul>
         </div>
         <div class="fg-col">
-          <h4>Help</h4>
+          <h2>Help</h2>
           <ul>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="faqs.html">FAQs</a></li>
@@ -448,7 +448,7 @@ function footerHTML() {
           </ul>
         </div>
         <div class="fg-col">
-          <h4>Company</h4>
+          <h2>Company</h2>
           <ul>
             <li><a href="about.html">About</a></li>
             <li><a href="sourcing-promise.html">Sourcing Promise</a></li>
@@ -471,9 +471,22 @@ function footerHTML() {
   </footer>`;
 }
 
+/* The float is a real control, not a div with an onclick: a div takes no
+   focus and carries no role, so a keyboard could not reach it and an ARIA
+   label was not allowed on it. sections/overlays.liquid renders the same
+   thing for the live theme — this copy only runs for a page that mounts its
+   chrome from JS, and the two are kept in step. */
+function waFloatHTML() {
+  const digits = String(window.WHATSAPP_NUMBER || '').replace(/[^0-9]/g, '');
+  const attrs = 'class="wa-float" title="Chat with a human on WhatsApp" aria-label="WhatsApp support"';
+  return digits
+    ? `<a ${attrs} href="https://wa.me/${digits}" target="_blank" rel="noopener">${WA_SVG}</a>`
+    : `<button type="button" ${attrs} onclick="waChat()">${WA_SVG}</button>`;
+}
+
 function overlaysHTML() {
   return `
-  <div class="wa-float" title="Chat with a human on WhatsApp" aria-label="WhatsApp support" onclick="waChat()">${WA_SVG}</div>
+  ${waFloatHTML()}
 
   <div class="tfs-overlay" id="refOverlay" onclick="if(event.target===this)closeReferral()">
     <div class="tfs-modal">
@@ -484,7 +497,7 @@ function overlaysHTML() {
         <h2 class="ref-title">Give AED 30,<br><em>Get AED 30</em></h2>
         <div class="ref-offer"><span class="ref-give">Both of you save AED 30</span><span class="ref-was">AED 60 value</span></div>
         <p class="ref-sub">Share your link. Your friend gets AED 30 off their first order — and you get AED 30 in store credit the moment they buy.</p>
-        <div class="ref-code-row"><input type="text" id="refLink" value="thefragrancesecrets.com/r/SARA-30" readonly/><button class="ref-copy" onclick="copyRef(this)">Copy</button></div>
+        <div class="ref-code-row"><input type="text" id="refLink" aria-label="Your referral link" value="thefragrancesecrets.com/r/SARA-30" readonly/><button class="ref-copy" onclick="copyRef(this)">Copy</button></div>
         <a href="#" class="ref-share" onclick="waChat();return false">${WA_SVG}Share on WhatsApp</a>
         <p class="ref-terms">Credit applied after your friend's first delivered order. T&amp;Cs apply.</p>
       </div>

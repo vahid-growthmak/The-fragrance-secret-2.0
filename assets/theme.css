@@ -3197,7 +3197,7 @@
       border-color: var(--gold-lt)
     }
 
-    .fg-col h4 {
+    .fg-col h2 {
       font-size: .72rem;
       letter-spacing: .16em;
       text-transform: uppercase;
@@ -3212,9 +3212,24 @@
       gap: 10px
     }
 
+    /* Footer link and text colours are set against --charcoal, the footer's
+       own background, and every one of them clears 4.5:1 there:
+         .6  base text ........ 6.98:1
+         .58 links ............ 6.61:1
+         .52 copyright ........ 5.56:1
+         .68 credit link ...... 8.64:1
+       The ladder is the one the footer always had — body text brightest,
+       links under it, the copyright dimmest — just lifted until the bottom
+       of it is legible. It was .45 and .3 down there, which measured 4.48:1
+       and 2.71:1. */
     .fg-col a {
       font-size: .82rem;
-      color: rgba(255, 255, 255, .5);
+      color: rgba(255, 255, 255, .58);
+      /* Underlined because colour alone is not a cue: WCAG 1.4.1 and the
+         same reason the prose links in pages.css carry one. */
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
       transition: color .25s
     }
 
@@ -3302,7 +3317,10 @@
 
     .footer-policies a {
       font-size: .74rem;
-      color: rgba(255, 255, 255, .45);
+      color: rgba(255, 255, 255, .58);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
       padding: 0 14px;
       transition: color .2s
     }
@@ -3317,7 +3335,7 @@
 
     .footer-bottom p {
       font-size: .74rem;
-      color: rgba(255, 255, 255, .3)
+      color: rgba(255, 255, 255, .52)
     }
 
     /* Copyright and build credit stacked in the row's left slot */
@@ -3331,7 +3349,10 @@
     /* A shade brighter than the copyright so the link is findable, but still
        clearly secondary to everything above it. */
     .footer-credit a {
-      color: rgba(255, 255, 255, .5);
+      color: rgba(255, 255, 255, .68);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
       transition: color .2s
     }
 
@@ -3375,12 +3396,26 @@
       align-items: center;
       justify-content: center;
       transition: all .3s var(--snap);
-      cursor: pointer
+      cursor: pointer;
+      /* It renders as an <a>, or as a <button> when no WhatsApp number is
+         set — it used to be a <div>, which no keyboard could reach. Both
+         replacements bring defaults the circle does not want. */
+      border: 0;
+      padding: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      color: inherit;
+      text-decoration: none
     }
 
     .wa-float:hover {
       transform: scale(1.1);
       box-shadow: 0 8px 28px rgba(37, 211, 102, .45)
+    }
+
+    .wa-float:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px
     }
 
     .wa-float svg {
@@ -4293,9 +4328,12 @@
       color: #08243F
     }
 
+    /* Tamara's orange with white on it measured 3.11:1. The brand colour
+       stays; the wordmark goes dark, which is what the Tabby chip next to it
+       already does with its own brand colour. 6.34:1. */
     .pay-chip.pay-tamara {
       background: #FE5A3C;
-      color: #fff
+      color: var(--ink)
     }
 
     .pay-chip.pay-cod {

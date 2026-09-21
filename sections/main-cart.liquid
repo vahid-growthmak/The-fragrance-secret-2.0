@@ -40,7 +40,7 @@
                 <div class="cl-meta">{% unless item.variant.title == 'Default Title' %}{{ item.variant.title }}{% endunless %}{% if item.product.vendor %} · {{ item.product.vendor }}{% endif %}</div>
                 <div class="qty-wrap">
                   <button type="button" class="qty-btn" data-cart-step="-1" aria-label="Decrease quantity">&minus;</button>
-                  <input class="qty-num" type="text" value="{{ item.quantity }}" readonly>
+                  <input class="qty-num" type="text" aria-label="Quantity for {{ item.product.title | escape }}" value="{{ item.quantity }}" readonly>
                   <button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>
                 </div>
               </div>
@@ -161,7 +161,7 @@
           '<div class="cl-meta">' + meta.join(' · ') + '</div>' +
           '<div class="qty-wrap">' +
             '<button type="button" class="qty-btn" data-cart-step="-1" aria-label="Decrease quantity">&minus;</button>' +
-            '<input class="qty-num" type="text" value="' + item.quantity + '" readonly>' +
+            '<input class="qty-num" type="text" aria-label="Quantity for ' + esc(item.product_title) + '" value="' + item.quantity + '" readonly>' +
             '<button type="button" class="qty-btn" data-cart-step="1" aria-label="Increase quantity">+</button>' +
           '</div>' +
         '</div>' +
