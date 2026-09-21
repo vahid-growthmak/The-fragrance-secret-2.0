@@ -299,8 +299,9 @@
   Placed between New Arrivals and the brand rows: it breaks the run of four-up
   grids with a single-product moment rather than stacking eight of them.
 
-  Add to cart posts the real product form and Buy it now is Shopify's dynamic
-  checkout button, so this behaves like the PDP, not a decorative panel.
+  Add to cart posts the real product form, so this behaves like the PDP
+  rather than a decorative panel. It carries no Buy it now — see the note
+  above the View-full-details link for what that pulled onto the page.
 {%- endcomment -%}
 {%- for block in section.blocks -%}
   {%- if block.type != 'featured_product' -%}{%- continue -%}{%- endif -%}
@@ -376,7 +377,23 @@
             <button type="submit" name="add" class="fp-btn-add"{% unless fpv.available %} disabled{% endunless %}>
               <span class="mi" aria-hidden="true">shopping_bag</span>{% if fpv.available %}Add to cart{% else %}Sold out{% endif %}
             </button>
-            {{ form | payment_button }}
+            {%- comment -%}
+              No dynamic checkout button here. The payment_button filter
+              rendered one, and with it the whole accelerated-checkout
+              stack: the Google Pay wallet, whose payframe iframe sets the
+              third-party NID cookie the audit flags, and the Shop Pay login
+              component, which tries to frame shop.app and is refused by
+              that origin's own frame-ancestors policy — a console error
+              and a 403 on every homepage view.
+
+              None of that is the theme's code, but the homepage is the page
+              that summons it. The button stays on the product page
+              (main-product.liquid), where a one-tap checkout is worth its
+              weight; the home page keeps Add to cart and a link into the PDP.
+
+              Restore it with a payment_button filter on the form, on its
+              own line here — nothing else is conditional on it.
+            {%- endcomment -%}
             <a href="{{ fp.url }}" class="fp-link-bold">View full details</a>
           </div>
 
