@@ -1,0 +1,381 @@
+{
+  "store": "nnxpvg-yx.myshopify.com",
+  "when": "2026-09-21T20:10:47",
+  "renamed": [
+    {
+      "handle": "perfume-oil-inspired-by-baccarat-rough-aj-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Saffron Jasmine Amberwood Perfume Oil – Oriental Unisex",
+      "new": "Baccarat Rouge 540 Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Saffron Amberwood Unisex",
+      "status": "Confirmed"
+    },
+    {
+      "handle": "white-oud-oil",
+      "old": "Fragrance Secrets White Oud Amber Perfume Oil – Oud Unisex",
+      "new": "White Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oud Amber Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-mukhallat-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oud Rose Sandalwood Perfume Oil – Oud Unisex",
+      "new": "Mukhallat Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oud Rose Sandalwood Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-marj-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich Perfume Oil 100g, 250g, 500g, 1kg – Floral Unisex",
+      "new": "Marj Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Floral Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-afnan-9-pm-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Apple Lavender Tonka Perfume Oil – Oriental Unisex",
+      "new": "Afnan 9 PM Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Apple Lavender Tonka Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-sauvage-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets fresh citrus spicy pepper Perfume Oil 100g, 250g, 500g, 1kg – Woody Citrus Unisex",
+      "new": "Sauvage Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Citrus Spicy Pepper Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-black-opium-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich coffee sweet vanilla Perfume Oil 100g, 250g, 500g, 1kg – Gourmand Floral Unisex",
+      "new": "Black Opium Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Coffee Vanilla Gourmand Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-invictus-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Grapefruit Marine Guaiac Perfume Oil – Oriental Unisex",
+      "new": "Invictus Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Fresh Marine Aromatic Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-angels-share-kilian-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Cognac Cinnamon Tonka Perfume Oil – Oriental Unisex",
+      "new": "Angels' Share Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Cognac Cinnamon Tonka Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-aqua-di-gio-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Citrus Perfume Oil – Citrus Unisex",
+      "new": "Acqua Di Gio Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Citrus Aromatic Unisex",
+      "status": "Confirmed"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-oud-maliki-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets deep oud warm spices Perfume Oil 100g, 250g, 500g, 1kg – Oud Woody Unisex",
+      "new": "Oud Maliki Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oud Warm Spices Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-litchi-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets juicy litchi sweet fruity Perfume Oil 100g, 250g, 500g, 1kg – Floral Fruity Unisex",
+      "new": "Litchi Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Sweet Fruity Floral Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-jasmin-super-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich jasmine soft floral Perfume Oil 100g, 250g, 500g, 1kg – Floral Musky Unisex",
+      "new": "Jasmin Super Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Jasmine Musky Floral Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-good-girl-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets sweet floral Perfume Oil 100g, 250g, 500g, 1kg – Floral Women",
+      "new": "Good Girl Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Sweet Floral Women",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-scandle-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Honey Patchouli Gardenia Perfume Oil – Oriental Unisex",
+      "new": "Scandal Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Honey Patchouli Gardenia Unisex",
+      "status": "Confirmed"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-white-oud-lt-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets White Oud Musk Perfume Oil – Oud Unisex",
+      "new": "White Oud LT Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oud Musk Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-tobacco-intense-dark-l-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets deep tobacco warm spices Perfume Oil 100g, 250g, 500g, 1kg – Woody Spicy Unisex",
+      "new": "Tobacco Intense Dark Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Tobacco Spice Woody Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-safari-extreme-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets woody spicy Perfume Oil 100g, 250g, 500g, 1kg – Woody Spicy Unisex",
+      "new": "Safari Extreme Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Woody Spicy Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-pacific-chill-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Aquatic Perfume Oil – Aquatic Unisex",
+      "new": "Pacific Chill Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Aquatic Fresh Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-nomade-16-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Mirabelle Freesia Oakmoss Perfume Oil – Oriental Unisex",
+      "new": "Nomade Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Mirabelle Freesia Oakmoss Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "fragrance-secrets-perfume-oil-inspired-by-afnan-9-pm-rebel-100g-250g-500g-1kg",
+      "old": "Fragrance Secrets Apple Cinnamon Vanilla Perfume Oil – Oriental Unisex",
+      "new": "Afnan 9 PM Rebel Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Apple Cinnamon Vanilla Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-real-mango-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets juicy mango sweet tropical fruits Perfume Oil 100g, 250g, 500g, 1kg – Floral Fruity Unisex",
+      "new": "Real Mango Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Tropical Mango Fruity Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-oud-abyaz-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich white oud warm woody Perfume Oil 100g, 250g, 500g, 1kg – Oud Woody Unisex",
+      "new": "Oud Abyaz Inspired Perfume Oil – Alcohol-Free & Long-Lasting | White Oud Woody Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-ward-no-1-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich floral fresh Perfume Oil 100g, 250g, 500g, 1kg – Floral Musky Unisex",
+      "new": "Ward No. 1 Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Fresh Floral Musky Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-polo-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets fresh herbs warm spices Perfume Oil 100g, 250g, 500g, 1kg – Woody Spicy Unisex",
+      "new": "Polo Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Herbal Spicy Woody Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-chocolate-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich cocoa sweet vanilla Perfume Oil 100g, 250g, 500g, 1kg – Gourmand Unisex",
+      "new": "Chocolate Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Cocoa Vanilla Gourmand Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-hina-attar-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets soft floral fresh Perfume Oil 100g, 250g, 500g, 1kg – Floral Musky Unisex",
+      "new": "Hina Attar Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Soft Floral Musky Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-mashmoom-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich oriental woody Perfume Oil 100g, 250g, 500g, 1kg – Woody Floral Unisex",
+      "new": "Mashmoom Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oriental Woody Floral Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-mukhallat-oman-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich oud aromatic spices Perfume Oil 100g, 250g, 500g, 1kg – Oud Floral Unisex",
+      "new": "Mukhallat Oman Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oud Aromatic Spice Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-dkn-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets fresh Perfume Oil 100g, 250g, 500g, 1kg – Woody Floral Unisex",
+      "new": "DKNY Be Delicious Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Fresh Woody Floral Unisex",
+      "status": "Confirmed"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-khamra-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oriental Perfume Oil 100g, 250g, 500g, 1kg – Oriental Unisex",
+      "new": "Khamra Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oriental Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-tajibni-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets oriental floral Perfume Oil 100g, 250g, 500g, 1kg – Woody Floral Unisex",
+      "new": "Tajibni Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oriental Floral Woody Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-silver-scent-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets fresh floral Perfume Oil 100g, 250g, 500g, 1kg – Floral Musky Unisex",
+      "new": "Silver Scent Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Fresh Floral Musky Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-oud-al-qamar-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oud Saffron Musk Perfume Oil – Oud Unisex",
+      "new": "Oud Al Qamar Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Saffron Musk Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-prestige-ruby-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets rich Perfume Oil 100g, 250g, 500g, 1kg – Oriental Unisex",
+      "new": "Prestige Ruby Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oriental Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-purple-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oud Vanilla Amber Perfume Oil – Oud Unisex",
+      "new": "Purple Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Vanilla Amber Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-paco-rabanne-one-million-royal-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Cardamom Oud Amber Perfume Oil – Oud Unisex",
+      "new": "1 Million Royal Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Cardamom Amber Oud Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-paco-rabanne-one-million-golden-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Saffron Oud Leather Perfume Oil – Oud Unisex",
+      "new": "1 Million Golden Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Saffron Leather Oud Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-oud-wazir-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oud Rose Patchouli Perfume Oil – Oud Unisex",
+      "new": "Oud Wazir Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Rose Patchouli Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-oud-lavender-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Lavender Oud Vanilla Perfume Oil – Oud Unisex",
+      "new": "Oud Lavender Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Lavender Vanilla Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-oud-al-rakan-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oud Amber Musk Perfume Oil – Oud Unisex",
+      "new": "Oud Al Rakan Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Amber Musk Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-nuit-et-confidences-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Vanilla Almond Tonka Perfume Oil – Oriental Unisex",
+      "new": "Nuit Et Confidences Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Vanilla Almond Tonka Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-creed-neroli-sauvage-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Neroli Bergamot Musk Perfume Oil – Oriental Unisex",
+      "new": "Creed Neroli Sauvage Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Neroli Bergamot Musk Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-nebras-al-ishq-shorouk-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets romantic floral Perfume Oil 100g, 250g, 500g, 1kg – Floral Unisex",
+      "new": "Nebras Al Ishq Shorouk Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Romantic Floral Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-mystic-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Smoky Oud Amber Perfume Oil – Oud Unisex",
+      "new": "Mystic Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Smoky Amber Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-mukh-amsiyat-saffron-baccarat-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Saffron Amberwood Cedar Perfume Oil – Oriental Unisex",
+      "new": "Mukh Amsiyat Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Saffron Amberwood Cedar Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-megamare-orto-parisi-super-g-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Marine Seaweed Ambergris Perfume Oil – Oriental Unisex",
+      "new": "Megamare Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Marine Seaweed Ambergris Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-kayali-pistachio-gelato-33-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets sweetness sophistication Perfume Oil – Oriental Unisex",
+      "new": "Kayali Pistachio Gelato 33 Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Pistachio Gourmand Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-kayali-cafe-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Coffee Oud Vanilla Perfume Oil – Oud Unisex",
+      "new": "Kayali Café Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Coffee Vanilla Oud Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-kingsman-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Leather Rose Vetiver Perfume Oil – Oriental Unisex",
+      "new": "Kingsman Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Leather Rose Vetiver Unisex",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-glittery-new-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Berry Sugar Vanilla Perfume Oil – Sweet Unisex",
+      "new": "Glittery New Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Berry Sugar Vanilla Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-glittery-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Fruity Sugar Musk Perfume Oil – Sweet Unisex",
+      "new": "Glittery Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Fruity Sugar Musk Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-fruity-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Fruity Oud Amber Perfume Oil – Oud Unisex",
+      "new": "Fruity Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Fruity Amber Oud Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-freedom-2-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Citrus Spice Woods Perfume Oil – Oriental Unisex",
+      "new": "Freedom 2 Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Citrus Spice Woody Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-escada-taj-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Mango Passionfruit Coconut Perfume Oil – Oriental Unisex",
+      "new": "Escada Taj Sunset Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Mango Passionfruit Coconut Unisex",
+      "status": "Confirmed"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-cool-water-men-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Citrus Perfume Oil – Citrus Men",
+      "new": "Cool Water Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Citrus Aquatic Men",
+      "status": "Confident"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-bling-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Sweet Berry Vanilla Perfume Oil – Sweet Unisex",
+      "new": "Bling Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Sweet Berry Vanilla Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-bade-al-oud-honour-glory-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets intensity refinement Perfume Oil – Oriental Unisex",
+      "new": "Bade Al Oud Honour & Glory Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Oriental Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-blue-lady-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Floral Perfume Oil – Floral Unisex",
+      "new": "Blue Lady Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Floral Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-ameerat-al-arab-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Rose Oud Vanilla Perfume Oil – Oriental Unisex",
+      "new": "Ameerat Al Arab Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Rose Oud Vanilla Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-asad-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Pineapple Birch Musk Perfume Oil – Oriental Unisex",
+      "new": "Asad Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Pineapple Birch Musk Unisex",
+      "status": "Check with supplier"
+    },
+    {
+      "handle": "perfume-oil-inspired-by-amir-al-oud-alcohol-free-concentrated-oil",
+      "old": "Fragrance Secrets Oud Rose Leather Perfume Oil – Oud Unisex",
+      "new": "Amir Al Oud Inspired Perfume Oil – Alcohol-Free & Long-Lasting | Rose Leather Oud Unisex",
+      "status": "Check with supplier"
+    }
+  ],
+  "failed": [],
+  "skipped_stale": [],
+  "missing": []
+}
