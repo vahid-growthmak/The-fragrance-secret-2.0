@@ -33,11 +33,20 @@
   template — display, body, icons — are preloaded; the rest are left for
   the CSS to ask for. The password page draws no icons, so it renders
   this with preload_icons: false and skips that third preload.
+
+  The icon preload is marked low priority. A font preload is High in
+  Chrome, so all three were arriving at the same priority as the hero
+  image — and with LCP now the metric holding the performance score down,
+  63 KB of header icons is not worth taking bandwidth from it. The preload
+  still buys early discovery, which is the part that matters: the icons are
+  declared in an inline @font-face, so without it nothing requests them
+  until theme.css has loaded and laid out. Icons land a beat after the
+  hero instead of beside it.
 {% endcomment %}
 <link rel="preload" href="{{ 'cormorant-garamond-latin.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ 'lato-400-latin.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
 {%- unless preload_icons == false -%}
-  <link rel="preload" href="{{ 'material-symbols-subset.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'material-symbols-subset.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin fetchpriority="low">
 {%- endunless -%}
 <style>
   @font-face {

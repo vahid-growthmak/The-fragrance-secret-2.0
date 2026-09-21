@@ -141,8 +141,16 @@
             removes itself and the card falls back to its plain gradient.
           {%- endcomment -%}
           {%- assign house_banner = house.handle | append: '-hero-sm.webp' -%}
+          {%- comment -%}
+            fetchpriority="low": these are the first images below the hero, so
+            Chrome's lazy-load threshold pulls them into the same opening burst
+            as the LCP image and they were competing with it for a phone's
+            bandwidth. They are decorative card backgrounds — nothing here is
+            worth a millisecond of LCP.
+          {%- endcomment -%}
           <img class="ob-img" src="{{ house_banner | asset_url }}" alt=""
-               onerror="this.remove()" loading="lazy" width="1200" height="417">
+               onerror="this.remove()" loading="lazy" fetchpriority="low" decoding="async"
+               width="1200" height="417">
           <span class="ob-tag">Our Brand</span>
           <span class="ob-name">{{ house_name }}</span>
           <span class="ob-sub">{{ house.description | strip_html | truncatewords: 6 }}</span>

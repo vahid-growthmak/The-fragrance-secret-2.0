@@ -7,7 +7,7 @@
           {%- if section.settings.logo != blank -%}
             <img src="{{ section.settings.logo | image_url: width: 320 }}" alt="{{ shop.name }}" width="160">
           {%- else -%}
-            <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}">
+            <img src="{{ 'logo.webp' | asset_url }}" alt="{{ shop.name }}" width="400" height="154">
           {%- endif -%}
         </span>
         {%- if section.settings.tagline != blank -%}<p>{{ section.settings.tagline }}</p>{%- endif -%}
