@@ -109,20 +109,7 @@
     {%- if is_refined -%}<meta name="robots" content="noindex, follow">{%- endif -%}
   {%- endif -%}
 
-  {% comment %}
-    Fonts — Cormorant Garamond for display, Lato for body.
-
-    Lato ships 100/300/400/700/900: no 500 and no 600, which are the two
-    weights the body copy leans on (49 and 93 rules). Those are left as
-    authored — CSS font matching answers 500 with 400 and 600 with 700, and
-    measured on the served woff2 those land within 4% of the stems they
-    replace. So only 400, 700 and italic 400 are fetched. No 300: the only 300
-    in the theme is the Material Symbols weight axis.
-  {% endcomment %}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  {% render 'fonts' %}
 
   {% comment %} Design tokens from theme settings, injected into :root (overrides CSS defaults) {% endcomment %}
   <style>
