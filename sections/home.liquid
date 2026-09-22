@@ -122,23 +122,31 @@
         moment this element is being measured.
       {%- endcomment -%}
       {%- comment -%}
-        Only when both files are .webp, because the AVIF name is derived from
-        the WebP one. type="image/avif" is a promise, not a hint: a browser
+        Only when every file in the ladder is .webp, because each AVIF name is
+        derived from its WebP one. type="image/avif" is a promise, not a hint: a browser
         that takes it and then cannot decode what arrives shows nothing at
         all, it does not fall through to the <img>. So a hero set to a .jpg
         asset skips the AVIF source entirely rather than pointing at a file
         that is not one.
       {%- endcomment -%}
       {%- assign hero_sm = section.settings.hero_image_asset_sm -%}
+      {%- assign hero_md = section.settings.hero_image_asset_md -%}
       {%- assign avif_ok = false -%}
       {%- if hero_asset contains '.webp' -%}
-        {%- if hero_sm == blank or hero_sm contains '.webp' -%}{%- assign avif_ok = true -%}{%- endif -%}
+        {%- assign avif_ok = true -%}
+        {%- if hero_sm != blank -%}
+          {%- unless hero_sm contains '.webp' -%}{%- assign avif_ok = false -%}{%- endunless -%}
+        {%- endif -%}
+        {%- if hero_md != blank -%}
+          {%- unless hero_md contains '.webp' -%}{%- assign avif_ok = false -%}{%- endunless -%}
+        {%- endif -%}
       {%- endif -%}
       <picture style="display:block;width:100%;height:100%">
         {%- if avif_ok -%}
           {%- if hero_sm != blank -%}
             <source type="image/avif" sizes="100vw"
               srcset="{{ hero_sm | replace: '.webp', '.avif' | asset_url }} 900w,
+                      {%- if hero_md != blank %} {{ hero_md | replace: '.webp', '.avif' | asset_url }} 1200w,{% endif %}
                       {{ hero_asset | replace: '.webp', '.avif' | asset_url }} 1672w">
           {%- else -%}
             <source type="image/avif" srcset="{{ hero_asset | replace: '.webp', '.avif' | asset_url }}">
@@ -146,7 +154,9 @@
         {%- endif -%}
         <img class="hero-img" src="{{ hero_asset | asset_url }}"
           {%- if section.settings.hero_image_asset_sm != blank %}
-          srcset="{{ section.settings.hero_image_asset_sm | asset_url }} 900w, {{ hero_asset | asset_url }} 1672w"
+          srcset="{{ hero_sm | asset_url }} 900w,
+                  {%- if hero_md != blank %} {{ hero_md | asset_url }} 1200w,{% endif %}
+                  {{ hero_asset | asset_url }} 1672w"
           sizes="100vw"
           {%- endif %}
           style="object-position: {{ section.settings.hero_focus }}"
@@ -729,6 +739,13 @@
       "label": "Small background image (theme asset)",
       "info": "Optional narrower variant served to phones.",
       "default": "home-hero-sm.webp"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_asset_md",
+      "label": "Medium background image (theme asset)",
+      "info": "1200px variant. Without it a phone at device pixel ratio 3 jumps straight to the full-size file.",
+      "default": "home-hero-md.webp"
     },
     {
       "type": "text",
