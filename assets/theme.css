@@ -3747,9 +3747,10 @@
     }
 
     /* KEY INFO STRIP */
-    /* auto-fit rather than a fixed four: the strip gains a fifth "Inspired By"
-       tile on products that interpret another fragrance, and hardcoding four
-       columns would wrap that tile onto a second row on its own. */
+    /* Four tiles now the "Inspired By" one has gone — the title carries that.
+       Still auto-fit rather than a hardcoded four, so the strip reflows on a
+       narrow screen and a fifth fact can be added later without this rule
+       wrapping it onto a row of its own. */
     .key-info {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -7812,9 +7813,10 @@ html body .jdgm-form textarea:focus {
       .bt-panel-head { flex-direction: column; align-items: flex-start; gap: 10px }
     }
 
-    /* Disclaimer under the key-info strip, shown only alongside the
-       "Inspired By" tile. Quiet by design — it is a legal note, not a selling
-       point — but it sits with the claim rather than only in the terms. */
+    /* Disclaimer under the key-info strip, on the products whose title says
+       they interpret another fragrance. Quiet by design — it is a legal note,
+       not a selling point — but it sits with the claim rather than only in
+       the terms. */
     .ki-inspired-note {
       font-family: var(--fb);
       font-size: .68rem;

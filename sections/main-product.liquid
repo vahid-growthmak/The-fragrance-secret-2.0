@@ -198,18 +198,18 @@
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">person</span></div><div class="ki-label">Best For</div><div class="ki-val">{{ best_for }}</div></div>
             <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">public</span></div><div class="ki-label">Made In</div><div class="ki-val">{{ origin }}</div></div>
             {%- comment -%}
-              Inspired-by sits with the other key facts rather than in a panel
-              of its own, because it is the same kind of fact. It renders only
-              where the metafield is set, so the strip stays four-up for every
-              product that does not interpret another fragrance.
+              No "Inspired By" tile. It used to sit here with the other key
+              facts, and it repeated what the product title now says outright
+              — "Baccarat Rouge 540 Inspired Perfume Oil …" — in a worse form,
+              because the metafield holds the supplier's spelling of the
+              original ("Baccarat Rough Aj") rather than the real name.
             {%- endcomment -%}
-            {%- if mf.inspired_by.value != blank -%}
-            <div class="ki-item"><div class="ki-icon"><span class="mi" aria-hidden="true">auto_awesome</span></div><div class="ki-label">Inspired By</div><div class="ki-val">{{ mf.inspired_by.value }}</div></div>
-            {%- endif -%}
           </div>
           {%- comment -%}
-            The disclaimer has to travel with the claim, so it follows the strip
-            rather than living only in the terms of service.
+            The disclaimer stays. The claim did not go away with the tile, it
+            moved up into the title, and a note like this has to travel with
+            the claim rather than live only in the terms of service. The
+            metafield is still the right test for which products make one.
           {%- endcomment -%}
           {%- if mf.inspired_by.value != blank -%}
           <p class="ki-inspired-note">An independent interpretation of this scent profile. Not produced by, affiliated with or endorsed by the original brand; the name is used only to describe the scent character.</p>
