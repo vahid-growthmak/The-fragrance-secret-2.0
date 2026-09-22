@@ -103,14 +103,56 @@
         fetchpriority="high" onload="this.classList.add('loaded')" />
     {%- else -%}
       {%- assign hero_asset = section.settings.hero_image_asset | default: 'home-hero.webp' -%}
-      <img class="hero-img" src="{{ hero_asset | asset_url }}"
-        {%- if section.settings.hero_image_asset_sm != blank %}
-        srcset="{{ section.settings.hero_image_asset_sm | asset_url }} 900w, {{ hero_asset | asset_url }} 1672w"
-        sizes="100vw"
-        {%- endif %}
-        style="object-position: {{ section.settings.hero_focus }}"
-        alt="{{ section.settings.hero_image_alt | escape }}"
-        fetchpriority="high" onload="this.classList.add('loaded')" />
+      {%- comment -%}
+        AVIF first, WebP second. This image is the LCP element, and the same
+        picture at the same quality is 49 KB as AVIF against 69 KB as WebP —
+        measured at 38.7 dB PSNR, so the saving is format, not quality. The
+        WebP <img> stays as written: AVIF wants Safari 16.4, and a phone
+        older than that must still get a hero rather than a blank stage.
+
+        The AVIF pair is generated from the WebP pair by
+        scripts/build-hero-avif.py — regenerate after replacing either file,
+        or a visitor on a current browser gets the previous artwork.
+
+        The <picture> is styled inline rather than from theme.css on purpose:
+        it sits between .hero-img-wrap and .hero-img, both of which size
+        against their parent, and an inline-by-default <picture> would
+        collapse the image's height:100%. theme.css is asynchronous now, so a
+        rule there would not be applied at first paint — which is the one
+        moment this element is being measured.
+      {%- endcomment -%}
+      {%- comment -%}
+        Only when both files are .webp, because the AVIF name is derived from
+        the WebP one. type="image/avif" is a promise, not a hint: a browser
+        that takes it and then cannot decode what arrives shows nothing at
+        all, it does not fall through to the <img>. So a hero set to a .jpg
+        asset skips the AVIF source entirely rather than pointing at a file
+        that is not one.
+      {%- endcomment -%}
+      {%- assign hero_sm = section.settings.hero_image_asset_sm -%}
+      {%- assign avif_ok = false -%}
+      {%- if hero_asset contains '.webp' -%}
+        {%- if hero_sm == blank or hero_sm contains '.webp' -%}{%- assign avif_ok = true -%}{%- endif -%}
+      {%- endif -%}
+      <picture style="display:block;width:100%;height:100%">
+        {%- if avif_ok -%}
+          {%- if hero_sm != blank -%}
+            <source type="image/avif" sizes="100vw"
+              srcset="{{ hero_sm | replace: '.webp', '.avif' | asset_url }} 900w,
+                      {{ hero_asset | replace: '.webp', '.avif' | asset_url }} 1672w">
+          {%- else -%}
+            <source type="image/avif" srcset="{{ hero_asset | replace: '.webp', '.avif' | asset_url }}">
+          {%- endif -%}
+        {%- endif -%}
+        <img class="hero-img" src="{{ hero_asset | asset_url }}"
+          {%- if section.settings.hero_image_asset_sm != blank %}
+          srcset="{{ section.settings.hero_image_asset_sm | asset_url }} 900w, {{ hero_asset | asset_url }} 1672w"
+          sizes="100vw"
+          {%- endif %}
+          style="object-position: {{ section.settings.hero_focus }}"
+          alt="{{ section.settings.hero_image_alt | escape }}"
+          fetchpriority="high" onload="this.classList.add('loaded')" />
+      </picture>
     {%- endif -%}
   </div>
 </section>

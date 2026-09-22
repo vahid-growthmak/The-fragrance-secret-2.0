@@ -110,8 +110,41 @@
   {%- endif -%}
 
   {% render 'fonts' %}
+  {% render 'critical-css' %}
 
-  {% comment %} Design tokens from theme settings, injected into :root (overrides CSS defaults) {% endcomment %}
+  {%- comment -%}
+    theme.css and pages.css load asynchronously. Blocking, they cost 790ms
+    each before the browser could paint anything, which gated FCP and, behind
+    it, LCP — the one metric still failing on mobile. The rules the first
+    screen needs are inlined above instead, so the paint no longer waits on a
+    network round trip at all; these two arrive in their own time and style
+    everything below the fold.
+
+    rel="preload" rather than the media="print" trick: preload asks for the
+    file at a sensible priority and the onload flips it into a real
+    stylesheet, where media="print" fetches it as a print sheet and can land
+    it at the bottom of the queue behind the hero image.
+
+    The noscript copy is not a nicety — without JavaScript the onload never
+    fires and the preload never becomes a stylesheet, so the page would be
+    left with critical CSS and nothing else.
+  {%- endcomment -%}
+  <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="{{ 'pages.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'pages.css' | asset_url | stylesheet_tag }}
+  </noscript>
+
+  {%- comment -%}
+    Design tokens from theme settings, injected into :root. Last on purpose:
+    theme.css declares the same custom properties at the same specificity, so
+    whichever comes later in the document wins. This block used to sit above
+    the stylesheet link, which meant theme.css overrode it and the colour
+    settings in the theme editor did nothing at all. The four settings happen
+    to hold the same values as the CSS defaults, so nothing changes colour
+    today — but the setting works now.
+  {%- endcomment -%}
   <style>
     :root {
       --gold: {{ settings.color_gold | default: '#C9A84C' }};
@@ -120,9 +153,6 @@
       --charcoal: {{ settings.color_charcoal | default: '#1C1812' }};
     }
   </style>
-
-  {{ 'theme.css' | asset_url | stylesheet_tag }}
-  {{ 'pages.css' | asset_url | stylesheet_tag }}
 
   <script>
     /* Base URL for the flat Shopify assets/ folder, consumed by IMG() in app.js */
