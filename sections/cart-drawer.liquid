@@ -56,7 +56,29 @@
               {%- endif -%}
               <div class="cl-body">
                 <div class="cl-name"><a href="{{ item.url }}">{{ item.product.title }}</a></div>
-                <div class="cl-meta">{% unless item.variant.title == 'Default Title' %}{{ item.variant.title }}{% endunless %}{% if item.product.vendor %} · {{ item.product.vendor }}{% endif %}</div>
+                {%- comment -%}
+                  Line-item properties, inside .cl-meta rather than beside it.
+                  A Custom Mixed Spray line reads "100ml / Extrait" and nothing
+                  else without them — the oil it is blended from is a property,
+                  so unrendered means the shopper cannot check what they
+                  ordered. They sit inside the meta div because .cl-body is
+                  display:contents in the cart page's grid, so a sibling would
+                  become an unplaced grid item and shove the quantity and price
+                  rows around.
+
+                  Shopify's convention: a key beginning _ is private to the
+                  theme, and a blank value means the field went unfilled.
+                {%- endcomment -%}
+                <div class="cl-meta">{% unless item.variant.title == 'Default Title' %}{{ item.variant.title }}{% endunless %}{% if item.product.vendor %} · {{ item.product.vendor }}{% endif %}
+                  {%- for prop in item.properties -%}
+                    {%- unless prop.first == blank or prop.last == blank -%}
+                      {%- if prop.first[0] != '_' -%}
+                        <span class="cl-prop"><span>{{ prop.first }}</span> {{ prop.last }}</span>
+                      {%- endif -%}
+                    {%- endunless -%}
+                  {%- endfor -%}
+                </div>
+
                 <div class="qty-wrap">
                   <button type="button" class="qty-btn" data-cart-step="-1" aria-label="Decrease quantity">&minus;</button>
                   <input class="qty-num" type="text" aria-label="Quantity for {{ item.product.title | escape }}" value="{{ item.quantity }}" readonly>

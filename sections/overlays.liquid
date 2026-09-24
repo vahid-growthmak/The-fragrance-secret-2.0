@@ -54,6 +54,33 @@
   </div>
 </div>
 
+{%- comment -%}
+  The Custom Mixed Spray product, handed to the wizard in app.js.
+
+  Every price and every variant id the wizard uses comes from here, so the
+  storefront cannot quote a total the cart then disagrees with — it used to
+  carry its own numbers in JavaScript, and a final button that called the
+  demo addToCart() stub and added nothing at all.
+
+  all_products returns nothing for a handle that is missing or unpublished,
+  so this simply does not render in that case, MIX_PRODUCT stays undefined,
+  and the PDP button (main-product.liquid) is not rendered either. The feature
+  disappears rather than half-working.
+{%- endcomment -%}
+{%- assign mix_product = all_products['custom-mixed-spray'] -%}
+{%- if mix_product.handle != blank and mix_product.available -%}
+  <script>
+    window.MIX_PRODUCT = {
+      handle: {{ mix_product.handle | json }},
+      variants: [
+        {%- for v in mix_product.variants -%}
+        {"id": {{ v.id }}, "size": {{ v.option1 | json }}, "strength": {{ v.option2 | json }}, "price": {{ v.price }}, "available": {{ v.available }}}{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    };
+  </script>
+{%- endif -%}
+
 <div class="tfs-overlay" id="mixOverlay" onclick="if(event.target===this)closeMix()">
   <div class="tfs-modal mix-modal">
     <button class="tfs-close" onclick="closeMix()" aria-label="Close"><span class="mi" aria-hidden="true">close</span></button>

@@ -873,18 +873,22 @@ function addToCart(name) {
 
 /* Real Shopify cart add by variant id (used by the concierge and any live card).
    Falls back to the demo toast when no variant id is available. */
-function addLiveToCart(variantId, name, qty) {
+function addLiveToCart(variantId, name, qty, properties) {
   if (!variantId) { addToCart(name, qty); return; }
+  const item = { id: variantId, quantity: qty || 1 };
+  /* Line-item properties ride along to the order and show on the cart line.
+     Optional, so every existing caller is unaffected. */
+  if (properties && Object.keys(properties).length) item.properties = properties;
   /* Quick Add and the concierge go through the drawer as well, so every add on
      the site ends in the same place instead of only the product form doing so. */
   if (typeof window.cartDrawerAdd === 'function' && document.getElementById('cartDrawer')) {
-    window.cartDrawerAdd([{ id: variantId, quantity: qty || 1 }]);
+    window.cartDrawerAdd([item]);
     return;
   }
   fetch((window.routes && window.routes.cart_add_url) || '/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({ items: [{ id: variantId, quantity: qty || 1 }] })
+    body: JSON.stringify({ items: [item] })
   }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
     .then(function () {
       return fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); });
@@ -1099,17 +1103,47 @@ function openAIFromQuiz() { openAI(); }
    MIX-YOUR-OWN-SPRAY (oil PDP)
 ═══════════════════════════════════════ */
 const MIX = { base: 'Bouquet of Oud', step: 1, size: null, conc: null };
+/* `opt` is the option value on the Shopify product (Size / Strength) and is
+   what these rows are matched to a variant by. The copy beside it is the
+   theme's; the money is not. */
 const MIX_SIZES = [
-  { id: '50', label: '50ml Spray', price: 149, meta: 'Everyday carry · ~500 sprays' },
-  { id: '100', label: '100ml Spray', price: 249, meta: 'Best value · ~1,000 sprays' },
+  { id: '50', opt: '50ml', label: '50ml Spray', meta: 'Everyday carry · ~500 sprays' },
+  { id: '100', opt: '100ml', label: '100ml Spray', meta: 'Best value · ~1,000 sprays' },
 ];
 const MIX_CONC = [
-  { id: 'edt', label: 'Eau de Toilette', premium: 0, longevity: '4–6 hrs', sillage: 'Soft', note: 'Light & fresh' },
-  { id: 'edp', label: 'Eau de Parfum', premium: 30, longevity: '7–9 hrs', sillage: 'Moderate', note: 'Our most popular' },
-  { id: 'extrait', label: 'Extrait', premium: 70, longevity: '10–14 hrs', sillage: 'Strong', note: 'Maximum depth' },
+  { id: 'edt', opt: 'Eau de Toilette', label: 'Eau de Toilette', longevity: '4–6 hrs', sillage: 'Soft', note: 'Light & fresh' },
+  { id: 'edp', opt: 'Eau de Parfum', label: 'Eau de Parfum', longevity: '7–9 hrs', sillage: 'Moderate', note: 'Our most popular' },
+  { id: 'extrait', opt: 'Extrait', label: 'Extrait', longevity: '10–14 hrs', sillage: 'Strong', note: 'Maximum depth' },
 ];
 const arrowSVG = '<span class="mi" aria-hidden="true" style="font-size:17px">arrow_forward</span>';
-function mixPrice() { return MIX.size ? MIX.size.price + (MIX.conc ? MIX.conc.premium : 0) : 0; }
+
+/* Every price in this wizard comes from the Custom Mixed Spray product, which
+   sections/overlays.liquid writes into window.MIX_PRODUCT. It used to quote
+   numbers held in this file, which would have been a storefront and a cart
+   disagreeing about the total the moment anyone edited a price in admin —
+   and there was no product to disagree with anyway: the last step called
+   addToCart(), the demo stub, and added nothing at all.
+
+   No product, no variants, nothing to sell: the PDP button is not rendered in
+   that case either, so this only has to fail quietly. */
+function mixVariants() { return (window.MIX_PRODUCT && window.MIX_PRODUCT.variants) || []; }
+function mixFind(sizeOpt, concOpt) {
+  return mixVariants().find(v => v.size === sizeOpt && v.strength === concOpt) || null;
+}
+function mixVariant() { return MIX.size && MIX.conc ? mixFind(MIX.size.opt, MIX.conc.opt) : null; }
+function mixPrice() { const v = mixVariant(); return v ? v.price : 0; }
+/* The cheapest strength in a size, for the "from" price on step 1. */
+function mixSizeFrom(sizeOpt) {
+  const prices = mixVariants().filter(v => v.size === sizeOpt).map(v => v.price);
+  return prices.length ? Math.min.apply(null, prices) : 0;
+}
+/* What a strength adds at the size already chosen, for step 2. Derived rather
+   than stored, so a price change in admin moves the premium with it. */
+function mixConcPremium(concOpt) {
+  if (!MIX.size) return 0;
+  const v = mixFind(MIX.size.opt, concOpt);
+  return v ? v.price - mixSizeFrom(MIX.size.opt) : 0;
+}
 function openMix(base) {
   if (base) MIX.base = base;
   MIX.step = 1; MIX.size = null; MIX.conc = null;
@@ -1122,7 +1156,17 @@ function mixSelectSize(id) { MIX.size = MIX_SIZES.find(s => s.id === id); render
 function mixSelectConc(id) { MIX.conc = MIX_CONC.find(c => c.id === id); renderMix(); }
 function mixNext() { if (MIX.step < 3) { MIX.step++; renderMix(); } }
 function mixBack() { if (MIX.step > 1) { MIX.step--; renderMix(); } }
-function mixAddToCart() { addToCart(`${MIX.base} — Custom ${MIX.size.label}, ${MIX.conc.label}`); closeMix(); }
+function mixAddToCart() {
+  const v = mixVariant();
+  if (!v || !v.available) { toast('That combination is unavailable — please pick another'); return; }
+  /* The base scent is a line-item property, not a variant. Any of the 140 oils
+     and attars that show the button can be one, and six sizes across all of
+     them is 840 variants. As a property it travels onto the order, which is
+     where whoever blends it needs to read it. */
+  addLiveToCart(v.id, `${MIX.base} — ${MIX.size.label}, ${MIX.conc.label}`, 1,
+    { 'Base scent': MIX.base, 'Blend': `${MIX.size.label} · ${MIX.conc.label}` });
+  closeMix();
+}
 function renderMix() {
   const prog = el('mixProg'); if (!prog) return;
   prog.innerHTML = [1, 2, 3].map(n => `<div class="mp-dot${n <= MIX.step ? ' active' : ''}"></div>`).join('');
@@ -1138,7 +1182,7 @@ function renderMix() {
           ${MIX_SIZES.map(s => `<button class="mix-opt${MIX.size && MIX.size.id === s.id ? ' selected' : ''}" onclick="mixSelectSize('${s.id}')">
             <span class="mix-opt-ic"><span class="mi" aria-hidden="true">water_drop</span></span>
             <span class="mix-opt-body"><span class="mix-opt-title">${s.label}</span><span class="mix-opt-meta">${s.meta}</span></span>
-            <span class="mix-opt-price">AED ${s.price}<small>from</small></span>
+            <span class="mix-opt-price">${formatMoney(mixSizeFrom(s.opt))}<small>from</small></span>
           </button>`).join('')}
         </div>
       </div>
@@ -1157,7 +1201,7 @@ function renderMix() {
             <span class="mix-opt-body"><span class="mix-opt-title">${c.label}</span>
               <span class="mix-opt-meta"><span><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-3px">schedule</span> Longevity <b>${c.longevity}</b></span><span><span class="mi" aria-hidden="true" style="font-size:14px;vertical-align:-3px">air</span> Sillage <b>${c.sillage}</b></span></span>
             </span>
-            <span class="mix-opt-price">${c.premium ? '+AED ' + c.premium : 'Included'}</span>
+            <span class="mix-opt-price">${mixConcPremium(c.opt) ? '+' + formatMoney(mixConcPremium(c.opt)) : 'Included'}</span>
           </button>`).join('')}
         </div>
       </div>
@@ -1176,7 +1220,7 @@ function renderMix() {
           <div class="mix-sum-row"><span>Base scent</span><b>${MIX.base}</b></div>
           <div class="mix-sum-row"><span>Bottle size</span><b>${MIX.size.label}</b></div>
           <div class="mix-sum-row"><span>Strength</span><b>${MIX.conc.label} · ${MIX.conc.longevity}</b></div>
-          <div class="mix-sum-row total"><span>Total</span><b>AED ${total}</b></div>
+          <div class="mix-sum-row total"><span>Total</span><b>${formatMoney(total)}</b></div>
         </div>
         <div class="mix-eta">
           <span class="mi" aria-hidden="true">schedule</span>
@@ -1185,7 +1229,7 @@ function renderMix() {
       </div>
       <div class="mix-foot">
         <button class="mix-back" onclick="mixBack()">Back</button>
-        <button class="mix-next" onclick="mixAddToCart()">Add Mixed Spray — AED ${total}</button>
+        <button class="mix-next" onclick="mixAddToCart()">Add Mixed Spray — ${formatMoney(total)}</button>
       </div>`;
   }
 }

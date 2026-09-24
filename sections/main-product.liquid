@@ -182,7 +182,21 @@
             {{ form | payment_button }}
             {% render 'pay-icons' %}
             <p class="pay-note">Pay later, interest-free in 4 with <span class="pay-chip pay-chip-inline pay-tabby" title="Tabby">tabby</span> &amp; <span class="pay-chip pay-chip-inline pay-tamara" title="Tamara">tamara</span> · <span class="pay-chip pay-chip-inline pay-cod" title="Cash on Delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/></svg>COD</span> available UAE-wide</p>
+            {%- comment -%}
+              Two conditions, not one. The first is which products can be a
+              base. The second is whether there is anything to sell: the
+              wizard quotes a price and adds a line, and both come from the
+              Custom Mixed Spray product. Unpublish that product and this
+              button stops being offered, rather than walking a shopper
+              through three steps to a button that cannot work — which is
+              what it did on 140 pages before the product existed at all.
+            {%- endcomment -%}
+            {%- assign mix_product = all_products['custom-mixed-spray'] -%}
+            {%- assign is_mix_base = false -%}
             {%- if product.type contains 'Oil' or product.type contains 'Attar' or product.tags contains 'oil' or product.tags contains 'attar' -%}
+              {%- assign is_mix_base = true -%}
+            {%- endif -%}
+            {%- if is_mix_base and mix_product.handle != blank and mix_product.available -%}
             <button type="button" class="mix-cta" onclick="openMix('{{ product.title | escape | replace: "'", "\\'" }}')">
               <span class="mi" aria-hidden="true">science</span>
               Mix It Into a Spray

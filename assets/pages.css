@@ -868,6 +868,12 @@ header.light .hdr-search-close { color: var(--warm); }
 }
 .co-line .cl-name { font-size: .84rem; font-weight: 500; color: var(--ink); }
 .co-line .cl-meta { font-size: .74rem; color: var(--warm); }
+/* Line-item properties — the Custom Mixed Spray line carries the oil it is
+   blended from here, which is the only place the shopper can check it. Quieter
+   than .cl-meta and with the key lighter than its value, so the line reads as
+   "Base scent  Amber Oud" rather than as two equal columns of text. */
+.co-line .cl-prop { display: block; font-size: .72rem; color: var(--warm); line-height: 1.45; }
+.co-line .cl-prop span { color: var(--muted); }
 .co-line .qty-wrap { width: fit-content; flex-shrink: 0; }
 /* The price never shrinks. The overflow guard further down gives every
    .co-line child min-width:0, and with white-space:nowrap that let the price
