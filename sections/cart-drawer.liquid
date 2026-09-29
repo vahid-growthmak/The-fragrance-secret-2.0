@@ -43,7 +43,7 @@
           {%- if cart.total_price >= free_ship_threshold -%}
             <span class="cd-ship-msg is-met"><span class="mi" aria-hidden="true">local_shipping</span>You've unlocked free UAE delivery</span>
           {%- else -%}
-            <span class="cd-ship-msg">Add <b>{{ remaining | money_with_currency }}</b> more for free UAE delivery</span>
+            <span class="cd-ship-msg">You’re <b>{{ remaining | money_with_currency }}</b> away from free UAE delivery</span>
           {%- endif -%}
           <span class="cd-ship-bar"><i style="width:{{ ship_pct }}%"></i></span>
         </div>

@@ -1624,8 +1624,31 @@ else document.addEventListener('DOMContentLoaded', initApp);
       .then(function (html) {
         var next = new DOMParser().parseFromString(html, 'text/html');
         var live = el(); if (!live) return;
+
+        /* Where the free-delivery bar stood before this change. The body below
+           is replaced wholesale, so the fill arrives as a fresh node and paints
+           straight at its final width — the CSS transition on it never gets a
+           start value to run from, and a bar that is simply *at* 60% states a
+           fact where one that travels to 60% shows progress. An empty bag has
+           no bar at all, so the first add climbs from nothing. */
+        var was = live.querySelector('.cd-ship-bar i');
+        was = was ? was.style.width : '0%';
+
         var a = next.querySelector('[data-cd-body]'), b = live.querySelector('[data-cd-body]');
         if (a && b) b.innerHTML = a.innerHTML;
+
+        /* Pin the new fill to the old width, force the reflow that commits it,
+           then release it to the figure Liquid rendered. */
+        var fill = live.querySelector('.cd-ship-bar i');
+        if (fill) {
+          var target = fill.style.width;
+          if (target !== was) {
+            fill.style.width = was;
+            void fill.offsetWidth;
+            fill.style.width = target;
+          }
+        }
+
         /* The footer is absent when the cart is empty, so swap the element
            itself rather than its contents. */
         var nf = next.querySelector('.cd-foot'), lf = live.querySelector('.cd-foot');

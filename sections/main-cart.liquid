@@ -104,7 +104,7 @@
             {%- if cart.total_price >= free_ship_threshold -%}
               <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> — you're over {{ free_ship_threshold | money_with_currency }} <span class="mi" aria-hidden="true" style="font-size:15px;vertical-align:-3px;color:var(--gold-dk)">check_circle</span></p>
             {%- else -%}
-              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>{{ remaining | money_with_currency }}</b> more for <b>free delivery</b></p>
+              <p id="shipMsg"><span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> You’re <b>{{ remaining | money_with_currency }}</b> away from <b>free delivery</b></p>
             {%- endif -%}
             <div class="ship-bar"><i id="shipBar" style="width:{{ ship_pct }}%"></i></div>
           </div>
@@ -254,7 +254,7 @@
     if (msg) {
       msg.innerHTML = cart.total_price >= FREE_SHIP
         ? '<span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> <b>Free delivery unlocked</b> \u2014 you\u2019re over ' + window.formatMoney(FREE_SHIP)
-        : '<span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> Add <b>' + window.formatMoney(FREE_SHIP - cart.total_price) + '</b> more for <b>free delivery</b>';
+        : '<span class="mi" aria-hidden="true" style="vertical-align:-4px;color:var(--gold-dk)">local_shipping</span> You\u2019re <b>' + window.formatMoney(FREE_SHIP - cart.total_price) + '</b> away from <b>free delivery</b>';
     }
 
     document.querySelectorAll('.cbadge').forEach(function (b) { b.textContent = cart.item_count; });
