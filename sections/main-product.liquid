@@ -75,10 +75,48 @@
         <div class="pdp-info">
           <div class="pdp-brand">{{ brand }}</div>
           <h1 class="pdp-title">{{ product.title }}</h1>
+          {%- comment -%}
+            Rating and review count, under the title. theme.css has carried
+            rules for .pdp-rating-row .stars, .rv-count and .rv-link since the
+            port without any markup ever rendering them — the slot held the
+            Judge.me preview badge alone, which paints nothing until the app's
+            script arrives and so left the title with nothing beneath it.
+
+            Read from the standard `reviews` namespace, which Judge.me writes
+            into: the same figures the widget below shows, but server-rendered,
+            so they are there at first paint and hold their space instead of
+            shifting the price row down when the app loads.
+
+            Gated on reviews.rating_count for the reason the reviews section
+            states further down — custom.review_count carries demo values on a
+            handful of products. Note the `rating` assign at the top of this
+            file defaults to 4.9: a display fallback, not evidence, and stars
+            on a product nobody has reviewed are an invention. So the count
+            decides, and nothing here is rendered without one.
+
+            With no count the Judge.me badge keeps the slot: it still shows its
+            own stars if the app holds reviews the metafields have not synced,
+            and collapses to nothing when there are genuinely none — the
+            "No reviews yet" prompt lives in the reviews section, once.
+          {%- endcomment -%}
+          {%- liquid
+            assign rv_count = product.metafields.reviews.rating_count.value | plus: 0
+            assign rv_rating = product.metafields.reviews.rating.value.rating
+          -%}
           <div class="pdp-rating-row">
-            <!-- Judge.me preview badge -->
-            <div style='clear:both'></div>
-            <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-template='product'>{{ product.metafields.judgeme.badge }}</div>
+            {%- if rv_count > 0 and rv_rating != blank -%}
+              {% render 'star-rating', rating: rv_rating %}
+              {%- comment -%}
+                Every star is aria-hidden, so the score has to be readable as
+                text or a screen reader gets a rating row that says nothing.
+              {%- endcomment -%}
+              <span class="rv-count">{{ rv_rating | times: 1.0 | round: 1 }} out of 5</span>
+              <a class="rv-link" href="#pdp-reviews">{{ rv_count }} review{% unless rv_count == 1 %}s{% endunless %}</a>
+            {%- else -%}
+              <!-- Judge.me preview badge -->
+              <div style='clear:both'></div>
+              <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-template='product'>{{ product.metafields.judgeme.badge }}</div>
+            {%- endif -%}
           </div>
           <div class="pdp-price-row" data-price-row>
             <span class="pdp-price-now">{{ cv.price | money_with_currency }}</span>
