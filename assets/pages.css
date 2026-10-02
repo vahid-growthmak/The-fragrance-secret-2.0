@@ -1517,3 +1517,27 @@ body.jdgm-modal-open .sticky-atc {
      16px grid gap spaces them, so they need no margin of their own. */
   .auth-card .form-row { grid-template-columns: 1fr; }
 }
+
+/* ── Order experience rating ──────────────────────────────────────────────
+   "How was your experience?" on a delivered order, in the customer account.
+   Markup in snippets/order-experience-rating.liquid; the card itself reuses
+   .co-block and .co-step, so only the prompt and the stars need rules. */
+.oer-sub { font-size: .86rem; color: var(--warm); line-height: 1.7; margin-bottom: 18px; max-width: 54ch; }
+.oer-stars { display: flex; gap: 4px; }
+.oer-star { display: inline-flex; padding: 2px; color: var(--cream-dk); transition: color .18s, transform .18s; }
+.oer-star .mi { font-size: 34px; }
+
+/* Empty until pointed at. Gold by default would read as a score already
+   given, which is the opposite of a request. Hovering fills every star and
+   then clears the ones past the pointer, so the third lights one through
+   three — how a rating control is expected to behave. */
+.oer-stars:hover .oer-star { color: var(--gold); }
+.oer-stars .oer-star:hover ~ .oer-star { color: var(--cream-dk); }
+.oer-star:hover { transform: scale(1.08); }
+/* Keyboard users never trigger :hover, so focus has to fill as well as ring. */
+.oer-star:focus-visible { color: var(--gold); outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .oer-star { transition: none; }
+  .oer-star:hover { transform: none; }
+}

@@ -39,6 +39,13 @@
     ]
   },
   {
+    "name": "Order experience rating",
+    "settings": [
+      { "type": "paragraph", "content": "A theme cannot store a rating. The storefront has no database and cannot write to Shopify \u2014 only the Admin API can put a value on an order, and an Admin token in theme code would expose the whole shop. So Judge.me keeps the ratings and sends the request; the theme only asks. Paste the Judge.me shop-review form link below and a \"How was your experience?\" card appears on a customer's order once that order is fulfilled. Leave it blank and nothing renders, rather than five stars that lead nowhere. Find the link in Judge.me \u203a Shop reviews. Judge.me also sends its own request automatically after fulfilment \u2014 set the timing there, not here, and give the courier time to actually arrive before it goes out." },
+      { "type": "text", "id": "judgeme_shop_review_url", "label": "Judge.me shop review form link", "info": "Full URL, starting https://. The chosen star is appended as &rating=1\u20135; if Judge.me ignores it the form simply opens unset." }
+    ]
+  },
+  {
     "name": "Welcome offer",
     "settings": [
       { "type": "paragraph", "content": "The first-order discount shown above the footer. A theme cannot create a discount, so the code below must exist in Shopify admin \u203a Discounts: a discount code, percentage off the order, customer eligibility set to customers with an account, and \"limit to one use per customer\" ticked. The theme puts the code on the bag; Shopify decides who may keep it." },

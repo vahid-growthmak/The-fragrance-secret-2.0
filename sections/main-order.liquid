@@ -19,6 +19,12 @@
     <div class="co-trow"><span>Shipping</span><span>{{ order.shipping_price | money_with_currency }}</span></div>
     <div class="co-trow grand"><span>Total</span><b>{{ order.total_net_amount | money_with_currency }}</b></div>
   </div>
+
+  {%- comment -%}
+    Asked after the totals rather than above them: the customer came here to
+    check an order, so the order answers first and the request comes second.
+  {%- endcomment -%}
+  {% render 'order-experience-rating', order: order %}
 </div></section>
 {% schema %}
 { "name": "Customer order", "settings": [] }

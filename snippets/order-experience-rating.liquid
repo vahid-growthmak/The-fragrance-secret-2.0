@@ -1,0 +1,73 @@
+{%- comment -%}
+  "How was your experience?" — an experience rating on a delivered order.
+  Usage: {% render 'order-experience-rating', order: order %}
+
+  Judge.me holds the rating; this is the prompt, not the store. A theme has no
+  database and the storefront cannot write to Shopify — an Admin token is the
+  only thing that can put a value on an order, and a token in theme JS is the
+  whole shop handed to anyone who opens View Source. So the stars hand off to
+  Judge.me's shop-review form, which already collects store ratings, already
+  keeps them against the order, and already sends the request on its own.
+
+  That hand-off is the point: Judge.me's automated request goes out after
+  fulfilment whether or not anyone returns to this page. This is for the
+  customer who comes back to check an order and is willing to say something
+  while they are here.
+
+  Two gates, both deliberate.
+
+  Fulfilment. An order placed an hour ago has nothing to rate. The customer
+  has seen a checkout form — the packing, the courier, whether COD went
+  smoothly at the door, none of it has happened yet. Asking then measures the
+  checkout and files the answer under service. So the card waits for the order
+  to actually be fulfilled.
+
+  A set URL. With no form to open, these would be five dead stars on a real
+  order. Blank setting, nothing renders — the same fallback the WhatsApp float
+  makes rather than linking nowhere.
+{%- endcomment -%}
+
+{%- liquid
+  assign form_url = settings.judgeme_shop_review_url | strip
+  assign is_fulfilled = false
+  if order.fulfillment_status == 'fulfilled'
+    assign is_fulfilled = true
+  endif
+-%}
+
+{%- if form_url != blank and is_fulfilled -%}
+  {%- comment -%}
+    The chosen rating rides along as a query parameter, so clicking the third
+    star opens the form already showing three. Judge.me decides whether to
+    honour it; if it does not, the form opens unset and the customer picks
+    there — the same page either way, so this can only help. The separator is
+    worked out rather than assumed: the link a merchant pastes out of Judge.me
+    usually carries a ?shop_domain= already, and a second ? would break it.
+  {%- endcomment -%}
+  {%- if form_url contains '?' -%}
+    {%- assign sep = '&' -%}
+  {%- else -%}
+    {%- assign sep = '?' -%}
+  {%- endif -%}
+
+  <div class="co-block">
+    <div class="co-step">
+      <span class="n"><span class="mi" aria-hidden="true" style="font-size:18px">star</span></span>
+      <h2>How was your experience?</h2>
+    </div>
+    <p class="oer-sub">Order {{ order.name }} has been delivered. Tell us how it went — the packaging, the delivery, the scent itself. It takes a few seconds, and it is what the next person shopping reads.</p>
+    {%- comment -%}
+      Five links rather than a widget: each one is a real destination, so this
+      works with no JavaScript and a screen reader is told what each star does
+      instead of meeting five identical icons.
+    {%- endcomment -%}
+    <div class="oer-stars" role="group" aria-label="Rate your experience with order {{ order.name }}">
+      {%- for i in (1..5) -%}
+        <a class="oer-star" href="{{ form_url }}{{ sep }}rating={{ i }}" target="_blank" rel="noopener"
+           aria-label="Rate {{ i }} out of 5 and open the review form">
+          <span class="mi mi-f" aria-hidden="true">star</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
